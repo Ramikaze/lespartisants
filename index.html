@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>آية الكرسي — Verset du Trône</title>
+<link href="https://fonts.googleapis.com/css2?family=Scheherazade+New:wght@300;400&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#07091a;--surface:#0f1326;--surface2:#161c38;
+  --gold:#c9a84c;--gold-light:#e8c96a;--gold-dim:rgba(201,168,76,0.18);
+  --gold-glow:rgba(201,168,76,0.08);--text:#e2d5b8;--text-muted:#7a6a4a;
+  --highlight:#f5e090;--danger:#e07575;--success:#72c492;
+  --border:rgba(201,168,76,0.12);--border-active:rgba(201,168,76,0.35);
+}
+body{background:var(--bg);color:var(--text);font-family:'Cormorant Garamond',Georgia,serif;min-height:100vh;overflow-x:hidden;padding-bottom:110px}
+body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100'%3E%3Cg fill='none' stroke='rgba(201,168,76,0.035)' stroke-width='0.6'%3E%3Cpolygon points='50,8 63,28 85,28 70,43 76,63 50,51 24,63 30,43 15,28 37,28'/%3E%3Crect x='25' y='25' width='50' height='50' transform='rotate(45 50 50)'/%3E%3C/g%3E%3C/svg%3E");pointer-events:none;z-index:0}
+body::after{content:'';position:fixed;top:-200px;left:50%;transform:translateX(-50%);width:700px;height:500px;background:radial-gradient(ellipse,rgba(201,168,76,0.06) 0%,transparent 70%);pointer-events:none;z-index:0}
+.container{max-width:860px;margin:0 auto;padding:2.5rem 1.5rem 2rem;position:relative;z-index:1}
+
+/* HEADER */
+.header{text-align:center;margin-bottom:2.5rem}
+.header-arabic{font-family:'Scheherazade New',serif;font-weight:300;font-size:3.8rem;color:var(--gold-light);direction:rtl;line-height:1.3;text-shadow:0 0 60px rgba(201,168,76,0.35);margin-bottom:0.3rem}
+.ornament{display:flex;align-items:center;justify-content:center;gap:1rem;margin:0.8rem 0}
+.ornament-line{height:1px;width:90px;background:linear-gradient(to right,transparent,var(--gold))}
+.ornament-line.r{background:linear-gradient(to left,transparent,var(--gold))}
+.ornament-gem{width:7px;height:7px;background:var(--gold);transform:rotate(45deg);box-shadow:0 0 8px var(--gold)}
+.header-sub{font-size:0.82rem;color:var(--text-muted);letter-spacing:0.18em;text-transform:uppercase}
+
+/* TABS */
+.tabs{display:flex;gap:0.4rem;margin-bottom:2rem;background:var(--surface);padding:0.35rem;border-radius:14px;border:1px solid var(--border)}
+.tab{flex:1;padding:0.6rem 0.8rem;background:transparent;border:1px solid transparent;border-radius:10px;color:var(--text-muted);font-family:'Cormorant Garamond',serif;font-size:0.95rem;cursor:pointer;transition:all 0.25s;letter-spacing:0.04em}
+.tab:hover{color:var(--text);background:var(--surface2)}
+.tab.active{background:var(--gold-glow);color:var(--gold-light);border-color:var(--border-active)}
+.mode-content{animation:fadeUp 0.35s ease both}
+@keyframes fadeUp{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+
+/* AUDIO BAR */
+.audio-bar{
+  position:fixed;bottom:0;left:0;right:0;
+  background:linear-gradient(to top,#07091a 80%,rgba(7,9,26,0.95));
+  border-top:1px solid var(--border-active);
+  padding:0.85rem 1.5rem;z-index:100;
+  display:flex;align-items:center;gap:1.2rem;
+  backdrop-filter:blur(12px);
+}
+.ab-info{flex-shrink:0}
+.ab-label{font-size:0.68rem;color:var(--text-muted);letter-spacing:0.12em;text-transform:uppercase}
+.ab-title{font-family:'Scheherazade New',serif;font-weight:300;font-size:1.35rem;color:var(--gold-light);direction:rtl}
+.ab-sep{width:1px;height:28px;background:var(--border);flex-shrink:0}
+.ab-controls{display:flex;align-items:center;gap:0.8rem;flex:1;min-width:0}
+.ab-btn{
+  width:36px;height:36px;border-radius:50%;
+  background:var(--gold-dim);border:1px solid var(--border-active);
+  color:var(--gold-light);cursor:pointer;
+  display:flex;align-items:center;justify-content:center;
+  font-size:1rem;transition:all 0.2s;flex-shrink:0;
+}
+.ab-btn:hover{background:rgba(201,168,76,0.35)}
+.ab-btn.playing{background:rgba(201,168,76,0.28);box-shadow:0 0 14px rgba(201,168,76,0.22)}
+.ab-progress{flex:1;height:4px;background:var(--surface2);border-radius:2px;cursor:pointer;position:relative;min-width:0}
+.ab-fill{height:100%;background:linear-gradient(to right,var(--gold),var(--gold-light));border-radius:2px;width:0%;pointer-events:none;transition:width 0.3s linear}
+.ab-time{font-size:0.72rem;color:var(--text-muted);white-space:nowrap;flex-shrink:0}
+.ab-reciter{font-size:0.68rem;color:var(--text-muted);white-space:nowrap;flex-shrink:0}
+.ab-status{font-size:0.68rem;padding:0.2rem 0.6rem;border-radius:10px;white-space:nowrap;flex-shrink:0}
+.ab-status.ok{color:var(--success);background:rgba(114,196,146,0.08);border:1px solid rgba(114,196,146,0.2)}
+.ab-status.err{color:var(--danger);background:rgba(224,117,117,0.08);border:1px solid rgba(224,117,117,0.2)}
+.ab-status.loading{color:var(--gold);background:rgba(201,168,76,0.08);border:1px solid rgba(201,168,76,0.2)}
+
+/* ICON SOUND BTN (générique) */
+.snd-btn{
+  display:inline-flex;align-items:center;justify-content:center;
+  width:30px;height:30px;border-radius:50%;
+  background:var(--gold-dim);border:1px solid var(--border-active);
+  color:var(--gold-light);cursor:pointer;font-size:0.85rem;
+  transition:all 0.2s;flex-shrink:0;
+}
+.snd-btn:hover{background:rgba(201,168,76,0.38);transform:scale(1.1)}
+.snd-btn.playing{box-shadow:0 0 12px rgba(201,168,76,0.4);animation:pulse 0.7s ease infinite alternate}
+.snd-btn.err{color:var(--danger);border-color:rgba(224,117,117,0.4);background:rgba(224,117,117,0.06)}
+@keyframes pulse{from{opacity:0.7}to{opacity:1}}
+
+/* EXPLORATION */
+.verse-wrapper{background:var(--surface);border:1px solid var(--border);border-radius:18px;padding:2.5rem 2rem;margin-bottom:1.2rem}
+.verse-display{direction:rtl;text-align:center;line-height:3.5;font-family:'Scheherazade New',serif;font-weight:300;font-size:1.95rem;color:var(--gold-light);text-shadow:0 0 30px rgba(232,201,106,0.2)}
+.verse-word{display:inline;cursor:pointer;padding:0.05rem 0.3rem;border-radius:5px;transition:color 0.18s,background 0.18s}
+.verse-word:hover,.verse-word.active{color:var(--highlight);background:rgba(201,168,76,0.13)}
+.stop-glyph{color:var(--gold);opacity:0.4;font-size:1.5rem;user-select:none}
+.explore-hint{text-align:center;font-size:0.8rem;color:var(--text-muted);letter-spacing:0.06em;margin-top:0.5rem}
+
+/* POPUP — pointer-events:auto pour que les boutons soient cliquables */
+.popup{
+  position:fixed;
+  background:linear-gradient(145deg,#1b2342,#141b35);
+  border:1px solid var(--border-active);border-radius:14px;
+  padding:1.1rem 1.3rem;width:275px;z-index:300;
+  box-shadow:0 14px 45px rgba(0,0,0,0.75),inset 0 1px 0 rgba(255,255,255,0.04);
+  pointer-events:auto; /* ← CRUCIAL : permet les clics sur les boutons internes */
+  animation:popIn 0.16s ease both;
+}
+@keyframes popIn{from{opacity:0;transform:scale(0.86)}to{opacity:1;transform:scale(1)}}
+.popup.hidden{display:none!important}
+.p-header{display:flex;align-items:center;justify-content:center;gap:0.6rem;margin-bottom:0.15rem}
+.p-arabic{font-family:'Scheherazade New',serif;font-weight:300;font-size:2.1rem;color:var(--gold-light);direction:rtl;text-align:center;text-shadow:0 0 18px rgba(232,201,106,0.3)}
+.p-trans{font-size:0.76rem;color:var(--text-muted);text-align:center;font-style:italic;margin-bottom:0.75rem;letter-spacing:0.03em}
+.p-line{height:1px;background:var(--border);margin-bottom:0.75rem}
+.p-french{font-size:1rem;color:var(--text);font-style:italic;text-align:center;margin-bottom:0.4rem;line-height:1.4}
+.p-grammar{font-size:0.7rem;color:var(--text-muted);text-align:center;background:rgba(201,168,76,0.06);padding:0.22rem 0.55rem;border-radius:20px;display:block}
+
+/* APPRENTISSAGE */
+.study-wrap{display:flex;flex-direction:column;align-items:center;gap:1.4rem}
+.prog-track{width:100%;max-width:580px;height:3px;background:var(--surface2);border-radius:2px;overflow:hidden}
+.prog-fill{height:100%;background:linear-gradient(to right,var(--gold),var(--gold-light));border-radius:2px;transition:width 0.4s ease}
+.study-card{width:100%;max-width:580px;background:var(--surface);border:1px solid var(--border);border-radius:22px;padding:3rem 2.5rem;text-align:center;min-height:300px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0.5rem;position:relative;transition:border-color 0.3s,box-shadow 0.3s}
+.study-card:hover{border-color:var(--border-active);box-shadow:0 0 40px rgba(201,168,76,0.07)}
+.sc-num{position:absolute;top:1.1rem;right:1.4rem;font-size:0.78rem;color:var(--text-muted)}
+.sc-snd{position:absolute;top:1rem;left:1.4rem}
+.sc-arabic{font-family:'Scheherazade New',serif;font-weight:300;font-size:4.5rem;color:var(--gold-light);direction:rtl;line-height:1.2;text-shadow:0 0 30px rgba(232,201,106,0.25)}
+.sc-trans{font-size:0.95rem;color:var(--text-muted);font-style:italic;letter-spacing:0.06em}
+.sc-sep{width:50px;height:1px;background:var(--border-active);margin:0.6rem auto;position:relative}
+.sc-sep::before{content:'✦';position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);color:var(--gold);font-size:0.6rem;background:var(--surface);padding:0 4px}
+.sc-french{font-size:1.45rem;color:var(--text);font-style:italic;line-height:1.4}
+.sc-grammar{font-size:0.75rem;color:var(--text-muted);background:rgba(201,168,76,0.06);border:1px solid var(--border);padding:0.3rem 0.9rem;border-radius:20px;margin-top:0.4rem}
+.study-nav{display:flex;gap:1rem;align-items:center;width:100%;max-width:580px;justify-content:space-between}
+.btn{padding:0.65rem 1.4rem;background:var(--surface);border:1px solid var(--border);border-radius:10px;color:var(--text);font-family:'Cormorant Garamond',serif;font-size:1rem;cursor:pointer;transition:all 0.2s;letter-spacing:0.04em}
+.btn:hover:not(:disabled){background:var(--gold-dim);color:var(--gold-light);border-color:var(--border-active)}
+.btn:disabled{opacity:0.25;cursor:not-allowed}
+.nav-ctr{font-size:0.88rem;color:var(--text-muted);min-width:70px;text-align:center}
+.kbd-hint{font-size:0.72rem;color:var(--text-muted);text-align:center;letter-spacing:0.06em}
+
+/* QUIZ */
+.quiz-wrap{display:flex;flex-direction:column;align-items:center;gap:1.4rem}
+.quiz-stats{display:flex;gap:2rem;background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:0.9rem 2.5rem}
+.stat-item{text-align:center}
+.stat-n{font-size:1.6rem;color:var(--gold-light);display:block;line-height:1}
+.stat-l{font-size:0.7rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.12em;margin-top:0.2rem;display:block}
+.quiz-card{width:100%;max-width:580px;background:var(--surface);border:1px solid var(--border);border-radius:22px;padding:2.5rem 2rem;text-align:center;min-height:260px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0.7rem;position:relative}
+.qc-snd{position:absolute;top:1rem;left:1.4rem}
+.q-arabic{font-family:'Scheherazade New',serif;font-weight:300;font-size:4.2rem;color:var(--gold-light);direction:rtl;text-shadow:0 0 25px rgba(232,201,106,0.2)}
+.q-trans{font-size:0.95rem;color:var(--text-muted);font-style:italic}
+.q-answer{font-size:1.45rem;color:var(--text);font-style:italic;min-height:2.2rem;transition:opacity 0.35s,transform 0.35s}
+.q-answer.hidden{opacity:0;transform:translateY(6px)}
+.q-grammar{font-size:0.75rem;color:var(--text-muted);transition:opacity 0.35s}
+.q-grammar.hidden{opacity:0}
+.quiz-btns{display:flex;gap:0.8rem;flex-wrap:wrap;justify-content:center;width:100%;max-width:440px}
+.btn-gold{padding:0.7rem 2.2rem;background:var(--gold-dim);border:1px solid var(--border-active);border-radius:10px;color:var(--gold-light);font-family:'Cormorant Garamond',serif;font-size:1rem;cursor:pointer;transition:all 0.2s;letter-spacing:0.06em}
+.btn-gold:hover{background:rgba(201,168,76,0.3)}
+.btn-ok{padding:0.65rem 1.6rem;background:rgba(114,196,146,0.08);border:1px solid rgba(114,196,146,0.35);border-radius:10px;color:var(--success);font-family:'Cormorant Garamond',serif;font-size:1rem;cursor:pointer;transition:all 0.2s}
+.btn-ok:hover{background:rgba(114,196,146,0.18)}
+.btn-nok{padding:0.65rem 1.6rem;background:rgba(224,117,117,0.08);border:1px solid rgba(224,117,117,0.35);border-radius:10px;color:var(--danger);font-family:'Cormorant Garamond',serif;font-size:1rem;cursor:pointer;transition:all 0.2s}
+.btn-nok:hover{background:rgba(224,117,117,0.18)}
+.quiz-prog-txt{font-size:0.82rem;color:var(--text-muted);letter-spacing:0.06em}
+
+/* PHRASES */
+.phrases-grid{display:flex;flex-direction:column;gap:1.2rem}
+.phrase-card{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:1.5rem 1.8rem;transition:all 0.25s}
+.phrase-card:hover{border-color:var(--border-active);box-shadow:0 4px 24px rgba(0,0,0,0.35);transform:translateX(3px)}
+.ph-num{font-size:0.7rem;color:var(--gold);letter-spacing:0.18em;text-transform:uppercase;margin-bottom:0.7rem}
+.ph-arabic{font-family:'Scheherazade New',serif;font-weight:300;font-size:1.85rem;color:var(--gold-light);direction:rtl;text-align:right;line-height:1.9;margin-bottom:0.9rem}
+.ph-sep{height:1px;background:var(--border);margin-bottom:0.9rem}
+.ph-french{font-size:1.1rem;color:var(--text);font-style:italic;margin-bottom:0.5rem;line-height:1.5}
+.ph-theme{font-size:0.76rem;color:var(--text-muted)}
+.ph-theme::before{content:'✦  ';color:var(--gold);opacity:0.6}
+.full-trans{margin-top:1.5rem;background:var(--surface);border:1px solid var(--border);border-left:3px solid var(--gold);border-radius:14px;padding:1.6rem 1.8rem}
+.ft-label{font-size:0.7rem;color:var(--gold);letter-spacing:0.18em;text-transform:uppercase;margin-bottom:0.8rem}
+.ft-text{font-style:italic;font-size:1rem;color:var(--text-muted);line-height:2}
+.hidden{display:none!important}
+
+@media(max-width:600px){
+  .verse-display{font-size:1.3rem;line-height:2.9}
+  .header-arabic{font-size:2.6rem}
+  .tab{font-size:0.78rem;padding:0.5rem 0.3rem}
+  .sc-arabic{font-size:3rem}
+  .q-arabic{font-size:3rem}
+  .audio-bar{gap:0.5rem;padding:0.7rem 0.9rem}
+  .ab-info .ab-title{font-size:1.1rem}
+  .ab-reciter{display:none}
+  .quiz-stats{gap:1rem;padding:0.8rem 1.2rem}
+  .study-card{padding:2rem 1.2rem;min-height:260px}
+  .quiz-card{padding:1.8rem 1.2rem;min-height:220px}
+  .container{padding:1.5rem 1rem 1rem}
+}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="header-arabic">آيَةُ الْكُرْسِيِّ</div>
+    <div class="ornament"><div class="ornament-line"></div><div class="ornament-gem"></div><div class="ornament-line r"></div></div>
+    <div class="header-sub">Le Verset du Trône &nbsp;·&nbsp; Sourate Al-Baqara &nbsp;·&nbsp; Verset 255</div>
+  </div>
+
+  <div class="tabs">
+    <button class="tab active" onclick="setMode(0)">🔍 Exploration</button>
+    <button class="tab" onclick="setMode(1)">📖 Apprentissage</button>
+    <button class="tab" onclick="setMode(2)">🎯 Quiz</button>
+    <button class="tab" onclick="setMode(3)">📜 Phrases</button>
+  </div>
+
+  <!-- MODE 0 -->
+  <div id="m0" class="mode-content">
+    <div class="verse-wrapper">
+      <div class="verse-display" id="verse-display"></div>
+    </div>
+    <div class="explore-hint" id="explore-hint">✦ Survolez un mot pour la traduction · 🔊 pour écouter la prononciation</div>
+    <div class="popup hidden" id="popup">
+      <div class="p-header">
+        <div class="p-arabic" id="p-ar"></div>
+        <button class="snd-btn" id="popup-snd" onclick="playWord(currentPopupIdx)">🔊</button>
+      </div>
+      <div class="p-trans" id="p-tr"></div>
+      <div class="p-line"></div>
+      <div class="p-french" id="p-fr"></div>
+      <div class="p-grammar" id="p-gr"></div>
+    </div>
+  </div>
+
+  <!-- MODE 1 -->
+  <div id="m1" class="mode-content hidden">
+    <div class="study-wrap">
+      <div class="prog-track" style="width:100%;max-width:580px">
+        <div class="prog-fill" id="prog-fill" style="width:2%"></div>
+      </div>
+      <div class="study-card">
+        <div class="sc-num" id="sc-num">1 / 50</div>
+        <div class="sc-snd">
+          <button class="snd-btn" id="sc-snd" onclick="playWord(sIdx)">🔊</button>
+        </div>
+        <div class="sc-arabic" id="sc-ar"></div>
+        <div class="sc-trans" id="sc-tr"></div>
+        <div class="sc-sep"></div>
+        <div class="sc-french" id="sc-fr"></div>
+        <div class="sc-grammar" id="sc-gr"></div>
+      </div>
+      <div class="study-nav" style="max-width:580px">
+        <button class="btn" id="btn-prev" onclick="sNav(-1)">← Précédent</button>
+        <div class="nav-ctr" id="s-ctr">1 / 50</div>
+        <button class="btn" id="btn-next" onclick="sNav(1)">Suivant →</button>
+      </div>
+      <div class="kbd-hint">← → pour naviguer &nbsp;·&nbsp; Espace pour écouter</div>
+    </div>
+  </div>
+
+  <!-- MODE 2 -->
+  <div id="m2" class="mode-content hidden">
+    <div class="quiz-wrap">
+      <div class="quiz-stats">
+        <div class="stat-item"><span class="stat-n" id="q-known">0</span><span class="stat-l">Sus</span></div>
+        <div class="stat-item"><span class="stat-n" id="q-review">0</span><span class="stat-l">À revoir</span></div>
+        <div class="stat-item"><span class="stat-n" id="q-left">50</span><span class="stat-l">Restants</span></div>
+      </div>
+      <div class="quiz-card">
+        <div class="qc-snd">
+          <button class="snd-btn" id="qc-snd" onclick="playWord(currentQuizIdx)">🔊</button>
+        </div>
+        <div class="q-arabic" id="q-ar"></div>
+        <div class="q-trans" id="q-tr"></div>
+        <div class="q-answer hidden" id="q-ans"></div>
+        <div class="q-grammar hidden" id="q-gr2"></div>
+      </div>
+      <div class="quiz-btns" id="q-btns">
+        <button class="btn-gold" onclick="revealQ()">Révéler la traduction</button>
+      </div>
+      <div class="quiz-prog-txt" id="q-prog">Mot 1 sur 50</div>
+      <button class="btn" onclick="resetQ()" style="font-size:.82rem;padding:.5rem 1.2rem">↺ Mélanger &amp; Recommencer</button>
+    </div>
+  </div>
+
+  <!-- MODE 3 -->
+  <div id="m3" class="mode-content hidden">
+    <div class="phrases-grid" id="phrases-grid"></div>
+    <div class="full-trans">
+      <div class="ft-label">Traduction intégrale</div>
+      <div class="ft-text">Allah ! Il n'y a de divinité que Lui, le Vivant, le Subsistant par Soi-même. Ni la somnolence ni le sommeil ne Le saisissent. À Lui appartient tout ce qui est dans les cieux et sur la terre. Qui peut intercéder auprès de Lui sans Sa permission ? Il connaît ce qui est devant eux et ce qui est derrière eux, et ils n'embrassent rien de Sa science, sauf ce qu'Il veut. Son Trône s'étend sur les cieux et la terre, et leur garde ne Lui pèse nullement. Et Il est le Très-Haut, le Très-Grand.</div>
+    </div>
+  </div>
+</div>
+
+<!-- BARRE AUDIO BAS -->
+<div class="audio-bar">
+  <div class="ab-info">
+    <div class="ab-label">Récitation complète</div>
+    <div class="ab-title">آية الكرسي</div>
+  </div>
+  <div class="ab-sep"></div>
+  <div class="ab-controls">
+    <button class="ab-btn" id="ab-play" onclick="toggleVerse()">▶</button>
+    <div class="ab-progress" id="ab-bar" onclick="seekVerse(event)">
+      <div class="ab-fill" id="ab-fill"></div>
+    </div>
+    <div class="ab-time" id="ab-time">0:00 / 0:00</div>
+  </div>
+  <div class="ab-reciter">Alafasy</div>
+  <div class="ab-status loading" id="ab-status">Appuyez ▶</div>
+</div>
+
+<script>
+/* ═══════ DATA ═══════ */
+const W=[
+  {a:"اللَّهُ",      t:"Allāhu",       f:"Allah (Dieu)",                        g:"Nom propre divin — sujet de la phrase"},
+  {a:"لَا",          t:"lā",           f:"il n'y a pas",                        g:"Particule de négation absolue"},
+  {a:"إِلَٰهَ",      t:"ilāha",        f:"de divinité",                         g:"Nom (accusatif après lā nāfiya lil-jins)"},
+  {a:"إِلَّا",       t:"illā",         f:"sauf / excepté",                      g:"Particule d'exception"},
+  {a:"هُوَ",         t:"Huwa",         f:"Lui",                                 g:"Pronom personnel — 3ème pers. masc."},
+  {a:"الْحَيُّ",     t:"Al-Ḥayyu",     f:"le Vivant",                           g:"Nom divin — al-Ḥayy"},
+  {a:"الْقَيُّومُ",  t:"Al-Qayyūmu",   f:"le Subsistant par Soi-même",          g:"Nom divin — al-Qayyūm"},
+  {a:"لَا",          t:"lā",           f:"ne… pas",                             g:"Particule de négation verbale"},
+  {a:"تَأْخُذُهُ",   t:"ta'khudhuhu",  f:"ne Le saisit / ne L'affecte",         g:"Verbe (présent) + pronom objet"},
+  {a:"سِنَةٌ",       t:"sinatun",      f:"assoupissement / somnolence légère",  g:"Nom (sujet du verbe)"},
+  {a:"وَلَا",        t:"wa-lā",        f:"et ni / et ne… pas",                  g:"Conjonction + négation"},
+  {a:"نَوْمٌ",       t:"nawmun",       f:"sommeil (profond)",                   g:"Nom coordonné au précédent"},
+  {a:"لَّهُ",        t:"Lahu",         f:"À Lui appartient",                    g:"Préposition + pronom possessif"},
+  {a:"مَا",          t:"mā",           f:"tout ce qui",                         g:"Pronom relatif indéfini"},
+  {a:"فِي",          t:"fī",           f:"dans / en",                           g:"Préposition"},
+  {a:"السَّمَاوَاتِ",t:"as-samāwāti",  f:"les cieux",                           g:"Nom (pluriel féminin, génitif)"},
+  {a:"وَمَا",        t:"wa-mā",        f:"et tout ce qui",                      g:"Conjonction + pronom relatif"},
+  {a:"فِي",          t:"fī",           f:"dans / sur",                          g:"Préposition"},
+  {a:"الْأَرْضِ",    t:"al-arḍi",      f:"la terre",                            g:"Nom (génitif)"},
+  {a:"مَن",          t:"man",          f:"qui",                                 g:"Pronom interrogatif"},
+  {a:"ذَا",          t:"dhā",          f:"est donc celui",                      g:"Particule de renforcement rhétorique"},
+  {a:"الَّذِي",      t:"alladhī",      f:"qui",                                 g:"Pronom relatif (masc. sing.)"},
+  {a:"يَشْفَعُ",     t:"yashfa'u",     f:"intercède",                           g:"Verbe (présent, 3ème pers. sing.)"},
+  {a:"عِندَهُ",      t:"ʿindahu",      f:"auprès de Lui",                       g:"Adverbe de lieu + pronom"},
+  {a:"إِلَّا",       t:"illā",         f:"sauf / si ce n'est",                  g:"Particule d'exception"},
+  {a:"بِإِذْنِهِ",   t:"bi-'idhnihi",  f:"avec Sa permission",                  g:"Préposition + nom + pronom possessif"},
+  {a:"يَعْلَمُ",     t:"yaʿlamu",      f:"Il connaît / Il sait",                g:"Verbe (présent, 3ème pers. sing.)"},
+  {a:"مَا",          t:"mā",           f:"ce qui / ce que",                     g:"Pronom relatif"},
+  {a:"بَيْنَ",       t:"bayna",        f:"entre / devant",                      g:"Préposition"},
+  {a:"أَيْدِيهِمْ",  t:"aydīhim",      f:"leurs mains (ce qui est devant eux)", g:"Nom + pronom possessif (pluriel)"},
+  {a:"وَمَا",        t:"wa-mā",        f:"et ce qui",                           g:"Conjonction + pronom relatif"},
+  {a:"خَلْفَهُمْ",   t:"khalfahum",    f:"derrière eux",                        g:"Adverbe + pronom possessif"},
+  {a:"وَلَا",        t:"wa-lā",        f:"et ils ne…",                          g:"Conjonction + négation"},
+  {a:"يُحِيطُونَ",   t:"yuḥīṭūna",     f:"n'embrassent / n'encompassent",       g:"Verbe (présent, pluriel)"},
+  {a:"بِشَيْءٍ",    t:"bi-shay'in",    f:"aucune chose / quoi que ce soit",     g:"Préposition + nom indéfini"},
+  {a:"مِّنْ",        t:"min",          f:"de / parmi",                          g:"Préposition partitive"},
+  {a:"عِلْمِهِ",     t:"ʿilmihi",      f:"Sa science / Son savoir",             g:"Nom + pronom possessif (génitif)"},
+  {a:"إِلَّا",       t:"illā",         f:"sauf / excepté",                      g:"Particule d'exception"},
+  {a:"بِمَا",        t:"bi-mā",        f:"de ce que / selon ce que",            g:"Préposition + pronom relatif"},
+  {a:"شَاءَ",        t:"shāʾa",        f:"Il a voulu / Il a décidé",            g:"Verbe (passé, 3ème pers. sing.)"},
+  {a:"وَسِعَ",       t:"wasiʿa",       f:"englobe / s'étend sur",               g:"Verbe (passé, 3ème pers. sing.)"},
+  {a:"كُرْسِيُّهُ",  t:"kursiyyuhu",   f:"Son Trône / Sa Chaise",               g:"Nom + pronom possessif (sujet)"},
+  {a:"السَّمَاوَاتِ",t:"as-samāwāti",  f:"les cieux",                           g:"Nom (pluriel, accusatif)"},
+  {a:"وَالْأَرْضَ",  t:"wa-l-arḍa",    f:"et la terre",                         g:"Conjonction + nom (accusatif)"},
+  {a:"وَلَا",        t:"wa-lā",        f:"et ne… pas",                          g:"Conjonction + négation"},
+  {a:"يَئُودُهُ",    t:"yaʾūduhu",     f:"ne Le fatigue / ne L'accable",        g:"Verbe + pronom objet"},
+  {a:"حِفْظُهُمَا",  t:"ḥifẓuhumā",    f:"leur garde / leur préservation",      g:"Nom + pronom duel (sujet)"},
+  {a:"وَهُوَ",       t:"wa-Huwa",      f:"et Lui est",                          g:"Conjonction + pronom"},
+  {a:"الْعَلِيُّ",   t:"Al-ʿAliyyu",   f:"le Très-Haut / l'Élevé",             g:"Nom divin — al-ʿAlī"},
+  {a:"الْعَظِيمُ",   t:"Al-ʿAẓīmu",    f:"le Très-Grand / l'Immense",          g:"Nom divin — al-ʿAẓīm"},
+];
+
+const STOPS={6:"ۚ",11:"ۚ",18:"ۗ",25:"ۚ",31:"ۖ",39:"ۚ",43:"ۖ"};
+
+const SEG=[
+  {n:1,a:"اللَّهُ لَا إِلَٰهَ إِلَّا هُوَ الْحَيُّ الْقَيُّومُ",f:"Allah ! Il n'y a de divinité que Lui, le Vivant, le Subsistant par Soi-même.",th:"La shahada et les deux noms fondamentaux : al-Ḥayy, al-Qayyūm"},
+  {n:2,a:"لَا تَأْخُذُهُ سِنَةٌ وَلَا نَوْمٌ",f:"Ni la somnolence ni le sommeil ne Le saisissent.",th:"L'éveil absolu et la vigilance éternelle d'Allah"},
+  {n:3,a:"لَّهُ مَا فِي السَّمَاوَاتِ وَمَا فِي الْأَرْضِ",f:"À Lui appartient tout ce qui est dans les cieux et sur la terre.",th:"La souveraineté absolue — tout appartient à Allah"},
+  {n:4,a:"مَن ذَا الَّذِي يَشْفَعُ عِندَهُ إِلَّا بِإِذْنِهِ",f:"Qui peut intercéder auprès de Lui sans Sa permission ?",th:"L'intercession soumise à Sa seule autorisation"},
+  {n:5,a:"يَعْلَمُ مَا بَيْنَ أَيْدِيهِمْ وَمَا خَلْفَهُمْ",f:"Il connaît ce qui est devant eux et ce qui est derrière eux.",th:"L'omniscience divine : passé, présent et futur"},
+  {n:6,a:"وَلَا يُحِيطُونَ بِشَيْءٍ مِّنْ عِلْمِهِ إِلَّا بِمَا شَاءَ",f:"Ils n'embrassent rien de Sa science, sauf ce qu'Il veut.",th:"Les limites de la connaissance humaine face à Sa science infinie"},
+  {n:7,a:"وَسِعَ كُرْسِيُّهُ السَّمَاوَاتِ وَالْأَرْضَ",f:"Son Trône s'étend sur les cieux et la terre.",th:"L'immensité du Trône — symbole de la domination cosmique"},
+  {n:8,a:"وَلَا يَئُودُهُ حِفْظُهُمَا وَهُوَ الْعَلِيُّ الْعَظِيمُ",f:"Et leur garde ne Lui pèse nullement. Et Il est le Très-Haut, le Très-Grand.",th:"La facilité de la protection divine — clôture par deux noms sublimes"},
+];
+
+
+
+/* ═══════ AUDIO ═══════ */
+
+/* ═══════ AUDIO ═══════ */
+
+// Verset complet — everyayah.com (fiable, sans restriction géographique)
+const VERSE_URLS = [
+  "https://everyayah.com/data/Alafasy_128kbps/002255.mp3",
+  "https://cdn.islamic.network/quran/audio/128/ar.alafasy/255.mp3",
+  "https://download.quranicaudio.com/verses/ar.alafasy/002255.mp3",
+];
+
+// Mot par mot
+function wordUrls(idx){
+  const n = String(idx+1).padStart(3,"0");
+  return [
+    "https://audio.qurancdn.com/wbw/002_255_" + n + ".mp3",
+    "https://everyayah.com/data/wbw/002_255_" + n + ".mp3",
+  ];
+}
+
+let verseAu  = null;
+let wordAu   = null;
+let currentPopupIdx = -1;
+let currentQuizIdx  = -1;
+let verseLoaded = false;
+
+/* ── Verset complet ── */
+// Sur mobile, l'audio DOIT être créé et joué dans un geste utilisateur direct
+function toggleVerse(){
+  if(!verseAu){
+    tryVerseUrl(0);
+    return;
+  }
+  if(verseAu.paused){
+    verseAu.play()
+      .then(()=>{ setAbStatus("ok","En lecture"); updatePlayBtn(true); })
+      .catch(()=>setAbStatus("err","Appuyez à nouveau"));
+  } else {
+    verseAu.pause();
+    updatePlayBtn(false);
+    setAbStatus("ok","Pause");
+  }
+}
+
+function tryVerseUrl(i){
+  if(i >= VERSE_URLS.length){ setAbStatus("err","Source indisponible"); return; }
+  setAbStatus("loading","Chargement…");
+  verseAu = new Audio(VERSE_URLS[i]);
+  verseAu.preload = "auto";
+  verseAu.addEventListener("error", ()=>{ verseAu=null; tryVerseUrl(i+1); }, {once:true});
+  verseAu.addEventListener("canplay", ()=>{
+    verseLoaded = true;
+    verseAu.play()
+      .then(()=>{ setAbStatus("ok","En lecture"); updatePlayBtn(true); startProgress(); })
+      .catch(()=>{ setAbStatus("ok","Prêt — appuyez ▶"); });
+  }, {once:true});
+  verseAu.addEventListener("ended", ()=>{ updatePlayBtn(false); setAbStatus("ok","Terminé"); });
+  verseAu.load();
+}
+
+function updatePlayBtn(playing){
+  const btn = document.getElementById("ab-play");
+  btn.textContent = playing ? "⏸" : "▶";
+  btn.classList.toggle("playing", playing);
+}
+
+let progTimer = null;
+function startProgress(){
+  clearInterval(progTimer);
+  progTimer = setInterval(()=>{
+    if(!verseAu||verseAu.paused){ clearInterval(progTimer); return; }
+    const p = verseAu.currentTime / verseAu.duration * 100;
+    document.getElementById("ab-fill").style.width = (isNaN(p)?0:p)+"%";
+    document.getElementById("ab-time").textContent = fmt(verseAu.currentTime)+" / "+fmt(verseAu.duration);
+  }, 500);
+}
+
+function seekVerse(e){
+  if(!verseAu||!verseAu.duration) return;
+  const r = document.getElementById("ab-bar").getBoundingClientRect();
+  const ratio = Math.max(0,Math.min(1,(e.clientX-r.left)/r.width));
+  verseAu.currentTime = ratio * verseAu.duration;
+  if(!verseAu.paused) startProgress();
+}
+
+function fmt(s){
+  if(!s||isNaN(s)) return "0:00";
+  const m=Math.floor(s/60), sec=Math.floor(s%60);
+  return m+":"+(sec<10?"0":"")+sec;
+}
+
+function setAbStatus(type,msg){
+  const el=document.getElementById("ab-status");
+  el.className="ab-status "+type;
+  el.textContent=msg;
+}
+
+/* ── Mot par mot ── */
+function playWord(idx){
+  if(idx<0||idx>=W.length) return;
+  if(wordAu){ wordAu.pause(); wordAu=null; }
+  // Créer et jouer immédiatement dans le geste utilisateur
+  tryWordUrl(idx, 0);
+}
+
+function tryWordUrl(idx, i){
+  const urls = wordUrls(idx);
+  if(i >= urls.length) return;
+  const au = new Audio(urls[i]);
+  au.addEventListener("error", ()=> tryWordUrl(idx, i+1), {once:true});
+  au.play().then(()=>{ wordAu=au; }).catch(()=> tryWordUrl(idx, i+1));
+}
+
+/* ═══════ STATE ═══════ */
+let sIdx=0, qIdx=0, qOrder=[], qKnown=0, qReview=0, pinned=-1;
+
+/* ═══════ MODES ═══════ */
+function setMode(n){
+  [0,1,2,3].forEach(i=>document.getElementById("m"+i).classList.toggle("hidden",i!==n));
+  document.querySelectorAll(".tab").forEach((t,i)=>t.classList.toggle("active",i===n));
+  if(n===0) buildExplore();
+  if(n===1){sIdx=0;renderStudy();}
+  if(n===2) initQuiz();
+  if(n===3) buildPhrases();
+}
+
+/* ═══════ MODE 0 ═══════ */
+function buildExplore(){
+  const c=document.getElementById("verse-display");
+  c.innerHTML="";
+  W.forEach((w,i)=>{
+    const s=document.createElement("span");
+    s.className="verse-word";
+    s.textContent=w.a;
+    s.addEventListener("mouseenter",e=>showPop(e.currentTarget,i,false));
+    s.addEventListener("mouseleave",tryHidePop);
+    s.addEventListener("click",e=>{e.stopPropagation();showPop(e.currentTarget,i,true);});
+    c.appendChild(s);
+    if(STOPS[i]){
+      const m=document.createElement("span");
+      m.className="stop-glyph";
+      m.textContent=" "+STOPS[i]+" ";
+      c.appendChild(m);
+    } else {
+      c.appendChild(document.createTextNode(" "));
+    }
+  });
+}
+
+// Fermer popup si on clique hors du popup ET hors des mots
+document.addEventListener("click",e=>{
+  const pop=document.getElementById("popup");
+  const isWord=e.target.classList.contains("verse-word");
+  const isInPop=pop.contains(e.target);
+  if(!isWord && !isInPop){
+    pinned=-1; currentPopupIdx=-1;
+    pop.classList.add("hidden");
+    document.querySelectorAll(".verse-word").forEach(el=>el.classList.remove("active"));
+    document.getElementById("explore-hint").textContent="✦ Survolez un mot pour la traduction · 🔊 pour écouter la prononciation";
+  }
+});
+
+function showPop(el,idx,pin){
+  if(pinned>=0 && !pin && pinned!==idx) return;
+  if(pin) pinned=idx;
+  currentPopupIdx=idx;
+  const w=W[idx];
+  document.getElementById("p-ar").textContent=w.a;
+  document.getElementById("p-tr").textContent=w.t;
+  document.getElementById("p-fr").textContent=w.f;
+  document.getElementById("p-gr").textContent=w.g;
+  const pop=document.getElementById("popup");
+  pop.classList.remove("hidden");
+  const r=el.getBoundingClientRect();
+  const pw=275, ph=210;
+  let left = r.left + r.width/2 - pw/2;
+  let top  = r.top - ph - 10;
+  if(top < 8) top = r.bottom + 10;
+  left = Math.max(8, Math.min(left, window.innerWidth - pw - 8));
+  pop.style.left = left + "px";
+  pop.style.top  = (top + window.scrollY) + "px";
+  document.querySelectorAll(".verse-word").forEach((e2,i)=>e2.classList.toggle("active",i===idx));
+  document.getElementById("explore-hint").textContent="Mot "+(idx+1)+" / "+W.length+(pin?" · épinglé":"");
+}
+
+function tryHidePop(){
+  if(pinned>=0) return;
+  currentPopupIdx=-1;
+  document.getElementById("popup").classList.add("hidden");
+  document.querySelectorAll(".verse-word").forEach(el=>el.classList.remove("active"));
+  document.getElementById("explore-hint").textContent="✦ Survolez un mot pour la traduction · 🔊 pour écouter la prononciation";
+}
+
+/* ═══════ MODE 1 ═══════ */
+function renderStudy(){
+  const w=W[sIdx];
+  document.getElementById("sc-ar").textContent=w.a;
+  document.getElementById("sc-tr").textContent=w.t;
+  document.getElementById("sc-fr").textContent=w.f;
+  document.getElementById("sc-gr").textContent=w.g;
+  document.getElementById("sc-num").textContent=(sIdx+1)+" / "+W.length;
+  document.getElementById("s-ctr").textContent=(sIdx+1)+" / "+W.length;
+  document.getElementById("prog-fill").style.width=((sIdx+1)/W.length*100)+"%";
+  document.getElementById("btn-prev").disabled=(sIdx===0);
+  document.getElementById("btn-next").disabled=(sIdx===W.length-1);
+}
+
+function sNav(d){sIdx=Math.max(0,Math.min(W.length-1,sIdx+d));renderStudy();}
+
+document.addEventListener("keydown",e=>{
+  if(!document.getElementById("m1").classList.contains("hidden")){
+    if(e.key==="ArrowRight") sNav(-1);
+    if(e.key==="ArrowLeft")  sNav(1);
+    if(e.key===" "){e.preventDefault();playWord(sIdx);}
+  }
+});
+
+/* ═══════ MODE 2 ═══════ */
+function initQuiz(){
+  qOrder=[...Array(W.length).keys()];
+  for(let i=qOrder.length-1;i>0;i--){
+    const j=Math.floor(Math.random()*(i+1));
+    [qOrder[i],qOrder[j]]=[qOrder[j],qOrder[i]];
+  }
+  qIdx=0;qKnown=0;qReview=0;renderQ();
+}
+function resetQ(){initQuiz();}
+
+function renderQ(){
+  if(qIdx>=qOrder.length){
+    document.getElementById("q-ar").textContent="✦";
+    document.getElementById("q-tr").textContent="Quiz terminé !";
+    document.getElementById("q-ans").textContent=qKnown+" sus  ·  "+qReview+" à revoir";
+    document.getElementById("q-ans").classList.remove("hidden");
+    document.getElementById("q-gr2").classList.add("hidden");
+    document.getElementById("q-btns").innerHTML='<button class="btn-gold" onclick="resetQ()">↺ Recommencer</button>';
+    document.getElementById("q-prog").textContent="Terminé !";
+    currentQuizIdx=-1;
+    return;
+  }
+  const ri=qOrder[qIdx]; currentQuizIdx=ri;
+  const w=W[ri];
+  document.getElementById("q-ar").textContent=w.a;
+  document.getElementById("q-tr").textContent=w.t;
+  document.getElementById("q-ans").textContent=w.f;
+  document.getElementById("q-ans").classList.add("hidden");
+  document.getElementById("q-gr2").textContent=w.g;
+  document.getElementById("q-gr2").classList.add("hidden");
+  document.getElementById("q-prog").textContent="Mot "+(qIdx+1)+" sur "+qOrder.length;
+  document.getElementById("q-known").textContent=qKnown;
+  document.getElementById("q-review").textContent=qReview;
+  document.getElementById("q-left").textContent=qOrder.length-qIdx;
+  document.getElementById("q-btns").innerHTML='<button class="btn-gold" onclick="revealQ()">Révéler la traduction</button>';
+}
+
+function revealQ(){
+  document.getElementById("q-ans").classList.remove("hidden");
+  document.getElementById("q-gr2").classList.remove("hidden");
+  document.getElementById("q-btns").innerHTML=
+    '<button class="btn-ok" onclick="gradeQ(true)">✓ Je savais</button>'+
+    '<button class="btn-nok" onclick="gradeQ(false)">↺ À revoir</button>';
+}
+function gradeQ(k){if(k)qKnown++;else qReview++;qIdx++;renderQ();}
+
+/* ═══════ MODE 3 ═══════ */
+function buildPhrases(){
+  const g=document.getElementById("phrases-grid");
+  g.innerHTML="";
+  SEG.forEach(s=>{
+    const d=document.createElement("div");
+    d.className="phrase-card";
+    d.innerHTML=
+      '<div class="ph-num">Segment '+s.n+'</div>'+
+      '<div class="ph-arabic">'+s.a+'</div>'+
+      '<div class="ph-sep"></div>'+
+      '<div class="ph-french">'+s.f+'</div>'+
+      '<div class="ph-theme">'+s.th+'</div>';
+    g.appendChild(d);
+  });
+}
+
+/* ═══════ INIT ═══════ */
+buildExplore();
+</script>
+<!-- fin -->
+</body>
+</html>
