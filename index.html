@@ -157,10 +157,12 @@ body::after{content:'';position:fixed;top:-200px;left:50%;transform:translateX(-
 .phrase-card{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:1.5rem 1.8rem;transition:all 0.25s}
 .phrase-card:hover{border-color:var(--border-active);box-shadow:0 4px 24px rgba(0,0,0,0.35);transform:translateX(3px)}
 .ph-num{font-size:0.7rem;color:var(--gold);letter-spacing:0.18em;text-transform:uppercase;margin-bottom:0.7rem}
+.ph-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:0.7rem}
+.ph-header .ph-num{margin-bottom:0}
 .ph-arabic{font-family:'Scheherazade New',serif;font-weight:300;font-size:1.85rem;color:var(--gold-light);direction:rtl;text-align:right;line-height:1.9;margin-bottom:0.9rem}
 .ph-sep{height:1px;background:var(--border);margin-bottom:0.9rem}
 .ph-french{font-size:1.1rem;color:var(--text);font-style:italic;margin-bottom:0.5rem;line-height:1.5}
-.ph-theme{font-size:0.76rem;color:var(--text-muted)}
+.ph-theme{font-size:0.9rem;color:var(--text-muted);letter-spacing:0.02em;line-height:1.5}
 .ph-theme::before{content:'✦  ';color:var(--gold);opacity:0.6}
 .full-trans{margin-top:1.5rem;background:var(--surface);border:1px solid var(--border);border-left:3px solid var(--gold);border-radius:14px;padding:1.6rem 1.8rem}
 .ft-label{font-size:0.7rem;color:var(--gold);letter-spacing:0.18em;text-transform:uppercase;margin-bottom:0.8rem}
@@ -353,14 +355,14 @@ const W=[
 const STOPS={6:"ۚ",11:"ۚ",18:"ۗ",25:"ۚ",31:"ۖ",39:"ۚ",43:"ۖ"};
 
 const SEG=[
-  {n:1,a:"اللَّهُ لَا إِلَٰهَ إِلَّا هُوَ الْحَيُّ الْقَيُّومُ",f:"Allah ! Il n'y a de divinité que Lui, le Vivant, le Subsistant par Soi-même.",th:"La shahada et les deux noms fondamentaux : al-Ḥayy, al-Qayyūm"},
-  {n:2,a:"لَا تَأْخُذُهُ سِنَةٌ وَلَا نَوْمٌ",f:"Ni la somnolence ni le sommeil ne Le saisissent.",th:"L'éveil absolu et la vigilance éternelle d'Allah"},
-  {n:3,a:"لَّهُ مَا فِي السَّمَاوَاتِ وَمَا فِي الْأَرْضِ",f:"À Lui appartient tout ce qui est dans les cieux et sur la terre.",th:"La souveraineté absolue — tout appartient à Allah"},
-  {n:4,a:"مَن ذَا الَّذِي يَشْفَعُ عِندَهُ إِلَّا بِإِذْنِهِ",f:"Qui peut intercéder auprès de Lui sans Sa permission ?",th:"L'intercession soumise à Sa seule autorisation"},
-  {n:5,a:"يَعْلَمُ مَا بَيْنَ أَيْدِيهِمْ وَمَا خَلْفَهُمْ",f:"Il connaît ce qui est devant eux et ce qui est derrière eux.",th:"L'omniscience divine : passé, présent et futur"},
-  {n:6,a:"وَلَا يُحِيطُونَ بِشَيْءٍ مِّنْ عِلْمِهِ إِلَّا بِمَا شَاءَ",f:"Ils n'embrassent rien de Sa science, sauf ce qu'Il veut.",th:"Les limites de la connaissance humaine face à Sa science infinie"},
-  {n:7,a:"وَسِعَ كُرْسِيُّهُ السَّمَاوَاتِ وَالْأَرْضَ",f:"Son Trône s'étend sur les cieux et la terre.",th:"L'immensité du Trône — symbole de la domination cosmique"},
-  {n:8,a:"وَلَا يَئُودُهُ حِفْظُهُمَا وَهُوَ الْعَلِيُّ الْعَظِيمُ",f:"Et leur garde ne Lui pèse nullement. Et Il est le Très-Haut, le Très-Grand.",th:"La facilité de la protection divine — clôture par deux noms sublimes"},
+  {n:1,w:[0,6],  a:"اللَّهُ لَا إِلَٰهَ إِلَّا هُوَ الْحَيُّ الْقَيُّومُ",f:"Allah ! Il n'y a de divinité que Lui, le Vivant, le Subsistant par Soi-même.",th:"La shahada et les deux noms fondamentaux : al-Ḥayy, al-Qayyūm"},
+  {n:2,w:[7,11], a:"لَا تَأْخُذُهُ سِنَةٌ وَلَا نَوْمٌ",f:"Ni la somnolence ni le sommeil ne Le saisissent.",th:"L'éveil absolu et la vigilance éternelle d'Allah"},
+  {n:3,w:[12,18],a:"لَّهُ مَا فِي السَّمَاوَاتِ وَمَا فِي الْأَرْضِ",f:"À Lui appartient tout ce qui est dans les cieux et sur la terre.",th:"La souveraineté absolue — tout appartient à Allah"},
+  {n:4,w:[19,25],a:"مَن ذَا الَّذِي يَشْفَعُ عِندَهُ إِلَّا بِإِذْنِهِ",f:"Qui peut intercéder auprès de Lui sans Sa permission ?",th:"L'intercession soumise à Sa seule autorisation"},
+  {n:5,w:[26,31],a:"يَعْلَمُ مَا بَيْنَ أَيْدِيهِمْ وَمَا خَلْفَهُمْ",f:"Il connaît ce qui est devant eux et ce qui est derrière eux.",th:"L'omniscience divine : passé, présent et futur"},
+  {n:6,w:[32,39],a:"وَلَا يُحِيطُونَ بِشَيْءٍ مِّنْ عِلْمِهِ إِلَّا بِمَا شَاءَ",f:"Ils n'embrassent rien de Sa science, sauf ce qu'Il veut.",th:"Les limites de la connaissance humaine face à Sa science infinie"},
+  {n:7,w:[40,43],a:"وَسِعَ كُرْسِيُّهُ السَّمَاوَاتِ وَالْأَرْضَ",f:"Son Trône s'étend sur les cieux et la terre.",th:"L'immensité du Trône — symbole de la domination cosmique"},
+  {n:8,w:[44,49],a:"وَلَا يَئُودُهُ حِفْظُهُمَا وَهُوَ الْعَلِيُّ الْعَظِيمُ",f:"Et leur garde ne Lui pèse nullement. Et Il est le Très-Haut, le Très-Grand.",th:"La facilité de la protection divine — clôture par deux noms sublimes"},
 ];
 
 
@@ -629,15 +631,75 @@ function revealQ(){
 }
 function gradeQ(k){if(k)qKnown++;else qReview++;qIdx++;renderQ();}
 
-/* ═══════ MODE 3 ═══════ */
+/* ── Lecture séquentielle d'un segment ── */
+let segAu = null;
+let segPlaying = -1; // index du segment en cours
+
+function playSegment(segIdx, wordIdx, btnEl){
+  const seg = SEG[segIdx];
+  if(!seg) return;
+
+  // Si déjà en cours sur ce segment → stop
+  if(segPlaying === segIdx){
+    if(segAu){ segAu.pause(); segAu=null; }
+    segPlaying = -1;
+    if(btnEl){ btnEl.textContent="🔊"; btnEl.classList.remove("playing"); }
+    return;
+  }
+
+  // Stopper tout audio segment précédent
+  if(segAu){ segAu.pause(); segAu=null; }
+  // Remettre tous les boutons de segment à l'état normal
+  document.querySelectorAll(".ph-play-btn").forEach(b=>{
+    b.textContent="🔊"; b.classList.remove("playing");
+  });
+
+  segPlaying = segIdx;
+  if(btnEl){ btnEl.textContent="⏸"; btnEl.classList.add("playing"); }
+
+  playNextWord(segIdx, wordIdx, btnEl);
+}
+
+function playNextWord(segIdx, wIdx, btnEl){
+  const seg = SEG[segIdx];
+  if(segPlaying !== segIdx) return; // annulé
+  if(wIdx > seg.w[1]){
+    // Segment terminé
+    segPlaying = -1;
+    if(btnEl){ btnEl.textContent="🔊"; btnEl.classList.remove("playing"); }
+    return;
+  }
+
+  const urls = wordUrls(wIdx);
+  trySegWord(segIdx, wIdx, 0, urls, btnEl);
+}
+
+function trySegWord(segIdx, wIdx, urlIdx, urls, btnEl){
+  if(segPlaying !== segIdx) return;
+  if(urlIdx >= urls.length){
+    // Ce mot échoue → passer au suivant quand même
+    playNextWord(segIdx, wIdx+1, btnEl);
+    return;
+  }
+  const au = new Audio(urls[urlIdx]);
+  segAu = au;
+  au.addEventListener("error", ()=> trySegWord(segIdx, wIdx, urlIdx+1, urls, btnEl), {once:true});
+  au.addEventListener("ended", ()=>{
+    if(segPlaying === segIdx) playNextWord(segIdx, wIdx+1, btnEl);
+  }, {once:true});
+  au.play().catch(()=> trySegWord(segIdx, wIdx, urlIdx+1, urls, btnEl));
+}
 function buildPhrases(){
   const g=document.getElementById("phrases-grid");
   g.innerHTML="";
-  SEG.forEach(s=>{
+  SEG.forEach((s,i)=>{
     const d=document.createElement("div");
     d.className="phrase-card";
     d.innerHTML=
-      '<div class="ph-num">Segment '+s.n+'</div>'+
+      '<div class="ph-header">'+
+        '<div class="ph-num">Segment '+s.n+'</div>'+
+        '<button class="snd-btn ph-play-btn" id="ph-btn-'+i+'" onclick="playSegment('+i+','+s.w[0]+',this)">🔊</button>'+
+      '</div>'+
       '<div class="ph-arabic">'+s.a+'</div>'+
       '<div class="ph-sep"></div>'+
       '<div class="ph-french">'+s.f+'</div>'+
