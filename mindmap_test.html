@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mind Map — Les Douze Imams</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Plus+Jakarta+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%;overflow:hidden;background:#070c18;font-family:'Plus Jakarta Sans',sans-serif}
+body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpolygon points='30,2 56,17 56,43 30,58 4,43 4,17' fill='none' stroke='%23c9a84c' stroke-width='0.25' opacity='0.04'/%3E%3C/svg%3E");pointer-events:none;z-index:0}
+.tb{position:fixed;top:0;left:0;right:0;height:42px;background:rgba(7,12,24,.97);border-bottom:1px solid rgba(201,168,76,.18);display:flex;align-items:center;padding:0 12px;gap:7px;z-index:100}
+.tb-title{font-family:'Cinzel',serif;font-size:12px;color:#c9a84c;font-weight:600;letter-spacing:.04em;flex:1}
+.tb-btn{height:24px;padding:0 9px;background:rgba(201,168,76,.08);border:1px solid rgba(201,168,76,.22);color:#c9a84c;border-radius:5px;cursor:pointer;font-size:10.5px;font-family:'Plus Jakarta Sans',sans-serif}
+.tb-btn:hover{background:rgba(201,168,76,.2)}
+#vp{position:fixed;top:42px;left:0;right:0;bottom:0;overflow:hidden;cursor:grab}
+#vp.pan{cursor:grabbing}
+#stage{position:absolute;top:0;left:0;transform-origin:0 0;will-change:transform}
+#lines{position:absolute;top:0;left:0;pointer-events:none;overflow:visible}
+.nd{position:absolute;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;cursor:grab;user-select:none;border-radius:8px;font-family:'Cinzel',serif;line-height:1.2;transition:filter .15s}
+.nd:hover{filter:brightness(1.35);z-index:20!important}
+.nd.drag{cursor:grabbing;z-index:50!important;filter:brightness(1.4)}
+.nd-num{position:absolute;top:2px;right:4px;font-size:7.5px;font-weight:700;opacity:.6}
+.dp-ov{position:fixed;inset:0;background:rgba(7,12,24,.5);z-index:200;opacity:0;pointer-events:none;transition:opacity .2s}
+.dp-ov.on{opacity:1;pointer-events:all}
+.dp{position:fixed;top:42px;right:-360px;bottom:0;width:340px;background:#0d1828;border-left:1px solid rgba(201,168,76,.18);z-index:300;overflow-y:auto;padding:16px 14px 50px;transition:right .28s cubic-bezier(.4,0,.2,1)}
+.dp.on{right:0}
+.dp-x{position:absolute;top:9px;right:9px;width:24px;height:24px;border-radius:50%;background:#132035;border:1px solid rgba(201,168,76,.2);color:#9aa3b8;cursor:pointer;font-size:13px;display:flex;align-items:center;justify-content:center}
+.dp-x:hover{background:#f87171;color:#fff}
+.dp-badge{display:inline-block;padding:2px 7px;border-radius:10px;font-size:8.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-bottom:6px}
+.dp-title{font-family:'Cinzel',serif;font-size:1rem;font-weight:700;color:#e8e2d0;line-height:1.3;margin-bottom:3px}
+.dp-ar{font-size:.95rem;color:#c9a84c;opacity:.7;direction:rtl;margin-bottom:7px}
+.dp-lbl{font-family:'Cinzel',serif;font-size:.55rem;letter-spacing:.16em;text-transform:uppercase;color:#c9a84c;display:block;margin:10px 0 3px}
+.dp-txt{font-size:.82rem;color:#9aa3b8;line-height:1.7}
+.dp-tags{display:flex;flex-wrap:wrap;gap:3px;margin-top:3px}
+.dp-tag{background:rgba(201,168,76,.07);border:1px solid rgba(201,168,76,.15);color:#c9a84c;padding:2px 6px;border-radius:7px;font-size:.65rem}
+@media(max-width:560px){.dp{top:auto;right:0;left:0;bottom:-100%;width:100%;max-height:66vh;border-left:none;border-top:1px solid rgba(201,168,76,.22);border-radius:13px 13px 0 0;transition:bottom .28s}.dp.on{bottom:0}}
+</style>
+</head>
+<body>
+<div class="tb">
+  <div class="tb-title">&#xFDFD; Mind Map — Les Douze Imams de l'Islam Chiite</div>
+  <button class="tb-btn" id="btn-fit">⊡ Vue</button>
+  <button class="tb-btn" id="btn-rst">↺ Reset</button>
+</div>
+<div id="vp"><div id="stage"><svg id="lines" width="2000" height="1600"></svg></div></div>
+<div class="dp-ov" id="dp-ov"></div>
+<div class="dp" id="dp"><button class="dp-x" id="dp-x">×</button><div id="dp-body"></div></div>
+
+<script>
+// ─── PALETTE ───
+var C='#c9a84c',B='#7eb8fa',G='#4ade80',P='#c084fc',B2='#5aa8ea',G2='#2bc46a';
+
+// ─── NODE SIZES ───
+var SZ={
+  root:{w:144,h:54,fs:12,fw:700,r:11},
+  cat: {w:122,h:48,fs:11,fw:700,r:9},
+  imam:{w:148,h:38,fs:9.5,fw:600,r:7},
+  node:{w:116,h:40,fs:9.5,fw:500,r:7},
+  leaf:{w:110,h:36,fs:9,fw:400,r:6},
+};
+
+// ─── ALL NODES with tight positions ───
+// Total canvas roughly 1200×1100
+// ROOT center: (580, 550)
+var NODES=[
+  // ROOT
+  {id:'root',t:'root',x:508,y:523,color:C,label:'Douze Imams\nde l\'Islam Chiite',
+   desc:'Carte des fondements doctrinaux, des 12 Imams, de l\'organisation et des piliers de la foi chiite.'},
+
+  // ══ HAUT-GAUCHE : Concepts Théologiques (x:60–370, y:40–430) ══
+  {id:'theo',t:'cat',x:220,y:100,color:B,label:'Concepts\nThéologiques',
+   ar:'المفاهيم العقدية',desc:'Les fondements doctrinaux de l\'Imamat dans l\'islam chiite duodécimain.'},
+
+  {id:'imamat',t:'node',x:100,y:30,color:B,label:'Imamat',
+   ar:'الإِمَامَة',tags:['Succession divine'],
+   desc:'Doctrine centrale : les Imams sont les guides divins légitimes après le Prophète, désignés par Dieu.'},
+  {id:'succ',t:'leaf',x:-60,y:18,color:B2,label:'Succession\ndivine',
+   desc:'L\'Imam est désigné (naṣṣ) par Dieu via le Prophète — Ghadīr Khumm 632 EC.'},
+  {id:'meta',t:'leaf',x:-60,y:62,color:B2,label:'Nécessité\nmétaphysique',
+   desc:'La Terre ne peut être dépourvue d\'une Preuve (ḥujja) de Dieu vivante à chaque époque.'},
+
+  {id:'isma',t:'node',x:100,y:155,color:B,label:'\'Iṣmah',
+   ar:'العِصْمَة',tags:['Infaillibilité'],
+   desc:'Infaillibilité : les 14 Infaillibles préservés de tout péché et erreur par don divin.'},
+  {id:'inf',t:'leaf',x:-60,y:140,color:B2,label:'Infaillibilité',
+   desc:'Les Imams ne commettent ni péché ni erreur dans la guidance. Don divin.'},
+  {id:'err',t:'leaf',x:-60,y:184,color:B2,label:'Protection\nde l\'erreur',
+   desc:'L\'Imam est protégé de toute déviation doctrinale. Sa parole fait autorité.'},
+
+  {id:'nass',t:'node',x:100,y:270,color:B,label:'Naṣṣ',
+   ar:'النَّصّ',tags:['Désignation'],
+   desc:'Désignation explicite : chaque Imam désigne son successeur de son vivant, devant témoins.'},
+  {id:'desg',t:'leaf',x:-60,y:270,color:B2,label:'Désignation\nexplicite',
+   desc:'Chaîne ininterrompue depuis le Prophète jusqu\'au 12e Imam.'},
+
+  {id:'ilm',t:'node',x:100,y:365,color:B,label:'\'Ilm',
+   ar:'العِلْم',tags:['Connaissance'],
+   desc:'Science héritée : connaissance spéciale (ladunni) transmise du Prophète aux Imams.'},
+  {id:'kin',t:'leaf',x:-60,y:352,color:B2,label:'Connaissance\ninspirée',
+   desc:'\'Ilm ladunni — connaissance déposée par Dieu dans le cœur de l\'Imam.'},
+  {id:'esex',t:'leaf',x:-60,y:396,color:B2,label:'Ésotérique &\nexotérique',
+   desc:'Les Imams maîtrisent le ẓāhir (apparent) et le bāṭin (caché) du Coran.'},
+
+  // ══ DROITE : Les Douze Imams (x:780–980, y:30–700) ══
+  {id:'imams',t:'cat',x:820,y:100,color:C,label:'Les Douze\nImams',
+   ar:'الأئمة الاثنا عشر',desc:'Les douze successeurs légitimes du Prophète selon la doctrine chiite duodécimaine.'},
+
+  {id:'i1', t:'imam',x:992,y:28,  color:C,num:1, label:'1. \'Alī ibn Abī Ṭālib',dates:'600–661',ar:'عَلِيّ',tags:['Ghadīr'],desc:'1er Imam. Amīr al-Mu\'minīn. Désigné à Ghadīr Khumm. Auteur du Nahj al-Balāgha. Martyrisé à Kufa.'},
+  {id:'i2', t:'imam',x:992,y:74,  color:C,num:2, label:'2. al-Ḥasan ibn \'Alī',dates:'625–670',ar:'الحَسَن',desc:'2e Imam. Al-Mujtabā. Traité stratégique avec Mu\'āwiya. Empoisonné à Médine.'},
+  {id:'i3', t:'imam',x:992,y:120, color:C,num:3, label:'3. al-Ḥusayn ibn \'Alī',dates:'626–680',ar:'الحُسَيْن',tags:['Karbalā\''],desc:'3e Imam. Martyrisé à Karbalā\' le 10 Muharram 61 AH. Fondement spirituel du chiisme.'},
+  {id:'i4', t:'imam',x:992,y:166, color:C,num:4, label:'4. Zayn al-\'Ābidīn',dates:'658–713',ar:'زَيْن العَابِدِين',tags:['Ṣaḥīfa'],desc:'4e Imam. Al-Sajjād. Seul survivant de Karbalā\'. Auteur de la Ṣaḥīfa Sajjādiyya.'},
+  {id:'i5', t:'imam',x:992,y:212, color:C,num:5, label:'5. Muḥammad al-Bāqir',dates:'676–733',ar:'مُحَمَّد البَاقِر',desc:'5e Imam. Bāqir al-\'Ulūm. Fondateur de la tradition intellectuelle chiite.'},
+  {id:'i6', t:'imam',x:992,y:258, color:C,num:6, label:'6. Ja\'far al-Ṣādiq',dates:'702–765',ar:'جَعْفَر الصَّادِق',tags:['Fiqh jafarite'],desc:'6e Imam. Al-Ṣādiq. 4000 disciples. L\'école jafarite porte son nom.'},
+  {id:'i7', t:'imam',x:992,y:304, color:C,num:7, label:'7. Mūsā al-Kāẓim',dates:'745–799',ar:'مُوسَى الكَاظِم',desc:'7e Imam. Al-Kāẓim. Emprisonné par Hārūn al-Rashīd. Mort en prison à Baghdad.'},
+  {id:'i8', t:'imam',x:992,y:350, color:C,num:8, label:'8. \'Alī al-Riḍā',dates:'765–818',ar:'عَلِيّ الرِّضَا',tags:['Mashhad'],desc:'8e Imam. Al-Riḍā. Désigné héritier par al-Ma\'mūn. Mort à Mashhad.'},
+  {id:'i9', t:'imam',x:992,y:396, color:C,num:9, label:'9. Muḥammad al-Jawād',dates:'811–835',ar:'مُحَمَّد الجَوَاد',desc:'9e Imam. Al-Taqī. Accéda à l\'Imamat à 7-8 ans.'},
+  {id:'i10',t:'imam',x:992,y:442, color:C,num:10,label:'10. \'Alī al-Hādī',dates:'827–868',ar:'عَلِيّ الهَادِي',desc:'10e Imam. Al-Naqī. Assigné à résidence à Sāmarrā\'.'},
+  {id:'i11',t:'imam',x:992,y:488, color:C,num:11,label:'11. al-Ḥasan al-\'Askarī',dates:'846–874',ar:'الحَسَن العَسْكَرِيّ',desc:'11e Imam. Al-\'Askarī. Père du Mahdī. Mort à 28 ans à Sāmarrā\'.'},
+  {id:'i12',t:'imam',x:992,y:534, color:'#e8c066',num:12,label:'12. Muḥammad al-Mahdī',dates:'868–présent',ar:'المَهدِيّ',tags:['Occultation'],desc:'12e Imam. Al-Muntaẓar. Occultation mineure (874–941) puis majeure. Son retour établira la justice.'},
+
+  // ══ BAS-GAUCHE : Organisation (x:60–380, y:680–1000) ══
+  {id:'org',t:'cat',x:220,y:940,color:G,label:'Organisation\net Pratique',
+   ar:'التنظيم',desc:'Les structures institutionnelles de la communauté chiite durant l\'Imamat et l\'occultation.'},
+
+  {id:'wik',t:'node',x:100,y:820,color:G,label:'Système\nWikālah',
+   ar:'الوِكَالَة',tags:['Agents','Réseau'],
+   desc:'Réseau d\'agents (wukalā\') représentant l\'Imam, gérant le khums et la communication.'},
+  {id:'ag', t:'leaf',x:-60,y:800,color:G2,label:'Réseau\nd\'agents',
+   desc:'Réseau clandestin actif sous les Imams al-Hādī, al-\'Askarī et l\'occultation mineure.'},
+  {id:'kh', t:'leaf',x:-60,y:844,color:G2,label:'Collecte\ndu Khums',
+   desc:'Le khums (cinquième des revenus) transmis à l\'Imam via ses agents.'},
+
+  {id:'repr',t:'node',x:100,y:940,color:G,label:'Quatre\nReprésentants',
+   ar:'النُّوَّاب',tags:['874–941'],
+   desc:'Durant l\'occultation mineure (874–941), quatre nawwāb intercèdent pour la communauté.'},
+  {id:'r1', t:'leaf',x:-60,y:895,color:G2,label:'\'Uthmān ibn Sa\'īd',desc:'1er nawwāb. Avait servi les Imams al-Hādī et al-\'Askarī.'},
+  {id:'r2', t:'leaf',x:-60,y:935,color:G2,label:'Muḥammad\nibn \'Uthmān',desc:'2e nawwāb. Fils du premier. Représenta l\'Imam ~40 ans.'},
+  {id:'r3', t:'leaf',x:-60,y:975,color:G2,label:'Ḥusayn ibn Rūḥ',desc:'3e nawwāb. Issu de la famille savante des Nawbakhtī.'},
+  {id:'r4', t:'leaf',x:-60,y:1015,color:G2,label:'\'Alī al-Samarī',desc:'4e nawwāb. À sa mort en 941, l\'occultation majeure commence.'},
+
+  {id:'ziy',t:'node',x:100,y:1058,color:G,label:'Ziyāra',
+   ar:'الزِّيَارَة',tags:['Sanctuaires'],desc:'Pèlerinage aux sanctuaires des Imams. Pratique centrale du chiisme.'},
+  {id:'zl', t:'leaf',x:-60,y:1058,color:G2,label:'Lieux saints',
+   desc:'Najaf, Karbalā\', Kāẓimayn, Sāmarrā\', Mashhad, Qom.'},
+
+  // ══ BAS-DROITE : Fondements de la Foi (x:780–980, y:680–1000) ══
+  {id:'fond',t:'cat',x:820,y:730,color:P,label:'Fondements\nde la Foi',
+   ar:'أُصُول الدِّين',desc:'Les cinq piliers doctrinaux (uṣūl al-dīn) du chiisme duodécimain.'},
+
+  {id:'taw', t:'node',x:992,y:670,color:P,label:'Tawḥīd\n(Unicité)',ar:'التَّوْحِيد',tags:['1er pilier'],desc:'L\'Unicité absolue de Dieu. Premier pilier fondamental.'},
+  {id:'adl', t:'node',x:992,y:718,color:P,label:'\'Adl\n(Justice)',ar:'العَدْل',tags:['2e pilier'],desc:'La Justice divine. Dieu est absolument juste.'},
+  {id:'nub', t:'node',x:992,y:766,color:P,label:'Nubuwwah\n(Prophétie)',ar:'النُّبُوَّة',tags:['3e pilier'],desc:'La prophétie. Muhammad ﷺ est le Sceau des prophètes.'},
+  {id:'fim', t:'node',x:992,y:814,color:P,label:'Imāmah\n(Imamat)',ar:'الإِمَامَة',tags:['4e pilier'],desc:'L\'Imamat comme pilier de la foi. Les 12 Imams sont les successeurs légitimes.'},
+  {id:'maad',t:'node',x:992,y:862,color:P,label:'Ma\'ād\n(Résurrection)',ar:'المَعَاد',tags:['5e pilier'],desc:'La Résurrection et la vie après la mort. 5e pilier islamique.'},
+];
+
+var EDGES=[
+  {f:'root',t:'theo',w:2.5},{f:'root',t:'imams',w:2.5},{f:'root',t:'org',w:2.5},{f:'root',t:'fond',w:2.5},
+  {f:'theo',t:'imamat',w:1.6},{f:'theo',t:'isma',w:1.6},{f:'theo',t:'nass',w:1.6},{f:'theo',t:'ilm',w:1.6},
+  {f:'imamat',t:'succ',w:1},{f:'imamat',t:'meta',w:1},
+  {f:'isma',t:'inf',w:1},{f:'isma',t:'err',w:1},
+  {f:'nass',t:'desg',w:1},
+  {f:'ilm',t:'kin',w:1},{f:'ilm',t:'esex',w:1},
+  {f:'imams',t:'i1',w:1.1},{f:'imams',t:'i2',w:1.1},{f:'imams',t:'i3',w:1.1},{f:'imams',t:'i4',w:1.1},
+  {f:'imams',t:'i5',w:1.1},{f:'imams',t:'i6',w:1.1},{f:'imams',t:'i7',w:1.1},{f:'imams',t:'i8',w:1.1},
+  {f:'imams',t:'i9',w:1.1},{f:'imams',t:'i10',w:1.1},{f:'imams',t:'i11',w:1.1},{f:'imams',t:'i12',w:1.1},
+  {f:'org',t:'wik',w:1.6},{f:'org',t:'repr',w:1.6},{f:'org',t:'ziy',w:1.6},
+  {f:'wik',t:'ag',w:1},{f:'wik',t:'kh',w:1},
+  {f:'repr',t:'r1',w:1},{f:'repr',t:'r2',w:1},{f:'repr',t:'r3',w:1},{f:'repr',t:'r4',w:1},
+  {f:'ziy',t:'zl',w:1},
+  {f:'fond',t:'taw',w:1.3},{f:'fond',t:'adl',w:1.3},{f:'fond',t:'nub',w:1.3},{f:'fond',t:'fim',w:1.3},{f:'fond',t:'maad',w:1.3},
+];
+
+// ─── BUILD ───
+var NM={},INIT={};
+NODES.forEach(function(n){NM[n.id]=n;INIT[n.id]={x:n.x,y:n.y};});
+var stage=document.getElementById('stage');
+var svg=document.getElementById('lines');
+
+NODES.forEach(function(n){
+  var s=SZ[n.t];
+  var el=document.createElement('div');
+  el.className='nd';el.id='el-'+n.id;
+  el.style.cssText=[
+    'left:'+n.x+'px','top:'+n.y+'px',
+    'width:'+s.w+'px','height:'+s.h+'px',
+    'border-radius:'+s.r+'px',
+    'font-size:'+s.fs+'px',
+    'font-weight:'+s.fw,
+    'color:'+n.color,
+    'background:'+n.color+(n.t==='root'?'20':n.t==='cat'?'18':'12'),
+    'border:'+  (n.t==='root'?'2':'1.5')+'px solid '+n.color+(n.t==='root'?'bb':n.t==='cat'?'77':'44'),
+    'z-index:'+(n.t==='root'?10:n.t==='cat'?8:5),
+  ].join(';');
+  if(n.t==='root'||n.t==='cat') el.style.boxShadow='0 0 18px '+n.color+'16';
+  if(n.num!=null){var nb=document.createElement('div');nb.className='nd-num';nb.style.color=n.color;nb.textContent=n.num;el.appendChild(nb);}
+  var lbl=document.createElement('div');
+  lbl.style.cssText='white-space:pre-line;pointer-events:none;padding:0 4px';
+  lbl.textContent=n.label;el.appendChild(lbl);
+  stage.appendChild(el);n._el=el;
+  makeDrag(n,el);
+  el.addEventListener('click',function(ev){if(!_dragged)openDP(n);});
+});
+
+// ─── EDGES (border intersection) ───
+function cx(n){return n.x+SZ[n.t].w/2;}
+function cy(n){return n.y+SZ[n.t].h/2;}
+function hw(n){return SZ[n.t].w/2;}
+function hh(n){return SZ[n.t].h/2;}
+function borderPt(n,tx,ty){
+  var bx=cx(n),by=cy(n),dx=tx-bx,dy=ty-by,W=hw(n),H=hh(n);
+  if(!dx&&!dy)return{x:bx,y:by};
+  var t=Infinity;
+  if(dx){var tR=(dx>0?W:-W)/dx;if(tR>0&&Math.abs(tR*dy)<=H+.1)t=Math.min(t,tR);}
+  if(dy){var tT=(dy>0?H:-H)/dy;if(tT>0&&Math.abs(tT*dx)<=W+.1)t=Math.min(t,tT);}
+  if(!isFinite(t))t=0;
+  return{x:bx+t*dx,y:by+t*dy};
+}
+function drawEdges(){
+  while(svg.firstChild)svg.removeChild(svg.firstChild);
+  EDGES.forEach(function(e){
+    var a=NM[e.f],b=NM[e.t];if(!a||!b)return;
+    var bx=cx(b),by=cy(b),ax=cx(a),ay=cy(a);
+    var p1=borderPt(a,bx,by),p2=borderPt(b,ax,ay);
+    var mx=(p1.x+p2.x)/2,my=(p1.y+p2.y)/2;
+    var path=document.createElementNS('http://www.w3.org/2000/svg','path');
+    // Subtle curve
+    var len=Math.hypot(p2.x-p1.x,p2.y-p1.y);
+    var bend=Math.min(len*.12,20);
+    var nx=-(p2.y-p1.y)/len*bend,ny=(p2.x-p1.x)/len*bend;
+    path.setAttribute('d','M'+p1.x.toFixed(1)+','+p1.y.toFixed(1)+' Q'+(mx+nx).toFixed(1)+','+(my+ny).toFixed(1)+' '+p2.x.toFixed(1)+','+p2.y.toFixed(1));
+    path.setAttribute('fill','none');
+    path.setAttribute('stroke',a.color);
+    path.setAttribute('stroke-opacity',a.t==='root'?'.6':a.t==='cat'?'.42':'.26');
+    path.setAttribute('stroke-width',e.w||1);
+    svg.appendChild(path);
+  });
+}
+drawEdges();
+
+// ─── DRAG ───
+var _dragged=false;
+var scale=1;
+function makeDrag(n,el){
+  var sx,sy,nx,ny,moved;
+  function mv(ex,ey){
+    if(!moved&&Math.hypot(ex-sx,ey-sy)<4)return;
+    moved=true;_dragged=true;
+    n.x=nx+(ex-sx)/scale;n.y=ny+(ey-sy)/scale;
+    el.style.left=n.x+'px';el.style.top=n.y+'px';
+    el.classList.add('drag');drawEdges();
+  }
+  el.addEventListener('mousedown',function(ev){
+    if(ev.button)return;ev.stopPropagation();
+    moved=false;_dragged=false;sx=ev.clientX;sy=ev.clientY;nx=n.x;ny=n.y;
+    var mm=function(e){mv(e.clientX,e.clientY);};
+    var mu=function(){el.classList.remove('drag');window.removeEventListener('mousemove',mm);window.removeEventListener('mouseup',mu);setTimeout(function(){_dragged=false;},50);};
+    window.addEventListener('mousemove',mm);window.addEventListener('mouseup',mu);
+  });
+  el.addEventListener('touchstart',function(ev){
+    ev.stopPropagation();if(ev.touches.length!==1)return;
+    moved=false;_dragged=false;sx=ev.touches[0].clientX;sy=ev.touches[0].clientY;nx=n.x;ny=n.y;
+    var tm=function(e){e.preventDefault();mv(e.touches[0].clientX,e.touches[0].clientY);};
+    var tu=function(){el.classList.remove('drag');el.removeEventListener('touchmove',tm);el.removeEventListener('touchend',tu);setTimeout(function(){_dragged=false;},50);};
+    el.addEventListener('touchmove',tm,{passive:false});el.addEventListener('touchend',tu);
+  },{passive:true});
+}
+
+// ─── PAN/ZOOM ───
+var vp=document.getElementById('vp');
+var ox=0,oy=0,pan=false,plx,ply,pvx=0,pvy=0,plt=0,mom=null;
+function apT(){stage.style.transform='translate('+ox+'px,'+oy+'px) scale('+scale+')';}
+function fitView(){
+  var minX=1e9,minY=1e9,maxX=-1e9,maxY=-1e9;
+  NODES.forEach(function(n){var s=SZ[n.t];minX=Math.min(minX,n.x);minY=Math.min(minY,n.y);maxX=Math.max(maxX,n.x+s.w);maxY=Math.max(maxY,n.y+s.h);});
+  var pd=40,bw=maxX-minX+pd*2,bh=maxY-minY+pd*2;
+  var vw=vp.clientWidth||window.innerWidth,vh=vp.clientHeight||(window.innerHeight-42);
+  scale=Math.min(vw/bw,vh/bh)*.95;
+  ox=(vw-bw*scale)/2-(minX-pd)*scale;
+  oy=(vh-bh*scale)/2-(minY-pd)*scale;
+  apT();
+}
+function resetAll(){NODES.forEach(function(n){n.x=INIT[n.id].x;n.y=INIT[n.id].y;n._el.style.left=n.x+'px';n._el.style.top=n.y+'px';});drawEdges();fitView();}
+window.addEventListener('load',fitView);setTimeout(fitView,80);
+function stopM(){if(mom){cancelAnimationFrame(mom);mom=null;}}
+vp.addEventListener('mousedown',function(ev){if(ev.target.closest('.nd'))return;stopM();pan=true;plx=ev.clientX;ply=ev.clientY;pvx=pvy=0;plt=Date.now();vp.classList.add('pan');});
+window.addEventListener('mouseup',function(){if(!pan)return;pan=false;vp.classList.remove('pan');if(Math.abs(pvx)>1||Math.abs(pvy)>1){(function g(){pvx*=.9;pvy*=.9;ox+=pvx;oy+=pvy;apT();if(Math.abs(pvx)>.4||Math.abs(pvy)>.4)mom=requestAnimationFrame(g);})();}});
+window.addEventListener('mousemove',function(ev){if(!pan)return;var now=Date.now(),dt=Math.max(now-plt,1);pvx=(ev.clientX-plx)/dt*14;pvy=(ev.clientY-ply)/dt*14;ox+=ev.clientX-plx;oy+=ev.clientY-ply;plx=ev.clientX;ply=ev.clientY;plt=now;apT();});
+vp.addEventListener('wheel',function(ev){ev.preventDefault();stopM();var r=vp.getBoundingClientRect(),mx=ev.clientX-r.left,my=ev.clientY-r.top,f=ev.deltaY>0?.88:1.12,ns=Math.min(4,Math.max(.1,scale*f));ox=mx-(mx-ox)*(ns/scale);oy=my-(my-oy)*(ns/scale);scale=ns;apT();},{passive:false});
+var vt2=[];
+vp.addEventListener('touchstart',function(ev){if(ev.target.closest('.nd'))return;stopM();vt2=Array.from(ev.touches);plx=vt2[0].clientX;ply=vt2[0].clientY;pvx=pvy=0;},{passive:true});
+vp.addEventListener('touchmove',function(ev){if(ev.target.closest('.nd'))return;if(ev.touches.length===1){var dx=ev.touches[0].clientX-plx,dy=ev.touches[0].clientY-ply;ox+=dx;oy+=dy;pvx=dx*.7;pvy=dy*.7;plx=ev.touches[0].clientX;ply=ev.touches[0].clientY;apT();}else if(ev.touches.length===2&&vt2.length>=2){var d=Math.hypot(ev.touches[0].clientX-ev.touches[1].clientX,ev.touches[0].clientY-ev.touches[1].clientY),d0=Math.hypot(vt2[0].clientX-vt2[1].clientX,vt2[0].clientY-vt2[1].clientY);scale=Math.min(4,Math.max(.1,scale*d/d0));vt2=Array.from(ev.touches);apT();}},{passive:true});
+vp.addEventListener('touchend',function(ev){if(ev.target.closest('.nd'))return;if(Math.abs(pvx)>1||Math.abs(pvy)>1){(function g(){pvx*=.92;pvy*=.92;ox+=pvx;oy+=pvy;apT();if(Math.abs(pvx)>.3||Math.abs(pvy)>.3)mom=requestAnimationFrame(g);})();}},{passive:true});
+document.getElementById('btn-fit').onclick=fitView;
+document.getElementById('btn-rst').onclick=resetAll;
+
+// ─── DETAIL PANEL ───
+var TL={'root':'Racine','cat':'Catégorie','imam':'Imam','node':'Concept','leaf':'Détail'};
+function openDP(n){
+  var tags=(n.tags||[]).map(function(t){return'<span class="dp-tag">'+t+'</span>';}).join('');
+  var nb=n.num?' · '+n.num+'e Imam':'';
+  document.getElementById('dp-body').innerHTML=
+    '<span class="dp-badge" style="background:'+n.color+'20;color:'+n.color+';border:1px solid '+n.color+'40">'+(TL[n.t]||n.t)+nb+'</span>'+
+    '<div class="dp-title">'+n.label.replace(/\n/g,' ')+'</div>'+
+    (n.ar?'<div class="dp-ar">'+n.ar+'</div>':'')+
+    (n.dates?'<span class="dp-lbl">Dates</span><div class="dp-txt">'+n.dates+'</div>':'')+
+    (n.desc?'<span class="dp-lbl">Description</span><div class="dp-txt">'+n.desc+'</div>':'')+
+    (tags?'<span class="dp-lbl">Thèmes</span><div class="dp-tags">'+tags+'</div>':'');
+  document.getElementById('dp').classList.add('on');
+  document.getElementById('dp-ov').classList.add('on');
+}
+document.getElementById('dp-x').onclick=closeDP;
+document.getElementById('dp-ov').onclick=closeDP;
+document.addEventListener('keydown',function(e){if(e.key==='Escape')closeDP();});
+function closeDP(){document.getElementById('dp').classList.remove('on');document.getElementById('dp-ov').classList.remove('on');}
+</script>
+</body>
+</html>

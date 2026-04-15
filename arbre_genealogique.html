@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Arbre Généalogique — Les 14 Infaillibles</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Scheherazade+New:wght@300;400&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%;overflow:hidden;background:#070c18;color:#e8e2d0;font-family:'EB Garamond',Georgia,serif}
+body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none'%3E%3Cg stroke='%23c9a84c' stroke-width='0.3' opacity='0.05'%3E%3Cpolygon points='40,3 74,22 74,58 40,77 6,58 6,22'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");pointer-events:none;z-index:0}
+
+/* HEADER */
+.header{position:fixed;top:0;left:0;right:0;height:52px;background:rgba(7,12,24,0.95);border-bottom:1px solid rgba(201,168,76,0.2);display:flex;align-items:center;padding:0 20px;gap:16px;z-index:100;backdrop-filter:blur(12px)}
+.header-title{font-family:'Cinzel',serif;font-size:15px;color:#c9a84c;font-weight:600;flex:1;letter-spacing:.04em}
+.legend{display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+.leg-item{display:flex;align-items:center;gap:5px;font-size:11px;color:#9aa3b8;white-space:nowrap}
+.leg-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0}
+
+/* ZOOM CONTROLS */
+.zoom-bar{position:fixed;bottom:20px;right:20px;display:flex;flex-direction:column;gap:6px;z-index:100}
+.z-btn{width:36px;height:36px;background:rgba(19,29,53,0.9);border:1px solid rgba(201,168,76,0.25);color:#c9a84c;border-radius:8px;cursor:pointer;font-size:18px;display:flex;align-items:center;justify-content:center;transition:all .2s;backdrop-filter:blur(8px)}
+.z-btn:hover{background:rgba(201,168,76,0.15);border-color:#c9a84c}
+.z-info{text-align:center;font-family:'Cinzel',serif;font-size:10px;color:#5a6480}
+
+/* CANVAS */
+#tree-container{position:fixed;inset:52px 0 0;cursor:grab;overflow:hidden}
+#tree-container:active{cursor:grabbing}
+#tree-svg{position:absolute;top:0;left:0;user-select:none}
+
+/* DETAIL PANEL */
+.dp-overlay{position:fixed;inset:0;background:rgba(7,12,24,0.6);z-index:200;opacity:0;pointer-events:none;transition:opacity .3s;backdrop-filter:blur(4px)}
+.dp-overlay.open{opacity:1;pointer-events:all}
+.dp{position:fixed;top:52px;right:-440px;bottom:0;width:440px;background:#111f36;border-left:1px solid rgba(201,168,76,0.2);z-index:300;overflow-y:auto;transition:right .35s cubic-bezier(.4,0,.2,1);padding:28px 20px;box-shadow:-10px 0 40px rgba(0,0,0,0.5)}
+.dp.open{right:0}
+@media(max-width:600px){
+  .dp{top:auto;right:0;left:0;bottom:-100%;width:100%;max-height:75vh;border-left:none;border-top:1px solid rgba(201,168,76,0.3);border-radius:18px 18px 0 0;padding:20px 16px 32px;transition:bottom .35s cubic-bezier(.4,0,.2,1)}
+  .dp.open{bottom:0;right:0}
+  .dp-close{top:10px;right:10px}
+  .dp-overlay.open{opacity:1;pointer-events:all}
+}
+.dp-close{position:absolute;top:14px;right:14px;background:#1a2e4a;border:1px solid rgba(201,168,76,0.2);color:#9aa3b8;width:32px;height:32px;border-radius:50%;cursor:pointer;font-size:16px;display:flex;align-items:center;justify-content:center;transition:all .2s}
+.dp-close:hover{background:#f87171;color:#fff;border-color:#f87171}
+.dp-badge{display:inline-block;padding:3px 10px;border-radius:20px;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin-bottom:12px}
+.dp-name{font-family:'Cinzel',serif;font-size:1.3rem;font-weight:700;color:#e8e2d0;line-height:1.25;margin-bottom:4px}
+.dp-arabic{font-size:1.1rem;color:#c9a84c;opacity:.75;direction:rtl;margin-bottom:12px}
+.dp-dates{font-size:.85rem;color:#c9a84c;opacity:.6;margin-bottom:16px}
+.dp-label{font-family:'Cinzel',serif;font-size:.65rem;letter-spacing:.14em;text-transform:uppercase;color:#c9a84c;display:block;margin:16px 0 6px}
+.dp-desc{font-size:.92rem;color:#9aa3b8;line-height:1.7}
+.dp-titles{display:flex;flex-wrap:wrap;gap:6px}
+.dp-title-tag{background:rgba(201,168,76,0.08);border:1px solid rgba(201,168,76,0.2);color:#c9a84c;padding:3px 10px;border-radius:12px;font-size:.78rem}
+.dp-rels{display:flex;flex-direction:column;gap:6px}
+.dp-rel{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.06);padding:8px 12px;border-radius:6px;cursor:pointer;transition:all .2s;display:flex;align-items:center;gap:8px}
+.dp-rel:hover{background:rgba(201,168,76,.08);border-color:rgba(201,168,76,.2)}
+.dp-rel-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0}
+.dp-rel-name{font-family:'Cinzel',serif;font-size:.8rem;flex:1}
+.dp-rel-type{font-size:.72rem;color:#5a6480}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-title">&#xFDFD; Arbre Généalogique — Les 14 Infaillibles</div>
+  <div class="legend">
+    <div class="leg-item"><div class="leg-dot" style="background:#c9a84c"></div>14 Infaillibles</div>
+    <div class="leg-item"><div class="leg-dot" style="background:#7eb8fa"></div>Famille</div>
+    <div class="leg-item"><div class="leg-dot" style="background:#94a3b8"></div>Ancêtres</div>
+    <div class="leg-item"><div class="leg-dot" style="background:#4ade80"></div>Compagnons</div>
+  </div>
+</div>
+
+<div id="tree-container">
+  <svg id="tree-svg" xmlns="http://www.w3.org/2000/svg"></svg>
+</div>
+
+<div class="zoom-bar">
+  <button class="z-btn" id="z-in">+</button>
+  <div class="z-info" id="z-pct">100%</div>
+  <button class="z-btn" id="z-out">−</button>
+  <button class="z-btn" id="z-fit" style="font-size:13px">⊡</button>
+</div>
+
+<div class="dp-overlay" id="dp-overlay"></div>
+<div class="dp" id="dp">
+  <button class="dp-close" id="dp-close">×</button>
+  <div id="dp-content"></div>
+</div>
+
+<script>
+/* ═══════════════════════════════════════
+   DATA
+═══════════════════════════════════════ */
+const NODES = [
+  // ANCESTORS
+  {id:'abd_muttalib', name:"'Abd al-Muṭṭalib", ar:"عبد المطلب", type:'ancestor', x:880, y:80, w:180,
+   desc:"Grand-père paternel du Prophète ﷺ et de l'Imam 'Alī (a). Chef du clan hāshimite de Quraysh.", dates:"497–578"},
+
+  {id:'abdallah', name:"'Abdallāh ibn 'Abd al-Muṭṭalib", ar:"عبد الله", type:'ancestor', x:480, y:240, w:180,
+   desc:"Père du Prophète ﷺ. Mort avant la naissance de Muhammad.", dates:"545–570"},
+
+  {id:'abu_talib', name:"Abū Ṭālib ibn 'Abd al-Muṭṭalib", ar:"أبو طالب", type:'ancestor', x:880, y:240, w:180,
+   desc:"Oncle paternel et tuteur du Prophète ﷺ. Père de l'Imam 'Alī, Ja'far al-Ṭayyār et 'Aqīl. Protégea le Prophète durant les premières années difficiles.", dates:"c.549–619"},
+
+  {id:'hamza', name:"Ḥamza ibn 'Abd al-Muṭṭalib", ar:"حمزة", type:'family', x:1200, y:240, w:160,
+   desc:"Oncle du Prophète ﷺ. Surnom : Asad Allāh (Lion de Dieu). Martyr de la bataille de Uḥud (625).", dates:"c.568–625"},
+
+  // MOTHERS
+  {id:'amina', name:"Āmina bint Wahb", ar:"آمنة بنت وهب", type:'mother', x:260, y:400, w:150,
+   desc:"Mère du Prophète ﷺ. Issue de la tribu de Zuhra. Morte quand Muhammad avait 6 ans.", dates:"c.549–576"},
+
+  {id:'khadija', name:"Khadīja bint Khuwaylid", ar:"خديجة", type:'infaillible_related', x:260, y:560, w:150,
+   titles:["Première croyante","Umm al-Mu'minīn"],
+   desc:"Première épouse du Prophète ﷺ. Première femme à embrasser l'islam. Mère de Fāṭima al-Zahrā'. Soutien indéfectible du Prophète.", dates:"c.555–619"},
+
+  // 14 INFAILLIBLES — Prophet
+  {id:'prophet', name:"Muhammad ﷺ", ar:"مُحَمَّد", type:'infaillible', num:'ن', x:480, y:400, w:160,
+   titles:["Rasūl Allāh","Khātam al-Nabiyyīn","Ḥabīb Allāh","al-Muṣṭafā","Abū al-Qāsim"],
+   desc:"Sceau des prophètes. Né à La Mecque en 570. Reçut la Révélation coranique à 40 ans. Unifia la péninsule arabique. Transmit son autorité à l'Ahl al-Bayt.", dates:"570–632"},
+
+  // Fatima — 14 Infaillibles
+  {id:'fatima', name:"Sayyida Fāṭima al-Zahrā'", ar:"فاطِمة الزَّهراء", type:'infaillible', num:'ف', x:680, y:560, w:180,
+   titles:["al-Zahrā'","al-Batūl","al-Muḥaddatha","Sayyidat Nisā' al-'Ālamīn"],
+   desc:"Fille bien-aimée du Prophète ﷺ et de Khadīja. Épouse de l'Imam 'Alī. Mère des Imams Ḥasan et Ḥusayn. Décédée quelques semaines après le Prophète.", dates:"605–632"},
+
+  // Imam 1
+  {id:'ali', name:"'Alī ibn Abī Ṭālib", ar:"عَلِيّ", type:'infaillible', num:1, x:880, y:400, w:160,
+   titles:["Amīr al-Mu'minīn","Ḥaydar","Abū Turāb","Bāb Madīnat al-'Ilm","Asad Allāh"],
+   desc:"1er Imam. Cousin et gendre du Prophète ﷺ. Désigné à Ghadīr Khumm. Compilateur du Coran. Auteur du Nahj al-Balāgha. Martyrisé à Kufa par Ibn Muljam.", dates:"600–661"},
+
+  // Family - siblings of Ali
+  {id:'jafar_tayyar', name:"Ja'far ibn Abī Ṭālib", ar:"جعفر الطيار", type:'family', x:1200, y:400, w:160,
+   titles:["Ja'far al-Ṭayyār","Celui qui vole au Paradis"],
+   desc:"Frère de l'Imam 'Alī. Surnommé al-Ṭayyār (Celui qui vole au Paradis). Émigra en Abyssinie. Martyr de la bataille de Mu'ta (629).", dates:"?–629"},
+
+  // Imam 2
+  {id:'hasan', name:"al-Ḥasan ibn 'Alī", ar:"الحَسَن", type:'infaillible', num:2, x:480, y:720, w:160,
+   titles:["al-Mujtabā","Sayyid Shabāb Ahl al-Janna"],
+   desc:"2e Imam. Petit-fils du Prophète ﷺ. Conclut un traité avec Mu'āwiya pour préserver la communauté. Empoisonné à Médine. Enterré au cimetière de Baqī'.", dates:"625–670"},
+
+  // Imam 3
+  {id:'husayn', name:"al-Ḥusayn ibn 'Alī", ar:"الحُسَيْن", type:'infaillible', num:3, x:780, y:720, w:160,
+   titles:["Sayyid al-Shuhadā'","Thār Allāh","Sayyid Shabāb Ahl al-Janna"],
+   desc:"3e Imam. Martyrisé le 10 Muharram 61 AH avec 72 compagnons à Karbalā'. « La mort avec dignité vaut mieux que la vie dans l'humiliation. » Sa révolution est le fondement de l'identité chiite.", dates:"626–680"},
+
+  // Zaynab
+  {id:'zaynab', name:"Zaynab bint 'Alī al-Kubrā", ar:"زَيْنَب الكُبرى", type:'family', x:1120, y:720, w:170,
+   titles:["Porteuse du message de Karbalā'"],
+   desc:"Fille de l'Imam 'Alī et de Fāṭima al-Zahrā'. Héroïne de Karbalā'. Ses discours devant Yazīd préservèrent la mémoire du massacre. Surnommée 'l'éloquente'.", dates:"c.626–682"},
+
+  // Children of Husayn
+  {id:'ali_akbar', name:"'Alī al-Akbar", ar:"علي الأكبر", type:'family', x:560, y:880, w:130,
+   desc:"Fils aîné de l'Imam Ḥusayn. Ressemblait au Prophète ﷺ. Martyrisé à Karbalā'.", dates:"c.654–680"},
+
+  {id:'zayn', name:"'Alī ibn al-Ḥusayn", ar:"زَيْن العَابِدِين", type:'infaillible', num:4, x:780, y:880, w:160,
+   titles:["Zayn al-'Ābidīn","al-Sajjād"],
+   desc:"4e Imam. Seul survivant adulte mâle de Karbalā'. Prisonnier conduit à Damas. Auteur de la Ṣaḥīfa Sajjādiyya. Sa résistance fut celle de la prière et de la préservation de la mémoire.", dates:"658–713"},
+
+  {id:'ali_asghar', name:"'Alī al-Asghar", ar:"علي الأصغر", type:'family', x:980, y:880, w:130,
+   desc:"Bébé martyr de Karbalā'. Tué par une flèche alors que l'Imam Ḥusayn le portait pour demander de l'eau. Symbole de l'innocence sacrifiée.", dates:"680"},
+
+  {id:'sukayna', name:"Sukayna bint al-Ḥusayn", ar:"سكينة", type:'family', x:1110, y:880, w:140,
+   desc:"Fille de l'Imam Ḥusayn. Connue pour sa noblesse de caractère. Survécut à Karbalā'.", dates:"c.657–117 AH"},
+
+  {id:'fatima_husayn', name:"Fāṭima bint al-Ḥusayn", ar:"فاطمة بنت الحسين", type:'family', x:1260, y:880, w:150,
+   desc:"Fille de l'Imam al-Ḥusayn. Survivante de Karbalā'. Transmit des hadiths.", dates:"?"},
+
+  // Imam 5
+  {id:'baqir', name:"Muḥammad al-Bāqir", ar:"مُحَمَّد البَاقِر", type:'infaillible', num:5, x:780, y:1060, w:160,
+   titles:["al-Bāqir","Bāqir al-'Ulūm"],
+   desc:"5e Imam. « Celui qui ouvre largement la connaissance ». Fonda une vaste école théologique à Médine. Transmit des milliers de hadiths et posa les bases du fiqh chiite.", dates:"676–733"},
+
+  // Imam 6
+  {id:'sadiq', name:"Ja'far al-Ṣādiq", ar:"جَعْفَر الصَّادِق", type:'infaillible', num:6, x:780, y:1240, w:160,
+   titles:["al-Ṣādiq","Fondateur du fiqh jafarite"],
+   desc:"6e Imam. Plus de 4000 disciples dont Abū Ḥanīfa et Mālik ibn Anas. L'école juridique chiite est dite « jafarite » en son honneur. Enseigna théologie, philosophie et sciences naturelles.", dates:"702–765"},
+
+  // Imam 7
+  {id:'kazim', name:"Mūsā al-Kāẓim", ar:"مُوسَى الكَاظِم", type:'infaillible', num:7, x:780, y:1420, w:160,
+   titles:["al-Kāẓim","Bāb al-Ḥawā'ij"],
+   desc:"7e Imam. « Celui qui ravale sa colère ». Emprisonné plusieurs années par Hārūn al-Rashīd. Mort en prison à Baghdad. Son mausolée est à Kāẓimayn.", dates:"745–799"},
+
+  // Fatima Masuma
+  {id:'fatima_masuma', name:"Fāṭima al-Ma'ṣūma", ar:"فاطمة المعصومة", type:'family', x:1050, y:1420, w:160,
+   titles:["al-Ma'ṣūma","L'Immaculée"],
+   desc:"Fille de l'Imam al-Kāẓim. Sœur de l'Imam al-Riḍā. En chemin pour rejoindre son frère, elle tomba malade et mourut à Qom. Son sanctuaire est l'un des plus visités d'Iran.", dates:"790–816"},
+
+  // Imam 8
+  {id:'rida', name:"'Alī al-Riḍā", ar:"عَلِيّ الرِّضَا", type:'infaillible', num:8, x:780, y:1600, w:160,
+   titles:["al-Riḍā","Gharīb al-Ghurabā'"],
+   desc:"8e Imam. Désigné héritier présomptif par le calife al-Ma'mūn (817). Refusa tout compromis de fond. Mort à Ṭūs (Mashhad). Son sanctuaire Ḥaram-e Razavī est le plus grand complexe religieux du monde.", dates:"765–818"},
+
+  // Imam 9
+  {id:'jawad', name:"Muḥammad al-Jawād", ar:"مُحَمَّد الجَوَاد", type:'infaillible', num:9, x:780, y:1780, w:160,
+   titles:["al-Jawād","al-Taqī"],
+   desc:"9e Imam. Assuma l'Imamat à l'âge de 7-8 ans après le martyre de son père. Mort empoisonné à Baghdad. Enterré à Kāẓimayn auprès de l'Imam al-Kāẓim.", dates:"811–835"},
+
+  // Imam 10
+  {id:'hadi', name:"'Alī al-Hādī", ar:"عَلِيّ الهَادِي", type:'infaillible', num:10, x:780, y:1960, w:160,
+   titles:["al-Hādī","al-Naqī","Le Guide"],
+   desc:"10e Imam. Assigné à résidence à Sāmarrā' sous surveillance abbasside. Malgré l'oppression, transmit les enseignements de l'Ahl al-Bayt.", dates:"827–868"},
+
+  // Imam 11
+  {id:'askari', name:"al-Ḥasan al-'Askarī", ar:"الحَسَن العَسْكَرِي", type:'infaillible', num:11, x:780, y:2140, w:180,
+   titles:["al-'Askarī","De la garnison militaire"],
+   desc:"11e Imam. Vécut sous stricte surveillance abbasside à Sāmarrā'. Père du Mahdī. Mort dans des conditions suspectes à 28 ans. Son mausolée (les deux dômes d'or) est à Sāmarrā'.", dates:"846–874"},
+
+  // Imam 12
+  {id:'mahdi', name:"al-Mahdī — al-Qā'im", ar:"المَهدِيّ", type:'infaillible', num:12, x:780, y:2320, w:180,
+   titles:["Ṣāḥib al-Zamān","al-Qā'im","al-Muntaẓar","al-Ḥujja","al-Mahdī"],
+   desc:"12e Imam. Né à Sāmarrā'. Occultation mineure (874–941) par 4 représentants. Occultation majeure depuis 941. Selon la doctrine chiite, il est vivant et reviendra établir la justice universelle.", dates:"868–occultation 874"},
+
+  // COMPANIONS
+  {id:'salman', name:"Salmān al-Fārisī", ar:"سلمان الفارسي", type:'companion', x:80, y:500, w:150,
+   titles:["al-Muḥammadī","Parmi les gens de la maison"],
+   desc:"Compagnon du Prophète ﷺ originaire de Perse. Parmi les plus fidèles à l'Imam 'Alī. Modèle de loyauté, de savoir et de dévotion. Le Prophète disait : « Salmān est des nôtres, des gens de la maison. »"},
+
+  {id:'ammar', name:"'Ammār ibn Yāsir", ar:"عمار بن ياسر", type:'companion', x:80, y:660, w:150,
+   titles:["Dhu al-Shahādatayn","L'homme aux deux témoignages"],
+   desc:"Compagnon persécuté dès les débuts de l'islam. Symbole de patience et de fidélité. Martyrisé à la bataille de Ṣiffīn (657) aux côtés de l'Imam 'Alī."},
+
+  {id:'abu_dharr', name:"Abū Dharr al-Ghifārī", ar:"أبو ذر الغفاري", type:'companion', x:80, y:820, w:150,
+   titles:["Symbole d'ascèse","Opposant à la tyrannie"],
+   desc:"Compagnon du Prophète ﷺ. Symbole de sincérité, d'ascèse et de justice sociale. Exilé par 'Uthmān. Fidèle à l'Imam 'Alī. Mort en exil dans le désert."},
+
+  {id:'miqdad', name:"Al-Miqdād ibn al-Aswad", ar:"المقداد بن الأسود", type:'companion', x:80, y:980, w:150,
+   desc:"Parmi les premiers et les plus fidèles compagnons à l'Imam 'Alī (a). Présent lors des grandes batailles de l'islam primitif."},
+
+  {id:'hudhayfa', name:"Ḥudhayfa al-Yamān", ar:"حذيفة اليمان", type:'companion', x:80, y:1100, w:150,
+   titles:["Ṣāḥib al-Sirr","Gardien des secrets du Prophète"],
+   desc:"Connu pour sa connaissance des hypocrites (munāfiqūn). Le Prophète ﷺ lui confia la liste des hypocrites. Fidèle compagnon de l'Imam 'Alī."},
+
+  {id:'ibn_masud', name:"'Abd Allāh ibn Mas'ūd", ar:"عبد الله بن مسعود", type:'companion', x:80, y:1220, w:150,
+   desc:"Grand récitant et transmetteur du Coran. Parmi les premiers compagnons à mémoriser de nombreuses sourates directement du Prophète ﷺ."},
+
+  {id:'abu_said', name:"Abū Sa'īd al-Khudrī", ar:"أبو سعيد الخدري", type:'companion', x:80, y:1340, w:150,
+   desc:"Compagnon du Prophète ﷺ rapportant de nombreux hadiths, notamment sur Ghadīr et les vertus de l'Ahl al-Bayt."},
+
+  {id:'khuzaima', name:"Khuzaima ibn Thābit al-Anṣārī", ar:"خزيمة بن ثابت", type:'companion', x:80, y:1460, w:150,
+   titles:["Dhu al-Shahādatayn","Compagnon d'exception"],
+   desc:"Compagnon d'exception. Son témoignage valait celui de deux hommes selon le Prophète ﷺ. Martyr à Ṣiffīn aux côtés de l'Imam 'Alī."},
+];
+
+const EDGES = [
+  // Abd al-Muttalib children
+  {f:'abd_muttalib', t:'abdallah', type:'parent'},
+  {f:'abd_muttalib', t:'abu_talib', type:'parent'},
+  {f:'abd_muttalib', t:'hamza', type:'parent'},
+  // Prophet parents
+  {f:'abdallah', t:'prophet', type:'parent'},
+  {f:'amina', t:'prophet', type:'parent'},
+  // Ali's parents
+  {f:'abu_talib', t:'ali', type:'parent'},
+  {f:'abu_talib', t:'jafar_tayyar', type:'parent'},
+  // Marriage: Prophet + Khadija → Fatima
+  {f:'prophet', t:'fatima', type:'parent'},
+  {f:'khadija', t:'fatima', type:'parent'},
+  // Marriage: Ali + Fatima (dashed)
+  {f:'ali', t:'fatima', type:'spouse'},
+  // Ali+Fatima children
+  {f:'fatima', t:'hasan', type:'parent'},
+  {f:'fatima', t:'husayn', type:'parent'},
+  {f:'fatima', t:'zaynab', type:'parent'},
+  // Husayn children
+  {f:'husayn', t:'zayn', type:'parent'},
+  {f:'husayn', t:'ali_akbar', type:'parent'},
+  {f:'husayn', t:'ali_asghar', type:'parent'},
+  {f:'husayn', t:'sukayna', type:'parent'},
+  {f:'husayn', t:'fatima_husayn', type:'parent'},
+  // Imam chain
+  {f:'zayn', t:'baqir', type:'parent'},
+  {f:'baqir', t:'sadiq', type:'parent'},
+  {f:'sadiq', t:'kazim', type:'parent'},
+  {f:'kazim', t:'rida', type:'parent'},
+  {f:'kazim', t:'fatima_masuma', type:'parent'},
+  {f:'rida', t:'jawad', type:'parent'},
+  {f:'jawad', t:'hadi', type:'parent'},
+  {f:'hadi', t:'askari', type:'parent'},
+  {f:'askari', t:'mahdi', type:'parent'},
+  // Companion ties (dotted)
+  {f:'ali', t:'salman', type:'companion'},
+  {f:'ali', t:'ammar', type:'companion'},
+  {f:'ali', t:'abu_dharr', type:'companion'},
+  {f:'ali', t:'miqdad', type:'companion'},
+  {f:'ali', t:'hudhayfa', type:'companion'},
+  {f:'ali', t:'ibn_masud', type:'companion'},
+  {f:'ali', t:'abu_said', type:'companion'},
+  {f:'ali', t:'khuzaima', type:'companion'},
+];
+
+/* ═══════════════════════════════════════
+   COLORS
+═══════════════════════════════════════ */
+const COLORS = {
+  infaillible: '#c9a84c',
+  infaillible_bg: 'rgba(201,168,76,0.12)',
+  infaillible_border: 'rgba(201,168,76,0.5)',
+  infaillible_related: '#e8c066',
+  family: '#7eb8fa',
+  family_bg: 'rgba(126,184,250,0.08)',
+  family_border: 'rgba(126,184,250,0.3)',
+  ancestor: '#94a3b8',
+  ancestor_bg: 'rgba(148,163,184,0.06)',
+  ancestor_border: 'rgba(148,163,184,0.25)',
+  mother: '#c084fc',
+  mother_bg: 'rgba(192,132,252,0.06)',
+  mother_border: 'rgba(192,132,252,0.2)',
+  companion: '#4ade80',
+  companion_bg: 'rgba(74,222,128,0.06)',
+  companion_border: 'rgba(74,222,128,0.2)',
+};
+
+/* Build maps */
+const NODE_MAP = {};
+NODES.forEach(n => { NODE_MAP[n.id] = n; n.rels = []; });
+EDGES.forEach(e => {
+  if (NODE_MAP[e.f] && NODE_MAP[e.t]) {
+    NODE_MAP[e.f].rels.push({id: e.t, type: e.type === 'parent' ? 'Enfant' : e.type === 'spouse' ? 'Époux/Épouse' : 'Compagnon fidèle'});
+    NODE_MAP[e.t].rels.push({id: e.f, type: e.type === 'parent' ? 'Parent' : e.type === 'spouse' ? 'Époux/Épouse' : 'Lié à'});
+  }
+});
+
+/* ═══════════════════════════════════════
+   SVG RENDERING
+═══════════════════════════════════════ */
+const SVG_W = 1500, SVG_H = 2700;
+const NODE_H = 70;
+const svg = document.getElementById('tree-svg');
+svg.setAttribute('width', SVG_W);
+svg.setAttribute('height', SVG_H);
+svg.setAttribute('viewBox', `0 0 ${SVG_W} ${SVG_H}`);
+
+const defs = document.createElementNS('http://www.w3.org/2000/svg', 'defs');
+
+// Glow filter
+['gold','blue','green'].forEach((name, i) => {
+  const colors = ['#c9a84c','#7eb8fa','#4ade80'];
+  const f = document.createElementNS('http://www.w3.org/2000/svg', 'filter');
+  f.setAttribute('id', `glow-${name}`);
+  f.setAttribute('x','-20%'); f.setAttribute('y','-20%');
+  f.setAttribute('width','140%'); f.setAttribute('height','140%');
+  const blur = document.createElementNS('http://www.w3.org/2000/svg', 'feGaussianBlur');
+  blur.setAttribute('stdDeviation','3');
+  blur.setAttribute('in','SourceGraphic');
+  blur.setAttribute('result','blur');
+  const merge = document.createElementNS('http://www.w3.org/2000/svg', 'feMerge');
+  const mn1 = document.createElementNS('http://www.w3.org/2000/svg', 'feMergeNode');
+  mn1.setAttribute('in','blur');
+  const mn2 = document.createElementNS('http://www.w3.org/2000/svg', 'feMergeNode');
+  mn2.setAttribute('in','SourceGraphic');
+  merge.appendChild(mn1); merge.appendChild(mn2);
+  f.appendChild(blur); f.appendChild(merge);
+  defs.appendChild(f);
+});
+svg.appendChild(defs);
+
+// Background
+const bg = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
+bg.setAttribute('width', SVG_W); bg.setAttribute('height', SVG_H);
+bg.setAttribute('fill', '#070c18');
+svg.appendChild(bg);
+
+// Edges layer
+const edgeG = document.createElementNS('http://www.w3.org/2000/svg', 'g');
+svg.appendChild(edgeG);
+
+// Nodes layer
+const nodeG = document.createElementNS('http://www.w3.org/2000/svg', 'g');
+svg.appendChild(nodeG);
+
+function getNodeColor(n) {
+  if (n.type === 'infaillible') return COLORS.infaillible;
+  if (n.type === 'infaillible_related') return COLORS.infaillible_related;
+  if (n.type === 'family') return COLORS.family;
+  if (n.type === 'ancestor') return COLORS.ancestor;
+  if (n.type === 'mother') return COLORS.mother;
+  if (n.type === 'companion') return COLORS.companion;
+  return '#94a3b8';
+}
+
+function getNodeBg(n) {
+  if (n.type === 'infaillible') return COLORS.infaillible_bg;
+  if (n.type === 'family') return COLORS.family_bg;
+  if (n.type === 'ancestor') return COLORS.ancestor_bg;
+  if (n.type === 'mother') return COLORS.mother_bg;
+  if (n.type === 'companion') return COLORS.companion_bg;
+  return 'rgba(148,163,184,0.06)';
+}
+
+function getNodeBorder(n) {
+  if (n.type === 'infaillible') return COLORS.infaillible_border;
+  if (n.type === 'family') return COLORS.family_border;
+  if (n.type === 'ancestor') return COLORS.ancestor_border;
+  if (n.type === 'mother') return COLORS.mother_border;
+  if (n.type === 'companion') return COLORS.companion_border;
+  return 'rgba(148,163,184,0.25)';
+}
+
+// Draw edges
+EDGES.forEach(e => {
+  const a = NODE_MAP[e.f], b = NODE_MAP[e.t];
+  if (!a || !b) return;
+  const ax = a.x + a.w/2, ay = a.y + NODE_H;
+  const bx = b.x + b.w/2, by = b.y;
+
+  if (e.type === 'companion') {
+    // Dotted line from Ali to companions (horizontal-ish)
+    const path = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+    path.setAttribute('x1', ax); path.setAttribute('y1', a.y + NODE_H/2);
+    path.setAttribute('x2', bx); path.setAttribute('y2', b.y + NODE_H/2);
+    path.setAttribute('stroke', 'rgba(74,222,128,0.15)');
+    path.setAttribute('stroke-width', '1');
+    path.setAttribute('stroke-dasharray', '4,4');
+    edgeG.appendChild(path);
+    return;
+  }
+
+  if (e.type === 'spouse') {
+    // Dashed line between spouses
+    const path = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+    path.setAttribute('x1', a.x + a.w); path.setAttribute('y1', a.y + NODE_H/2);
+    path.setAttribute('x2', b.x); path.setAttribute('y2', b.y + NODE_H/2);
+    path.setAttribute('stroke', 'rgba(201,168,76,0.3)');
+    path.setAttribute('stroke-width', '1.5');
+    path.setAttribute('stroke-dasharray', '6,3');
+    edgeG.appendChild(path);
+    return;
+  }
+
+  // Parent edge — smooth bezier
+  const my = (ay + by) / 2;
+  const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+  const d = `M${ax},${ay} C${ax},${my} ${bx},${my} ${bx},${by}`;
+  path.setAttribute('d', d);
+  path.setAttribute('fill', 'none');
+
+  const color = getNodeColor(a);
+  const opacity = (a.type === 'infaillible' || b.type === 'infaillible') ? '0.35' : '0.18';
+  path.setAttribute('stroke', color);
+  path.setAttribute('stroke-width', (a.type === 'infaillible' && b.type === 'infaillible') ? '2' : '1.2');
+  path.setAttribute('stroke-opacity', opacity);
+  edgeG.appendChild(path);
+});
+
+function mkText(x, y, content, opts = {}) {
+  const t = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+  t.setAttribute('x', x); t.setAttribute('y', y);
+  if (opts.anchor) t.setAttribute('text-anchor', opts.anchor);
+  if (opts.family) t.setAttribute('font-family', opts.family);
+  if (opts.size)   t.setAttribute('font-size', opts.size);
+  if (opts.weight) t.setAttribute('font-weight', opts.weight);
+  if (opts.style)  t.setAttribute('font-style', opts.style);
+  if (opts.fill)   t.setAttribute('fill', opts.fill);
+  if (opts.opacity)t.setAttribute('fill-opacity', opts.opacity);
+  if (opts.dir)    t.setAttribute('direction', opts.dir);
+  if (opts.cls)    t.setAttribute('class', opts.cls);
+  t.textContent = content;
+  return t;
+}
+
+// Draw nodes
+NODES.forEach(n => {
+  const g = document.createElementNS('http://www.w3.org/2000/svg', 'g');
+  g.setAttribute('cursor', 'pointer');
+  g.setAttribute('data-id', n.id);
+
+  const color = getNodeColor(n);
+  const bg = getNodeBg(n);
+  const border = getNodeBorder(n);
+  const isInfaillible = n.type === 'infaillible';
+  const cx = n.x + n.w / 2; // horizontal center
+
+  // Glow for infaillibles
+  if (isInfaillible) {
+    const shadow = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
+    shadow.setAttribute('x', n.x - 3); shadow.setAttribute('y', n.y - 3);
+    shadow.setAttribute('width', n.w + 6); shadow.setAttribute('height', NODE_H + 6);
+    shadow.setAttribute('rx', '11');
+    shadow.setAttribute('fill', 'none');
+    shadow.setAttribute('stroke', color);
+    shadow.setAttribute('stroke-width', '1');
+    shadow.setAttribute('stroke-opacity', '0.25');
+    shadow.setAttribute('filter', 'url(#glow-gold)');
+    g.appendChild(shadow);
+  }
+
+  // Main rect
+  const rect = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
+  rect.setAttribute('x', n.x); rect.setAttribute('y', n.y);
+  rect.setAttribute('width', n.w); rect.setAttribute('height', NODE_H);
+  rect.setAttribute('rx', '9');
+  rect.setAttribute('fill', bg);
+  rect.setAttribute('stroke', border);
+  rect.setAttribute('stroke-width', isInfaillible ? '1.5' : '1');
+  g.appendChild(rect);
+
+  // ── ROW 1: Name (left) + badge (right) ──
+  const badgeW = 30, hasBadge = n.num !== undefined && n.num !== null;
+  const nameMaxW = n.w - (hasBadge ? badgeW + 14 : 12) - 8;
+
+  // Badge
+  if (hasBadge) {
+    const br = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
+    br.setAttribute('x', n.x + n.w - badgeW - 5);
+    br.setAttribute('y', n.y + 5);
+    br.setAttribute('width', badgeW); br.setAttribute('height', 18);
+    br.setAttribute('rx', '5');
+    br.setAttribute('fill', color); br.setAttribute('fill-opacity', '0.22');
+    g.appendChild(br);
+    const label = n.num === 'ن' ? 'ﷺ' : n.num === 'ف' ? 'ف' : n.num + 'e';
+    g.appendChild(mkText(n.x + n.w - badgeW/2 - 5, n.y + 16, label, {
+      anchor: 'middle', family: 'Cinzel, serif', size: '9', weight: '700', fill: color
+    }));
+  }
+
+  // Name — truncate to fit
+  const maxChars = Math.floor(nameMaxW / (isInfaillible ? 7.2 : 6.2));
+  let dispName = n.name.replace(/ﷺ/, '').trim();
+  if (dispName.length > maxChars) dispName = dispName.substring(0, maxChars - 1) + '…';
+  g.appendChild(mkText(n.x + 8, n.y + 18, dispName, {
+    family: 'Cinzel, serif',
+    size: isInfaillible ? '11' : '9.5',
+    weight: isInfaillible ? '600' : '500',
+    fill: color
+  }));
+
+  // ── ROW 2: Arabic — CENTERED ──
+  if (n.ar) {
+    g.appendChild(mkText(cx, n.y + 36, n.ar, {
+      anchor: 'middle',
+      family: "'Scheherazade New', 'Noto Naskh Arabic', serif",
+      size: isInfaillible ? '13' : '11',
+      fill: color,
+      opacity: '0.75',
+      dir: 'rtl'
+    }));
+  }
+
+  // ── ROW 3: First title (laqab) — italic, centered ──
+  const firstTitle = (n.titles && n.titles.length > 0) ? n.titles[0] : null;
+  if (firstTitle) {
+    let titleDisp = firstTitle;
+    const maxT = Math.floor((n.w - 16) / 5.8);
+    if (titleDisp.length > maxT) titleDisp = titleDisp.substring(0, maxT - 1) + '…';
+    g.appendChild(mkText(cx, n.y + 54, titleDisp, {
+      anchor: 'middle',
+      family: 'EB Garamond, Georgia, serif',
+      size: '8.5',
+      style: 'italic',
+      fill: color,
+      opacity: '0.6'
+    }));
+  }
+
+  // ── ROW 4: Dates — left ──
+  if (n.dates) {
+    g.appendChild(mkText(n.x + 8, n.y + 76, n.dates, {
+      family: 'Cinzel, serif',
+      size: '7.5',
+      fill: color,
+      opacity: '0.4'
+    }));
+  }
+
+  // Hover
+  g.addEventListener('mouseenter', () => {
+    rect.setAttribute('fill-opacity', '1.5');
+    rect.setAttribute('stroke-width', isInfaillible ? '2.5' : '2');
+  });
+  g.addEventListener('mouseleave', () => {
+    rect.setAttribute('fill-opacity', '1');
+    rect.setAttribute('stroke-width', isInfaillible ? '1.5' : '1');
+  });
+  g.addEventListener('click', (e) => {
+    e.stopPropagation();
+    openDetail(n.id);
+  });
+
+  nodeG.appendChild(g);
+});
+
+// Section labels
+function addLabel(text, x, y, color) {
+  const t = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+  t.setAttribute('x', x); t.setAttribute('y', y);
+  t.setAttribute('font-family', 'Cinzel, serif');
+  t.setAttribute('font-size', '10');
+  t.setAttribute('letter-spacing', '2');
+  t.setAttribute('text-transform', 'uppercase');
+  t.setAttribute('fill', color || '#5a6480');
+  t.setAttribute('fill-opacity', '0.6');
+  t.textContent = text.toUpperCase();
+  nodeG.appendChild(t);
+}
+
+addLabel('COMPAGNONS D\'EXCEPTION', 30, 460, '#4ade80');
+addLabel('AHL AL-BAYT', 380, 50, '#c9a84c');
+
+/* ═══════════════════════════════════════
+   PAN / ZOOM
+═══════════════════════════════════════ */
+const container = document.getElementById('tree-container');
+const isMobile = window.innerWidth < 600;
+let scale = isMobile ? 0.28 : 0.45, panX = isMobile ? 10 : 20, panY = isMobile ? 0 : -20;
+let isDragging = false, lastX = 0, lastY = 0;
+let velX = 0, velY = 0, lastMX = 0, lastMY = 0, lastT = 0;
+let momentum = null;
+
+function updateTransform() {
+  svg.style.transform = `translate(${panX}px, ${panY}px) scale(${scale})`;
+  svg.style.transformOrigin = '0 0';
+  document.getElementById('z-pct').textContent = Math.round(scale * 100) + '%';
+}
+updateTransform();
+
+function stopMomentum() { if (momentum) { cancelAnimationFrame(momentum); momentum = null; } }
+
+container.addEventListener('mousedown', e => {
+  stopMomentum();
+  isDragging = true;
+  lastX = e.clientX; lastY = e.clientY;
+  lastMX = e.clientX; lastMY = e.clientY;
+  lastT = Date.now();
+  velX = 0; velY = 0;
+});
+window.addEventListener('mouseup', () => {
+  isDragging = false;
+  if (Math.abs(velX) > 1 || Math.abs(velY) > 1) {
+    (function glide() {
+      velX *= 0.92; velY *= 0.92;
+      panX += velX; panY += velY;
+      updateTransform();
+      if (Math.abs(velX) > 0.5 || Math.abs(velY) > 0.5) momentum = requestAnimationFrame(glide);
+    })();
+  }
+});
+window.addEventListener('mousemove', e => {
+  if (!isDragging) return;
+  const now = Date.now(), dt = Math.max(now - lastT, 1);
+  velX = (e.clientX - lastMX) / dt * 14;
+  velY = (e.clientY - lastMY) / dt * 14;
+  panX += e.clientX - lastX;
+  panY += e.clientY - lastY;
+  lastX = e.clientX; lastY = e.clientY;
+  lastMX = e.clientX; lastMY = e.clientY; lastT = now;
+  updateTransform();
+});
+
+container.addEventListener('wheel', e => {
+  e.preventDefault();
+  stopMomentum();
+  const rect = container.getBoundingClientRect();
+  const mx = e.clientX - rect.left, my = e.clientY - rect.top;
+  const factor = e.deltaY > 0 ? 0.88 : 1.14;
+  const newScale = Math.min(3, Math.max(0.15, scale * factor));
+  panX = mx - (mx - panX) * (newScale / scale);
+  panY = my - (my - panY) * (newScale / scale);
+  scale = newScale;
+  updateTransform();
+}, { passive: false });
+
+// Touch
+let touches = [];
+container.addEventListener('touchstart', e => {
+  stopMomentum();
+  touches = Array.from(e.touches);
+  lastX = touches[0].clientX; lastY = touches[0].clientY;
+  velX = 0; velY = 0;
+}, { passive: true });
+container.addEventListener('touchmove', e => {
+  if (e.touches.length === 1) {
+    const dx = e.touches[0].clientX - lastX, dy = e.touches[0].clientY - lastY;
+    panX += dx; panY += dy;
+    lastX = e.touches[0].clientX; lastY = e.touches[0].clientY;
+    velX = dx * 0.7; velY = dy * 0.7;
+    updateTransform();
+  } else if (e.touches.length === 2) {
+    const d = Math.hypot(e.touches[0].clientX - e.touches[1].clientX, e.touches[0].clientY - e.touches[1].clientY);
+    if (touches.length >= 2) {
+      const d0 = Math.hypot(touches[0].clientX - touches[1].clientX, touches[0].clientY - touches[1].clientY);
+      const f = d / d0;
+      scale = Math.min(3, Math.max(0.15, scale * f));
+      updateTransform();
+    }
+    touches = Array.from(e.touches);
+  }
+}, { passive: true });
+container.addEventListener('touchend', () => {
+  if (Math.abs(velX) > 1 || Math.abs(velY) > 1) {
+    (function glide() {
+      velX *= 0.93; velY *= 0.93;
+      panX += velX; panY += velY;
+      updateTransform();
+      if (Math.abs(velX) > 0.3 || Math.abs(velY) > 0.3) momentum = requestAnimationFrame(glide);
+    })();
+  }
+}, { passive: true });
+
+// Zoom buttons
+document.getElementById('z-in').addEventListener('click', () => {
+  scale = Math.min(3, scale * 1.25);
+  updateTransform();
+});
+document.getElementById('z-out').addEventListener('click', () => {
+  scale = Math.max(0.15, scale * 0.8);
+  updateTransform();
+});
+document.getElementById('z-fit').addEventListener('click', () => {
+  const cw = container.clientWidth, ch = container.clientHeight;
+  scale = Math.min(cw / SVG_W, ch / SVG_H) * 0.95;
+  panX = (cw - SVG_W * scale) / 2;
+  panY = (ch - SVG_H * scale) / 2;
+  updateTransform();
+});
+
+/* ═══════════════════════════════════════
+   DETAIL PANEL
+═══════════════════════════════════════ */
+function openDetail(id) {
+  const n = NODE_MAP[id];
+  if (!n) return;
+  const color = getNodeColor(n);
+
+  const typeLabels = {infaillible:'Infaillible',family:'Famille',ancestor:'Ancêtre',mother:'Mère',companion:'Compagnon',infaillible_related:'Ahl al-Bayt'};
+  const typeLabel = typeLabels[n.type] || n.type;
+
+  const rels = (n.rels || []).map(r => {
+    const rn = NODE_MAP[r.id];
+    if (!rn) return '';
+    const rc = getNodeColor(rn);
+    return `<div class="dp-rel" onclick="openDetail('${rn.id}')">
+      <div class="dp-rel-dot" style="background:${rc}"></div>
+      <div class="dp-rel-name">${rn.name}</div>
+      <div class="dp-rel-type">${r.type}</div>
+    </div>`;
+  }).filter(Boolean).join('');
+
+  const titles = (n.titles || []).map(t => `<span class="dp-title-tag">${t}</span>`).join('');
+
+  document.getElementById('dp-content').innerHTML = `
+    <span class="dp-badge" style="background:${color}22;color:${color};border:1px solid ${color}44">${typeLabel}${n.num ? ' · ' + n.num + (n.num === 'ن' || n.num === 'ف' ? '' : 'er Imam') : ''}</span>
+    <div class="dp-name">${n.name}</div>
+    ${n.ar ? `<div class="dp-arabic">${n.ar}</div>` : ''}
+    ${n.dates ? `<div class="dp-dates">&#128197; ${n.dates}</div>` : ''}
+    <span class="dp-label">Description</span>
+    <p class="dp-desc">${n.desc || '–'}</p>
+    ${titles ? `<span class="dp-label">Titres &amp; Surnoms</span><div class="dp-titles">${titles}</div>` : ''}
+    ${rels ? `<span class="dp-label">Relations</span><div class="dp-rels">${rels}</div>` : ''}
+  `;
+
+  document.getElementById('dp').classList.add('open');
+  document.getElementById('dp-overlay').classList.add('open');
+}
+
+document.getElementById('dp-close').addEventListener('click', closeDetail);
+document.getElementById('dp-overlay').addEventListener('click', closeDetail);
+function closeDetail() {
+  document.getElementById('dp').classList.remove('open');
+  document.getElementById('dp-overlay').classList.remove('open');
+}
+</script>
+</body>
+</html>
