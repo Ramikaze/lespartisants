@@ -75,6 +75,47 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
   .surah-view{padding:20px 14px 80px}
   .verse{padding:12px 14px}
 }
+
+[data-theme="light"]{--lbg:#e8e0d4;--ltext:#2c2114;--laccent:#7a5c24}
+[data-theme="light"] body{background:var(--lbg)!important;color:var(--ltext)!important}
+[data-theme="light"] body::before{opacity:0.4!important}
+[data-theme="light"] .hdr{background:rgba(225,218,206,0.97)!important;border-color:rgba(122,92,36,0.18)!important}
+[data-theme="light"] .hdr-title{color:var(--laccent)!important}
+[data-theme="light"] .sel{background:rgba(220,212,196,0.7)!important;color:var(--ltext)!important;border-color:rgba(122,92,36,0.25)!important}
+[data-theme="light"] .sel option{background:#e8e0d4!important;color:var(--ltext)!important}
+[data-theme="light"] .btn-go{background:rgba(122,92,36,0.1)!important;color:var(--laccent)!important;border-color:rgba(122,92,36,0.25)!important}
+[data-theme="light"] .list-title{color:var(--ltext)!important}
+[data-theme="light"] .list-title span{color:var(--laccent)!important}
+[data-theme="light"] .list-sub{color:#7a6e56!important}
+[data-theme="light"] .list-search{background:rgba(220,212,196,0.6)!important;border-color:rgba(122,92,36,0.15)!important}
+[data-theme="light"] .list-search input{color:var(--ltext)!important}
+[data-theme="light"] .list-search input::placeholder{color:#a89880!important}
+[data-theme="light"] .list-search svg{color:#8a7c66!important}
+[data-theme="light"] .surah-card{background:rgba(235,228,216,0.7)!important;border-color:rgba(122,92,36,0.1)!important}
+[data-theme="light"] .surah-card:hover{background:rgba(240,234,222,0.9)!important;border-color:rgba(122,92,36,0.3)!important}
+[data-theme="light"] .surah-num{color:var(--laccent)!important;background:rgba(122,92,36,0.08)!important;border-color:rgba(122,92,36,0.18)!important}
+[data-theme="light"] .surah-name-fr{color:var(--ltext)!important}
+[data-theme="light"] .surah-name-ar{color:var(--laccent)!important}
+[data-theme="light"] .surah-detail{color:#7a6e56!important}
+[data-theme="light"] .surah-arrow{color:var(--laccent)!important}
+[data-theme="light"] .surah-header{border-color:rgba(122,92,36,0.12)!important}
+[data-theme="light"] .s-num{color:var(--laccent)!important}
+[data-theme="light"] .s-name{color:var(--ltext)!important}
+[data-theme="light"] .s-name-ar{color:var(--laccent)!important}
+[data-theme="light"] .s-meta{color:#7a6e56!important}
+[data-theme="light"] .bismillah{color:var(--laccent)!important;border-color:rgba(122,92,36,0.1)!important;background:rgba(122,92,36,0.04)!important}
+[data-theme="light"] .verse{color:#3d3425!important}
+[data-theme="light"] .verse:hover{background:rgba(122,92,36,0.04)!important}
+[data-theme="light"] .verse:target,[data-theme="light"] .verse.highlight{background:rgba(122,92,36,0.08)!important;border-left-color:var(--laccent)!important}
+[data-theme="light"] .verse-num{color:var(--laccent)!important;background:rgba(122,92,36,0.07)!important;border-color:rgba(122,92,36,0.15)!important}
+[data-theme="light"] .verse-text{color:#3d3425!important}
+[data-theme="light"] .nav-btns{border-color:rgba(122,92,36,0.1)!important}
+[data-theme="light"] .nav-btn{color:var(--laccent)!important;border-color:rgba(122,92,36,0.25)!important}
+[data-theme="light"] .nav-btn:hover{background:rgba(122,92,36,0.08)!important}
+[data-theme="light"] .audio-note{color:#7a6e56!important}
+[data-theme="light"] ::-webkit-scrollbar-track{background:var(--lbg)!important}
+[data-theme="light"] ::-webkit-scrollbar-thumb{background:rgba(122,92,36,0.25)!important}
+
 </style>
 </head>
 <body>
@@ -283,6 +324,23 @@ document.getElementById('goBtn').addEventListener('click', function(){
 verseInput.addEventListener('keydown', function(e){
   if (e.key === 'Enter') document.getElementById('goBtn').click();
 });
+</script>
+<!-- Theme listener: receives theme from parent portal -->
+<script>
+window.addEventListener('message', function(e) {
+  if (e.data && e.data.type === 'theme') {
+    if (e.data.theme === 'light') {
+      document.documentElement.setAttribute('data-theme', 'light');
+    } else {
+      document.documentElement.removeAttribute('data-theme');
+    }
+  }
+});
+try {
+  if (localStorage.getItem('theme') === 'light') {
+    document.documentElement.setAttribute('data-theme', 'light');
+  }
+} catch(e) {}
 </script>
 </body>
 </html>
