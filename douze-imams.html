@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Les Douze Imams — Les Partisans</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Scheherazade+New:wght@400;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{min-height:100%;background:#070c18;color:#e2d9c4;font-family:'Plus Jakarta Sans',sans-serif;font-size:17px;line-height:1.6}
+body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23c9a84c' stroke-width='0.3' opacity='0.05'%3E%3Crect x='22' y='22' width='56' height='56' rx='2'/%3E%3Ccircle cx='50' cy='50' r='28'/%3E%3C/g%3E%3C/svg%3E");background-size:100px;pointer-events:none;z-index:0}
+::-webkit-scrollbar{width:5px}::-webkit-scrollbar-track{background:#070c18}::-webkit-scrollbar-thumb{background:rgba(201,168,76,0.3);border-radius:3px}
+
+.wrap{max-width:1100px;margin:0 auto;padding:40px 24px 80px;position:relative;z-index:1}
+
+/* Hero */
+.hero{text-align:center;margin-bottom:40px}
+.hero-label{font-family:'Cinzel',serif;font-size:0.72rem;letter-spacing:0.22em;text-transform:uppercase;color:#c9a84c;opacity:0.6;margin-bottom:12px}
+.hero-title{font-family:'Cinzel',serif;font-size:clamp(1.5rem,4vw,2.2rem);font-weight:700;color:#e8e2d0;margin-bottom:10px}
+.hero-title span{color:#c9a84c}
+.hero-sub{font-size:15px;color:#6a7590;max-width:600px;margin:0 auto 16px;line-height:1.6}
+.hero-div{width:60px;height:2px;background:#c9a84c;margin:0 auto;border-radius:1px}
+
+/* Grid */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:18px}
+.imam-card{background:rgba(19,29,53,0.7);border:1px solid rgba(201,168,76,0.12);border-radius:16px;padding:24px;cursor:pointer;transition:all .3s;position:relative;overflow:hidden}
+.imam-card:hover{border-color:rgba(201,168,76,0.4);transform:translateY(-2px);box-shadow:0 8px 28px rgba(0,0,0,0.4)}
+.imam-card-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:14px}
+.imam-badge{font-family:'Cinzel',serif;font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#fff;background:rgba(201,168,76,0.8);padding:4px 12px;border-radius:6px}
+.imam-big-num{font-family:'Cinzel',serif;font-size:3.5rem;font-weight:700;color:rgba(201,168,76,0.08);line-height:1;position:absolute;top:12px;right:20px}
+.imam-dates{font-size:13px;color:#c9a84c;opacity:0.6;margin-bottom:6px}
+.imam-name{font-family:'Cinzel',serif;font-size:17px;font-weight:700;color:#e8e2d0;margin-bottom:8px;line-height:1.3}
+.imam-desc{font-size:14px;color:#6a7590;line-height:1.55;margin-bottom:14px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.imam-tags{display:flex;flex-wrap:wrap;gap:6px}
+.imam-tag{font-size:11px;color:#5a6480;background:rgba(90,100,128,0.12);border:1px solid rgba(90,100,128,0.15);padding:3px 10px;border-radius:8px}
+.imam-arrow{position:absolute;bottom:20px;right:20px;width:26px;height:26px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:rgba(201,168,76,0.1);border:1px solid rgba(201,168,76,0.2);color:#c9a84c;transition:all .2s}
+.imam-card:hover .imam-arrow{background:#c9a84c;color:#070c18}
+
+/* Detail view */
+.detail{display:none;max-width:760px;margin:0 auto;padding:0 24px 80px}
+.detail.active{display:block}
+.detail-back{display:inline-flex;align-items:center;gap:8px;background:none;border:1px solid rgba(201,168,76,0.3);color:#c9a84c;padding:9px 18px;border-radius:10px;cursor:pointer;font-family:inherit;font-size:15px;margin-bottom:28px;transition:all .2s}
+.detail-back:hover{background:rgba(201,168,76,0.1)}
+.detail-header{text-align:center;margin-bottom:36px;padding-bottom:28px;border-bottom:1px solid rgba(201,168,76,0.12)}
+.detail-num{font-family:'Cinzel',serif;font-size:4rem;font-weight:700;color:rgba(201,168,76,0.12);line-height:1;margin-bottom:8px}
+.detail-badge{display:inline-block;font-family:'Cinzel',serif;font-size:11px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:#fff;background:rgba(201,168,76,0.8);padding:5px 16px;border-radius:8px;margin-bottom:14px}
+.detail-name{font-family:'Cinzel',serif;font-size:clamp(1.3rem,3.5vw,1.8rem);font-weight:700;color:#e8e2d0;margin-bottom:6px}
+.detail-surnom{font-size:15px;color:#c9a84c;opacity:0.7;margin-bottom:4px}
+.detail-titre{font-size:14px;color:#6a7590;font-style:italic}
+
+.info-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:32px}
+.info-box{background:rgba(19,29,53,0.5);border:1px solid rgba(201,168,76,0.08);border-radius:12px;padding:16px 18px}
+.info-label{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#c9a84c;opacity:0.6;margin-bottom:6px}
+.info-value{font-size:15px;color:#e2d9c4;line-height:1.5}
+.info-box.full{grid-column:1/-1}
+
+.detail-bio{font-size:1.05rem;color:#b0a890;line-height:1.9;margin-bottom:32px;text-align:justify}
+
+.detail-nav{display:flex;justify-content:space-between;padding-top:20px;border-top:1px solid rgba(201,168,76,0.1)}
+.detail-nav-btn{background:none;border:1px solid rgba(201,168,76,0.25);color:#c9a84c;padding:9px 20px;border-radius:10px;cursor:pointer;font-family:'Cinzel',serif;font-size:14px;transition:all .2s}
+.detail-nav-btn:hover{background:rgba(201,168,76,0.1)}
+.detail-nav-btn:disabled{opacity:0.3;cursor:default}
+
+/* Light theme */
+[data-theme="light"] body{background:#e8e0d4!important;color:#2c2114!important}
+[data-theme="light"] body::before{opacity:0.4!important}
+[data-theme="light"] .hero-title{color:#2c2114!important}
+[data-theme="light"] .hero-title span{color:#7a5c24!important}
+[data-theme="light"] .hero-label{color:#7a5c24!important}
+[data-theme="light"] .hero-sub{color:#746850!important}
+[data-theme="light"] .imam-card{background:rgba(235,228,216,0.7)!important;border-color:rgba(122,92,36,0.12)!important}
+[data-theme="light"] .imam-card:hover{border-color:rgba(122,92,36,0.35)!important;box-shadow:0 8px 28px rgba(60,45,20,0.1)!important}
+[data-theme="light"] .imam-name,[data-theme="light"] .detail-name{color:#2c2114!important}
+[data-theme="light"] .imam-desc{color:#5a4e3c!important}
+[data-theme="light"] .imam-dates{color:#7a5c24!important}
+[data-theme="light"] .imam-badge,[data-theme="light"] .detail-badge{background:rgba(122,92,36,0.75)!important}
+[data-theme="light"] .imam-big-num,[data-theme="light"] .detail-num{color:rgba(122,92,36,0.08)!important}
+[data-theme="light"] .imam-tag{background:rgba(100,90,72,0.08)!important;border-color:rgba(100,90,72,0.15)!important;color:#5a4e3c!important}
+[data-theme="light"] .info-box{background:rgba(220,212,196,0.5)!important;border-color:rgba(122,92,36,0.08)!important}
+[data-theme="light"] .info-label{color:#7a5c24!important}
+[data-theme="light"] .info-value{color:#2c2114!important}
+[data-theme="light"] .detail-bio{color:#3d3425!important}
+[data-theme="light"] .detail-back,.detail-nav-btn{color:#7a5c24!important;border-color:rgba(122,92,36,0.25)!important}
+[data-theme="light"] .detail-surnom{color:#7a5c24!important}
+[data-theme="light"] .detail-titre{color:#746850!important}
+[data-theme="light"] .detail-header{border-color:rgba(122,92,36,0.1)!important}
+[data-theme="light"] .detail-nav{border-color:rgba(122,92,36,0.1)!important}
+[data-theme="light"] ::-webkit-scrollbar-track{background:#e8e0d4!important}
+[data-theme="light"] ::-webkit-scrollbar-thumb{background:rgba(122,92,36,0.25)!important}
+
+@media(max-width:600px){
+  .wrap{padding:28px 14px 60px}
+  .grid{grid-template-columns:1fr}
+  .info-grid{grid-template-columns:1fr}
+  .imam-card{padding:20px}
+  .detail-num{font-size:3rem}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+<div class="hero" id="heroSection">
+  <div class="hero-label">Les Successeurs du Proph&#232;te</div>
+  <h1 class="hero-title">Les Douze <span>Imams</span></h1>
+  <p class="hero-sub">Selon la doctrine chiite duod&#233;cimaine, les Imams sont les guides l&#233;gitimes de la communaut&#233; apr&#232;s le Proph&#232;te Muhammad &#65018;.</p>
+  <div class="hero-div"></div>
+</div>
+<div class="grid" id="imamGrid"></div>
+</div>
+
+<div class="detail" id="detailView">
+  <div style="max-width:760px;margin:0 auto;padding:0 24px">
+    <button class="detail-back" onclick="showGrid()">&#8592; Retour aux Imams</button>
+    <div id="detailContent"></div>
+  </div>
+</div>
+
+<script>
+var IMAMS = [
+{n:1,name:"Imam Ali ibn Abi Talib",full:"Ali ibn Abi Talib",sur:"Al-Murtada, Amir al-Mu'minin",titre:"Premier Imam, Porteur du savoir proph\u00e9tique",parents:"Abu Talib et Fatima bint Asad",naiss:"600 ap. J.-C. / 13 Rajab 23 av. h\u00e9gire",lieuN:"dans la Kaaba \u00e0 La Mecque",martyre:"661 ap. J.-C. / 21 Ramadan 40 h.",causeMort:"assassin\u00e9 \u00e0 Koufa",sep:"Najaf (Irak)",dates:"600\u2013661",bio:"Imam Ali (a) est le successeur direct du Proph\u00e8te (s) selon les sources chiites. Il est reconnu pour sa science, sa justice, son courage et son r\u00f4le central \u00e0 Ghadir Khumm. Il est la figure la plus importante apr\u00e8s le Proph\u00e8te dans la th\u00e9ologie chiite.",tags:["1er Imam","Amir al-Mu'minin","Ghadir","Najaf"]},
+{n:2,name:"Imam Hassan ibn Ali",full:"Hassan ibn Ali",sur:"Al-Mujtaba",titre:"Ma\u00eetre des jeunes du Paradis",parents:"Ali ibn Abi Talib et Fatima al-Zahra",naiss:"625 ap. J.-C. / 15 Ramadan 3 h.",lieuN:"\u00e0 M\u00e9dine",martyre:"670 ap. J.-C. / 28 Safar 50 h.",causeMort:"empoisonn\u00e9",sep:"Jannat al-Baqi, M\u00e9dine",dates:"625\u2013670",bio:"Imam Hassan (a) est connu pour son immense sagesse et son trait\u00e9 de paix historique visant \u00e0 prot\u00e9ger la communaut\u00e9 musulmane. Il est reconnu comme le deuxi\u00e8me imam divinement d\u00e9sign\u00e9.",tags:["2e Imam","Al-Mujtaba","trait\u00e9 de paix"]},
+{n:3,name:"Imam Hussein ibn Ali",full:"Hussein ibn Ali",sur:"Sayyid al-Shuhad\u00e2'",titre:"Ma\u00eetre des martyrs",parents:"Ali ibn Abi Talib et Fatima al-Zahra",naiss:"626 ap. J.-C. / 3 Sha'ban 4 h.",lieuN:"\u00e0 M\u00e9dine",martyre:"680 ap. J.-C. / 10 Muharram 61 h.",causeMort:"tu\u00e9 \u00e0 Karbala",sep:"Karbala (Irak)",dates:"626\u2013680",bio:"Imam Hussein (a) est le symbole universel du sacrifice et de la justice. Son soul\u00e8vement \u00e0 Karbala est consid\u00e9r\u00e9 comme la d\u00e9fense supr\u00eame de l'islam authentique contre la corruption et la tyrannie.",tags:["3e Imam","Karbala","Achoura","martyre"]},
+{n:4,name:"Imam Ali Zayn al-Abidin",full:"Ali ibn al-Hussein",sur:"Zayn al-Abidin, Sajjad",titre:"Ma\u00eetre des d\u00e9vots",parents:"Hussein ibn Ali et Shahrbanu",naiss:"658 ap. J.-C. / 5 Sha'ban 38 h.",lieuN:"\u00e0 M\u00e9dine",martyre:"713 ap. J.-C. / 25 Muharram 95 h.",causeMort:"empoisonn\u00e9",sep:"Jannat al-Baqi, M\u00e9dine",dates:"658\u2013713",bio:"Imam Zayn al-Abidin (a) est c\u00e9l\u00e8bre pour ses pri\u00e8res spirituelles r\u00e9unies dans la \u00ab Sahifa Sajjadiyya \u00bb et pour son r\u00f4le essentiel dans la pr\u00e9servation de la foi apr\u00e8s la trag\u00e9die de Karbala.",tags:["4e Imam","Sahifa Sajjadiyya","supplication"]},
+{n:5,name:"Imam Muhammad al-Baqir",full:"Muhammad ibn Ali",sur:"Al-Baqir (celui qui ouvre la science)",titre:"Im\u00e2m de la connaissance",parents:"Ali Zayn al-Abidin et Fatima bint Hassan",naiss:"676 ap. J.-C. / 1 Rajab 57 h.",lieuN:"\u00e0 M\u00e9dine",martyre:"733 ap. J.-C. / 7 Dh\u00fb al-Hijjah 114 h.",causeMort:"empoisonn\u00e9",sep:"Jannat al-Baqi, M\u00e9dine",dates:"676\u2013733",bio:"Imam al-Baqir (a) a marqu\u00e9 l'histoire islamique par son ouverture des sciences religieuses et sa transmission du savoir. Il a form\u00e9 de nombreux disciples et pos\u00e9 les bases d'une pens\u00e9e th\u00e9ologique structur\u00e9e.",tags:["5e Imam","science","th\u00e9ologie"]},
+{n:6,name:"Imam Ja'far al-Sadiq",full:"Ja'far ibn Muhammad",sur:"Al-Sadiq (le v\u00e9ridique)",titre:"Fondateur de l'\u00e9cole ja'farite",parents:"Muhammad al-Baqir et Umm Farwa",naiss:"702 ap. J.-C. / 17 Rab\u00ee' al-Awwal 83 h.",lieuN:"\u00e0 M\u00e9dine",martyre:"765 ap. J.-C. / 25 Shawwal 148 h.",causeMort:"empoisonn\u00e9",sep:"Jannat al-Baqi, M\u00e9dine",dates:"702\u2013765",bio:"Imam Ja'far al-Sadiq (a) est l'un des plus grands savants de l'islam. Il est reconnu pour avoir form\u00e9 un nombre important d'\u00e9l\u00e8ves, dont plusieurs savants sunnites. Son enseignement constitue aujourd'hui la base de la jurisprudence chiite.",tags:["6e Imam","fiqh ja'farite","jurisprudence"]},
+{n:7,name:"Imam Musa al-Kazim",full:"Musa ibn Ja'far",sur:"Al-Kazim (celui qui retient sa col\u00e8re)",titre:"Exemple de patience et de pi\u00e9t\u00e9",parents:"Ja'far al-Sadiq et Hamida al-Barbariyya",naiss:"745 ap. J.-C. / 7 Safar 128 h.",lieuN:"pr\u00e8s de M\u00e9dine",martyre:"799 ap. J.-C. / 25 Rajab 183 h.",causeMort:"empoisonn\u00e9 dans la prison de Harun al-Rashid",sep:"Kadhimiya (Irak)",dates:"745\u2013799",bio:"Imam Musa al-Kazim (a) est reconnu pour sa patience extraordinaire face aux injustices et aux longues ann\u00e9es d'emprisonnement. Son comportement exemplaire en fit un symbole de la r\u00e9sistance spirituelle et morale.",tags:["7e Imam","patience","Kadhimiya"]},
+{n:8,name:"Imam Ali al-Rida",full:"Ali ibn Musa",sur:"Al-Rida (le satisfait, l'agr\u00e9\u00e9)",titre:"H\u00e9ritier de la science proph\u00e9tique",parents:"Musa al-Kazim et Najma",naiss:"766 ap. J.-C. / 11 Dh\u00fb al-Qi'da 148 h.",lieuN:"\u00e0 M\u00e9dine",martyre:"818 ap. J.-C. / 17 Safar 203 h.",causeMort:"empoisonn\u00e9 \u00e0 Tus",sep:"Mashhad (Iran)",dates:"766\u2013818",bio:"Imam al-Rida (a) fut d\u00e9sign\u00e9 h\u00e9ritier apparent par le calife Al-Ma'mun, ce qui entra\u00eena de nombreux d\u00e9bats th\u00e9ologiques publics. Il est c\u00e9l\u00e8bre pour ses arguments spirituels, son savoir incomparable et ses dialogues scientifiques.",tags:["8e Imam","Mashhad","d\u00e9bats"]},
+{n:9,name:"Imam Muhammad al-Jawad",full:"Muhammad ibn Ali",sur:"Al-Jawad (le g\u00e9n\u00e9reux), Al-Taqi",titre:"Le plus jeune imam \u00e0 exercer publiquement",parents:"Ali al-Rida et Sabika",naiss:"811 ap. J.-C. / 10 Rajab 195 h.",lieuN:"\u00e0 M\u00e9dine",martyre:"835 ap. J.-C. / 30 Dh\u00fb al-Qi'da 220 h.",causeMort:"empoisonn\u00e9",sep:"Kadhimiya (Irak)",dates:"811\u2013835",bio:"Imam Muhammad al-Jawad (a), malgr\u00e9 son jeune \u00e2ge au moment de sa nomination, impressionna les plus grands savants de son \u00e9poque par son intelligence, sa g\u00e9n\u00e9rosit\u00e9 et sa ma\u00eetrise des sciences religieuses.",tags:["9e Imam","g\u00e9n\u00e9rosit\u00e9","jeunesse"]},
+{n:10,name:"Imam Ali al-Hadi",full:"Ali ibn Muhammad",sur:"Al-Hadi (le guide), Al-Naqi (le pur)",titre:"Guide spirituel \u00e0 Samarra",parents:"Muhammad al-Jawad et Samana",naiss:"828 ap. J.-C. / 2 Rajab 212 h.",lieuN:"\u00e0 M\u00e9dine",martyre:"868 ap. J.-C. / 3 Rajab 254 h.",causeMort:"empoisonn\u00e9",sep:"Samarra (Irak)",dates:"828\u2013868",bio:"Imam al-Hadi (a) joua un r\u00f4le essentiel dans la consolidation du r\u00e9seau de repr\u00e9sentants (wak\u00eel) pour guider les communaut\u00e9s chiites dispers\u00e9es. Il est reconnu pour sa sagesse et son asc\u00e9tisme.",tags:["10e Imam","Samarra","wak\u00eel"]},
+{n:11,name:"Imam Hassan al-Askari",full:"Hassan ibn Ali",sur:"Al-Askari",titre:"P\u00e8re de l'Imam attendu",parents:"Ali al-Hadi et Haditha",naiss:"846 ap. J.-C. / 10 Rabi' al-Thani 232 h.",lieuN:"\u00e0 M\u00e9dine",martyre:"874 ap. J.-C. / 8 Rabi' al-Awwal 260 h.",causeMort:"empoisonn\u00e9",sep:"Samarra (Irak)",dates:"846\u2013874",bio:"Imam Hassan al-Askari (a) v\u00e9cut sous surveillance s\u00e9v\u00e8re des Abbassides. Malgr\u00e9 cette pression, il forma secr\u00e8tement ses disciples et pr\u00e9para la communaut\u00e9 \u00e0 la transition vers la p\u00e9riode de la Grande Occultation.",tags:["11e Imam","Samarra","Abbassides"]},
+{n:12,name:"Imam al-Mahdi",full:"Muhammad ibn Hassan",sur:"Al-Mahdi, Al-Qa'im, Sahib al-Zaman",titre:"Le Dernier Imam, le Sauveur divinement promis",parents:"Hassan al-Askari et Narjis",naiss:"869 ap. J.-C. / 15 Sha'ban 255 h.",lieuN:"\u00e0 Samarra",martyre:"En Occultation (non martyris\u00e9)",causeMort:"",sep:"Occultation mineure puis majeure",dates:"869 \u2013 pr\u00e9sent",bio:"Selon la doctrine chiite, Imam al-Mahdi (aj) est le dernier des Douze Imams. Il n'est pas mort mais a \u00e9t\u00e9 mis en occultation par la volont\u00e9 divine. Il r\u00e9appara\u00eetra \u00e0 la fin des temps pour \u00e9tablir la justice et mettre fin \u00e0 l'oppression.",tags:["12e Imam","Mahdi","Occultation","justice"]}
+];
+
+var gridEl = document.getElementById('imamGrid');
+var detailEl = document.getElementById('detailView');
+var wrapEl = document.querySelector('.wrap');
+
+// Build grid
+IMAMS.forEach(function(im) {
+  var card = document.createElement('div');
+  card.className = 'imam-card';
+  card.innerHTML =
+    '<div class="imam-card-top"><div class="imam-badge">' + im.n + (im.n===1?'er':'e') + ' Imam</div></div>' +
+    '<div class="imam-big-num">' + im.n + '</div>' +
+    '<div class="imam-dates">' + im.dates + ' EC</div>' +
+    '<div class="imam-name">' + im.name + '</div>' +
+    '<div class="imam-desc">' + im.bio + '</div>' +
+    '<div class="imam-tags">' + im.tags.map(function(t){return '<span class="imam-tag">'+t+'</span>';}).join('') + '</div>' +
+    '<div class="imam-arrow"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg></div>';
+  card.addEventListener('click', function() { showDetail(im.n); });
+  gridEl.appendChild(card);
+});
+
+function showGrid() {
+  wrapEl.style.display = '';
+  detailEl.classList.remove('active');
+  window.scrollTo(0, 0);
+  try{history.pushState({page:'grid'}, '', '#')}catch(e){}
+}
+
+function showDetail(n) {
+  var im = IMAMS.find(function(x){return x.n===n;});
+  if (!im) return;
+  wrapEl.style.display = 'none';
+  detailEl.classList.add('active');
+
+  var h = '<div class="detail-header">';
+  h += '<div class="detail-num">' + im.n + '</div>';
+  h += '<div class="detail-badge">' + im.n + (im.n===1?'er':'e') + ' Imam</div>';
+  h += '<div class="detail-name">' + im.name + '</div>';
+  h += '<div class="detail-surnom">' + im.sur + '</div>';
+  h += '<div class="detail-titre">' + im.titre + '</div>';
+  h += '</div>';
+
+  h += '<div class="info-grid">';
+  h += '<div class="info-box"><div class="info-label">Nom complet</div><div class="info-value">' + im.full + '</div></div>';
+  h += '<div class="info-box"><div class="info-label">Parents</div><div class="info-value">' + im.parents + '</div></div>';
+  h += '<div class="info-box"><div class="info-label">Naissance</div><div class="info-value">' + im.naiss + '<br>' + im.lieuN + '</div></div>';
+  h += '<div class="info-box"><div class="info-label">' + (im.n===12 ? 'Statut' : 'Martyre') + '</div><div class="info-value">' + im.martyre + (im.causeMort ? '<br>' + im.causeMort : '') + '</div></div>';
+  h += '<div class="info-box full"><div class="info-label">' + (im.n===12 ? 'Lieu de pr\u00e9sence' : 'Lieu de s\u00e9pulture') + '</div><div class="info-value">' + im.sep + '</div></div>';
+  h += '</div>';
+
+  h += '<div class="detail-bio">' + im.bio + '</div>';
+
+  h += '<div class="detail-nav">';
+  h += '<button class="detail-nav-btn"' + (im.n <= 1 ? ' disabled' : '') + ' onclick="showDetail(' + (im.n-1) + ')">&larr; Imam pr\u00e9c\u00e9dent</button>';
+  h += '<button class="detail-nav-btn" onclick="showGrid()">Tous les Imams</button>';
+  h += '<button class="detail-nav-btn"' + (im.n >= 12 ? ' disabled' : '') + ' onclick="showDetail(' + (im.n+1) + ')">Imam suivant &rarr;</button>';
+  h += '</div>';
+
+  document.getElementById('detailContent').innerHTML = h;
+  window.scrollTo(0, 0);
+  try{history.pushState({page:'detail',n:n}, '', '#imam'+n)}catch(e){}
+}
+
+// Back button
+window.addEventListener('popstate', function(e) {
+  if (e.state && e.state.page === 'detail') showDetail(e.state.n);
+  else showGrid();
+});
+try{history.replaceState({page:'grid'}, '', '#')}catch(e){}
+
+// Theme listener
+window.addEventListener('message', function(e) {
+  if (e.data && e.data.type === 'theme') {
+    if (e.data.theme === 'light') document.documentElement.setAttribute('data-theme', 'light');
+    else document.documentElement.removeAttribute('data-theme');
+  }
+});
+try { if (localStorage.getItem('theme') === 'light') document.documentElement.setAttribute('data-theme', 'light'); } catch(e) {}
+</script>
+</body>
+</html>

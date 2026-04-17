@@ -292,6 +292,14 @@ body,body *{transition:background-color 0.3s,color 0.3s,border-color 0.3s}
       <div class="card-desc">Arbre g&#233;n&#233;alogique interactif des 14 Infaillibles et leurs compagnons.</div>
       <div class="card-footer"><span class="card-meta">Pannable &middot; Zoomable &middot; D&#233;tails</span><span class="card-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg></span></div>
     </div>
+    <!-- Douze Imams -->
+    <div class="card" id="card-12" data-theme="genealogie" data-keywords="douze imams 12 ali hassan hussein biographie imam mahdi sajjad baqir sadiq kazim rida jawad hadi askari">
+      <div class="card-icon" style="font-family:Cinzel,serif;font-size:22px;font-weight:700;color:var(--accent);">12</div>
+      <div class="card-tag">Biographies</div>
+      <div class="card-title">Les Douze Imams</div>
+      <div class="card-desc">Biographies d&#233;taill&#233;es des 12 Imams : naissance, martyre, lieu de s&#233;pulture et r&#244;le historique.</div>
+      <div class="card-footer"><span class="card-meta">12 biographies &middot; Fiches d&#233;taill&#233;es</span><span class="card-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg></span></div>
+    </div>
     <!-- Invocations -->
     <div class="card" id="card-4" data-theme="invocations" data-keywords="invocations dua ziyara priere sahifa sajjadiyya ahl bayt">
       <div class="card-icon"><svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="4" y="14" width="4" height="16" rx="1" fill="#c9a84c" fill-opacity="0.6" stroke="#c9a84c" stroke-width="0.8"/><path d="M4 14 Q6 10 8 14Z" fill="#c9a84c"/><rect x="28" y="14" width="4" height="16" rx="1" fill="#c9a84c" fill-opacity="0.6" stroke="#c9a84c" stroke-width="0.8"/><path d="M28 14 Q30 10 32 14Z" fill="#c9a84c"/><rect x="8" y="20" width="20" height="10" rx="1" fill="#c9a84c" fill-opacity="0.25" stroke="#c9a84c" stroke-width="1.2"/><path d="M10 20 Q18 8 26 20Z" fill="#c9a84c" fill-opacity="0.5" stroke="#c9a84c" stroke-width="1.2"/><path d="M15 30 L15 24 Q18 21 21 24 L21 30Z" fill="#c9a84c" fill-opacity="0.5" stroke="#c9a84c" stroke-width="0.8"/><line x1="3" y1="30" x2="33" y2="30" stroke="#c9a84c" stroke-width="1" opacity="0.4"/></svg></div>
@@ -417,6 +425,7 @@ body,body *{transition:background-color 0.3s,color 0.3s,border-color 0.3s}
 <div class="iframe-wrap" id="frame9"><div class="loader" id="loader9"><div class="loader-dots"><div class="loader-dot"></div><div class="loader-dot"></div><div class="loader-dot"></div></div><div class="loader-text">Chargement&#8230;</div></div><iframe id="iframe9"></iframe></div>
 <div class="iframe-wrap" id="frame10"><div class="loader" id="loader10"><div class="loader-dots"><div class="loader-dot"></div><div class="loader-dot"></div><div class="loader-dot"></div></div><div class="loader-text">Chargement&#8230;</div></div><iframe id="iframe10"></iframe></div>
 <div class="iframe-wrap" id="frame11"><div class="loader" id="loader11"><div class="loader-dots"><div class="loader-dot"></div><div class="loader-dot"></div><div class="loader-dot"></div></div><div class="loader-text">Chargement&#8230;</div></div><iframe id="iframe11"></iframe></div>
+<div class="iframe-wrap" id="frame12"><div class="loader" id="loader12"><div class="loader-dots"><div class="loader-dot"></div><div class="loader-dot"></div><div class="loader-dot"></div></div><div class="loader-text">Chargement&#8230;</div></div><iframe id="iframe12"></iframe></div>
 
 <script>
 (function(){
@@ -432,7 +441,8 @@ body,body *{transition:background-color 0.3s,color 0.3s,border-color 0.3s}
     "coran-lecture.html",
     "usul-al-din.html",
     "hadith-kisa.html",
-    "verset-apprentissage.html"
+    "verset-apprentissage.html",
+    "douze-imams.html"
   ];
   var N = MODULES.length;
   var loaded = new Array(N).fill(false);
@@ -553,7 +563,7 @@ body,body *{transition:background-color 0.3s,color 0.3s,border-color 0.3s}
   });
 
   /* ── Cartes sur la page d'accueil → ouvrent le module directement ── */
-  var cardModules = {0:0, 1:1, 2:2, 3:3, 4:4, 5:5, 6:6, 7:7, 8:8, 9:9, 10:10, 11:11};
+  var cardModules = {0:0, 1:1, 2:2, 3:3, 4:4, 5:5, 6:6, 7:7, 8:8, 9:9, 10:10, 11:11, 12:12};
   Object.keys(cardModules).forEach(function(cardId){
     var el = document.getElementById('card-' + cardId);
     if (el) el.addEventListener('click', function(){ openModule(cardModules[cardId]); });
