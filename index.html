@@ -25,12 +25,12 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
 
 /* === NAV — sticky en haut === */
 .top-nav{position:sticky;top:0;z-index:200;display:flex;align-items:center;flex-wrap:wrap;padding:0 16px;min-height:54px;background:rgba(7,12,24,0.96);border-bottom:1px solid rgba(201,168,76,0.18);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
-.nav-logo{font-family:'Cinzel',serif;font-size:15px;font-weight:600;color:#c9a84c;letter-spacing:.05em;cursor:pointer;transition:opacity .2s;user-select:none;white-space:nowrap;flex-shrink:0;padding:14px 0}
+.nav-logo{font-family:'Cinzel',serif;font-size:17px;font-weight:600;color:#c9a84c;letter-spacing:.05em;cursor:pointer;transition:opacity .2s;user-select:none;white-space:nowrap;flex-shrink:0;padding:14px 0}
 .nav-logo:hover{opacity:.75}
 .nav-spacer{flex:1}
 .nav-tabs{display:flex;align-items:center;gap:2px;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;padding:8px 0}
 .nav-tabs::-webkit-scrollbar{display:none}
-.nav-tab{background:none;border:none;cursor:pointer;padding:6px 10px;border-radius:8px;font-family:'Plus Jakarta Sans',sans-serif;font-size:12.5px;font-weight:500;color:#9aa3b8;transition:all .2s;white-space:nowrap;flex-shrink:0}
+.nav-tab{background:none;border:none;cursor:pointer;padding:7px 12px;border-radius:8px;font-family:'Plus Jakarta Sans',sans-serif;font-size:14px;font-weight:500;color:#9aa3b8;transition:all .2s;white-space:nowrap;flex-shrink:0}
 .nav-tab:hover{color:#e8e2d0;background:rgba(201,168,76,0.08)}
 .nav-tab.active{color:#c9a84c;background:rgba(201,168,76,0.12);font-weight:600}
 
@@ -40,22 +40,22 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
 .home-ornament{width:1px;height:40px;background:linear-gradient(to bottom,transparent,#c9a84c,transparent);margin:0 auto 20px}
 .home-title{font-family:'Cinzel',serif;font-size:clamp(20px,5vw,34px);font-weight:700;color:#e8e2d0;line-height:1.25;margin-bottom:8px;letter-spacing:.02em}
 .home-title span{color:#c9a84c}
-.home-subtitle{font-size:12px;color:#5a6480;letter-spacing:.09em;text-transform:uppercase}
+.home-subtitle{font-size:14px;color:#5a6480;letter-spacing:.09em;text-transform:uppercase}
 
 /* === SEARCH & FILTERS === */
 .search-section{width:100%;max-width:1400px;margin-bottom:24px}
 .search-bar{display:flex;align-items:center;gap:10px;background:rgba(19,29,53,0.6);border:1px solid rgba(201,168,76,0.15);border-radius:12px;padding:10px 16px;transition:border-color .2s}
 .search-bar:focus-within{border-color:rgba(201,168,76,0.5)}
 .search-icon{width:18px;height:18px;color:#5a6480;flex-shrink:0}
-.search-input{flex:1;background:none;border:none;color:#e8e2d0;font-family:inherit;font-size:14px;outline:none}
+.search-input{flex:1;background:none;border:none;color:#e8e2d0;font-family:inherit;font-size:16px;outline:none}
 .search-input::placeholder{color:#3a4560}
 .filter-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
-.filter-tag{background:rgba(19,29,53,0.5);border:1px solid rgba(201,168,76,0.12);color:#6a7590;padding:5px 14px;border-radius:20px;font-family:inherit;font-size:12px;cursor:pointer;transition:all .2s;white-space:nowrap}
+.filter-tag{background:rgba(19,29,53,0.5);border:1px solid rgba(201,168,76,0.12);color:#6a7590;padding:6px 16px;border-radius:20px;font-family:inherit;font-size:14px;cursor:pointer;transition:all .2s;white-space:nowrap}
 .filter-tag:hover{border-color:rgba(201,168,76,0.3);color:#9aa3b8}
 .filter-tag.active{background:rgba(201,168,76,0.15);border-color:rgba(201,168,76,0.4);color:#c9a84c;font-weight:600}
-.search-count{font-size:11px;color:#3a4560;margin-top:8px}
+.search-count{font-size:13px;color:#3a4560;margin-top:8px}
 .card.search-hidden{display:none}
-.no-results{text-align:center;padding:40px 20px;color:#3a4560;font-size:14px;grid-column:1/-1}
+.no-results{text-align:center;padding:40px 20px;color:#3a4560;font-size:16px;grid-column:1/-1}
 
 /* === CARDS === */
 .cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:18px;width:100%;max-width:1400px}
@@ -65,15 +65,15 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
 .card:hover::before{opacity:1}
 .card.soon{opacity:.65}
 .card-icon{width:42px;height:42px;border-radius:11px;display:flex;align-items:center;justify-content:center;margin-bottom:12px;font-size:19px;background:rgba(201,168,76,0.1);border:1px solid rgba(201,168,76,0.2)}
-.card-tag{font-size:9.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#c9a84c;margin-bottom:5px}
-.card-title{font-family:'Cinzel',serif;font-size:15px;font-weight:600;color:#e8e2d0;line-height:1.35;margin-bottom:7px}
-.card-desc{font-size:12.5px;color:#6a7590;line-height:1.55;margin-bottom:14px}
+.card-tag{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#c9a84c;margin-bottom:5px}
+.card-title{font-family:'Cinzel',serif;font-size:18px;font-weight:600;color:#e8e2d0;line-height:1.35;margin-bottom:7px}
+.card-desc{font-size:14.5px;color:#6a7590;line-height:1.6;margin-bottom:14px}
 .card-footer{display:flex;align-items:center;justify-content:space-between;padding-top:12px;border-top:1px solid rgba(201,168,76,0.1)}
-.card-meta{font-size:10.5px;color:#3a4560}
+.card-meta{font-size:12.5px;color:#3a4560}
 .card-arrow{width:26px;height:26px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:rgba(201,168,76,0.1);border:1px solid rgba(201,168,76,0.2);color:#c9a84c;transition:all .2s;flex-shrink:0}
 .card:hover .card-arrow{background:#c9a84c;color:#070c18;border-color:#c9a84c}
 .card-arrow svg{width:11px;height:11px}
-.soon-badge{font-size:9px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#5a6480;background:rgba(90,100,128,0.12);border:1px solid rgba(90,100,128,0.2);padding:3px 8px;border-radius:10px}
+.soon-badge{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#5a6480;background:rgba(90,100,128,0.12);border:1px solid rgba(90,100,128,0.2);padding:3px 8px;border-radius:10px}
 
 /* === IFRAMES — position:fixed, couvrent TOUT sous la nav === */
 .iframe-wrap{
@@ -91,16 +91,16 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
 .loader-dot{width:8px;height:8px;border-radius:50%;background:#c9a84c;animation:ldpulse 1.2s ease-in-out infinite}
 .loader-dots .loader-dot:nth-child(2){animation-delay:.2s}
 .loader-dots .loader-dot:nth-child(3){animation-delay:.4s}
-.loader-text{font-size:12px;color:#5a6480}
+.loader-text{font-size:14px;color:#5a6480}
 @keyframes ldpulse{0%,100%{opacity:.2;transform:scale(.8)}50%{opacity:1;transform:scale(1)}}
 
 /* === SUBMENUS === */
 .submenu{width:100%;max-width:1400px;animation:fadeUp .3s ease}
 @keyframes fadeUp{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
 .submenu-header{display:flex;align-items:center;gap:14px;margin-bottom:22px}
-.submenu-back{background:none;border:1px solid rgba(201,168,76,0.3);color:#c9a84c;padding:7px 14px;border-radius:8px;cursor:pointer;font-family:inherit;font-size:13px;transition:all .2s}
+.submenu-back{background:none;border:1px solid rgba(201,168,76,0.3);color:#c9a84c;padding:8px 16px;border-radius:8px;cursor:pointer;font-family:inherit;font-size:15px;transition:all .2s}
 .submenu-back:hover{background:rgba(201,168,76,0.12)}
-.submenu-title{font-family:'Cinzel',serif;font-size:18px;font-weight:700;color:#c9a84c}
+.submenu-title{font-family:'Cinzel',serif;font-size:22px;font-weight:700;color:#c9a84c}
 .submenu-cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:18px}
 
 /* === MOBILE === */
@@ -109,14 +109,14 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
   .nav-logo{font-size:13px;padding:10px 0}
   .nav-spacer{display:none}
   .nav-tabs{width:100%;border-top:1px solid rgba(201,168,76,0.08);padding:6px 0}
-  .nav-tab{padding:5px 8px;font-size:11px}
+  .nav-tab{padding:6px 10px;font-size:12px}
   .home{padding:28px 12px 70px}
   .home-header{margin-bottom:28px}
   .cards{grid-template-columns:1fr 1fr;gap:10px}
   .card{padding:16px}
   .card-icon{width:36px;height:36px;font-size:16px;margin-bottom:10px}
-  .card-title{font-size:13px}
-  .card-desc{font-size:11.5px}
+  .card-title{font-size:15px}
+  .card-desc{font-size:13px}
   .search-bar{padding:8px 12px}
   .search-input{font-size:13px}
   .filter-tags{gap:4px}
