@@ -113,14 +113,13 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
   <div class="nav-spacer"></div>
   <div class="nav-tabs">
     <button class="nav-tab active" id="tab-home">Accueil</button>
-    <button class="nav-tab" id="tab-0">Le Chiisme R&#233;pond</button>
+    <button class="nav-tab" id="tab-chiisme">Le Chiisme</button>
     <button class="nav-tab" id="tab-1">Chronologie</button>
-    <button class="nav-tab" id="tab-2">Verset du Tr&#244;ne</button>
-    <button class="nav-tab" id="tab-3">Arbre G&#233;n&#233;alogique</button>
+    <button class="nav-tab" id="tab-coran">Le Coran</button>
+    <button class="nav-tab" id="tab-3">14 Infaillibles</button>
     <button class="nav-tab" id="tab-4">Invocations</button>
     <button class="nav-tab" id="tab-5">Biblioth&#232;que</button>
     <button class="nav-tab" id="tab-6">Vid&#233;os</button>
-    <button class="nav-tab" id="tab-7">Connaissance &amp; Raison</button>
   </div>
 </nav>
 
@@ -256,27 +255,41 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
   var N = MODULES.length;
   var loaded = new Array(N).fill(false);
 
-  function tabs(active) {
-    document.getElementById('tab-home').classList.toggle('active', active === -1);
-    for (var i = 0; i < N; i++) {
-      var t = document.getElementById('tab-' + i);
-      if (t) t.classList.toggle('active', i === active);
-    }
+  /* ── Réinitialiser tous les onglets ── */
+  function clearTabs() {
+    document.querySelectorAll('.nav-tab').forEach(function(t){ t.classList.remove('active'); });
   }
 
-  function home() {
-    document.getElementById('homeScreen').style.display = '';
+  /* ── Fermer tous les iframes ── */
+  function hideAllFrames() {
     for (var i = 0; i < N; i++) document.getElementById('frame' + i).classList.remove('active');
-    tabs(-1);
     document.body.classList.remove('iframe-active');
+  }
+
+  /* ── Fermer les sous-menus et réafficher les cartes ── */
+  function closeAllSubMenus() {
+    document.querySelectorAll('.submenu').forEach(function(s){ s.style.display = 'none'; });
+    var g = document.getElementById('cardsGrid');
+    if (g) g.style.display = 'grid';
+  }
+
+  /* ── ACCUEIL ── */
+  function home() {
+    hideAllFrames();
+    closeAllSubMenus();
+    document.getElementById('homeScreen').style.display = '';
+    clearTabs();
+    document.getElementById('tab-home').classList.add('active');
     window.scrollTo(0, 0);
   }
 
-  function open_(idx) {
+  /* ── Ouvrir un module dans un iframe ── */
+  function openModule(idx) {
     document.getElementById('homeScreen').style.display = 'none';
-    for (var i = 0; i < N; i++) document.getElementById('frame' + i).classList.toggle('active', i === idx);
-    tabs(idx);
+    hideAllFrames();
+    document.getElementById('frame' + idx).classList.add('active');
     document.body.classList.add('iframe-active');
+    clearTabs();
     if (!loaded[idx]) {
       loaded[idx] = true;
       var iframe = document.getElementById('iframe' + idx);
@@ -288,26 +301,48 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
     }
   }
 
+  /* ── Ouvrir un sous-menu thématique (sur la page d'accueil) ── */
+  window.openSubMenu = function(id) {
+    hideAllFrames();
+    document.getElementById('homeScreen').style.display = '';
+    document.getElementById('cardsGrid').style.display = 'none';
+    document.querySelectorAll('.submenu').forEach(function(s){ s.style.display = 'none'; });
+    document.getElementById('submenu-' + id).style.display = 'block';
+    clearTabs();
+    var tabEl = document.getElementById('tab-' + id);
+    if (tabEl) tabEl.classList.add('active');
+    window.scrollTo(0, 0);
+  };
+
+  /* ── Fermer un sous-menu (bouton Retour) ── */
+  window.closeSubMenu = function() {
+    home();
+  };
+
+  /* ── Câblage : Logo + Accueil ── */
   document.getElementById('logoBtn').addEventListener('click', home);
   document.getElementById('tab-home').addEventListener('click', home);
-  for (var i = 0; i < N; i++) {
-    (function(idx) {
-      var tabEl = document.getElementById('tab-' + idx);
-      var cardEl = document.getElementById('card-' + idx);
-      if (tabEl) tabEl.addEventListener('click', function() { open_(idx); });
-      if (cardEl) cardEl.addEventListener('click', function() { open_(idx); });
-    })(i);
-  }
 
-  window.openSubMenu = function(id) {
-    document.getElementById('cardsGrid').style.display = 'none';
-    document.querySelectorAll('.submenu').forEach(function(s) { s.style.display = 'none'; });
-    document.getElementById('submenu-' + id).style.display = 'block';
-  };
-  window.closeSubMenu = function() {
-    document.querySelectorAll('.submenu').forEach(function(s) { s.style.display = 'none'; });
-    document.getElementById('cardsGrid').style.display = 'grid';
-  };
+  /* ── Onglets thématiques → ouvrent le sous-menu ── */
+  document.getElementById('tab-chiisme').addEventListener('click', function(){ openSubMenu('chiisme'); });
+  document.getElementById('tab-coran').addEventListener('click', function(){ openSubMenu('coran'); });
+
+  /* ── Onglets directs → ouvrent le module ── */
+  var directTabs = {1:1, 3:3, 4:4, 5:5, 6:6};
+  Object.keys(directTabs).forEach(function(tabId){
+    var el = document.getElementById('tab-' + tabId);
+    if (el) el.addEventListener('click', function(){
+      openModule(directTabs[tabId]);
+      el.classList.add('active');
+    });
+  });
+
+  /* ── Cartes sur la page d'accueil → ouvrent le module directement ── */
+  var cardModules = {0:0, 1:1, 2:2, 3:3, 4:4, 5:5, 6:6, 7:7};
+  Object.keys(cardModules).forEach(function(cardId){
+    var el = document.getElementById('card-' + cardId);
+    if (el) el.addEventListener('click', function(){ openModule(cardModules[cardId]); });
+  });
 })();
 </script>
 </body>
