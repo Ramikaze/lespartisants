@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>آية الكرسي — Verset du Trône</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Scheherazade+New:wght@300;400;700&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#07091a;--surface:#0f1326;--surface2:#161c38;--surface3:#1d2442;
+  --gold:#c9a84c;--gold-l:#e8c96a;--gold-dim:rgba(201,168,76,0.15);
+  --text:#e2d5b8;--text-dim:#7a6a4a;--text-muted:#4a5270;
+  --border:rgba(201,168,76,0.12);--border-a:rgba(201,168,76,0.35);
+  --success:#72c492;--danger:#e07575;
+}
+html,body{height:100%;overflow:hidden;background:var(--bg);color:var(--text);font-family:'EB Garamond',Georgia,serif}
+body::before{content:'';position:fixed;inset:0;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100'%3E%3Cg fill='none' stroke='rgba(201,168,76,0.03)' stroke-width='0.6'%3E%3Cpolygon points='50,8 63,28 85,28 70,43 76,63 50,51 24,63 30,43 15,28 37,28'/%3E%3C/g%3E%3C/svg%3E");
+  pointer-events:none;z-index:0}
+
+/* ── LAYOUT ── */
+#app{height:100%;display:flex;flex-direction:column;position:relative;z-index:1}
+.main{flex:1;overflow-y:auto;overflow-x:hidden;padding:32px 20px 20px;-webkit-overflow-scrolling:touch}
+
+/* ── HEADER ── */
+.header{text-align:center;margin-bottom:28px}
+.h-arabic{font-family:'Scheherazade New',serif;font-size:3rem;color:var(--gold-l);direction:rtl;line-height:1.3;text-shadow:0 0 40px rgba(201,168,76,0.3);margin-bottom:6px}
+.ornament{display:flex;align-items:center;justify-content:center;gap:12px;margin:8px 0}
+.orn-line{height:1px;width:70px;background:linear-gradient(to right,transparent,var(--gold))}
+.orn-line.r{background:linear-gradient(to left,transparent,var(--gold))}
+.orn-gem{width:6px;height:6px;background:var(--gold);transform:rotate(45deg);box-shadow:0 0 6px var(--gold)}
+.h-sub{font-size:.78rem;color:var(--text-muted);letter-spacing:.16em;text-transform:uppercase}
+
+/* ── VERSE BLOCKS ── */
+.verse-block{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:20px 24px;margin-bottom:20px;position:relative}
+.verse-block.v255{border-color:rgba(201,168,76,0.2)}
+.verse-label{display:flex;align-items:center;gap:10px;margin-bottom:16px}
+.verse-num{font-family:'Cinzel',serif;font-size:.7rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);opacity:.7}
+.verse-label-line{flex:1;height:1px;background:var(--border)}
+
+/* ── ARABIC TEXT ── */
+.verse-text{
+  direction:rtl;text-align:right;
+  font-family:'Scheherazade New',serif;font-weight:400;font-size:1.9rem;
+  color:var(--gold-l);line-height:2.2;
+  text-shadow:0 0 20px rgba(232,201,106,0.12);
+  padding:8px 0;
+}
+.verse-text .w{
+  display:inline;cursor:pointer;
+  padding:2px 4px;border-radius:4px;
+  transition:background .15s,color .15s;
+  position:relative;
+}
+.verse-text .w:hover,.verse-text .w.active{
+  background:rgba(201,168,76,0.18);color:#fff;
+}
+.verse-text .w.playing{
+  background:rgba(201,168,76,0.28);
+  color:#fff;
+  text-shadow:0 0 16px rgba(232,201,106,0.8), 0 0 4px rgba(232,201,106,0.4);
+  box-shadow:0 0 0 2px rgba(201,168,76,0.45), 0 0 14px rgba(201,168,76,0.2);
+  border-radius:5px;
+  transform:scale(1.06);
+  display:inline-block;
+  position:relative;
+  z-index:2;
+  transition:transform .12s, box-shadow .12s;
+}
+.stop-mark{color:var(--gold);opacity:.5;font-size:1.1rem;margin:0 2px}
+.verse-end{color:var(--gold);opacity:.6;font-size:1.3rem;margin-right:4px}
+
+/* ── TRANSLATION TOOLTIP ── */
+#tooltip{
+  position:fixed;z-index:500;
+  background:var(--surface3);border:1px solid var(--border-a);
+  border-radius:12px;padding:12px 16px;
+  max-width:280px;min-width:180px;
+  pointer-events:none;opacity:0;
+  transition:opacity .18s;
+  box-shadow:0 8px 32px rgba(0,0,0,0.5);
+}
+#tooltip.show{opacity:1;pointer-events:all}
+.tt-arabic{font-family:'Scheherazade New',serif;font-size:1.5rem;color:var(--gold-l);direction:rtl;text-align:center;margin-bottom:6px}
+.tt-trans{font-size:.78rem;color:var(--gold);letter-spacing:.06em;text-align:center;margin-bottom:4px;font-style:italic}
+.tt-fr{font-size:.95rem;color:var(--text);text-align:center;margin-bottom:8px;line-height:1.5}
+.tt-gram{font-size:.7rem;color:var(--text-dim);text-align:center;line-height:1.4}
+.tt-btns{display:flex;justify-content:center;margin-top:8px}
+.tt-audio{
+  background:var(--gold-dim);border:1px solid var(--border-a);
+  color:var(--gold-l);border-radius:50%;
+  width:32px;height:32px;cursor:pointer;
+  display:flex;align-items:center;justify-content:center;
+  transition:background .2s;
+}
+.tt-audio:hover{background:rgba(201,168,76,0.3)}
+.tt-audio.playing{box-shadow:0 0 10px rgba(201,168,76,0.4);animation:pulse .7s ease infinite alternate}
+.verse-translation{margin-top:14px;padding:14px 16px;background:rgba(201,168,76,0.06);border-left:3px solid rgba(201,168,76,0.35);border-radius:0 10px 10px 0;font-size:1rem;line-height:1.75;color:#c9c0a8;font-style:italic;}
+@keyframes pulse{from{opacity:.7}to{opacity:1}}
+
+/* ── AUDIO BAR ── */
+.audio-bar{
+  flex-shrink:0;
+  background:linear-gradient(to top,var(--bg) 75%,rgba(7,9,26,.95));
+  border-top:1px solid var(--border-a);
+  padding:10px 16px 10px;
+}
+.ab-title{font-family:'Cinzel',serif;font-size:.65rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);opacity:.6;margin-bottom:8px;text-align:center}
+.ab-rows{display:flex;flex-direction:column;gap:7px}
+.ab-row{display:flex;align-items:center;gap:8px}
+.ab-vtag{font-family:'Cinzel',serif;font-size:.65rem;font-weight:700;color:var(--gold);min-width:30px;text-align:right;flex-shrink:0}
+/* skip / play buttons */
+.ab-btn{
+  width:30px;height:30px;border-radius:50%;
+  background:var(--gold-dim);border:1px solid var(--border-a);
+  color:var(--gold-l);cursor:pointer;
+  display:flex;align-items:center;justify-content:center;
+  transition:all .2s;flex-shrink:0;
+}
+.ab-btn:hover{background:rgba(201,168,76,0.3)}
+.ab-btn.active{background:rgba(201,168,76,0.25);box-shadow:0 0 12px rgba(201,168,76,0.25)}
+.ab-play{width:34px;height:34px}
+/* progress */
+.ab-prog{flex:1;height:3px;background:var(--surface2);border-radius:2px;cursor:pointer;min-width:0;position:relative}
+.ab-fill{height:100%;background:linear-gradient(to right,var(--gold),var(--gold-l));border-radius:2px;width:0%;pointer-events:none;transition:width .25s linear}
+.ab-time{font-size:.65rem;color:var(--text-muted);white-space:nowrap;flex-shrink:0;min-width:50px;text-align:right}
+
+/* SVG icons */
+.icon-skip-back{display:block}
+.icon-skip-fwd{display:block}
+
+@media(max-width:600px){
+  .main{padding:20px 12px 12px}
+  .h-arabic{font-size:2.2rem}
+  .verse-text{font-size:1.5rem;line-height:2}
+  .verse-block{padding:14px 14px}
+}
+</style>
+</head>
+<body>
+<div id="app">
+  <div class="main" id="main">
+
+    <div class="header">
+      <div class="h-arabic">آيَةُ الْكُرْسِيّ</div>
+      <div class="ornament">
+        <div class="orn-line"></div>
+        <div class="orn-gem"></div>
+        <div class="orn-line r"></div>
+      </div>
+      <div class="h-sub">Le Verset du Trône · Sourate Al-Baqara · Versets 255–257</div>
+    </div>
+
+    <!-- Versets rendus dynamiquement -->
+    <div id="verses"></div>
+
+  </div>
+
+  <!-- AUDIO BAR -->
+  <div class="audio-bar">
+    <div class="ab-title">Écouter les versets</div>
+    <div class="ab-rows" id="ab-rows"></div>
+  </div>
+</div>
+
+<!-- TOOLTIP -->
+<div id="tooltip">
+  <div class="tt-arabic" id="tt-ar"></div>
+  <div class="tt-trans"  id="tt-tr"></div>
+  <div class="tt-fr"     id="tt-fr"></div>
+  <div class="tt-gram"   id="tt-gr"></div>
+  <div class="tt-btns">
+    <button class="tt-audio" id="tt-audio-btn" onclick="playWord(currentIdx)">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+    </button>
+  </div>
+</div>
+
+<script>
+/* ════════════════════════════════════════════
+   DATA — Mots (v, p, a, t, f, g)
+════════════════════════════════════════════ */
+const W=[
+/* V.255 */
+{v:255,p:1, a:"اللَّهُ",       t:"Allāhu",         f:"Allah (Dieu)",                        g:"Nom propre divin — sujet"},
+{v:255,p:2, a:"لَا",           t:"lā",             f:"il n'y a pas",                        g:"Particule de négation absolue"},
+{v:255,p:3, a:"إِلَٰهَ",       t:"ilāha",          f:"de divinité",                         g:"Nom (accusatif après lā nāfiya)"},
+{v:255,p:4, a:"إِلَّا",        t:"illā",           f:"sauf / excepté",                      g:"Particule d'exception"},
+{v:255,p:5, a:"هُوَ",          t:"Huwa",           f:"Lui",                                 g:"Pronom personnel 3ème pers. masc."},
+{v:255,p:6, a:"الْحَيُّ",      t:"Al-Ḥayyu",       f:"le Vivant",                           g:"Nom divin — al-Ḥayy"},
+{v:255,p:7, a:"الْقَيُّومُ",   t:"Al-Qayyūmu",     f:"le Subsistant par Soi-même",          g:"Nom divin — al-Qayyūm"},
+{v:255,p:8, a:"لَا",           t:"lā",             f:"ne… pas",                             g:"Particule de négation verbale"},
+{v:255,p:9, a:"تَأْخُذُهُ",    t:"ta'khudhuhu",    f:"ne Le saisit / ne L'affecte",         g:"Verbe présent + pronom objet"},
+{v:255,p:10,a:"سِنَةٌ",        t:"sinatun",        f:"assoupissement / somnolence légère",  g:"Nom (sujet du verbe)"},
+{v:255,p:11,a:"وَلَا",         t:"wa-lā",          f:"et ni / et ne… pas",                  g:"Conjonction + négation"},
+{v:255,p:12,a:"نَوْمٌ",        t:"nawmun",         f:"sommeil (profond)",                   g:"Nom coordonné au précédent"},
+{v:255,p:13,a:"لَّهُ",         t:"Lahu",           f:"À Lui appartient",                    g:"Préposition + pronom possessif"},
+{v:255,p:14,a:"مَا",           t:"mā",             f:"tout ce qui",                         g:"Pronom relatif indéfini"},
+{v:255,p:15,a:"فِي",           t:"fī",             f:"dans / en",                           g:"Préposition"},
+{v:255,p:16,a:"السَّمَاوَاتِ", t:"as-samāwāti",    f:"les cieux",                           g:"Nom (pluriel féminin, génitif)"},
+{v:255,p:17,a:"وَمَا",         t:"wa-mā",          f:"et tout ce qui",                      g:"Conjonction + pronom relatif"},
+{v:255,p:18,a:"فِي",           t:"fī",             f:"dans / sur",                          g:"Préposition"},
+{v:255,p:19,a:"الْأَرْضِ",     t:"al-arḍi",        f:"la terre",                            g:"Nom (génitif)"},
+{v:255,p:20,a:"مَن",           t:"man",            f:"qui",                                 g:"Pronom interrogatif"},
+{v:255,p:21,a:"ذَا",           t:"dhā",            f:"est donc celui",                      g:"Particule de renforcement"},
+{v:255,p:22,a:"الَّذِي",       t:"alladhī",        f:"qui",                                 g:"Pronom relatif masc. sing."},
+{v:255,p:23,a:"يَشْفَعُ",      t:"yashfa'u",       f:"intercède",                           g:"Verbe présent, 3ème pers. sing."},
+{v:255,p:24,a:"عِندَهُ",       t:"ʿindahu",        f:"auprès de Lui",                       g:"Adverbe de lieu + pronom"},
+{v:255,p:25,a:"إِلَّا",        t:"illā",           f:"sauf / si ce n'est",                  g:"Particule d'exception"},
+{v:255,p:26,a:"بِإِذْنِهِ",    t:"bi-'idhnihi",    f:"avec Sa permission",                  g:"Préposition + nom + pronom possessif"},
+{v:255,p:27,a:"يَعْلَمُ",      t:"yaʿlamu",        f:"Il connaît / Il sait",                g:"Verbe présent, 3ème pers. sing."},
+{v:255,p:28,a:"مَا",           t:"mā",             f:"ce qui / ce que",                     g:"Pronom relatif"},
+{v:255,p:29,a:"بَيْنَ",        t:"bayna",          f:"entre / devant",                      g:"Préposition"},
+{v:255,p:30,a:"أَيْدِيهِمْ",   t:"aydīhim",        f:"leurs mains (ce qui est devant eux)", g:"Nom + pronom possessif pluriel"},
+{v:255,p:31,a:"وَمَا",         t:"wa-mā",          f:"et ce qui",                           g:"Conjonction + pronom relatif"},
+{v:255,p:32,a:"خَلْفَهُمْ",    t:"khalfahum",      f:"derrière eux",                        g:"Adverbe + pronom possessif"},
+{v:255,p:33,a:"وَلَا",         t:"wa-lā",          f:"et ils ne…",                          g:"Conjonction + négation"},
+{v:255,p:34,a:"يُحِيطُونَ",    t:"yuḥīṭūna",       f:"n'embrassent / n'encompassent",       g:"Verbe présent, pluriel"},
+{v:255,p:35,a:"بِشَيْءٍ",     t:"bi-shay'in",      f:"aucune chose / quoi que ce soit",     g:"Préposition + nom indéfini"},
+{v:255,p:36,a:"مِّنْ",         t:"min",            f:"de / parmi",                          g:"Préposition partitive"},
+{v:255,p:37,a:"عِلْمِهِ",      t:"ʿilmihi",        f:"Sa science / Son savoir",             g:"Nom + pronom possessif génitif"},
+{v:255,p:38,a:"إِلَّا",        t:"illā",           f:"sauf / excepté",                      g:"Particule d'exception"},
+{v:255,p:39,a:"بِمَا",         t:"bi-mā",          f:"de ce que / selon ce que",            g:"Préposition + pronom relatif"},
+{v:255,p:40,a:"شَاءَ",         t:"shāʾa",          f:"Il a voulu / Il a décidé",            g:"Verbe passé, 3ème pers. sing."},
+{v:255,p:41,a:"وَسِعَ",        t:"wasiʿa",         f:"englobe / s'étend sur",               g:"Verbe passé, 3ème pers. sing."},
+{v:255,p:42,a:"كُرْسِيُّهُ",   t:"kursiyyuhu",     f:"Son Trône / Sa Chaise",               g:"Nom + pronom possessif sujet"},
+{v:255,p:43,a:"السَّمَاوَاتِ", t:"as-samāwāti",    f:"les cieux",                           g:"Nom pluriel, accusatif"},
+{v:255,p:44,a:"وَالْأَرْضَ",   t:"wa-l-arḍa",      f:"et la terre",                         g:"Conjonction + nom accusatif"},
+{v:255,p:45,a:"وَلَا",         t:"wa-lā",          f:"et ne… pas",                          g:"Conjonction + négation"},
+{v:255,p:46,a:"يَئُودُهُ",     t:"yaʾūduhu",       f:"ne Le fatigue / ne L'accable",        g:"Verbe + pronom objet"},
+{v:255,p:47,a:"حِفْظُهُمَا",   t:"ḥifẓuhumā",      f:"leur garde / leur préservation",      g:"Nom + pronom duel sujet"},
+{v:255,p:48,a:"وَهُوَ",        t:"wa-Huwa",        f:"et Lui est",                          g:"Conjonction + pronom"},
+{v:255,p:49,a:"الْعَلِيُّ",    t:"Al-ʿAliyyu",     f:"le Très-Haut / l'Élevé",             g:"Nom divin — al-ʿAlī"},
+{v:255,p:50,a:"الْعَظِيمُ",    t:"Al-ʿAẓīmu",      f:"le Très-Grand / l'Immense",          g:"Nom divin — al-ʿAẓīm"},
+/* V.256 */
+{v:256,p:1, a:"لَا",           t:"lā",             f:"point de / nulle",                    g:"Particule de négation catégorique"},
+{v:256,p:2, a:"إِكْرَاهَ",     t:"ikrāha",         f:"contrainte / coercition",             g:"Nom accusatif après lā nāfiya"},
+{v:256,p:3, a:"فِي",           t:"fī",             f:"dans / en",                           g:"Préposition"},
+{v:256,p:4, a:"الدِّينِ",      t:"ad-dīni",        f:"la religion",                         g:"Nom génitif"},
+{v:256,p:5, a:"قَد",           t:"qad",            f:"certes / en vérité",                  g:"Particule d'affirmation"},
+{v:256,p:6, a:"تَّبَيَّنَ",    t:"tabayyana",      f:"est devenu clair / s'est manifesté",  g:"Verbe passé, 3ème pers. sing."},
+{v:256,p:7, a:"الرُّشْدُ",     t:"ar-rushdu",      f:"la bonne voie / la droiture",         g:"Nom sujet"},
+{v:256,p:8, a:"مِنَ",          t:"mina",           f:"de / d'avec",                         g:"Préposition"},
+{v:256,p:9, a:"الْغَيِّ",      t:"al-ghayyi",      f:"l'égarement / la perdition",          g:"Nom génitif"},
+{v:256,p:10,a:"فَمَن",         t:"fa-man",         f:"alors quiconque",                     g:"Conjonction + pronom relatif"},
+{v:256,p:11,a:"يَكْفُرْ",      t:"yakfur",         f:"renie / refuse",                      g:"Verbe apocopé, 3ème pers. sing."},
+{v:256,p:12,a:"بِالطَّاغُوتِ", t:"biṭ-ṭāghūti",   f:"la Tāghūt (idole / tyrannie)",        g:"Préposition + nom"},
+{v:256,p:13,a:"وَيُؤْمِن",     t:"wa-yu'min",      f:"et croit",                            g:"Conjonction + verbe présent"},
+{v:256,p:14,a:"بِاللَّهِ",     t:"billāhi",        f:"en Allah",                            g:"Préposition + nom divin"},
+{v:256,p:15,a:"فَقَدِ",        t:"fa-qadi",        f:"alors certes il a",                   g:"Conjonction + particule d'accompli"},
+{v:256,p:16,a:"اسْتَمْسَكَ",   t:"istamsaka",      f:"s'est agrippé / s'est accroché",      g:"Verbe passé, 3ème pers. sing."},
+{v:256,p:17,a:"بِالْعُرْوَةِ", t:"bil-ʿurwati",   f:"à la poignée / à l'anse",             g:"Préposition + nom"},
+{v:256,p:18,a:"الْوُثْقَىٰ",   t:"al-wuthqā",     f:"la plus solide / indestructible",     g:"Adjectif superlatif féminin"},
+{v:256,p:19,a:"لَا",           t:"lā",             f:"sans / point de",                     g:"Particule de négation"},
+{v:256,p:20,a:"انفِصَامَ",     t:"infiṣāma",       f:"rupture / brisure",                   g:"Nom verbal"},
+{v:256,p:21,a:"لَهَا",         t:"lahā",           f:"pour elle",                           g:"Préposition + pronom féminin"},
+{v:256,p:22,a:"وَاللَّهُ",     t:"wa-llāhu",       f:"et Allah",                            g:"Conjonction + nom divin"},
+{v:256,p:23,a:"سَمِيعٌ",       t:"samīʿun",        f:"entend tout / Audient",               g:"Nom divin — as-Samīʿ"},
+{v:256,p:24,a:"عَلِيمٌ",       t:"ʿalīmun",        f:"sait tout / Omniscient",              g:"Nom divin — al-ʿAlīm"},
+/* V.257 */
+{v:257,p:1, a:"اللَّهُ",       t:"Allāhu",         f:"Allah",                               g:"Nom propre divin — sujet"},
+{v:257,p:2, a:"وَلِيُّ",       t:"waliyyu",        f:"le Protecteur / le Maître",           g:"Nom prédicat"},
+{v:257,p:3, a:"الَّذِينَ",     t:"alladhīna",      f:"de ceux qui",                         g:"Pronom relatif pluriel"},
+{v:257,p:4, a:"آمَنُوا",       t:"āmanū",          f:"ont cru / ont la foi",                g:"Verbe passé, pluriel"},
+{v:257,p:5, a:"يُخْرِجُهُم",   t:"yukhriju-hum",   f:"Il les fait sortir",                  g:"Verbe présent + pronom objet"},
+{v:257,p:6, a:"مِّنَ",         t:"mina",           f:"des / hors de",                       g:"Préposition"},
+{v:257,p:7, a:"الظُّلُمَاتِ",  t:"aẓ-ẓulumāti",   f:"les ténèbres",                        g:"Nom pluriel, génitif"},
+{v:257,p:8, a:"إِلَى",         t:"ilā",            f:"vers / en direction de",              g:"Préposition de direction"},
+{v:257,p:9, a:"النُّورِ",      t:"an-nūri",        f:"la lumière",                          g:"Nom génitif"},
+{v:257,p:10,a:"وَالَّذِينَ",   t:"wa-lladhīna",    f:"et ceux qui",                         g:"Conjonction + pronom relatif"},
+{v:257,p:11,a:"كَفَرُوا",      t:"kafarū",         f:"ont mécru / ont rejeté la foi",       g:"Verbe passé, pluriel"},
+{v:257,p:12,a:"أَوْلِيَاؤُهُمُ",t:"awliyā'uhumu",  f:"leurs protecteurs / leurs maîtres",  g:"Nom pluriel + pronom possessif"},
+{v:257,p:13,a:"الطَّاغُوتُ",   t:"aṭ-ṭāghūtu",    f:"la Tāghūt",                           g:"Nom sujet"},
+{v:257,p:14,a:"يُخْرِجُونَهُم",t:"yukhriju-na-hum",f:"ils les font sortir",                 g:"Verbe présent pluriel + pronom"},
+{v:257,p:15,a:"مِّنَ",         t:"mina",           f:"de / hors de",                        g:"Préposition"},
+{v:257,p:16,a:"النُّورِ",      t:"an-nūri",        f:"la lumière",                          g:"Nom génitif"},
+{v:257,p:17,a:"إِلَى",         t:"ilā",            f:"vers",                                g:"Préposition de direction"},
+{v:257,p:18,a:"الظُّلُمَاتِ",  t:"aẓ-ẓulumāti",   f:"les ténèbres",                        g:"Nom pluriel, génitif"},
+{v:257,p:19,a:"أُولَٰئِكَ",    t:"ulā'ika",        f:"ceux-là",                             g:"Pronom démonstratif pluriel"},
+{v:257,p:20,a:"أَصْحَابُ",     t:"aṣḥābu",        f:"les gens de / les compagnons de",     g:"Nom pluriel prédicat"},
+{v:257,p:21,a:"النَّارِ",      t:"an-nāri",        f:"le Feu",                              g:"Nom génitif"},
+{v:257,p:22,a:"هُمْ",          t:"hum",            f:"eux / ils",                           g:"Pronom personnel pluriel"},
+{v:257,p:23,a:"فِيهَا",        t:"fīhā",           f:"en elle / dans le Feu",               g:"Préposition + pronom féminin"},
+{v:257,p:24,a:"خَالِدُونَ",    t:"khālidūna",      f:"éternellement / à jamais",            g:"Adjectif pluriel masculin prédicat"},
+];
+
+// Marques d'arrêt (index global 0-based)
+const STOPS = {6:"ۚ",11:"ۚ",18:"ۗ",25:"ۚ",31:"ۖ",39:"ۚ",43:"ۖ",49:"۞",73:"۞"};
+
+// URLs audio par verset
+const VERSE_AUDIO = {
+  255:["https://everyayah.com/data/Alafasy_128kbps/002255.mp3","https://cdn.islamic.network/quran/audio/128/ar.alafasy/255.mp3"],
+  256:["https://everyayah.com/data/Alafasy_128kbps/002256.mp3","https://cdn.islamic.network/quran/audio/128/ar.alafasy/256.mp3"],
+  257:["https://everyayah.com/data/Alafasy_128kbps/002257.mp3","https://cdn.islamic.network/quran/audio/128/ar.alafasy/257.mp3"],
+};
+// Word audio base URLs
+function wordUrls(idx) {
+  const w = W[idx];
+  const surah = '002';                          // Al-Baqara
+  const ayah  = String(w.v).padStart(3,'0');   // 255 → '255'
+  const word  = String(w.p).padStart(3,'0');   // position within ayah
+  const ayahN = w.v;                            // numeric
+  const wordN = w.p;
+  return [
+    // Quran CDN — most reliable for word-by-word
+    `https://audio.qurancdn.com/wbw/${surah}_${ayah}_${word}.mp3`,
+    // Islamic Network CDN
+    `https://cdn.islamic.network/quran/audio/128/ar.alafasy/word/2_${ayahN}_${wordN}.mp3`,
+    // Everyayah (surah+ayah+word = 9 digits)
+    `https://everyayah.com/data/Alafasy_128kbps/${surah}${ayah}${word}.mp3`,
+    // QuranWBW
+    `https://quranwbw.com/audio/2/${ayahN}/${word}.mp3`,
+  ];
+}
+
+/* ════════════════════════════════════════════
+   RENDER VERSES
+════════════════════════════════════════════ */
+function renderVerses() {
+  const container = document.getElementById('verses');
+  if (!container) return;
+  container.innerHTML = '';
+
+  const verses = [255, 256, 257];
+  verses.forEach(v => {
+    const words = W.filter(w => w.v === v);
+    const block = document.createElement('div');
+    block.className = `verse-block v${v}`;
+    block.id = `vb-${v}`;
+
+    // Label
+    const label = document.createElement('div');
+    label.className = 'verse-label';
+    label.innerHTML = `<div class="verse-label-line"></div><div class="verse-num">Verset ${v}</div><div class="verse-label-line"></div>`;
+    block.appendChild(label);
+
+    // Text
+    const textDiv = document.createElement('div');
+    textDiv.className = 'verse-text';
+    textDiv.id = `vt-${v}`;
+
+    // Verse end marker first (RTL: appears at end visually)
+    const endMark = document.createElement('span');
+    endMark.className = 'verse-end';
+    endMark.textContent = `\u06DD${v-254}`;
+    textDiv.appendChild(endMark);
+
+    // Words (RTL: render in order, display handles direction)
+    words.forEach((w, wi) => {
+      const globalIdx = W.indexOf(w);
+
+      const span = document.createElement('span');
+      span.className = 'w';
+      span.dataset.idx = globalIdx;
+      span.textContent = w.a;
+
+      span.addEventListener('mouseenter', e => showTooltip(e, globalIdx, false));
+      span.addEventListener('mouseleave', () => { if (!tooltipPinned) hideTooltip(); });
+      span.addEventListener('click', e => { e.stopPropagation(); showTooltip(e, globalIdx, true); });
+      textDiv.appendChild(span);
+
+      // Stop mark after word
+      if (STOPS[globalIdx]) {
+        const sm = document.createElement('span');
+        sm.className = 'stop-mark';
+        sm.textContent = ' ' + STOPS[globalIdx] + ' ';
+        textDiv.appendChild(sm);
+      } else {
+        textDiv.appendChild(document.createTextNode(' '));
+      }
+    });
+
+    block.appendChild(textDiv);
+    var _tr={255:'Allah ! Point de divinité à part Lui, le Vivant, le Subsistant par Lui-même. Ni somnolence ni sommeil ne Le saisissent. À Lui appartient tout ce qui est dans les cieux et sur la terre. Qui peut intercéder auprès de Lui sans Sa permission ? Il connaît ce qui est devant eux et ce qui est derrière eux. Ils n’embrassent de Sa science que ce qu’Il veut. Son Trône s’étend sur les cieux et la terre, et leur garde ne Lui coûte aucun effort. Il est le Très-Haut, le Très-Grand.',256:'Nulle contrainte en religion ! Car la bonne voie se distingue clairement de l’égarement. Celui donc qui renie la Tāghūt et croit en Allah s’est agrippé à l’anse la plus solide, sans rupture possible. Allah est Audient et Omniscient.',257:'Allah est le Protecteur de ceux qui ont cru : Il les fait sortir des ténèbres vers la lumière. Quant à ceux qui ont mécru, leurs protecteurs sont les Tāghūt qui les font sortir de la lumière vers les ténèbres. Ceux-là sont les gens du Feu, où ils demeureront éternellement.'}
+    if(_tr[v]){
+      var td=document.createElement('div');
+      td.className='verse-translation';
+      td.textContent=_tr[v];
+      block.appendChild(td);
+    }
+    container.appendChild(block);
+  });
+}
+
+/* ════════════════════════════════════════════
+   TOOLTIP
+════════════════════════════════════════════ */
+let currentIdx = -1, tooltipPinned = false;
+
+function showTooltip(e, idx, pin) {
+  if (tooltipPinned && !pin && idx !== currentIdx) return;
+  if (pin) tooltipPinned = true;
+  currentIdx = idx;
+  const w = W[idx];
+  document.getElementById('tt-ar').textContent = w.a;
+  document.getElementById('tt-tr').textContent = w.t;
+  document.getElementById('tt-fr').textContent = w.f;
+  document.getElementById('tt-gr').textContent = w.g;
+
+  const tt = document.getElementById('tooltip');
+  tt.classList.add('show');
+
+  // Position
+  const r = (e.currentTarget || e.target).getBoundingClientRect();
+  const tw = 280, th = 180;
+  let left = r.left + r.width/2 - tw/2;
+  let top  = r.top - th - 10;
+  if (top < 60) top = r.bottom + 10;
+  left = Math.max(8, Math.min(left, window.innerWidth - tw - 8));
+  tt.style.left = left + 'px';
+  tt.style.top  = top  + 'px';
+
+  // Highlight
+  document.querySelectorAll('.w').forEach((el, i) => el.classList.toggle('active', +el.dataset.idx === idx));
+}
+
+function hideTooltip() {
+  if (tooltipPinned) return;
+  currentIdx = -1;
+  document.getElementById('tooltip').classList.remove('show');
+  document.querySelectorAll('.w').forEach(el => el.classList.remove('active'));
+}
+
+document.addEventListener('click', e => {
+  if (!e.target.closest('.w') && !e.target.closest('#tooltip')) {
+    tooltipPinned = false;
+    hideTooltip();
+  }
+});
+
+/* ════════════════════════════════════════════
+   WORD AUDIO
+════════════════════════════════════════════ */
+let wordAu = null;
+
+function playWord(idx) {
+  if (idx < 0 || idx >= W.length) return;
+  if (wordAu) { wordAu.pause(); wordAu = null; }
+  const btn = document.getElementById('tt-audio-btn');
+  const urls = wordUrls(idx);
+  tryWord(idx, urls, 0, btn);
+}
+
+function tryWord(idx, urls, i, btn) {
+  if (i >= urls.length) {
+    // All URLs failed — show brief visual feedback
+    if (btn) { btn.style.opacity='0.3'; setTimeout(() => btn.style.opacity='', 800); }
+    return;
+  }
+  const au = new Audio();
+  au.crossOrigin = 'anonymous';
+  au.addEventListener('error', () => tryWord(idx, urls, i+1, btn), {once:true});
+  au.addEventListener('canplay', () => {
+    wordAu = au;
+    if (btn) btn.classList.add('playing');
+    // Highlight the word being played
+    document.querySelectorAll('.w').forEach(el =>
+      el.classList.toggle('playing', +el.dataset.idx === idx));
+    au.play().catch(() => tryWord(idx, urls, i+1, btn));
+  }, {once:true});
+  au.addEventListener('ended', () => {
+    wordAu = null;
+    if (btn) btn.classList.remove('playing');
+    document.querySelectorAll('.w').forEach(el => el.classList.remove('playing'));
+  }, {once:true});
+  au.src = urls[i];
+  au.load();
+}
+
+/* ════════════════════════════════════════════
+   VERSE AUDIO PLAYERS
+════════════════════════════════════════════ */
+const AU = {}, TIMERS = {}, WORD_COUNTS = {255:50, 256:24, 257:23};
+let activeVerse = null;
+
+function buildAudioBar() {
+  const rows = document.getElementById('ab-rows');
+  if (!rows) return;
+  rows.innerHTML = '';
+  [255, 256, 257].forEach(v => {
+    const row = document.createElement('div');
+    row.className = 'ab-row';
+    row.id = `ab-${v}`;
+    row.innerHTML = `
+      <div class="ab-vtag">V.${v}</div>
+      <button class="ab-btn" onclick="skip(${v},-10)" title="Reculer 10s">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="1 4 1 10 7 10"/>
+          <path d="M3.51 15a9 9 0 1 0 .49-3.5"/>
+          <text x="12" y="16.5" font-size="7" font-family="sans-serif" fill="currentColor" stroke="none" text-anchor="middle">10</text>
+        </svg>
+      </button>
+      <button class="ab-btn ab-play" id="ab-play-${v}" onclick="togglePlay(${v})">
+        <svg id="ab-icon-${v}" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" stroke="none"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+      </button>
+      <button class="ab-btn" onclick="skip(${v},10)" title="Avancer 10s">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="23 4 23 10 17 10"/>
+          <path d="M20.49 15a9 9 0 1 1-.49-3.5"/>
+          <text x="12" y="16.5" font-size="7" font-family="sans-serif" fill="currentColor" stroke="none" text-anchor="middle">10</text>
+        </svg>
+      </button>
+      <div class="ab-prog" onclick="seek(${v},event)">
+        <div class="ab-fill" id="ab-fill-${v}"></div>
+      </div>
+      <div class="ab-time" id="ab-time-${v}">0:00</div>
+    `;
+    rows.appendChild(row);
+  });
+}
+
+function getOrCreateAudio(v) {
+  if (AU[v]) return AU[v];
+  const urls = VERSE_AUDIO[v];
+  const au = new Audio();
+  au.preload = 'none';
+  AU[v] = au;
+  au.addEventListener('timeupdate', () => updateProgress(v));
+  au.addEventListener('ended', () => { stopPlayback(v); });
+  au.addEventListener('error', () => {
+    // Try next URL
+    const srcs = VERSE_AUDIO[v];
+    const curr = srcs.indexOf(au.src);
+    if (curr < srcs.length - 1) { au.src = srcs[curr+1]; au.play().catch(()=>{}); }
+  });
+  au.src = urls[0];
+  return au;
+}
+
+function togglePlay(v) {
+  const au = getOrCreateAudio(v);
+  if (!au.paused) {
+    stopPlayback(v);
+    return;
+  }
+  // Stop other verses
+  [255,256,257].forEach(ov => { if (ov !== v && AU[ov] && !AU[ov].paused) stopPlayback(ov); });
+  activeVerse = v;
+  _lastHighlight = -1;
+  au.play().then(() => { setPlayIcon(v, true); startTicker(); }).catch(() => {});
+}
+
+function stopPlayback(v) {
+  if (AU[v]) AU[v].pause();
+  setPlayIcon(v, false);
+  if (activeVerse === v) { activeVerse = null; }
+  if (_rafId) { cancelAnimationFrame(_rafId); _rafId = null; }
+  clearWordHighlight();
+}
+
+function setPlayIcon(v, playing) {
+  const ic = document.getElementById(`ab-icon-${v}`);
+  if (!ic) return;
+  const btn = document.getElementById(`ab-play-${v}`);
+  if (playing) {
+    ic.innerHTML = '<rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/>';
+    ic.setAttribute('fill','currentColor');
+    if (btn) btn.classList.add('active');
+  } else {
+    ic.innerHTML = '<polygon points="5 3 19 12 5 21 5 3"/>';
+    ic.setAttribute('fill','currentColor');
+    if (btn) btn.classList.remove('active');
+  }
+}
+
+function skip(v, sec) {
+  const au = getOrCreateAudio(v);
+  au.currentTime = Math.max(0, Math.min(au.duration || 0, au.currentTime + sec));
+}
+
+function seek(v, e) {
+  const au = getOrCreateAudio(v);
+  if (!au.duration) return;
+  const bar = document.getElementById(`ab-fill-${v}`).parentElement;
+  const r = bar.getBoundingClientRect();
+  const ratio = (e.clientX - r.left) / r.width;
+  au.currentTime = ratio * au.duration;
+}
+
+// rAF-based ticker for smooth word highlighting
+let _rafId = null;
+let _lastHighlight = -1;
+
+function startTicker() {
+  if (_rafId) return;
+  function tick() {
+    if (!activeVerse || !AU[activeVerse] || AU[activeVerse].paused) {
+      _rafId = null;
+      return;
+    }
+    const au = AU[activeVerse];
+    const v  = activeVerse;
+    // Progress bar
+    if (au.duration) {
+      const pct = (au.currentTime / au.duration * 100);
+      const fill = document.getElementById(`ab-fill-${v}`);
+      if (fill) fill.style.width = pct + '%';
+      const timeEl = document.getElementById(`ab-time-${v}`);
+      if (timeEl) timeEl.textContent = fmtTime(au.currentTime) + ' / ' + fmtTime(au.duration);
+      // Word highlight
+      const words = W.filter(w => w.v === v);
+      const widx = Math.min(Math.floor((au.currentTime / au.duration) * words.length), words.length - 1);
+      const globalIdx = W.indexOf(words[widx]);
+      if (globalIdx !== _lastHighlight) {
+        highlightWord(globalIdx);
+        _lastHighlight = globalIdx;
+        // Scroll word into view smoothly
+        const el = document.querySelector(`.w[data-idx="${globalIdx}"]`);
+        if (el) el.scrollIntoView({behavior:'smooth', block:'nearest', inline:'nearest'});
+      }
+    }
+    _rafId = requestAnimationFrame(tick);
+  }
+  _rafId = requestAnimationFrame(tick);
+}
+
+function updateProgress(v) {
+  // Called by timeupdate — delegates to rAF ticker when active
+  const au = AU[v]; if (!au) return;
+  if (!au.paused && v === activeVerse) startTicker();
+  const fill = document.getElementById(`ab-fill-${v}`);
+  if (fill && au.duration) fill.style.width = (au.currentTime / au.duration * 100) + '%';
+  const timeEl = document.getElementById(`ab-time-${v}`);
+  if (timeEl) timeEl.textContent = fmtTime(au.currentTime) + (au.duration ? ' / ' + fmtTime(au.duration) : '');
+}
+
+function highlightWord(globalIdx) {
+  document.querySelectorAll('.w').forEach(el => {
+    el.classList.toggle('playing', +el.dataset.idx === globalIdx);
+  });
+}
+function clearWordHighlight() {
+  _lastHighlight = -1;
+  document.querySelectorAll('.w').forEach(el => el.classList.remove('playing'));
+}
+
+function fmtTime(s) {
+  if (!s || isNaN(s)) return '0:00';
+  const m = Math.floor(s / 60), sec = Math.floor(s % 60);
+  return m + ':' + String(sec).padStart(2,'0');
+}
+
+/* ════════════════════════════════════════════
+   INIT
+════════════════════════════════════════════ */
+(function() {
+  function tryInit() {
+    const el = document.getElementById('verses');
+    if (!el) { setTimeout(tryInit, 30); return; }
+    renderVerses();
+    buildAudioBar();
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', tryInit);
+  } else {
+    tryInit();
+  }
+})();
+</script>
+</body>
+</html>

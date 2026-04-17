@@ -1,0 +1,2420 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Islam chiite — Chronologie & Réseau Historique</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   VARIABLES & RESET
+   ============================================================ */
+:root {
+  --bg-deep:      #070c18;
+  --bg-base:      #0d1426;
+  --bg-surface:   #131d35;
+  --bg-elevated:  #1a2645;
+  --bg-card:      #1e2e4a;
+  --gold:         #c9a84c;
+  --gold-bright:  #e8c066;
+  --gold-dim:     #8a7030;
+  --text-primary: #e8e2d0;
+  --text-secondary: #9aa3b8;
+  --text-dim:     #5a6480;
+  --border:       rgba(201,168,76,0.15);
+  --border-bright: rgba(201,168,76,0.35);
+  --prophet:      #f0c060;
+  --imam:         #7eb8fa;
+  --imam-bg:      rgba(126,184,250,0.12);
+  --person:       #94a3b8;
+  --event:        #f87171;
+  --event-bg:     rgba(248,113,113,0.12);
+  --place:        #4ade80;
+  --place-bg:     rgba(74,222,128,0.12);
+  --theme:        #c084fc;
+  --theme-bg:     rgba(192,132,252,0.12);
+  --dynasty:      #fb923c;
+  --scholar:      #38bdf8;
+  --work:         #e879f9;
+  --radius:       8px;
+  --radius-lg:    14px;
+  --shadow:       0 4px 24px rgba(0,0,0,0.5);
+  --shadow-gold:  0 0 30px rgba(201,168,76,0.15);
+  --trans:        all 0.3s cubic-bezier(0.4,0,0.2,1);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg-deep);
+  color: var(--text-primary);
+  font-family: 'EB Garamond', Georgia, serif;
+  font-size: 16px;
+  line-height: 1.65;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Islamic geometric pattern background */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg stroke='%23c9a84c' stroke-width='0.3' opacity='0.08'%3E%3Cpolygon points='30,2 56,17 56,43 30,58 4,43 4,17'/%3E%3Cpolygon points='30,10 50,21 50,39 30,50 10,39 10,21'/%3E%3Cline x1='30' y1='2' x2='30' y2='58'/%3E%3Cline x1='4' y1='17' x2='56' y2='43'/%3E%3Cline x1='56' y1='17' x2='4' y2='43'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ============================================================
+   SCROLLBAR
+   ============================================================ */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: var(--bg-base); }
+::-webkit-scrollbar-thumb { background: var(--gold-dim); border-radius: 3px; }
+
+/* ============================================================
+   TYPOGRAPHY
+   ============================================================ */
+h1,h2,h3,h4 { font-family: 'Cinzel', serif; font-weight: 600; line-height: 1.25; }
+h1 { font-size: clamp(1.8rem, 4vw, 3rem); }
+h2 { font-size: clamp(1.3rem, 2.5vw, 1.9rem); }
+h3 { font-size: 1.1rem; }
+
+.gold { color: var(--gold); }
+.dim  { color: var(--text-secondary); }
+em { font-style: italic; color: var(--gold); }
+
+/* ============================================================
+   LAYOUT HELPERS
+   ============================================================ */
+.container { max-width: 1400px; margin: 0 auto; padding: 0 24px; position: relative; z-index: 1; }
+.section { padding: 60px 0; display: none; }
+.section.active { display: block; }
+.flex { display: flex; gap: 16px; align-items: center; }
+.grid { display: grid; gap: 16px; }
+.grid-2 { grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); }
+.grid-3 { grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); }
+.grid-4 { grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); }
+
+/* ============================================================
+   NAVIGATION
+   ============================================================ */
+.nav-wrap {
+  position: sticky; top: 0; z-index: 100;
+  background: rgba(7,12,24,0.92);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+  box-shadow: 0 2px 20px rgba(0,0,0,0.4);
+}
+
+.nav-inner {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 0 24px;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.nav-inner::-webkit-scrollbar { display: none; }
+
+.nav-brand {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  color: var(--gold);
+  white-space: nowrap;
+  letter-spacing: 0.1em;
+  padding: 14px 20px 14px 0;
+  border-right: 1px solid var(--border);
+  margin-right: 8px;
+  text-transform: uppercase;
+}
+
+.nav-btn {
+  background: none; border: none;
+  color: var(--text-secondary);
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 14px 14px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: var(--trans);
+  position: relative;
+}
+.nav-btn::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 50%; transform: translateX(-50%);
+  width: 0; height: 2px;
+  background: var(--gold);
+  transition: width 0.3s ease;
+}
+.nav-btn:hover { color: var(--text-primary); }
+.nav-btn.active { color: var(--gold); }
+.nav-btn.active::after { width: 70%; }
+
+/* ============================================================
+   HERO
+   ============================================================ */
+.hero {
+  padding: 80px 0 60px;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.hero-ornament {
+  font-size: 2rem;
+  color: var(--gold);
+  opacity: 0.4;
+  letter-spacing: 0.5em;
+  margin-bottom: 20px;
+  display: block;
+}
+
+.hero h1 {
+  color: var(--text-primary);
+  margin-bottom: 16px;
+  text-shadow: 0 0 40px rgba(201,168,76,0.3);
+}
+.hero h1 span { color: var(--gold); }
+
+.hero-sub {
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+  max-width: 640px;
+  margin: 0 auto 40px;
+  font-style: italic;
+}
+
+.hero-divider {
+  width: 120px; height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  margin: 0 auto 40px;
+}
+
+.hero-btns {
+  display: flex; gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 12px 24px;
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: var(--trans);
+  border: none;
+}
+.btn-primary {
+  background: var(--gold);
+  color: var(--bg-deep);
+  font-weight: 700;
+}
+.btn-primary:hover { background: var(--gold-bright); box-shadow: 0 0 20px rgba(201,168,76,0.4); }
+.btn-outline {
+  background: transparent;
+  color: var(--gold);
+  border: 1px solid var(--border-bright);
+}
+.btn-outline:hover { background: var(--bg-elevated); border-color: var(--gold); }
+
+/* ============================================================
+   SEARCH BAR
+   ============================================================ */
+.search-wrap {
+  position: relative; z-index: 1;
+  padding: 0 24px 16px;
+  max-width: 700px; margin: 0 auto;
+}
+.search-input {
+  width: 100%;
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: 40px;
+  padding: 12px 20px 12px 48px;
+  color: var(--text-primary);
+  font-family: 'EB Garamond', serif;
+  font-size: 1rem;
+  outline: none;
+  transition: var(--trans);
+}
+.search-input::placeholder { color: var(--text-dim); }
+.search-input:focus { border-color: var(--gold); box-shadow: 0 0 0 3px rgba(201,168,76,0.12); }
+.search-icon {
+  position: absolute; left: 42px; top: 50%; transform: translateY(-50%);
+  color: var(--text-dim); font-size: 1.1rem; pointer-events: none;
+}
+.search-results {
+  position: absolute; top: calc(100% - 8px); left: 24px; right: 24px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-bright);
+  border-radius: var(--radius-lg);
+  max-height: 360px; overflow-y: auto;
+  box-shadow: var(--shadow);
+  display: none; z-index: 200;
+}
+.search-results.show { display: block; }
+.search-item {
+  display: flex; align-items: center; gap: 12px;
+  padding: 10px 16px;
+  cursor: pointer;
+  transition: background 0.2s;
+  border-bottom: 1px solid var(--border);
+}
+.search-item:last-child { border-bottom: none; }
+.search-item:hover { background: var(--bg-elevated); }
+.search-item-dot {
+  width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0;
+}
+.search-item-name { font-family: 'Cinzel', serif; font-size: 0.85rem; }
+.search-item-meta { font-size: 0.78rem; color: var(--text-dim); }
+
+/* ============================================================
+   SECTION HEADER
+   ============================================================ */
+.section-header {
+  text-align: center;
+  margin-bottom: 48px;
+}
+.section-label {
+  font-family: 'Cinzel', serif;
+  font-size: 0.7rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--gold);
+  display: block;
+  margin-bottom: 12px;
+}
+.section-header h2 { margin-bottom: 12px; }
+.section-header p { color: var(--text-secondary); max-width: 560px; margin: 0 auto; }
+.section-divider {
+  width: 60px; height: 2px;
+  background: var(--gold);
+  margin: 20px auto 0;
+}
+
+/* ============================================================
+   FILTERS BAR
+   ============================================================ */
+.filters {
+  display: flex; gap: 8px; flex-wrap: wrap;
+  margin-bottom: 32px; align-items: center;
+}
+.filter-btn {
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  color: var(--text-secondary);
+  font-family: 'Cinzel', serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 7px 14px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: var(--trans);
+}
+.filter-btn:hover { border-color: var(--gold); color: var(--text-primary); }
+.filter-btn.active { background: var(--gold); color: var(--bg-deep); border-color: var(--gold); font-weight: 600; }
+
+/* ============================================================
+   CARDS
+   ============================================================ */
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 22px;
+  cursor: pointer;
+  transition: var(--trans);
+  position: relative;
+  overflow: hidden;
+}
+.card::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0;
+  height: 2px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.card:hover { transform: translateY(-3px); border-color: var(--border-bright); box-shadow: var(--shadow); }
+.card:hover::before { opacity: 1; }
+.card.type-prophet::before { background: var(--prophet); }
+.card.type-imam::before { background: var(--imam); }
+.card.type-event::before { background: var(--event); }
+.card.type-place::before { background: var(--place); }
+.card.type-theme::before { background: var(--theme); }
+.card.type-dynasty::before { background: var(--dynasty); }
+.card.type-scholar::before { background: var(--scholar); }
+.card.type-work::before { background: var(--work); }
+.card.type-person::before { background: var(--person); }
+
+.card-badge {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-family: 'Cinzel', serif; font-size: 0.65rem;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  padding: 4px 10px; border-radius: 12px;
+  margin-bottom: 12px;
+  font-weight: 600;
+}
+.card-date { font-size: 0.82rem; color: var(--text-dim); margin-bottom: 8px; font-style: italic; }
+.card h3 { margin-bottom: 8px; font-size: 1rem; color: var(--text-primary); }
+.card p { font-size: 0.9rem; color: var(--text-secondary); line-height: 1.5; }
+.card-footer {
+  margin-top: 14px; padding-top: 14px;
+  border-top: 1px solid var(--border);
+  display: flex; gap: 6px; flex-wrap: wrap;
+}
+.tag {
+  font-size: 0.72rem; padding: 3px 10px;
+  background: var(--bg-elevated); color: var(--text-dim);
+  border-radius: 10px; border: 1px solid var(--border);
+}
+
+/* Imam card special */
+.imam-card {
+  background: linear-gradient(135deg, var(--bg-card), var(--bg-elevated));
+  border-color: rgba(126,184,250,0.2);
+}
+.imam-number {
+  font-family: 'Cinzel', serif;
+  font-size: 3rem;
+  font-weight: 700;
+  color: rgba(126,184,250,0.15);
+  position: absolute;
+  top: 10px; right: 16px;
+  line-height: 1;
+}
+.imam-card h3 { color: var(--imam); }
+
+/* ============================================================
+   TIMELINE
+   ============================================================ */
+/* Era tabs */
+.era-tabs {
+  display: flex; gap: 8px; flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+.era-tab {
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  color: var(--text-secondary);
+  font-family: 'Cinzel', serif;
+  font-size: 0.68rem; letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 8px 16px; border-radius: 6px;
+  cursor: pointer; transition: var(--trans);
+}
+.era-tab:hover { border-color: var(--gold); color: var(--gold); }
+.era-tab.active { background: var(--gold); color: var(--bg-deep); border-color: var(--gold); font-weight: 700; }
+
+/* ── HORIZONTAL TIMELINE ── */
+.htimeline-outer {
+  overflow-x: scroll; overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  scrollbar-color: var(--gold-dim) var(--bg-surface);
+  cursor: grab;
+  position: relative;
+  height: 580px;
+  border-radius: var(--radius-lg);
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  user-select: none;
+  will-change: scroll-position;
+  contain: strict;
+}
+.htimeline-outer:active { cursor: grabbing; }
+.htimeline-outer::-webkit-scrollbar { height: 5px; }
+.htimeline-outer::-webkit-scrollbar-track { background: var(--bg-base); }
+.htimeline-outer::-webkit-scrollbar-thumb { background: var(--gold-dim); border-radius: 3px; }
+
+/* Zoom controls */
+.timeline-zoom-bar {
+  display: flex; align-items: center; justify-content: space-between;
+  margin-bottom: 10px; gap: 12px; flex-wrap: wrap;
+}
+.zoom-hint { font-size: 0.75rem; color: var(--text-dim); font-style: italic; }
+.zoom-controls { display: flex; align-items: center; gap: 8px; }
+.zoom-btn {
+  background: var(--bg-surface); border: 1px solid var(--border);
+  color: var(--gold); width: 30px; height: 30px; border-radius: 6px;
+  cursor: pointer; font-size: 1rem; line-height: 1;
+  display: flex; align-items: center; justify-content: center;
+  transition: var(--trans); flex-shrink: 0;
+}
+.zoom-btn:hover { background: var(--bg-elevated); border-color: var(--gold); }
+.zoom-reset { font-size: 0.85rem; }
+.zoom-track {
+  width: 90px; height: 4px; border-radius: 2px;
+  background: var(--bg-elevated); border: 1px solid var(--border);
+  position: relative; overflow: hidden;
+}
+.zoom-fill {
+  position: absolute; left: 0; top: 0; bottom: 0;
+  background: var(--gold); border-radius: 2px;
+  transition: width 0.2s;
+}
+
+.htimeline-track {
+  position: relative;
+  height: 100%;
+  min-width: 100%;
+  will-change: contents;
+}
+
+.htimeline-axis {
+  position: absolute;
+  top: 50%; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--gold-dim) 1%, var(--gold-dim) 99%, transparent);
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* Era color bands */
+.era-band {
+  position: absolute;
+  top: 0; bottom: 0; left: 0;
+  opacity: 0.05;
+  pointer-events: none;
+  z-index: 0;
+  will-change: transform, width;
+}
+.era-band-label {
+  position: absolute;
+  bottom: 12px; left: 8px;
+  font-family: 'Cinzel', serif;
+  font-size: 0.6rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  opacity: 0.7;
+  white-space: nowrap;
+}
+
+/* Date ticks on axis */
+.ht-date-tick {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  pointer-events: none;
+  z-index: 3;
+  will-change: transform;
+  /* translateX set by JS via applyZoom */
+}
+.ht-tick-line {
+  width: 1px; height: 10px;
+  background: var(--gold-dim);
+  margin: 0 auto;
+  opacity: 0.5;
+}
+.ht-tick-label {
+  font-family: 'Cinzel', serif;
+  font-size: 0.6rem;
+  color: var(--gold-dim);
+  text-align: center;
+  margin-top: 3px;
+  white-space: nowrap;
+}
+
+/* Timeline items */
+.ht-item {
+  position: absolute;
+  width: 170px;
+  cursor: pointer;
+  z-index: 5;
+  transition: z-index 0s;
+  will-change: transform;
+  left: 0;
+}
+.ht-item:hover { z-index: 10; }
+
+.ht-item.above {
+  bottom: calc(50% + 6px);
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+}
+.ht-item.below {
+  top: calc(50% + 6px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.ht-dot {
+  width: 11px; height: 11px;
+  border-radius: 50%;
+  border: 2px solid var(--bg-deep);
+  flex-shrink: 0;
+  transition: transform 0.2s, box-shadow 0.2s;
+  z-index: 4;
+}
+.ht-item:hover .ht-dot { transform: scale(1.6); }
+
+.ht-connector {
+  width: 1px;
+  flex-shrink: 0;
+}
+.ht-item.above .ht-connector { height: 24px; }
+.ht-item.below .ht-connector { height: 24px; }
+
+.ht-card {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 8px 10px;
+  width: 100%;
+  transition: var(--trans);
+}
+.ht-item:hover .ht-card {
+  border-color: var(--border-bright);
+  background: var(--bg-card);
+  box-shadow: var(--shadow);
+}
+.ht-card-date {
+  font-family: 'Cinzel', serif;
+  font-size: 0.62rem;
+  font-weight: 700;
+  margin-bottom: 3px;
+}
+.ht-card-title {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  color: var(--text-primary);
+  line-height: 1.3;
+  margin-bottom: 2px;
+}
+.ht-card-type {
+  font-size: 0.62rem;
+  opacity: 0.7;
+}
+
+/* ── KEYWORD LINKS ── */
+.kw-link {
+  cursor: pointer;
+  border-bottom: 1px dotted currentColor;
+  opacity: 0.9;
+  transition: opacity 0.15s;
+}
+.kw-link:hover { opacity: 1; font-weight: 600; }
+
+/* ============================================================
+   NETWORK GRAPH
+   ============================================================ */
+.network-section { padding: 40px 0; }
+.network-controls {
+  display: flex; gap: 12px; align-items: center;
+  margin-bottom: 20px; flex-wrap: wrap;
+}
+.network-hint {
+  font-size: 0.8rem; color: var(--text-dim);
+  font-style: italic; margin-left: auto;
+}
+#network-canvas-wrap {
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  position: relative;
+  height: 600px;
+}
+#network-canvas { width: 100%; height: 100%; display: block; cursor: grab; }
+#network-canvas:active { cursor: grabbing; }
+
+.graph-legend {
+  display: flex; gap: 12px; flex-wrap: wrap;
+  margin-top: 12px;
+}
+.legend-item {
+  display: flex; align-items: center; gap: 6px;
+  font-size: 0.78rem; color: var(--text-secondary);
+}
+.legend-dot { width: 10px; height: 10px; border-radius: 50%; }
+
+/* ============================================================
+   DETAIL PANEL
+   ============================================================ */
+.detail-overlay {
+  position: fixed; inset: 0;
+  background: rgba(7,12,24,0.7);
+  backdrop-filter: blur(4px);
+  z-index: 300;
+  opacity: 0; pointer-events: none;
+  transition: opacity 0.35s;
+}
+.detail-overlay.open { opacity: 1; pointer-events: all; }
+
+.detail-panel {
+  position: fixed; top: 0; right: -480px; bottom: 0;
+  width: 100%; max-width: 480px;
+  background: var(--bg-surface);
+  border-left: 1px solid var(--border-bright);
+  z-index: 400;
+  overflow-y: auto;
+  transition: right 0.35s cubic-bezier(0.4,0,0.2,1);
+  box-shadow: -10px 0 40px rgba(0,0,0,0.5);
+}
+.detail-panel.open { right: 0; }
+
+.detail-panel-inner { padding: 32px 28px 80px; }
+.detail-close {
+  position: absolute; top: 16px; right: 16px;
+  background: var(--bg-elevated); border: 1px solid var(--border);
+  color: var(--text-secondary); border-radius: 50%;
+  width: 36px; height: 36px;
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer; font-size: 1.2rem;
+  transition: var(--trans);
+}
+.detail-close:hover { background: var(--event); color: white; border-color: var(--event); }
+
+.detail-type-badge {
+  margin-bottom: 16px; display: inline-block;
+}
+.detail-name {
+  font-family: 'Cinzel', serif;
+  font-size: 1.5rem; font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 6px; line-height: 1.2;
+}
+.detail-arabic {
+  font-size: 1.2rem; color: var(--gold); opacity: 0.7;
+  margin-bottom: 16px; direction: rtl;
+}
+.detail-date {
+  font-style: italic; color: var(--gold-dim);
+  margin-bottom: 20px; font-size: 0.9rem;
+}
+.detail-section-label {
+  font-family: 'Cinzel', serif; font-size: 0.68rem;
+  letter-spacing: 0.15em; text-transform: uppercase;
+  color: var(--gold); margin: 20px 0 8px;
+  display: block;
+}
+.detail-desc { color: var(--text-secondary); line-height: 1.7; font-size: 0.95rem; }
+.detail-significance {
+  background: var(--bg-elevated);
+  border-left: 3px solid var(--gold);
+  padding: 12px 16px;
+  border-radius: 0 var(--radius) var(--radius) 0;
+  font-size: 0.9rem; color: var(--text-secondary);
+  line-height: 1.6;
+}
+.detail-relations { display: flex; flex-direction: column; gap: 8px; }
+.detail-rel-item {
+  display: flex; align-items: center; gap: 10px;
+  background: var(--bg-elevated);
+  padding: 10px 14px; border-radius: var(--radius);
+  cursor: pointer; transition: var(--trans);
+  border: 1px solid transparent;
+}
+.detail-rel-item:hover { border-color: var(--border-bright); }
+.detail-rel-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+.detail-rel-name { font-family: 'Cinzel', serif; font-size: 0.82rem; flex: 1; }
+.detail-rel-type { font-size: 0.75rem; color: var(--text-dim); }
+
+/* ============================================================
+   PLACES SECTION
+   ============================================================ */
+.place-card-icon {
+  font-size: 2rem; margin-bottom: 10px;
+}
+
+/* ============================================================
+   THEME CARD
+   ============================================================ */
+.theme-card { border-color: rgba(192,132,252,0.15); }
+.theme-icon { font-size: 2.2rem; margin-bottom: 10px; opacity: 0.8; }
+
+/* ============================================================
+   SCHOLARS SECTION
+   ============================================================ */
+.scholar-card { border-color: rgba(56,189,248,0.15); }
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+footer {
+  margin-top: 80px;
+  border-top: 1px solid var(--border);
+  padding: 40px 24px;
+  text-align: center;
+  position: relative; z-index: 1;
+}
+footer p { color: var(--text-dim); font-size: 0.85rem; max-width: 600px; margin: 0 auto; line-height: 1.8; }
+.footer-ornament { font-size: 1.4rem; color: var(--gold); opacity: 0.3; margin-bottom: 16px; letter-spacing: 0.5em; }
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 768px) {
+  .htimeline-outer { height: 420px; }
+  .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
+  .detail-panel { max-width: 100%; }
+  .hero { padding: 50px 0 40px; }
+}
+</style>
+</head>
+<body>
+
+<!-- ============================================================
+     NAVIGATION
+     ============================================================ -->
+<nav class="nav-wrap">
+  <div class="nav-inner">
+    <span class="nav-brand">☽ Islam chiite</span>
+    <button class="nav-btn active" data-section="home">Accueil</button>
+    <button class="nav-btn" data-section="timeline">Frise</button>
+    <button class="nav-btn" data-section="network">Réseau</button>
+    <button class="nav-btn" data-section="imams">Imams</button>
+    <button class="nav-btn" data-section="events">Événements</button>
+    <button class="nav-btn" data-section="places">Lieux</button>
+    <button class="nav-btn" data-section="themes">Thèmes</button>
+    <button class="nav-btn" data-section="scholars">Savants</button>
+  </div>
+</nav>
+
+<!-- ============================================================
+     HERO
+     ============================================================ -->
+<section id="home" class="section active">
+  <div class="container">
+    <div class="hero">
+      <span class="hero-ornament">✦ ✦ ✦</span>
+      <h1>Chronologie de l'<span>Islam chiite</span></h1>
+      <p class="hero-sub">Explorez l'histoire, les Imams, les événements fondateurs, les lieux saints et les relations entre les figures de l'Ahl al-Bayt.</p>
+      <div class="hero-divider"></div>
+      <div class="hero-btns">
+        <button class="btn btn-primary" onclick="showSection('timeline')">Frise chronologique</button>
+        <button class="btn btn-outline" onclick="showSection('network')">Réseau relationnel</button>
+        <button class="btn btn-outline" onclick="showSection('imams')">Les douze Imams</button>
+        <button class="btn btn-outline" onclick="showSection('events')">Événements majeurs</button>
+      </div>
+    </div>
+
+    <!-- Search -->
+    <div class="search-wrap">
+      <span class="search-icon">⌕</span>
+      <input type="text" id="main-search" class="search-input" placeholder="Rechercher un Imam, événement, lieu, thème..." autocomplete="off">
+      <div id="search-results" class="search-results"></div>
+    </div>
+
+    <!-- Quick stats -->
+    <div class="grid grid-4" style="margin-top:48px;">
+      <div class="card" style="text-align:center;" onclick="showSection('imams')">
+        <div style="font-size:2.5rem;color:var(--imam);margin-bottom:8px;font-family:'Cinzel',serif;font-weight:700;">12</div>
+        <div style="font-family:'Cinzel',serif;font-size:0.85rem;color:var(--text-secondary);">Imams duodécimains</div>
+      </div>
+      <div class="card" style="text-align:center;" onclick="showSection('events')">
+        <div style="font-size:2.5rem;color:var(--event);margin-bottom:8px;font-family:'Cinzel',serif;font-weight:700;">40+</div>
+        <div style="font-family:'Cinzel',serif;font-size:0.85rem;color:var(--text-secondary);">Événements historiques</div>
+      </div>
+      <div class="card" style="text-align:center;" onclick="showSection('places')">
+        <div style="font-size:2.5rem;color:var(--place);margin-bottom:8px;font-family:'Cinzel',serif;font-weight:700;">12</div>
+        <div style="font-family:'Cinzel',serif;font-size:0.85rem;color:var(--text-secondary);">Lieux saints</div>
+      </div>
+      <div class="card" style="text-align:center;" onclick="showSection('scholars')">
+        <div style="font-size:2.5rem;color:var(--scholar);margin-bottom:8px;font-family:'Cinzel',serif;font-weight:700;">14+</div>
+        <div style="font-family:'Cinzel',serif;font-size:0.85rem;color:var(--text-secondary);">Savants & œuvres</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     FRISE CHRONOLOGIQUE
+     ============================================================ -->
+<section id="timeline" class="section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label">Exploration historique</span>
+      <h2>Frise chronologique</h2>
+      <p>De la naissance du Prophète à l'occultation du douzième Imam et au-delà.</p>
+      <div class="section-divider"></div>
+    </div>
+
+    <div class="era-tabs" id="era-tabs">
+      <button class="era-tab active" data-era="all">Toutes les périodes</button>
+      <button class="era-tab" data-era="prophetic">Ère prophétique (570–632)</button>
+      <button class="era-tab" data-era="early">Ahl al-Bayt (632–680)</button>
+      <button class="era-tab" data-era="umayyad">Ère omeyyade (680–750)</button>
+      <button class="era-tab" data-era="abbasid">Ère abbasside (750–874)</button>
+      <button class="era-tab" data-era="occultation">Occultation (874–)</button>
+    </div>
+
+    <div class="filters" id="timeline-filters">
+      <button class="filter-btn active" data-filter="all">Tous</button>
+      <button class="filter-btn" data-filter="event">Événements</button>
+      <button class="filter-btn" data-filter="imam">Imams</button>
+      <button class="filter-btn" data-filter="prophet">Prophète</button>
+      <button class="filter-btn" data-filter="dynasty">Dynasties</button>
+      <button class="filter-btn" data-filter="place">Lieux</button>
+    </div>
+
+    <div class="timeline-zoom-bar">
+      <span class="zoom-hint">Glisser &middot; Molette ou boutons pour zoomer</span>
+      <div class="zoom-controls">
+        <button class="zoom-btn" id="zoom-out">&#8722;</button>
+        <div class="zoom-track"><div class="zoom-fill" id="zoom-fill"></div></div>
+        <button class="zoom-btn" id="zoom-in">&#43;</button>
+        <button class="zoom-btn zoom-reset" id="zoom-reset" title="R&eacute;initialiser">&#8635;</button>
+      </div>
+    </div>
+
+    <div class="htimeline-outer" id="htimeline-outer">
+      <div class="htimeline-track" id="htimeline-track"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     RÉSEAU RELATIONNEL
+     ============================================================ -->
+<section id="network" class="section">
+  <div class="container" style="max-width:100%;padding:0 24px;">
+    <div class="section-header">
+      <span class="section-label">Visualisation</span>
+      <h2>Réseau relationnel</h2>
+      <p>Les liens entre Imams, événements, lieux, dynasties, thèmes et savants.</p>
+      <div class="section-divider"></div>
+    </div>
+
+    <div class="network-controls">
+      <div class="filters" style="margin-bottom:0;" id="graph-filters">
+        <button class="filter-btn active" data-filter="all">Tout afficher</button>
+        <button class="filter-btn" data-filter="prophet,imam,ahl_al_bayt">Ahl al-Bayt</button>
+        <button class="filter-btn" data-filter="event">Événements</button>
+        <button class="filter-btn" data-filter="place">Lieux</button>
+        <button class="filter-btn" data-filter="dynasty">Dynasties</button>
+        <button class="filter-btn" data-filter="scholar,work">Savants</button>
+      </div>
+      <span class="network-hint">🖱 Glisser pour naviguer · Molette pour zoomer · Clic pour détails</span>
+    </div>
+
+    <div id="network-canvas-wrap">
+      <canvas id="network-canvas"></canvas>
+    </div>
+
+    <div class="graph-legend" id="graph-legend"></div>
+  </div>
+</section>
+
+<!-- ============================================================
+     IMAMS
+     ============================================================ -->
+<section id="imams" class="section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label">Les successeurs du Prophète</span>
+      <h2>Les douze Imams</h2>
+      <p>Selon la doctrine chiite duodécimaine, les Imams sont les guides légitimes de la communauté après le Prophète Muhammad ﷺ.</p>
+      <div class="section-divider"></div>
+    </div>
+    <div class="grid grid-3" id="imams-grid"></div>
+  </div>
+</section>
+
+<!-- ============================================================
+     ÉVÉNEMENTS
+     ============================================================ -->
+<section id="events" class="section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label">Histoire</span>
+      <h2>Événements majeurs</h2>
+      <p>Les tournants historiques, batailles, traités et moments fondateurs du chiisme.</p>
+      <div class="section-divider"></div>
+    </div>
+    <div class="filters" id="events-filters">
+      <button class="filter-btn active" data-filter="all">Tous</button>
+      <button class="filter-btn" data-filter="revelation">Révélation</button>
+      <button class="filter-btn" data-filter="battle">Batailles</button>
+      <button class="filter-btn" data-filter="martyrdom">Martyres</button>
+      <button class="filter-btn" data-filter="politics">Politique</button>
+      <button class="filter-btn" data-filter="knowledge">Transmission</button>
+    </div>
+    <div class="grid grid-3" id="events-grid"></div>
+  </div>
+</section>
+
+<!-- ============================================================
+     LIEUX
+     ============================================================ -->
+<section id="places" class="section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label">Géographie sacrée</span>
+      <h2>Lieux saints et centres du savoir</h2>
+      <p>De La Mecque à Qom, les villes qui ont forgé l'identité chiite.</p>
+      <div class="section-divider"></div>
+    </div>
+    <div class="grid grid-3" id="places-grid"></div>
+  </div>
+</section>
+
+<!-- ============================================================
+     THÈMES
+     ============================================================ -->
+<section id="themes" class="section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label">Doctrine</span>
+      <h2>Thèmes & concepts fondateurs</h2>
+      <p>Les piliers doctrinaux, théologiques et spirituels du chiisme duodécimain.</p>
+      <div class="section-divider"></div>
+    </div>
+    <div class="grid grid-3" id="themes-grid"></div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SAVANTS
+     ============================================================ -->
+<section id="scholars" class="section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label">Tradition intellectuelle</span>
+      <h2>Savants & œuvres majeures</h2>
+      <p>Les grands penseurs, juristes et théologiens chiites et leurs œuvres fondatrices.</p>
+      <div class="section-divider"></div>
+    </div>
+    <div class="grid grid-3" id="scholars-grid"></div>
+  </div>
+</section>
+
+<!-- ============================================================
+     DETAIL PANEL
+     ============================================================ -->
+<div class="detail-overlay" id="detail-overlay" onclick="closeDetail()"></div>
+<div class="detail-panel" id="detail-panel">
+  <button class="detail-close" onclick="closeDetail()">×</button>
+  <div class="detail-panel-inner" id="detail-content"></div>
+</div>
+
+<!-- ============================================================
+     FOOTER
+     ============================================================ -->
+<footer>
+  <div class="footer-ornament">✦ ✦ ✦</div>
+  <p>Ce site est un outil pédagogique d'exploration historique centré sur l'islam chiite duodécimain.<br>
+  Les données présentées reflètent la mémoire et la transmission historique chiites. Certains événements constituent des points de divergence entre les traditions islamiques.</p>
+</footer>
+
+<!-- ============================================================
+     SCRIPT
+     ============================================================ -->
+<script>
+/* ==============================================================
+   DATA
+   ============================================================== */
+const NODES = [
+  /* PROPHÈTE */
+  { id:'muhammad', name:'Muhammad ﷺ', arabic:'مُحَمَّد', type:'prophet', category:'prophet',
+    date:'570–632 EC', startDate:570, endDate:632, place:'mecca',
+    tags:['prophète','révélation','islam','sceau'],
+    era:'prophetic',
+    description:'Né à La Mecque en 570 EC, Muhammad ibn Abdallah reçut la Révélation coranique à l\'âge de 40 ans par l\'intermédiaire de l\'ange Jibril. Dernier des prophètes abrahamiques, il unifia la péninsule arabique sous l\'islam et transmit son autorité à l\'Ahl al-Bayt selon la doctrine chiite.',
+    significance:'Sceau des prophètes, receveur du Coran, fondateur de la communauté islamique.',
+    relatedIds:['ali','fatima','hasan','husayn','ghadir','hijra','khadija'] },
+
+  /* AHL AL-BAYT */
+  { id:'khadija', name:'Khadija bint Khuwaylid', arabic:'خَدِيجَة', type:'person', category:'ahl_al_bayt',
+    date:'556–619 EC', startDate:556, endDate:619, place:'mecca',
+    tags:['épouse','prophète','première croyante'],
+    era:'prophetic',
+    description:'Première épouse du Prophète, première femme à embrasser l\'islam. Marchand prospère, elle soutint Muhammad ﷺ dès les premières révélations. Mère de Fatima al-Zahra.',
+    significance:'Première croyante de l\'islam, soutien indéfectible du Prophète.',
+    relatedIds:['muhammad','fatima'] },
+
+  { id:'fatima', name:'Sayyida Fatima al-Zahra', arabic:'فَاطِمَة الزَّهْرَاء', type:'person', category:'ahl_al_bayt',
+    date:'605–632 EC', startDate:605, endDate:632, place:'medina',
+    tags:['Ahl al-Bayt','zahra','sayyida','martyrdom'],
+    era:'prophetic',
+    description:'Fille bien-aimée du Prophète Muhammad ﷺ et de Khadija, épouse de l\'Imam Ali, mère des Imams Hasan et Husayn. Elle décéda quelques semaines après le Prophète dans des circonstances douloureuses. Modèle de dignité, de résistance et de foi pour le chiisme.',
+    significance:'Mère des Imams, pilier central de l\'Ahl al-Bayt, modèle de la femme croyante.',
+    relatedIds:['muhammad','ali','hasan','husayn','saqifa','khadija'] },
+
+  /* IMAM 1 */
+  { id:'ali', name:'Imam Ali ibn Abi Talib', arabic:'عَلِيّ بْن أَبِي طَالِب', type:'imam', category:'imam',
+    imamate:1, date:'600–661 EC', startDate:600, endDate:661, place:'najaf',
+    tags:['1er Imam','Amir al-Mu\'minin','calife','Nahj al-Balagha'],
+    era:'early',
+    description:'Premier Imam du chiisme duodécimain, cousin et gendre du Prophète Muhammad ﷺ. Désigné à Ghadir Khumm en 632 EC, il assuma le califat de 656 à 661. Guerrier, juge et savant exceptionnel, compilateur du Coran selon la tradition chiite. Ses sermons et lettres sont réunis dans le Nahj al-Balagha.',
+    significance:'Père de l\'Imamat chiite, modèle de justice et de connaissance, figure centrale de la spiritualité islamique.',
+    relatedIds:['muhammad','fatima','hasan','husayn','ghadir','nahjal','siffin','jamal','nahrawan','kufa'] },
+
+  /* IMAM 2 */
+  { id:'hasan', name:'Imam Hasan ibn Ali', arabic:'الحَسَن بْن عَلِيّ', type:'imam', category:'imam',
+    imamate:2, date:'625–670 EC', startDate:625, endDate:670, place:'medina',
+    tags:['2e Imam','traité','Mu\'awiya'],
+    era:'early',
+    description:'Second Imam du chiisme duodécimain, fils aîné de l\'Imam Ali et de Fatima al-Zahra. Petit-fils du Prophète, il assuma l\'Imamat en 661 après le martyre de son père. Pour préserver la communauté du carnage d\'une guerre civile, il conclut un traité avec Mu\'awiya ibn Abi Sufyan, tout en maintenant une résistance intellectuelle et spirituelle.',
+    significance:'Préservateur de la communauté chiite, gardien de la ligne prophétique par sa stratégie de résistance non-violente.',
+    relatedIds:['ali','fatima','husayn','muawiya','treaty_hasan','medina'] },
+
+  /* IMAM 3 */
+  { id:'husayn', name:'Imam Husayn ibn Ali', arabic:'الحُسَيْن بْن عَلِيّ', type:'imam', category:'imam',
+    imamate:3, date:'626–680 EC', startDate:626, endDate:680, place:'karbala',
+    tags:['3e Imam','Karbala','Achura','martyre','révolution'],
+    era:'early',
+    description:'Troisième Imam du chiisme, fils cadet de l\'Imam Ali et de Fatima al-Zahra. Refusant de prêter allégeance à Yazid ibn Mu\'awiya, il se leva contre la tyrannie en 680. Massacré à Karbala le 10 Muharram avec 72 compagnons, son sacrifice est le fondement du chiisme et un appel éternel à la justice.',
+    significance:'Martyr de Karbala, symbole universel de résistance contre l\'injustice, source spirituelle de l\'identité chiite.',
+    relatedIds:['ali','fatima','hasan','zaynab','zayn','karbala_event','yazid','umayyad'] },
+
+  /* IMAM 4 */
+  { id:'zayn', name:'Imam Zayn al-Abidin', arabic:'زَيْن العَابِدِين', type:'imam', category:'imam',
+    imamate:4, date:'658–713 EC', startDate:658, endDate:713, place:'medina',
+    tags:['4e Imam','Sahifa Sajjadiyya','supplication','prisonnier','dua'],
+    era:'umayyad',
+    description:'Quatrième Imam, fils de l\'Imam Husayn, seul survivant adulte mâle de Karbala. Prisonnier conduit à Damas, il résista par la connaissance, la prière et la préservation de la mémoire. Sa Sahifa Sajjadiyya (Psautier de la famille du Prophète) est un chef-d\'œuvre de la supplication islamique.',
+    significance:'Préservateur de la mémoire de Karbala, auteur de la Sahifa Sajjadiyya, fondateur d\'un chiisme de résistance spirituelle.',
+    relatedIds:['husayn','baqir','karbala_event','medina','sahifa'] },
+
+  /* IMAM 5 */
+  { id:'baqir', name:'Imam Muhammad al-Baqir', arabic:'مُحَمَّد البَاقِر', type:'imam', category:'imam',
+    imamate:5, date:'676–733 EC', startDate:676, endDate:733, place:'medina',
+    tags:['5e Imam','faqih','exégèse','sciences'],
+    era:'umayyad',
+    description:'Cinquième Imam, fils de l\'Imam Zayn al-Abidin. Al-Baqir — "celui qui ouvre largement la connaissance" — fonda une vaste école théologique à Médine. Il transmit des milliers de hadith, développa l\'exégèse coranique et posa les bases du fiqh chiite.',
+    significance:'Fondateur de la tradition intellectuelle chiite, passeur d\'un savoir prophétique immense.',
+    relatedIds:['zayn','sadiq','medina','kufa'] },
+
+  /* IMAM 6 */
+  { id:'sadiq', name:'Imam Ja\'far al-Sadiq', arabic:'جَعْفَر الصَّادِق', type:'imam', category:'imam',
+    imamate:6, date:'702–765 EC', startDate:702, endDate:765, place:'medina',
+    tags:['6e Imam','fiqh','école jafarite','4000 disciples','alchimie'],
+    era:'abbasid',
+    description:'Sixième Imam, fils de l\'Imam al-Baqir. Figure intellectuelle majeure de l\'islam, il forma plus de 4 000 disciples, parmi lesquels Abu Hanifa et Malik ibn Anas. L\'école juridique chiite est dite "jafarite" en son honneur. Il enseigna la théologie, la philosophie, les sciences naturelles et transmitta un corpus hadithique colossal.',
+    significance:'Père du fiqh chiite, l\'un des penseurs les plus influents de l\'histoire islamique, pont entre toutes les traditions du savoir.',
+    relatedIds:['baqir','kazim','kulayni','medina','kafi'] },
+
+  /* IMAM 7 */
+  { id:'kazim', name:'Imam Musa al-Kazim', arabic:'مُوسَى الكَاظِم', type:'imam', category:'imam',
+    imamate:7, date:'745–799 EC', startDate:745, endDate:799, place:'kazimayn',
+    tags:['7e Imam','prisonnier','patience','Baghdad'],
+    era:'abbasid',
+    description:'Septième Imam, fils de l\'Imam al-Sadiq. Al-Kazim — "celui qui ravale sa colère" — fut emprisonné de nombreuses années par le calife Harun al-Rashid. Il mourut en prison à Bagdad, et son mausolée se trouve à Kazimayn. Sa patience face à l\'oppression est légendaire.',
+    significance:'Modèle de patience et de résistance spirituelle face au pouvoir abbasside.',
+    relatedIds:['sadiq','rida','baghdad','abbasid'] },
+
+  /* IMAM 8 */
+  { id:'rida', name:'Imam Ali al-Rida', arabic:'عَلِيّ الرِّضَا', type:'imam', category:'imam',
+    imamate:8, date:'765–818 EC', startDate:765, endDate:818, place:'mashhad',
+    tags:['8e Imam','al-Ma\'mun','héritier','Mashhad'],
+    era:'abbasid',
+    description:'Huitième Imam, fils de l\'Imam al-Kazim. Le calife abbasside al-Ma\'mun le désigna comme héritier présomptif en 817, tentant de neutraliser l\'influence chiite. L\'Imam refusa tout compromis de fond et mourut à Tus (Mashhad). Son mausolée est le plus visité d\'Iran.',
+    significance:'Résistance à la cooptation politique, référence doctrinale majeure, saint patron de Mashhad.',
+    relatedIds:['kazim','jawad','mashhad','abbasid'] },
+
+  /* IMAM 9 */
+  { id:'jawad', name:'Imam Muhammad al-Jawad', arabic:'مُحَمَّد الجَوَاد', type:'imam', category:'imam',
+    imamate:9, date:'811–835 EC', startDate:811, endDate:835, place:'kazimayn',
+    tags:['9e Imam','al-Taqi','prodige','jeunesse'],
+    era:'abbasid',
+    description:'Neuvième Imam, fils de l\'Imam al-Rida. Il accéda à l\'Imamat à l\'âge de 8 ou 9 ans, ce qui posa la question de la légitimité d\'un Imam enfant. Sa capacité à répondre aux questions savantes les plus complexes affirma la conception chiite de l\'Imamat divin.',
+    significance:'Confirmation de l\'Imamat comme don divin indépendant de l\'âge.',
+    relatedIds:['rida','hadi','kazimayn','abbasid'] },
+
+  /* IMAM 10 */
+  { id:'hadi', name:'Imam Ali al-Hadi', arabic:'عَلِيّ الهَادِي', type:'imam', category:'imam',
+    imamate:10, date:'827–868 EC', startDate:827, endDate:868, place:'samarra',
+    tags:['10e Imam','al-Naqi','Samarra','assignation à résidence'],
+    era:'abbasid',
+    description:'Dixième Imam, fils de l\'Imam al-Jawad. Il fut contraint de s\'installer à Samarra par le calife al-Mutawakkil, qui le plaça sous surveillance constante. Il y vécut et mourut, entourant son entourage d\'une communauté discrète de fidèles.',
+    significance:'Résistance à l\'assignation à résidence, préservation du réseau de communication chiite.',
+    relatedIds:['jawad','askari','samarra','abbasid'] },
+
+  /* IMAM 11 */
+  { id:'askari', name:'Imam Hasan al-Askari', arabic:'الحَسَن العَسْكَرِيّ', type:'imam', category:'imam',
+    imamate:11, date:'846–874 EC', startDate:846, endDate:874, place:'samarra',
+    tags:['11e Imam','Samarra','père du Mahdi','occultation préparée'],
+    era:'abbasid',
+    description:'Onzième Imam, fils de l\'Imam al-Hadi. Lui aussi contraint de résider à Samarra, il prépara la communauté à la grande transition à venir : l\'occultation de son fils, le douzième Imam. Il mourut à 28 ans dans des circonstances suspectes.',
+    significance:'Préparateur de la transition vers l\'occultation, dernier Imam visible de la communauté.',
+    relatedIds:['hadi','mahdi','samarra','abbasid','minor_occultation'] },
+
+  /* IMAM 12 */
+  { id:'mahdi', name:'Imam al-Mahdi', arabic:'المَهْدِيّ المُنْتَظَر', type:'imam', category:'imam',
+    imamate:12, date:'869–présent', startDate:869, endDate:null, place:'samarra',
+    tags:['12e Imam','Mahdi attendu','occultation mineure','occultation majeure','retour'],
+    era:'occultation',
+    description:'Douzième et dernier Imam du chiisme duodécimain, fils de l\'Imam Hasan al-Askari. Né en 869 à Samarra, il entra en occultation mineure (874–941) en communiquant par l\'intermédiaire de quatre représentants. Depuis 941, il est en occultation majeure jusqu\'à son retour à la fin des temps pour établir la justice universelle.',
+    significance:'Imam vivant caché, source de l\'autorité du wilayat al-faqih, espoir eschatologique du chiisme.',
+    relatedIds:['askari','minor_occultation','major_occultation','samarra'] },
+
+  /* PERSONNAGES */
+  { id:'zaynab', name:'Zaynab bint Ali', arabic:'زَيْنَب بِنْت عَلِيّ', type:'person', category:'ahl_al_bayt',
+    date:'626–682 EC', startDate:626, endDate:682, place:'damascus',
+    tags:['Ahl al-Bayt','Karbala','témoignage','résistance'],
+    era:'umayyad',
+    description:'Sœur de l\'Imam Husayn, fille de l\'Imam Ali et de Fatima al-Zahra. Après la catastrophe de Karbala, elle assura la survie spirituelle du message de son frère en prenant la parole devant Yazid à Damas avec une éloquence légendaire. Première historienne de Karbala.',
+    significance:'Voix de Karbala, transmettrice du témoignage, modèle de résistance féminine.',
+    relatedIds:['ali','fatima','husayn','karbala_event','damascus'] },
+
+  { id:'abbas', name:'Abbas ibn Ali', arabic:'العَبَّاس بْن عَلِيّ', type:'person', category:'ahl_al_bayt',
+    date:'647–680 EC', startDate:647, endDate:680, place:'karbala',
+    tags:['Karbala','porte-étendard','eau','fidélité'],
+    era:'early',
+    description:'Demi-frère de l\'Imam Husayn, fils de l\'Imam Ali. Porte-étendard et chef militaire à Karbala, il mourut en tentant d\'apporter de l\'eau aux enfants assoiffés. Son tombeau à Karbala est l\'un des plus vénérés du chiisme.',
+    significance:'Symbole de fidélité absolue et de sacrifice.',
+    relatedIds:['ali','husayn','karbala_event','karbala'] },
+
+  { id:'salman', name:'Salman al-Farisi', arabic:'سَلْمَان الفَارِسِيّ', type:'person', category:'person',
+    date:'568–657 EC', startDate:568, endDate:657, place:'medina',
+    tags:['compagnon','Ahl al-Bayt','Perse'],
+    era:'prophetic',
+    description:'Compagnon persan du Prophète, l\'un des plus proches de l\'Imam Ali. Sa phrase "Salman est de nous, Ahl al-Bayt" (hadith prophétique) en fait une figure emblématique de la dévotion à la famille du Prophète et de l\'universalité de l\'islam.',
+    significance:'Symbole de l\'universalité de l\'islam et du lien entre la Perse et l\'Ahl al-Bayt.',
+    relatedIds:['muhammad','ali'] },
+
+  { id:'muawiya', name:'Mu\'awiya ibn Abi Sufyan', arabic:'مُعَاوِيَة بْن أَبِي سُفْيَان', type:'person', category:'person',
+    date:'602–680 EC', startDate:602, endDate:680, place:'damascus',
+    tags:['Omeyyades','gouverneur','califat','opposition'],
+    era:'early',
+    description:'Fondateur de la dynastie omeyyade, gouverneur de Syrie sous le règne du calife Uthman. Il s\'opposa à l\'Imam Ali lors de la bataille de Siffin et signa un traité avec l\'Imam Hasan lui reconnaissant le califat. Figure centrale des divergences entre chiisme et sunnisme.',
+    significance:'Moment clé de divergence historique : sa prise de pouvoir rompt la légitimité de l\'Imamat selon la doctrine chiite.',
+    relatedIds:['ali','hasan','husayn','umayyad','siffin','damascus','treaty_hasan'] },
+
+  { id:'yazid', name:'Yazid ibn Mu\'awiya', arabic:'يَزِيد بْن مُعَاوِيَة', type:'person', category:'person',
+    date:'645–683 EC', startDate:645, endDate:683, place:'damascus',
+    tags:['Omeyyades','Karbala','tyrannie'],
+    era:'umayyad',
+    description:'Fils de Mu\'awiya, deuxième calife omeyyade. Son refus d\'accepter la délégitimation de l\'Imamat et son exigence d\'allégeance de l\'Imam Husayn conduisirent directement à la tragédie de Karbala.',
+    significance:'Responsable direct du massacre de Karbala selon la tradition chiite.',
+    relatedIds:['muawiya','husayn','karbala_event','umayyad'] },
+
+  /* ÉVÉNEMENTS */
+  { id:'revelation', name:'Première Révélation', arabic:'البِعْثَة', type:'event', category:'event',
+    date:'610 EC', startDate:610, era:'prophetic', subtype:'revelation',
+    place:'mecca', tags:['Coran','Jibril','Hira'],
+    description:'En 610 EC, Muhammad ﷺ reçut la première révélation coranique dans la grotte de Hira près de La Mecque, par l\'intermédiaire de l\'ange Jibril. Cette nuit marque le début de la prophétie et de la mission islamique.',
+    significance:'Commencement de la Révélation divine, fondement de l\'islam.',
+    relatedIds:['muhammad','mecca'] },
+
+  { id:'hijra', name:'La Hijra', arabic:'الهِجْرَة', type:'event', category:'event',
+    date:'622 EC', startDate:622, era:'prophetic', subtype:'politics',
+    place:'medina', tags:['émigration','Médine','calendrier'],
+    description:'En 622 EC, le Prophète et ses compagnons émigrèrent de La Mecque vers Médine (Yathrib), fuyant les persécutions de Quraysh. Cet événement marque le début du calendrier hégirien (AH).',
+    significance:'Fondation de la première cité islamique, début du calendrier musulman.',
+    relatedIds:['muhammad','mecca','medina'] },
+
+  { id:'ghadir', name:'Ghadir Khumm', arabic:'غَدِير خُمّ', type:'event', category:'event',
+    date:'18 Dhu al-Hijja 10 AH / 632 EC', startDate:632, era:'prophetic', subtype:'revelation',
+    place:'mecca', tags:['wilaya','succession','désignation','Ali'],
+    description:'Le 18 Dhu al-Hijja, lors du retour du pèlerinage d\'adieu, le Prophète Muhammad ﷺ s\'arrêta à la mare de Ghadir Khumm et, devant 120 000 pèlerins, déclara : "Celui dont je suis le maître (mawla), Ali est son maître." Pour la tradition chiite, cet acte constitue la désignation explicite de l\'Imam Ali comme successeur.',
+    significance:'Moment fondateur du chiisme : désignation divine de l\'Imam Ali comme successeur du Prophète.',
+    relatedIds:['muhammad','ali','fatima'] },
+
+  { id:'prophet_death', name:'Décès du Prophète', arabic:'وَفَاة النَّبِيّ', type:'event', category:'event',
+    date:'28 Safar 11 AH / 632 EC', startDate:632, era:'early', subtype:'martyrdom',
+    place:'medina', tags:['décès','succession','Ahl al-Bayt'],
+    description:'Le 28 Safar 11 AH, le Prophète Muhammad ﷺ rendit l\'âme à Médine. Sa mort déclencha immédiatement la crise de succession qui est au cœur de la divergence entre chiisme et sunnisme.',
+    significance:'Moment déclencheur de la crise successorale, séparation des chemins chiite et sunnite.',
+    relatedIds:['muhammad','ali','fatima','saqifa','medina'] },
+
+  { id:'saqifa', name:'Saqifa Bani Sa\'ida', arabic:'سَقِيفَة بَنِي سَاعِدَة', type:'event', category:'event',
+    date:'632 EC', startDate:632, era:'early', subtype:'politics',
+    place:'medina', tags:['succession','Abu Bakr','califat','divergence'],
+    description:'Tandis que l\'Imam Ali et l\'Ahl al-Bayt étaient occupés à préparer les funérailles du Prophète, un groupe de compagnons se réunit sous l\'auvent de Saqifa Bani Sa\'ida et élut Abu Bakr comme premier calife. La tradition chiite considère cet acte comme un détournement de la désignation divine de Ghadir Khumm.',
+    significance:'Moment clé de divergence historique : fondement de la rupture entre chiisme et sunnisme sur la question du califat.',
+    relatedIds:['muhammad','ali','fatima','medina'] },
+
+  { id:'fatima_death', name:'Martyre de Fatima al-Zahra', arabic:'شَهَادَة فَاطِمَة', type:'event', category:'event',
+    date:'632–633 EC', startDate:632, era:'early', subtype:'martyrdom',
+    place:'medina', tags:['martyre','Fatima','Fadak','résistance'],
+    description:'Quelques semaines ou mois après le décès du Prophète, Fatima al-Zahra mourut dans des circonstances controversées, après avoir revendiqué l\'héritage de Fadak et protesté contre l\'usurpation des droits de l\'Imam Ali. Elle demanda à être enterrée secrètement la nuit.',
+    significance:'Martyre considérée par le chiisme, symbole de la résistance de l\'Ahl al-Bayt.',
+    relatedIds:['fatima','ali','muhammad','medina'] },
+
+  { id:'jamal', name:'Bataille du Chameau', arabic:'مَعْرَكَة الجَمَل', type:'event', category:'event',
+    date:'656 EC', startDate:656, era:'early', subtype:'battle',
+    place:'basra', tags:['bataille','Ali','Aisha','Talha','Zubayr'],
+    description:'Première guerre civile islamique, opposant l\'Imam Ali à une coalition menée par Aisha (épouse du Prophète), Talha et Zubayr près de Bassora. L\'Imam Ali sortit vainqueur. Ce fut la première bataille entre musulmans.',
+    significance:'Premier conflit armé majeur de l\'Imamat d\'Ali, marquant la profonde fracture de la communauté.',
+    relatedIds:['ali','kufa'] },
+
+  { id:'siffin', name:'Bataille de Siffin', arabic:'مَعْرَكَة صِفِّين', type:'event', category:'event',
+    date:'657 EC', startDate:657, era:'early', subtype:'battle',
+    place:'kufa', tags:['bataille','Ali','Mu\'awiya','arbitrage'],
+    description:'Bataille décisive entre l\'Imam Ali et Mu\'awiya ibn Abi Sufyan sur les bords de l\'Euphrate. Alors que l\'armée d\'Ali était sur le point de l\'emporter, les soldats de Mu\'awiya brandirent des Corans en signe d\'appel à l\'arbitrage. L\'arbitrage conclut de manière controversée.',
+    significance:'Crise politique et spirituelle majeure dans le califat d\'Ali.',
+    relatedIds:['ali','muawiya','kufa','damascus'] },
+
+  { id:'nahrawan', name:'Bataille de Nahrawan', arabic:'مَعْرَكَة النَّهْرَوَان', type:'event', category:'event',
+    date:'658 EC', startDate:658, era:'early', subtype:'battle',
+    place:'kufa', tags:['Kharijites','bataille','Ali'],
+    description:'Bataille contre les Kharijites — partisans de l\'Imam Ali devenus extrémistes après Siffin — qui proclamaient "le jugement n\'appartient qu\'à Dieu" (La hukm illa lillah) pour rejeter tout arbitrage humain. L\'Imam Ali les vainquit mais en sortit politiquement affaibli.',
+    significance:'Émergence du kharijisme, premier mouvement extrémiste de l\'histoire islamique.',
+    relatedIds:['ali','kufa'] },
+
+  { id:'ali_martyrdom', name:'Martyre de l\'Imam Ali', arabic:'شَهَادَة الإِمَام عَلِيّ', type:'event', category:'event',
+    date:'21 Ramadan 40 AH / 661 EC', startDate:661, era:'early', subtype:'martyrdom',
+    place:'kufa', tags:['martyre','Ali','kharijite','assassinat'],
+    description:'Le 19 Ramadan 40 AH, l\'Imam Ali fut frappé d\'un coup d\'épée empoisonnée par Ibn Muljam al-Muradi (un Kharijite) lors de sa prière de l\'aube à la Grande Mosquée de Kufa. Il mourut deux jours plus tard, le 21 Ramadan. Il fut enterré à Najaf.',
+    significance:'Martyrologe fondateur du chiisme, Najaf devient le premier grand sanctuaire chiite.',
+    relatedIds:['ali','kufa','najaf','hasan'] },
+
+  { id:'treaty_hasan', name:'Traité de l\'Imam Hasan', arabic:'صُلْح الحَسَن', type:'event', category:'event',
+    date:'661 EC', startDate:661, era:'early', subtype:'politics',
+    place:'kufa', tags:['traité','Hasan','Mu\'awiya','stratégie'],
+    description:'L\'Imam Hasan conclut un traité avec Mu\'awiya, lui cédant le califat formel sous conditions strictes : pas de persécution des chiites, pas de désignation de successeur dynastique, retour du califat à l\'Imam Hasan à la mort de Mu\'awiya. Mu\'awiya ne respecta aucune de ces conditions.',
+    significance:'Acte de préservation stratégique de la communauté chiite, non une capitulation.',
+    relatedIds:['hasan','muawiya','ali','kufa'] },
+
+  { id:'hasan_martyrdom', name:'Martyre de l\'Imam Hasan', arabic:'شَهَادَة الإِمَام الحَسَن', type:'event', category:'event',
+    date:'50 AH / 670 EC', startDate:670, era:'early', subtype:'martyrdom',
+    place:'medina', tags:['martyre','Hasan','poison'],
+    description:'L\'Imam Hasan mourut empoisonné à Médine en 670 EC. La tradition chiite rapporte que la responsabilité en incombe à l\'entourage de Mu\'awiya. Il fut enterré au cimetière de Baqi à Médine.',
+    significance:'Second grand martyre chiite, confirmant le schéma de persécution de l\'Ahl al-Bayt.',
+    relatedIds:['hasan','muawiya','husayn','medina'] },
+
+  { id:'karbala_event', name:'Bataille de Karbala', arabic:'مَعْرَكَة كَرْبَلَاء', type:'event', category:'event',
+    date:'10 Muharram 61 AH / 10 octobre 680 EC', startDate:680, era:'umayyad', subtype:'battle',
+    place:'karbala', tags:['Achura','martyre','Husayn','10 Muharram'],
+    description:'Le 10 Muharram (Achura) 61 AH, l\'Imam Husayn et 72 compagnons — dont des femmes et des enfants — furent massacrés dans la plaine de Karbala par l\'armée de Yazid ibn Mu\'awiya commandée par Ibn Sa\'d. L\'Imam Husayn avait refusé de prêter allégeance à Yazid, déclarant : "La mort avec dignité vaut mieux que la vie dans l\'humiliation."',
+    significance:'L\'événement le plus central du chiisme : révolution spirituelle, appel éternel à la justice, fondement de l\'identité chiite.',
+    relatedIds:['husayn','zaynab','abbas','yazid','zayn','karbala','umayyad'] },
+
+  { id:'captivity', name:'Captivité de l\'Ahl al-Bayt', arabic:'سَبْي أَهْل البَيْت', type:'event', category:'event',
+    date:'680–681 EC', startDate:680, era:'umayyad', subtype:'martyrdom',
+    place:'damascus', tags:['captivité','Zaynab','témoignage','Damas'],
+    description:'Après Karbala, les survivants — dont l\'Imam Zayn al-Abidin blessé et Zaynab bint Ali — furent emmenés prisonniers à Kufa puis à Damas. Les discours de Zaynab devant Yazid et ceux de l\'Imam Zayn al-Abidin constituent des témoignages historiques décisifs qui préservèrent la mémoire de Karbala.',
+    significance:'Transmission vivante du message de Karbala, Zaynab comme première historienne du massacre.',
+    relatedIds:['zaynab','zayn','husayn','yazid','damascus','karbala_event'] },
+
+  { id:'minor_occultation', name:'Occultation mineure', arabic:'الغَيْبَة الصُّغْرَى', type:'event', category:'event',
+    date:'874–941 EC', startDate:874, endDate:941, era:'occultation', subtype:'knowledge',
+    place:'samarra', tags:['occultation','Mahdi','4 représentants','nawab'],
+    description:'De 874 à 941 EC, le douzième Imam communiqua avec la communauté par l\'intermédiaire de quatre représentants (nawwab) successifs : Uthman ibn Sa\'id al-Askar, Muhammad ibn Uthman al-Askar, Husayn ibn Ruh al-Nawbakhti, et Ali ibn Muhammad al-Samarri.',
+    significance:'Transition entre présence physique et occultation totale, institutionnalisation de la représentation de l\'Imam.',
+    relatedIds:['mahdi','askari','samarra'] },
+
+  { id:'major_occultation', name:'Occultation majeure', arabic:'الغَيْبَة الكُبْرَى', type:'event', category:'event',
+    date:'941 EC–présent', startDate:941, era:'occultation', subtype:'knowledge',
+    place:'samarra', tags:['occultation','Mahdi','retour','eschatologie'],
+    description:'En 941 EC, à la mort du quatrième représentant, l\'Imam al-Mahdi entra en occultation majeure. Aucun représentant direct ne fut désigné. Selon la doctrine chiite, l\'Imam est vivant et présent mais caché, et son retour (zuhur) à la fin des temps établira la justice universelle.',
+    significance:'Fondement de la théologie chiite contemporaine et du concept de wilayat al-faqih.',
+    relatedIds:['mahdi','minor_occultation','samarra'] },
+
+  /* LIEUX */
+  { id:'mecca', name:'La Mecque', arabic:'مَكَّة المُكَرَّمَة', type:'place', category:'place',
+    date:'Ville éternelle', era:'all',
+    tags:['Ka\'ba','Quraysh','pèlerinage','révélation'],
+    icon:'🕋',
+    description:'Ville sainte au cœur de l\'Arabie, lieu de naissance du Prophète Muhammad ﷺ et berceau de l\'islam. La Ka\'ba, première maison de Dieu selon la tradition islamique, est au centre de la Grande Mosquée. Site des révélations premières et du pèlerinage annuel (Hajj).',
+    significance:'La ville la plus sainte de l\'islam.',
+    relatedIds:['muhammad','revelation','hijra','ghadir'] },
+
+  { id:'medina', name:'Médine', arabic:'المَدِينَة المُنَوَّرَة', type:'place', category:'place',
+    date:'Ville du Prophète', era:'all',
+    tags:['Prophète','Baqi','hégire','masjid'],
+    icon:'🕌',
+    description:'Ville d\'émigration du Prophète, fondation de la première cité islamique. Le Prophète y est enterré dans la Mosquée du Prophète (Masjid al-Nabawi). Le cimetière de Baqi renferme les tombes de Fatima al-Zahra, des Imams Hasan, Zayn al-Abidin, Baqir et Sadiq.',
+    significance:'Deuxième ville sainte de l\'islam, cœur de la tradition prophétique.',
+    relatedIds:['muhammad','fatima','hasan','baqir','sadiq','hijra'] },
+
+  { id:'kufa', name:'Kufa (Koufa)', arabic:'الكُوفَة', type:'place', category:'place',
+    date:'Fondée en 638 EC', era:'early',
+    tags:['Ali','capitale','Mésopotamie','mosquée'],
+    icon:'⚔',
+    description:'Ville fondée en 638 EC en Irak. Capitale du califat de l\'Imam Ali, c\'est à la Grande Mosquée de Kufa qu\'il fut assassiné. Kufa était un centre intellectuel majeur du chiisme primitif et la ville d\'où partirent les lettres d\'invitation à l\'Imam Husayn avant Karbala.',
+    significance:'Capitale de l\'Imam Ali, lieu de son martyre, centre du chiisme primitif.',
+    relatedIds:['ali','husayn','ali_martyrdom','karbala_event'] },
+
+  { id:'karbala', name:'Karbala', arabic:'كَرْبَلَاء', type:'place', category:'place',
+    date:'Sanctuaire de l\'Imam Husayn', era:'umayyad',
+    tags:['Husayn','Abbas','sanctuaire','Achura'],
+    icon:'🌹',
+    description:'Ville d\'Irak où fut massacré l\'Imam Husayn le 10 Muharram 61 AH (680 EC). Le sanctuaire de l\'Imam Husayn (Haram al-Husayni) et le mausolée d\'Abbas ibn Ali en sont les deux pôles spirituels. Destination du plus grand pèlerinage mondial : Arba\'in (40e jour après Achura).',
+    significance:'Le lieu le plus saint du chiisme après Médine pour les Imams, site de la révolution de Karbala.',
+    relatedIds:['husayn','abbas','karbala_event','zayn'] },
+
+  { id:'najaf', name:'Najaf', arabic:'النَّجَف الأَشْرَف', type:'place', category:'place',
+    date:'Sanctuaire de l\'Imam Ali', era:'early',
+    tags:['Ali','mausolée','hawza','jurisprudence'],
+    icon:'🌟',
+    description:'Ville d\'Irak abritant le sanctuaire de l\'Imam Ali ibn Abi Talib. La hawza ilmiyya de Najaf est l\'une des plus grandes universités religieuses du monde islamique, fondée au Xe siècle par Sheikh al-Tusi. Centre mondial du chiisme et de la jurisprudence islamique.',
+    significance:'Cœur spirituel et intellectuel du chiisme mondial.',
+    relatedIds:['ali','ali_martyrdom','mufid','tusi'] },
+
+  { id:'samarra', name:'Samarra', arabic:'سَامَرَّاء', type:'place', category:'place',
+    date:'Ville des Imams X et XI', era:'abbasid',
+    tags:['Hadi','Askari','Mahdi','occultation'],
+    icon:'🏛',
+    description:'Ville d\'Irak où furent assignés à résidence les 10e et 11e Imams sous surveillance abbasside. Le sanctuaire des Imams al-Hadi et al-Askari (dit "des deux dômes d\'or") fut détruit puis reconstruit plusieurs fois. La cave (sardab) de l\'occultation du 12e Imam s\'y trouve.',
+    significance:'Lieu de l\'occultation du douzième Imam, sanctuaire des Imams X et XI.',
+    relatedIds:['hadi','askari','mahdi','minor_occultation'] },
+
+  { id:'qom', name:'Qom', arabic:'قُمّ', type:'place', category:'place',
+    date:'Centre depuis le IXe siècle', era:'abbasid',
+    tags:['Fatima Ma\'suma','hawza','Iran','autorité religieuse'],
+    icon:'📚',
+    description:'Ville sainte d\'Iran, centre du chiisme iranien depuis le IXe siècle. Abrite le sanctuaire de Fatima Ma\'suma (sœur de l\'Imam al-Rida) et la hawza ilmiyya de Qom, principale université religieuse chiite depuis les années 1920. Siège des plus hautes autorités du marjaïya.',
+    significance:'Principal centre d\'enseignement religieux chiite contemporain, siège des grands marjas.',
+    relatedIds:['rida','sadiq'] },
+
+  { id:'mashhad', name:'Mashhad', arabic:'مَشْهَد', type:'place', category:'place',
+    date:'Sanctuaire depuis 818 EC', era:'abbasid',
+    tags:['Rida','Iran','pèlerinage','8e Imam'],
+    icon:'✨',
+    description:'Ville d\'Iran (Khorasan) où mourut l\'Imam Ali al-Rida en 818 EC, empoisonné selon la tradition chiite. Son sanctuaire (Haram-e Razavi) est le plus grand complexe religieux du monde, attirant des dizaines de millions de pèlerins chaque année.',
+    significance:'Sanctuaire du huitième Imam, le plus visité au monde.',
+    relatedIds:['rida'] },
+
+  { id:'damascus', name:'Damas', arabic:'دِمَشْق', type:'place', category:'place',
+    date:'Capitale omeyyade', era:'umayyad',
+    tags:['Omeyyades','Yazid','Zaynab','capitale'],
+    icon:'🏰',
+    description:'Capitale de la dynastie omeyyade. C\'est devant le trône de Yazid à Damas que Zaynab bint Ali prononça son célèbre discours condamnant le massacre de Karbala. La ville abrite également le mausolée de Zaynab (Sayyida Zaynab) dans sa banlieue sud.',
+    significance:'Siège du pouvoir omeyyade, lieu du témoignage de Zaynab.',
+    relatedIds:['muawiya','yazid','zaynab','umayyad','captivity'] },
+
+  { id:'kazimayn', name:'Kazimayn', arabic:'الكَاظِمَيْن', type:'place', category:'place',
+    date:'Sanctuaire des Imams VII et IX', era:'abbasid',
+    tags:['Kazim','Jawad','Bagdad','sanctuaire'],
+    icon:'🕍',
+    description:'Ville (aujourd\'hui district de Bagdad) abritant les sanctuaires des Imams Musa al-Kazim et Muhammad al-Jawad dans un seul et même complexe. L\'un des pèlerinages chiites les plus importants d\'Irak.',
+    significance:'Sanctuaire des 7e et 9e Imams.',
+    relatedIds:['kazim','jawad'] },
+
+  /* THÈMES */
+  { id:'imamat', name:'L\'Imamat', arabic:'الإِمَامَة', type:'theme', category:'theme',
+    icon:'👑',
+    tags:['doctrine','successeur','divin','guide'],
+    description:'Doctrine centrale du chiisme duodécimain : les Imams de la famille du Prophète sont les guides divins légitimes de la communauté. L\'Imam n\'est pas simplement un chef politique mais un guide spirituel désigné par Dieu et investit d\'une connaissance spéciale (\'ilm ladunni).',
+    significance:'Pilier doctrinal fondateur du chiisme.',
+    relatedIds:['ali','ghadir','mahdi'] },
+
+  { id:'wilaya', name:'La Wilaya', arabic:'الوِلَايَة', type:'theme', category:'theme',
+    icon:'🌊',
+    tags:['gardiennat','amour','Ali','Ahl al-Bayt'],
+    description:'Concept multi-dimensionnel désignant le gardiennat spirituel, l\'autorité et l\'amour envers l\'Imam Ali et l\'Ahl al-Bayt. La wilaya est à la fois une obligation doctrinale et une réalité mystique : le lien d\'amour et de fidélité envers les Imams est constitutif de la foi.',
+    significance:'Fondement de la relation spirituelle chiite avec les Imams.',
+    relatedIds:['ghadir','imamat','ali'] },
+
+  { id:'adl', name:'La Justice Divine', arabic:'العَدْل', type:'theme', category:'theme',
+    icon:'⚖',
+    tags:['justice','doctrine','attribut divin'],
+    description:'L\'un des cinq piliers doctrinaux du chiisme duodécimain (usul al-din) : Dieu est absolument juste et ne peut ordonner que le juste. Ce principe est au cœur de l\'éthique chiite et de son opposition à toute tyrannique.',
+    significance:'Pilier doctrinal distinguant le chiisme du déterminisme théologique sunnite majoritaire.',
+    relatedIds:['imamat','ali'] },
+
+  { id:'shahada', name:'Le Martyre', arabic:'الشَّهَادَة', type:'theme', category:'theme',
+    icon:'🌹',
+    tags:['martyre','Karbala','sacrifice','résistance'],
+    description:'Le martyre (shahada) occupe une place centrale dans la spiritualité chiite. Les martyrs, à commencer par l\'Imam Ali, Fatima al-Zahra et surtout l\'Imam Husayn à Karbala, sont des modèles de sacrifice pour la vérité et la justice. Le thème du martyre structure le calendrier liturgique chiite (Achura, Arba\'in).',
+    significance:'Paradigme spirituel et éthique central du chiisme.',
+    relatedIds:['husayn','karbala_event','ali','fatima'] },
+
+  { id:'ghayba', name:'L\'Occultation', arabic:'الغَيْبَة', type:'theme', category:'theme',
+    icon:'🌙',
+    tags:['Mahdi','occultation','attente','eschatologie'],
+    description:'L\'occultation (ghayba) du douzième Imam est un dogme fondamental du chiisme duodécimain. L\'Imam al-Mahdi est vivant mais caché depuis 874 EC. En son absence, l\'autorité religieuse revient aux juristes (wilayat al-faqih selon l\'école de l\'Imam Khomeini).',
+    significance:'Fondement de la théologie politique chiite et de l\'eschatologie islamique.',
+    relatedIds:['mahdi','minor_occultation','major_occultation'] },
+
+  { id:'taqiyya', name:'La Taqiyya', arabic:'التَّقِيَّة', type:'theme', category:'theme',
+    icon:'🛡',
+    tags:['dissimulation','protection','fiqh','chiisme'],
+    description:'La dissimulation prudente (taqiyya) est une disposition autorisée par le fiqh chiite en situation de danger grave. Plusieurs Imams la pratiquèrent pour protéger leurs disciples sous oppression. Elle est fondée sur des versets coraniques et ne signifie pas hypocrisie mais protection de soi et de la communauté.',
+    significance:'Mécanisme de survie historique de la communauté chiite sous persécution.',
+    relatedIds:['sadiq','hadi','askari'] },
+
+  { id:'transmission', name:'Transmission du Savoir', arabic:'نَقْل العِلْم', type:'theme', category:'theme',
+    icon:'📖',
+    tags:['hadith','science','chaîne','Imams'],
+    description:'La transmission du savoir prophétique par les Imams est un pilier de la civilisation chiite. Chaque Imam a transmis un corpus de hadiths, d\'exégèse et de jurisprudence. Cette transmission continue assure la permanence de la guidance divine au sein de la communauté.',
+    significance:'Fondement de la tradition hadithique et juridique chiite.',
+    relatedIds:['baqir','sadiq','kulayni','kafi'] },
+
+  /* DYNASTIES */
+  { id:'umayyad', name:'Omeyyades', arabic:'الأُمَوِيُّون', type:'dynasty', category:'dynasty',
+    date:'661–750 EC', startDate:661, endDate:750, era:'umayyad',
+    tags:['califat','Damas','oppression','Karbala'],
+    description:'Première grande dynastie islamique, fondée par Mu\'awiya ibn Abi Sufyan en 661. Gouvernant depuis Damas, les Omeyyades furent les principaux oppresseurs de l\'Ahl al-Bayt : martyres de l\'Imam Husayn (680), de l\'Imam Hasan (670), persécutions continues des chiites.',
+    significance:'Période de la plus grande oppression de l\'Ahl al-Bayt, fondatrice de la mémoire chiite du martyre.',
+    relatedIds:['muawiya','yazid','husayn','karbala_event','damascus'] },
+
+  { id:'abbasid', name:'Abbassides', arabic:'العَبَّاسِيُّون', type:'dynasty', category:'dynasty',
+    date:'750–1258 EC', startDate:750, endDate:1258, era:'abbasid',
+    tags:['califat','Bagdad','oppression','Imams'],
+    description:'Deuxième grande dynastie islamique, ayant renversé les Omeyyades en 750. Les Abbassides, malgré leur rhétorique pro-alide, persécutèrent les Imams chiites : emprisonnement de l\'Imam al-Kazim, assignation à résidence des Imams al-Hadi et al-Askari à Samarra.',
+    significance:'Les Imams VIII à XII vécurent sous cette oppression.',
+    relatedIds:['kazim','rida','jawad','hadi','askari','mahdi','baghdad'] },
+
+  /* SAVANTS */
+  { id:'kulayni', name:'Al-Kulayni', arabic:'الكُلَيْنِيّ', type:'scholar', category:'scholar',
+    date:'864–941 EC', startDate:864, endDate:941, place:'baghdad',
+    tags:['hadith','Al-Kafi','jurisprudence'],
+    description:'Muhammad ibn Ya\'qub al-Kulayni, grand mujtahid chiite décédé en 941 EC (l\'année même de l\'occultation majeure). Auteur du Kitab al-Kafi, la plus vaste et la plus importante compilation de hadiths chiites en trois volumes (usul, furu\', rawda). Il vécut entre Rey et Bagdad.',
+    significance:'Auteur du recueil hadithique le plus fondamental du chiisme.',
+    relatedIds:['sadiq','kafi','baghdad'] },
+
+  { id:'saduq', name:'Sheikh al-Saduq', arabic:'الشَّيْخ الصَّدُوق', type:'scholar', category:'scholar',
+    date:'923–991 EC', startDate:923, endDate:991, place:'qom',
+    tags:['hadith','fiqh','Man la Yahduruhu','Qom'],
+    description:'Muhammad ibn Ali ibn Babawayh al-Qummi, dit al-Saduq. Grand savant chiite, il compila Man la yahduruhu al-faqih, l\'un des quatre livres canoniques du chiisme. Il répondit à des questions théologiques de l\'Imam al-Mahdi par écrit pendant l\'occultation mineure.',
+    significance:'Auteur d\'un des quatre recueils canoniques chiites.',
+    relatedIds:['mahdi','minor_occultation','qom','kafi'] },
+
+  { id:'mufid', name:'Sheikh al-Mufid', arabic:'الشَّيْخ المُفِيد', type:'scholar', category:'scholar',
+    date:'948–1022 EC', startDate:948, endDate:1022, place:'baghdad',
+    tags:['théologie','kalam','Al-Irshad','Bagdad'],
+    description:'Muhammad ibn al-Nu\'man al-Akbari al-Baghdadi, dit al-Mufid. Théologien de premier plan, il systématisa la théologie chiite (kalam) et réfuta les opinions adverses avec une rigueur dialectique remarquable. Son œuvre Al-Irshad est la biographie la plus célèbre des Imams.',
+    significance:'Père de la théologie rationnelle chiite.',
+    relatedIds:['najaf','baghdad','tusi'] },
+
+  { id:'tusi', name:'Sheikh al-Tusi', arabic:'الشَّيْخ الطُّوسِيّ', type:'scholar', category:'scholar',
+    date:'996–1067 EC', startDate:996, endDate:1067, place:'najaf',
+    tags:['fiqh','hawza','Najaf','Tahdhib'],
+    description:'Muhammad ibn Hasan al-Tusi, dit "Sheikh al-Ta\'ifa". Il fonda la hawza ilmiyya de Najaf après avoir fui Bagdad lors d\'émeutes anti-chiites (1055). Auteur de Tahdhib al-Ahkam et al-Istibsar (deux des quatre livres canoniques), et des premiers traités de jurisprudence comparée.',
+    significance:'Fondateur de la hawza de Najaf, systématisateur du fiqh chiite.',
+    relatedIds:['najaf','mufid'] },
+
+  { id:'hilli', name:'Allama al-Hilli', arabic:'العَلَّامَة الحِلِّيّ', type:'scholar', category:'scholar',
+    date:'1250–1325 EC', startDate:1250, endDate:1325, place:'najaf',
+    tags:['fiqh','kalam','usul','Ilkhanides'],
+    description:'Al-Hasan ibn Yusuf al-Hilli, dit "Allama al-Hilli". Grand juriste et théologien, il convertit le souverain mongol Öljaitü au chiisme, ouvrant la voie à la domination chiite en Iran. Prolifique auteur de traités de jurisprudence, de logique et de théologie.',
+    significance:'Responsable de la conversion de l\'Iran mongol au chiisme.',
+    relatedIds:['najaf','tusi'] },
+
+  { id:'majlisi', name:'Allama Majlisi', arabic:'العَلَّامَة المَجْلِسِيّ', type:'scholar', category:'scholar',
+    date:'1627–1699 EC', startDate:1627, endDate:1699, place:'isfahan',
+    tags:['Bihar al-Anwar','Safavides','encyclopédie'],
+    description:'Muhammad Baqir Majlisi, savant safavide et compilateur de Bihar al-Anwar ("Mers des lumières"), encyclopédie hadithique en 110 volumes, la plus vaste compilation de la littérature chiite. Il fut le chef des religieux (Sheikh al-Islam) sous les derniers souverains safavides.',
+    significance:'Auteur de la plus grande encyclopédie de l\'islam chiite.',
+    relatedIds:['safavid','biharanwar','isfahan'] },
+
+  { id:'tabatabai', name:'Allama Tabataba\'i', arabic:'العَلَّامَة الطَّبَاطَبَائِيّ', type:'scholar', category:'scholar',
+    date:'1904–1981 EC', startDate:1904, endDate:1981, place:'qom',
+    tags:['Mizan','tafsir','philosophie','Qom'],
+    description:'Sayyid Muhammad Husayn Tabataba\'i, philosophe, théologien et exégète de Qom. Auteur de al-Mizan fi Tafsir al-Quran (Le bilan dans l\'exégèse du Coran), en 20 volumes, et de Usul-e Falsafa wa Rawish-e Realism (La philosophie et le réalisme). Maître de nombreux savants contemporains.',
+    significance:'Auteur du tafsir chiite le plus influent du XXe siècle.',
+    relatedIds:['qom','mizan'] },
+
+  /* ŒUVRES */
+  { id:'kafi', name:'Kitab al-Kafi', arabic:'كِتَاب الكَافِي', type:'work', category:'work',
+    date:'IVe siècle AH / Xe siècle EC', era:'abbasid',
+    tags:['hadith','canonique','usul','kulayni'],
+    description:'Ouvrage fondamental d\'al-Kulayni, compilant environ 16 000 hadiths chiites en trois grandes sections : Usul (principes de la foi), Furu\' (jurisprudence) et Rawda (jardins). Premier des quatre livres canoniques (al-Kutub al-Arba\'a) du chiisme duodécimain.',
+    significance:'Le recueil hadithique le plus important du chiisme.',
+    relatedIds:['kulayni','sadiq','baqir'] },
+
+  { id:'nahjal', name:'Nahj al-Balagha', arabic:'نَهْج البَلَاغَة', type:'work', category:'work',
+    date:'Compilé v. 1000 EC', era:'abbasid',
+    tags:['Ali','sermons','lettres','éloquence'],
+    description:'Recueil compilé par Sharif al-Radi (966–1016) rassemblant sermons, lettres et aphorismes de l\'Imam Ali. Considéré comme le chef-d\'œuvre de la prose arabe après le Coran. Ses textes couvrent la théologie, la politique, l\'éthique, la spiritualité et la philosophie.',
+    significance:'Monument littéraire et doctrinal du chiisme, référence spirituelle universelle.',
+    relatedIds:['ali','mufid'] },
+
+  { id:'sahifa', name:'Sahifa Sajjadiyya', arabic:'الصَّحِيفَة السَّجَّادِيَّة', type:'work', category:'work',
+    date:'VIIe–VIIIe siècle EC', era:'umayyad',
+    tags:['dua','Zayn al-Abidin','supplication','Psautier'],
+    description:'Recueil de supplications de l\'Imam Zayn al-Abidin, dit "le Psautier de la famille du Prophète" (Zabur Al Muhammad). Ses 54 supplications sont des chef-d\'œuvres de la prose arabe et de la théologie mystique, couvrant tous les aspects de la relation entre l\'homme et Dieu.',
+    significance:'Trésor de la spiritualité chiite, l\'une des plus belles œuvres de la littérature islamique.',
+    relatedIds:['zayn','karbala_event'] },
+
+  { id:'mizan', name:'Al-Mizan fi Tafsir al-Quran', arabic:'المِيزَان فِي تَفْسِير القُرْآن', type:'work', category:'work',
+    date:'1954–1972 EC', era:'all',
+    tags:['tafsir','Tabataba\'i','philosophie','20 volumes'],
+    description:'Monumental commentaire du Coran en 20 volumes par Allama Tabataba\'i, combinant exégèse traditionnelle, philosophie islamique et réponse aux défis intellectuels contemporains. Chaque sourate est analysée selon une méthode interne (le Coran expliqué par le Coran) puis par les hadiths.',
+    significance:'Le tafsir chiite le plus complet et le plus rigoureusement philosophique du XXe siècle.',
+    relatedIds:['tabatabai','qom'] },
+
+  { id:'biharanwar', name:'Bihar al-Anwar', arabic:'بِحَار الأَنْوَار', type:'work', category:'work',
+    date:'XVIIe siècle EC', era:'all',
+    tags:['encyclopédie','Majlisi','110 volumes','Safavides'],
+    description:'Encyclopédie monumentale de Allama Majlisi en 110 volumes, compilant l\'intégralité de la littérature hadithique et historique chiite disponible à son époque. Incontournable référence pour toute recherche sur la tradition chiite.',
+    significance:'Plus grande encyclopédie de l\'islam chiite, référence académique et religieuse incontournable.',
+    relatedIds:['majlisi'] },
+
+  /* DYNASTIES SUPPLÉMENTAIRES */
+  { id:'safavid', name:'Safavides', arabic:'الصَّفَوِيُّون', type:'dynasty', category:'dynasty',
+    date:'1501–1736 EC', startDate:1501, endDate:1736,
+    tags:['Iran','chiisme d\'État','Perse','art'],
+    description:'Dynastie perse qui fit du chiisme duodécimain la religion d\'État de l\'Iran en 1501, sous Shah Ismail Ier. Ce tournant historique façonna l\'identité iranienne et ancra durablement le chiisme dans la région. Isfahan fut leur capitale et l\'un des plus grands centres culturels islamiques.',
+    significance:'Fondateurs du chiisme d\'État en Iran, transformation géopolitique majeure.',
+    relatedIds:['majlisi','hilli'] }
+];
+
+/* Edges */
+const EDGES = [
+  {s:'muhammad',t:'ali',type:'désigne_successeur',label:'désigne successeur'},
+  {s:'muhammad',t:'fatima',type:'père',label:'père de'},
+  {s:'muhammad',t:'hasan',type:'grand-père',label:'grand-père de'},
+  {s:'muhammad',t:'husayn',type:'grand-père',label:'grand-père de'},
+  {s:'muhammad',t:'khadija',type:'époux',label:'époux de'},
+  {s:'khadija',t:'fatima',type:'mère',label:'mère de'},
+  {s:'ali',t:'fatima',type:'époux',label:'époux de'},
+  {s:'ali',t:'hasan',type:'père',label:'père de'},
+  {s:'ali',t:'husayn',type:'père',label:'père de'},
+  {s:'ali',t:'zaynab',type:'père',label:'père de'},
+  {s:'ali',t:'abbas',type:'père',label:'père de'},
+  {s:'fatima',t:'hasan',type:'mère',label:'mère de'},
+  {s:'fatima',t:'husayn',type:'mère',label:'mère de'},
+  {s:'hasan',t:'husayn',type:'frère',label:'frère de'},
+  {s:'husayn',t:'zayn',type:'père',label:'père de'},
+  {s:'husayn',t:'zaynab',type:'frère',label:'frère de'},
+  {s:'husayn',t:'abbas',type:'frère',label:'demi-frère'},
+  {s:'zayn',t:'baqir',type:'père',label:'père de'},
+  {s:'baqir',t:'sadiq',type:'père',label:'père de'},
+  {s:'sadiq',t:'kazim',type:'père',label:'père de'},
+  {s:'kazim',t:'rida',type:'père',label:'père de'},
+  {s:'rida',t:'jawad',type:'père',label:'père de'},
+  {s:'jawad',t:'hadi',type:'père',label:'père de'},
+  {s:'hadi',t:'askari',type:'père',label:'père de'},
+  {s:'askari',t:'mahdi',type:'père',label:'père de'},
+  {s:'muhammad',t:'ghadir',type:'a_prononcé',label:'a prononcé'},
+  {s:'ghadir',t:'ali',type:'désigne',label:'désigne'},
+  {s:'muhammad',t:'revelation',type:'reçoit',label:'reçoit'},
+  {s:'muhammad',t:'hijra',type:'accomplit',label:'accomplit'},
+  {s:'muhammad',t:'prophet_death',type:'précède',label:'précède'},
+  {s:'prophet_death',t:'saqifa',type:'déclenche',label:'déclenche'},
+  {s:'saqifa',t:'fatima_death',type:'précède',label:'précède'},
+  {s:'ali',t:'jamal',type:'commande',label:'commande à'},
+  {s:'ali',t:'siffin',type:'commande',label:'commande à'},
+  {s:'ali',t:'nahrawan',type:'commande',label:'commande à'},
+  {s:'muawiya',t:'siffin',type:'commande',label:'commande à'},
+  {s:'muawiya',t:'treaty_hasan',type:'signe',label:'signe'},
+  {s:'hasan',t:'treaty_hasan',type:'signe',label:'signe'},
+  {s:'hasan',t:'hasan_martyrdom',type:'meurt_lors_de',label:'martyrisé'},
+  {s:'husayn',t:'karbala_event',type:'meurt_lors_de',label:'martyrisé à'},
+  {s:'zaynab',t:'karbala_event',type:'survit_à',label:'survit à'},
+  {s:'zaynab',t:'captivity',type:'vit',label:'vit'},
+  {s:'abbas',t:'karbala_event',type:'meurt_lors_de',label:'martyrisé à'},
+  {s:'yazid',t:'karbala_event',type:'ordonne',label:'ordonne'},
+  {s:'yazid',t:'umayyad',type:'appartient',label:'appartient à'},
+  {s:'muawiya',t:'umayyad',type:'fonde',label:'fonde'},
+  {s:'zayn',t:'sahifa',type:'auteur',label:'auteur de'},
+  {s:'ali',t:'nahjal',type:'auteur',label:'auteur de'},
+  {s:'sadiq',t:'kafi',type:'source',label:'source de'},
+  {s:'baqir',t:'kafi',type:'source',label:'source de'},
+  {s:'kulayni',t:'kafi',type:'compile',label:'compile'},
+  {s:'mufid',t:'nahjal',type:'commente',label:'commente'},
+  {s:'sadiq',t:'transmission',type:'incarne',label:'incarne'},
+  {s:'baqir',t:'transmission',type:'incarne',label:'incarne'},
+  {s:'husayn',t:'shahada',type:'incarne',label:'incarne'},
+  {s:'ali',t:'adl',type:'incarne',label:'incarne'},
+  {s:'ghadir',t:'wilaya',type:'fonde',label:'fonde'},
+  {s:'mahdi',t:'ghayba',type:'incarne',label:'incarne'},
+  {s:'minor_occultation',t:'major_occultation',type:'précède',label:'précède'},
+  {s:'askari',t:'minor_occultation',type:'précède',label:'précède'},
+  {s:'mahdi',t:'minor_occultation',type:'entre_dans',label:'entre dans'},
+  {s:'mahdi',t:'major_occultation',type:'entre_dans',label:'entre dans'},
+  {s:'ali',t:'kufa',type:'capitale',label:'capitale de'},
+  {s:'ali',t:'najaf',type:'enterré_à',label:'enterré à'},
+  {s:'husayn',t:'karbala',type:'enterré_à',label:'enterré à'},
+  {s:'hasan',t:'medina',type:'enterré_à',label:'enterré à'},
+  {s:'rida',t:'mashhad',type:'enterré_à',label:'enterré à'},
+  {s:'tusi',t:'najaf',type:'fonde',label:'fonde hawza'},
+  {s:'kulayni',t:'baghdad',type:'vécu_à',label:'vécut à'},
+  {s:'mufid',t:'baghdad',type:'vécu_à',label:'vécut à'},
+  {s:'mufid',t:'tusi',type:'enseigne',label:'enseigne'},
+  {s:'tabatabai',t:'mizan',type:'auteur',label:'auteur de'},
+  {s:'tabatabai',t:'qom',type:'vécu_à',label:'vécut à'},
+  {s:'majlisi',t:'biharanwar',type:'auteur',label:'auteur de'},
+  {s:'majlisi',t:'safavid',type:'appartient',label:'appartient à'},
+  {s:'umayyad',t:'karbala_event',type:'commande',label:'commande'},
+  {s:'abbasid',t:'kazim',type:'emprisonne',label:'emprisonne'},
+  {s:'abbasid',t:'hadi',type:'opprime',label:'opprime'},
+  {s:'abbasid',t:'askari',type:'opprime',label:'opprime'},
+  {s:'hilli',t:'safavid',type:'influence',label:'influence'},
+  {s:'saduq',t:'qom',type:'vécu_à',label:'vécut à'},
+  {s:'husayn',t:'imamat',type:'défend',label:'défend'},
+  {s:'ali',t:'imamat',type:'incarne',label:'incarne'}
+];
+
+/* ============================================================
+   TYPE METADATA
+   ============================================================ */
+const TYPE_META = {
+  prophet:  {color:'#f0c060', label:'Prophète'},
+  imam:     {color:'#7eb8fa', label:'Imam'},
+  ahl_al_bayt:{color:'#a5d8ff', label:'Ahl al-Bayt'},
+  person:   {color:'#94a3b8', label:'Personnage'},
+  event:    {color:'#f87171', label:'Événement'},
+  place:    {color:'#4ade80', label:'Lieu'},
+  theme:    {color:'#c084fc', label:'Thème'},
+  dynasty:  {color:'#fb923c', label:'Dynastie'},
+  scholar:  {color:'#38bdf8', label:'Savant'},
+  work:     {color:'#e879f9', label:'Œuvre'},
+};
+
+function typeColor(type, cat) {
+  const t = TYPE_META[cat||type];
+  return t ? t.color : '#94a3b8';
+}
+function typeLabel(type, cat) {
+  const t = TYPE_META[cat||type];
+  return t ? t.label : type;
+}
+function nodeBadgeStyle(node) {
+  const c = typeColor(node.type, node.category);
+  return `background:${c}22;color:${c};border:1px solid ${c}44;`;
+}
+
+/* Node map for fast lookup */
+const NODE_MAP = {};
+NODES.forEach(n => NODE_MAP[n.id] = n);
+
+/* ============================================================
+   NAVIGATION
+   ============================================================ */
+function showSection(id) {
+  document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+  document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
+  const sec = document.getElementById(id);
+  if (sec) { sec.classList.add('active'); sec.scrollIntoView({behavior:'smooth',block:'start'}); }
+  const btn = document.querySelector(`.nav-btn[data-section="${id}"]`);
+  if (btn) btn.classList.add('active');
+  if (id === 'network') initGraph();
+  if (id === 'timeline') renderTimeline('all');
+}
+
+document.querySelectorAll('.nav-btn').forEach(btn => {
+  btn.addEventListener('click', () => showSection(btn.dataset.section));
+});
+
+/* ============================================================
+   SEARCH
+   ============================================================ */
+const searchInput = document.getElementById('main-search');
+const searchResults = document.getElementById('search-results');
+
+searchInput.addEventListener('input', () => {
+  const q = searchInput.value.trim().toLowerCase();
+  if (!q) { searchResults.classList.remove('show'); return; }
+  const hits = NODES.filter(n =>
+    n.name.toLowerCase().includes(q) ||
+    (n.description||'').toLowerCase().includes(q) ||
+    (n.tags||[]).some(t => t.toLowerCase().includes(q))
+  ).slice(0, 12);
+  if (!hits.length) { searchResults.classList.remove('show'); return; }
+  searchResults.innerHTML = hits.map(n => `
+    <div class="search-item" onclick="openDetail('${n.id}');searchResults.classList.remove('show');searchInput.value='';">
+      <div class="search-item-dot" style="background:${typeColor(n.type,n.category)};"></div>
+      <div>
+        <div class="search-item-name">${n.name}</div>
+        <div class="search-item-meta">${typeLabel(n.type,n.category)}${n.date?' — '+n.date:''}</div>
+      </div>
+    </div>`).join('');
+  searchResults.classList.add('show');
+});
+
+document.addEventListener('click', e => {
+  if (!e.target.closest('.search-wrap')) searchResults.classList.remove('show');
+});
+
+/* ============================================================
+   DETAIL PANEL
+   ============================================================ */
+function openDetail(id) {
+  const node = NODE_MAP[id];
+  if (!node) return;
+  const panel = document.getElementById('detail-panel');
+  const overlay = document.getElementById('detail-overlay');
+  const content = document.getElementById('detail-content');
+  const color = typeColor(node.type, node.category);
+
+  const rels = (node.relatedIds||[]).map(rid => {
+    const rn = NODE_MAP[rid];
+    if (!rn) return '';
+    const edge = EDGES.find(e => (e.s===id&&e.t===rid)||(e.s===rid&&e.t===id));
+    return `<div class="detail-rel-item" onclick="openDetail('${rn.id}')">
+      <div class="detail-rel-dot" style="background:${typeColor(rn.type,rn.category)};"></div>
+      <span class="detail-rel-name">${rn.name}</span>
+      <span class="detail-rel-type">${edge?edge.label:typeLabel(rn.type,rn.category)}</span>
+    </div>`;
+  }).filter(Boolean).join('');
+
+  const linkedDesc = linkify(node.description||'–', id);
+  const linkedSig  = linkify(node.significance||'', id);
+  const placeNode  = node.place ? (NODE_MAP[node.place]||null) : null;
+
+  content.innerHTML = `
+    <div class="detail-type-badge">
+      <span class="card-badge" style="${nodeBadgeStyle(node)}">${typeLabel(node.type,node.category)}</span>
+    </div>
+    <div class="detail-name">${node.name}</div>
+    ${node.arabic?`<div class="detail-arabic">${node.arabic}</div>`:''}
+    ${node.date?`<div class="detail-date">📅 ${node.date}</div>`:''}
+    ${placeNode?`<span class="detail-section-label">Lieu associé</span><div class="detail-desc"><span class="kw-link" style="color:var(--place)" onclick="openDetail('${placeNode.id}')">${placeNode.name}</span></div>`:''}
+    <span class="detail-section-label">Description</span>
+    <p class="detail-desc">${linkedDesc}</p>
+    ${linkedSig?`<span class="detail-section-label">Importance historique</span>
+    <div class="detail-significance">${linkedSig}</div>`:''}
+    ${rels?`<span class="detail-section-label">Relations</span><div class="detail-relations">${rels}</div>`:''}
+    ${(node.tags&&node.tags.length)?`<span class="detail-section-label">Mots-clés</span>
+    <div style="display:flex;gap:6px;flex-wrap:wrap;">${node.tags.map(t=>{const hit=NODES.find(n=>n.name.toLowerCase().includes(t.toLowerCase())&&n.id!==id);return hit?`<span class="tag kw-link" style="color:${typeColor(hit.type,hit.category)};cursor:pointer" onclick="openDetail('${hit.id}')">${t}</span>`:`<span class="tag">${t}</span>`;}).join('')}</div>`:''}
+  `;
+  panel.classList.add('open');
+  overlay.classList.add('open');
+}
+
+function closeDetail() {
+  document.getElementById('detail-panel').classList.remove('open');
+  document.getElementById('detail-overlay').classList.remove('open');
+}
+
+/* ============================================================
+   TIMELINE
+   ============================================================ */
+/* ============================================================
+   LINKIFY — keyword → clickable link
+   ============================================================ */
+let _LINK_MAP = null;
+function getLinkMap() {
+  if (_LINK_MAP) return _LINK_MAP;
+  const entries = [];
+  NODES.forEach(n => {
+    entries.push({name: n.name.replace(/\s*ﷺ$/, ''), id: n.id});
+    // Short-form aliases
+    const plain = n.name
+      .replace(/^Imam\s+/i, '')
+      .replace(/^Sayyida\s+/i, '')
+      .replace(/^Al-/i, '')
+      .replace(/\s*ﷺ$/, '').trim();
+    if (plain !== n.name && plain.length >= 3)
+      entries.push({name: plain, id: n.id});
+  });
+  _LINK_MAP = entries
+    .filter(e => e.name && e.name.length >= 3)
+    .sort((a,b) => b.name.length - a.name.length);
+  return _LINK_MAP;
+}
+
+function linkify(text, currentId) {
+  if (!text) return '';
+  const map = getLinkMap();
+  const textLen = text.length;
+  const used = new Uint8Array(textLen); // 0 = free
+  const regions = [];
+  const tl = text.toLowerCase();
+
+  for (const {name, id} of map) {
+    if (id === currentId) continue;
+    const nl = name.toLowerCase();
+    let pos = 0;
+    while (pos <= textLen - nl.length) {
+      const idx = tl.indexOf(nl, pos);
+      if (idx === -1) break;
+      const end = idx + nl.length;
+      // Word-boundary guard
+      const pre = idx > 0 ? text[idx-1] : ' ';
+      const post = end < textLen ? text[end] : ' ';
+      if (!/[\wàáâäéèêëîïôùûüç]/i.test(pre) && !/[\wàáâäéèêëîïôùûüç]/i.test(post)) {
+        // Check no overlap
+        let free = true;
+        for (let k = idx; k < end; k++) { if (used[k]) { free = false; break; } }
+        if (free) {
+          for (let k = idx; k < end; k++) used[k] = 1;
+          regions.push({start:idx, end, id, matched: text.slice(idx, end)});
+        }
+      }
+      pos = idx + 1;
+    }
+  }
+
+  if (!regions.length) return text;
+  regions.sort((a,b) => a.start - b.start);
+  let out = '', cursor = 0;
+  for (const r of regions) {
+    const n = NODE_MAP[r.id];
+    const c = n ? typeColor(n.type, n.category) : 'var(--gold)';
+    out += text.slice(cursor, r.start);
+    out += `<span class="kw-link" style="color:${c}" onclick="event.stopPropagation();openDetail('${r.id}')">${r.matched}</span>`;
+    cursor = r.end;
+  }
+  return out + text.slice(cursor);
+}
+
+/* ============================================================
+   HORIZONTAL TIMELINE
+   ============================================================ */
+let timelineZoom = 1.0;
+const ZOOM_MIN = 0.25, ZOOM_MAX = 5.0, ZOOM_STEP = 0.2, ZOOM_DEFAULT = 1.0;
+const TL_PAD = 140, TL_MIN = 560, TL_MAX = 2030, TL_BASE_PPY = 7;
+
+function updateZoomUI() {
+  const pct = ((timelineZoom - ZOOM_MIN) / (ZOOM_MAX - ZOOM_MIN)) * 100;
+  const fill = document.getElementById('zoom-fill');
+  if (fill) fill.style.width = pct + '%';
+}
+
+/* Apply zoom WITHOUT re-rendering DOM — only updates CSS transforms */
+let _zoomRaf = null;
+function applyZoom() {
+  if (_zoomRaf) cancelAnimationFrame(_zoomRaf);
+  _zoomRaf = requestAnimationFrame(function() {
+    const track = document.getElementById('htimeline-track');
+    const outer = document.getElementById('htimeline-outer');
+    if (!track) return;
+
+    const ppy = TL_BASE_PPY * timelineZoom;
+    const totalW = (TL_MAX - TL_MIN) * ppy + TL_PAD * 2;
+    const scrollRatio = outer ? outer.scrollLeft / (outer.scrollWidth || 1) : 0;
+
+    track.style.width = totalW + 'px';
+
+    track.querySelectorAll('.ht-item[data-date]').forEach(function(el) {
+      const x = TL_PAD + (el.dataset.date - TL_MIN) * ppy - 85;
+      el.style.transform = 'translateX(' + x + 'px)';
+    });
+    track.querySelectorAll('.era-band[data-start]').forEach(function(el) {
+      const x = TL_PAD + (el.dataset.start - TL_MIN) * ppy;
+      const w = (el.dataset.end - el.dataset.start) * ppy;
+      el.style.transform = 'translateX(' + x + 'px)';
+      el.style.width = w + 'px';
+    });
+    track.querySelectorAll('.ht-date-tick[data-year]').forEach(function(el) {
+      const x = TL_PAD + (el.dataset.year - TL_MIN) * ppy;
+      el.style.transform = 'translateX(' + x + 'px)';
+    });
+
+    if (outer) outer.scrollLeft = scrollRatio * totalW;
+    updateZoomUI();
+  });
+}
+
+function setZoom(z) {
+  timelineZoom = Math.min(ZOOM_MAX, Math.max(ZOOM_MIN, z));
+  applyZoom();
+}
+
+function renderTimeline(era, typeFilter) {
+  const outer = document.getElementById('htimeline-outer');
+  const track = document.getElementById('htimeline-track');
+
+  const nodes = NODES
+    .filter(n => n.startDate)
+    .filter(n => era === 'all' || n.era === era)
+    .filter(n => !typeFilter || typeFilter === 'all' || n.type === typeFilter || n.category === typeFilter)
+    .sort((a,b) => a.startDate - b.startDate);
+
+  if (!nodes.length) { track.innerHTML = '<div style="display:flex;align-items:center;justify-content:center;height:100%;color:var(--text-dim);font-size:0.9rem;">Aucun élément pour cette période.</div>'; return; }
+
+  const MIN_DATE = 560, MAX_DATE = 2030;
+  const PX_PER_YEAR = 7 * timelineZoom;
+  const PAD = 140;
+  const totalW = (MAX_DATE - MIN_DATE) * PX_PER_YEAR + PAD * 2;
+  track.style.width = totalW + 'px';
+
+  const toX = d => PAD + (d - MIN_DATE) * PX_PER_YEAR;
+
+  const ERA_BANDS = [
+    {start:570,end:632,color:'#f0c060',label:'Ère prophétique'},
+    {start:632,end:680,color:'#7eb8fa',label:'Ahl al-Bayt'},
+    {start:680,end:750,color:'#f87171',label:'Omeyyades'},
+    {start:750,end:874,color:'#fb923c',label:'Abbassides'},
+    {start:874,end:2030,color:'#c084fc',label:'Occultation'},
+  ];
+
+  let html = '';
+
+  // Era bands
+  ERA_BANDS.forEach(e => {
+    const x = toX(e.start), w = (e.end - e.start) * PX_PER_YEAR;
+    html += `<div class="era-band" data-start="${e.start}" data-end="${e.end}" style="transform:translateX(${x}px);width:${w}px;background:${e.color}"><span class="era-band-label" style="color:${e.color}">${e.label}</span></div>`;
+  });
+
+  // Axis
+  html += `<div class="htimeline-axis"></div>`;
+
+  // Date ticks every 50 years
+  for (let y = 600; y <= 2000; y += 50) {
+    html += `<div class="ht-date-tick" data-year="${y}" style="transform:translateX(${toX(y)}px)"><div class="ht-tick-line"></div><div class="ht-tick-label">${y}</div></div>`;
+  }
+
+  const CARD_W = 170;
+  const placed = [];
+
+  nodes.forEach((n, i) => {
+    const cx = toX(n.startDate);
+    const color = typeColor(n.type, n.category);
+    let above = (i % 2 === 0);
+    const close = placed.filter(p => Math.abs(p.x - cx) < CARD_W && p.above === above);
+    if (close.length > 0) above = !above;
+    placed.push({x: cx, above});
+
+    const tx = cx - CARD_W/2;
+    html += `<div class="ht-item ${above?'above':'below'}" data-date="${n.startDate}" style="transform:translateX(${tx}px)" onclick="openDetail('${n.id}')">
+      <div class="ht-card">
+        <div class="ht-card-date" style="color:${color}">${n.startDate} EC</div>
+        <div class="ht-card-title">${n.name.replace(/ﷺ/,'ﷺ').split(' ').slice(0,5).join(' ')}</div>
+        <div class="ht-card-type" style="color:${color}">${typeLabel(n.type,n.category)}</div>
+      </div>
+      <div class="ht-connector" style="background:${color}60"></div>
+      <div class="ht-dot" style="background:${color};box-shadow:0 0 8px ${color}90"></div>
+    </div>`;
+  });
+
+  track.innerHTML = html;
+
+  // Drag-to-scroll (velocity-based for smoothness)
+  let isDown = false, startX = 0, scrollLeft = 0, velX = 0, lastX = 0, lastT = 0, momentum = null;
+
+  function stopMomentum() { if (momentum) { cancelAnimationFrame(momentum); momentum = null; } }
+
+  outer.addEventListener('mousedown', function(e) {
+    if (e.target.classList.contains('kw-link')) return;
+    stopMomentum();
+    isDown = true; startX = e.pageX; scrollLeft = outer.scrollLeft;
+    lastX = e.pageX; lastT = Date.now(); velX = 0;
+  });
+  outer.addEventListener('mouseleave', function() { isDown = false; });
+  outer.addEventListener('mouseup', function() {
+    isDown = false;
+    // momentum scroll
+    if (Math.abs(velX) > 0.5) {
+      (function glide() {
+        velX *= 0.93;
+        outer.scrollLeft -= velX;
+        if (Math.abs(velX) > 0.5) momentum = requestAnimationFrame(glide);
+        else momentum = null;
+      })();
+    }
+  });
+  outer.addEventListener('mousemove', function(e) {
+    if (!isDown) return;
+    const now = Date.now(), dt = now - lastT || 1;
+    velX = (e.pageX - lastX) / dt * 16; // px per frame ~16ms
+    lastX = e.pageX; lastT = now;
+    outer.scrollLeft = scrollLeft - (e.pageX - startX);
+  });
+  // Touch drag
+  let tStart = 0, tScroll = 0;
+  outer.ontouchstart = e => {
+    if (e.touches.length === 1) { tStart = e.touches[0].clientX; tScroll = outer.scrollLeft; }
+  };
+  outer.ontouchmove = e => {
+    if (e.touches.length === 1) {
+      outer.scrollLeft = tScroll - (e.touches[0].clientX - tStart) * 1.5;
+    } else if (e.touches.length === 2) {
+      // Pinch zoom
+      e.preventDefault();
+      const d = Math.hypot(
+        e.touches[0].clientX - e.touches[1].clientX,
+        e.touches[0].clientY - e.touches[1].clientY
+      );
+      if (!outer._pinchDist) { outer._pinchDist = d; outer._pinchZoom = timelineZoom; return; }
+      setZoom(outer._pinchZoom * (d / outer._pinchDist));
+    }
+  };
+  outer.ontouchend = () => { outer._pinchDist = null; };
+
+  // Mouse wheel zoom (Ctrl+wheel or plain wheel)
+  outer.addEventListener('wheel', function(e) {
+    if (e.ctrlKey || e.metaKey || Math.abs(e.deltaY) > Math.abs(e.deltaX)) {
+      e.preventDefault();
+      const delta = e.deltaY > 0 ? -ZOOM_STEP : ZOOM_STEP;
+      setZoom(timelineZoom + delta);
+    }
+  }, { passive: false });
+
+  // Wire zoom buttons (only first call)
+  if (!outer._zoomWired) {
+    outer._zoomWired = true;
+    document.getElementById('zoom-in').addEventListener('click', () => setZoom(timelineZoom + ZOOM_STEP));
+    document.getElementById('zoom-out').addEventListener('click', () => setZoom(timelineZoom - ZOOM_STEP));
+    document.getElementById('zoom-reset').addEventListener('click', () => setZoom(ZOOM_DEFAULT));
+  }
+  updateZoomUI();
+}
+
+/* Era tabs */
+document.getElementById('era-tabs').addEventListener('click', e => {
+  const tab = e.target.closest('.era-tab');
+  if (!tab) return;
+  document.querySelectorAll('.era-tab').forEach(t => t.classList.remove('active'));
+  tab.classList.add('active');
+  const activeType = document.querySelector('#timeline-filters .filter-btn.active')?.dataset.filter || 'all';
+  renderTimeline(tab.dataset.era, activeType==='all'?null:activeType);
+});
+
+/* Timeline filters */
+document.getElementById('timeline-filters').addEventListener('click', e => {
+  const btn = e.target.closest('.filter-btn');
+  if (!btn) return;
+  document.querySelectorAll('#timeline-filters .filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  const activeEra = document.querySelector('#era-tabs .era-tab.active')?.dataset.era || 'all';
+  renderTimeline(activeEra, btn.dataset.filter==='all'?null:btn.dataset.filter);
+});
+
+/* ============================================================
+   IMAMS GRID
+   ============================================================ */
+function renderImams() {
+  const imams = NODES.filter(n => n.type==='imam' && n.imamate).sort((a,b)=>a.imamate-b.imamate);
+  document.getElementById('imams-grid').innerHTML = imams.map(n => `
+    <div class="card imam-card" onclick="openDetail('${n.id}')">
+      <div class="imam-number">${n.imamate}</div>
+      <span class="card-badge" style="background:var(--imam-bg);color:var(--imam);border:1px solid rgba(126,184,250,0.3);">
+        ${n.imamate}er Imam
+      </span>
+      <div class="card-date">${n.date}</div>
+      <h3>${n.name}</h3>
+      ${n.arabic?`<div style="direction:rtl;font-size:1rem;color:var(--gold);opacity:0.6;margin-bottom:8px;">${n.arabic}</div>`:''}
+      <p>${(n.description||'').substring(0,130)}…</p>
+      <div class="card-footer">${(n.tags||[]).slice(0,3).map(t=>`<span class="tag">${t}</span>`).join('')}</div>
+    </div>`).join('');
+}
+
+/* ============================================================
+   EVENTS GRID
+   ============================================================ */
+function renderEvents(subtype) {
+  const events = NODES.filter(n => n.type==='event')
+    .filter(n => !subtype || subtype==='all' || n.subtype===subtype)
+    .sort((a,b) => (a.startDate||0)-(b.startDate||0));
+  document.getElementById('events-grid').innerHTML = events.map(n => `
+    <div class="card type-event" onclick="openDetail('${n.id}')">
+      <span class="card-badge" style="${nodeBadgeStyle(n)}">${n.subtype||'Événement'}</span>
+      <div class="card-date">${n.date}</div>
+      <h3>${n.name}</h3>
+      <p>${(n.description||'').substring(0,120)}…</p>
+      <div class="card-footer">${(n.tags||[]).slice(0,3).map(t=>`<span class="tag">${t}</span>`).join('')}</div>
+    </div>`).join('');
+}
+
+document.getElementById('events-filters').addEventListener('click', e => {
+  const btn = e.target.closest('.filter-btn');
+  if (!btn) return;
+  document.querySelectorAll('#events-filters .filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  renderEvents(btn.dataset.filter==='all'?null:btn.dataset.filter);
+});
+
+/* ============================================================
+   PLACES GRID
+   ============================================================ */
+function renderPlaces() {
+  const places = NODES.filter(n => n.type==='place');
+  document.getElementById('places-grid').innerHTML = places.map(n => `
+    <div class="card type-place" onclick="openDetail('${n.id}')">
+      <div class="place-card-icon">${n.icon||'📍'}</div>
+      <span class="card-badge" style="${nodeBadgeStyle(n)}">Lieu</span>
+      <h3>${n.name}</h3>
+      ${n.arabic?`<div style="direction:rtl;font-size:1rem;color:var(--gold);opacity:0.5;margin-bottom:8px;">${n.arabic}</div>`:''}
+      <p>${(n.description||'').substring(0,130)}…</p>
+      <div class="card-footer">${(n.tags||[]).slice(0,3).map(t=>`<span class="tag">${t}</span>`).join('')}</div>
+    </div>`).join('');
+}
+
+/* ============================================================
+   THEMES GRID
+   ============================================================ */
+function renderThemes() {
+  const themes = NODES.filter(n => n.type==='theme');
+  document.getElementById('themes-grid').innerHTML = themes.map(n => `
+    <div class="card theme-card" onclick="openDetail('${n.id}')">
+      <div class="theme-icon">${n.icon||'◆'}</div>
+      <span class="card-badge" style="${nodeBadgeStyle(n)}">Thème doctrinal</span>
+      <h3>${n.name}</h3>
+      ${n.arabic?`<div style="direction:rtl;font-size:1rem;color:var(--theme);opacity:0.5;margin-bottom:8px;">${n.arabic}</div>`:''}
+      <p>${(n.description||'').substring(0,150)}…</p>
+      <div class="card-footer">${(n.tags||[]).slice(0,3).map(t=>`<span class="tag">${t}</span>`).join('')}</div>
+    </div>`).join('');
+}
+
+/* ============================================================
+   SCHOLARS GRID
+   ============================================================ */
+function renderScholars() {
+  const scholars = NODES.filter(n => n.type==='scholar'||n.type==='work'||n.type==='dynasty');
+  document.getElementById('scholars-grid').innerHTML = scholars.map(n => `
+    <div class="card scholar-card" onclick="openDetail('${n.id}')">
+      <span class="card-badge" style="${nodeBadgeStyle(n)}">${typeLabel(n.type,n.category)}</span>
+      ${n.date?`<div class="card-date">${n.date}</div>`:''}
+      <h3>${n.name}</h3>
+      ${n.arabic?`<div style="direction:rtl;font-size:1rem;color:var(--scholar);opacity:0.4;margin-bottom:8px;">${n.arabic}</div>`:''}
+      <p>${(n.description||'').substring(0,130)}…</p>
+      <div class="card-footer">${(n.tags||[]).slice(0,3).map(t=>`<span class="tag">${t}</span>`).join('')}</div>
+    </div>`).join('');
+}
+
+/* ============================================================
+   NETWORK GRAPH
+   ============================================================ */
+let graphInitialized = false;
+let graphState = null;
+
+function initGraph() {
+  if (graphInitialized) return;
+  graphInitialized = true;
+
+  const wrap = document.getElementById('network-canvas-wrap');
+  const canvas = document.getElementById('network-canvas');
+  canvas.width = wrap.clientWidth;
+  canvas.height = wrap.clientHeight;
+  const ctx = canvas.getContext('2d');
+
+  /* Legend */
+  const legendEl = document.getElementById('graph-legend');
+  legendEl.innerHTML = Object.entries(TYPE_META).map(([k,v])=>
+    `<div class="legend-item"><div class="legend-dot" style="background:${v.color}"></div>${v.label}</div>`
+  ).join('');
+
+  /* Build graph data */
+  let gNodes = NODES.map(n => ({
+    ...n,
+    x: (Math.random()-0.5)*900,
+    y: (Math.random()-0.5)*700,
+    vx: 0, vy: 0,
+    radius: nodeRadius(n),
+    visible: true
+  }));
+  const nodeMap2 = {};
+  gNodes.forEach(n => nodeMap2[n.id] = n);
+
+  let gEdges = EDGES.filter(e => nodeMap2[e.s] && nodeMap2[e.t]);
+  let alpha = 1;
+  let selectedId = null;
+  let hoveredId = null;
+  let isDragging = false;
+  let dragNode = null;
+  let panX = canvas.width/2, panY = canvas.height/2;
+  let scale = 1;
+  let lastMX = 0, lastMY = 0;
+  let isPanning = false;
+  let animFrame;
+
+  graphState = { gNodes, gEdges, nodeMap2 };
+
+  function nodeRadius(n) {
+    if (n.category==='prophet') return 18;
+    if (n.type==='imam'||n.category==='imam') return 14;
+    if (n.type==='event') return 11;
+    if (n.type==='place') return 12;
+    if (n.type==='theme') return 10;
+    if (n.type==='dynasty') return 12;
+    if (n.type==='scholar'||n.type==='work') return 10;
+    return 10;
+  }
+
+  function tick() {
+    if (alpha < 0.005) return;
+    const nodes = gNodes.filter(n=>n.visible);
+    const k = alpha;
+
+    /* Repulsion */
+    for (let i=0; i<nodes.length; i++) {
+      for (let j=i+1; j<nodes.length; j++) {
+        const dx = nodes[j].x - nodes[i].x;
+        const dy = nodes[j].y - nodes[i].y;
+        const d2 = dx*dx+dy*dy;
+        if (d2 < 1) continue;
+        const d = Math.sqrt(d2);
+        const repulse = 3500/d2 * k;
+        const fx = dx/d*repulse, fy = dy/d*repulse;
+        nodes[i].vx -= fx; nodes[i].vy -= fy;
+        nodes[j].vx += fx; nodes[j].vy += fy;
+      }
+    }
+    /* Spring */
+    for (const e of gEdges) {
+      const a = nodeMap2[e.s], b = nodeMap2[e.t];
+      if (!a||!b||!a.visible||!b.visible) continue;
+      const dx = b.x-a.x, dy = b.y-a.y;
+      const d = Math.sqrt(dx*dx+dy*dy)||0.01;
+      const target = 130;
+      const f = (d-target)*0.04*k;
+      const fx = dx/d*f, fy = dy/d*f;
+      a.vx+=fx; a.vy+=fy; b.vx-=fx; b.vy-=fy;
+    }
+    /* Center gravity */
+    for (const n of nodes) {
+      n.vx -= n.x * 0.015 * k;
+      n.vy -= n.y * 0.015 * k;
+    }
+    /* Apply */
+    for (const n of nodes) {
+      if (n===dragNode) continue;
+      n.vx*=0.82; n.vy*=0.82;
+      n.x+=n.vx; n.y+=n.vy;
+    }
+    alpha *= 0.992;
+  }
+
+  function draw() {
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+    ctx.save();
+    ctx.translate(panX,panY);
+    ctx.scale(scale,scale);
+
+    const visNodes = gNodes.filter(n=>n.visible);
+    const nodeSet = new Set(visNodes.map(n=>n.id));
+
+    /* Get connected to selected */
+    const connectedIds = new Set();
+    if (selectedId) {
+      gEdges.forEach(e=>{
+        if (e.s===selectedId) connectedIds.add(e.t);
+        if (e.t===selectedId) connectedIds.add(e.s);
+      });
+    }
+
+    /* Edges */
+    for (const e of gEdges) {
+      const a = nodeMap2[e.s], b = nodeMap2[e.t];
+      if (!a||!b||!a.visible||!b.visible) continue;
+      const isHighlighted = selectedId && (e.s===selectedId||e.t===selectedId);
+      const dimmed = selectedId && !isHighlighted;
+      ctx.beginPath();
+      ctx.moveTo(a.x,a.y); ctx.lineTo(b.x,b.y);
+      ctx.strokeStyle = isHighlighted ? 'rgba(201,168,76,0.7)' : dimmed ? 'rgba(255,255,255,0.04)' : 'rgba(255,255,255,0.1)';
+      ctx.lineWidth = isHighlighted ? 1.5 : 0.8;
+      ctx.stroke();
+    }
+
+    /* Nodes */
+    for (const n of visNodes) {
+      const c = typeColor(n.type, n.category);
+      const isSelected = n.id===selectedId;
+      const isConnected = connectedIds.has(n.id);
+      const isHovered = n.id===hoveredId;
+      const dimmed = selectedId && !isSelected && !isConnected;
+      const r = n.radius + (isHovered?3:0);
+
+      /* Glow for selected/connected */
+      if (isSelected || isConnected) {
+        ctx.beginPath();
+        ctx.arc(n.x,n.y,r+6,0,Math.PI*2);
+        const grad = ctx.createRadialGradient(n.x,n.y,r,n.x,n.y,r+10);
+        grad.addColorStop(0, c+'66');
+        grad.addColorStop(1, 'transparent');
+        ctx.fillStyle = grad;
+        ctx.fill();
+      }
+
+      ctx.beginPath();
+      ctx.arc(n.x,n.y,r,0,Math.PI*2);
+      ctx.fillStyle = dimmed ? c+'33' : c;
+      ctx.fill();
+      if (isSelected) {
+        ctx.strokeStyle = '#fff';
+        ctx.lineWidth = 2;
+        ctx.stroke();
+      }
+
+      /* Label */
+      if (!dimmed || isConnected) {
+        const fontSize = isSelected ? 11 : isHovered ? 10 : 9;
+        ctx.font = `${isSelected?'bold ':''} ${fontSize}px 'EB Garamond', serif`;
+        ctx.fillStyle = dimmed ? 'rgba(200,200,200,0.2)' : isSelected ? '#fff' : 'rgba(230,226,208,0.85)';
+        const shortName = n.name.split(' ').slice(0,3).join(' ');
+        ctx.fillText(shortName, n.x+r+3, n.y+4);
+      }
+    }
+    ctx.restore();
+  }
+
+  function loop() {
+    tick();
+    draw();
+    animFrame = requestAnimationFrame(loop);
+  }
+  loop();
+
+  /* Mouse events */
+  function getNodeAtPos(mx,my) {
+    const wx = (mx-panX)/scale, wy = (my-panY)/scale;
+    for (const n of gNodes) {
+      if (!n.visible) continue;
+      const dx=n.x-wx, dy=n.y-wy;
+      if (dx*dx+dy*dy <= (n.radius+4)*(n.radius+4)) return n;
+    }
+    return null;
+  }
+
+  canvas.addEventListener('mousedown', e => {
+    const {offsetX:mx, offsetY:my} = e;
+    const hit = getNodeAtPos(mx,my);
+    if (hit) { dragNode=hit; isDragging=false; }
+    else { isPanning=true; }
+    lastMX=mx; lastMY=my;
+  });
+
+  canvas.addEventListener('mousemove', e => {
+    const {offsetX:mx, offsetY:my} = e;
+    if (dragNode) {
+      const dx=mx-lastMX, dy=my-lastMY;
+      if (Math.abs(dx)>2||Math.abs(dy)>2) isDragging=true;
+      if (isDragging) {
+        dragNode.x += dx/scale;
+        dragNode.y += dy/scale;
+        dragNode.vx=0; dragNode.vy=0;
+        alpha = Math.max(alpha, 0.1);
+      }
+    } else if (isPanning) {
+      panX += mx-lastMX; panY += my-lastMY;
+    }
+    lastMX=mx; lastMY=my;
+    const h = getNodeAtPos(mx,my);
+    hoveredId = h?h.id:null;
+    canvas.style.cursor = h?'pointer': isPanning?'grabbing':'grab';
+  });
+
+  canvas.addEventListener('mouseup', e => {
+    if (!isDragging && dragNode) {
+      selectedId = dragNode.id===selectedId ? null : dragNode.id;
+      if (selectedId) openDetail(selectedId);
+    }
+    dragNode=null; isDragging=false; isPanning=false;
+    canvas.style.cursor='grab';
+  });
+
+  canvas.addEventListener('wheel', e => {
+    e.preventDefault();
+    const factor = e.deltaY > 0 ? 0.9 : 1.1;
+    const newScale = Math.min(3, Math.max(0.2, scale*factor));
+    const {offsetX:mx, offsetY:my} = e;
+    panX = mx - (mx-panX)*(newScale/scale);
+    panY = my - (my-panY)*(newScale/scale);
+    scale = newScale;
+  }, {passive:false});
+
+  /* Graph filter buttons */
+  document.getElementById('graph-filters').addEventListener('click', e => {
+    const btn = e.target.closest('.filter-btn');
+    if (!btn) return;
+    document.querySelectorAll('#graph-filters .filter-btn').forEach(b=>b.classList.remove('active'));
+    btn.classList.add('active');
+    const f = btn.dataset.filter;
+    const types = f==='all' ? null : f.split(',');
+    gNodes.forEach(n => {
+      n.visible = !types || types.includes(n.type) || types.includes(n.category);
+    });
+    selectedId = null;
+    alpha = 0.5;
+  });
+
+  window.addEventListener('resize', () => {
+    canvas.width = wrap.clientWidth;
+    canvas.height = wrap.clientHeight;
+    panX = canvas.width/2;
+    panY = canvas.height/2;
+  });
+}
+
+/* ============================================================
+   INIT
+   ============================================================ */
+renderImams();
+renderEvents();
+renderPlaces();
+renderThemes();
+renderScholars();
+renderTimeline('all');
+</script>
+</body>
+</html>

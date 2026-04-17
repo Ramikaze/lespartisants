@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Les Mérites de la Connaissance — Tradition chiite</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Scheherazade+New:wght@400;700&family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500;0,600&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{min-height:100%;background:#070c18;color:#e2d9c4;font-family:'EB Garamond',Georgia,serif;line-height:1.75;overflow-x:hidden}
+body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23c9a84c' stroke-width='0.3' opacity='0.055'%3E%3Crect x='22' y='22' width='56' height='56' rx='2'/%3E%3Crect x='22' y='22' width='56' height='56' rx='2' transform='rotate(45 50 50)'/%3E%3Ccircle cx='50' cy='50' r='28'/%3E%3C/g%3E%3C/svg%3E");background-size:100px;pointer-events:none;z-index:0}
+::-webkit-scrollbar{width:5px}::-webkit-scrollbar-track{background:#070c18}::-webkit-scrollbar-thumb{background:rgba(201,168,76,0.3);border-radius:3px}
+.wrap{max-width:760px;margin:0 auto;padding:56px 28px 100px;position:relative;z-index:1}
+.hero{text-align:center;margin-bottom:52px}
+.hero-ornament{display:flex;align-items:center;justify-content:center;gap:14px;margin-bottom:24px}
+.orn-line{height:1px;width:80px;background:linear-gradient(to right,transparent,#c9a84c)}.orn-line.r{background:linear-gradient(to left,transparent,#c9a84c)}
+.orn-gem{width:7px;height:7px;background:#c9a84c;transform:rotate(45deg);box-shadow:0 0 8px rgba(201,168,76,0.6)}
+.hero-label{font-family:'Cinzel',serif;font-size:0.68rem;letter-spacing:0.22em;text-transform:uppercase;color:#c9a84c;opacity:0.6;margin-bottom:16px}
+.hero-title{font-family:'Cinzel',serif;font-size:clamp(1.3rem,3.5vw,2rem);font-weight:700;color:#e8e2d0;line-height:1.25;margin-bottom:10px}
+.hero-title span{color:#c9a84c}
+.hero-subtitle{font-size:1rem;color:#7a6a4a;font-style:italic;margin-bottom:28px;line-height:1.6}
+.hero-divider{width:120px;height:1px;background:linear-gradient(90deg,transparent,#c9a84c,transparent);margin:0 auto}
+.toc{background:rgba(19,29,53,0.6);border:1px solid rgba(201,168,76,0.15);border-radius:14px;padding:22px 26px;margin-bottom:48px}
+.toc-title{font-family:'Cinzel',serif;font-size:0.7rem;letter-spacing:0.18em;text-transform:uppercase;color:#c9a84c;margin-bottom:14px;opacity:0.8}
+.toc-list{list-style:none;display:flex;flex-direction:column;gap:7px}
+.toc-item{display:flex;align-items:baseline;gap:10px;cursor:pointer;transition:color 0.2s}
+.toc-item:hover .toc-link{color:#e8c06a}
+.toc-num{font-family:'Cinzel',serif;font-size:0.68rem;color:#c9a84c;opacity:0.5;min-width:26px;flex-shrink:0}
+.toc-link{font-size:0.92rem;color:#9aa3b8;transition:color 0.2s}
+.section{margin-bottom:52px;scroll-margin-top:20px}
+.section-header{display:flex;align-items:center;gap:14px;margin-bottom:22px}
+.section-num{font-family:'Cinzel',serif;font-size:0.72rem;font-weight:700;color:#c9a84c;background:rgba(201,168,76,0.1);border:1px solid rgba(201,168,76,0.25);border-radius:6px;padding:4px 10px;flex-shrink:0}
+.section-title{font-family:'Cinzel',serif;font-size:1.1rem;font-weight:600;color:#e8e2d0;line-height:1.3}
+.section-line{height:1px;flex:1;background:linear-gradient(to right,rgba(201,168,76,0.2),transparent)}
+.body-text{font-size:1.05rem;color:#cec6b0;line-height:1.9;margin-bottom:16px;text-align:justify}
+.hadith{background:rgba(13,22,42,0.7);border:1px solid rgba(201,168,76,0.2);border-left:3px solid #c9a84c;border-radius:0 12px 12px 0;padding:18px 22px;margin:22px 0;position:relative;overflow:hidden}
+.hadith::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at top left,rgba(201,168,76,0.05),transparent 60%);pointer-events:none}
+.hadith-text{font-size:1.1rem;font-style:italic;color:#ddd5bf;line-height:1.85}
+.hadith-source{font-size:0.8rem;color:#c9a84c;opacity:0.65;margin-top:12px;font-family:'Cinzel',serif;letter-spacing:0.05em}
+.quran{background:rgba(201,168,76,0.05);border:1px solid rgba(201,168,76,0.15);border-radius:10px;padding:16px 20px;margin:18px 0;text-align:center}
+.quran-fr{font-style:italic;font-size:0.95rem;color:#cec6b0;margin-bottom:6px}
+.quran-ref{font-family:'Cinzel',serif;font-size:0.72rem;color:#c9a84c;opacity:0.55;letter-spacing:0.1em}
+.concept-list{list-style:none;margin:14px 0 20px;display:flex;flex-direction:column;gap:10px}
+.concept-item{display:flex;align-items:baseline;gap:12px;font-size:1.0rem;color:#cec6b0;line-height:1.7}
+.concept-bullet{width:5px;height:5px;background:#c9a84c;transform:rotate(45deg);flex-shrink:0;margin-top:8px;box-shadow:0 0 4px rgba(201,168,76,0.4)}
+.concept-item strong{color:#e8c06a;font-weight:600}
+.section-divider{display:flex;align-items:center;gap:16px;margin:48px 0}
+.sdiv-line{height:1px;flex:1;background:linear-gradient(to right,transparent,rgba(201,168,76,0.2),transparent)}
+.sdiv-gem{width:5px;height:5px;background:rgba(201,168,76,0.4);transform:rotate(45deg)}
+.sources{background:rgba(7,12,24,0.8);border:1px solid rgba(201,168,76,0.12);border-radius:12px;padding:24px 28px;margin-top:48px}
+.sources-title{font-family:'Cinzel',serif;font-size:0.75rem;letter-spacing:0.18em;text-transform:uppercase;color:#c9a84c;margin-bottom:18px;opacity:0.7}
+.source-item{font-size:0.9rem;color:#7a6a4a;margin-bottom:10px;line-height:1.6;padding-left:14px;position:relative}
+.source-item::before{content:'·';position:absolute;left:0;color:#c9a84c;opacity:0.5}
+@media(max-width:600px){.wrap{padding:36px 18px 80px}.body-text{font-size:1rem}.hadith-text{font-size:1.0rem}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<div class="hero">
+<div class="hero-label">Tradition chiite duodécimaine · Étude doctrinale</div>
+<div class="hero-ornament"><div class="orn-line"></div><div class="orn-gem"></div><div class="orn-line r"></div></div>
+<h1 class="hero-title">Les Mérites de la <span>Connaissance</span>,<br>la Condamnation de l'Ignorance<br>et le Rôle Central de la <span>Raison</span></h1>
+<div class="hero-subtitle">ʿAql · ʿIlm · Jahl — dans la tradition islamique chiite</div>
+<div class="hero-divider"></div>
+</div>
+
+<div class="toc"><div class="toc-title">Table des matières</div>
+<ul class="toc-list">
+<li class="toc-item" onclick="document.getElementById('s0').scrollIntoView({behavior:'smooth'})"><span class="toc-num">Intro</span><span class="toc-link">Introduction</span></li>
+<li class="toc-item" onclick="document.getElementById('s1').scrollIntoView({behavior:'smooth'})"><span class="toc-num">I</span><span class="toc-link">La ʿAql : première création</span></li>
+<li class="toc-item" onclick="document.getElementById('s2').scrollIntoView({behavior:'smooth'})"><span class="toc-num">II</span><span class="toc-link">ʿAql et ʿIlm : relation organique</span></li>
+<li class="toc-item" onclick="document.getElementById('s3').scrollIntoView({behavior:'smooth'})"><span class="toc-num">III</span><span class="toc-link">La connaissance dans le Coran</span></li>
+<li class="toc-item" onclick="document.getElementById('s4').scrollIntoView({behavior:'smooth'})"><span class="toc-num">IV</span><span class="toc-link">La ʿAql : mesure de la valeur humaine</span></li>
+<li class="toc-item" onclick="document.getElementById('s5').scrollIntoView({behavior:'smooth'})"><span class="toc-num">V</span><span class="toc-link">Obligation divine et héritage prophétique</span></li>
+<li class="toc-item" onclick="document.getElementById('s6').scrollIntoView({behavior:'smooth'})"><span class="toc-num">VI</span><span class="toc-link">ʿAql contre Jahl : combat cosmique</span></li>
+<li class="toc-item" onclick="document.getElementById('s7').scrollIntoView({behavior:'smooth'})"><span class="toc-num">VII</span><span class="toc-link">Connaissance sans action</span></li>
+<li class="toc-item" onclick="document.getElementById('s8').scrollIntoView({behavior:'smooth'})"><span class="toc-num">VIII</span><span class="toc-link">L'humilité du savant</span></li>
+<li class="toc-item" onclick="document.getElementById('s9').scrollIntoView({behavior:'smooth'})"><span class="toc-num">IX</span><span class="toc-link">La condamnation de l'ignorance</span></li>
+<li class="toc-item" onclick="document.getElementById('s10').scrollIntoView({behavior:'smooth'})"><span class="toc-num">X</span><span class="toc-link">L'Imamat : sommet de la ʿAql</span></li>
+</ul></div>
+
+<div class="section" id="s0"><div class="section-header"><span class="section-num">Introduction</span><div class="section-line"></div></div>
+<p class="body-text">Dans la tradition chiite duodécimaine, le thème de la connaissance (ʿilm) est si fondamental que le plus grand recueil de hadiths chiites — le <em>Kitāb al-Kāfī</em> de Muḥammad ibn Yaʿqūb al-Kulaynī (m. 329 H) — s'ouvre précisément par le <em>Kitāb al-ʿAql wa al-Jahl</em>, avant même le <em>Kitāb Faḍl al-ʿIlm</em>.</p>
+<p class="body-text">Ce choix éditorial révèle que pour les Ahl al-Bayt (عليهم السلام), la ʿAql — la Raison — est la condition préalable et le fondement de toute connaissance authentique. Sans raison saine, il ne saurait y avoir ni foi éclairée, ni action droite.</p></div>
+
+<div class="section-divider"><div class="sdiv-line"></div><div class="sdiv-gem"></div><div class="sdiv-line"></div></div>
+
+<div class="section" id="s1"><div class="section-header"><span class="section-num">I</span><h2 class="section-title">La ʿAql : première création et fondement de tout</h2></div>
+<p class="body-text">Le concept de ʿAql dépasse la simple faculté de raisonnement logique. Il désigne une réalité spirituelle et cosmique primordiale, la première chose que Allah ﷻ a créée :</p>
+<div class="hadith"><div class="hadith-text">« La première chose qu'Allah a créée, la première chose dont Il a fait l'acquisition, c'est la Raison. Il lui dit : "Avance", et elle avança. Il lui dit : "Recule", et elle recula. Alors Il dit : "Par Ma Puissance et Ma Gloire, Je n'ai rien créé de plus cher que toi. Par toi Je saisis, par toi Je donne, par toi J'accorde la récompense, et par toi J'inflige le châtiment." »</div><div class="hadith-source"><em>Usūl al-Kāfī</em>, T. I, <em>Kitāb al-ʿAql wa al-Jahl</em>, hadith 1 (éd. Dār al-Kutub al-Islāmiyya, Téhéran)</div></div>
+<ul class="concept-list">
+<li class="concept-item"><div class="concept-bullet"></div><span>La ʿAql est la <strong>création la plus noble</strong> aux yeux d'Allah ﷻ.</span></li>
+<li class="concept-item"><div class="concept-bullet"></div><span>Elle est l'<strong>instrument de la rétribution divine</strong>.</span></li>
+<li class="concept-item"><div class="concept-bullet"></div><span>Elle n'est pas une construction humaine, mais un <strong>dépôt divin</strong>.</span></li>
+</ul>
+<div class="hadith"><div class="hadith-text">« Ô Hishām, Allah ﷻ a donné aux gens deux arguments : l'argument extérieur et l'argument intérieur. L'argument extérieur, ce sont les Prophètes et les Messagers, ainsi que les Imams. L'argument intérieur, c'est la Raison. »</div><div class="hadith-source"><em>Usūl al-Kāfī</em>, T. I, <em>Kitāb al-ʿAql wa al-Jahl</em>, hadith 12 — Lettre de l'Imam al-Kāzim à Hishām ibn al-Ḥakam</div></div></div>
+
+<div class="section-divider"><div class="sdiv-line"></div><div class="sdiv-gem"></div><div class="sdiv-line"></div></div>
+
+<div class="section" id="s2"><div class="section-header"><span class="section-num">II</span><h2 class="section-title">La ʿAql et la ʿIlm : une relation organique</h2></div>
+<div class="hadith"><div class="hadith-text">« La Raison est la fondation de la connaissance et son miroir. »</div><div class="hadith-source"><em>Nahj al-Balāgha</em>, Hikmah 399 (éd. Ṣubḥī Ṣāliḥ)</div></div>
+<div class="hadith"><div class="hadith-text">« La connaissance est la vie de l'âme et la lumière des yeux. »</div><div class="hadith-source"><em>Nahj al-Balāgha</em>, Hikmah 146 (éd. Ṣubḥī Ṣāliḥ)</div></div>
+<div class="hadith"><div class="hadith-text">« Celui qui possède la raison possède la religion, et celui qui possède la religion entre au Paradis. »</div><div class="hadith-source"><em>Usūl al-Kāfī</em>, T. I, <em>Kitāb al-ʿAql wa al-Jahl</em>, hadith 3</div></div></div>
+
+<div class="section-divider"><div class="sdiv-line"></div><div class="sdiv-gem"></div><div class="sdiv-line"></div></div>
+
+<div class="section" id="s3"><div class="section-header"><span class="section-num">III</span><h2 class="section-title">Le statut de la connaissance dans le Coran</h2></div>
+<div class="quran"><div class="quran-fr">« Dis : Sont-ils égaux, ceux qui savent et ceux qui ne savent pas ? »</div><div class="quran-ref">Sourate Az-Zumar · 39:9</div></div>
+<div class="quran"><div class="quran-fr">« Allah élèvera en degrés ceux d'entre vous qui ont cru et ceux à qui la science a été accordée. »</div><div class="quran-ref">Sourate Al-Mujādala · 58:11</div></div>
+<div class="quran"><div class="quran-fr">« Parmi les serviteurs de Dieu, les savants sont les seuls à Le redouter. »</div><div class="quran-ref">Sourate Fāṭir · 35:28</div></div>
+<p class="body-text">L'Imam al-Ṣādiq (عليه السلام) commente : « Le sens à donner au mot savant se rattache à celui dont les actes confirment ses dires. » (<em>Usūl al-Kāfī</em>, T. I, p. 53–54, hadith 64)</p></div>
+
+<div class="section-divider"><div class="sdiv-line"></div><div class="sdiv-gem"></div><div class="sdiv-line"></div></div>
+
+<div class="section" id="s4"><div class="section-header"><span class="section-num">IV</span><h2 class="section-title">La ʿAql : mesure de la valeur humaine</h2></div>
+<div class="hadith"><div class="hadith-text">« Ô Hishām, Allah ﷻ n'a pas accordé de grâce plus grande aux Prophètes et aux Messagers qu'Il leur a accordée par rapport à leur raison supérieure. La raison d'un Prophète est supérieure à toute la dévotion de tous les adorateurs. Un homme ne s'acquitte de ses obligations envers Allah que dans la mesure de sa raison. »</div><div class="hadith-source"><em>Usūl al-Kāfī</em>, T. I, hadith 12 — Lettre à Hishām</div></div>
+<div class="hadith"><div class="hadith-text">« L'homme de raison est celui qui ne laisse pas ce qui est licite lui échapper par avarice, et ne se plonge pas dans l'illicite par convoitise. »</div><div class="hadith-source"><em>Usūl al-Kāfī</em>, T. I, hadith 12</div></div></div>
+
+<div class="section-divider"><div class="sdiv-line"></div><div class="sdiv-gem"></div><div class="sdiv-line"></div></div>
+
+<div class="section" id="s5"><div class="section-header"><span class="section-num">V</span><h2 class="section-title">La connaissance : obligation divine et héritage prophétique</h2></div>
+<div class="hadith"><div class="hadith-text">« Chercher la connaissance est une obligation pour tout musulman. »</div><div class="hadith-source">Le Prophète ﷺ — <em>Usūl al-Kāfī</em>, T. I, p. 47–48, hadith 36 (chaîne <em>mursal</em> dans certaines versions)</div></div>
+<div class="hadith"><div class="hadith-text">« Pour celui qui chemine sur la voie du savoir, Allah lui ouvrira une voie menant au Paradis ; les Anges lui déploieront leurs ailes en signe d'agrément ; les habitants du Ciel et de la Terre, ainsi que les poissons des océans, invoqueront sur lui le Pardon de Dieu. Le mérite du savant sur l'adorateur est semblable au mérite de la lune sur tous les astres lorsqu'elle est pleine. <strong>Les savants sont les héritiers des Prophètes.</strong> »</div><div class="hadith-source"><em>Usūl al-Kāfī</em>, T. I, p. 52, hadith 57</div></div></div>
+
+<div class="section-divider"><div class="sdiv-line"></div><div class="sdiv-gem"></div><div class="sdiv-line"></div></div>
+
+<div class="section" id="s6"><div class="section-header"><span class="section-num">VI</span><h2 class="section-title">La ʿAql contre le Jahl : un combat cosmique</h2></div>
+<div class="hadith"><div class="hadith-text">« Allah créa la Raison — et c'est la première créature spirituelle issue du côté droit du Trône, faite de Sa lumière — et lui dit : "Recule", et elle recula. Puis Il dit : "Avance", et elle avança. Alors Allah déclara : "Je t'ai créée grande et t'ai honorée au-dessus de toutes Mes créatures." Puis Il créa l'Ignorance des ténèbres de l'abîme marin et lui dit d'avancer, elle avança, et de reculer, elle ne recula pas. Allah lui dit : "Tu t'es montrée arrogante", et Il la maudit. »</div><div class="hadith-source"><em>Usūl al-Kāfī</em>, T. I, hadith 14</div></div>
+<p class="body-text">Puis Allah ﷻ accorda à la ʿAql soixante-quinze soldats — des vertus comme la bonté, la foi, la vérité, la piété — et à l'ignorance soixante-quinze soldats opposés. Ce hadith montre que le combat contre l'ignorance est un <strong>combat spirituel et cosmique</strong>, inscrit dans l'ordre même de la création.</p></div>
+
+<div class="section-divider"><div class="sdiv-line"></div><div class="sdiv-gem"></div><div class="sdiv-line"></div></div>
+
+<div class="section" id="s7"><div class="section-header"><span class="section-num">VII</span><h2 class="section-title">Connaissance sans action : une trahison de la ʿAql</h2></div>
+<div class="hadith"><div class="hadith-text">« Allah n'agrée aucune action accomplie sans connaissance, et aucune connaissance sans action. Celui qui possède la connaissance, celle-ci le guide dans l'action ; quant à celui qui n'agit pas, il ne possède aucune connaissance. »</div><div class="hadith-source">L'Imam al-Ṣādiq (ع) — <em>Usūl al-Kāfī</em>, T. I, p. 62, hadith 105</div></div>
+<div class="hadith"><div class="hadith-text">« Celui qui agit sans connaissance détruit plus qu'il ne construit. »</div><div class="hadith-source">Le Prophète ﷺ — <em>Usūl al-Kāfī</em>, T. I, p. 62, hadith 106</div></div></div>
+
+<div class="section-divider"><div class="sdiv-line"></div><div class="sdiv-gem"></div><div class="sdiv-line"></div></div>
+
+<div class="section" id="s8"><div class="section-header"><span class="section-num">VIII</span><h2 class="section-title">L'humilité du savant : fruit de la ʿAql mature</h2></div>
+<div class="hadith"><div class="hadith-text">« Sollicitez le savoir ; ornez-vous de clémence et de dignité ; soyez humbles envers ceux à qui vous transmettez le savoir ; ne soyez pas des savants présomptueux, car votre vanité anéantira votre prééminence. »</div><div class="hadith-source"><em>Usūl al-Kāfī</em>, T. I, p. 53, hadith 63</div></div>
+<div class="hadith"><div class="hadith-text">« Ô Hishām, l'homme de raison ne ment pas, même si cela lui est profitable. »</div><div class="hadith-source">L'Imam al-Kāzim (ع) — <em>Usūl al-Kāfī</em>, T. I, hadith 12</div></div></div>
+
+<div class="section-divider"><div class="sdiv-line"></div><div class="sdiv-gem"></div><div class="sdiv-line"></div></div>
+
+<div class="section" id="s9"><div class="section-header"><span class="section-num">IX</span><h2 class="section-title">La condamnation de l'ignorance</h2></div>
+<div class="hadith"><div class="hadith-text">« L'ignorance est la plus grande pauvreté. »</div><div class="hadith-source"><em>Nahj al-Balāgha</em>, Hikmah 38 (éd. Ṣubḥī Ṣāliḥ)</div></div>
+<div class="hadith"><div class="hadith-text">« La valeur de chaque homme est ce qu'il sait faire de bien. »</div><div class="hadith-source"><em>Nahj al-Balāgha</em>, Hikmah 81</div></div>
+<div class="hadith"><div class="hadith-text">« L'ignorance détruit de nombreuses personnes instruites en religion, et le savoir qu'elles possèdent ne leur profite aucunement. »</div><div class="hadith-source"><em>Nahj al-Balāgha</em>, Hikmah 107</div></div>
+<ul class="concept-list">
+<li class="concept-item"><div class="concept-bullet"></div><span><strong>Ignorance simple (<em>jahl basīṭ</em>)</strong> : ne pas savoir — curable par l'apprentissage.</span></li>
+<li class="concept-item"><div class="concept-bullet"></div><span><strong>Ignorance composée (<em>jahl murakkab</em>)</strong> : ne pas savoir que l'on ne sait pas — la mort de la ʿAql.</span></li>
+<li class="concept-item"><div class="concept-bullet"></div><span><strong>Ignorance de l'Imam</strong> : la plus condamnée, celle concernant la <em>maʿrifa</em> de l'Imam de son temps.</span></li>
+</ul></div>
+
+<div class="section-divider"><div class="sdiv-line"></div><div class="sdiv-gem"></div><div class="sdiv-line"></div></div>
+
+<div class="section" id="s10"><div class="section-header"><span class="section-num">X</span><h2 class="section-title">La connaissance de l'Imamat : sommet de la ʿAql et du ʿIlm</h2></div>
+<div class="hadith"><div class="hadith-text">« Ô Hishām, l'argument extérieur d'Allah sur les hommes, ce sont les Prophètes, les Messagers et les Imams. L'argument intérieur, c'est la Raison. Mais la Raison sans Imam est incomplète, et l'Imam sans Raison est inaccessible. »</div><div class="hadith-source"><em>Usūl al-Kāfī</em>, T. I, hadith 12</div></div>
+<p class="body-text">Ce système forme un tout cohérent : la <strong>ʿAql</strong> est le fondement intérieur ; la <strong>ʿIlm</strong> en est le fruit ; et la <strong><em>maʿrifa</em></strong> de l'Imam en est le sommet. C'est précisément pour cela que le <em>Kitāb al-Kāfī</em> s'ouvre par la Raison avant de s'ouvrir à la connaissance : sans la première, la seconde demeure inaccessible.</p></div>
+
+<div class="sources"><div class="sources-title">Sources utilisées</div>
+<p class="source-item"><em>Kitāb al-Kāfī</em>, Usūl, T. I, d'al-Kulaynī — éd. Dār al-Kutub al-Islāmiyya, Téhéran, 1365 Sh.</p>
+<p class="source-item"><em>Nahj al-Balāgha</em>, compilé par al-Sharīf al-Raḍī — éd. Ṣubḥī Ṣāliḥ, Dār al-Kitāb al-Lubnānī.</p>
+<p class="source-item">Versets coraniques : Az-Zumar 39:9, Al-Mujādala 58:11, Fāṭir 35:28.</p>
+</div>
+</div>
+</body>
+</html>
