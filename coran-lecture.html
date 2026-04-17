@@ -139,8 +139,37 @@ Q.forEach(function(s){
 
 // Search in list
 var listSearchEl = document.getElementById('listSearch');
+var navTimeout = null;
 listSearchEl.addEventListener('input', function(){
-  var q = this.value.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+  var val = this.value.trim();
+  clearTimeout(navTimeout);
+
+  // Detect surah-verse pattern (e.g. 23-5, 2:255, 36.4, 112/1)
+  var m = val.match(/^(\d{1,3})\s*[-:\.\/]\s*(\d+)$/);
+  if (m) {
+    var sn = parseInt(m[1]), vn = parseInt(m[2]);
+    if (sn >= 1 && sn <= 114) {
+      // Show all cards but navigate after a brief pause
+      gridEl.querySelectorAll('.surah-card').forEach(function(c){ c.classList.remove('hidden'); });
+      navTimeout = setTimeout(function(){ openSurah(sn, vn); }, 600);
+      return;
+    }
+  }
+
+  // Detect bare surah number (e.g. "36")
+  var mn = val.match(/^(\d{1,3})$/);
+  if (mn && parseInt(mn[1]) >= 1 && parseInt(mn[1]) <= 114) {
+    // Filter to show matching surah numbers
+    var num = mn[1];
+    gridEl.querySelectorAll('.surah-card').forEach(function(c){
+      var txt = c.getAttribute('data-search');
+      c.classList.toggle('hidden', txt.indexOf(num) !== 0 && txt.indexOf(' ' + num + ' ') === -1);
+    });
+    return;
+  }
+
+  // Normal text search
+  var q = val.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
   gridEl.querySelectorAll('.surah-card').forEach(function(c){
     var txt = c.getAttribute('data-search').normalize('NFD').replace(/[\u0300-\u036f]/g, '');
     c.classList.toggle('hidden', q && txt.indexOf(q) === -1);
@@ -148,6 +177,7 @@ listSearchEl.addEventListener('input', function(){
 });
 listSearchEl.addEventListener('keydown', function(e){
   if (e.key === 'Enter') {
+    clearTimeout(navTimeout);
     var val = this.value.trim();
     var m = val.match(/^(\d{1,3})\s*[-:\.\/]\s*(\d+)$/);
     if (m) {
@@ -159,7 +189,6 @@ listSearchEl.addEventListener('keydown', function(e){
       var sn2 = parseInt(mn[1]);
       if (sn2 >= 1 && sn2 <= 114) { openSurah(sn2); return; }
     }
-    // If not a number pattern, click the first visible card
     var first = gridEl.querySelector('.surah-card:not(.hidden)');
     if (first) first.click();
   }
