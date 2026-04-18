@@ -6,6 +6,7 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="theme-color" content="#070c18">
 <title>Les Partisans</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/7.0.0/fuse.min.js"></script>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 
@@ -250,7 +251,7 @@ body,body *{transition:background-color 0.3s,color 0.3s,border-color 0.3s}
   <div class="search-section" id="searchSection">
     <div class="search-bar">
       <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><line x1="16.5" y1="16.5" x2="21" y2="21"/></svg>
-      <input class="search-input" id="searchInput" type="text" placeholder="Rechercher une ressource...">
+      <input class="search-input" id="searchInput" type="text" placeholder="Rechercher (ex: coran, imams, invocations...)">
     </div>
     <div class="filter-tags" id="filterTags">
       <button class="filter-tag active" data-filter="all">Tout</button>
@@ -584,7 +585,7 @@ body,body *{transition:background-color 0.3s,color 0.3s,border-color 0.3s}
     var el = document.getElementById('card-' + cardId);
     if (el) el.addEventListener('click', function(){ openModule(cardModules[cardId]); });
   });
-  /* ── Recherche & Filtres ── */
+  /* ── Recherche Fuse.js (fuzzy) & Filtres ── */
   var searchInput = document.getElementById('searchInput');
   var filterTags = document.querySelectorAll('.filter-tag');
   var cards = document.querySelectorAll('#cardsGrid .card');
@@ -595,35 +596,70 @@ body,body *{transition:background-color 0.3s,color 0.3s,border-color 0.3s}
     return str.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
   }
 
-  function applyFilters() {
-    var query = normalize(searchInput.value.trim());
-    var visible = 0;
-    cards.forEach(function(card) {
-      var theme = card.getAttribute('data-theme') || '';
-      var keywords = normalize((card.getAttribute('data-keywords') || '') + ' ' + card.textContent);
-      var matchTheme = activeFilter === 'all' || theme === activeFilter;
-      var matchSearch = !query || keywords.indexOf(query) !== -1;
-      if (matchTheme && matchSearch) {
-        card.classList.remove('search-hidden');
-        visible++;
-      } else {
-        card.classList.add('search-hidden');
-      }
+  /* Build Fuse index */
+  var fuseData = [];
+  cards.forEach(function(card, i) {
+    fuseData.push({
+      idx: i,
+      el: card,
+      theme: card.getAttribute('data-theme') || '',
+      text: normalize((card.getAttribute('data-keywords') || '') + ' ' + card.textContent)
     });
-    if (query || activeFilter !== 'all') {
+  });
+  var fuse = new Fuse(fuseData, {
+    keys: ['text'],
+    threshold: 0.35,
+    distance: 200,
+    minMatchCharLength: 2,
+    ignoreLocation: true
+  });
+
+  function applyFilters() {
+    var raw = searchInput.value.trim();
+    var query = normalize(raw);
+    var visible = 0;
+
+    if (query.length >= 2) {
+      var results = fuse.search(query);
+      var matchedIdxs = new Set(results.map(function(r){ return r.item.idx; }));
+      fuseData.forEach(function(d) {
+        var matchTheme = activeFilter === 'all' || d.theme === activeFilter;
+        var matchSearch = matchedIdxs.has(d.idx);
+        if (matchTheme && matchSearch) {
+          d.el.classList.remove('search-hidden');
+          visible++;
+        } else {
+          d.el.classList.add('search-hidden');
+        }
+      });
+    } else {
+      fuseData.forEach(function(d) {
+        var matchTheme = activeFilter === 'all' || d.theme === activeFilter;
+        if (matchTheme) {
+          d.el.classList.remove('search-hidden');
+          visible++;
+        } else {
+          d.el.classList.add('search-hidden');
+        }
+      });
+    }
+
+    if (raw || activeFilter !== 'all') {
       searchCount.textContent = visible + ' résultat' + (visible !== 1 ? 's' : '');
     } else {
       searchCount.textContent = '';
     }
     var noRes = document.getElementById('noResults');
-    if (visible === 0) {
+    if (visible === 0 && (raw || activeFilter !== 'all')) {
       if (!noRes) {
         noRes = document.createElement('div');
         noRes.id = 'noResults';
         noRes.className = 'no-results';
-        noRes.textContent = 'Aucun résultat trouvé.';
         document.getElementById('cardsGrid').appendChild(noRes);
       }
+      var msg = raw ? 'Aucun r\u00e9sultat pour \u00ab\u00a0' + raw + '\u00a0\u00bb' : 'Aucun r\u00e9sultat dans cette cat\u00e9gorie.';
+      if (raw && activeFilter !== 'all') msg += ' dans ce filtre. Essayez avec \u00ab\u00a0Tout\u00a0\u00bb.';
+      noRes.textContent = msg;
       noRes.style.display = '';
     } else if (noRes) {
       noRes.style.display = 'none';
