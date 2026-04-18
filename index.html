@@ -227,7 +227,7 @@ body,body *{transition:background-color 0.3s,color 0.3s,border-color 0.3s}
     <button class="nav-tab" id="tab-chiisme">Le Chiisme</button>
     <button class="nav-tab" id="tab-1">Chronologie</button>
     <button class="nav-tab" id="tab-coran">Le Coran</button>
-    <button class="nav-tab" id="tab-3">14 Infaillibles</button>
+    <button class="nav-tab" id="tab-ahlulbayt">Ahl al-Bayt</button>
     <button class="nav-tab" id="tab-4">Invocations</button>
     <button class="nav-tab" id="tab-5">Biblioth&#232;que</button>
     <button class="nav-tab" id="tab-6">Vid&#233;os</button>
@@ -257,7 +257,7 @@ body,body *{transition:background-color 0.3s,color 0.3s,border-color 0.3s}
       <button class="filter-tag" data-filter="chiisme">Le Chiisme</button>
       <button class="filter-tag" data-filter="coran">Le Coran</button>
       <button class="filter-tag" data-filter="histoire">Histoire</button>
-      <button class="filter-tag" data-filter="genealogie">G&#233;n&#233;alogie</button>
+      <button class="filter-tag" data-filter="ahlulbayt">Ahl al-Bayt</button>
       <button class="filter-tag" data-filter="invocations">Invocations</button>
       <button class="filter-tag" data-filter="bibliotheque">Biblioth&#232;que</button>
       <button class="filter-tag" data-filter="videos">Vid&#233;os</button>
@@ -291,21 +291,13 @@ body,body *{transition:background-color 0.3s,color 0.3s,border-color 0.3s}
       <div class="card-desc">&#201;tude du Coran, versets cl&#233;s, apprentissage du Verset du Tr&#244;ne et m&#233;ditation.</div>
       <div class="card-footer"><span class="card-meta">Verset du Tr&#244;ne &middot; Audio &middot; &#201;tude</span><span class="card-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg></span></div>
     </div>
-    <!-- 14 Infaillibles -->
-    <div class="card" id="card-3" data-theme="genealogie" data-keywords="14 infaillibles arbre genealogique imam ali fatima hassan hussein">
-      <div class="card-icon" style="font-family:Cinzel,serif;font-size:22px;font-weight:700;color:var(--accent);">14</div>
-      <div class="card-tag">G&#233;n&#233;alogie</div>
-      <div class="card-title">Les 14 Infaillibles</div>
-      <div class="card-desc">Arbre g&#233;n&#233;alogique interactif des 14 Infaillibles et leurs compagnons.</div>
-      <div class="card-footer"><span class="card-meta">Pannable &middot; Zoomable &middot; D&#233;tails</span><span class="card-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg></span></div>
-    </div>
-    <!-- Douze Imams -->
-    <div class="card" id="card-12" data-theme="genealogie" data-keywords="douze imams 12 ali hassan hussein biographie imam mahdi sajjad baqir sadiq kazim rida jawad hadi askari">
-      <div class="card-icon" style="font-family:Cinzel,serif;font-size:22px;font-weight:700;color:var(--accent);">12</div>
-      <div class="card-tag">Biographies</div>
-      <div class="card-title">Les Douze Imams</div>
-      <div class="card-desc">Biographies d&#233;taill&#233;es des 12 Imams : naissance, martyre, lieu de s&#233;pulture et r&#244;le historique.</div>
-      <div class="card-footer"><span class="card-meta">12 biographies &middot; Fiches d&#233;taill&#233;es</span><span class="card-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg></span></div>
+    <!-- Ahl al-Bayt -->
+    <div class="card" id="card-ahlulbayt" data-theme="ahlulbayt" data-keywords="14 infaillibles arbre genealogique imam ali fatima hassan hussein douze imams 12 biographie mahdi sajjad baqir sadiq kazim rida jawad hadi askari ahl bayt" onclick="openSubMenu('ahlulbayt')">
+      <div class="card-icon" style="font-family:Cinzel,serif;font-size:18px;font-weight:700;color:var(--accent);">&#1575;&#1607;&#1604;</div>
+      <div class="card-tag">Les Gens de la Maison</div>
+      <div class="card-title">Ahl al-Bayt</div>
+      <div class="card-desc">Les 14 Infaillibles, arbre g&#233;n&#233;alogique et biographies des 12 Imams.</div>
+      <div class="card-footer"><span class="card-meta">G&#233;n&#233;alogie &middot; Biographies &middot; Imams</span><span class="card-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg></span></div>
     </div>
     <!-- Invocations -->
     <div class="card" id="card-4" data-theme="invocations" data-keywords="invocations dua ziyara priere sahifa sajjadiyya ahl bayt">
@@ -407,6 +399,29 @@ body,body *{transition:background-color 0.3s,color 0.3s,border-color 0.3s}
         <div class="card-title">Hadith al-Kis&#226;'</div>
         <div class="card-desc">Le Hadith de la Couverture — Arabe, translitt&#233;ration et traduction fran&#231;aise, avec audio.</div>
         <div class="card-footer"><span class="card-meta">Audio &middot; Trilingue &middot; Coran 33:33</span><span class="card-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg></span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="submenu" id="submenu-ahlulbayt" style="display:none">
+    <div class="submenu-header">
+      <button class="submenu-back" onclick="closeSubMenu()">&#8592; Retour</button>
+      <div class="submenu-title">&#9775; Ahl al-Bayt</div>
+    </div>
+    <div class="submenu-cards">
+      <div class="card" id="card-3">
+        <div class="card-icon" style="font-family:Cinzel,serif;font-size:22px;font-weight:700;color:var(--accent);">14</div>
+        <div class="card-tag">G&#233;n&#233;alogie</div>
+        <div class="card-title">Les 14 Infaillibles</div>
+        <div class="card-desc">Arbre g&#233;n&#233;alogique interactif des 14 Infaillibles et leurs compagnons.</div>
+        <div class="card-footer"><span class="card-meta">Pannable &middot; Zoomable &middot; D&#233;tails</span><span class="card-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg></span></div>
+      </div>
+      <div class="card" id="card-12">
+        <div class="card-icon" style="font-family:Cinzel,serif;font-size:22px;font-weight:700;color:var(--accent);">12</div>
+        <div class="card-tag">Biographies</div>
+        <div class="card-title">Les Douze Imams</div>
+        <div class="card-desc">Biographies d&#233;taill&#233;es des 12 Imams : naissance, martyre, lieu de s&#233;pulture et r&#244;le historique.</div>
+        <div class="card-footer"><span class="card-meta">12 biographies &middot; Fiches d&#233;taill&#233;es</span><span class="card-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg></span></div>
       </div>
     </div>
   </div>
@@ -551,9 +566,10 @@ body,body *{transition:background-color 0.3s,color 0.3s,border-color 0.3s}
   document.getElementById('tab-chiisme').addEventListener('click', function(){ openSubMenu('chiisme'); });
   document.getElementById('tab-coran').addEventListener('click', function(){ openSubMenu('coran'); });
   document.getElementById('tab-hadith').addEventListener('click', function(){ openSubMenu('hadith'); });
+  document.getElementById('tab-ahlulbayt').addEventListener('click', function(){ openSubMenu('ahlulbayt'); });
 
   /* ── Onglets directs → ouvrent le module ── */
-  var directTabs = {1:1, 3:3, 4:4, 5:5, 6:6};
+  var directTabs = {1:1, 4:4, 5:5, 6:6};
   Object.keys(directTabs).forEach(function(tabId){
     var el = document.getElementById('tab-' + tabId);
     if (el) el.addEventListener('click', function(){
