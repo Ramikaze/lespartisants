@@ -440,13 +440,13 @@ em { font-style: italic; color: var(--gold); }
   scrollbar-color: var(--gold-dim) var(--bg-surface);
   cursor: grab;
   position: relative;
-  height: 680px;
+  min-height: 500px;
+  height: 780px; /* overridden by JS based on card density */
   border-radius: var(--radius-lg);
   background: var(--bg-surface);
   border: 1px solid var(--border);
   user-select: none;
   will-change: scroll-position;
-  contain: strict;
 }
 .htimeline-outer:active { cursor: grabbing; }
 .htimeline-outer::-webkit-scrollbar { height: 5px; }
@@ -580,8 +580,8 @@ em { font-style: italic; color: var(--gold); }
   width: 1px;
   flex-shrink: 0;
 }
-.ht-item.above .ht-connector { height: 24px; }
-.ht-item.below .ht-connector { height: 24px; }
+.ht-item.above .ht-connector { height: 24px; /* overridden by inline style for multi-slot */ }
+.ht-item.below .ht-connector { height: 24px; /* overridden by inline style for multi-slot */ }
 
 .ht-card {
   background: var(--bg-elevated);
@@ -1974,7 +1974,7 @@ function applyZoom() {
     track.style.width = totalW + 'px';
 
     track.querySelectorAll('.ht-item[data-date]').forEach(function(el) {
-      const x = TL_PAD + (el.dataset.date - TL_MIN) * ppy - 85;
+      const x = TL_PAD + (el.dataset.date - TL_MIN) * ppy - 88;
       el.style.transform = 'translateX(' + x + 'px)';
     });
     track.querySelectorAll('.era-band[data-start]').forEach(function(el) {
@@ -1994,13 +1994,21 @@ function applyZoom() {
 }
 
 function setZoom(z) {
+  const oldZoom = timelineZoom;
   timelineZoom = Math.min(ZOOM_MAX, Math.max(ZOOM_MIN, z));
-  applyZoom();
+  if (timelineZoom === oldZoom) return;
+  /* Re-render timeline so slot placement recalculates at new pixel density */
+  const activeEra = document.querySelector('#era-tabs .era-tab.active')?.dataset.era || 'all';
+  const activeType = document.querySelector('#timeline-filters .filter-btn.active')?.dataset.filter || 'all';
+  renderTimeline(activeEra, activeType === 'all' ? null : activeType);
 }
 
 function renderTimeline(era, typeFilter) {
   const outer = document.getElementById('htimeline-outer');
   const track = document.getElementById('htimeline-track');
+
+  /* Save scroll position ratio for restore after re-render */
+  const scrollRatio = outer.scrollWidth > 0 ? outer.scrollLeft / outer.scrollWidth : 0;
 
   const nodes = NODES
     .filter(n => n.startDate)
@@ -2042,95 +2050,131 @@ function renderTimeline(era, typeFilter) {
     html += `<div class="ht-date-tick" data-year="${y}" style="transform:translateX(${toX(y)}px)"><div class="ht-tick-line"></div><div class="ht-tick-label">${y}</div></div>`;
   }
 
-  const CARD_W = 170;
-  const placed = [];
+  const CARD_W = 175;
+  const CARD_H = 76;
+  const SLOT_GAP = 6;
+  const BASE_CONN = 20;
 
-  nodes.forEach((n, i) => {
+  /* 
+   * Robust placement: unlimited rows above/below.
+   * For each card, find the first (side, row) where no existing card overlaps.
+   * Priority order: above-row0, below-row0, above-row1, below-row1, ...
+   * Connector height grows with row index so cards never visually collide.
+   */
+  const placed = []; // {x, above, row}
+
+  function findSlot(cx) {
+    for (let row = 0; row < 20; row++) {
+      for (let side = 0; side < 2; side++) {
+        const ab = (side === 0);
+        const collides = placed.some(p =>
+          p.above === ab && p.row === row && Math.abs(p.x - cx) < CARD_W + 4
+        );
+        if (!collides) return { above: ab, row };
+      }
+    }
+    return { above: true, row: 0 }; // fallback
+  }
+
+  let maxRow = 0;
+
+  nodes.forEach((n) => {
     const cx = toX(n.startDate);
     const color = typeColor(n.type, n.category);
-    let above = (i % 2 === 0);
-    const close = placed.filter(p => Math.abs(p.x - cx) < CARD_W && p.above === above);
-    if (close.length > 0) above = !above;
-    placed.push({x: cx, above});
+    const { above, row } = findSlot(cx);
+    placed.push({ x: cx, above, row });
+    if (row > maxRow) maxRow = row;
 
-    const tx = cx - CARD_W/2;
+    const connH = BASE_CONN + row * (CARD_H + SLOT_GAP);
+    const tx = cx - CARD_W / 2;
     html += `<div class="ht-item ${above?'above':'below'}" data-date="${n.startDate}" style="transform:translateX(${tx}px)" onclick="openDetail('${n.id}')">
       <div class="ht-card">
         <div class="ht-card-date" style="color:${color}">${n.startDate} EC</div>
         <div class="ht-card-title">${n.name.replace(/ﷺ/,'ﷺ').split(' ').slice(0,5).join(' ')}</div>
         <div class="ht-card-type" style="color:${color}">${typeLabel(n.type,n.category)}</div>
       </div>
-      <div class="ht-connector" style="background:${color}60"></div>
+      <div class="ht-connector" style="background:${color}60;height:${connH}px"></div>
       <div class="ht-dot" style="background:${color};box-shadow:0 0 8px ${color}90"></div>
     </div>`;
   });
 
+  /* Auto-size container height to fit all rows */
+  const neededHalf = BASE_CONN + (maxRow + 1) * (CARD_H + SLOT_GAP) + 30;
+  const totalHeight = Math.max(500, neededHalf * 2 + 40);
+  outer.style.height = totalHeight + 'px';
+
   track.innerHTML = html;
 
-  // Drag-to-scroll (velocity-based for smoothness)
-  let isDown = false, startX = 0, scrollLeft = 0, velX = 0, lastX = 0, lastT = 0, momentum = null;
-
-  function stopMomentum() { if (momentum) { cancelAnimationFrame(momentum); momentum = null; } }
-
-  outer.addEventListener('mousedown', function(e) {
-    if (e.target.classList.contains('kw-link')) return;
-    stopMomentum();
-    isDown = true; startX = e.pageX; scrollLeft = outer.scrollLeft;
-    lastX = e.pageX; lastT = Date.now(); velX = 0;
+  /* Restore scroll position after re-render */
+  requestAnimationFrame(() => {
+    outer.scrollLeft = scrollRatio * outer.scrollWidth;
   });
-  outer.addEventListener('mouseleave', function() { isDown = false; });
-  outer.addEventListener('mouseup', function() {
-    isDown = false;
-    // momentum scroll
-    if (Math.abs(velX) > 0.5) {
-      (function glide() {
-        velX *= 0.93;
-        outer.scrollLeft -= velX;
-        if (Math.abs(velX) > 0.5) momentum = requestAnimationFrame(glide);
-        else momentum = null;
-      })();
-    }
-  });
-  outer.addEventListener('mousemove', function(e) {
-    if (!isDown) return;
-    const now = Date.now(), dt = now - lastT || 1;
-    velX = (e.pageX - lastX) / dt * 16; // px per frame ~16ms
-    lastX = e.pageX; lastT = now;
-    outer.scrollLeft = scrollLeft - (e.pageX - startX);
-  });
-  // Touch drag
-  let tStart = 0, tScroll = 0;
-  outer.ontouchstart = e => {
-    if (e.touches.length === 1) { tStart = e.touches[0].clientX; tScroll = outer.scrollLeft; }
-  };
-  outer.ontouchmove = e => {
-    if (e.touches.length === 1) {
-      outer.scrollLeft = tScroll - (e.touches[0].clientX - tStart) * 1.5;
-    } else if (e.touches.length === 2) {
-      // Pinch zoom
-      e.preventDefault();
-      const d = Math.hypot(
-        e.touches[0].clientX - e.touches[1].clientX,
-        e.touches[0].clientY - e.touches[1].clientY
-      );
-      if (!outer._pinchDist) { outer._pinchDist = d; outer._pinchZoom = timelineZoom; return; }
-      setZoom(outer._pinchZoom * (d / outer._pinchDist));
-    }
-  };
-  outer.ontouchend = () => { outer._pinchDist = null; };
 
-  // Mouse wheel zoom (Ctrl+wheel or plain wheel)
-  outer.addEventListener('wheel', function(e) {
-    if (e.ctrlKey || e.metaKey || Math.abs(e.deltaY) > Math.abs(e.deltaX)) {
-      e.preventDefault();
-      const delta = e.deltaY > 0 ? -ZOOM_STEP : ZOOM_STEP;
-      setZoom(timelineZoom + delta);
-    }
-  }, { passive: false });
+  // Wire drag/scroll/zoom listeners only ONCE
+  if (!outer._eventsWired) {
+    outer._eventsWired = true;
 
-  // Wire zoom buttons (only first call)
-  if (!outer._zoomWired) {
-    outer._zoomWired = true;
+    // Drag-to-scroll (velocity-based for smoothness)
+    let isDown = false, startX = 0, scrollLeft = 0, velX = 0, lastX = 0, lastT = 0, momentum = null;
+
+    function stopMomentum() { if (momentum) { cancelAnimationFrame(momentum); momentum = null; } }
+
+    outer.addEventListener('mousedown', function(e) {
+      if (e.target.classList.contains('kw-link')) return;
+      stopMomentum();
+      isDown = true; startX = e.pageX; scrollLeft = outer.scrollLeft;
+      lastX = e.pageX; lastT = Date.now(); velX = 0;
+    });
+    outer.addEventListener('mouseleave', function() { isDown = false; });
+    outer.addEventListener('mouseup', function() {
+      isDown = false;
+      // momentum scroll
+      if (Math.abs(velX) > 0.5) {
+        (function glide() {
+          velX *= 0.93;
+          outer.scrollLeft -= velX;
+          if (Math.abs(velX) > 0.5) momentum = requestAnimationFrame(glide);
+          else momentum = null;
+        })();
+      }
+    });
+    outer.addEventListener('mousemove', function(e) {
+      if (!isDown) return;
+      const now = Date.now(), dt = now - lastT || 1;
+      velX = (e.pageX - lastX) / dt * 16;
+      lastX = e.pageX; lastT = now;
+      outer.scrollLeft = scrollLeft - (e.pageX - startX);
+    });
+    // Touch drag
+    let tStart = 0, tScroll = 0;
+    outer.ontouchstart = e => {
+      if (e.touches.length === 1) { tStart = e.touches[0].clientX; tScroll = outer.scrollLeft; }
+    };
+    outer.ontouchmove = e => {
+      if (e.touches.length === 1) {
+        outer.scrollLeft = tScroll - (e.touches[0].clientX - tStart) * 1.5;
+      } else if (e.touches.length === 2) {
+        e.preventDefault();
+        const d = Math.hypot(
+          e.touches[0].clientX - e.touches[1].clientX,
+          e.touches[0].clientY - e.touches[1].clientY
+        );
+        if (!outer._pinchDist) { outer._pinchDist = d; outer._pinchZoom = timelineZoom; return; }
+        setZoom(outer._pinchZoom * (d / outer._pinchDist));
+      }
+    };
+    outer.ontouchend = () => { outer._pinchDist = null; };
+
+    // Mouse wheel zoom
+    outer.addEventListener('wheel', function(e) {
+      if (e.ctrlKey || e.metaKey || Math.abs(e.deltaY) > Math.abs(e.deltaX)) {
+        e.preventDefault();
+        const delta = e.deltaY > 0 ? -ZOOM_STEP : ZOOM_STEP;
+        setZoom(timelineZoom + delta);
+      }
+    }, { passive: false });
+
+    // Zoom buttons
     document.getElementById('zoom-in').addEventListener('click', () => setZoom(timelineZoom + ZOOM_STEP));
     document.getElementById('zoom-out').addEventListener('click', () => setZoom(timelineZoom - ZOOM_STEP));
     document.getElementById('zoom-reset').addEventListener('click', () => setZoom(ZOOM_DEFAULT));
