@@ -68,6 +68,16 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
 .font-ctrl .fc-btn{background:none;border:none;color:#c9a84c;font-size:16px;cursor:pointer;padding:4px 6px;border-radius:4px;line-height:1;transition:background .15s}
 .font-ctrl .fc-btn:hover{background:rgba(201,168,76,0.2)}
 .font-ctrl .fc-btn:active{background:rgba(201,168,76,0.35)}
+.pdf-card{background:rgba(201,168,76,0.04);border:1px solid rgba(201,168,76,0.18);border-radius:14px;padding:28px 28px 24px;margin:24px 0 28px;max-width:700px;margin-left:auto;margin-right:auto}
+.pdf-card-head{display:flex;align-items:center;gap:14px;margin-bottom:16px}
+.pdf-card-icon{width:48px;height:48px;background:rgba(201,168,76,0.12);border:1px solid rgba(201,168,76,0.25);border-radius:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.pdf-card-icon svg{width:26px;height:26px;color:#c9a84c}
+.pdf-card-title{font-family:'Cinzel',serif;font-size:1.1rem;font-weight:700;color:#c9a84c}
+.pdf-card-subtitle{font-size:0.8rem;color:#5a6480;margin-top:2px}
+.pdf-card-text{font-size:0.92rem;color:#9e9480;line-height:1.75;margin-bottom:20px;text-align:justify}
+.pdf-card-dl{display:inline-flex;align-items:center;gap:8px;background:rgba(201,168,76,0.12);border:1px solid rgba(201,168,76,0.3);color:#c9a84c;padding:10px 22px;border-radius:10px;font-family:'Cinzel',serif;font-size:0.85rem;font-weight:600;letter-spacing:.04em;text-decoration:none;transition:all .2s;cursor:pointer}
+.pdf-card-dl:hover{background:rgba(201,168,76,0.22);border-color:rgba(201,168,76,0.5);transform:translateY(-1px)}
+.pdf-card-dl svg{width:18px;height:18px}
 .nav-btns{display:flex;justify-content:space-between;padding:20px 0;border-top:1px solid rgba(201,168,76,0.1);margin-top:40px}
 .nav-btn{background:none;border:1px solid rgba(201,168,76,0.3);color:#c9a84c;padding:10px 22px;border-radius:8px;cursor:pointer;font-family:'Cinzel',serif;font-size:15px;transition:all .2s}
 .nav-btn:hover{background:rgba(201,168,76,0.12)}
@@ -134,6 +144,12 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
 [data-theme="light"] .font-ctrl .fc-label{color:#7a5c24!important}
 [data-theme="light"] .font-ctrl .fc-btn{color:#7a5c24!important}
 [data-theme="light"] .font-ctrl .fc-btn:hover{background:rgba(122,92,36,0.12)!important}
+[data-theme="light"] .pdf-card{background:rgba(122,92,36,0.04)!important;border-color:rgba(122,92,36,0.15)!important}
+[data-theme="light"] .pdf-card-icon{background:rgba(122,92,36,0.08)!important;border-color:rgba(122,92,36,0.2)!important}
+[data-theme="light"] .pdf-card-title{color:#7a5c24!important}
+[data-theme="light"] .pdf-card-text{color:#5a4a30!important}
+[data-theme="light"] .pdf-card-dl{background:rgba(122,92,36,0.08)!important;color:#7a5c24!important;border-color:rgba(122,92,36,0.25)!important}
+[data-theme="light"] .pdf-card-dl:hover{background:rgba(122,92,36,0.16)!important}
 
 
 </style>
@@ -163,6 +179,19 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
       <input id="listSearch" type="text" placeholder="Rechercher une sourate ou taper 23-5 pour sourate 23 verset 5...">
     </div>
   </div>
+
+  <div class="pdf-card">
+    <div class="pdf-card-head">
+      <div class="pdf-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><polyline points="9 15 12 18 15 15"/></svg></div>
+      <div>
+        <div class="pdf-card-title">Le Coran &mdash; Traduction Abolqasemi Fakhri</div>
+        <div class="pdf-card-subtitle">&Eacute;ditions Ansariyan &middot; PDF &middot; 4,2 Mo</div>
+      </div>
+    </div>
+    <div class="pdf-card-text">Le Coran fran&ccedil;ais chiite, traduit par Abu al-Qasim Fakhri et publi&eacute; par Ansariyan, est une r&eacute;f&eacute;rence unique pour les lecteurs francophones cherchant une traduction fid&egrave;le et approfondie selon l'approche chiite. Il est important de souligner que les chiites ne poss&egrave;dent pas un Coran diff&eacute;rent des autres musulmans. Le texte sacr&eacute; reste inchang&eacute; et authentique, tel qu'il a &eacute;t&eacute; r&eacute;v&eacute;l&eacute; au Proph&egrave;te Muhammad (s). Ce qui distingue cette traduction est son approche interpr&eacute;tative, qui met en avant les commentaires et les nuances du Coran selon l'&eacute;cole de pens&eacute;e chiite, tout en respectant le sens original du message divin. Cette &eacute;dition est la seule traduction chiite du Coran en fran&ccedil;ais actuellement disponible, offrant ainsi une ressource pr&eacute;cieuse pour les lecteurs d&eacute;sireux d'explorer les enseignements coraniques &agrave; travers une perspective chiite.</div>
+    <a class="pdf-card-dl" href="Le_Coran_traduit_en_francais_par_Abolqasemi_Fakhri.pdf" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>T&eacute;l&eacute;charger le PDF</a>
+  </div>
+
   <div class="surah-grid" id="surahGrid"></div>
 </div>
 
