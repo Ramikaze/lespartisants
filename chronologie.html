@@ -2056,14 +2056,23 @@ function renderTimeline(era, typeFilter) {
   const CARD_H = 76;
   const SLOT_GAP = 6;
   const BASE_CONN = 20;
+  const SAME_DATE_OFFSET = CARD_W + 8; // horizontal spacing for same-date events
 
   /* 
-   * Robust placement: unlimited rows above/below.
-   * For each card, find the first (side, row) where no existing card overlaps.
-   * Priority order: above-row0, below-row0, above-row1, below-row1, ...
-   * Connector height grows with row index so cards never visually collide.
+   * Placement strategy:
+   * 1. Events at the same startDate are spread horizontally (side by side)
+   * 2. Then each spread position is assigned above/below + row to avoid
+   *    overlap with neighbors at different dates.
+   * Connector height grows with row index.
    */
-  const placed = []; // {x, above, row}
+  const placed = []; // {x, above, row, date}
+
+  /* Pre-compute horizontal offsets for same-date events */
+  const dateCounts = {};
+  nodes.forEach(n => {
+    dateCounts[n.startDate] = (dateCounts[n.startDate] || 0) + 1;
+  });
+  const dateIndex = {}; // tracks how many of each date we've placed
 
   function findSlot(cx) {
     for (let row = 0; row < 20; row++) {
@@ -2075,16 +2084,26 @@ function renderTimeline(era, typeFilter) {
         if (!collides) return { above: ab, row };
       }
     }
-    return { above: true, row: 0 }; // fallback
+    return { above: true, row: 0 };
   }
 
   let maxRow = 0;
 
   nodes.forEach((n) => {
-    const cx = toX(n.startDate);
+    const baseCx = toX(n.startDate);
     const color = typeColor(n.type, n.category);
+
+    /* Offset same-date events horizontally */
+    const dIdx = dateIndex[n.startDate] || 0;
+    dateIndex[n.startDate] = dIdx + 1;
+    const totalSameDate = dateCounts[n.startDate];
+    /* Center the group: offset = (index - (count-1)/2) * spacing */
+    const cx = totalSameDate > 1
+      ? baseCx + (dIdx - (totalSameDate - 1) / 2) * SAME_DATE_OFFSET
+      : baseCx;
+
     const { above, row } = findSlot(cx);
-    placed.push({ x: cx, above, row });
+    placed.push({ x: cx, above, row, date: n.startDate });
     if (row > maxRow) maxRow = row;
 
     const connH = BASE_CONN + row * (CARD_H + SLOT_GAP);
@@ -2099,10 +2118,8 @@ function renderTimeline(era, typeFilter) {
     const dotHtml = `<div class="ht-dot" style="background:${color};box-shadow:0 0 8px ${color}90"></div>`;
 
     if (above) {
-      /* Above: card (top) → connector → dot (bottom, on axis) */
       html += `<div class="ht-item above" data-date="${n.startDate}" style="transform:translateX(${tx}px)" onclick="openDetail('${n.id}')">${cardHtml}${connHtml}${dotHtml}</div>`;
     } else {
-      /* Below: dot (top, on axis) → connector → card (bottom) */
       html += `<div class="ht-item below" data-date="${n.startDate}" style="transform:translateX(${tx}px)" onclick="openDetail('${n.id}')">${dotHtml}${connHtml}${cardHtml}</div>`;
     }
   });
