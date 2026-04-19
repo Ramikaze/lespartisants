@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Résister — L'Islam face aux temps dystopiques</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500;0,600&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{min-height:100%;background:#070c18;color:#e2d9c4;font-family:'EB Garamond',Georgia,serif;font-size:18px;line-height:1.8;overflow-x:hidden}
+body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23c9a84c' stroke-width='0.3' opacity='0.04'%3E%3Ccircle cx='50' cy='50' r='40'/%3E%3Ccircle cx='50' cy='50' r='25'/%3E%3Ccircle cx='50' cy='50' r='10'/%3E%3C/g%3E%3C/svg%3E");background-size:100px;pointer-events:none;z-index:0}
+::-webkit-scrollbar{width:5px}::-webkit-scrollbar-track{background:#070c18}::-webkit-scrollbar-thumb{background:rgba(201,168,76,0.3);border-radius:3px}
+.wrap{max-width:760px;margin:0 auto;padding:56px 28px 100px;position:relative;z-index:1}
+.hero{text-align:center;margin-bottom:42px}
+.hero-ornament{display:flex;align-items:center;justify-content:center;gap:14px;margin-bottom:24px}
+.orn-line{height:1px;width:80px;background:linear-gradient(to right,transparent,#c9a84c)}.orn-line.r{background:linear-gradient(to left,transparent,#c9a84c)}
+.orn-gem{width:7px;height:7px;background:#c9a84c;transform:rotate(45deg);box-shadow:0 0 8px rgba(201,168,76,0.6)}
+.hero-label{font-family:'Cinzel',serif;font-size:0.75rem;letter-spacing:0.22em;text-transform:uppercase;color:#c9a84c;opacity:0.6;margin-bottom:16px}
+.hero-title{font-family:'Cinzel',serif;font-size:clamp(1.5rem,4vw,2.3rem);font-weight:700;color:#e8e2d0;line-height:1.25;margin-bottom:10px}
+.hero-title span{color:#c9a84c}
+.hero-subtitle{font-size:1.15rem;color:#7a6a4a;font-style:italic;margin-bottom:28px;line-height:1.6}
+.hero-divider{width:120px;height:1px;background:linear-gradient(90deg,transparent,#c9a84c,transparent);margin:0 auto}
+.intro-box{background:rgba(19,29,53,0.5);border:1px solid rgba(201,168,76,0.12);border-radius:14px;padding:32px 30px;margin-bottom:42px}
+.intro-box p{font-size:1.15rem;color:#cec6b0;line-height:1.95;margin-bottom:16px;text-align:justify}
+.intro-box p:last-child{margin-bottom:0}
+.intro-box strong{color:#e8c06a;font-weight:600}
+.intro-box em{color:#b8a882}
+.intro-epigraph{font-style:italic;font-size:1.05rem;color:#9a9280;text-align:center;margin-bottom:20px;line-height:1.7}
+.cards-label{font-family:'Cinzel',serif;font-size:0.75rem;letter-spacing:0.2em;text-transform:uppercase;color:#c9a84c;opacity:0.6;margin-bottom:18px}
+.cards-grid{display:grid;grid-template-columns:1fr;gap:14px;margin-bottom:40px}
+.a-card{background:rgba(19,29,53,0.5);border:1px solid rgba(201,168,76,0.12);border-radius:12px;padding:22px 24px;cursor:pointer;transition:all .25s ease;position:relative;overflow:hidden}
+.a-card:hover{border-color:rgba(201,168,76,0.35);background:rgba(19,29,53,0.7);transform:translateY(-2px)}
+.a-card.soon{opacity:0.45;pointer-events:none}
+.a-card-num{font-family:'Cinzel',serif;font-size:0.7rem;letter-spacing:0.15em;color:#c9a84c;opacity:0.5;margin-bottom:6px}
+.a-card-title{font-family:'Cinzel',serif;font-size:1.1rem;font-weight:600;color:#e8e2d0;margin-bottom:8px;line-height:1.35}
+.a-card-desc{font-size:0.95rem;color:#8a8070;line-height:1.6}
+.a-card-arrow{position:absolute;right:20px;top:50%;transform:translateY(-50%);color:#c9a84c;opacity:0.3}
+.a-card:hover .a-card-arrow{opacity:0.7}
+.a-card-soon{font-family:'Cinzel',serif;font-size:0.7rem;color:#5a5040;letter-spacing:0.1em;margin-top:6px}
+.article-view{display:none}
+.article-view.active{display:block}
+.back-btn{display:inline-flex;align-items:center;gap:8px;font-family:'Cinzel',serif;font-size:0.85rem;color:#c9a84c;cursor:pointer;border:1px solid rgba(201,168,76,0.2);background:rgba(19,29,53,0.4);border-radius:8px;padding:8px 16px;margin-bottom:32px;transition:all .2s}
+.back-btn:hover{background:rgba(201,168,76,0.1);border-color:rgba(201,168,76,0.4)}
+.article-header{margin-bottom:28px}
+.article-num{font-family:'Cinzel',serif;font-size:0.7rem;letter-spacing:0.2em;text-transform:uppercase;color:#c9a84c;opacity:0.5;margin-bottom:8px}
+.article-title{font-family:'Cinzel',serif;font-size:clamp(1.2rem,3vw,1.6rem);font-weight:700;color:#e8e2d0;line-height:1.3;margin-bottom:12px}
+.body-text{font-size:1.15rem;color:#cec6b0;line-height:1.95;margin-bottom:18px;text-align:justify}
+.body-text strong{color:#e8c06a;font-weight:600}
+.body-text em{color:#b8a882}
+.sub-heading{font-family:'Cinzel',serif;font-size:1.1rem;font-weight:600;color:#e8c06a;margin:32px 0 16px}
+.evidence{background:rgba(13,22,42,0.7);border:1px solid rgba(201,168,76,0.15);border-left:3px solid #c9a84c;border-radius:0 10px 10px 0;padding:18px 22px;margin:22px 0}
+.evidence-label{font-family:'Cinzel',serif;font-size:0.72rem;letter-spacing:0.15em;text-transform:uppercase;color:#c9a84c;margin-bottom:8px;opacity:0.7}
+.evidence-text{font-size:1.05rem;color:#ddd5bf;line-height:1.8;margin-bottom:6px}
+.evidence-source{font-size:0.82rem;color:#7a6a4a;font-style:italic}
+.action-box{background:rgba(201,168,76,0.06);border:1px solid rgba(201,168,76,0.18);border-radius:12px;padding:24px 26px;margin:32px 0}
+.action-title{font-family:'Cinzel',serif;font-size:0.85rem;letter-spacing:0.15em;text-transform:uppercase;color:#c9a84c;margin-bottom:14px}
+.action-item{display:flex;align-items:baseline;gap:12px;font-size:1.05rem;color:#cec6b0;line-height:1.8;margin-bottom:10px}
+.action-bullet{width:5px;height:5px;background:#c9a84c;transform:rotate(45deg);flex-shrink:0;margin-top:10px}
+.sources-box{background:rgba(7,12,24,0.8);border:1px solid rgba(201,168,76,0.12);border-radius:12px;padding:24px 28px;margin-top:40px}
+.sources-title{font-family:'Cinzel',serif;font-size:0.78rem;letter-spacing:0.18em;text-transform:uppercase;color:#c9a84c;margin-bottom:14px;opacity:0.7}
+.source-item{font-size:0.9rem;color:#7a6a4a;margin-bottom:8px;line-height:1.6;padding-left:14px;position:relative}
+.source-item::before{content:'·';position:absolute;left:0;color:#c9a84c;opacity:0.5}
+@media(max-width:600px){.wrap{padding:36px 18px 80px}.body-text{font-size:1.05rem}.intro-box{padding:22px 20px}.a-card{padding:18px 20px}}
+[data-theme="light"]{--lbg:#e8e0d4;--ltext:#2c2114;--laccent:#7a5c24;--lborder:rgba(122,92,36,0.15)}
+[data-theme="light"] body{background:var(--lbg)!important;color:var(--ltext)!important}
+[data-theme="light"] body::before{opacity:0.4!important}
+[data-theme="light"] .hero-title{color:var(--ltext)!important}
+[data-theme="light"] .hero-title span{color:var(--laccent)!important}
+[data-theme="light"] .hero-subtitle{color:#7a6e56!important}
+[data-theme="light"] .intro-box{background:rgba(220,212,196,0.5)!important;border-color:var(--lborder)!important}
+[data-theme="light"] .intro-box p{color:#3d3425!important}
+[data-theme="light"] .intro-box strong{color:#6a4e1a!important}
+[data-theme="light"] .intro-epigraph{color:#6a5e48!important}
+[data-theme="light"] .a-card{background:rgba(220,212,196,0.5)!important;border-color:var(--lborder)!important}
+[data-theme="light"] .a-card:hover{background:rgba(220,212,196,0.7)!important;border-color:rgba(122,92,36,0.3)!important}
+[data-theme="light"] .a-card-title{color:var(--ltext)!important}
+[data-theme="light"] .a-card-desc{color:#6a5e48!important}
+[data-theme="light"] .back-btn{background:rgba(220,212,196,0.5)!important;border-color:var(--lborder)!important;color:var(--laccent)!important}
+[data-theme="light"] .article-title{color:var(--ltext)!important}
+[data-theme="light"] .body-text{color:#3d3425!important}
+[data-theme="light"] .body-text strong{color:#6a4e1a!important}
+[data-theme="light"] .sub-heading{color:var(--laccent)!important}
+[data-theme="light"] .evidence{background:rgba(220,212,196,0.5)!important;border-color:rgba(122,92,36,0.15)!important;border-left-color:var(--laccent)!important}
+[data-theme="light"] .evidence-text{color:#3d3425!important}
+[data-theme="light"] .action-box{background:rgba(122,92,36,0.05)!important;border-color:rgba(122,92,36,0.15)!important}
+[data-theme="light"] .action-item{color:#3d3425!important}
+[data-theme="light"] .sources-box{background:rgba(220,212,196,0.4)!important;border-color:var(--lborder)!important}
+[data-theme="light"] .source-item{color:#6a5e48!important}
+[data-theme="light"] ::-webkit-scrollbar-track{background:var(--lbg)!important}
+[data-theme="light"] ::-webkit-scrollbar-thumb{background:rgba(122,92,36,0.25)!important}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<!-- ══════════ HOME VIEW ══════════ -->
+<div id="homeView">
+
+<div class="hero">
+<div class="hero-label">Série d'articles</div>
+<div class="hero-ornament"><div class="orn-line"></div><div class="orn-gem"></div><div class="orn-line r"></div></div>
+<h1 class="hero-title"><span>Résister</span></h1>
+<p class="hero-subtitle">L'Islam face aux temps dystopiques</p>
+<div class="hero-divider"></div>
+</div>
+
+<div class="intro-box">
+<p class="intro-epigraph">« Celui qui voit un souverain oppresseur rendant licite ce que Dieu a interdit, trahissant le pacte de Dieu, agissant contre la Sunna du Messager de Dieu ﷺ — celui qui voit cela et ne s'y oppose ni par l'acte ni par la parole, il est juste que Dieu le place là où Il place l'oppresseur. »<br>— Imam al-Ḥusayn (ع), veille de ʿĀshūrāʾ</p>
+<p>Le 10 Muḥarram de l'an 61 de l'Hégire, à Karbala, l'Imam al-Ḥusayn (ع) a posé un acte qui a défini pour toujours le sens du mot <strong>résistance</strong> dans l'Islam. Face à un pouvoir qui exigeait la soumission, il a choisi le refus — non par calcul stratégique, non par espoir de victoire militaire, mais parce que <strong>se taire face à l'injustice, c'est y participer</strong>. ʿĀshūrāʾ n'est pas un événement du passé : c'est un programme d'action permanent. Chaque époque produit son Yazīd et chaque époque appelle ses Ḥusayn.</p>
+<p>Aujourd'hui, les formes de l'oppression ont changé. Elles sont plus subtiles, plus totales, plus difficiles à identifier — et c'est précisément ce qui les rend plus dangereuses. Orwell avait prédit Big Brother. Huxley avait annoncé le soma. Bradbury avait vu les livres brûler. Ce qui était fiction est devenu le quotidien : surveillance de masse normalisée, anesthésie spirituelle par le divertissement permanent, noyade du savoir sous le bruit et remplacement de la connaissance par l'illusion de savoir.</p>
+<p>Le musulman du XXIᵉ siècle évolue dans un monde qui combine les trois dystopies à la fois — un monde qui ne persécute plus seulement les corps, mais qui <strong>colonise les esprits</strong>, <strong>corrompt les désirs</strong> et <strong>reprogramme les consciences</strong>. L'école de Karbala nous enseigne que face à ce type de système, le silence est une forme de complicité. Résister n'est pas une option — c'est un <strong>devoir religieux</strong> (<em>taklīf</em>).</p>
+<p>Cette série d'articles n'est pas un cri d'alarme. C'est un <strong>programme de formation</strong>. Chaque texte pose un diagnostic sur une dimension précise de cette guerre silencieuse, et se conclut par une question : <em>que faire, concrètement ?</em></p>
+<p>Pour que chaque musulman comprenne le monde dans lequel il vit. Pour qu'il arme ses enfants de lucidité. Et pour qu'il transmette aux générations futures une foi assez solide pour résister à tout ce que ce siècle leur réserve. Car comme l'a enseigné l'Imam al-Ḥusayn (ع) par son sang : <strong>la dignité ne se négocie pas</strong>.</p>
+</div>
+
+<div class="cards-label">Articles</div>
+<div class="cards-grid">
+<div class="a-card" onclick="openArticle('a1')">
+<div class="a-card-num">Article 01</div>
+<div class="a-card-title">Le monde de la surveillance</div>
+<div class="a-card-desc">Comment le musulman pratiquant est devenu un suspect structurel — de la France au Royaume-Uni en passant par les États-Unis.</div>
+<div class="a-card-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg></div>
+</div>
+<div class="a-card soon"><div class="a-card-num">Article 02</div><div class="a-card-title">Le soma numérique</div><div class="a-card-desc">Réseaux sociaux, dopamine et destruction de la concentration nécessaire à l'étude du dîn.</div><div class="a-card-soon">À venir</div></div>
+<div class="a-card soon"><div class="a-card-num">Article 03</div><div class="a-card-title">La noyade du savoir</div><div class="a-card-desc">Comment la transmission classique du savoir islamique est menacée par la superficialité numérique.</div><div class="a-card-soon">À venir</div></div>
+<div class="a-card soon"><div class="a-card-num">Article 04</div><div class="a-card-title">La fabrique du doute</div><div class="a-card-desc">L'athéisme comme produit culturel exporté, et comment la théologie rationnelle chiite y répond.</div><div class="a-card-soon">À venir</div></div>
+<div class="a-card soon"><div class="a-card-num">Article 05</div><div class="a-card-title">L'économie de la dépendance</div><div class="a-card-desc">Ribā systémique, dette comme outil de contrôle, alternatives islamiques.</div><div class="a-card-soon">À venir</div></div>
+<div class="a-card soon"><div class="a-card-num">Article 06</div><div class="a-card-title">Éduquer dans le chaos</div><div class="a-card-desc">Programme concret pour transmettre la foi aux enfants dans un environnement hostile.</div><div class="a-card-soon">À venir</div></div>
+</div>
+</div>
+
+<!-- ══════════ ARTICLE 1 ══════════ -->
+<div class="article-view" id="a1">
+<button class="back-btn" onclick="closeArticle()">← Retour aux articles</button>
+<div class="article-header">
+<div class="article-num">Article 01</div>
+<h2 class="article-title">Le monde de la surveillance — Comment le musulman pratiquant est devenu un suspect structurel</h2>
+</div>
+<p class="body-text">Il y a un moment précis où la surveillance cesse d'être un outil de sécurité et devient un instrument de contrôle social. Ce moment, pour les communautés musulmanes d'Occident, est déjà passé. Ce qui suit n'est pas une théorie : ce sont des faits documentés par des institutions gouvernementales, des tribunaux fédéraux et des organisations de défense des droits — de l'ACLU américaine à la CNCDH française en passant par Amnesty International.</p>
+<div class="sub-heading">France : le fichage invisible</div>
+<p class="body-text">En mars 2015, deux mois après les attentats de Charlie Hebdo, la France crée le <strong>FSPRT</strong> — le Fichier des signalements pour la prévention de la radicalisation à caractère terroriste. C'est un fichier secret : les décrets qui le régissent n'ont pas été rendus publics, au motif de la sûreté de l'État. Le fichier passe de quelques dizaines de noms en 2014 à plus de <strong>22 000 personnes</strong> inscrites selon les derniers chiffres communiqués par le ministère de l'Intérieur.</p>
+<p class="body-text">Le spectre est immense. On y trouve aussi bien un salarié signalé par son employeur parce qu'il refuse de serrer la main des femmes, qu'une adolescente récemment convertie, qu'un homme en lien avec des groupes armés. Le fichier couvre « toute l'échelle de la radicalisation », selon les mots mêmes de la police. Le problème est que les critères d'inscription reposent sur des « indicateurs de basculement » — des signaux comportementaux — et non sur des actes délictueux. La plateforme d'appel qui alimente le fichier fonctionne sur un principe de dénonciation : un appel sur dix donne lieu à un signalement.</p>
+<div class="evidence"><div class="evidence-label">Source institutionnelle</div><p class="evidence-text">La Commission nationale consultative des droits de l'homme (CNCDH) a qualifié le FSPRT de « fichier secret » portant « une atteinte disproportionnée au respect de la liberté et de la vie privée » et a formellement demandé sa suppression.</p><p class="evidence-source">CNCDH, Avis sur la prévention de la radicalisation, publié au Journal Officiel (Légifrance)</p></div>
+<div class="sub-heading">États-Unis : cartographier la foi</div>
+<p class="body-text">Entre 2002 et 2014, le département de police de New York (NYPD) a opéré un programme de surveillance systématique des communautés musulmanes à travers sa <strong>Demographics Unit</strong> — rebaptisée plus tard « Zone Assessment Unit ». Le programme consistait à cartographier les quartiers à population musulmane, à placer des caméras devant les mosquées, à photographier les plaques d'immatriculation des fidèles, à infiltrer des informateurs (les « mosque crawlers ») dans les lieux de culte, et à surveiller les associations étudiantes musulmanes.</p>
+<p class="body-text">Le programme couvrait toutes les mosquées dans un rayon de 160 kilomètres autour de New York et s'étendait aux États voisins — New Jersey, Pennsylvanie, Connecticut. La liste des cibles reposait sur 28 « origines ancestrales d'intérêt » associées à des populations musulmanes. Les chrétiens coptes égyptiens et les juifs iraniens étaient explicitement exclus du programme. Le ciblage était donc <strong>confessionnel</strong>, pas sécuritaire.</p>
+<div class="evidence"><div class="evidence-label">Fait judiciaire</div><p class="evidence-text">Le NYPD a admis devant la justice que la surveillance de sa Demographics Unit n'avait produit aucune piste sur une activité terroriste. Zéro. En 12 ans d'opération.</p><p class="evidence-source">Brennan Center for Justice ; Associated Press (enquête lauréate du prix Pulitzer) ; Settlement Raza v. City of New York (2017)</p></div>
+<p class="body-text">En 2016, après des poursuites judiciaires de l'ACLU et du Center for Constitutional Rights, la ville de New York a accepté un règlement amiable interdisant les enquêtes fondées sur la race, la religion ou l'ethnicité. La cour d'appel fédérale de Philadelphie a comparé la surveillance des musulmans américains à celle « des Juifs américains pendant le Red Scare, des Afro-Américains pendant le mouvement des droits civiques, et des Japonais-Américains pendant la Seconde Guerre mondiale ».</p>
+<div class="sub-heading">Royaume-Uni : quand l'enseignant devient policier</div>
+<p class="body-text">Le programme <strong>Prevent</strong>, créé en 2003 et renforcé par la loi de 2015 (<em>Counter-Terrorism and Security Act</em>), impose aux enseignants, médecins, travailleurs sociaux et universitaires une obligation légale de signaler toute personne qu'ils soupçonnent d'être « susceptible d'être entraînée vers le terrorisme ». Dans les faits, cela transforme chaque salle de classe en poste d'observation.</p>
+<p class="body-text">Les chiffres officiels du Home Office révèlent l'ampleur du problème. Sur l'année 2023-2024, <strong>6 922 personnes</strong> ont été signalées au programme Prevent. Environ 85 % de ces signalements n'ont donné lieu à aucune suite — autrement dit, ces personnes n'auraient jamais dû être signalées. Les musulmans, qui représentent moins de 6 % de la population britannique, sont <strong>au minimum six fois plus susceptibles</strong> d'être signalés que n'importe quel autre groupe. Près d'un tiers des personnes signalées sont des <strong>enfants de moins de 15 ans</strong>. Le programme Prevent a même enregistré des signalements de nourrissons de moins de 3 ans — plus de 200 cas en une décennie.</p>
+<div class="evidence"><div class="evidence-label">Source internationale</div><p class="evidence-text">En août 2024, le Comité des Nations Unies pour l'élimination de la discrimination raciale (CERD) a condamné le programme Prevent pour son ciblage des communautés musulmanes et son « effet glaçant sur la liberté d'expression des enfants ».</p><p class="evidence-source">Amnesty International, rapport « This is the Thought Police » (2023) ; UN CERD (2024) ; Home Office Statistics, Prevent referrals 2023-2024</p></div>
+<p class="body-text">Le rapport d'Amnesty International de 2023 documente un fait révélateur : sur 153 musulmans interrogés, <strong>109 ont déclaré avoir modifié leur comportement par peur d'être signalés</strong>. C'est exactement l'effet recherché par un système panoptique : il n'est pas nécessaire de surveiller tout le monde en permanence — il suffit que tout le monde croie qu'il peut être surveillé à tout moment. C'est la logique de Bentham, reprise par Orwell, devenue réalité pour les musulmans britanniques.</p>
+<div class="sub-heading">Le mécanisme commun : de la sécurité au contrôle</div>
+<p class="body-text">Ces trois programmes — FSPRT, Demographics Unit, Prevent — partagent une structure identique malgré leurs différences nationales. Premièrement, ils reposent sur des <strong>critères comportementaux</strong> et non sur des actes criminels : porter le voile, fréquenter une mosquée, refuser de serrer la main, exprimer des opinions sur la politique étrangère — tout cela peut déclencher un signalement. Deuxièmement, ils opèrent dans un <strong>espace pré-criminel</strong> — avant qu'aucun délit ne soit commis, ni même envisagé. Troisièmement, ils produisent un <strong>effet d'autocensure</strong> qui s'étend bien au-delà des individus signalés : c'est la communauté tout entière qui intériorise la surveillance et modifie son comportement.</p>
+<p class="body-text">Orwell avait décrit un écran qui surveille chaque foyer. La réalité est plus subtile et plus efficace : ce n'est pas l'État qui regarde — c'est le voisin, le collègue, l'enseignant, le médecin. La surveillance est <strong>externalisée</strong>. Elle n'a plus besoin de caméras dans chaque pièce : elle a transformé chaque citoyen en relais potentiel du renseignement. Et l'individu qui se sait potentiellement observé se censure lui-même — sans qu'aucune contrainte physique ne soit nécessaire.</p>
+<div class="sub-heading">Que faire ?</div>
+<div class="action-box">
+<div class="action-title">Actions concrètes</div>
+<div class="action-item"><div class="action-bullet"></div><strong>Connaître ses droits.</strong> En France, toute personne peut exercer un droit d'accès indirect au FSPRT via la CNIL. Au Royaume-Uni, un signalement Prevent ne constitue pas une accusation et ne crée aucune obligation de coopérer. Aux États-Unis, le quatrième amendement protège contre les fouilles et saisies sans mandat. Apprendre ces droits, c'est le premier acte de résistance.</div>
+<div class="action-item"><div class="action-bullet"></div><strong>Documenter, pas réagir.</strong> Lorsqu'un musulman fait l'objet d'une convocation, d'un interrogatoire informel, ou d'un signalement, la première chose à faire est de tout documenter par écrit — dates, noms, questions posées. Ne rien signer sans avocat. Ne pas céder à la panique.</div>
+<div class="action-item"><div class="action-bullet"></div><strong>Soutenir les organisations de défense.</strong> Les victoires juridiques contre la surveillance (NYPD, Prevent) n'ont été possibles que grâce à des organisations comme l'ACLU, le Brennan Center, CAGE, Amnesty International, Prevent Watch. Leur financement est un acte de protection communautaire.</div>
+<div class="action-item"><div class="action-bullet"></div><strong>Éduquer les enfants sans naïveté.</strong> Expliquer à un enfant que son enseignant peut être tenu de le signaler n'est pas de la paranoïa — c'est une obligation parentale dans un pays où un tiers des signalés Prevent ont moins de 15 ans. L'enfant doit comprendre qu'exprimer sa foi n'est pas un délit, mais que le contexte exige de la prudence — sans honte.</div>
+<div class="action-item"><div class="action-bullet"></div><strong>Ne pas intérioriser le regard.</strong> Le plus grand danger de la surveillance n'est pas le fichage : c'est l'autocensure. Un musulman qui cesse de fréquenter la mosquée par peur d'être fiché a déjà perdu. La pratique religieuse visible, assumée et sereine est en elle-même un acte de dignité face au panoptique.</div>
+</div>
+<div class="sources-box">
+<div class="sources-title">Sources de l'article</div>
+<p class="source-item">CNCDH, <em>Avis sur la prévention de la radicalisation</em>, Journal Officiel, Légifrance — appel à la suppression du FSPRT.</p>
+<p class="source-item">DGSI, Fiche descriptive du FSPRT, site officiel du ministère de l'Intérieur (nov. 2024).</p>
+<p class="source-item">Assemblée nationale, Proposition de loi sur l'expulsion des étrangers fichés FSPRT — chiffres de 22 000 inscrits (Darmanin).</p>
+<p class="source-item">ACLU, <em>Factsheet: The NYPD Muslim Surveillance Program</em> — description complète du programme Demographics Unit.</p>
+<p class="source-item">Brennan Center for Justice, <em>NYPD Agrees to Settle Muslim Surveillance Cases</em> — aveu de zéro piste produite.</p>
+<p class="source-item">Center for Constitutional Rights, <em>Settlement Hassan v. City of New York</em> — comparaison avec la surveillance des Japonais-Américains.</p>
+<p class="source-item">Home Office (UK), <em>Individuals referred to Prevent, April 2023 to March 2024</em> — 6 922 signalements, 85 % sans suite.</p>
+<p class="source-item">Amnesty International, <em>This is the Thought Police</em> (2023) — 109/153 musulmans ont modifié leur comportement.</p>
+<p class="source-item">UN CERD, Condamnation du programme Prevent (août 2024).</p>
+<p class="source-item">Prevent Watch, <em>Babies and Muslims lost in a flood of Home Office statistics</em> (jan. 2026) — 200+ signalements de nourrissons.</p>
+<p class="source-item">Rights & Security International, Written evidence au Parlement britannique (avr. 2025) — musulmans 6× plus susceptibles d'être signalés.</p>
+</div>
+</div>
+
+</div>
+<script>
+function openArticle(id){document.getElementById('homeView').style.display='none';var v=document.getElementById(id);if(v)v.classList.add('active');window.scrollTo({top:0,behavior:'smooth'});}
+function closeArticle(){document.querySelectorAll('.article-view').forEach(function(v){v.classList.remove('active');});document.getElementById('homeView').style.display='block';window.scrollTo({top:0,behavior:'smooth'});}
+</script>
+<script>
+window.addEventListener('message',function(e){if(e.data&&e.data.type==='theme'){if(e.data.theme==='light')document.documentElement.setAttribute('data-theme','light');else document.documentElement.removeAttribute('data-theme');}});
+try{if(localStorage.getItem('theme')==='light')document.documentElement.setAttribute('data-theme','light');}catch(e){}
+</script>
+<style>.scroll-top-btn{position:fixed;bottom:24px;right:24px;width:44px;height:44px;background:rgba(19,29,53,0.85);border:1px solid rgba(201,168,76,0.3);border-radius:50%;color:#c9a84c;cursor:pointer;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:all .3s ease;z-index:999;backdrop-filter:blur(10px)}.scroll-top-btn.visible{opacity:1;pointer-events:all}.scroll-top-btn:hover{background:rgba(201,168,76,0.2);border-color:#c9a84c;transform:translateY(-2px)}.scroll-top-btn svg{width:20px;height:20px}[data-theme="light"] .scroll-top-btn{background:rgba(225,218,206,0.9)!important;border-color:rgba(122,92,36,0.25)!important;color:#7a5c24!important}</style>
+<button class="scroll-top-btn" id="scrollTopBtn" aria-label="Retour en haut"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg></button>
+<script>(function(){var b=document.getElementById('scrollTopBtn');if(!b)return;function c(){b.classList.toggle('visible',(window.pageYOffset||document.documentElement.scrollTop)>250);}window.addEventListener('scroll',c,{passive:true});b.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});c();})();</script>
+</body>
+</html>
