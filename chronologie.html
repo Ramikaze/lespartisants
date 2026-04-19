@@ -544,7 +544,7 @@ em { font-style: italic; color: var(--gold); }
 /* Timeline items */
 .ht-item {
   position: absolute;
-  width: 170px;
+  width: 175px;
   cursor: pointer;
   z-index: 5;
   transition: z-index 0s;
@@ -553,14 +553,16 @@ em { font-style: italic; color: var(--gold); }
 }
 .ht-item:hover { z-index: 10; }
 
+/* Above: card on top, dot at bottom touching axis */
 .ht-item.above {
-  bottom: calc(50% + 6px);
+  bottom: calc(50% - 5px);
   display: flex;
-  flex-direction: column-reverse;
+  flex-direction: column;
   align-items: center;
 }
+/* Below: dot on top touching axis, card at bottom */
 .ht-item.below {
-  top: calc(50% + 6px);
+  top: calc(50% - 5px);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -580,8 +582,8 @@ em { font-style: italic; color: var(--gold); }
   width: 1px;
   flex-shrink: 0;
 }
-.ht-item.above .ht-connector { height: 24px; /* overridden by inline style for multi-slot */ }
-.ht-item.below .ht-connector { height: 24px; /* overridden by inline style for multi-slot */ }
+.ht-item.above .ht-connector { /* height set by inline style */ }
+.ht-item.below .ht-connector { /* height set by inline style */ }
 
 .ht-card {
   background: var(--bg-elevated);
@@ -1130,7 +1132,7 @@ const NODES = [
     date:'570–632 EC', startDate:570, endDate:632, place:'mecca',
     tags:['prophète','révélation','islam','sceau'],
     era:'prophetic',
-    description:'Né à La Mecque en 570 EC, Muhammad ibn Abdallah reçut la Révélation coranique à l\'âge de 40 ans par l\'intermédiaire de l\'ange Jibril. Dernier des prophètes abrahamiques, il unifia la péninsule arabique sous l\'islam et transmit son autorité à l\'Ahl al-Bayt selon la doctrine chiite.',
+    description:'Né à La Mecque le 12 Rabi al-Awwal (17 selon la tradition chiite) de l\'Année de l\'Éléphant (570 EC), Muhammad ibn Abdallah ibn Abd al-Muttalib, orphelin élevé par son grand-père puis son oncle Abu Talib, reçut la Révélation coranique à 40 ans dans la grotte de Hira par l\'ange Jibril. Sa mission prophétique dura 23 ans : 13 ans à La Mecque marqués par la persécution, puis 10 ans à Médine où il fonda le premier État islamique, mena les batailles de Badr (624), Uhud (625), Khandaq (627), et libéra La Mecque en 630. Lors du pèlerinage d\'adieu (632), il désigna l\'Imam Ali comme son successeur à Ghadir Khumm. Il mourut le 28 Safar 11 AH (632 EC) à Médine.',
     significance:'Sceau des prophètes, receveur du Coran, fondateur de la communauté islamique.',
     relatedIds:['ali','fatima','hasan','husayn','ghadir','hijra','khadija'] },
 
@@ -1139,16 +1141,16 @@ const NODES = [
     date:'556–619 EC', startDate:556, endDate:619, place:'mecca',
     tags:['épouse','prophète','première croyante'],
     era:'prophetic',
-    description:'Première épouse du Prophète, première femme à embrasser l\'islam. Marchand prospère, elle soutint Muhammad ﷺ dès les premières révélations. Mère de Fatima al-Zahra.',
-    significance:'Première croyante de l\'islam, soutien indéfectible du Prophète.',
+    description:'Première épouse du Prophète Muhammad ﷺ, première personne à embrasser l\'islam et à croire en la Révélation. Marchande prospère et respectée de La Mecque, elle était surnommée al-Tahira (la pure) avant même l\'islam. Elle proposa le mariage à Muhammad et le soutint sans faille durant les premières années difficiles de la mission prophétique, investissant sa fortune pour protéger la communauté naissante. Mère de Fatima al-Zahra. Sa mort en 619, survenue la même année que celle d\'Abu Talib (protecteur du Prophète), marqua l\'Année de la Tristesse (\'Am al-Huzn), l\'une des périodes les plus éprouvantes de la vie du Prophète.',
+    significance:'Première croyante de l\'islam, soutien indéfectible du Prophète, mère de la lignée des Imams à travers Fatima.',
     relatedIds:['muhammad','fatima'] },
 
   { id:'fatima', name:'Sayyida Fatima al-Zahra', arabic:'فَاطِمَة الزَّهْرَاء', type:'person', category:'ahl_al_bayt',
     date:'605–632 EC', startDate:605, endDate:632, place:'medina',
     tags:['Ahl al-Bayt','zahra','sayyida','martyrdom'],
     era:'prophetic',
-    description:'Fille bien-aimée du Prophète Muhammad ﷺ et de Khadija, épouse de l\'Imam Ali, mère des Imams Hasan et Husayn. Elle décéda quelques semaines après le Prophète dans des circonstances douloureuses. Modèle de dignité, de résistance et de foi pour le chiisme.',
-    significance:'Mère des Imams, pilier central de l\'Ahl al-Bayt, modèle de la femme croyante.',
+    description:'Fille bien-aimée du Prophète Muhammad ﷺ et de Khadija, épouse de l\'Imam Ali, mère des Imams Hasan et Husayn. Née à La Mecque vers 605 EC (cinq ans avant la Révélation), selon la majorité des historiens et savants chiites et sunnites. Certains hadiths dans al-Kafi mentionnent une naissance cinq ans après la bi\'tha (615 EC), mais cette date reste minoritaire. Après le décès du Prophète, elle revendiqua l\'héritage de Fadak et protesta publiquement contre l\'usurpation des droits de l\'Imam Ali lors du sermon de Fadakiyya, un chef-d\'œuvre d\'éloquence. Elle décéda quelques semaines après le Prophète dans des circonstances douloureuses et demanda à être enterrée secrètement la nuit. Modèle de dignité, de résistance et de foi, elle est considérée comme la maîtresse des femmes des mondes.',
+    significance:'Mère des Imams, pilier central de l\'Ahl al-Bayt, modèle de la femme croyante, son martyre est le premier drame du chiisme après le décès du Prophète.',
     relatedIds:['muhammad','ali','hasan','husayn','saqifa','khadija'] },
 
   /* IMAM 1 */
@@ -1156,7 +1158,7 @@ const NODES = [
     imamate:1, date:'600–661 EC', startDate:600, endDate:661, place:'najaf',
     tags:['1er Imam','Amir al-Mu\'minin','calife','Nahj al-Balagha'],
     era:'early',
-    description:'Premier Imam du chiisme duodécimain, cousin et gendre du Prophète Muhammad ﷺ. Désigné à Ghadir Khumm en 632 EC, il assuma le califat de 656 à 661. Guerrier, juge et savant exceptionnel, compilateur du Coran selon la tradition chiite. Ses sermons et lettres sont réunis dans le Nahj al-Balagha.',
+    description:'Premier Imam du chiisme duodécimain, né le 13 Rajab 23 av. H (~600 EC) à l\'intérieur même de la Kaaba — seule personne de l\'histoire à y être née. Cousin et gendre du Prophète, premier homme à embrasser l\'islam. Il grandit dans la maison du Prophète dès l\'âge de 6 ans. Héros de Badr (624), Uhud (625) et Khandaq (627), il conquit Khaybar en 628 en arrachant la porte de la forteresse. Désigné successeur à Ghadir Khumm (632), il fut écarté du califat pendant 25 ans avant de l\'assumer de 656 à 661. Son califat fut marqué par les batailles du Chameau (656), Siffin (657) et Nahrawan (658). Guerrier, juge, mystique, théologien et administrateur d\'exception. Ses sermons, lettres et aphorismes, réunis dans le Nahj al-Balagha, forment l\'un des sommets de la littérature arabe. Frappé par Ibn Muljam le 19 Ramadan 40 AH à la mosquée de Kufa, il mourut le 21 Ramadan (661 EC) et fut enterré à Najaf.',
     significance:'Père de l\'Imamat chiite, modèle de justice et de connaissance, figure centrale de la spiritualité islamique.',
     relatedIds:['muhammad','fatima','hasan','husayn','ghadir','nahjal','siffin','jamal','nahrawan','kufa'] },
 
@@ -1165,7 +1167,7 @@ const NODES = [
     imamate:2, date:'625–670 EC', startDate:625, endDate:670, place:'medina',
     tags:['2e Imam','traité','Mu\'awiya'],
     era:'early',
-    description:'Second Imam du chiisme duodécimain, fils aîné de l\'Imam Ali et de Fatima al-Zahra. Petit-fils du Prophète, il assuma l\'Imamat en 661 après le martyre de son père. Pour préserver la communauté du carnage d\'une guerre civile, il conclut un traité avec Mu\'awiya ibn Abi Sufyan, tout en maintenant une résistance intellectuelle et spirituelle.',
+    description:'Second Imam du chiisme duodécimain, né le 15 Ramadan 3 AH (625 EC) à Médine, fils aîné de l\'Imam Ali et de Fatima al-Zahra. Après le martyre de son père en 661, il fut brièvement reconnu comme calife avant de constater que son armée, infiltrée et démoralisée, ne pouvait soutenir une guerre contre Mu\'awiya. Pour préserver la communauté d\'un anéantissement total, il conclut un traité assorti de conditions strictes (protection des chiites, pas de succession dynastique). Mu\'awiya viola toutes ses clauses, révélant ainsi sa vraie nature devant l\'histoire. L\'Imam Hasan mourut empoisonné en 50 AH (670 EC) et fut enterré au cimetière de Baqi à Médine.',
     significance:'Préservateur de la communauté chiite, gardien de la ligne prophétique par sa stratégie de résistance non-violente.',
     relatedIds:['ali','fatima','husayn','muawiya','treaty_hasan','medina'] },
 
@@ -1174,7 +1176,7 @@ const NODES = [
     imamate:3, date:'626–680 EC', startDate:626, endDate:680, place:'karbala',
     tags:['3e Imam','Karbala','Achura','martyre','révolution'],
     era:'early',
-    description:'Troisième Imam du chiisme, fils cadet de l\'Imam Ali et de Fatima al-Zahra. Refusant de prêter allégeance à Yazid ibn Mu\'awiya, il se leva contre la tyrannie en 680. Massacré à Karbala le 10 Muharram avec 72 compagnons, son sacrifice est le fondement du chiisme et un appel éternel à la justice.',
+    description:'Troisième Imam du chiisme, né le 3 Sha\'ban 4 AH (626 EC) à Médine, fils cadet de l\'Imam Ali et de Fatima al-Zahra. Le Prophète dit de lui et de Hasan : "Hasan et Husayn sont les maîtres de la jeunesse du Paradis." Après la mort de Mu\'awiya (680), son fils Yazid exigea l\'allégeance de Husayn, qui refusa : "Un homme comme moi ne prête pas allégeance à un homme comme lui." Invité par les Kufiens à les diriger, il quitta Médine avec sa famille. Trahi sous la pression d\'Ibn Ziyad, il fut encerclé avec 72 compagnons à Karbala et massacré le 10 Muharram (Achura) 61 AH. Sa révolution est le fondement moral et spirituel du chiisme.',
     significance:'Martyr de Karbala, symbole universel de résistance contre l\'injustice, source spirituelle de l\'identité chiite.',
     relatedIds:['ali','fatima','hasan','zaynab','zayn','karbala_event','yazid','umayyad'] },
 
@@ -1183,7 +1185,7 @@ const NODES = [
     imamate:4, date:'658–713 EC', startDate:658, endDate:713, place:'medina',
     tags:['4e Imam','Sahifa Sajjadiyya','supplication','prisonnier','dua'],
     era:'umayyad',
-    description:'Quatrième Imam, fils de l\'Imam Husayn, seul survivant adulte mâle de Karbala. Prisonnier conduit à Damas, il résista par la connaissance, la prière et la préservation de la mémoire. Sa Sahifa Sajjadiyya (Psautier de la famille du Prophète) est un chef-d\'œuvre de la supplication islamique.',
+    description:'Quatrième Imam, né le 5 Sha\'ban 38 AH (658 EC) à Médine, fils de l\'Imam Husayn. Seul survivant adulte mâle de Karbala — une maladie grave l\'avait empêché de combattre — il fut enchaîné et conduit prisonnier à Kufa puis à Damas. De retour à Médine, il consacra 34 ans d\'Imamat à la reconstruction spirituelle de la communauté par la connaissance et la supplication. Sa Sahifa Sajjadiyya — 54 prières d\'une profondeur exceptionnelle — est surnommée "le Psautier de la famille de Muhammad". Son Traité des Droits (Risalat al-Huquq) est l\'un des premiers textes islamiques sur les droits et devoirs sociaux. Il mourut empoisonné en 95 AH (713 EC) à Médine.',
     significance:'Préservateur de la mémoire de Karbala, auteur de la Sahifa Sajjadiyya, fondateur d\'un chiisme de résistance spirituelle.',
     relatedIds:['husayn','baqir','karbala_event','medina','sahifa'] },
 
@@ -1252,11 +1254,11 @@ const NODES = [
 
   /* IMAM 12 */
   { id:'mahdi', name:'Imam al-Mahdi', arabic:'المَهْدِيّ المُنْتَظَر', type:'imam', category:'imam',
-    imamate:12, date:'869–présent', startDate:869, endDate:null, place:'samarra',
+    imamate:12, date:'868–présent', startDate:868, endDate:null, place:'samarra',
     tags:['12e Imam','Mahdi attendu','occultation mineure','occultation majeure','retour'],
     era:'occultation',
-    description:'Douzième et dernier Imam du chiisme duodécimain, fils de l\'Imam Hasan al-Askari. Né en 869 à Samarra, il entra en occultation mineure (874–941) en communiquant par l\'intermédiaire de quatre représentants. Depuis 941, il est en occultation majeure jusqu\'à son retour à la fin des temps pour établir la justice universelle.',
-    significance:'Imam vivant caché, source de l\'autorité du wilayat al-faqih, espoir eschatologique du chiisme.',
+    description:'Douzième et dernier Imam du chiisme duodécimain, Muhammad ibn al-Hasan, fils de l\'Imam Hasan al-Askari. Né le 15 Sha\'ban 255 AH (868 EC) à Samarra dans le plus grand secret pour le protéger des Abbassides qui cherchaient à l\'éliminer. Il entra en occultation mineure (874–941) en communiquant par l\'intermédiaire de quatre représentants successifs (nawwab) : Uthman ibn Sa\'id, Muhammad ibn Uthman, Husayn ibn Ruh et Ali ibn Muhammad al-Samarri. Depuis 941, il est en occultation majeure (al-ghayba al-kubra). Selon la doctrine chiite, il est vivant et présent mais caché, et son retour (zuhur) à la fin des temps établira la justice universelle sur terre.',
+    significance:'Imam vivant caché, source ultime de l\'autorité spirituelle, espoir eschatologique du chiisme, fondement théologique du concept de wilayat al-faqih.',
     relatedIds:['askari','minor_occultation','major_occultation','samarra'] },
 
   /* PERSONNAGES */
@@ -1272,15 +1274,15 @@ const NODES = [
     date:'647–680 EC', startDate:647, endDate:680, place:'karbala',
     tags:['Karbala','porte-étendard','eau','fidélité'],
     era:'early',
-    description:'Demi-frère de l\'Imam Husayn, fils de l\'Imam Ali. Porte-étendard et chef militaire à Karbala, il mourut en tentant d\'apporter de l\'eau aux enfants assoiffés. Son tombeau à Karbala est l\'un des plus vénérés du chiisme.',
-    significance:'Symbole de fidélité absolue et de sacrifice.',
+    description:'Fils de l\'Imam Ali et d\'Umm al-Banin, demi-frère de l\'Imam Husayn. Porte-étendard de l\'armée de Husayn à Karbala et chef militaire de grande valeur, il était surnommé Qamar Bani Hashim (Lune des Banu Hashim) pour sa beauté et sa noblesse. Le jour d\'Achura, il se lança vers l\'Euphrate pour apporter de l\'eau aux enfants assoiffés du camp. Il parvint à remplir une outre mais refusa de boire lui-même par solidarité avec son frère. Les soldats ennemis lui tranchèrent les deux bras avant de le tuer. Son sanctuaire à Karbala est l\'un des plus vénérés du chiisme.',
+    significance:'Symbole absolu de fidélité, de sacrifice et de loyauté fraternelle dans la conscience chiite.',
     relatedIds:['ali','husayn','karbala_event','karbala'] },
 
   { id:'salman', name:'Salman al-Farisi', arabic:'سَلْمَان الفَارِسِيّ', type:'person', category:'person',
-    date:'568–657 EC', startDate:568, endDate:657, place:'medina',
+    date:'? – ~656 EC', startDate:568, endDate:656, place:'medina',
     tags:['compagnon','Ahl al-Bayt','Perse'],
     era:'prophetic',
-    description:'Compagnon persan du Prophète, l\'un des plus proches de l\'Imam Ali. Sa phrase "Salman est de nous, Ahl al-Bayt" (hadith prophétique) en fait une figure emblématique de la dévotion à la famille du Prophète et de l\'universalité de l\'islam.',
+    description:'Compagnon persan du Prophète, originaire d\'Ispahan. Après un long voyage spirituel à travers la Perse, la Syrie et la Palestine — passant du zoroastrisme au christianisme puis à l\'islam — il rencontra le Prophète à Médine. Il suggéra le creusement du fossé (khandaq) lors du siège de Médine en 627. Le Prophète déclara : "Salman est de nous, Ahl al-Bayt", faisant de lui l\'un des plus proches compagnons de l\'Imam Ali. Nommé gouverneur d\'al-Mada\'in, il vécut dans un ascétisme extrême jusqu\'à sa mort vers 35-36 AH (~656 EC).',
     significance:'Symbole de l\'universalité de l\'islam et du lien entre la Perse et l\'Ahl al-Bayt.',
     relatedIds:['muhammad','ali'] },
 
@@ -1288,72 +1290,72 @@ const NODES = [
     date:'602–680 EC', startDate:602, endDate:680, place:'damascus',
     tags:['Omeyyades','gouverneur','califat','opposition'],
     era:'early',
-    description:'Fondateur de la dynastie omeyyade, gouverneur de Syrie sous le règne du calife Uthman. Il s\'opposa à l\'Imam Ali lors de la bataille de Siffin et signa un traité avec l\'Imam Hasan lui reconnaissant le califat. Figure centrale des divergences entre chiisme et sunnisme.',
-    significance:'Moment clé de divergence historique : sa prise de pouvoir rompt la légitimité de l\'Imamat selon la doctrine chiite.',
+    description:'Fondateur de la dynastie omeyyade, fils d\'Abu Sufyan (ancien adversaire du Prophète). Gouverneur de Syrie sous les califes Umar et Uthman, il refusa de reconnaître le califat de l\'Imam Ali et s\'opposa à lui lors de la bataille de Siffin (657). Après le martyre de l\'Imam Ali, il signa un traité avec l\'Imam Hasan en 661, s\'engageant à ne pas désigner de successeur dynastique et à ne pas persécuter les chiites — conditions qu\'il ne respecta jamais. Il transforma le califat en monarchie héréditaire en désignant son fils Yazid comme successeur, violant ainsi l\'accord et le principe même de la succession légitime.',
+    significance:'Sa prise de pouvoir rompt la légitimité de l\'Imamat et inaugure la transformation du califat en monarchie dynastique.',
     relatedIds:['ali','hasan','husayn','umayyad','siffin','damascus','treaty_hasan'] },
 
   { id:'yazid', name:'Yazid ibn Mu\'awiya', arabic:'يَزِيد بْن مُعَاوِيَة', type:'person', category:'person',
     date:'645–683 EC', startDate:645, endDate:683, place:'damascus',
     tags:['Omeyyades','Karbala','tyrannie'],
     era:'umayyad',
-    description:'Fils de Mu\'awiya, deuxième calife omeyyade. Son refus d\'accepter la délégitimation de l\'Imamat et son exigence d\'allégeance de l\'Imam Husayn conduisirent directement à la tragédie de Karbala.',
-    significance:'Responsable direct du massacre de Karbala selon la tradition chiite.',
+    description:'Fils de Mu\'awiya, deuxième calife omeyyade (680–683). Son accession au pouvoir viola les termes du traité conclu entre Mu\'awiya et l\'Imam Hasan, qui stipulait qu\'aucun successeur dynastique ne serait désigné. Son exigence d\'allégeance (bay\'a) de l\'Imam Husayn — que celui-ci refusa catégoriquement — conduisit directement à la tragédie de Karbala. Son règne fut également marqué par le sac de Médine (bataille d\'al-Harra, 683) et le siège de La Mecque. Il mourut en 683 à l\'âge de 38 ans.',
+    significance:'Responsable direct du massacre de Karbala, figure archétypale de la tyrannie dans la conscience chiite.',
     relatedIds:['muawiya','husayn','karbala_event','umayyad'] },
 
   /* ÉVÉNEMENTS */
   { id:'revelation', name:'Première Révélation', arabic:'البِعْثَة', type:'event', category:'event',
     date:'610 EC', startDate:610, era:'prophetic', subtype:'revelation',
     place:'mecca', tags:['Coran','Jibril','Hira'],
-    description:'En 610 EC, Muhammad ﷺ reçut la première révélation coranique dans la grotte de Hira près de La Mecque, par l\'intermédiaire de l\'ange Jibril. Cette nuit marque le début de la prophétie et de la mission islamique.',
+    description:'Le 27 Rajab (~610 EC), alors qu\'il se recueillait dans la grotte de Hira sur le mont al-Nur, Muhammad ﷺ reçut la visite de l\'ange Jibril qui lui ordonna : "Lis !" (Iqra\'). Les cinq premiers versets de la sourate al-Alaq (96:1-5) furent ainsi révélés, inaugurant 23 ans de Révélation coranique. Khadija, son épouse, fut la première à croire en sa mission, suivie de l\'Imam Ali, alors âgé de 10 ans.',
     significance:'Commencement de la Révélation divine, fondement de l\'islam.',
     relatedIds:['muhammad','mecca'] },
 
   { id:'hijra', name:'La Hijra', arabic:'الهِجْرَة', type:'event', category:'event',
     date:'622 EC', startDate:622, era:'prophetic', subtype:'politics',
     place:'medina', tags:['émigration','Médine','calendrier'],
-    description:'En 622 EC, le Prophète et ses compagnons émigrèrent de La Mecque vers Médine (Yathrib), fuyant les persécutions de Quraysh. Cet événement marque le début du calendrier hégirien (AH).',
-    significance:'Fondation de la première cité islamique, début du calendrier musulman.',
-    relatedIds:['muhammad','mecca','medina'] },
+    description:'En 622 EC, le Prophète Muhammad ﷺ et ses compagnons émigrèrent de La Mecque vers Yathrib (renommée Médine — Madinat al-Nabi, la Cité du Prophète), fuyant treize années de persécutions de la part des Quraysh. La nuit de la Hijra, l\'Imam Ali dormit dans le lit du Prophète pour le protéger, risquant sa vie face aux assassins envoyés par les notables mecquois. Cet événement marque le début du calendrier hégirien (AH) et la fondation du premier État islamique à Médine.',
+    significance:'Fondation de la première cité islamique, début du calendrier musulman, acte de sacrifice de l\'Imam Ali.',
+    relatedIds:['muhammad','mecca','medina','ali'] },
 
   { id:'ghadir', name:'Ghadir Khumm', arabic:'غَدِير خُمّ', type:'event', category:'event',
     date:'18 Dhu al-Hijja 10 AH / 632 EC', startDate:632, era:'prophetic', subtype:'revelation',
     place:'mecca', tags:['wilaya','succession','désignation','Ali'],
-    description:'Le 18 Dhu al-Hijja, lors du retour du pèlerinage d\'adieu, le Prophète Muhammad ﷺ s\'arrêta à la mare de Ghadir Khumm et, devant 120 000 pèlerins, déclara : "Celui dont je suis le maître (mawla), Ali est son maître." Pour la tradition chiite, cet acte constitue la désignation explicite de l\'Imam Ali comme successeur.',
+    description:'Le 18 Dhu al-Hijja 10 AH (mars 632 EC), au retour du pèlerinage d\'adieu (Hajjat al-Wada\'), le Prophète Muhammad ﷺ fit arrêter la caravane à la mare de Ghadir Khumm, entre La Mecque et Médine. Devant environ 100 000 à 120 000 pèlerins, il prit la main de l\'Imam Ali et déclara : "Man kuntu mawlahu, fa hadha Aliyyun mawlahu" (Celui dont je suis le maître, Ali est son maître). Cet événement est rapporté par plus de 110 compagnons et transmis dans des dizaines de recueils sunnites et chiites. Pour la tradition chiite, cet acte constitue la désignation divine explicite de l\'Imam Ali comme successeur du Prophète.',
     significance:'Moment fondateur du chiisme : désignation divine de l\'Imam Ali comme successeur du Prophète.',
     relatedIds:['muhammad','ali','fatima'] },
 
   { id:'prophet_death', name:'Décès du Prophète', arabic:'وَفَاة النَّبِيّ', type:'event', category:'event',
     date:'28 Safar 11 AH / 632 EC', startDate:632, era:'early', subtype:'martyrdom',
     place:'medina', tags:['décès','succession','Ahl al-Bayt'],
-    description:'Le 28 Safar 11 AH, le Prophète Muhammad ﷺ rendit l\'âme à Médine. Sa mort déclencha immédiatement la crise de succession qui est au cœur de la divergence entre chiisme et sunnisme.',
+    description:'Le 28 Safar 11 AH (632 EC) selon la tradition chiite (12 Rabi al-Awwal selon la tradition sunnite), le Prophète Muhammad ﷺ rendit l\'âme à Médine dans les bras de l\'Imam Ali. Peu avant sa mort, il demanda de quoi écrire un testament (hadith al-qirtas), mais en fut empêché. Sa mort déclencha la crise de succession : tandis que l\'Imam Ali et l\'Ahl al-Bayt lavaient et préparaient le corps, un groupe de compagnons se réunissait déjà à Saqifa Bani Sa\'ida.',
     significance:'Moment déclencheur de la crise successorale, séparation des chemins chiite et sunnite.',
     relatedIds:['muhammad','ali','fatima','saqifa','medina'] },
 
   { id:'saqifa', name:'Saqifa Bani Sa\'ida', arabic:'سَقِيفَة بَنِي سَاعِدَة', type:'event', category:'event',
     date:'632 EC', startDate:632, era:'early', subtype:'politics',
     place:'medina', tags:['succession','Abu Bakr','califat','divergence'],
-    description:'Tandis que l\'Imam Ali et l\'Ahl al-Bayt étaient occupés à préparer les funérailles du Prophète, un groupe de compagnons se réunit sous l\'auvent de Saqifa Bani Sa\'ida et élut Abu Bakr comme premier calife. La tradition chiite considère cet acte comme un détournement de la désignation divine de Ghadir Khumm.',
+    description:'Le jour même de la mort du Prophète, tandis que l\'Imam Ali et l\'Ahl al-Bayt préparaient les funérailles, un groupe de compagnons Ansars et Muhajiruns se réunit précipitamment sous l\'auvent (saqifa) des Bani Sa\'ida à Médine. Après des débats houleux, Abu Bakr fut élu premier calife par acclamation d\'un petit nombre de présents. L\'Imam Ali, Zubayr, Abbas et d\'autres membres de l\'Ahl al-Bayt ne furent pas consultés. La tradition chiite considère cet acte comme un détournement de la désignation de Ghadir Khumm et une violation de la volonté divine.',
     significance:'Moment clé de divergence historique : fondement de la rupture entre chiisme et sunnisme sur la question du califat.',
     relatedIds:['muhammad','ali','fatima','medina'] },
 
   { id:'fatima_death', name:'Martyre de Fatima al-Zahra', arabic:'شَهَادَة فَاطِمَة', type:'event', category:'event',
     date:'632–633 EC', startDate:632, era:'early', subtype:'martyrdom',
     place:'medina', tags:['martyre','Fatima','Fadak','résistance'],
-    description:'Quelques semaines ou mois après le décès du Prophète, Fatima al-Zahra mourut dans des circonstances controversées, après avoir revendiqué l\'héritage de Fadak et protesté contre l\'usurpation des droits de l\'Imam Ali. Elle demanda à être enterrée secrètement la nuit.',
+    description:'Entre 75 jours et 6 mois après le décès du Prophète (les traditions varient entre le 3 Jumada al-Thani et le 13 Jumada al-Ula 11 AH), Fatima al-Zahra mourut à Médine à l\'âge de ~27 ans. Elle prononça le célèbre sermon de Fadakiyya devant la mosquée du Prophète, revendiquant l\'héritage de Fadak confisqué par Abu Bakr et dénonçant l\'usurpation du califat. Elle mourut en colère contre ceux qui avaient trahi la volonté de son père et demanda à être enterrée secrètement la nuit par l\'Imam Ali. L\'emplacement exact de sa tombe reste inconnu à ce jour.',
     significance:'Martyre considérée par le chiisme, symbole de la résistance de l\'Ahl al-Bayt.',
     relatedIds:['fatima','ali','muhammad','medina'] },
 
   { id:'jamal', name:'Bataille du Chameau', arabic:'مَعْرَكَة الجَمَل', type:'event', category:'event',
     date:'656 EC', startDate:656, era:'early', subtype:'battle',
     place:'basra', tags:['bataille','Ali','Aisha','Talha','Zubayr'],
-    description:'Première guerre civile islamique, opposant l\'Imam Ali à une coalition menée par Aisha (épouse du Prophète), Talha et Zubayr près de Bassora. L\'Imam Ali sortit vainqueur. Ce fut la première bataille entre musulmans.',
+    description:'Le 10 Jumada al-Thani 36 AH (656 EC), première guerre civile (fitna) de l\'islam, opposant l\'Imam Ali à une coalition menée par Aisha, Talha et Zubayr près de Bassora. Le conflit fut déclenché par la contestation du califat d\'Ali après l\'assassinat d\'Uthman. La bataille tire son nom du chameau sur lequel Aisha commandait ses troupes. Malgré les tentatives de conciliation d\'Ali, les hostilités éclatèrent. Talha et Zubayr furent tués, et Aisha fut traitée avec respect puis renvoyée à Médine. Environ 10 000 musulmans périrent.',
     significance:'Premier conflit armé majeur de l\'Imamat d\'Ali, marquant la profonde fracture de la communauté.',
     relatedIds:['ali','kufa'] },
 
   { id:'siffin', name:'Bataille de Siffin', arabic:'مَعْرَكَة صِفِّين', type:'event', category:'event',
     date:'657 EC', startDate:657, era:'early', subtype:'battle',
     place:'kufa', tags:['bataille','Ali','Mu\'awiya','arbitrage'],
-    description:'Bataille décisive entre l\'Imam Ali et Mu\'awiya ibn Abi Sufyan sur les bords de l\'Euphrate. Alors que l\'armée d\'Ali était sur le point de l\'emporter, les soldats de Mu\'awiya brandirent des Corans en signe d\'appel à l\'arbitrage. L\'arbitrage conclut de manière controversée.',
+    description:'En Safar 37 AH (657 EC), bataille prolongée sur les bords de l\'Euphrate à Siffin (nord de la Syrie actuelle), opposant l\'Imam Ali à Mu\'awiya ibn Abi Sufyan. L\'armée d\'Ali, commandée par Malik al-Ashtar, était sur le point de l\'emporter lorsque Amr ibn al-As ordonna de brandir des feuillets du Coran au bout des lances en criant "Le Coran nous départagera !". Cette ruse divisa le camp d\'Ali : une partie de ses soldats exigea l\'arrêt des combats. L\'arbitrage de Dumat al-Jandal (658) fut défavorable à Ali et provoqua la sécession des Kharijites. Le compagnon Ammar ibn Yasir fut tué à Siffin aux côtés d\'Ali, réalisant la prophétie du Prophète.',
     significance:'Crise politique et spirituelle majeure dans le califat d\'Ali.',
     relatedIds:['ali','muawiya','kufa','damascus'] },
 
@@ -1388,21 +1390,21 @@ const NODES = [
   { id:'karbala_event', name:'Bataille de Karbala', arabic:'مَعْرَكَة كَرْبَلَاء', type:'event', category:'event',
     date:'10 Muharram 61 AH / 10 octobre 680 EC', startDate:680, era:'umayyad', subtype:'battle',
     place:'karbala', tags:['Achura','martyre','Husayn','10 Muharram'],
-    description:'Le 10 Muharram (Achura) 61 AH, l\'Imam Husayn et 72 compagnons — dont des femmes et des enfants — furent massacrés dans la plaine de Karbala par l\'armée de Yazid ibn Mu\'awiya commandée par Ibn Sa\'d. L\'Imam Husayn avait refusé de prêter allégeance à Yazid, déclarant : "La mort avec dignité vaut mieux que la vie dans l\'humiliation."',
+    description:'Le 10 Muharram (Achura) 61 AH (10 octobre 680 EC), l\'Imam Husayn, 72 compagnons et membres de sa famille furent encerclés puis massacrés dans la plaine de Karbala, sur les rives de l\'Euphrate, par une armée envoyée par Ubayd Allah ibn Ziyad. Privés d\'eau depuis trois jours, les compagnons tombèrent un à un. Abbas fut tué en tentant d\'apporter de l\'eau ; Ali al-Akbar, fils aîné de Husayn, tomba au combat ; le bébé Ali al-Asghar fut tué par une flèche dans les bras de son père. L\'Imam Husayn, blessé de multiples coups, fut décapité par Shimr ibn Dhi al-Jawshan. Les survivants — l\'Imam Zayn al-Abidin (malade), Zaynab et les femmes — furent faits prisonniers. Cette tragédie est commémorée chaque année lors du deuil d\'Achura.',
     significance:'L\'événement le plus central du chiisme : révolution spirituelle, appel éternel à la justice, fondement de l\'identité chiite.',
     relatedIds:['husayn','zaynab','abbas','yazid','zayn','karbala','umayyad'] },
 
   { id:'captivity', name:'Captivité de l\'Ahl al-Bayt', arabic:'سَبْي أَهْل البَيْت', type:'event', category:'event',
     date:'680–681 EC', startDate:680, era:'umayyad', subtype:'martyrdom',
     place:'damascus', tags:['captivité','Zaynab','témoignage','Damas'],
-    description:'Après Karbala, les survivants — dont l\'Imam Zayn al-Abidin blessé et Zaynab bint Ali — furent emmenés prisonniers à Kufa puis à Damas. Les discours de Zaynab devant Yazid et ceux de l\'Imam Zayn al-Abidin constituent des témoignages historiques décisifs qui préservèrent la mémoire de Karbala.',
+    description:'Après le massacre de Karbala, les têtes des martyrs furent placées sur des lances et les survivants — dont l\'Imam Zayn al-Abidin, gravement malade et enchaîné, Zaynab bint Ali, et les femmes et enfants — furent emmenés prisonniers à Kufa puis à Damas. Devant le gouverneur Ibn Ziyad à Kufa puis devant Yazid à Damas, Zaynab prononça des discours d\'une éloquence brûlante qui retournèrent l\'opinion publique. L\'Imam Zayn al-Abidin prononça également un sermon dans la mosquée de Damas qui émut l\'assemblée aux larmes. La pression populaire contraignit Yazid à libérer les captifs. Ces témoignages sont la raison pour laquelle Karbala ne fut jamais oublié.',
     significance:'Transmission vivante du message de Karbala, Zaynab comme première historienne du massacre.',
     relatedIds:['zaynab','zayn','husayn','yazid','damascus','karbala_event'] },
 
   { id:'minor_occultation', name:'Occultation mineure', arabic:'الغَيْبَة الصُّغْرَى', type:'event', category:'event',
     date:'874–941 EC', startDate:874, endDate:941, era:'occultation', subtype:'knowledge',
     place:'samarra', tags:['occultation','Mahdi','4 représentants','nawab'],
-    description:'De 874 à 941 EC, le douzième Imam communiqua avec la communauté par l\'intermédiaire de quatre représentants (nawwab) successifs : Uthman ibn Sa\'id al-Askar, Muhammad ibn Uthman al-Askar, Husayn ibn Ruh al-Nawbakhti, et Ali ibn Muhammad al-Samarri.',
+    description:'De 260 à 329 AH (874–941 EC), période de 67 ans durant laquelle le douzième Imam communiqua avec la communauté chiite par l\'intermédiaire de quatre représentants (nawwab) successifs, transmettant des directives (tawqi\'at) par écrit : 1) Uthman ibn Sa\'id al-Askari (874–~880) ; 2) Muhammad ibn Uthman (~880–917) ; 3) Husayn ibn Ruh al-Nawbakhti (917–938) ; 4) Ali ibn Muhammad al-Samarri (938–941). Avant de mourir, le dernier représentant reçut un tawqi\' déclarant : "Après toi, il n\'y aura plus de représentant." Cette période permit une transition progressive vers l\'autonomie juridique de la communauté.',
     significance:'Transition entre présence physique et occultation totale, institutionnalisation de la représentation de l\'Imam.',
     relatedIds:['mahdi','askari','samarra'] },
 
@@ -1548,15 +1550,15 @@ const NODES = [
   { id:'umayyad', name:'Omeyyades', arabic:'الأُمَوِيُّون', type:'dynasty', category:'dynasty',
     date:'661–750 EC', startDate:661, endDate:750, era:'umayyad',
     tags:['califat','Damas','oppression','Karbala'],
-    description:'Première grande dynastie islamique, fondée par Mu\'awiya ibn Abi Sufyan en 661. Gouvernant depuis Damas, les Omeyyades furent les principaux oppresseurs de l\'Ahl al-Bayt : martyres de l\'Imam Husayn (680), de l\'Imam Hasan (670), persécutions continues des chiites.',
-    significance:'Période de la plus grande oppression de l\'Ahl al-Bayt, fondatrice de la mémoire chiite du martyre.',
+    description:'Première grande dynastie héréditaire de l\'islam, fondée par Mu\'awiya ibn Abi Sufyan en 661 après le martyre de l\'Imam Ali. Gouvernant depuis Damas, les Omeyyades instaurèrent un pouvoir monarchique en rupture avec le principe de l\'Imamat. Leur règne est marqué par l\'empoisonnement de l\'Imam Hasan (670), le massacre de Karbala (680), la persécution systématique des chiites et des partisans de l\'Ahl al-Bayt, ainsi que la destruction du cimetière de Baqi et la répression de toute opposition religieuse. La dynastie fut renversée par la révolution abbasside en 750.',
+    significance:'Période de la plus grande oppression de l\'Ahl al-Bayt, fondatrice de la mémoire chiite du martyre et de la résistance.',
     relatedIds:['muawiya','yazid','husayn','karbala_event','damascus'] },
 
   { id:'abbasid', name:'Abbassides', arabic:'العَبَّاسِيُّون', type:'dynasty', category:'dynasty',
     date:'750–1258 EC', startDate:750, endDate:1258, era:'abbasid',
     tags:['califat','Bagdad','oppression','Imams'],
-    description:'Deuxième grande dynastie islamique, ayant renversé les Omeyyades en 750. Les Abbassides, malgré leur rhétorique pro-alide, persécutèrent les Imams chiites : emprisonnement de l\'Imam al-Kazim, assignation à résidence des Imams al-Hadi et al-Askari à Samarra.',
-    significance:'Les Imams VIII à XII vécurent sous cette oppression.',
+    description:'Deuxième grande dynastie islamique, ayant renversé les Omeyyades en 750 en s\'appuyant initialement sur une rhétorique pro-alide (al-Rida min Al Muhammad — "l\'agréé de la famille de Muhammad"). Malgré ces promesses, les Abbassides poursuivirent la persécution des Imams chiites avec une intensité redoutable : emprisonnement prolongé de l\'Imam Musa al-Kazim à Bagdad, tentative de cooptation puis empoisonnement de l\'Imam Ali al-Rida, empoisonnement de l\'Imam al-Jawad, assignation à résidence des Imams al-Hadi et al-Askari à Samarra sous surveillance militaire. C\'est sous leur règne que se produisit l\'occultation du douzième Imam. La dynastie s\'effondra avec la chute de Bagdad devant les Mongols en 1258.',
+    significance:'Les Imams VII à XII vécurent sous cette oppression, développant le réseau des représentants (wukala) et préparant la transition vers l\'occultation.',
     relatedIds:['kazim','rida','jawad','hadi','askari','mahdi','baghdad'] },
 
   /* SAVANTS */
@@ -1584,14 +1586,14 @@ const NODES = [
   { id:'tusi', name:'Sheikh al-Tusi', arabic:'الشَّيْخ الطُّوسِيّ', type:'scholar', category:'scholar',
     date:'996–1067 EC', startDate:996, endDate:1067, place:'najaf',
     tags:['fiqh','hawza','Najaf','Tahdhib'],
-    description:'Muhammad ibn Hasan al-Tusi, dit "Sheikh al-Ta\'ifa". Il fonda la hawza ilmiyya de Najaf après avoir fui Bagdad lors d\'émeutes anti-chiites (1055). Auteur de Tahdhib al-Ahkam et al-Istibsar (deux des quatre livres canoniques), et des premiers traités de jurisprudence comparée.',
+    description:'Abu Ja\'far Muhammad ibn Hasan al-Tusi (996–1067 EC), honoré du titre de "Sheikh al-Ta\'ifa" (Maître de la communauté). Né au Khorasan, il étudia à Bagdad sous Sheikh al-Mufid et al-Sharif al-Murtada. Lorsque la bibliothèque chiite de Bagdad fut incendiée lors des émeutes de 1055, il s\'exila à Najaf où il fonda la hawza ilmiyya, toujours en activité — la plus ancienne université islamique du monde. Auteur de Tahdhib al-Ahkam et al-Istibsar (deux des quatre livres canoniques), ainsi que d\'Al-Tibyan (premier tafsir chiite systématique).',
     significance:'Fondateur de la hawza de Najaf, systématisateur du fiqh chiite.',
     relatedIds:['najaf','mufid'] },
 
   { id:'hilli', name:'Allama al-Hilli', arabic:'العَلَّامَة الحِلِّيّ', type:'scholar', category:'scholar',
     date:'1250–1325 EC', startDate:1250, endDate:1325, place:'najaf',
     tags:['fiqh','kalam','usul','Ilkhanides'],
-    description:'Al-Hasan ibn Yusuf al-Hilli, dit "Allama al-Hilli". Grand juriste et théologien, il convertit le souverain mongol Öljaitü au chiisme, ouvrant la voie à la domination chiite en Iran. Prolifique auteur de traités de jurisprudence, de logique et de théologie.',
+    description:'Jamal al-Din Abu Mansur al-Hasan ibn Yusuf al-Hilli (648–726 AH / 1250–1325 EC), honoré du titre unique d\'"al-Allama" (le très-savant). Probablement le savant chiite le plus prolifique de l\'histoire, auteur de plus de 500 ouvrages couvrant le fiqh, le kalam, la logique, le tafsir et l\'usul al-fiqh. Son chef-d\'œuvre juridique est le Tadhkirat al-Fuqaha. Il réussit à convertir le souverain ilkhanide Öljaitü Khodabandeh au chiisme en 1310, ce qui fit du chiisme la religion d\'État en Perse pour la première fois — une transformation dont les effets se prolongent jusqu\'à aujourd\'hui. Il formalisa le système de l\'ijtihad et du taqlid tel qu\'il est pratiqué dans le chiisme contemporain.',
     significance:'Responsable de la conversion de l\'Iran mongol au chiisme.',
     relatedIds:['najaf','tusi'] },
 
@@ -1649,8 +1651,8 @@ const NODES = [
   { id:'safavid', name:'Safavides', arabic:'الصَّفَوِيُّون', type:'dynasty', category:'dynasty',
     date:'1501–1736 EC', startDate:1501, endDate:1736,
     tags:['Iran','chiisme d\'État','Perse','art'],
-    description:'Dynastie perse qui fit du chiisme duodécimain la religion d\'État de l\'Iran en 1501, sous Shah Ismail Ier. Ce tournant historique façonna l\'identité iranienne et ancra durablement le chiisme dans la région. Isfahan fut leur capitale et l\'un des plus grands centres culturels islamiques.',
-    significance:'Fondateurs du chiisme d\'État en Iran, transformation géopolitique majeure.',
+    description:'Dynastie perse fondée par Shah Ismail Ier (r. 1501–1524), qui imposa le chiisme duodécimain comme religion d\'État de l\'Iran en 1501 — transformant irréversiblement la géopolitique du monde musulman. Ce basculement fut préparé par le travail de l\'Allama al-Hilli au XIIIe siècle et consolidé par l\'immigration massive de savants chiites du Jabal Amil (Liban). Sous Shah Abbas Ier le Grand (r. 1588–1629), Isfahan devint un joyau architectural (mosquée de l\'Imam, place Naqsh-e Jahan). L\'Allama Majlisi, Sheikh al-Islam sous les derniers Safavides, compila Bihar al-Anwar et enracina le chiisme populaire. La dynastie s\'effondra en 1722 face à l\'invasion afghane.',
+    significance:'Fondateurs du chiisme d\'État en Iran, transformation civilisationnelle majeure qui façonna durablement l\'identité iranienne et chiite.',
     relatedIds:['majlisi','hilli'] }
 ];
 
@@ -2087,15 +2089,22 @@ function renderTimeline(era, typeFilter) {
 
     const connH = BASE_CONN + row * (CARD_H + SLOT_GAP);
     const tx = cx - CARD_W / 2;
-    html += `<div class="ht-item ${above?'above':'below'}" data-date="${n.startDate}" style="transform:translateX(${tx}px)" onclick="openDetail('${n.id}')">
-      <div class="ht-card">
+
+    const cardHtml = `<div class="ht-card">
         <div class="ht-card-date" style="color:${color}">${n.startDate} EC</div>
         <div class="ht-card-title">${n.name.replace(/ﷺ/,'ﷺ').split(' ').slice(0,5).join(' ')}</div>
         <div class="ht-card-type" style="color:${color}">${typeLabel(n.type,n.category)}</div>
-      </div>
-      <div class="ht-connector" style="background:${color}60;height:${connH}px"></div>
-      <div class="ht-dot" style="background:${color};box-shadow:0 0 8px ${color}90"></div>
-    </div>`;
+      </div>`;
+    const connHtml = `<div class="ht-connector" style="background:${color}60;height:${connH}px"></div>`;
+    const dotHtml = `<div class="ht-dot" style="background:${color};box-shadow:0 0 8px ${color}90"></div>`;
+
+    if (above) {
+      /* Above: card (top) → connector → dot (bottom, on axis) */
+      html += `<div class="ht-item above" data-date="${n.startDate}" style="transform:translateX(${tx}px)" onclick="openDetail('${n.id}')">${cardHtml}${connHtml}${dotHtml}</div>`;
+    } else {
+      /* Below: dot (top, on axis) → connector → card (bottom) */
+      html += `<div class="ht-item below" data-date="${n.startDate}" style="transform:translateX(${tx}px)" onclick="openDetail('${n.id}')">${dotHtml}${connHtml}${cardHtml}</div>`;
+    }
   });
 
   /* Auto-size container height to fit all rows */
