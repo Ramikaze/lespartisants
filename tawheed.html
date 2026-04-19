@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Al-Tawḥīd — L'Unicité Divine</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Scheherazade+New:wght@400;700&family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500;0,600&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{min-height:100%;background:#070c18;color:#e2d9c4;font-family:'EB Garamond',Georgia,serif;font-size:18px;line-height:1.8;overflow-x:hidden}
+body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23c9a84c' stroke-width='0.3' opacity='0.055'%3E%3Crect x='22' y='22' width='56' height='56' rx='2'/%3E%3Crect x='22' y='22' width='56' height='56' rx='2' transform='rotate(45 50 50)'/%3E%3Ccircle cx='50' cy='50' r='28'/%3E%3C/g%3E%3C/svg%3E");background-size:100px;pointer-events:none;z-index:0}
+::-webkit-scrollbar{width:5px}::-webkit-scrollbar-track{background:#070c18}::-webkit-scrollbar-thumb{background:rgba(201,168,76,0.3);border-radius:3px}
+.wrap{max-width:760px;margin:0 auto;padding:56px 28px 100px;position:relative;z-index:1}
+.hero{text-align:center;margin-bottom:52px}
+.hero-ornament{display:flex;align-items:center;justify-content:center;gap:14px;margin-bottom:24px}
+.orn-line{height:1px;width:80px;background:linear-gradient(to right,transparent,#c9a84c)}.orn-line.r{background:linear-gradient(to left,transparent,#c9a84c)}
+.orn-gem{width:7px;height:7px;background:#c9a84c;transform:rotate(45deg);box-shadow:0 0 8px rgba(201,168,76,0.6)}
+.hero-label{font-family:'Cinzel',serif;font-size:0.75rem;letter-spacing:0.22em;text-transform:uppercase;color:#c9a84c;opacity:0.6;margin-bottom:16px}
+.hero-title{font-family:'Cinzel',serif;font-size:clamp(1.4rem,3.5vw,2.1rem);font-weight:700;color:#e8e2d0;line-height:1.25;margin-bottom:10px}
+.hero-title span{color:#c9a84c}
+.hero-subtitle{font-size:1.1rem;color:#7a6a4a;font-style:italic;margin-bottom:28px;line-height:1.6}
+.hero-divider{width:120px;height:1px;background:linear-gradient(90deg,transparent,#c9a84c,transparent);margin:0 auto}
+.toc{background:rgba(19,29,53,0.6);border:1px solid rgba(201,168,76,0.15);border-radius:14px;padding:22px 26px;margin-bottom:48px}
+.toc-title{font-family:'Cinzel',serif;font-size:0.75rem;letter-spacing:0.18em;text-transform:uppercase;color:#c9a84c;margin-bottom:14px;opacity:0.8}
+.toc-list{list-style:none;display:flex;flex-direction:column;gap:8px}
+.toc-item{display:flex;align-items:baseline;gap:10px;cursor:pointer;transition:color 0.2s}
+.toc-item:hover .toc-link{color:#e8c06a}
+.toc-num{font-family:'Cinzel',serif;font-size:0.72rem;color:#c9a84c;opacity:0.5;min-width:26px;flex-shrink:0}
+.toc-link{font-size:1rem;color:#9aa3b8;transition:color 0.2s}
+.toc-part{font-family:'Cinzel',serif;font-size:0.82rem;color:#c9a84c;margin-top:14px;margin-bottom:4px;letter-spacing:0.12em;text-transform:uppercase}
+.section{margin-bottom:52px;scroll-margin-top:20px}
+.section-header{display:flex;align-items:center;gap:14px;margin-bottom:22px}
+.section-num{font-family:'Cinzel',serif;font-size:0.75rem;font-weight:700;color:#c9a84c;background:rgba(201,168,76,0.1);border:1px solid rgba(201,168,76,0.25);border-radius:6px;padding:4px 10px;flex-shrink:0}
+.section-title{font-family:'Cinzel',serif;font-size:1.2rem;font-weight:600;color:#e8e2d0;line-height:1.3}
+.section-line{height:1px;flex:1;background:linear-gradient(to right,rgba(201,168,76,0.2),transparent)}
+.body-text{font-size:1.15rem;color:#cec6b0;line-height:1.95;margin-bottom:18px;text-align:justify}
+.body-text strong{color:#e8c06a;font-weight:600}
+.body-text em{color:#b8a882}
+.quran{background:rgba(201,168,76,0.05);border:1px solid rgba(201,168,76,0.15);border-radius:10px;padding:18px 24px;margin:22px 0;text-align:center}
+.quran-fr{font-style:italic;font-size:1.1rem;color:#ddd5bf;margin-bottom:8px;line-height:1.8}
+.quran-ref{font-family:'Cinzel',serif;font-size:0.78rem;color:#c9a84c;opacity:0.55;letter-spacing:0.1em}
+.hadith{background:rgba(13,22,42,0.7);border:1px solid rgba(201,168,76,0.15);border-left:3px solid #c9a84c;border-radius:0 10px 10px 0;padding:18px 22px;margin:22px 0}
+.hadith-text{font-style:italic;font-size:1.05rem;color:#ddd5bf;line-height:1.8;margin-bottom:6px}
+.hadith-source{font-family:'Cinzel',serif;font-size:0.78rem;color:#c9a84c;opacity:0.6}
+.section-divider{display:flex;align-items:center;gap:16px;margin:48px 0}
+.sdiv-line{height:1px;flex:1;background:linear-gradient(to right,transparent,rgba(201,168,76,0.2),transparent)}
+.sdiv-gem{width:5px;height:5px;background:rgba(201,168,76,0.4);transform:rotate(45deg)}
+.part-header{text-align:center;margin:56px 0 40px}
+.part-label{font-family:'Cinzel',serif;font-size:0.72rem;letter-spacing:0.25em;text-transform:uppercase;color:#c9a84c;opacity:0.5;margin-bottom:8px}
+.part-title{font-family:'Cinzel',serif;font-size:1.35rem;font-weight:700;color:#e8e2d0}
+.sources{background:rgba(7,12,24,0.8);border:1px solid rgba(201,168,76,0.12);border-radius:12px;padding:24px 28px;margin-top:48px}
+.sources-title{font-family:'Cinzel',serif;font-size:0.78rem;letter-spacing:0.18em;text-transform:uppercase;color:#c9a84c;margin-bottom:18px;opacity:0.7}
+.source-item{font-size:0.95rem;color:#7a6a4a;margin-bottom:10px;line-height:1.6;padding-left:14px;position:relative}
+.source-item::before{content:'·';position:absolute;left:0;color:#c9a84c;opacity:0.5}
+@media(max-width:600px){.wrap{padding:36px 18px 80px}.body-text{font-size:1.05rem}}
+[data-theme="light"]{--lbg:#e8e0d4;--ltext:#2c2114;--ltext2:#5a4e3c;--laccent:#7a5c24;--lcard:rgba(220,212,196,0.6);--lborder:rgba(122,92,36,0.15)}
+[data-theme="light"] body{background:var(--lbg)!important;color:var(--ltext)!important}
+[data-theme="light"] body::before{opacity:0.4!important}
+[data-theme="light"] .wrap{color:var(--ltext)}
+[data-theme="light"] .hero-title{color:var(--ltext)!important}
+[data-theme="light"] .hero-title span{color:var(--laccent)!important}
+[data-theme="light"] .hero-subtitle{color:#7a6e56!important}
+[data-theme="light"] .hero-label{color:var(--laccent)!important}
+[data-theme="light"] .toc{background:rgba(220,212,196,0.5)!important;border-color:var(--lborder)!important}
+[data-theme="light"] .toc-link{color:var(--ltext2)!important}
+[data-theme="light"] .toc-title,[data-theme="light"] .toc-num,[data-theme="light"] .toc-part{color:var(--laccent)!important}
+[data-theme="light"] .section-title,[data-theme="light"] .part-title{color:var(--ltext)!important}
+[data-theme="light"] .section-num{color:var(--laccent)!important;background:rgba(122,92,36,0.08)!important;border-color:rgba(122,92,36,0.2)!important}
+[data-theme="light"] .section-line{background:linear-gradient(to right,rgba(122,92,36,0.15),transparent)!important}
+[data-theme="light"] .body-text{color:#3d3425!important}
+[data-theme="light"] .body-text strong{color:#6a4e1a!important}
+[data-theme="light"] .body-text em{color:#6a5e48!important}
+[data-theme="light"] .hadith{background:rgba(220,212,196,0.5)!important;border-color:rgba(122,92,36,0.15)!important;border-left-color:var(--laccent)!important}
+[data-theme="light"] .hadith-text{color:#3d3425!important}
+[data-theme="light"] .hadith-source{color:var(--laccent)!important}
+[data-theme="light"] .quran{background:rgba(122,92,36,0.05)!important;border-color:rgba(122,92,36,0.12)!important}
+[data-theme="light"] .quran-fr{color:#3d3425!important}
+[data-theme="light"] .quran-ref{color:var(--laccent)!important}
+[data-theme="light"] .sdiv-line{background:linear-gradient(to right,transparent,rgba(122,92,36,0.15),transparent)!important}
+[data-theme="light"] .sdiv-gem{background:rgba(122,92,36,0.3)!important}
+[data-theme="light"] .part-label{color:var(--laccent)!important}
+[data-theme="light"] .sources{background:rgba(220,212,196,0.4)!important;border-color:var(--lborder)!important}
+[data-theme="light"] .sources-title{color:var(--laccent)!important}
+[data-theme="light"] .source-item{color:#6a5e48!important}
+[data-theme="light"] ::-webkit-scrollbar-track{background:var(--lbg)!important}
+[data-theme="light"] ::-webkit-scrollbar-thumb{background:rgba(122,92,36,0.25)!important}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<div class="hero">
+<div class="hero-label">Théologie chiite</div>
+<div class="hero-ornament"><div class="orn-line"></div><div class="orn-gem"></div><div class="orn-line r"></div></div>
+<h1 class="hero-title">Al-<span>Tawḥīd</span> — L'Unicité Divine</h1>
+<p class="hero-subtitle">Comprendre l'Unicité de Dieu à travers la tradition de l'Ahl al-Bayt : Son Essence, Ses Attributs, Sa Justice et la sagesse de Ses décrets.</p>
+<div class="hero-divider"></div>
+</div>
+
+<nav class="toc">
+<div class="toc-title">Sommaire</div>
+<ul class="toc-list">
+<li class="toc-part">I — Dieu et les degrés de l'Unicité</li>
+<li class="toc-item" onclick="document.getElementById('s1').scrollIntoView({behavior:'smooth'})"><span class="toc-num">1</span><span class="toc-link">Dieu, une réalité évidente</span></li>
+<li class="toc-item" onclick="document.getElementById('s2').scrollIntoView({behavior:'smooth'})"><span class="toc-num">2</span><span class="toc-link">L'Unicité de l'Essence</span></li>
+<li class="toc-item" onclick="document.getElementById('s3').scrollIntoView({behavior:'smooth'})"><span class="toc-num">3</span><span class="toc-link">L'Unicité des Attributs</span></li>
+<li class="toc-item" onclick="document.getElementById('s4').scrollIntoView({behavior:'smooth'})"><span class="toc-num">4</span><span class="toc-link">L'Unicité de la Création et de la Seigneurie</span></li>
+<li class="toc-item" onclick="document.getElementById('s5').scrollIntoView({behavior:'smooth'})"><span class="toc-num">5</span><span class="toc-link">L'Unicité de l'Adoration</span></li>
+<li class="toc-part">II — Les Attributs divins</li>
+<li class="toc-item" onclick="document.getElementById('s6').scrollIntoView({behavior:'smooth'})"><span class="toc-num">6</span><span class="toc-link">Attributs de l'Essence : Science, Puissance, Vie, Volonté</span></li>
+<li class="toc-item" onclick="document.getElementById('s7').scrollIntoView({behavior:'smooth'})"><span class="toc-num">7</span><span class="toc-link">Attributs de l'Acte et Attributs négatifs</span></li>
+<li class="toc-part">III — La Justice divine</li>
+<li class="toc-item" onclick="document.getElementById('s8').scrollIntoView({behavior:'smooth'})"><span class="toc-num">8</span><span class="toc-link">La Justice, attribut de perfection</span></li>
+<li class="toc-item" onclick="document.getElementById('s9').scrollIntoView({behavior:'smooth'})"><span class="toc-num">9</span><span class="toc-link">Le bien et le mal sont-ils rationnels ?</span></li>
+<li class="toc-item" onclick="document.getElementById('s10').scrollIntoView({behavior:'smooth'})"><span class="toc-num">10</span><span class="toc-link">La Grâce divine (Luṭf)</span></li>
+<li class="toc-part">IV — Prédestination et libre arbitre</li>
+<li class="toc-item" onclick="document.getElementById('s11').scrollIntoView({behavior:'smooth'})"><span class="toc-num">11</span><span class="toc-link">Qaḍā' et Qadar</span></li>
+<li class="toc-item" onclick="document.getElementById('s12').scrollIntoView({behavior:'smooth'})"><span class="toc-num">12</span><span class="toc-link">La voie médiane : ni fatalisme ni autonomie absolue</span></li>
+<li class="toc-part">V — Le Badā' et les prescriptions</li>
+<li class="toc-item" onclick="document.getElementById('s13').scrollIntoView({behavior:'smooth'})"><span class="toc-num">13</span><span class="toc-link">Le Badā' : le décret conditionnel</span></li>
+<li class="toc-item" onclick="document.getElementById('s14').scrollIntoView({behavior:'smooth'})"><span class="toc-num">14</span><span class="toc-link">La sagesse des prescriptions divines</span></li>
+</ul>
+</nav>
+
+<!-- ═══════ PARTIE I ═══════ -->
+<div class="part-header"><div class="part-label">Partie I</div><div class="part-title">Dieu et les degrés de l'Unicité</div></div>
+
+<div class="section" id="s1">
+<div class="section-header"><span class="section-num">1</span><h2 class="section-title">Dieu, une réalité évidente</h2><div class="section-line"></div></div>
+<p class="body-text">Le Coran présente l'existence de Dieu non pas comme une hypothèse à démontrer, mais comme une évidence inscrite dans la nature même des choses. L'observation attentive de l'univers — l'alternance du jour et de la nuit, l'harmonie des lois physiques, la complexité du vivant — conduit l'esprit lucide à reconnaître une Intelligence ordonnatrice. Toute la tradition imamite affirme que Dieu est <strong>Un, Éternel, Omniscient, Tout-Puissant, Très-Juste</strong>. Il n'est ni corps ni forme ; Il ne se situe ni dans un lieu ni dans un temps. La vision physique ne peut L'atteindre, mais Lui perçoit toute chose.</p>
+<div class="quran"><p class="quran-fr">« Peut-il y avoir un doute au sujet de Dieu, Créateur des cieux et de la terre ? »</p><p class="quran-ref">Sourate Ibrâhîm, 14:10</p></div>
+<p class="body-text">L'homme est invité à méditer sur les merveilles de la création, car chaque phénomène naturel porte en lui un signe (<em>âya</em>) pointant vers son Auteur. C'est pourquoi le Coran qualifie les gens de réflexion de « doués d'intelligence » (<em>ûlû al-albâb</em>) : ceux dont la raison, loin de s'opposer à la foi, en constitue le chemin le plus sûr.</p>
+</div>
+
+<div class="section" id="s2">
+<div class="section-header"><span class="section-num">2</span><h2 class="section-title">L'Unicité de l'Essence</h2><div class="section-line"></div></div>
+<p class="body-text">Le premier degré du Tawḥīd porte sur l'<strong>Essence</strong> (<em>dhât</em>) de Dieu. Son Être est absolument simple, non composé, sans parties. Il n'a ni début ni fin ; rien dans l'existence ne Lui ressemble ni ne peut Lui être comparé. L'Imam ʿAlī (a) enseigne que Dieu est « Un en signification ; Il n'est divisible ni par l'existence extérieure, ni par l'imagination, ni par l'intellect ».</p>
+<p class="body-text">C'est cette simplicité absolue de l'Essence qui fonde le rejet de toute forme de pluralisme divin. La doctrine de la Trinité, par exemple, est irrecevable du point de vue du Tawḥīd : si chacune des trois entités possède une personnalité distincte, l'incomparabilité divine est violée ; si elles partagent une seule personnalité composée, la simplicité absolue est contredite. Le Tawḥīd exige que Dieu soit au-delà de toute composition, de toute dualité et de toute division.</p>
+</div>
+
+<div class="section" id="s3">
+<div class="section-header"><span class="section-num">3</span><h2 class="section-title">L'Unicité des Attributs</h2><div class="section-line"></div></div>
+<p class="body-text">Les attributs positifs de Dieu — Son <strong>Savoir</strong>, Sa <strong>Puissance</strong>, Sa <strong>Vie</strong>, Sa <strong>Volonté</strong> — ne sont pas des entités extérieures qui viendraient s'ajouter à Son Essence. Ils sont <strong>identiques à elle</strong>. Dieu n'est pas un être qui « possède » la science comme on possède un outil : Il <em>est</em> Science, tout entier ; Il <em>est</em> Puissance, tout entier ; Il <em>est</em> Vie, tout entier.</p>
+<div class="hadith"><p class="hadith-text">« Dieu ne cessera jamais d'être notre Seigneur. La connaissance est Son Essence ; l'ouïe est Son Essence ; la vue est Son Essence ; la puissance est Son Essence. »</p><p class="hadith-source">Imam Jaʿfar al-Ṣādiq (a)</p></div>
+<p class="body-text">L'Imam ʿAlī (a) pousse cette logique dans le sermon d'ouverture du <em>Nahj al-Balâgha</em> : « La perfection de la sincérité envers Lui consiste à nier tout attribut distinct de Lui, car tout attribut distinct témoigne qu'il diffère de l'être auquel il est attribué. » Attribuer à Dieu des qualités séparées reviendrait à introduire la multiplicité dans Son Être — et donc à rompre le Tawḥīd.</p>
+</div>
+
+<div class="section" id="s4">
+<div class="section-header"><span class="section-num">4</span><h2 class="section-title">L'Unicité de la Création et de la Seigneurie</h2><div class="section-line"></div></div>
+<p class="body-text"><strong>Unicité de la Création</strong> (<em>Tawḥīd al-Khâliqiyya</em>) : il n'existe de Créateur que Dieu. Tout ce qui accède à l'existence est nécessairement Son œuvre. Les êtres contingents ont besoin d'une cause extérieure pour exister — seul Dieu existe par Lui-même, sans cause. Reconnaître cette réalité n'annule pas la causalité entre les phénomènes naturels : les relations de cause à effet procèdent elles aussi de la Volonté divine. En revanche, les mauvaises actions de l'homme ne sont pas attribuables à Dieu, car l'être humain dispose du <strong>libre arbitre</strong>.</p>
+<div class="quran"><p class="quran-fr">« Dis : Dieu est le Créateur de toute chose, et Il est l'Unique, le Tout-Puissant. »</p><p class="quran-ref">Sourate ar-Raʿd, 13:16</p></div>
+<p class="body-text"><strong>Unicité de la Seigneurie</strong> (<em>Tawḥīd ar-Rubûbiyya</em>) : Celui qui a créé le monde est aussi Celui qui le gouverne. L'Originateur et le Gestionnaire ne font qu'un. Lois, prescriptions, intercession et pardon relèvent exclusivement de la prérogative de Dieu. Si le Prophète détient une autorité, c'est parce que Dieu la lui a conférée : obéir au Messager, c'est obéir à Dieu.</p>
+</div>
+
+<div class="section" id="s5">
+<div class="section-header"><span class="section-num">5</span><h2 class="section-title">L'Unicité de l'Adoration</h2><div class="section-line"></div></div>
+<p class="body-text">Seul Dieu mérite l'adoration (<em>ʿibâda</em>). Chaque musulman le proclame cinq fois par jour dans la sourate al-Fâtiḥa : <em>« C'est Toi seul que nous adorons »</em>. Tout acte d'humiliation accompli envers un être créé, dans la croyance que celui-ci détiendrait un pouvoir indépendant sur le destin, constitue une forme de <em>shirk</em> (associationnisme).</p>
+<p class="body-text">En revanche, il est essentiel de distinguer l'<strong>adoration</strong> (<em>ʿibâda</em>) de la <strong>vénération</strong> (<em>taʿẓīm</em>) et du <strong>respect</strong> (<em>takrîm</em>). Visiter les tombes des saints, commémorer le Prophète et les Imams, recourir à leur intercession — tout cela relève du respect légitime, non du polythéisme. Car celui qui honore les signes de Dieu manifeste la piété de son cœur.</p>
+<div class="quran"><p class="quran-fr">« Quiconque magnifie les rites de Dieu, cela procède de la piété des cœurs. »</p><p class="quran-ref">Sourate al-Ḥajj, 22:32</p></div>
+</div>
+
+<div class="section-divider"><div class="sdiv-line"></div><div class="sdiv-gem"></div><div class="sdiv-line"></div></div>
+
+<!-- ═══════ PARTIE II ═══════ -->
+<div class="part-header"><div class="part-label">Partie II</div><div class="part-title">Les Attributs divins</div></div>
+
+<div class="section" id="s6">
+<div class="section-header"><span class="section-num">6</span><h2 class="section-title">Attributs de l'Essence</h2><div class="section-line"></div></div>
+<p class="body-text">Les attributs divins se répartissent en deux catégories : les <strong>attributs de Beauté</strong> (<em>jamâl</em>) — positifs — et les <strong>attributs de Majesté</strong> (<em>jalâl</em>) — négatifs. Les premiers affirment la perfection divine ; les seconds nient toute imperfection.</p>
+<p class="body-text"><strong>La Science</strong> (<em>al-ʿIlm</em>). La science de Dieu est éternelle et totale. Il connaît chaque chose avant et après sa création, sans que cette connaissance ne subisse aucun changement. L'Imam al-Ṣādiq (a) enseigne : « Sa connaissance d'un lieu avant sa création est identique à Sa connaissance après sa création. »</p>
+<p class="body-text"><strong>La Puissance</strong> (<em>al-Qudra</em>). La puissance de Dieu ne connaît aucune limite. Si les choses intrinsèquement impossibles (le cercle carré, par exemple) ne relèvent pas de la Puissance, ce n'est pas par insuffisance de celle-ci, mais par l'inexistence même de ces objets : l'impossible n'est pas une « chose » que Dieu ne pourrait pas faire, c'est un néant conceptuel.</p>
+<p class="body-text"><strong>La Vie</strong> (<em>al-Ḥayât</em>). Dieu est vivant par Sa nature essentielle, d'une vie qui ne connaît ni début ni fin. « Place ta confiance en le Vivant qui ne meurt jamais » (25:58).</p>
+<p class="body-text"><strong>La Volonté</strong> (<em>al-Irâda</em>). Dieu est l'Agent absolument libre. Sa Volonté à l'égard d'un acte est identique à la réalisation même de cet acte, sans succession temporelle entre la décision et l'exécution.</p>
+</div>
+
+<div class="section" id="s7">
+<div class="section-header"><span class="section-num">7</span><h2 class="section-title">Attributs de l'Acte et Attributs négatifs</h2><div class="section-line"></div></div>
+<p class="body-text"><strong>Attributs de l'Acte.</strong> Ils concernent les différentes manifestations de l'action divine. La <em>Parole</em> de Dieu parvient aux Prophètes selon trois modes : inspiration directe dans le cœur, parole de derrière un voile (comme pour Moïse au Sinaï), ou envoi d'un ange (comme Jibrîl avec Muhammad). Dans tous les cas, la Parole est un acte créé de Dieu, non une entité incréée coéternelle. La <em>Véracité</em> de Dieu est absolue — le mensonge procède de l'ignorance ou du besoin, deux états dont Dieu est infiniment exempt. La <em>Sagesse</em> de Dieu signifie que chacun de Ses actes atteint une réalisation parfaite, sans gaspillage ni gratuité.</p>
+<p class="body-text"><strong>Attributs négatifs.</strong> Dieu n'a pas de corps, n'est pas matière, ne s'incarne dans aucune entité. La vision oculaire de Dieu est impossible — même Moïse n'a pu Le voir : « Tu ne Me verras pas » (7:143). En revanche, la <em>vision du cœur</em> — la perception intérieure par la foi — est une réalité connue des proches de Dieu. L'Imam ʿAlī (a), interrogé « As-tu vu ton Seigneur ? », répondit : « Ce sont les cœurs qui Le perçoivent, par les vérités de la foi. »</p>
+<p class="body-text">Quant aux <strong>attributs informatifs</strong> (<em>khabarî</em>) — la « Main » de Dieu, Son « Visage », Son « établissement sur le Trône » — ils ne peuvent être pris au sens littéral sous peine de tomber dans l'anthropomorphisme (<em>tajsîm</em>). La « Main » désigne la Puissance, le « Visage » l'Essence éternelle, et le « Trône » la souveraineté absolue sur l'univers.</p>
+</div>
+
+<div class="section-divider"><div class="sdiv-line"></div><div class="sdiv-gem"></div><div class="sdiv-line"></div></div>
+
+<!-- ═══════ PARTIE III ═══════ -->
+<div class="part-header"><div class="part-label">Partie III</div><div class="part-title">La Justice divine</div></div>
+
+<div class="section" id="s8">
+<div class="section-header"><span class="section-num">8</span><h2 class="section-title">La Justice, attribut de perfection</h2><div class="section-line"></div></div>
+<p class="body-text">La justice (<em>al-ʿAdl</em>) est un attribut fondamental de Dieu dans la théologie imamite — au point d'en constituer le deuxième pilier doctrinal après le Tawḥīd. Dieu ne commet jamais d'injustice. Toute injustice procède soit de l'ignorance, soit de l'impuissance, soit du besoin — trois états dont l'Être absolu est infiniment exempt.</p>
+<div class="quran"><p class="quran-fr">« Dieu ne lèse personne, fût-ce du poids d'un atome. »</p><p class="quran-ref">Sourate an-Nisâ', 4:40</p></div>
+<p class="body-text">La Justice se déploie dans trois domaines. Dans la <strong>création</strong> : Dieu accorde à chaque être ce qui correspond à sa nature et à sa capacité — « Notre Seigneur est Celui qui a donné à chaque chose sa nature, puis l'a guidée » (20:50). Dans la <strong>loi</strong> : Dieu n'impose jamais une obligation dépassant la capacité humaine — « Nous n'imposons à aucune âme une charge supérieure à sa capacité » (23:62). Dans la <strong>rétribution</strong> : Dieu ne punit jamais sans avertissement préalable — « Nous ne châtions jamais avant d'avoir envoyé un Messager » (17:15).</p>
+</div>
+
+<div class="section" id="s9">
+<div class="section-header"><span class="section-num">9</span><h2 class="section-title">Le bien et le mal sont-ils rationnels ?</h2><div class="section-line"></div></div>
+<p class="body-text">Deux positions s'affrontent dans la théologie islamique sur cette question. La tradition imamite (<em>ʿAdliyya</em>) affirme que la raison humaine est capable de percevoir, indépendamment de la Révélation, que certains actes sont bons et d'autres mauvais. La justice est intrinsèquement belle ; l'oppression est intrinsèquement laide. Puisque Dieu possède toute perfection, Ses actes ne peuvent être que justes et sages.</p>
+<p class="body-text">La position contraire — selon laquelle seule la Révélation définirait le bien et le mal — se heurte à un paradoxe fatal : si l'intellect ne pouvait pas reconnaître la laideur du mensonge, comment pourrait-on établir l'autorité de la Révélation elle-même ? Toute Révélation repose en dernier ressort sur la véracité du Messager — une véracité que la raison doit pouvoir évaluer.</p>
+<div class="quran"><p class="quran-fr">« La récompense de la bienfaisance peut-elle être autre chose que la bienfaisance ? »</p><p class="quran-ref">Sourate ar-Raḥmān, 55:60</p></div>
+</div>
+
+<div class="section" id="s10">
+<div class="section-header"><span class="section-num">10</span><h2 class="section-title">La Grâce divine (Luṭf)</h2><div class="section-line"></div></div>
+<p class="body-text">La <strong>Grâce</strong> (<em>luṭf</em>) est ce qui rapproche la créature de l'obéissance et l'éloigne de la désobéissance, sans pour autant la contraindre. Dieu a créé l'homme afin qu'il atteigne la plénitude dont son âme est capable. Pour cela, Il lui a envoyé des Messagers, des Livres, des lois — autant de moyens de guidance qui constituent Sa Grâce. Cette Grâce n'est pas un caprice divin : elle découle nécessairement de la perfection de Dieu. Un Être parfait qui crée des êtres destinés à la perfection ne peut les abandonner sans guidance.</p>
+</div>
+
+<div class="section-divider"><div class="sdiv-line"></div><div class="sdiv-gem"></div><div class="sdiv-line"></div></div>
+
+<!-- ═══════ PARTIE IV ═══════ -->
+<div class="part-header"><div class="part-label">Partie IV</div><div class="part-title">Prédestination et libre arbitre</div></div>
+
+<div class="section" id="s11">
+<div class="section-header"><span class="section-num">11</span><h2 class="section-title">Qaḍā' et Qadar</h2><div class="section-line"></div></div>
+<p class="body-text">La croyance au décret divin (<em>qaḍā'</em>) et à la mesure (<em>qadar</em>) est un pilier de la foi. Le <em>qadar</em> désigne la mesure que Dieu assigne à chaque créature — ses capacités, ses limites, son potentiel. Le <em>qaḍā'</em> désigne l'actualisation définitive de cette mesure dans l'existence, selon la chaîne des causes et des effets voulue par Dieu.</p>
+<div class="hadith"><p class="hadith-text">« Le qadar est la mesure d'une chose quant à sa subsistance ou à sa disparition ; le qaḍā' est l'octroi de la capacité définitive pour une entité de s'actualiser. »</p><p class="hadith-source">Imam ʿAlī al-Riḍā (a)</p></div>
+<p class="body-text">La prédestination divine ne supprime pas la liberté humaine. La preuve en est triple : chaque individu perçoit en lui-même la capacité de choisir ; dans toute société humaine, les gens sont loués ou blâmés pour leurs actes — ce qui présuppose leur liberté ; enfin, sans libre arbitre, la religion perdrait tout son sens, car il serait injuste de récompenser ou de punir des êtres qui ne choisissent pas.</p>
+<div class="quran"><p class="quran-fr">« Nous lui avons montré la voie, qu'il soit reconnaissant ou ingrat. »</p><p class="quran-ref">Sourate al-Insân, 76:3</p></div>
+</div>
+
+<div class="section" id="s12">
+<div class="section-header"><span class="section-num">12</span><h2 class="section-title">La voie médiane</h2><div class="section-line"></div></div>
+<p class="body-text">Deux extrêmes ont émergé dans la pensée islamique après le Prophète. Les <strong>Mujabbirah</strong> (fatalistes) affirmèrent que Dieu force Ses créatures à agir, puis les punit pour des actes qu'elles n'ont pas choisis — position qui rend la justice divine absurde. Les <strong>Mufawwiḍah</strong> (délégationistes) affirmèrent que Dieu a délégué à l'homme une autonomie totale, se désengageant de l'univers — position qui nie Sa souveraineté.</p>
+<p class="body-text">Les Imams de l'Ahl al-Bayt ont établi la <strong>voie médiane</strong> (<em>amr bayn al-amrayn</em>) : nos actes sont réellement les nôtres, car nous en sommes les agents naturels ; et ils relèvent simultanément de l'autorité de Dieu, car c'est Lui qui accorde l'existence à toutes choses et qui maintient chaque instant dans l'être.</p>
+<div class="hadith"><p class="hadith-text">« Il n'y a ni contrainte imposée par Dieu (jabr), ni délégation absolue de puissance (tafwīḍ) ; mais plutôt une voie entre deux voies. »</p><p class="hadith-source">Imam Jaʿfar al-Ṣādiq (a)</p></div>
+</div>
+
+<div class="section-divider"><div class="sdiv-line"></div><div class="sdiv-gem"></div><div class="sdiv-line"></div></div>
+
+<!-- ═══════ PARTIE V ═══════ -->
+<div class="part-header"><div class="part-label">Partie V</div><div class="part-title">Le Badā' et les prescriptions</div></div>
+
+<div class="section" id="s13">
+<div class="section-header"><span class="section-num">13</span><h2 class="section-title">Le Badā' : le décret conditionnel</h2><div class="section-line"></div></div>
+<p class="body-text">Le terme <em>badā'</em> signifie littéralement « apparaître » ou « changer d'avis ». Appliqué à Dieu dans son sens littéral, il est inacceptable, car il impliquerait ignorance et regret — deux imperfections incompatibles avec l'Être absolu. L'Imam al-Ṣādiq (a) affirme catégoriquement : « Celui qui prétend que Dieu change une décision antérieure par regret est considéré par nous comme ayant mécru en Dieu. »</p>
+<p class="body-text">Ce que le <em>badā'</em> désigne en réalité, c'est que le destin divin se présente sous <strong>deux formes</strong> : un <strong>décret définitif</strong> et inconditionnel (<em>qaḍā' maḥtûm</em>), et un <strong>décret conditionnel</strong> (<em>qaḍā' mawqûf</em>) susceptible de changer selon les conditions — aumône, invocation, repentir. La modification d'un décret conditionnel ne constitue pas un « changement d'avis » mais l'accomplissement d'une condition prévue de toute éternité dans la science divine.</p>
+<div class="quran"><p class="quran-fr">« Dieu efface ce qu'Il veut et confirme ce qu'Il veut ; et auprès de Lui se trouve la Mère du Livre. »</p><p class="quran-ref">Sourate ar-Raʿd, 13:39</p></div>
+</div>
+
+<div class="section" id="s14">
+<div class="section-header"><span class="section-num">14</span><h2 class="section-title">La sagesse des prescriptions divines</h2><div class="section-line"></div></div>
+<p class="body-text">Dieu est absolument autosuffisant. Il n'a nul besoin de Ses créatures ni de leur adoration. Lorsqu'Il prescrit des devoirs et interdit des actes, ce n'est pas pour satisfaire un besoin personnel, mais pour le bien de Ses serviteurs. Chaque commandement apporte un avantage ; chaque interdit préserve d'un dommage. Les lois divines sont l'expression ultime de Sa Miséricorde et de Sa Sagesse.</p>
+<div class="quran"><p class="quran-fr">« Dieu ordonne la justice, la bienfaisance et la générosité envers les proches ; Il interdit la turpitude, l'abomination et l'injustice. »</p><p class="quran-ref">Sourate an-Naḥl, 16:90</p></div>
+</div>
+
+<div class="sources"><div class="sources-title">Sources</div>
+<p class="source-item"><em>ʿAqâ'id al-Imâmiyya</em>, de Muḥammad Riḍâ al-Muẓaffar — exposé classique des croyances imamites.</p>
+<p class="source-item"><em>Doctrine of Shi'ah Islam</em>, de l'Ayatollah Jaʿfar Subḥânî — traité de théologie chiite contemporain.</p>
+<p class="source-item"><em>Nahj al-Balâgha</em>, sermons et lettres de l'Imam ʿAlī (a).</p>
+<p class="source-item"><em>Kitâb al-Kâfî</em>, Uṣûl, d'al-Kulaynî — Kitâb al-Tawḥîd.</p>
+<p class="source-item"><em>At-Tawḥîd</em>, de Sheikh al-Ṣadûq.</p>
+</div>
+
+</div>
+<!-- Theme listener -->
+<script>
+window.addEventListener('message', function(e) {
+  if (e.data && e.data.type === 'theme') {
+    if (e.data.theme === 'light') {
+      document.documentElement.setAttribute('data-theme', 'light');
+    } else {
+      document.documentElement.removeAttribute('data-theme');
+    }
+  }
+});
+try {
+  if (localStorage.getItem('theme') === 'light') {
+    document.documentElement.setAttribute('data-theme', 'light');
+  }
+} catch(e) {}
+</script>
+<!-- Scroll-to-top -->
+<style>
+.scroll-top-btn{position:fixed;bottom:24px;right:24px;width:44px;height:44px;background:rgba(19,29,53,0.85);border:1px solid rgba(201,168,76,0.3);border-radius:50%;color:#c9a84c;font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:all .3s ease;z-index:999;backdrop-filter:blur(10px);box-shadow:0 4px 16px rgba(0,0,0,0.3)}
+.scroll-top-btn.visible{opacity:1;pointer-events:all}
+.scroll-top-btn:hover{background:rgba(201,168,76,0.2);border-color:#c9a84c;transform:translateY(-2px)}
+.scroll-top-btn svg{width:20px;height:20px}
+[data-theme="light"] .scroll-top-btn{background:rgba(225,218,206,0.9)!important;border-color:rgba(122,92,36,0.25)!important;color:#7a5c24!important}
+[data-theme="light"] .scroll-top-btn:hover{background:rgba(235,228,216,0.95)!important;border-color:#7a5c24!important}
+</style>
+<button class="scroll-top-btn" id="scrollTopBtn" aria-label="Retour en haut">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
+</button>
+<script>
+(function(){
+  var btn=document.getElementById('scrollTopBtn');
+  if(!btn) return;
+  function check(){
+    var st=window.pageYOffset||document.documentElement.scrollTop;
+    btn.classList.toggle('visible',st>250);
+  }
+  window.addEventListener('scroll',check,{passive:true});
+  btn.addEventListener('click',function(){
+    window.scrollTo({top:0,behavior:'smooth'});
+  });
+  check();
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>La Prophétie et l'Imamat (Al-Nubuwwa wa-l-Imāmah)</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Scheherazade+New:wght@400;700&family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500;0,600&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{min-height:100%;background:#070c18;color:#e2d9c4;font-family:'EB Garamond',Georgia,serif;font-size:18px;line-height:1.8;overflow-x:hidden}
+body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23c9a84c' stroke-width='0.3' opacity='0.055'%3E%3Crect x='22' y='22' width='56' height='56' rx='2'/%3E%3Crect x='22' y='22' width='56' height='56' rx='2' transform='rotate(45 50 50)'/%3E%3Ccircle cx='50' cy='50' r='28'/%3E%3C/g%3E%3C/svg%3E");background-size:100px;pointer-events:none;z-index:0}
+::-webkit-scrollbar{width:5px}::-webkit-scrollbar-track{background:#070c18}::-webkit-scrollbar-thumb{background:rgba(201,168,76,0.3);border-radius:3px}
+.wrap{max-width:760px;margin:0 auto;padding:56px 28px 100px;position:relative;z-index:1}
+.hero{text-align:center;margin-bottom:52px}
+.hero-ornament{display:flex;align-items:center;justify-content:center;gap:14px;margin-bottom:24px}
+.orn-line{height:1px;width:80px;background:linear-gradient(to right,transparent,#c9a84c)}.orn-line.r{background:linear-gradient(to left,transparent,#c9a84c)}
+.orn-gem{width:7px;height:7px;background:#c9a84c;transform:rotate(45deg);box-shadow:0 0 8px rgba(201,168,76,0.6)}
+.hero-label{font-family:'Cinzel',serif;font-size:0.75rem;letter-spacing:0.22em;text-transform:uppercase;color:#c9a84c;opacity:0.6;margin-bottom:16px}
+.hero-title{font-family:'Cinzel',serif;font-size:clamp(1.3rem,3.5vw,2rem);font-weight:700;color:#e8e2d0;line-height:1.25;margin-bottom:10px}
+.hero-title span{color:#c9a84c}
+.hero-subtitle{font-size:1.1rem;color:#7a6a4a;font-style:italic;margin-bottom:28px;line-height:1.6}
+.hero-divider{width:120px;height:1px;background:linear-gradient(90deg,transparent,#c9a84c,transparent);margin:0 auto}
+.toc{background:rgba(19,29,53,0.6);border:1px solid rgba(201,168,76,0.15);border-radius:14px;padding:22px 26px;margin-bottom:48px}
+.toc-title{font-family:'Cinzel',serif;font-size:0.75rem;letter-spacing:0.18em;text-transform:uppercase;color:#c9a84c;margin-bottom:14px;opacity:0.8}
+.toc-list{list-style:none;display:flex;flex-direction:column;gap:8px}
+.toc-item{display:flex;align-items:baseline;gap:10px;cursor:pointer;transition:color 0.2s}
+.toc-item:hover .toc-link{color:#e8c06a}
+.toc-num{font-family:'Cinzel',serif;font-size:0.72rem;color:#c9a84c;opacity:0.5;min-width:26px;flex-shrink:0}
+.toc-link{font-size:1rem;color:#9aa3b8;transition:color 0.2s}
+.toc-part{font-family:'Cinzel',serif;font-size:0.82rem;color:#c9a84c;margin-top:14px;margin-bottom:4px;letter-spacing:0.12em;text-transform:uppercase}
+.section{margin-bottom:52px;scroll-margin-top:20px}
+.section-header{display:flex;align-items:center;gap:14px;margin-bottom:22px}
+.section-num{font-family:'Cinzel',serif;font-size:0.75rem;font-weight:700;color:#c9a84c;background:rgba(201,168,76,0.1);border:1px solid rgba(201,168,76,0.25);border-radius:6px;padding:4px 10px;flex-shrink:0}
+.section-title{font-family:'Cinzel',serif;font-size:1.2rem;font-weight:600;color:#e8e2d0;line-height:1.3}
+.section-line{height:1px;flex:1;background:linear-gradient(to right,rgba(201,168,76,0.2),transparent)}
+.body-text{font-size:1.15rem;color:#cec6b0;line-height:1.95;margin-bottom:18px;text-align:justify}
+.body-text strong{color:#e8c06a;font-weight:600}
+.body-text em{color:#b8a882}
+.quran{background:rgba(201,168,76,0.05);border:1px solid rgba(201,168,76,0.15);border-radius:10px;padding:18px 24px;margin:22px 0;text-align:center}
+.quran-fr{font-style:italic;font-size:1.1rem;color:#ddd5bf;margin-bottom:8px;line-height:1.8}
+.quran-ref{font-family:'Cinzel',serif;font-size:0.78rem;color:#c9a84c;opacity:0.55;letter-spacing:0.1em}
+.hadith{background:rgba(13,22,42,0.7);border:1px solid rgba(201,168,76,0.15);border-left:3px solid #c9a84c;border-radius:0 10px 10px 0;padding:18px 22px;margin:22px 0}
+.hadith-text{font-style:italic;font-size:1.05rem;color:#ddd5bf;line-height:1.8;margin-bottom:6px}
+.hadith-source{font-family:'Cinzel',serif;font-size:0.78rem;color:#c9a84c;opacity:0.6}
+.imam-table{width:100%;border-collapse:collapse;margin:22px 0;font-size:0.95rem}
+.imam-table th{font-family:'Cinzel',serif;font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;color:#c9a84c;padding:10px 12px;border-bottom:1px solid rgba(201,168,76,0.25);text-align:left}
+.imam-table td{padding:8px 12px;border-bottom:1px solid rgba(201,168,76,0.06);color:#cec6b0}
+.imam-table tr:hover td{background:rgba(201,168,76,0.04)}
+.imam-num{color:#c9a84c;font-family:'Cinzel',serif;font-weight:700;font-size:0.85rem}
+.section-divider{display:flex;align-items:center;gap:16px;margin:48px 0}
+.sdiv-line{height:1px;flex:1;background:linear-gradient(to right,transparent,rgba(201,168,76,0.2),transparent)}
+.sdiv-gem{width:5px;height:5px;background:rgba(201,168,76,0.4);transform:rotate(45deg)}
+.part-header{text-align:center;margin:56px 0 40px}
+.part-label{font-family:'Cinzel',serif;font-size:0.72rem;letter-spacing:0.25em;text-transform:uppercase;color:#c9a84c;opacity:0.5;margin-bottom:8px}
+.part-title{font-family:'Cinzel',serif;font-size:1.35rem;font-weight:700;color:#e8e2d0}
+.sources{background:rgba(7,12,24,0.8);border:1px solid rgba(201,168,76,0.12);border-radius:12px;padding:24px 28px;margin-top:48px}
+.sources-title{font-family:'Cinzel',serif;font-size:0.78rem;letter-spacing:0.18em;text-transform:uppercase;color:#c9a84c;margin-bottom:18px;opacity:0.7}
+.source-item{font-size:0.95rem;color:#7a6a4a;margin-bottom:10px;line-height:1.6;padding-left:14px;position:relative}
+.source-item::before{content:'·';position:absolute;left:0;color:#c9a84c;opacity:0.5}
+@media(max-width:600px){.wrap{padding:36px 18px 80px}.body-text{font-size:1.05rem}.imam-table{font-size:0.85rem}.imam-table th,.imam-table td{padding:6px 8px}}
+[data-theme="light"]{--lbg:#e8e0d4;--ltext:#2c2114;--ltext2:#5a4e3c;--laccent:#7a5c24;--lcard:rgba(220,212,196,0.6);--lborder:rgba(122,92,36,0.15)}
+[data-theme="light"] body{background:var(--lbg)!important;color:var(--ltext)!important}
+[data-theme="light"] body::before{opacity:0.4!important}
+[data-theme="light"] .wrap{color:var(--ltext)}
+[data-theme="light"] .hero-title{color:var(--ltext)!important}
+[data-theme="light"] .hero-title span{color:var(--laccent)!important}
+[data-theme="light"] .hero-subtitle{color:#7a6e56!important}
+[data-theme="light"] .hero-label{color:var(--laccent)!important}
+[data-theme="light"] .toc{background:rgba(220,212,196,0.5)!important;border-color:var(--lborder)!important}
+[data-theme="light"] .toc-link{color:var(--ltext2)!important}
+[data-theme="light"] .toc-title,[data-theme="light"] .toc-num,[data-theme="light"] .toc-part{color:var(--laccent)!important}
+[data-theme="light"] .section-title,[data-theme="light"] .part-title{color:var(--ltext)!important}
+[data-theme="light"] .section-num{color:var(--laccent)!important;background:rgba(122,92,36,0.08)!important;border-color:rgba(122,92,36,0.2)!important}
+[data-theme="light"] .section-line{background:linear-gradient(to right,rgba(122,92,36,0.15),transparent)!important}
+[data-theme="light"] .body-text{color:#3d3425!important}
+[data-theme="light"] .body-text strong{color:#6a4e1a!important}
+[data-theme="light"] .hadith{background:rgba(220,212,196,0.5)!important;border-color:rgba(122,92,36,0.15)!important;border-left-color:var(--laccent)!important}
+[data-theme="light"] .hadith-text{color:#3d3425!important}
+[data-theme="light"] .hadith-source{color:var(--laccent)!important}
+[data-theme="light"] .quran{background:rgba(122,92,36,0.05)!important;border-color:rgba(122,92,36,0.12)!important}
+[data-theme="light"] .quran-fr{color:#3d3425!important}
+[data-theme="light"] .quran-ref{color:var(--laccent)!important}
+[data-theme="light"] .sdiv-line{background:linear-gradient(to right,transparent,rgba(122,92,36,0.15),transparent)!important}
+[data-theme="light"] .part-label{color:var(--laccent)!important}
+[data-theme="light"] .sources{background:rgba(220,212,196,0.4)!important;border-color:var(--lborder)!important}
+[data-theme="light"] .sources-title{color:var(--laccent)!important}
+[data-theme="light"] .source-item{color:#6a5e48!important}
+[data-theme="light"] .imam-table th{color:var(--laccent)!important;border-color:rgba(122,92,36,0.2)!important}
+[data-theme="light"] .imam-table td{color:#3d3425!important;border-color:rgba(122,92,36,0.06)!important}
+[data-theme="light"] .imam-num{color:var(--laccent)!important}
+[data-theme="light"] ::-webkit-scrollbar-track{background:var(--lbg)!important}
+[data-theme="light"] ::-webkit-scrollbar-thumb{background:rgba(122,92,36,0.25)!important}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<div class="hero">
+<div class="hero-label">Théologie chiite</div>
+<div class="hero-ornament"><div class="orn-line"></div><div class="orn-gem"></div><div class="orn-line r"></div></div>
+<h1 class="hero-title">La <span>Prophétie</span> et l'<span>Imamat</span><br><small style="font-size:0.55em;color:#7a6a4a;font-weight:400">(Al-Nubuwwa wa-l-Imāmah)</small></h1>
+<p class="hero-subtitle">La Prophétie et l'Imamat : pourquoi Dieu envoie des Prophètes, comment les reconnaître, et pourquoi la guidance se poursuit à travers les Imams de l'Ahl al-Bayt.</p>
+<div class="hero-divider"></div>
+</div>
+
+<nav class="toc">
+<div class="toc-title">Sommaire</div>
+<ul class="toc-list">
+<li class="toc-part">I — La Prophétie (Nubuwwa)</li>
+<li class="toc-item" onclick="document.getElementById('s1').scrollIntoView({behavior:'smooth'})"><span class="toc-num">1</span><span class="toc-link">Pourquoi Dieu envoie des Prophètes</span></li>
+<li class="toc-item" onclick="document.getElementById('s2').scrollIntoView({behavior:'smooth'})"><span class="toc-num">2</span><span class="toc-link">Les miracles et la reconnaissance des Prophètes</span></li>
+<li class="toc-item" onclick="document.getElementById('s3').scrollIntoView({behavior:'smooth'})"><span class="toc-num">3</span><span class="toc-link">L'infaillibilité (ʿIṣma) des Prophètes</span></li>
+<li class="toc-part">II — Le Prophète Muḥammad ﷺ</li>
+<li class="toc-item" onclick="document.getElementById('s4').scrollIntoView({behavior:'smooth'})"><span class="toc-num">4</span><span class="toc-link">Le Sceau de la Prophétie</span></li>
+<li class="toc-item" onclick="document.getElementById('s5').scrollIntoView({behavior:'smooth'})"><span class="toc-num">5</span><span class="toc-link">Le Coran, miracle éternel</span></li>
+<li class="toc-item" onclick="document.getElementById('s6').scrollIntoView({behavior:'smooth'})"><span class="toc-num">6</span><span class="toc-link">La Sharīʿa et sa pérennité</span></li>
+<li class="toc-part">III — L'Imamat (Imāmah)</li>
+<li class="toc-item" onclick="document.getElementById('s7').scrollIntoView({behavior:'smooth'})"><span class="toc-num">7</span><span class="toc-link">Pourquoi l'Imamat est nécessaire</span></li>
+<li class="toc-item" onclick="document.getElementById('s8').scrollIntoView({behavior:'smooth'})"><span class="toc-num">8</span><span class="toc-link">Désignation divine et infaillibilité de l'Imam</span></li>
+<li class="toc-item" onclick="document.getElementById('s9').scrollIntoView({behavior:'smooth'})"><span class="toc-num">9</span><span class="toc-link">Les Douze Imams</span></li>
+<li class="toc-item" onclick="document.getElementById('s10').scrollIntoView({behavior:'smooth'})"><span class="toc-num">10</span><span class="toc-link">Ghadīr Khumm et l'origine du chiisme</span></li>
+<li class="toc-part">IV — L'Imam al-Mahdī et questions complémentaires</li>
+<li class="toc-item" onclick="document.getElementById('s11').scrollIntoView({behavior:'smooth'})"><span class="toc-num">11</span><span class="toc-link">L'Imam al-Mahdī et l'Occultation</span></li>
+<li class="toc-item" onclick="document.getElementById('s12').scrollIntoView({behavior:'smooth'})"><span class="toc-num">12</span><span class="toc-link">La Taqiyya et la croyance au Retour (Rajʿa)</span></li>
+</ul>
+</nav>
+
+<!-- ═══════ PARTIE I ═══════ -->
+<div class="part-header"><div class="part-label">Partie I</div><div class="part-title">La Prophétie (Nubuwwa)</div></div>
+
+<div class="section" id="s1">
+<div class="section-header"><span class="section-num">1</span><h2 class="section-title">Pourquoi Dieu envoie des Prophètes</h2><div class="section-line"></div></div>
+<p class="body-text">La Prophétie n'est pas un accident de l'histoire : elle est une <strong>nécessité rationnelle</strong>. L'intellect humain, malgré ses capacités remarquables, ne suffit pas à lui seul pour découvrir le chemin intégral vers la perfection. D'où venons-nous ? Pourquoi sommes-nous ici ? Où allons-nous ? Les réponses divergentes que les philosophies humaines apportent à ces questions fondamentales témoignent de l'incapacité de la raison seule à y répondre de façon définitive.</p>
+<div class="quran"><p class="quran-fr">« Ne connaît-Il pas ce qu'Il a créé, Lui le Subtil, le Parfaitement Informé ? »</p><p class="quran-ref">Sourate al-Mulk, 67:14</p></div>
+<p class="body-text">Puisque le Créateur connaît Sa création mieux qu'elle ne se connaît elle-même, Sa guidance est infiniment supérieure à toute guidance humaine. C'est pourquoi, par <strong>Miséricorde et par Grâce</strong> (<em>luṭf</em>), Dieu a suscité parmi les hommes des envoyés chargés de leur transmettre le Message divin, de purifier leurs âmes et de leur enseigner la Sagesse. Envoyer des guides est un acte inhérent à la perfection de Dieu — un Être parfait ne crée pas des êtres destinés à la perfection pour les abandonner sans boussole.</p>
+<div class="quran"><p class="quran-fr">« C'est Lui qui a envoyé parmi les illettrés un Messager issu d'eux-mêmes, pour leur réciter Ses versets, les purifier et leur enseigner le Livre et la Sagesse. »</p><p class="quran-ref">Sourate al-Jumuʿa, 62:2</p></div>
+</div>
+
+<div class="section" id="s2">
+<div class="section-header"><span class="section-num">2</span><h2 class="section-title">Les miracles et la reconnaissance des Prophètes</h2><div class="section-line"></div></div>
+<p class="body-text">Si Dieu envoie des Prophètes, Il doit nécessairement fournir aux hommes le moyen de les identifier. Ce moyen, c'est le <strong>miracle</strong> (<em>muʿjiza</em>) — un acte qui dépasse les capacités humaines et qu'aucun imposteur ne peut reproduire. Le miracle se distingue de la magie par sa nature même : il n'est pas le fruit d'un apprentissage technique, il est indisputé, et son auteur poursuit des fins spirituelles et non mondaines.</p>
+<p class="body-text">Il existe un lien logique entre le miracle et la véracité : si un menteur pouvait accomplir des miracles, Dieu — le Tout-Sage — serait complice de l'égarement des hommes, ce qui est incompatible avec Sa justice et Sa sagesse. Par ailleurs, chaque Prophète a reçu un miracle adapté à son époque : le bâton de Moïse face aux magiciens, les guérisons de Jésus face aux médecins, et le Coran face aux maîtres de la rhétorique arabe.</p>
+<p class="body-text">Trois voies permettent de reconnaître un Prophète. La <strong>prédiction explicite</strong> du Prophète précédent. Les <strong>signes concordants</strong> : la noblesse de sa vie, la qualité de son message, le caractère de ses premiers fidèles. Et enfin l'<strong>accomplissement de miracles</strong>, qui est la preuve la plus universelle.</p>
+</div>
+
+<div class="section" id="s3">
+<div class="section-header"><span class="section-num">3</span><h2 class="section-title">L'infaillibilité (ʿIṣma) des Prophètes</h2><div class="section-line"></div></div>
+<p class="body-text">L'<strong>infaillibilité</strong> (<em>ʿiṣma</em>) signifie que les Prophètes — et les Imams — sont protégés de tout péché, de toute erreur, et de toute défaillance dans la réception, la préservation et la transmission de la Révélation. Sans cette protection, la mission prophétique perdrait sa raison d'être : si un Prophète pouvait se tromper, ses fidèles se trouveraient face à un dilemme insoluble — le suivre dans l'erreur ou cesser de le suivre.</p>
+<p class="body-text">L'infaillibilité ne contredit pas le libre arbitre. Le Prophète infaillible <em>peut</em> techniquement commettre un péché, mais ne le fait jamais, car sa conscience aiguë des conséquences du mal et son amour absolu pour Dieu le prémunissent contre toute tentation. De même, l'infaillibilité opère <strong>avant</strong> la mission prophétique : un individu dont la vie passée fut entachée de péchés ne saurait inspirer confiance. C'est pourquoi Muhammad était connu comme <em>al-Amîn</em> (le Digne de confiance) bien avant la Révélation.</p>
+<p class="body-text">Les Prophètes doivent en outre posséder les plus hautes qualités morales et intellectuelles : courage, prudence, intelligence, véracité, noblesse de caractère. Aucun être humain ne peut leur être égal dans ces domaines.</p>
+</div>
+
+<div class="section-divider"><div class="sdiv-line"></div><div class="sdiv-gem"></div><div class="sdiv-line"></div></div>
+
+<!-- ═══════ PARTIE II ═══════ -->
+<div class="part-header"><div class="part-label">Partie II</div><div class="part-title">Le Prophète Muḥammad ﷺ</div></div>
+
+<div class="section" id="s4">
+<div class="section-header"><span class="section-num">4</span><h2 class="section-title">Le Sceau de la Prophétie</h2><div class="section-line"></div></div>
+<p class="body-text">Muhammad ﷺ est le <strong>Sceau des Prophètes</strong> (<em>khâtam al-nabiyyîn</em>) : après lui, aucun autre prophète ne sera envoyé, et la loi qu'il a établie prévaudra jusqu'au Jour dernier. Sa mission est <strong>universelle</strong> — elle ne s'adresse pas à un peuple particulier mais à l'humanité entière.</p>
+<div class="quran"><p class="quran-fr">« Nous ne t'avons envoyé qu'en miséricorde pour les mondes. »</p><p class="quran-ref">Sourate al-Anbiyâ', 21:107</p></div>
+<p class="body-text">Plusieurs éléments confirment la véracité de sa mission. Sa vie irréprochable avant la Révélation : les Quraysh le surnommaient <em>al-Amîn</em> et lui confiaient leurs biens. Son émergence au-dessus d'un environnement dominé par l'idolâtrie, sans jamais y succomber. Le contenu révolutionnaire de son message : appel au monothéisme pur, dignité des femmes, interdiction de l'usure, justice sociale. Le caractère de ses proches compagnons : ʿAlī ibn Abî Ṭâlib, Salmân al-Fârisî, Abû Dharr al-Ghifârî — des figures d'une spiritualité éminente. Et en vingt-trois ans, la transformation d'une péninsule fragmentée en une civilisation d'une envergure sans précédent.</p>
+</div>
+
+<div class="section" id="s5">
+<div class="section-header"><span class="section-num">5</span><h2 class="section-title">Le Coran, miracle éternel</h2><div class="section-line"></div></div>
+<p class="body-text">Chaque prophète a reçu un miracle de nature temporelle — le bâton de Moïse, les guérisons de Jésus. Le miracle de Muhammad est d'une nature fondamentalement différente : c'est un <strong>texte</strong>, le Coran, un miracle qui traverse les siècles. La raison est profonde : la dernière religion a besoin d'un miracle permanent, accessible à toute époque et tout lieu.</p>
+<p class="body-text">Le caractère miraculeux du Coran se manifeste à plusieurs niveaux. Son auteur était un homme sans instruction formelle (<em>ummî</em>). Il fut révélé sur 23 ans, dans des contextes radicalement différents — guerre, paix, persécution, victoire — et pourtant il maintient du début à la fin une harmonie stylistique parfaite. Il contient des informations sur la nature et l'univers que les contemporains du Prophète ne pouvaient connaître. Le Coran lança un défi ouvert : produire dix sourates semblables, puis une seule — et quatorze siècles plus tard, personne n'a relevé ce défi.</p>
+<div class="quran"><p class="quran-fr">« Le faux ne l'atteint ni par devant ni par derrière. C'est une révélation émanant d'un Sage, Digne de louange. »</p><p class="quran-ref">Sourate Fuṣṣilat, 41:42</p></div>
+</div>
+
+<div class="section" id="s6">
+<div class="section-header"><span class="section-num">6</span><h2 class="section-title">La Sharīʿa et sa pérennité</h2><div class="section-line"></div></div>
+<p class="body-text">L'Islam est la dernière et la plus complète des religions révélées. Sa législation (<em>sharîʿa</em>) est conçue pour répondre aux besoins de l'humanité à travers les époques. Le secret de sa pérennité réside dans l'articulation entre des <strong>principes permanents</strong> (les fondements de la foi, les règles éthiques immuables) et un <strong>mécanisme d'adaptation vivant</strong> — l'<em>ijtihâd</em> — par lequel les savants qualifiés extraient des règles juridiques adaptées aux réalités nouvelles sans trahir les fondements.</p>
+<p class="body-text">Croire au Prophète Muhammad implique de croire à tous les Prophètes qui l'ont précédé — Adam, Noé, Abraham, Moïse, Jésus et tous ceux mentionnés dans le Coran. Renier l'un d'entre eux, c'est renier celui qui nous a informé de leur véracité.</p>
+</div>
+
+<div class="section-divider"><div class="sdiv-line"></div><div class="sdiv-gem"></div><div class="sdiv-line"></div></div>
+
+<!-- ═══════ PARTIE III ═══════ -->
+<div class="part-header"><div class="part-label">Partie III</div><div class="part-title">L'Imamat (Imāmah)</div></div>
+
+<div class="section" id="s7">
+<div class="section-header"><span class="section-num">7</span><h2 class="section-title">Pourquoi l'Imamat est nécessaire</h2><div class="section-line"></div></div>
+<p class="body-text">L'Imamat est la <strong>continuation de la Prophétie</strong>. Avec le départ du Prophète, la Révélation coranique prit fin — mais les responsabilités qu'il assumait (expliquer le Coran, prévenir les déviations doctrinales, enseigner la Sharîʿa, établir la justice) ne prirent pas fin. Un grand réformateur qui construit un édifice ne le laisse pas sans gardien. La même logique qui démontre la nécessité des Prophètes s'applique à la nécessité d'Imams qui leur succèdent.</p>
+<div class="quran"><p class="quran-fr">« À chaque peuple, un Guide est donné. »</p><p class="quran-ref">Sourate ar-Raʿd, 13:7</p></div>
+<p class="body-text">L'Imamat ne peut résulter d'une élection ou d'un choix populaire. Comme la Prophétie, il est une <strong>désignation divine</strong> (<em>naṣṣ</em>) communiquée par le Prophète ou par l'Imam qui précède. Le Prophète a dit : « Celui qui meurt sans connaître l'Imam de son époque est mort d'une mort de l'Ignorance (<em>jâhiliyya</em>). »</p>
+</div>
+
+<div class="section" id="s8">
+<div class="section-header"><span class="section-num">8</span><h2 class="section-title">Désignation divine et infaillibilité de l'Imam</h2><div class="section-line"></div></div>
+<p class="body-text">L'Imam doit être <strong>infaillible</strong> au même titre que le Prophète — protégé de tout péché et de toute erreur, depuis sa naissance jusqu'à sa mort. Les responsabilités qui lui incombent — commenter le Coran, clarifier les lois religieuses, répondre aux questions théologiques, prévenir toute forme de déviation — exigent une connaissance totale et inerrante. Une personne ordinaire chargée de telles fonctions ne pourrait être à l'abri de l'erreur.</p>
+<div class="quran"><p class="quran-fr">« Dieu veut seulement éloigner de vous la souillure, ô Gens de la Maison, et vous purifier d'une purification complète. »</p><p class="quran-ref">Sourate al-Aḥzâb, 33:33</p></div>
+<p class="body-text">L'Imam tire son savoir du Prophète ou de l'Imam qui le précède. Il comprend chaque vérité par une <strong>Inspiration Divine</strong> et grâce à une force intérieure dont Dieu l'a doté. L'histoire témoigne que les Saints Imams, dès leur plus jeune âge, n'ont reçu aucune instruction formelle d'un maître humain — et pourtant personne ne put atteindre leur niveau de connaissance. Obéir aux Imams, c'est obéir à Dieu ; les aimer, c'est aimer Dieu.</p>
+<div class="hadith"><p class="hadith-text">« Je vous laisse ce par quoi vous ne vous égarerez jamais tant que vous vous y accrocherez : les Deux Poids — le Livre de Dieu et mes Ahl al-Bayt. Ces deux ne se sépareront jamais l'un de l'autre jusqu'à ce qu'ils me rencontrent au Bassin (al-Kawthar). »</p><p class="hadith-source">Hadith al-Thaqalayn — rapporté par les sources chiites et sunnites</p></div>
+</div>
+
+<div class="section" id="s9">
+<div class="section-header"><span class="section-num">9</span><h2 class="section-title">Les Douze Imams</h2><div class="section-line"></div></div>
+<p class="body-text">Les successeurs légitimes du Prophète sont au nombre de <strong>douze</strong>. Le Prophète les a tous désignés par leurs noms, et chacun d'eux a ensuite désigné son successeur :</p>
+
+<table class="imam-table">
+<thead><tr><th>N°</th><th>Imam</th><th>Titre</th><th>Période (H.)</th></tr></thead>
+<tbody>
+<tr><td class="imam-num">1</td><td>ʿAlī ibn Abī Ṭālib</td><td>Amīr al-Muʾminīn</td><td>23 av. H. – 40</td></tr>
+<tr><td class="imam-num">2</td><td>al-Ḥasan ibn ʿAlī</td><td>al-Mujtabā</td><td>2 – 50</td></tr>
+<tr><td class="imam-num">3</td><td>al-Ḥusayn ibn ʿAlī</td><td>Sayyid al-Shuhadāʾ</td><td>3 – 61</td></tr>
+<tr><td class="imam-num">4</td><td>ʿAlī ibn al-Ḥusayn</td><td>Zayn al-ʿĀbidīn</td><td>38 – 94</td></tr>
+<tr><td class="imam-num">5</td><td>Muḥammad ibn ʿAlī</td><td>al-Bāqir</td><td>57 – 114</td></tr>
+<tr><td class="imam-num">6</td><td>Jaʿfar ibn Muḥammad</td><td>al-Ṣādiq</td><td>83 – 148</td></tr>
+<tr><td class="imam-num">7</td><td>Mūsā ibn Jaʿfar</td><td>al-Kāẓim</td><td>128 – 183</td></tr>
+<tr><td class="imam-num">8</td><td>ʿAlī ibn Mūsā</td><td>al-Riḍā</td><td>148 – 203</td></tr>
+<tr><td class="imam-num">9</td><td>Muḥammad ibn ʿAlī</td><td>al-Jawād / al-Taqī</td><td>195 – 220</td></tr>
+<tr><td class="imam-num">10</td><td>ʿAlī ibn Muḥammad</td><td>al-Hādī / al-Naqī</td><td>212 – 254</td></tr>
+<tr><td class="imam-num">11</td><td>al-Ḥasan ibn ʿAlī</td><td>al-ʿAskarī</td><td>232 – 260</td></tr>
+<tr><td class="imam-num">12</td><td>Muḥammad ibn al-Ḥasan</td><td>al-Mahdī / al-Ḥujja</td><td>255 – vivant</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="section" id="s10">
+<div class="section-header"><span class="section-num">10</span><h2 class="section-title">Ghadīr Khumm et l'origine du chiisme</h2><div class="section-line"></div></div>
+<p class="body-text">Au retour du pèlerinage d'adieu, le Prophète fit arrêter la caravane à la mare de <strong>Ghadīr Khumm</strong>, entre La Mecque et Médine, et informa ses compagnons qu'il avait reçu un ordre divin si impératif que s'il ne l'exécutait pas, il n'aurait pas accompli sa mission :</p>
+<div class="quran"><p class="quran-fr">« Ô Messager, transmets ce qui t'a été révélé de la part de ton Seigneur. Si tu ne le fais pas, tu n'auras pas transmis Son message. »</p><p class="quran-ref">Sourate al-Mā'ida, 5:67</p></div>
+<p class="body-text">Devant des milliers de pèlerins, le Prophète prit la main de ʿAlī, la leva, et proclama : <em>« Man kuntu mawlâhu, fa-hâdhâ ʿAliyyun mawlâhu »</em> — « Pour quiconque m'a comme maître, ʿAlī est aussi son maître. » Ce hadith est rapporté par plus de 110 compagnons et transmis dans des dizaines de recueils sunnites et chiites ; il atteint le degré du <em>tawâtur</em> (transmission massive). Ce jour même, Dieu révéla : « Aujourd'hui, J'ai parachevé pour vous votre religion » (5:3).</p>
+<p class="body-text">Le terme « Shīʿa » signifie « partisan ». Il désigne ceux qui, dès le vivant du Prophète, formèrent un cercle autour de ʿAlī, convaincus que la direction de la communauté après le Prophète lui revenait par désignation divine. Le chiisme n'est pas né de circonstances politiques postérieures : c'est le Prophète lui-même qui en a planté la graine.</p>
+</div>
+
+<div class="section-divider"><div class="sdiv-line"></div><div class="sdiv-gem"></div><div class="sdiv-line"></div></div>
+
+<!-- ═══════ PARTIE IV ═══════ -->
+<div class="part-header"><div class="part-label">Partie IV</div><div class="part-title">L'Imam al-Mahdī et questions complémentaires</div></div>
+
+<div class="section" id="s11">
+<div class="section-header"><span class="section-num">11</span><h2 class="section-title">L'Imam al-Mahdī et l'Occultation</h2><div class="section-line"></div></div>
+<p class="body-text">La venue d'un homme de la descendance du Prophète, destiné à établir la justice universelle dans un monde dominé par l'oppression, est un axiome partagé par l'ensemble des musulmans. Les hadiths sur ce sujet atteignent le plus haut degré d'authenticité.</p>
+<div class="hadith"><p class="hadith-text">« S'il ne restait qu'un seul jour dans la vie du monde, Dieu prolongerait ce jour jusqu'à ce qu'un homme surgisse de mes descendants, qui remplira le monde de justice et d'équité, tout comme il avait été rempli d'injustice. »</p><p class="hadith-source">Musnad d'Ibn Ḥanbal</p></div>
+<p class="body-text">Les chiites imamites identifient ce réformateur comme le <strong>douzième Imam</strong>, Muhammad ibn al-Ḥasan al-ʿAskarī, né en l'an 255 de l'Hégire à Samarra. Il est vivant et en état d'<strong>occultation</strong> (<em>ghayba</em>) depuis 874 EC. L'occultation temporaire d'un guide n'est pas sans précédent : Moïse se retira quarante jours au mont Sinaï ; Jonas disparut dans le ventre de la baleine ; Jésus fut élevé vers Dieu. La raison principale de cette occultation, selon l'Imam al-Bāqir, est de le protéger de l'élimination physique par ses ennemis.</p>
+<p class="body-text">Bien que caché, l'Imam demeure une source de bénédiction — « comme le soleil derrière un nuage, qui dispense lumière et chaleur même lorsqu'il n'est pas visible ». Attendre sa réapparition ne signifie pas l'inaction : les croyants ont le devoir de continuer à ordonner le bien, interdire le mal, et approfondir leur connaissance.</p>
+</div>
+
+<div class="section" id="s12">
+<div class="section-header"><span class="section-num">12</span><h2 class="section-title">La Taqiyya et la croyance au Retour (Rajʿa)</h2><div class="section-line"></div></div>
+<p class="body-text"><strong>La Taqiyya</strong> (<em>dissimulation de protection</em>) est le droit pour un croyant, lorsqu'il se trouve en danger de mort à cause de sa foi, de dissimuler ses convictions pour préserver sa vie. Ce principe est commandé par la raison naturelle et confirmé par le Coran : « Celui qui renie Dieu après avoir cru — non pas celui qui le fait sous la contrainte alors que son cœur reste plein de foi — subira la Colère de Dieu » (16:106).</p>
+<p class="body-text">La Taqiyya n'est cependant pas toujours obligatoire. Elle est <strong>interdite</strong> lorsque la proclamation de la Vérité sert les intérêts de l'Islam, lors de tout appel au Jihad, ou lorsque le silence risque de propager le faux et de menacer la survie de la religion.</p>
+<p class="body-text"><strong>Le Retour</strong> (<em>rajʿa</em>) est la croyance selon laquelle Dieu ressuscitera, pour un temps limité après la réapparition de l'Imam al-Mahdī, certains morts — les uns pour être honorés, les autres pour rendre compte. Cette croyance ne doit pas être confondue avec la transmigration des âmes (<em>tanâsukh</em>) : dans la <em>rajʿa</em>, l'âme retourne à son propre corps originel ; dans la transmigration, elle migre vers un corps différent. Le Retour est confirmé par des hadiths des Saints Imams et trouve son fondement dans le verset : « Dieu efface ce qu'Il veut et confirme ce qu'Il veut ; auprès de Lui se trouve la Mère du Livre » (13:39).</p>
+</div>
+
+<div class="sources"><div class="sources-title">Sources</div>
+<p class="source-item"><em>ʿAqâ'id al-Imâmiyya</em>, de Muḥammad Riḍâ al-Muẓaffar — exposé des croyances imamites.</p>
+<p class="source-item"><em>Doctrine of Shi'ah Islam</em>, de l'Ayatollah Jaʿfar Subḥânî.</p>
+<p class="source-item"><em>Kitâb al-Kâfî</em>, Uṣûl, d'al-Kulaynî — Kitâb al-Ḥujja.</p>
+<p class="source-item"><em>Nahj al-Balâgha</em>, sermons et lettres de l'Imam ʿAlī (a).</p>
+<p class="source-item"><em>Al-Irshâd</em>, de Sheikh al-Mufîd — biographie des Imams.</p>
+</div>
+
+</div>
+<!-- Theme listener -->
+<script>
+window.addEventListener('message', function(e) {
+  if (e.data && e.data.type === 'theme') {
+    if (e.data.theme === 'light') {
+      document.documentElement.setAttribute('data-theme', 'light');
+    } else {
+      document.documentElement.removeAttribute('data-theme');
+    }
+  }
+});
+try {
+  if (localStorage.getItem('theme') === 'light') {
+    document.documentElement.setAttribute('data-theme', 'light');
+  }
+} catch(e) {}
+</script>
+<!-- Scroll-to-top -->
+<style>
+.scroll-top-btn{position:fixed;bottom:24px;right:24px;width:44px;height:44px;background:rgba(19,29,53,0.85);border:1px solid rgba(201,168,76,0.3);border-radius:50%;color:#c9a84c;font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:all .3s ease;z-index:999;backdrop-filter:blur(10px);box-shadow:0 4px 16px rgba(0,0,0,0.3)}
+.scroll-top-btn.visible{opacity:1;pointer-events:all}
+.scroll-top-btn:hover{background:rgba(201,168,76,0.2);border-color:#c9a84c;transform:translateY(-2px)}
+.scroll-top-btn svg{width:20px;height:20px}
+[data-theme="light"] .scroll-top-btn{background:rgba(225,218,206,0.9)!important;border-color:rgba(122,92,36,0.25)!important;color:#7a5c24!important}
+[data-theme="light"] .scroll-top-btn:hover{background:rgba(235,228,216,0.95)!important;border-color:#7a5c24!important}
+</style>
+<button class="scroll-top-btn" id="scrollTopBtn" aria-label="Retour en haut">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
+</button>
+<script>
+(function(){
+  var btn=document.getElementById('scrollTopBtn');
+  if(!btn) return;
+  function check(){
+    var st=window.pageYOffset||document.documentElement.scrollTop;
+    btn.classList.toggle('visible',st>250);
+  }
+  window.addEventListener('scroll',check,{passive:true});
+  btn.addEventListener('click',function(){
+    window.scrollTo({top:0,behavior:'smooth'});
+  });
+  check();
+})();
+</script>
+</body>
+</html>

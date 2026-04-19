@@ -362,6 +362,20 @@ body,body *{transition:background-color 0.3s,color 0.3s,border-color 0.3s}
         <div class="card-desc">Les cinq piliers doctrinaux du chiisme : Tawh&#238;d, &#703;Adl, Nubuwwah, Im&#226;mah et Ma&#703;&#226;d.</div>
         <div class="card-footer"><span class="card-meta">5 piliers &middot; Th&#233;ologie rationnelle</span><span class="card-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg></span></div>
       </div>
+      <div class="card" id="card-tawheed">
+        <div class="card-icon"><svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="18" cy="18" r="14" stroke="#c9a84c" stroke-width="1.2" fill="none"/><circle cx="18" cy="18" r="7" stroke="#c9a84c" stroke-width="0.8" fill="rgba(201,168,76,0.1)"/><circle cx="18" cy="18" r="2.5" fill="#c9a84c" fill-opacity="0.6"/><line x1="18" y1="4" x2="18" y2="32" stroke="#c9a84c" stroke-width="0.5" opacity="0.3"/><line x1="4" y1="18" x2="32" y2="18" stroke="#c9a84c" stroke-width="0.5" opacity="0.3"/></svg></div>
+        <div class="card-tag">Th&#233;ologie</div>
+        <div class="card-title">Al-Tawḥīd — L'Unicit&#233; Divine</div>
+        <div class="card-desc">L'Essence de Dieu, Ses Attributs, Sa Justice, la pr&#233;destination et le libre arbitre dans la tradition de l'Ahl al-Bayt.</div>
+        <div class="card-footer"><span class="card-meta">Tawḥīd &middot; &#703;Adl &middot; Qaḍā&#703;</span><span class="card-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg></span></div>
+      </div>
+      <div class="card" id="card-nubuwwa">
+        <div class="card-icon"><svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M18 4 L22 14 L18 12 L14 14 Z" fill="#c9a84c" fill-opacity="0.3" stroke="#c9a84c" stroke-width="1"/><line x1="18" y1="14" x2="18" y2="32" stroke="#c9a84c" stroke-width="1.2"/><circle cx="12" cy="26" r="3" stroke="#c9a84c" stroke-width="0.8" fill="rgba(201,168,76,0.08)"/><circle cx="24" cy="26" r="3" stroke="#c9a84c" stroke-width="0.8" fill="rgba(201,168,76,0.08)"/><circle cx="18" cy="20" r="3" stroke="#c9a84c" stroke-width="0.8" fill="rgba(201,168,76,0.15)"/></svg></div>
+        <div class="card-tag">Th&#233;ologie</div>
+        <div class="card-title">La Proph&#233;tie et l'Imamat (Al-Nubuwwa wa-l-Im&#257;mah)</div>
+        <div class="card-desc">La n&#233;cessit&#233; de la Proph&#233;tie, l'infaillibilit&#233;, le Sceau des Proph&#232;tes, l'Imamat, les Douze Imams et l'Imam al-Mahdī.</div>
+        <div class="card-footer"><span class="card-meta">Nubuwwa &middot; Imāmah &middot; Mahdī</span><span class="card-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg></span></div>
+      </div>
     </div>
   </div>
 
@@ -442,6 +456,8 @@ body,body *{transition:background-color 0.3s,color 0.3s,border-color 0.3s}
 <div class="iframe-wrap" id="frame10"><div class="loader" id="loader10"><div class="loader-dots"><div class="loader-dot"></div><div class="loader-dot"></div><div class="loader-dot"></div></div><div class="loader-text">Chargement&#8230;</div></div><iframe id="iframe10"></iframe></div>
 <div class="iframe-wrap" id="frame11"><div class="loader" id="loader11"><div class="loader-dots"><div class="loader-dot"></div><div class="loader-dot"></div><div class="loader-dot"></div></div><div class="loader-text">Chargement&#8230;</div></div><iframe id="iframe11"></iframe></div>
 <div class="iframe-wrap" id="frame12"><div class="loader" id="loader12"><div class="loader-dots"><div class="loader-dot"></div><div class="loader-dot"></div><div class="loader-dot"></div></div><div class="loader-text">Chargement&#8230;</div></div><iframe id="iframe12"></iframe></div>
+<div class="iframe-wrap" id="frame13"><div class="loader" id="loader13"><div class="loader-dots"><div class="loader-dot"></div><div class="loader-dot"></div><div class="loader-dot"></div></div><div class="loader-text">Chargement&#8230;</div></div><iframe id="iframe13"></iframe></div>
+<div class="iframe-wrap" id="frame14"><div class="loader" id="loader14"><div class="loader-dots"><div class="loader-dot"></div><div class="loader-dot"></div><div class="loader-dot"></div></div><div class="loader-text">Chargement&#8230;</div></div><iframe id="iframe14"></iframe></div>
 
 <script>
 (function(){
@@ -458,7 +474,9 @@ body,body *{transition:background-color 0.3s,color 0.3s,border-color 0.3s}
     "usul-al-din.html",
     "hadith-kisa.html",
     "verset-apprentissage.html",
-    "douze-imams.html"
+    "douze-imams.html",
+    "tawheed.html",
+    "nubuwwa.html"
   ];
   var N = MODULES.length;
   var loaded = new Array(N).fill(false);
@@ -580,7 +598,7 @@ body,body *{transition:background-color 0.3s,color 0.3s,border-color 0.3s}
   });
 
   /* ── Cartes sur la page d'accueil → ouvrent le module directement ── */
-  var cardModules = {0:0, 1:1, 2:2, 3:3, 4:4, 5:5, 6:6, 7:7, 8:8, 9:9, 10:10, 11:11, 12:12};
+  var cardModules = {0:0, 1:1, 2:2, 3:3, 4:4, 5:5, 6:6, 7:7, 8:8, 9:9, 10:10, 11:11, 12:12, 'tawheed':13, 'nubuwwa':14};
   Object.keys(cardModules).forEach(function(cardId){
     var el = document.getElementById('card-' + cardId);
     if (el) el.addEventListener('click', function(){ openModule(cardModules[cardId]); });
