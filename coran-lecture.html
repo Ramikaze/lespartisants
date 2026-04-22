@@ -89,7 +89,8 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
 
 /* ── INTERACTIVE WORDS ── */
 .verse-ar .w{display:inline;cursor:pointer;padding:2px 4px;border-radius:4px;transition:background .15s,color .15s;position:relative}
-.verse-ar .w:hover,.verse-ar .w.active{background:rgba(201,168,76,0.18);color:#fff}
+.verse-ar .w:hover{background:rgba(201,168,76,0.08)}
+.verse-ar .w.active{background:rgba(201,168,76,0.18);color:#fff}
 .verse-ar .w.playing{background:rgba(201,168,76,0.28);color:#fff;text-shadow:0 0 16px rgba(232,201,106,0.8),0 0 4px rgba(232,201,106,0.4);box-shadow:0 0 0 2px rgba(201,168,76,0.45),0 0 14px rgba(201,168,76,0.2);border-radius:5px;transform:scale(1.06);display:inline-block;position:relative;z-index:2;transition:transform .12s,box-shadow .12s}
 
 /* ── WORD TOOLTIP ── */
@@ -121,7 +122,8 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
 [data-theme="light"] .verse-audio .va-fill{background:linear-gradient(90deg,#7a5c24,#a07830)!important}
 [data-theme="light"] .verse-audio .va-time{color:rgba(122,92,36,0.5)!important}
 /* ── Light: Interactive words ── */
-[data-theme="light"] .verse-ar .w:hover,[data-theme="light"] .verse-ar .w.active{background:rgba(122,92,36,0.12)!important;color:#2c2114!important}
+[data-theme="light"] .verse-ar .w:hover{background:rgba(122,92,36,0.06)!important}
+[data-theme="light"] .verse-ar .w.active{background:rgba(122,92,36,0.12)!important;color:#2c2114!important}
 [data-theme="light"] .verse-ar .w.playing{background:rgba(122,92,36,0.2)!important;color:#2c2114!important;text-shadow:none!important;box-shadow:0 0 0 2px rgba(122,92,36,0.35)!important}
 /* ── Light: Tooltip ── */
 [data-theme="light"] #wtooltip{background:rgba(235,228,216,0.97)!important;border-color:rgba(122,92,36,0.3)!important;box-shadow:0 8px 32px rgba(60,45,20,0.15)!important}
@@ -583,17 +585,17 @@ function fmtTime(s) {
 }
 
 /* ── WORD-BY-WORD TOOLTIP SYSTEM ── */
+/* Comportement : clic sur un mot = verrouille la bulle
+   Re-clic sur le même mot = ferme la bulle
+   Clic sur un autre mot = change la bulle
+   Clic ailleurs = ferme la bulle */
 (function(){
   var tt = document.getElementById('wtooltip');
   var ttAr = tt.querySelector('.wtt-arabic');
   var ttTrans = tt.querySelector('.wtt-trans');
   var ttEn = tt.querySelector('.wtt-en');
   var ttAudioBtn = tt.querySelector('.wtt-audio');
-  var wordCache = {};
   var wordAudio = null;
-  var hoverTimeout = null;
-  var isOverTooltip = false;
-  var isOverWord = false;
   var currentWordEl = null;
 
   function showTooltip(el) {
@@ -602,6 +604,10 @@ function fmtTime(s) {
     var wordIdx = parseInt(el.getAttribute('data-i'));
     var wordText = el.textContent;
 
+    /* Désactiver l'ancien mot */
+    if (currentWordEl && currentWordEl !== el) {
+      currentWordEl.classList.remove('active');
+    }
     currentWordEl = el;
     el.classList.add('active');
 
@@ -626,7 +632,7 @@ function fmtTime(s) {
     ttEn.textContent = tradText;
     ttAudioBtn.setAttribute('data-src', audioUrl);
     ttAudioBtn.style.display = 'flex';
-    
+
     tt.classList.add('show');
     positionTooltip(el);
   }
@@ -644,7 +650,6 @@ function fmtTime(s) {
     var th = tt.offsetHeight;
     var x = rect.left + rect.width / 2 - tw / 2;
     var y = rect.top - th - 10;
-    /* Keep within viewport */
     if (x < 8) x = 8;
     if (x + tw > window.innerWidth - 8) x = window.innerWidth - tw - 8;
     if (y < 8) { y = rect.bottom + 10; }
@@ -652,33 +657,22 @@ function fmtTime(s) {
     tt.style.top = y + 'px';
   }
 
-  /* Event delegation on document for .verse-ar .w elements */
-  document.addEventListener('mouseenter', function(e) {
+  /* Clic sur un mot : verrouille / déverrouille / change */
+  document.addEventListener('click', function(e) {
     var w = e.target.closest && e.target.closest('.verse-ar .w');
     if (w) {
-      isOverWord = true;
-      clearTimeout(hoverTimeout);
-      showTooltip(w);
+      e.stopPropagation();
+      if (currentWordEl === w && tt.classList.contains('show')) {
+        hideTooltip();
+      } else {
+        showTooltip(w);
+      }
+      return;
     }
-  }, true);
-
-  document.addEventListener('mouseleave', function(e) {
-    var w = e.target.closest && e.target.closest('.verse-ar .w');
-    if (w) {
-      isOverWord = false;
-      hoverTimeout = setTimeout(function(){
-        if (!isOverTooltip && !isOverWord) hideTooltip();
-      }, 200);
-    }
-  }, true);
-
-  /* Keep tooltip open when hovering over it */
-  tt.addEventListener('mouseenter', function(){ isOverTooltip = true; clearTimeout(hoverTimeout); });
-  tt.addEventListener('mouseleave', function(){
-    isOverTooltip = false;
-    hoverTimeout = setTimeout(function(){
-      if (!isOverWord) hideTooltip();
-    }, 200);
+    /* Clic dans la bulle : ne pas fermer */
+    if (e.target.closest('#wtooltip')) return;
+    /* Clic ailleurs : fermer */
+    hideTooltip();
   });
 
   /* Word audio playback */
@@ -701,7 +695,7 @@ function fmtTime(s) {
     });
   });
 
-  /* Touch support for mobile */
+  /* Touch support for mobile (inchangé) */
   document.addEventListener('touchstart', function(e) {
     var w = e.target.closest && e.target.closest('.verse-ar .w');
     if (w) {
