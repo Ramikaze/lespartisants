@@ -99,30 +99,53 @@ body::before{content:'';position:fixed;inset:0;
 .verse-translation{margin-top:14px;padding:14px 16px;background:rgba(201,168,76,0.06);border-left:3px solid rgba(201,168,76,0.35);border-radius:0 10px 10px 0;font-size:var(--vt-fr-size,1rem);line-height:1.75;color:#c9c0a8;font-style:italic;}
 @keyframes pulse{from{opacity:.7}to{opacity:1}}
 
-/* ── AUDIO INLINE (sous chaque verset) ── */
-.ab-inline{margin-top:14px;padding-top:12px;border-top:1px solid var(--border)}
-.ab-rows{display:flex;flex-direction:column;gap:7px}
-.ab-row{display:flex;align-items:center;gap:8px}
-.ab-vtag{font-family:'Cinzel',serif;font-size:.65rem;font-weight:700;color:var(--gold);min-width:30px;text-align:right;flex-shrink:0}
-/* skip / play buttons */
+/* ── AUDIO INLINE (sous chaque verset) — compact ── */
+.ab-inline{margin-top:10px;padding-top:8px;border-top:1px solid var(--border)}
+.ab-row{display:flex;align-items:center;gap:6px}
+/* skip / play / repeat buttons — smaller */
 .ab-btn{
-  width:30px;height:30px;border-radius:50%;
+  width:24px;height:24px;border-radius:50%;
   background:var(--gold-dim);border:1px solid var(--border-a);
   color:var(--gold-l);cursor:pointer;
   display:flex;align-items:center;justify-content:center;
   transition:all .2s;flex-shrink:0;
 }
 .ab-btn:hover{background:rgba(201,168,76,0.3)}
-.ab-btn.active{background:rgba(201,168,76,0.25);box-shadow:0 0 12px rgba(201,168,76,0.25)}
-.ab-play{width:34px;height:34px}
+.ab-btn.active,.ab-btn.repeat-on{background:rgba(201,168,76,0.28);box-shadow:0 0 8px rgba(201,168,76,0.3);color:#fff}
+.ab-play{width:28px;height:28px}
 /* progress */
-.ab-prog{flex:1;height:3px;background:var(--surface2);border-radius:2px;cursor:pointer;min-width:0;position:relative}
-.ab-fill{height:100%;background:linear-gradient(to right,var(--gold),var(--gold-l));border-radius:2px;width:0%;pointer-events:none;transition:width .25s linear}
-.ab-time{font-size:.65rem;color:var(--text-muted);white-space:nowrap;flex-shrink:0;min-width:50px;text-align:right}
+.ab-prog{flex:1;height:2px;background:var(--surface2);border-radius:2px;cursor:pointer;min-width:0;position:relative}
+.ab-fill{height:100%;background:linear-gradient(to right,var(--gold),var(--gold-l));border-radius:2px;width:0%;pointer-events:none;transition:width .2s linear}
+.ab-time{font-size:.6rem;color:var(--text-muted);white-space:nowrap;flex-shrink:0;min-width:44px;text-align:right}
 
-/* SVG icons */
-.icon-skip-back{display:block}
-.icon-skip-fwd{display:block}
+/* ── GLOBAL SURAH PLAYER ── */
+#global-player{
+  position:sticky;top:0;z-index:100;
+  background:rgba(10,14,32,0.92);backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--border-a);
+  padding:8px 16px;
+  display:flex;align-items:center;gap:10px;
+}
+#gp-label{font-family:'Cinzel',serif;font-size:.65rem;font-weight:700;color:var(--gold);white-space:nowrap;min-width:60px}
+#gp-ar{font-family:'Scheherazade New',serif;font-size:1rem;color:var(--gold-l);direction:rtl;min-width:80px;text-align:right;flex-shrink:0}
+.gp-btn{
+  width:30px;height:30px;border-radius:50%;
+  background:var(--gold-dim);border:1px solid var(--border-a);
+  color:var(--gold-l);cursor:pointer;
+  display:flex;align-items:center;justify-content:center;
+  transition:all .2s;flex-shrink:0;
+}
+.gp-btn:hover{background:rgba(201,168,76,0.3)}
+.gp-btn.active{background:rgba(201,168,76,0.28);box-shadow:0 0 8px rgba(201,168,76,0.3)}
+#gp-play{width:36px;height:36px}
+#gp-prog{flex:1;height:3px;background:var(--surface2);border-radius:2px;cursor:pointer;min-width:0}
+#gp-fill{height:100%;background:linear-gradient(to right,var(--gold),var(--gold-l));border-radius:2px;width:0%;pointer-events:none;transition:width .2s linear}
+#gp-time{font-size:.62rem;color:var(--text-muted);white-space:nowrap;flex-shrink:0}
+[data-theme="light"] #global-player{background:rgba(232,224,210,0.95)!important;border-bottom-color:rgba(122,92,36,0.2)!important}
+[data-theme="light"] #gp-label,[data-theme="light"] #gp-ar{color:#7a5c24!important}
+[data-theme="light"] .gp-btn{background:rgba(122,92,36,0.08)!important;border-color:rgba(122,92,36,0.2)!important;color:#7a5c24!important}
+[data-theme="light"] #gp-prog{background:rgba(122,92,36,0.1)!important}
+[data-theme="light"] #gp-fill{background:linear-gradient(to right,#7a5c24,#a08040)!important}
 
 
 /* ── MAIN TABS ── */
@@ -282,7 +305,7 @@ body::before{content:'';position:fixed;inset:0;
 [data-theme="light"] .ab-inline{border-top-color:rgba(122,92,36,0.12)!important}
 [data-theme="light"] .ab-btn{background:rgba(122,92,36,0.08)!important;border-color:rgba(122,92,36,0.2)!important;color:#7a5c24!important}
 [data-theme="light"] .ab-btn:hover{background:rgba(122,92,36,0.15)!important}
-[data-theme="light"] .ab-btn.active{background:rgba(122,92,36,0.2)!important}
+[data-theme="light"] .ab-btn.active,[data-theme="light"] .ab-btn.repeat-on{background:rgba(122,92,36,0.2)!important}
 [data-theme="light"] .ab-prog{background:rgba(122,92,36,0.1)!important}
 [data-theme="light"] .ab-fill{background:linear-gradient(to right,#7a5c24,#a08040)!important}
 [data-theme="light"] .ab-time{color:#8a7c66!important}
@@ -330,6 +353,25 @@ body::before{content:'';position:fixed;inset:0;
 </head>
 <body>
 <div id="app">
+  <!-- GLOBAL SURAH PLAYER -->
+  <div id="global-player">
+    <span id="gp-label">Sourate</span>
+    <button class="gp-btn" id="gp-prev" title="Verset précédent" onclick="gpPrev()">
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
+    </button>
+    <button class="gp-btn" id="gp-play" onclick="gpToggle()">
+      <svg id="gp-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+    </button>
+    <button class="gp-btn" id="gp-next" title="Verset suivant" onclick="gpNext()">
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+    </button>
+    <button class="gp-btn" id="gp-repeat" title="Répéter" onclick="gpToggleRepeat()">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="17 1 21 5 17 9"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><polyline points="7 23 3 19 7 15"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/></svg>
+    </button>
+    <div id="gp-prog" onclick="gpSeek(event)"><div id="gp-fill"></div></div>
+    <span id="gp-time">0:00</span>
+    <span id="gp-ar"></span>
+  </div>
   <div class="main" id="main">
 
     <div class="header">
@@ -724,24 +766,45 @@ function tryWord(idx, urls, i, btn) {
 ════════════════════════════════════════════ */
 const AU = {}, TIMERS = {}, WORD_COUNTS = {255:50, 256:24, 257:23};
 let activeVerse = null;
+const REPEAT = {255:false,256:false,257:false};
+
+// Improved word timing: fraction of verse duration per word (cumulative breakpoints)
+// Based on typical recitation pacing — each value is when that word ENDS (0..1)
+const WORD_TIMING = {
+  255: [.014,.024,.036,.046,.056,.073,.096,.105,.124,.148,.157,.17,.18,.194,.2,.22,.242,.252,.273,.296,.31,.326,.348,.37,.382,.398,.42,.432,.45,.472,.49,.506,.52,.534,.55,.575,.592,.61,.625,.648,.672,.7,.73,.758,.775,.79,.81,.83,.852,.872,.9,.92,.95,.975,1],
+  256: [.04,.09,.13,.19,.26,.33,.41,.47,.55,.62,.68,.74,.79,.84,.875,.905,.93,.95,.96,.97,.98,.99,1],
+  257: [.04,.09,.15,.22,.30,.36,.43,.50,.57,.63,.68,.73,.77,.82,.86,.89,.92,.94,.96,.97,.98,.99,1]
+};
+
+function toggleRepeat(v) {
+  REPEAT[v] = !REPEAT[v];
+  var btn = document.getElementById('ab-rep-' + v);
+  if (btn) btn.classList.toggle('repeat-on', REPEAT[v]);
+}
 
 function buildAudioBar() {
-  // Audio players intégrés sous chaque verset
   [255, 256, 257].forEach(function(v) {
     var block = document.getElementById('vb-' + v);
     if (!block) return;
-    var existing = block.querySelector('.ab-inline');
-    if (existing) return;
+    if (block.querySelector('.ab-inline')) return;
     var wrap = document.createElement('div');
     wrap.className = 'ab-inline';
     var row = document.createElement('div');
     row.className = 'ab-row';
     row.id = 'ab-' + v;
-    // Skip back
     row.innerHTML =
-      '<button class="ab-btn" onclick="skip(' + v + ',-5)"><svg class="icon-skip-back" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polygon points="19 20 9 12 19 4"/><line x1="5" y1="4" x2="5" y2="20"/></svg></button>' +
-      '<button class="ab-btn ab-play" id="ab-play-' + v + '" onclick="togglePlay(' + v + ')"><svg id="ab-icon-' + v + '" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg></button>' +
-      '<button class="ab-btn" onclick="skip(' + v + ',5)"><svg class="icon-skip-fwd" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polygon points="5 4 15 12 5 20"/><line x1="19" y1="4" x2="19" y2="20"/></svg></button>' +
+      '<button class="ab-btn" title="Reculer 5s" onclick="skip(' + v + ',-5)">' +
+        '<svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="19 20 9 12 19 4"/><line x1="5" y1="4" x2="5" y2="20"/></svg>' +
+      '</button>' +
+      '<button class="ab-btn ab-play" id="ab-play-' + v + '" onclick="togglePlay(' + v + ')">' +
+        '<svg id="ab-icon-' + v + '" width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>' +
+      '</button>' +
+      '<button class="ab-btn" title="Avancer 5s" onclick="skip(' + v + ',5)">' +
+        '<svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="5 4 15 12 5 20"/><line x1="19" y1="4" x2="19" y2="20"/></svg>' +
+      '</button>' +
+      '<button class="ab-btn" id="ab-rep-' + v + '" title="Répéter" onclick="toggleRepeat(' + v + ')">' +
+        '<svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="17 1 21 5 17 9"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><polyline points="7 23 3 19 7 15"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/></svg>' +
+      '</button>' +
       '<div class="ab-prog" onclick="seek(' + v + ',event)"><div class="ab-fill" id="ab-fill-' + v + '"></div></div>' +
       '<div class="ab-time" id="ab-time-' + v + '">0:00</div>';
     wrap.appendChild(row);
@@ -756,7 +819,15 @@ function getOrCreateAudio(v) {
   au.preload = 'none';
   AU[v] = au;
   au.addEventListener('timeupdate', () => updateProgress(v));
-  au.addEventListener('ended', () => { stopPlayback(v); });
+  au.addEventListener('ended', () => {
+    if (REPEAT[v]) {
+      au.currentTime = 0;
+      _lastHighlight = -1;
+      au.play().catch(()=>{});
+    } else {
+      stopPlayback(v);
+    }
+  });
   au.addEventListener('error', () => {
     // Try next URL
     const srcs = VERSE_AUDIO[v];
@@ -837,16 +908,29 @@ function startTicker() {
       if (fill) fill.style.width = pct + '%';
       const timeEl = document.getElementById(`ab-time-${v}`);
       if (timeEl) timeEl.textContent = fmtTime(au.currentTime) + ' / ' + fmtTime(au.duration);
-      // Word highlight
+      // Word highlight — use improved timing map if available
       const words = W.filter(w => w.v === v);
-      const widx = Math.min(Math.floor((au.currentTime / au.duration) * words.length), words.length - 1);
+      const prog = au.currentTime / au.duration;
+      let widx = words.length - 1;
+      const timing = WORD_TIMING[v];
+      if (timing) {
+        widx = timing.findIndex(t => prog <= t);
+        if (widx < 0) widx = words.length - 1;
+        widx = Math.min(widx, words.length - 1);
+      } else {
+        widx = Math.min(Math.floor(prog * words.length), words.length - 1);
+      }
       const globalIdx = W.indexOf(words[widx]);
       if (globalIdx !== _lastHighlight) {
         highlightWord(globalIdx);
         _lastHighlight = globalIdx;
-        // Scroll word into view smoothly
         const el = document.querySelector(`.w[data-idx="${globalIdx}"]`);
         if (el) el.scrollIntoView({behavior:'smooth', block:'nearest', inline:'nearest'});
+      }
+      // Update global player if it is the active source
+      if (gpActive && gpVerse === v) {
+        document.getElementById('gp-fill').style.width = (prog*100)+'%';
+        document.getElementById('gp-time').textContent = fmtTime(au.currentTime)+' / '+fmtTime(au.duration);
       }
     }
     _rafId = requestAnimationFrame(tick);
@@ -881,6 +965,123 @@ function fmtTime(s) {
 }
 
 /* ════════════════════════════════════════════
+   GLOBAL SURAH PLAYER
+════════════════════════════════════════════ */
+const GP_VERSES = [255, 256, 257];
+let gpActive = false;
+let gpVerse = 255;
+let gpRepeat = false;
+
+function gpUpdateLabel() {
+  var v = gpVerse;
+  document.getElementById('gp-label').textContent = 'V.' + v;
+  var words = W.filter(w => w.v === v);
+  document.getElementById('gp-ar').textContent = words.slice(0,3).map(w=>w.a).join(' ') + '…';
+}
+
+function gpSetIcon(playing) {
+  var ic = document.getElementById('gp-icon');
+  if (!ic) return;
+  var btn = document.getElementById('gp-play');
+  if (playing) {
+    ic.innerHTML = '<rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/>';
+    if (btn) btn.classList.add('active');
+  } else {
+    ic.innerHTML = '<polygon points="5 3 19 12 5 21 5 3"/>';
+    if (btn) btn.classList.remove('active');
+  }
+}
+
+function gpToggle() {
+  if (!gpActive) gpPlay(); else gpPause();
+}
+
+function gpPlay() {
+  // Stop individual verse players
+  GP_VERSES.forEach(ov => { if (AU[ov] && !AU[ov].paused) stopPlayback(ov); });
+  gpActive = true;
+  gpUpdateLabel();
+  var au = getOrCreateAudio(gpVerse);
+  // Override ended handler for sequential playback
+  au.onended = gpOnEnded;
+  activeVerse = gpVerse;
+  _lastHighlight = -1;
+  au.play().then(() => { gpSetIcon(true); startTicker(); }).catch(()=>{});
+  // Scroll verse into view
+  var vb = document.getElementById('vb-' + gpVerse);
+  if (vb) vb.scrollIntoView({behavior:'smooth', block:'start'});
+}
+
+function gpPause() {
+  gpActive = false;
+  var au = AU[gpVerse];
+  if (au) au.pause();
+  gpSetIcon(false);
+  clearWordHighlight();
+  if (_rafId) { cancelAnimationFrame(_rafId); _rafId = null; }
+  activeVerse = null;
+}
+
+function gpOnEnded() {
+  if (!gpActive) return;
+  if (gpRepeat) {
+    var au = AU[gpVerse];
+    if (au) { au.currentTime = 0; _lastHighlight = -1; au.play().catch(()=>{}); }
+    return;
+  }
+  // Advance to next verse
+  var idx = GP_VERSES.indexOf(gpVerse);
+  if (idx < GP_VERSES.length - 1) {
+    gpVerse = GP_VERSES[idx + 1];
+    gpPlay();
+  } else {
+    gpActive = false;
+    gpVerse = 255;
+    gpSetIcon(false);
+    clearWordHighlight();
+    gpUpdateLabel();
+  }
+}
+
+function gpNext() {
+  var idx = GP_VERSES.indexOf(gpVerse);
+  if (idx < GP_VERSES.length - 1) {
+    var wasActive = gpActive;
+    if (gpActive) gpPause();
+    gpVerse = GP_VERSES[idx + 1];
+    gpUpdateLabel();
+    if (wasActive) gpPlay();
+  }
+}
+
+function gpPrev() {
+  var idx = GP_VERSES.indexOf(gpVerse);
+  var wasActive = gpActive;
+  if (gpActive) gpPause();
+  if (AU[gpVerse] && AU[gpVerse].currentTime > 2 && idx === GP_VERSES.indexOf(gpVerse)) {
+    AU[gpVerse].currentTime = 0;
+  } else if (idx > 0) {
+    gpVerse = GP_VERSES[idx - 1];
+  }
+  gpUpdateLabel();
+  if (wasActive) gpPlay();
+}
+
+function gpSeek(e) {
+  var bar = document.getElementById('gp-prog');
+  var r = bar.getBoundingClientRect();
+  var ratio = Math.max(0, Math.min(1, (e.clientX - r.left) / r.width));
+  var au = AU[gpVerse];
+  if (au && au.duration) au.currentTime = ratio * au.duration;
+}
+
+function gpToggleRepeat() {
+  gpRepeat = !gpRepeat;
+  var btn = document.getElementById('gp-repeat');
+  if (btn) btn.classList.toggle('active', gpRepeat);
+}
+
+/* ════════════════════════════════════════════
    INIT
 ════════════════════════════════════════════ */
 (function() {
@@ -889,6 +1090,7 @@ function fmtTime(s) {
     if (!el) { setTimeout(tryInit, 30); return; }
     renderVerses();
     buildAudioBar();
+    gpUpdateLabel();
   }
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', tryInit);
