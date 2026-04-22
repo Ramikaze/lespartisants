@@ -524,11 +524,11 @@ const W=[
 // Marques d'arrêt (index global 0-based)
 const STOPS = {6:"ۚ",11:"ۚ",18:"ۗ",25:"ۚ",31:"ۖ",39:"ۚ",43:"ۖ",49:"۞",73:"۞"};
 
-// URLs audio par verset
+// URLs audio par verset — Récitateur : Mahmoud Khalil Al-Husary
 const VERSE_AUDIO = {
-  255:["https://everyayah.com/data/Alafasy_128kbps/002255.mp3","https://cdn.islamic.network/quran/audio/128/ar.alafasy/255.mp3"],
-  256:["https://everyayah.com/data/Alafasy_128kbps/002256.mp3","https://cdn.islamic.network/quran/audio/128/ar.alafasy/256.mp3"],
-  257:["https://everyayah.com/data/Alafasy_128kbps/002257.mp3","https://cdn.islamic.network/quran/audio/128/ar.alafasy/257.mp3"],
+  255:["https://everyayah.com/data/Husary_128kbps/002255.mp3","https://cdn.islamic.network/quran/audio/128/ar.husary/255.mp3"],
+  256:["https://everyayah.com/data/Husary_128kbps/002256.mp3","https://cdn.islamic.network/quran/audio/128/ar.husary/256.mp3"],
+  257:["https://everyayah.com/data/Husary_128kbps/002257.mp3","https://cdn.islamic.network/quran/audio/128/ar.husary/257.mp3"],
 };
 // Word audio base URLs
 function wordUrls(idx) {
@@ -542,9 +542,9 @@ function wordUrls(idx) {
     // Quran CDN — most reliable for word-by-word
     `https://audio.qurancdn.com/wbw/${surah}_${ayah}_${word}.mp3`,
     // Islamic Network CDN
-    `https://cdn.islamic.network/quran/audio/128/ar.alafasy/word/2_${ayahN}_${wordN}.mp3`,
+    `https://cdn.islamic.network/quran/audio/128/ar.husary/word/2_${ayahN}_${wordN}.mp3`,
     // Everyayah (surah+ayah+word = 9 digits)
-    `https://everyayah.com/data/Alafasy_128kbps/${surah}${ayah}${word}.mp3`,
+    `https://everyayah.com/data/Husary_128kbps/${surah}${ayah}${word}.mp3`,
     // QuranWBW
     `https://quranwbw.com/audio/2/${ayahN}/${word}.mp3`,
   ];

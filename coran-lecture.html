@@ -87,6 +87,24 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
 .verse-ar{direction:rtl;text-align:right;font-family:'Scheherazade New',serif;font-size:var(--ar-size,1.55rem);color:#c9a84c;line-height:2.1;margin-bottom:10px;padding:6px 0 8px;border-bottom:1px solid rgba(201,168,76,0.08)}
 .bismillah-ar{font-family:'Scheherazade New',serif;font-size:var(--ar-size,1.45rem);display:block;margin-bottom:8px;direction:rtl}
 
+/* ── VERSE AUDIO PLAYER ── */
+.verse-audio{display:flex;align-items:center;gap:10px;margin-top:10px;padding:8px 14px;background:rgba(201,168,76,0.04);border:1px solid rgba(201,168,76,0.1);border-radius:10px;transition:all .2s}
+.verse-audio:hover{border-color:rgba(201,168,76,0.25)}
+.verse-audio .va-btn{background:rgba(201,168,76,0.12);border:1px solid rgba(201,168,76,0.25);color:#c9a84c;width:34px;height:34px;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all .15s;flex-shrink:0}
+.verse-audio .va-btn:hover{background:rgba(201,168,76,0.25);transform:scale(1.08)}
+.verse-audio .va-btn.playing{box-shadow:0 0 10px rgba(201,168,76,0.35);animation:va-pulse .8s ease infinite alternate}
+@keyframes va-pulse{0%{box-shadow:0 0 6px rgba(201,168,76,0.2)}100%{box-shadow:0 0 14px rgba(201,168,76,0.45)}}
+.verse-audio .va-bar{flex:1;height:4px;background:rgba(201,168,76,0.12);border-radius:3px;overflow:hidden;position:relative;cursor:pointer}
+.verse-audio .va-fill{height:100%;width:0%;background:linear-gradient(90deg,#c9a84c,#e8c96a);border-radius:3px;transition:width .1s linear}
+.verse-audio .va-time{font-size:12px;color:rgba(201,168,76,0.5);min-width:36px;text-align:right;font-family:'Cinzel',serif;letter-spacing:.04em}
+.verse-audio .va-label{font-size:11px;color:rgba(201,168,76,0.4);letter-spacing:.06em;font-family:'Cinzel',serif}
+[data-theme="light"] .verse-audio{background:rgba(122,92,36,0.04)!important;border-color:rgba(122,92,36,0.1)!important}
+[data-theme="light"] .verse-audio .va-btn{background:rgba(122,92,36,0.1)!important;border-color:rgba(122,92,36,0.2)!important;color:#7a5c24!important}
+[data-theme="light"] .verse-audio .va-bar{background:rgba(122,92,36,0.1)!important}
+[data-theme="light"] .verse-audio .va-fill{background:linear-gradient(90deg,#7a5c24,#a07830)!important}
+[data-theme="light"] .verse-audio .va-time{color:rgba(122,92,36,0.5)!important}
+[data-theme="light"] .verse-audio .va-label{color:rgba(122,92,36,0.4)!important}
+
 
 @media(max-width:600px){
   .hdr{padding:10px 12px;gap:8px}
@@ -335,10 +353,19 @@ function openSurah(num, scrollToVerse) {
 
   s.v.forEach(function(v){
     var arText = AR[s.n + '-' + v[0]] || '';
+    var audioId = 'audio-' + s.n + '-' + v[0];
+    var sStr = String(s.n).padStart(3,'0');
+    var vStr = String(v[0]).padStart(3,'0');
     h += '<div class="verse" id="v' + v[0] + '">';
     if (arText) h += '<div class="verse-ar">' + arText + '</div>';
     h += '<span class="verse-num">' + v[0] + '</span>';
     h += '<span class="verse-text">' + v[1] + '</span>';
+    h += '<div class="verse-audio" id="' + audioId + '" data-src="https://everyayah.com/data/Husary_128kbps/' + sStr + vStr + '.mp3">';
+    h += '<button class="va-btn" onclick="toggleVerseAudio(\'' + audioId + '\')" title="\u00c9couter"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="6,4 20,12 6,20"/></svg></button>';
+    h += '<div class="va-bar" onclick="seekVerseAudio(event,\'' + audioId + '\')">';
+    h += '<div class="va-fill"></div></div>';
+    h += '<span class="va-time">0:00</span>';
+    h += '</div>';
     h += '</div>';
   });
 
@@ -394,6 +421,100 @@ document.getElementById('goBtn').addEventListener('click', function(){
 verseInput.addEventListener('keydown', function(e){
   if (e.key === 'Enter') document.getElementById('goBtn').click();
 });
+
+/* ── VERSE AUDIO SYSTEM — Al-Husary ── */
+var _vaPlayers = {};
+var _vaCurrentId = null;
+
+function toggleVerseAudio(id) {
+  var wrap = document.getElementById(id);
+  if (!wrap) return;
+  var src = wrap.getAttribute('data-src');
+  var btn = wrap.querySelector('.va-btn');
+  var fill = wrap.querySelector('.va-fill');
+  var timeEl = wrap.querySelector('.va-time');
+
+  /* Stop other playing verse */
+  if (_vaCurrentId && _vaCurrentId !== id) {
+    stopVerseAudio(_vaCurrentId);
+  }
+
+  if (!_vaPlayers[id]) {
+    var au = new Audio();
+    au.preload = 'none';
+    au.src = src;
+    au.addEventListener('timeupdate', function() {
+      if (au.duration) {
+        fill.style.width = (au.currentTime / au.duration * 100) + '%';
+        timeEl.textContent = fmtTime(au.currentTime);
+      }
+    });
+    au.addEventListener('ended', function() {
+      btn.classList.remove('playing');
+      btn.innerHTML = '<svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="6,4 20,12 6,20"/></svg>';
+      fill.style.width = '0%';
+      timeEl.textContent = '0:00';
+      _vaCurrentId = null;
+    });
+    au.addEventListener('error', function() {
+      /* Try fallback CDN */
+      var parts = src.match(/(\d{3})(\d{3})\.mp3/);
+      if (parts) {
+        var sn = parseInt(parts[1]);
+        var vn = parseInt(parts[2]);
+        var offset = 0;
+        for (var i = 0; i < Q.length; i++) { if (Q[i].n < sn) offset += Q[i].c; }
+        au.src = 'https://cdn.islamic.network/quran/audio/128/ar.husary/' + (offset + vn) + '.mp3';
+      }
+    });
+    _vaPlayers[id] = au;
+  }
+
+  var au = _vaPlayers[id];
+  if (au.paused) {
+    au.play();
+    btn.classList.add('playing');
+    btn.innerHTML = '<svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg>';
+    _vaCurrentId = id;
+  } else {
+    au.pause();
+    btn.classList.remove('playing');
+    btn.innerHTML = '<svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="6,4 20,12 6,20"/></svg>';
+    _vaCurrentId = null;
+  }
+}
+
+function stopVerseAudio(id) {
+  var au = _vaPlayers[id];
+  if (!au) return;
+  au.pause();
+  au.currentTime = 0;
+  var wrap = document.getElementById(id);
+  if (wrap) {
+    var btn = wrap.querySelector('.va-btn');
+    var fill = wrap.querySelector('.va-fill');
+    var timeEl = wrap.querySelector('.va-time');
+    btn.classList.remove('playing');
+    btn.innerHTML = '<svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="6,4 20,12 6,20"/></svg>';
+    fill.style.width = '0%';
+    timeEl.textContent = '0:00';
+  }
+}
+
+function seekVerseAudio(e, id) {
+  var au = _vaPlayers[id];
+  if (!au || !au.duration) return;
+  var bar = e.currentTarget;
+  var rect = bar.getBoundingClientRect();
+  var pct = (e.clientX - rect.left) / rect.width;
+  au.currentTime = pct * au.duration;
+}
+
+function fmtTime(s) {
+  var m = Math.floor(s / 60);
+  var sec = Math.floor(s % 60);
+  return m + ':' + (sec < 10 ? '0' : '') + sec;
+}
 </script>
 <!-- Theme listener: receives theme from parent portal -->
 <script>
