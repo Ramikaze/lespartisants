@@ -438,6 +438,12 @@ function openSurah(num, scrollToVerse) {
     var el = document.getElementById('v' + scrollToVerse);
     if (el) {
       setTimeout(function(){ el.scrollIntoView({behavior:'smooth',block:'center'}); el.classList.add('highlight'); }, 100);
+    } else {
+      /* DOM pas encore prêt, réessayer après un délai plus long */
+      setTimeout(function(){
+        var el2 = document.getElementById('v' + scrollToVerse);
+        if (el2) { el2.scrollIntoView({behavior:'smooth',block:'center'}); el2.classList.add('highlight'); }
+      }, 350);
     }
   } else {
     window.scrollTo(0, 0);
@@ -464,8 +470,18 @@ surahSel.addEventListener('change', function(){
 
 document.getElementById('goBtn').addEventListener('click', function(){
   var sn = parseInt(surahSel.value);
-  var vn = parseInt(verseInput.value);
-  openSurah(sn, vn || null);
+  var vn = parseInt(verseInput.value) || null;
+  /* Si la sourate est déjà affichée, scroller directement sans reconstruire */
+  if (vn && view.style.display !== 'none' && parseInt(surahSel.value) === sn) {
+    var el = document.getElementById('v' + vn);
+    if (el) {
+      el.scrollIntoView({behavior:'smooth', block:'center'});
+      document.querySelectorAll('.verse.highlight').forEach(function(e){ e.classList.remove('highlight'); });
+      el.classList.add('highlight');
+      return;
+    }
+  }
+  openSurah(sn, vn);
 });
 
 verseInput.addEventListener('keydown', function(e){
