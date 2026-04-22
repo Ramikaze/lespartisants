@@ -733,9 +733,29 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
 
 </div>
 <script>
-function openArticle(id){document.getElementById('homeView').style.display='none';var v=document.getElementById(id);if(v)v.classList.add('active');window.scrollTo({top:0,behavior:'smooth'});}
-function closeArticle(){document.querySelectorAll('.article-view').forEach(function(v){v.classList.remove('active');});document.getElementById('homeView').style.display='block';window.scrollTo({top:0,behavior:'smooth'});}
+var _fromPop = false;
+function openArticle(id){
+  document.getElementById('homeView').style.display='none';
+  var v=document.getElementById(id);
+  if(v)v.classList.add('active');
+  window.scrollTo({top:0,behavior:'smooth'});
+  if(!_fromPop) try{history.pushState({article:id},'','#'+id)}catch(e){}
+}
+function closeArticle(){
+  document.querySelectorAll('.article-view').forEach(function(v){v.classList.remove('active');});
+  document.getElementById('homeView').style.display='block';
+  window.scrollTo({top:0,behavior:'smooth'});
+  if(!_fromPop) try{history.pushState({article:null},'','#')}catch(e){}
+}
 function toggleIntro(){var m=document.getElementById('introMore');var b=document.getElementById('introToggle');if(m.classList.contains('open')){m.classList.remove('open');b.classList.remove('open');b.innerHTML='Lire la suite <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>';}else{m.classList.add('open');b.classList.add('open');b.innerHTML='Réduire <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>';}}
+window.addEventListener('popstate',function(e){
+  _fromPop=true;
+  var s=e.state;
+  if(s&&s.article){openArticle(s.article);}else{closeArticle();}
+  _fromPop=false;
+});
+/* Restore state from hash on load */
+(function(){var h=window.location.hash.replace('#','');if(h&&document.getElementById(h)){openArticle(h);}})();
 </script>
 <script>
 window.addEventListener('message',function(e){if(e.data&&e.data.type==='theme'){if(e.data.theme==='light')document.documentElement.setAttribute('data-theme','light');else document.documentElement.removeAttribute('data-theme');}});

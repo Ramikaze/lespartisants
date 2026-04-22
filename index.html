@@ -233,13 +233,13 @@ body,body *{transition:background-color 0.3s,color 0.3s,border-color 0.3s}
   <div class="nav-tabs">
     <button class="nav-tab active" id="tab-home">Accueil</button>
     <button class="nav-tab" id="tab-chiisme">Le Chiisme</button>
-    <button class="nav-tab" id="tab-1">Chronologie</button>
     <button class="nav-tab" id="tab-coran">Le Coran</button>
     <button class="nav-tab" id="tab-ahlulbayt">Ahl al-Bayt</button>
-    <button class="nav-tab" id="tab-4">Invocations</button>
-    <button class="nav-tab" id="tab-5">Biblioth&#232;que</button>
-    <button class="nav-tab" id="tab-6">Vid&#233;os</button>
     <button class="nav-tab" id="tab-hadith">Hadiths</button>
+    <button class="nav-tab" id="tab-4">Invocations</button>
+    <button class="nav-tab" id="tab-resister">R&#233;sister</button>
+    <button class="nav-tab" id="tab-1">Chronologie</button>
+    <button class="nav-tab" id="tab-6">Vid&#233;os</button>
   </div>
 </nav>
 
@@ -613,7 +613,7 @@ body,body *{transition:background-color 0.3s,color 0.3s,border-color 0.3s}
   document.getElementById('tab-ahlulbayt').addEventListener('click', function(){ openSubMenu('ahlulbayt'); });
 
   /* ── Onglets directs → ouvrent le module ── */
-  var directTabs = {1:1, 4:4, 5:5, 6:6};
+  var directTabs = {1:1, 4:4, 6:6, 'resister':15};
   Object.keys(directTabs).forEach(function(tabId){
     var el = document.getElementById('tab-' + tabId);
     if (el) el.addEventListener('click', function(){
