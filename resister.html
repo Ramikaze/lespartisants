@@ -149,7 +149,7 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
 <div class="a-card-desc">Comment le musulman pratiquant est devenu un suspect structurel — de la France au Royaume-Uni en passant par les États-Unis.</div>
 <div class="a-card-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg></div>
 </div>
-<div class="a-card soon"><div class="a-card-num">Article 02</div><div class="a-card-title">Le soma numérique</div><div class="a-card-desc">Réseaux sociaux, dopamine et destruction de la concentration nécessaire à l'étude du dîn.</div><div class="a-card-soon">À venir</div></div>
+<div class="a-card" onclick="openArticle('a2')"><div class="a-card-num">Article 02</div><div class="a-card-title">Le soma numérique</div><div class="a-card-desc">Réseaux sociaux, dopamine et destruction de la concentration nécessaire à l'étude du dîn.</div><div class="a-card-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg></div></div>
 <div class="a-card soon"><div class="a-card-num">Article 03</div><div class="a-card-title">La noyade du savoir</div><div class="a-card-desc">Comment la transmission classique du savoir islamique est menacée par la superficialité numérique.</div><div class="a-card-soon">À venir</div></div>
 <div class="a-card soon"><div class="a-card-num">Article 04</div><div class="a-card-title">La fabrique du doute</div><div class="a-card-desc">L'athéisme comme produit culturel exporté, et comment la théologie rationnelle chiite y répond.</div><div class="a-card-soon">À venir</div></div>
 <div class="a-card soon"><div class="a-card-num">Article 05</div><div class="a-card-title">L'économie de la dépendance</div><div class="a-card-desc">Ribā systémique, dette comme outil de contrôle, alternatives islamiques.</div><div class="a-card-soon">À venir</div></div>
@@ -236,6 +236,116 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
 <p class="source-item">Common Dreams, <em>US Military Buys Location Data Harvested from Apps</em> — <a href="https://www.commondreams.org/news/2020/11/16/absolutely-sickening-us-military-buys-location-data-harvested-apps-including-one" style="color:#c9a84c" target="_blank">commondreams.org</a></p>
 <p class="source-item">YES! Magazine, <em>When Data Privacy Becomes a Subject of Faith</em> — <a href="https://www.yesmagazine.org/social-justice/2021/06/16/app-data-collection-muslims-in-tech" style="color:#c9a84c" target="_blank">yesmagazine.org</a></p>
 <p class="source-item">University of Toronto, <em>Muslim Prayer Apps and the Issue of Surveillance</em> — <a href="https://islamicstudies.artsci.utoronto.ca/muslim-prayer-apps-and-the-issue-of-surveillance/" style="color:#c9a84c" target="_blank">utoronto.ca</a></p>
+</div>
+</div>
+
+<!-- ══════════ ARTICLE 2 ══════════ -->
+<div class="article-view" id="a2">
+<button class="back-btn" onclick="closeArticle()">← Retour aux articles</button>
+<div class="article-header">
+<div class="article-num">Article 02</div>
+<h2 class="article-title">Le soma numérique — Comment l'économie de l'attention détruit la concentration nécessaire à la foi</h2>
+</div>
+<nav class="article-toc">
+<div class="article-toc-title">Dans cet article</div>
+<ul class="article-toc-list">
+<li class="article-toc-item" onclick="document.getElementById('sec2-huxley').scrollIntoView({behavior:'smooth'})">Huxley avait raison</li>
+<li class="article-toc-item" onclick="document.getElementById('sec2-machine').scrollIntoView({behavior:'smooth'})">La machine à capturer l'attention</li>
+<li class="article-toc-item" onclick="document.getElementById('sec2-cerveau').scrollIntoView({behavior:'smooth'})">Ce que la science dit du cerveau volé</li>
+<li class="article-toc-item" onclick="document.getElementById('sec2-salat').scrollIntoView({behavior:'smooth'})">L'impact sur la pratique islamique</li>
+<li class="article-toc-item" onclick="document.getElementById('sec2-jeunes').scrollIntoView({behavior:'smooth'})">La génération sacrifiée</li>
+<li class="article-toc-item" onclick="document.getElementById('sec2-action').scrollIntoView({behavior:'smooth'})">Que faire ?</li>
+</ul>
+</nav>
+
+<p class="body-text">Dans l'article précédent, nous avons documenté comment les États surveillent les musulmans de l'extérieur — fichiers, caméras, informateurs. Mais il existe une forme de contrôle infiniment plus efficace : celle qui ne s'impose pas par la contrainte, mais par le <strong>plaisir</strong>. Celle qui ne surveille pas l'esprit — elle <strong>l'occupe</strong>. Celle qui ne brûle pas les livres — elle fait en sorte que <strong>plus personne n'ait envie de les lire</strong>.</p>
+
+<div class="sub-heading" id="sec2-huxley">Huxley avait raison</div>
+
+<p class="body-text">En 1932, Aldous Huxley publie <em>Le Meilleur des mondes</em> (<em>Brave New World</em>). Le roman décrit une société où les citoyens ne sont pas opprimés par la force, mais <strong>anesthésiés par le plaisir</strong>. L'outil central de ce contrôle est le <strong>soma</strong> — une drogue sans effets secondaires qui procure une euphorie douce, efface l'anxiété et supprime toute envie de questionner l'ordre établi. Personne n'est forcé de le prendre. Tout le monde le prend. Pourquoi se révolter quand on est heureux ?</p>
+
+<p class="body-text">Neil Postman, dans <em>Se distraire à en mourir</em> (1985), a formulé la distinction décisive : <strong>Orwell craignait ceux qui interdisent les livres. Huxley craignait qu'il n'y ait plus personne pour vouloir en lire.</strong> Orwell redoutait qu'on nous prive d'information. Huxley redoutait qu'on nous en noie au point de nous rendre passifs. Orwell avait peur de la douleur. Huxley avait peur du plaisir.</p>
+
+<div class="evidence"><div class="evidence-label">Citation</div><p class="evidence-text">« Ce que Orwell craignait, c'étaient ceux qui interdiraient les livres. Ce que Huxley craignait, c'est qu'il n'y aurait plus aucune raison d'interdire un livre, car plus personne ne voudrait en lire un. »</p><p class="evidence-source">Neil Postman, <em>Amusing Ourselves to Death</em>, 1985</p></div>
+
+<p class="body-text">Nous vivons dans le monde de Huxley. Le soma du XXI<sup>e</sup> siècle ne se présente pas sous forme de comprimé — il se présente sous forme d'<strong>écran</strong>. Il est gratuit, accessible 24 heures sur 24, et il a été conçu — au sens littéral de l'ingénierie — pour être aussi addictif que possible.</p>
+
+<div class="sub-heading" id="sec2-machine">La machine à capturer l'attention</div>
+
+<p class="body-text">Ce que nous appelons « réseaux sociaux » n'est pas un service de communication. C'est une <strong>industrie d'extraction</strong>. Le produit extrait n'est ni le pétrole ni le minerai — c'est <strong>l'attention humaine</strong>, revendue aux annonceurs sous forme de temps de cerveau disponible. Ce modèle économique porte un nom : l'<strong>économie de l'attention</strong>. Et il repose sur un mécanisme neurologique précis : la <strong>boucle dopaminergique</strong>.</p>
+
+<p class="body-text">Aza Raskin, l'inventeur du <em>scroll</em> infini — ce mécanisme qui permet de faire défiler un flux de contenu sans jamais atteindre le bas de la page — a publiquement exprimé ses regrets. Dans le documentaire <em>The Social Dilemma</em> (Netflix, 2020), il déclare : « C'est comme si on avait versé de la cocaïne comportementale dans le code de vos applications. » Le <em>scroll</em> infini supprime le point d'arrêt naturel. Sans signal de fin, le cerveau ne reçoit jamais l'indication qu'il est temps de passer à autre chose.</p>
+
+<div class="evidence"><div class="evidence-label">Témoignage d'initié</div><p class="evidence-text">« La pensée la plus courte et la plus simple qui me vient à l'esprit est : "Bon sang, j'ai contribué à fabriquer des outils qui déchirent le tissu social." [...] Les boucles de rétroaction à court terme, dopaminergiques, que nous avons créées détruisent le fonctionnement de la société. »</p><p class="evidence-source">Chamath Palihapitiya, ancien vice-président de la croissance chez Facebook, conférence à Stanford (2017)</p></div>
+
+<p class="body-text">Tristan Harris, ancien « éthicien du design » chez Google, a fondé le <strong>Center for Humane Technology</strong> après avoir constaté de l'intérieur que les plus grandes entreprises technologiques du monde emploient des centaines de psychologues et de neuroscientifiques dont la mission explicite est de <strong>maximiser le temps passé sur l'application</strong>. Les notifications, les badges rouges, le <em>like</em>, le <em>pull-to-refresh</em>, les <em>stories</em> éphémères qui disparaissent après 24 heures — chaque micro-fonctionnalité est le résultat de tests A/B sur des millions d'utilisateurs pour identifier ce qui capte le plus efficacement l'attention.</p>
+
+<p class="body-text">Le mécanisme central est celui de la <strong>récompense variable</strong> — un principe découvert par le psychologue B.F. Skinner dans les années 1950. Lorsqu'un rat appuie sur un levier et reçoit une récompense à intervalles aléatoires (parfois oui, parfois non), il développe un comportement compulsif bien plus puissant que s'il recevait une récompense à chaque fois. C'est exactement le principe du <em>feed</em> des réseaux sociaux : on ne sait jamais si le prochain <em>scroll</em> révélera un contenu fascinant ou ennuyeux — et c'est cette <strong>incertitude</strong> qui rend le geste irrésistible. C'est aussi le principe de la machine à sous.</p>
+
+<div class="sub-heading" id="sec2-cerveau">Ce que la science dit du cerveau volé</div>
+
+<p class="body-text">En 2023, le <strong>Surgeon General des États-Unis</strong> — l'autorité médicale fédérale la plus élevée du pays — a publié un avis officiel (<em>Advisory</em>) avertissant que les réseaux sociaux présentent « un risque profond de nuisance à la santé mentale des enfants et des adolescents ». Ce n'est pas un article d'opinion. C'est un avis de santé publique au même titre que les avertissements sur le tabac.</p>
+
+<div class="evidence"><div class="evidence-label">Source institutionnelle</div><p class="evidence-text">« Les enfants et les adolescents qui passent plus de 3 heures par jour sur les réseaux sociaux voient leur risque de problèmes de santé mentale — notamment de dépression et d'anxiété — doubler. Or les adolescents américains passent en moyenne 3,5 heures par jour sur ces plateformes. »</p><p class="evidence-source">U.S. Surgeon General, <em>Social Media and Youth Mental Health</em>, Advisory 2023 — <a href="https://www.hhs.gov/surgeongeneral/priorities/youth-mental-health/social-media/index.html" style="color:#c9a84c;text-decoration:underline" target="_blank">hhs.gov</a></p></div>
+
+<p class="body-text">Gloria Mark, professeure d'informatique à l'Université de Californie (Irvine), a mené vingt ans de recherche sur l'attention au travail. Ses mesures montrent que la durée moyenne d'attention sur un écran est passée de <strong>2 minutes 30 secondes</strong> en 2004 à <strong>47 secondes</strong> en 2020. Autrement dit, en seize ans, notre capacité de concentration soutenue a été <strong>divisée par trois</strong>.</p>
+
+<div class="evidence"><div class="evidence-label">Source scientifique</div><p class="evidence-text">Gloria Mark a mesuré, par capteurs et observations directes, que les utilisateurs changent de tâche ou de fenêtre en moyenne toutes les 47 secondes lorsqu'ils sont devant un écran. Après chaque interruption, il faut en moyenne 25 minutes pour retrouver une concentration équivalente.</p><p class="evidence-source">Gloria Mark, <em>Attention Span: A Groundbreaking Way to Restore Balance, Happiness and Productivity</em>, Hanover Square Press, 2023</p></div>
+
+<p class="body-text">La neuroscience confirme le mécanisme. Le Dr Anna Lembke, cheffe du service d'addictologie à l'Université Stanford, explique dans <em>Dopamine Nation</em> (2021) que l'usage intensif des smartphones <strong>déséquilibre le système dopaminergique</strong> du cerveau. La dopamine est le neurotransmetteur du désir et de la motivation — pas du plaisir lui-même, mais de l'<em>anticipation</em> du plaisir. Chaque notification, chaque <em>like</em>, chaque vidéo qui défile provoque une micro-décharge de dopamine. Le cerveau, pour maintenir son équilibre, répond par une <strong>régulation à la baisse</strong> : il réduit sa sensibilité à la dopamine. Résultat : les activités qui ne produisent pas de stimulation rapide — lire un livre, écouter un cours, méditer, prier avec concentration — deviennent progressivement <strong>insupportables</strong>, non pas parce qu'elles sont ennuyeuses, mais parce que le cerveau a perdu la capacité d'en extraire la satisfaction.</p>
+
+<div class="sub-heading" id="sec2-salat">L'impact sur la pratique islamique</div>
+
+<p class="body-text">Voici le point de convergence entre la neuroscience et la foi. L'Islam n'est pas une religion de spectacle. C'est une religion de <strong>concentration intérieure</strong>. Le Coran utilise le terme <strong>khushūʿ</strong> (خُشُوع) — l'humilité attentive, la présence totale du cœur devant Dieu. C'est la qualité sans laquelle la ṣalāt devient un ensemble de mouvements vides.</p>
+
+<div class="evidence"><div class="evidence-label">Coran</div><p class="evidence-text">قَدْ أَفْلَحَ الْمُؤْمِنُونَ ﴿١﴾ الَّذِينَ هُمْ فِي صَلَاتِهِمْ خَاشِعُونَ ﴿٢﴾<br>« Bienheureux sont certes les croyants, ceux qui dans leur prière sont recueillis (khāshiʿūn). »</p><p class="evidence-source">Sourate Al-Mu'minūn, 23:1-2</p></div>
+
+<p class="body-text">L'Imam ʿAlī ibn Abī Ṭālib (ع) a décrit la ṣalāt comme le moment où le croyant « se tient devant Allah comme un serviteur devant son maître, concentrant son cœur et ne laissant rien d'autre y entrer ». L'Imam Jaʿfar aṣ-Ṣādiq (ع) a dit : « Lorsque tu te tiens en prière, ton cœur doit être comme si tu voyais Celui à Qui tu t'adresses. Si tu ne Le vois pas, sache que Lui te voit. » Ce niveau de présence suppose une capacité de <strong>concentration soutenue</strong> que l'économie de l'attention détruit méthodiquement.</p>
+
+<p class="body-text">L'étude du Coran — pas la simple récitation, mais le <strong>tadabbur</strong> (التدبّر), la méditation profonde sur le sens des versets — exige un type d'attention que les neuroscientifiques appellent « attention profonde » ou « <em>deep work</em> », selon la terminologie de Cal Newport. C'est une attention soutenue, non interrompue, qui demande un minimum de 20 à 30 minutes pour s'installer pleinement. Or, le même cerveau qui est entraîné à changer de stimulus toutes les 47 secondes est <strong>structurellement incapable</strong> de maintenir cette attention. Ce n'est pas un manque de volonté. C'est un <strong>déficit neurologique acquis</strong>.</p>
+
+<p class="body-text">Le <strong>tafakkur</strong> (التفكّر) — la réflexion contemplative que le Coran commande à plus de dix-sept reprises (« أفلا تتفكرون » — « Ne réfléchissez-vous donc pas ? ») — est l'exact opposé du <em>scroll</em> infini. Le <em>scroll</em> est passif, fragmenté, sans fin et sans but. Le tafakkur est actif, unifié, orienté vers un sens. L'un vide l'esprit. L'autre le remplit. Et les deux utilisent le même organe — un organe dont la plasticité signifie qu'il se configure au service de celui qui l'utilise le plus.</p>
+
+<div class="evidence"><div class="evidence-label">Hadith</div><p class="evidence-text">« Une heure de tafakkur (réflexion) vaut mieux qu'une année d'adoration (sans réflexion). »</p><p class="evidence-source">Rapporté de l'Imam ʿAlī (ع) — Al-Majlisī, Biḥār al-Anwār</p></div>
+
+<div class="sub-heading" id="sec2-jeunes">La génération sacrifiée</div>
+
+<p class="body-text">Les chiffres sont accablants. Selon une étude de <strong>Common Sense Media</strong> (2023), les adolescents américains passent en moyenne <strong>4 heures 44 minutes par jour</strong> sur les réseaux sociaux — en dehors du temps scolaire. C'est plus de 32 heures par semaine. À titre de comparaison, un <em>ḥāfiẓ</em> (celui qui mémorise le Coran en entier) consacre typiquement 2 à 3 heures par jour à la mémorisation. Le temps est le même. Le choix de son allocation définit une civilisation.</p>
+
+<p class="body-text">Jonathan Haidt, psychologue social à l'Université de New York, a documenté dans <em>The Anxious Generation</em> (2024) ce qu'il appelle le « <strong>grand recâblage de l'enfance</strong> » (<em>the great rewiring</em>). Entre 2010 et 2015 — années qui correspondent exactement à la généralisation du smartphone chez les adolescents —, les taux de dépression, d'anxiété, d'automutilation et de suicide chez les adolescents ont connu une hausse brutale et simultanée dans tous les pays anglophones. Chez les adolescentes américaines, les visites aux urgences pour automutilation ont augmenté de <strong>62 %</strong> entre 2009 et 2015.</p>
+
+<div class="evidence"><div class="evidence-label">Source</div><p class="evidence-text">« Nous avons mené la plus grande expérience incontrôlée de l'histoire sur les enfants. La génération née après 1996 est la première à avoir traversé la puberté avec un smartphone dans la poche. Les résultats sont catastrophiques. »</p><p class="evidence-source">Jonathan Haidt, <em>The Anxious Generation</em>, Penguin Press, 2024</p></div>
+
+<p class="body-text">Pour les jeunes musulmans, le problème est double. Ils subissent les mêmes effets neuropsychologiques que tous les jeunes de leur génération — dépression, anxiété, fragmentation attentionnelle. Mais ils subissent en plus une <strong>érosion spécifique de leur capacité spirituelle</strong>. Un adolescent dont le cerveau est habitué à recevoir une gratification toutes les 47 secondes ne pourra pas maintenir le khushūʿ pendant une ṣalāt de 7 minutes. Un jeune qui consomme en moyenne 4 h 44 de contenu fragmenté par jour n'a ni le temps ni la capacité cognitive de s'asseoir avec un texte de fiqh ou un commentaire coranique. La mosquée, le cercle d'étude, le duʿāʾ nocturne — tout cela exige un type d'attention que le soma numérique a méthodiquement éradiqué.</p>
+
+<p class="body-text">Et c'est là que la prophétie de Huxley se réalise pleinement. Le système n'a pas besoin d'interdire l'Islam. Il n'a pas besoin de fermer les mosquées ni de brûler les livres. Il lui suffit de rendre les cerveaux <strong>incapables de recevoir</strong> ce que l'Islam a à offrir. Un Coran disponible sur chaque smartphone du monde ne sert à rien si plus personne n'a la patience de le lire au-delà de trois versets.</p>
+
+<div class="sub-heading" id="sec2-action">Que faire ?</div>
+
+<div class="action-box">
+<div class="action-title">Actions concrètes</div>
+<div class="action-item"><div class="action-bullet"></div><strong>Reconnaître l'addiction.</strong> Le déni est le premier obstacle. Un musulman qui vérifie son téléphone 80 à 120 fois par jour — la moyenne mesurée par les études — a un problème d'attention qui affecte directement sa ṣalāt, son étude et sa relation à Dieu. Le nommer est le premier pas.</div>
+<div class="action-item"><div class="action-bullet"></div><strong>Instaurer un « jeûne numérique » (ṣiyām raqamī).</strong> Comme le jeûne du Ramadan entraîne le nafs à résister au désir licite pour renforcer la volonté, un jeûne numérique quotidien — 2 heures sans écran, en commençant par 30 minutes — reconstruit progressivement les circuits de l'attention profonde. L'Imam aṣ-Ṣādiq (ع) a enseigné que le jihād an-nafs (combat de l'âme) est le plus grand des jihād. Résister à l'envie de consulter son téléphone pendant le duʿāʾ est un acte de ce jihād.</div>
+<div class="action-item"><div class="action-bullet"></div><strong>Protéger les enfants — vraiment.</strong> Le Surgeon General américain recommande de ne donner aucun accès aux réseaux sociaux avant 16 ans. Jonathan Haidt préconise pas de smartphone avant 14 ans et pas de réseaux sociaux avant 16 ans. Dans la tradition islamique, les parents sont les bergers (rāʿī) de leurs enfants et seront interrogés sur ce qu'ils leur ont confié. Donner un smartphone avec TikTok à un enfant de 10 ans, c'est lui confier une machine à soma en sachant exactement ce qu'elle fait.</div>
+<div class="action-item"><div class="action-bullet"></div><strong>Remplacer, pas simplement supprimer.</strong> Le vide attentionnel laissé par le retrait des écrans doit être rempli par quelque chose de plus profond, pas par du vide. Cercles d'étude (ḥalaqāt), mémorisation du Coran, lecture de hadiths en famille, pratique du tafakkur silencieux, conversations réelles. Le cerveau a besoin de 4 à 6 semaines pour commencer à se recâbler vers des sources de satisfaction plus lentes et plus profondes.</div>
+<div class="action-item"><div class="action-bullet"></div><strong>Utiliser la technologie comme outil, pas comme environnement.</strong> Il ne s'agit pas de rejeter Internet. Il s'agit de distinguer l'usage <em>intentionnel</em> (rechercher une information précise, suivre un cours en ligne, communiquer avec un but) de l'usage <em>passif</em> (scroller un feed sans but, regarder des vidéos recommandées par un algorithme). L'un est un outil. L'autre est du soma.</div>
+<div class="action-item"><div class="action-bullet"></div><strong>Cultiver le khushūʿ comme acte de résistance.</strong> Dans un monde conçu pour fragmenter l'attention, prier avec concentration totale est un acte révolutionnaire. Rester assis 30 minutes avec un commentaire coranique sans toucher son téléphone est un acte de désobéissance au système. L'Imam ʿAlī (ع) a dit : « La valeur de chaque personne réside dans ce qu'elle maîtrise. » Celui qui maîtrise son attention maîtrise son âme.</div>
+</div>
+
+<div class="sources-box">
+<div class="sources-title">Sources de l'article</div>
+<p class="source-item">Aldous Huxley, <em>Brave New World</em>, Chatto & Windus, 1932.</p>
+<p class="source-item">Neil Postman, <em>Amusing Ourselves to Death: Public Discourse in the Age of Show Business</em>, Viking, 1985.</p>
+<p class="source-item">U.S. Surgeon General, <em>Social Media and Youth Mental Health</em>, Advisory 2023 — <a href="https://www.hhs.gov/surgeongeneral/priorities/youth-mental-health/social-media/index.html" style="color:#c9a84c" target="_blank">hhs.gov</a></p>
+<p class="source-item">Gloria Mark, <em>Attention Span: A Groundbreaking Way to Restore Balance, Happiness and Productivity</em>, Hanover Square Press, 2023.</p>
+<p class="source-item">Anna Lembke, <em>Dopamine Nation: Finding Balance in the Age of Indulgence</em>, Dutton, 2021.</p>
+<p class="source-item">Jonathan Haidt, <em>The Anxious Generation: How the Great Rewiring of Childhood Is Causing an Epidemic of Mental Illness</em>, Penguin Press, 2024.</p>
+<p class="source-item">Common Sense Media, <em>Constant Companion: A Week in the Life of a Young Person's Smartphone Use</em>, 2023 — <a href="https://www.commonsensemedia.org/research/constant-companion-a-week-in-the-life-of-a-young-persons-smartphone-use" style="color:#c9a84c" target="_blank">commonsensemedia.org</a></p>
+<p class="source-item">Cal Newport, <em>Deep Work: Rules for Focused Success in a Distracted World</em>, Grand Central Publishing, 2016.</p>
+<p class="source-item">Chamath Palihapitiya, conférence à Stanford Graduate School of Business, novembre 2017 — <a href="https://www.youtube.com/watch?v=PMotykw0SIk" style="color:#c9a84c" target="_blank">YouTube</a></p>
+<p class="source-item">Center for Humane Technology (Tristan Harris, Aza Raskin) — <a href="https://www.humanetech.com/" style="color:#c9a84c" target="_blank">humanetech.com</a></p>
+<p class="source-item"><em>The Social Dilemma</em>, documentaire, Netflix, 2020.</p>
+<p class="source-item">Al-Majlisī, <em>Biḥār al-Anwār</em>, vol. 68 & 75 (hadiths sur le tafakkur et le jihād an-nafs).</p>
 </div>
 </div>
 
