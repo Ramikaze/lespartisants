@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="theme-color" content="#070c18">
+<meta name="theme-color" content="#080f26">
 <title>Les Partisans</title>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/7.0.0/fuse.min.js"></script>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -12,53 +12,53 @@
 
 /* === THÈME : Variables CSS === */
 :root{
-  --bg:#070c18;
-  --bg-nav:rgba(7,12,24,0.96);
-  --bg-card:rgba(19,29,53,0.8);
-  --bg-card-hover:rgba(19,29,53,0.95);
-  --bg-search:rgba(19,29,53,0.6);
-  --bg-filter:rgba(19,29,53,0.5);
-  --bg-filter-active:rgba(201,168,76,0.15);
-  --bg-tab-hover:rgba(201,168,76,0.08);
-  --bg-tab-active:rgba(201,168,76,0.12);
-  --bg-card-glow:rgba(201,168,76,0.07);
-  --bg-loader:#070c18;
-  --bg-iframe:#070c18;
-  --text:#e8e2d0;
+  --bg:#080f26;
+  --bg-nav:rgba(8,15,38,0.96);
+  --bg-card:rgba(16,28,64,0.8);
+  --bg-card-hover:rgba(16,28,64,0.95);
+  --bg-search:rgba(16,28,64,0.6);
+  --bg-filter:rgba(16,28,64,0.5);
+  --bg-filter-active:rgba(212,175,55,0.15);
+  --bg-tab-hover:rgba(212,175,55,0.08);
+  --bg-tab-active:rgba(212,175,55,0.12);
+  --bg-card-glow:rgba(212,175,55,0.07);
+  --bg-loader:#080f26;
+  --bg-iframe:#080f26;
+  --text:#ffffff;
   --text-sub:#9aa3b8;
   --text-dim:#6a7590;
   --text-faint:#5a6480;
   --text-ghost:#3a4560;
-  --accent:#c9a84c;
-  --accent-soft:rgba(201,168,76,0.15);
-  --accent-border:rgba(201,168,76,0.18);
-  --accent-border-strong:rgba(201,168,76,0.4);
-  --card-border:rgba(201,168,76,0.15);
-  --card-border-hover:rgba(201,168,76,0.4);
-  --card-footer-border:rgba(201,168,76,0.1);
-  --card-arrow-bg:rgba(201,168,76,0.1);
-  --card-arrow-border:rgba(201,168,76,0.2);
+  --accent:#d4af37;
+  --accent-soft:rgba(212,175,55,0.15);
+  --accent-border:rgba(212,175,55,0.18);
+  --accent-border-strong:rgba(212,175,55,0.4);
+  --card-border:rgba(212,175,55,0.15);
+  --card-border-hover:rgba(212,175,55,0.4);
+  --card-footer-border:rgba(212,175,55,0.1);
+  --card-arrow-bg:rgba(212,175,55,0.1);
+  --card-arrow-border:rgba(212,175,55,0.2);
   --soon-bg:rgba(90,100,128,0.12);
   --soon-border:rgba(90,100,128,0.2);
   --soon-text:#5a6480;
   --shadow-card:rgba(0,0,0,0.4);
-  --shadow-glow:rgba(201,168,76,0.07);
+  --shadow-glow:rgba(212,175,55,0.07);
   --pattern-opacity:0.055;
-  --scrollbar-thumb:rgba(201,168,76,0.3);
+  --scrollbar-thumb:rgba(212,175,55,0.3);
 }
 [data-theme="light"]{
-  --bg:#e8e0d4;
-  --bg-nav:rgba(225,218,206,0.97);
-  --bg-card:rgba(235,228,216,0.85);
-  --bg-card-hover:rgba(240,234,222,0.95);
-  --bg-search:rgba(218,210,196,0.7);
-  --bg-filter:rgba(218,210,196,0.5);
+  --bg:#e5cca8;
+  --bg-nav:rgba(247,231,206,0.97);
+  --bg-card:rgba(247,231,206,0.85);
+  --bg-card-hover:rgba(251,241,215,0.95);
+  --bg-search:rgba(229,204,168,0.7);
+  --bg-filter:rgba(229,204,168,0.5);
   --bg-filter-active:rgba(140,108,48,0.14);
   --bg-tab-hover:rgba(140,108,48,0.08);
   --bg-tab-active:rgba(140,108,48,0.12);
   --bg-card-glow:rgba(140,108,48,0.05);
-  --bg-loader:#e8e0d4;
-  --bg-iframe:#e8e0d4;
+  --bg-loader:#e5cca8;
+  --bg-iframe:#e5cca8;
   --text:#2c2114;
   --text-sub:#5a4e3c;
   --text-dim:#746850;
@@ -110,11 +110,11 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
 
 
 /* === THEME TOGGLE === */
-.theme-toggle{background:rgba(201,168,76,0.06);border:1px solid var(--accent-border);color:var(--accent);display:flex;align-items:center;border-radius:20px;cursor:pointer;transition:all .2s;flex-shrink:0;margin-right:8px;padding:2px;overflow:hidden;gap:0}
-.theme-toggle:hover{border-color:var(--accent-border-strong);background:rgba(201,168,76,0.1)}
+.theme-toggle{background:rgba(212,175,55,0.06);border:1px solid var(--accent-border);color:var(--accent);display:flex;align-items:center;border-radius:20px;cursor:pointer;transition:all .2s;flex-shrink:0;margin-right:8px;padding:2px;overflow:hidden;gap:0}
+.theme-toggle:hover{border-color:var(--accent-border-strong);background:rgba(212,175,55,0.1)}
 .theme-opt{display:flex;align-items:center;justify-content:center;width:32px;height:32px;border-radius:50%;transition:all .25s;opacity:0.5;position:relative}
 .theme-opt:hover{opacity:0.8}
-.theme-opt.active{opacity:1;background:rgba(201,168,76,0.18)}
+.theme-opt.active{opacity:1;background:rgba(212,175,55,0.18)}
 .theme-opt svg{width:17px;height:17px}
 [data-theme="light"] .theme-toggle{background:rgba(122,92,36,0.06)!important;border-color:rgba(122,92,36,0.2)!important}
 [data-theme="light"] .theme-opt{color:#7a5c24!important}
@@ -201,7 +201,7 @@ body,body *{transition:background-color 0.3s,color 0.3s,border-color 0.3s}
   .top-nav{padding:0 12px}
   .nav-logo{font-size:13px;padding:10px 0}
   .nav-spacer{display:none}
-  .nav-tabs{width:100%;border-top:1px solid rgba(201,168,76,0.08);padding:6px 0}
+  .nav-tabs{width:100%;border-top:1px solid rgba(212,175,55,0.08);padding:6px 0}
   .nav-tab{padding:6px 10px;font-size:13px}
   .home{padding:28px 12px 70px}
   .home-header{margin-bottom:28px}
@@ -277,7 +277,7 @@ body,body *{transition:background-color 0.3s,color 0.3s,border-color 0.3s}
   <div class="cards" id="cardsGrid">
     <!-- Chiisme -->
     <div class="card" id="card-chiisme" data-theme="chiisme" data-keywords="chiisme doctrine islam questions reponses histoire foi" onclick="openSubMenu('chiisme')">
-      <div class="card-icon"><svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="15" y="25" width="6" height="5" rx="2" fill="#c9a84c" fill-opacity="0.7"/><circle cx="18" cy="20" r="7" fill="#c9a84c" fill-opacity="0.25" stroke="#c9a84c" stroke-width="1.3"/><path d="M10 18 Q10 12 18 11 Q26 12 26 18" fill="#c9a84c" fill-opacity="0.55" stroke="#c9a84c" stroke-width="1.2"/><path d="M10 18 Q11 15 18 14 Q25 15 26 18" stroke="#c9a84c" stroke-width="1" fill="none" opacity="0.8"/><path d="M11 16 Q12 13 18 12.5 Q24 13 25 16" stroke="#c9a84c" stroke-width="0.8" fill="none" opacity="0.6"/><path d="M13 13 Q18 8 23 13" stroke="#c9a84c" stroke-width="1.2" fill="#c9a84c" fill-opacity="0.4"/><path d="M25 16 Q28 18 27 22 Q26 24 24 24" stroke="#c9a84c" stroke-width="1.2" fill="none"/><path d="M8 31 Q10 26 15 25 L21 25 Q26 26 28 31" fill="#c9a84c" fill-opacity="0.2" stroke="#c9a84c" stroke-width="1.2"/></svg></div>
+      <div class="card-icon"><svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="15" y="25" width="6" height="5" rx="2" fill="#d4af37" fill-opacity="0.7"/><circle cx="18" cy="20" r="7" fill="#d4af37" fill-opacity="0.25" stroke="#d4af37" stroke-width="1.3"/><path d="M10 18 Q10 12 18 11 Q26 12 26 18" fill="#d4af37" fill-opacity="0.55" stroke="#d4af37" stroke-width="1.2"/><path d="M10 18 Q11 15 18 14 Q25 15 26 18" stroke="#d4af37" stroke-width="1" fill="none" opacity="0.8"/><path d="M11 16 Q12 13 18 12.5 Q24 13 25 16" stroke="#d4af37" stroke-width="0.8" fill="none" opacity="0.6"/><path d="M13 13 Q18 8 23 13" stroke="#d4af37" stroke-width="1.2" fill="#d4af37" fill-opacity="0.4"/><path d="M25 16 Q28 18 27 22 Q26 24 24 24" stroke="#d4af37" stroke-width="1.2" fill="none"/><path d="M8 31 Q10 26 15 25 L21 25 Q26 26 28 31" fill="#d4af37" fill-opacity="0.2" stroke="#d4af37" stroke-width="1.2"/></svg></div>
       <div class="card-tag">D&#233;couverte &amp; Doctrine</div>
       <div class="card-title">Qu'est-ce que le Chiisme ?</div>
       <div class="card-desc">Histoire, doctrine, r&#233;ponses aux questions et fondements de l'islam chiite.</div>
@@ -285,7 +285,7 @@ body,body *{transition:background-color 0.3s,color 0.3s,border-color 0.3s}
     </div>
     <!-- Chronologie -->
     <div class="card" id="card-1" data-theme="histoire" data-keywords="chronologie histoire frise reseau imams personnalites evenements">
-      <div class="card-icon"><svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="18" cy="18" r="15" stroke="#c9a84c" stroke-width="1.5" fill="#c9a84c" fill-opacity="0.1"/><circle cx="18" cy="18" r="12" stroke="#c9a84c" stroke-width="0.6" fill="none" opacity="0.4"/><line x1="18" y1="5" x2="18" y2="8" stroke="#c9a84c" stroke-width="1.5"/><line x1="31" y1="18" x2="28" y2="18" stroke="#c9a84c" stroke-width="1.5"/><line x1="18" y1="31" x2="18" y2="28" stroke="#c9a84c" stroke-width="1.5"/><line x1="5" y1="18" x2="8" y2="18" stroke="#c9a84c" stroke-width="1.5"/><line x1="18" y1="18" x2="12" y2="12" stroke="#c9a84c" stroke-width="2" stroke-linecap="round"/><line x1="18" y1="18" x2="18" y2="8" stroke="#c9a84c" stroke-width="1.5" stroke-linecap="round"/><circle cx="18" cy="18" r="1.5" fill="#c9a84c"/></svg></div>
+      <div class="card-icon"><svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="18" cy="18" r="15" stroke="#d4af37" stroke-width="1.5" fill="#d4af37" fill-opacity="0.1"/><circle cx="18" cy="18" r="12" stroke="#d4af37" stroke-width="0.6" fill="none" opacity="0.4"/><line x1="18" y1="5" x2="18" y2="8" stroke="#d4af37" stroke-width="1.5"/><line x1="31" y1="18" x2="28" y2="18" stroke="#d4af37" stroke-width="1.5"/><line x1="18" y1="31" x2="18" y2="28" stroke="#d4af37" stroke-width="1.5"/><line x1="5" y1="18" x2="8" y2="18" stroke="#d4af37" stroke-width="1.5"/><line x1="18" y1="18" x2="12" y2="12" stroke="#d4af37" stroke-width="2" stroke-linecap="round"/><line x1="18" y1="18" x2="18" y2="8" stroke="#d4af37" stroke-width="1.5" stroke-linecap="round"/><circle cx="18" cy="18" r="1.5" fill="#d4af37"/></svg></div>
       <div class="card-tag">Explorateur historique</div>
       <div class="card-title">Chronologie &amp; R&#233;seau</div>
       <div class="card-desc">Frise, r&#233;seau de personnalit&#233;s, Imams et th&#232;mes cl&#233;s.</div>
@@ -293,7 +293,7 @@ body,body *{transition:background-color 0.3s,color 0.3s,border-color 0.3s}
     </div>
     <!-- Coran -->
     <div class="card" id="card-coran" data-theme="coran" data-keywords="coran quran verset trone sourate lecture traduction ayat" onclick="openSubMenu('coran')">
-      <div class="card-icon"><svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 8 C4 8 11 7 17 9 L17 29 C11 27 4 28 4 28 Z" fill="#c9a84c" fill-opacity="0.2" stroke="#c9a84c" stroke-width="1.3" stroke-linejoin="round"/><path d="M32 8 C32 8 25 7 19 9 L19 29 C25 27 32 28 32 28 Z" fill="#c9a84c" fill-opacity="0.3" stroke="#c9a84c" stroke-width="1.3" stroke-linejoin="round"/><line x1="18" y1="8" x2="18" y2="29" stroke="#c9a84c" stroke-width="2"/><line x1="7" y1="14" x2="15" y2="13" stroke="#c9a84c" stroke-width="0.8" opacity="0.7"/><line x1="7" y1="18" x2="15" y2="17" stroke="#c9a84c" stroke-width="0.8" opacity="0.7"/><line x1="7" y1="22" x2="15" y2="21" stroke="#c9a84c" stroke-width="0.8" opacity="0.7"/><line x1="21" y1="13" x2="29" y2="14" stroke="#c9a84c" stroke-width="0.8" opacity="0.7"/><line x1="21" y1="17" x2="29" y2="18" stroke="#c9a84c" stroke-width="0.8" opacity="0.7"/><line x1="21" y1="21" x2="29" y2="22" stroke="#c9a84c" stroke-width="0.8" opacity="0.7"/></svg></div>
+      <div class="card-icon"><svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 8 C4 8 11 7 17 9 L17 29 C11 27 4 28 4 28 Z" fill="#d4af37" fill-opacity="0.2" stroke="#d4af37" stroke-width="1.3" stroke-linejoin="round"/><path d="M32 8 C32 8 25 7 19 9 L19 29 C25 27 32 28 32 28 Z" fill="#d4af37" fill-opacity="0.3" stroke="#d4af37" stroke-width="1.3" stroke-linejoin="round"/><line x1="18" y1="8" x2="18" y2="29" stroke="#d4af37" stroke-width="2"/><line x1="7" y1="14" x2="15" y2="13" stroke="#d4af37" stroke-width="0.8" opacity="0.7"/><line x1="7" y1="18" x2="15" y2="17" stroke="#d4af37" stroke-width="0.8" opacity="0.7"/><line x1="7" y1="22" x2="15" y2="21" stroke="#d4af37" stroke-width="0.8" opacity="0.7"/><line x1="21" y1="13" x2="29" y2="14" stroke="#d4af37" stroke-width="0.8" opacity="0.7"/><line x1="21" y1="17" x2="29" y2="18" stroke="#d4af37" stroke-width="0.8" opacity="0.7"/><line x1="21" y1="21" x2="29" y2="22" stroke="#d4af37" stroke-width="0.8" opacity="0.7"/></svg></div>
       <div class="card-tag">&#201;tude coranique</div>
       <div class="card-title">Le Coran</div>
       <div class="card-desc">&#201;tude du Coran, versets cl&#233;s, apprentissage du Verset du Tr&#244;ne et m&#233;ditation.</div>
@@ -309,7 +309,7 @@ body,body *{transition:background-color 0.3s,color 0.3s,border-color 0.3s}
     </div>
     <!-- 99 Noms d'Allah -->
     <div class="card" id="card-16" data-theme="chiisme" data-keywords="noms allah 99 asma husna theologie dieu attributs">
-      <div class="card-icon"><svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="18" cy="18" r="14" stroke="#c9a84c" stroke-width="1.2" fill="none"/><circle cx="18" cy="18" r="7" stroke="#c9a84c" stroke-width="0.8" fill="rgba(201,168,76,0.1)"/><circle cx="18" cy="18" r="2.5" fill="#c9a84c" fill-opacity="0.6"/></svg></div>
+      <div class="card-icon"><svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="18" cy="18" r="14" stroke="#d4af37" stroke-width="1.2" fill="none"/><circle cx="18" cy="18" r="7" stroke="#d4af37" stroke-width="0.8" fill="rgba(212,175,55,0.1)"/><circle cx="18" cy="18" r="2.5" fill="#d4af37" fill-opacity="0.6"/></svg></div>
       <div class="card-tag">Th&#233;ologie</div>
       <div class="card-title">Les 99 Noms d'Allah</div>
       <div class="card-desc">Les plus beaux Noms d'Allah (Asm&#226;' Allah al-Husn&#226;) selon la tradition, r&#233;v&#233;lant la grandeur et la mis&#233;ricorde du Cr&#233;ateur.</div>
@@ -317,7 +317,7 @@ body,body *{transition:background-color 0.3s,color 0.3s,border-color 0.3s}
     </div>
     <!-- Invocations -->
     <div class="card" id="card-4" data-theme="invocations" data-keywords="invocations dua ziyara priere sahifa sajjadiyya ahl bayt">
-      <div class="card-icon"><svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="4" y="14" width="4" height="16" rx="1" fill="#c9a84c" fill-opacity="0.6" stroke="#c9a84c" stroke-width="0.8"/><path d="M4 14 Q6 10 8 14Z" fill="#c9a84c"/><rect x="28" y="14" width="4" height="16" rx="1" fill="#c9a84c" fill-opacity="0.6" stroke="#c9a84c" stroke-width="0.8"/><path d="M28 14 Q30 10 32 14Z" fill="#c9a84c"/><rect x="8" y="20" width="20" height="10" rx="1" fill="#c9a84c" fill-opacity="0.25" stroke="#c9a84c" stroke-width="1.2"/><path d="M10 20 Q18 8 26 20Z" fill="#c9a84c" fill-opacity="0.5" stroke="#c9a84c" stroke-width="1.2"/><path d="M15 30 L15 24 Q18 21 21 24 L21 30Z" fill="#c9a84c" fill-opacity="0.5" stroke="#c9a84c" stroke-width="0.8"/><line x1="3" y1="30" x2="33" y2="30" stroke="#c9a84c" stroke-width="1" opacity="0.4"/></svg></div>
+      <div class="card-icon"><svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="4" y="14" width="4" height="16" rx="1" fill="#d4af37" fill-opacity="0.6" stroke="#d4af37" stroke-width="0.8"/><path d="M4 14 Q6 10 8 14Z" fill="#d4af37"/><rect x="28" y="14" width="4" height="16" rx="1" fill="#d4af37" fill-opacity="0.6" stroke="#d4af37" stroke-width="0.8"/><path d="M28 14 Q30 10 32 14Z" fill="#d4af37"/><rect x="8" y="20" width="20" height="10" rx="1" fill="#d4af37" fill-opacity="0.25" stroke="#d4af37" stroke-width="1.2"/><path d="M10 20 Q18 8 26 20Z" fill="#d4af37" fill-opacity="0.5" stroke="#d4af37" stroke-width="1.2"/><path d="M15 30 L15 24 Q18 21 21 24 L21 30Z" fill="#d4af37" fill-opacity="0.5" stroke="#d4af37" stroke-width="0.8"/><line x1="3" y1="30" x2="33" y2="30" stroke="#d4af37" stroke-width="1" opacity="0.4"/></svg></div>
       <div class="card-tag">Invocations</div>
       <div class="card-title">Du&#8217;&#x101; &amp; Ziy&#x101;ra</div>
       <div class="card-desc">Invocations et visites pieuses de l'Ahl al-Bayt, tir&#233;es de la &#7778;a&#7717;&#299;fa as-Sajj&#257;diyya.</div>
@@ -325,7 +325,7 @@ body,body *{transition:background-color 0.3s,color 0.3s,border-color 0.3s}
     </div>
     <!-- Hadiths -->
     <div class="card" id="card-hadith" data-theme="hadith" data-keywords="hadith kisa couverture ahl bayt fatimah ali hasan husayn prophete" onclick="openSubMenu('hadith')">
-      <div class="card-icon"><svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8 6 L28 6 C29 6 30 7 30 8 L30 28 C30 29 29 30 28 30 L8 30 C7 30 6 29 6 28 L6 8 C6 7 7 6 8 6Z" fill="#c9a84c" fill-opacity="0.15" stroke="#c9a84c" stroke-width="1.3"/><path d="M10 6 L10 30" stroke="#c9a84c" stroke-width="1.5"/><line x1="14" y1="12" x2="26" y2="12" stroke="#c9a84c" stroke-width="0.8" opacity="0.5"/><line x1="14" y1="16" x2="26" y2="16" stroke="#c9a84c" stroke-width="0.8" opacity="0.5"/><line x1="14" y1="20" x2="22" y2="20" stroke="#c9a84c" stroke-width="0.8" opacity="0.5"/><line x1="14" y1="24" x2="24" y2="24" stroke="#c9a84c" stroke-width="0.8" opacity="0.5"/></svg></div>
+      <div class="card-icon"><svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8 6 L28 6 C29 6 30 7 30 8 L30 28 C30 29 29 30 28 30 L8 30 C7 30 6 29 6 28 L6 8 C6 7 7 6 8 6Z" fill="#d4af37" fill-opacity="0.15" stroke="#d4af37" stroke-width="1.3"/><path d="M10 6 L10 30" stroke="#d4af37" stroke-width="1.5"/><line x1="14" y1="12" x2="26" y2="12" stroke="#d4af37" stroke-width="0.8" opacity="0.5"/><line x1="14" y1="16" x2="26" y2="16" stroke="#d4af37" stroke-width="0.8" opacity="0.5"/><line x1="14" y1="20" x2="22" y2="20" stroke="#d4af37" stroke-width="0.8" opacity="0.5"/><line x1="14" y1="24" x2="24" y2="24" stroke="#d4af37" stroke-width="0.8" opacity="0.5"/></svg></div>
       <div class="card-tag">Hadiths</div>
       <div class="card-title">Hadiths des Ahl al-Bayt</div>
       <div class="card-desc">Hadiths majeurs de la tradition chiite : al-Kis&#226;', Thaqalayn et autres r&#233;cits fondateurs.</div>
@@ -333,7 +333,7 @@ body,body *{transition:background-color 0.3s,color 0.3s,border-color 0.3s}
     </div>
     <!-- Lucidité -->
     <div class="card" id="card-resister" data-theme="chiisme" data-keywords="resister resistance dystopie surveillance islam orwell huxley bradbury ashura karbala hussein eveil conscience societe">
-      <div class="card-icon"><svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="18" cy="16" r="10" stroke="#c9a84c" stroke-width="1.3" fill="none"/><circle cx="18" cy="16" r="5" stroke="#c9a84c" stroke-width="1" fill="rgba(201,168,76,0.15)"/><circle cx="18" cy="16" r="2" fill="#c9a84c" fill-opacity="0.7"/><path d="M10 28 Q18 24 26 28" stroke="#c9a84c" stroke-width="1.2" fill="none"/><line x1="18" y1="6" x2="18" y2="3" stroke="#c9a84c" stroke-width="1" opacity="0.5"/><line x1="26" y1="10" x2="28" y2="8" stroke="#c9a84c" stroke-width="1" opacity="0.5"/><line x1="10" y1="10" x2="8" y2="8" stroke="#c9a84c" stroke-width="1" opacity="0.5"/></svg></div>
+      <div class="card-icon"><svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="18" cy="16" r="10" stroke="#d4af37" stroke-width="1.3" fill="none"/><circle cx="18" cy="16" r="5" stroke="#d4af37" stroke-width="1" fill="rgba(212,175,55,0.15)"/><circle cx="18" cy="16" r="2" fill="#d4af37" fill-opacity="0.7"/><path d="M10 28 Q18 24 26 28" stroke="#d4af37" stroke-width="1.2" fill="none"/><line x1="18" y1="6" x2="18" y2="3" stroke="#d4af37" stroke-width="1" opacity="0.5"/><line x1="26" y1="10" x2="28" y2="8" stroke="#d4af37" stroke-width="1" opacity="0.5"/><line x1="10" y1="10" x2="8" y2="8" stroke="#d4af37" stroke-width="1" opacity="0.5"/></svg></div>
       <div class="card-tag">R&#233;flexion</div>
       <div class="card-title">R&#233;sister</div>
       <div class="card-desc">L'Islam face aux temps dystopiques. L'&#233;cole de Karbala comme fondement d'une r&#233;sistance lucide face au monde moderne.</div>
@@ -341,7 +341,7 @@ body,body *{transition:background-color 0.3s,color 0.3s,border-color 0.3s}
     </div>
     <!-- Bibliothèque -->
     <div class="card soon" id="card-5" data-theme="bibliotheque" data-keywords="bibliotheque livres textes fiqh theologie spiritualite">
-      <div class="card-icon"><svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 8 C4 8 11 7 17 9 L17 29 C11 27 4 28 4 28 Z" fill="#c9a84c" fill-opacity="0.2" stroke="#c9a84c" stroke-width="1.3" stroke-linejoin="round"/><path d="M32 8 C32 8 25 7 19 9 L19 29 C25 27 32 28 32 28 Z" fill="#c9a84c" fill-opacity="0.3" stroke="#c9a84c" stroke-width="1.3" stroke-linejoin="round"/><line x1="18" y1="8" x2="18" y2="29" stroke="#c9a84c" stroke-width="2"/></svg></div>
+      <div class="card-icon"><svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 8 C4 8 11 7 17 9 L17 29 C11 27 4 28 4 28 Z" fill="#d4af37" fill-opacity="0.2" stroke="#d4af37" stroke-width="1.3" stroke-linejoin="round"/><path d="M32 8 C32 8 25 7 19 9 L19 29 C25 27 32 28 32 28 Z" fill="#d4af37" fill-opacity="0.3" stroke="#d4af37" stroke-width="1.3" stroke-linejoin="round"/><line x1="18" y1="8" x2="18" y2="29" stroke="#d4af37" stroke-width="2"/></svg></div>
       <div class="card-tag">Biblioth&#232;que</div>
       <div class="card-title">Biblioth&#232;que Islamique</div>
       <div class="card-desc">Textes fondamentaux, fiqh, th&#233;ologie et spiritualit&#233; chiite.</div>
@@ -349,7 +349,7 @@ body,body *{transition:background-color 0.3s,color 0.3s,border-color 0.3s}
     </div>
     <!-- Vidéos -->
     <div class="card" id="card-6" data-theme="videos" data-keywords="videos conferences documentaires enseignements cours">
-      <div class="card-icon"><svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="7" width="22" height="22" rx="3" fill="#c9a84c" fill-opacity="0.2" stroke="#c9a84c" stroke-width="1.3"/><path d="M24 14 L34 10 L34 26 L24 22 Z" fill="#c9a84c" fill-opacity="0.6" stroke="#c9a84c" stroke-width="1.2" stroke-linejoin="round"/></svg></div>
+      <div class="card-icon"><svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="7" width="22" height="22" rx="3" fill="#d4af37" fill-opacity="0.2" stroke="#d4af37" stroke-width="1.3"/><path d="M24 14 L34 10 L34 26 L24 22 Z" fill="#d4af37" fill-opacity="0.6" stroke="#d4af37" stroke-width="1.2" stroke-linejoin="round"/></svg></div>
       <div class="card-tag">Vid&#233;os</div>
       <div class="card-title">Vid&#233;os</div>
       <div class="card-desc">Conf&#233;rences, documentaires et enseignements islamiques.</div>
@@ -357,7 +357,7 @@ body,body *{transition:background-color 0.3s,color 0.3s,border-color 0.3s}
     </div>
     <!-- Soutenir -->
     <div class="card" id="card-soutenir" data-theme="all" data-keywords="don soutenir contribuer aide paypal revolut financement suggestions" onclick="document.getElementById('soutenir-overlay').classList.add('active')">
-      <div class="card-icon"><svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M18 30 C10 24 4 19 4 13 C4 9 7 6 11 6 C13.5 6 16 7.5 18 10 C20 7.5 22.5 6 25 6 C29 6 32 9 32 13 C32 19 26 24 18 30Z" fill="#c9a84c" fill-opacity="0.2" stroke="#c9a84c" stroke-width="1.3"/></svg></div>
+      <div class="card-icon"><svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M18 30 C10 24 4 19 4 13 C4 9 7 6 11 6 C13.5 6 16 7.5 18 10 C20 7.5 22.5 6 25 6 C29 6 32 9 32 13 C32 19 26 24 18 30Z" fill="#d4af37" fill-opacity="0.2" stroke="#d4af37" stroke-width="1.3"/></svg></div>
       <div class="card-tag">Soutenir</div>
       <div class="card-title">Soutenir le projet &#9749;</div>
       <div class="card-desc">H&#233;bergement, IA, nuits blanches et caf&#233;ine. Chaque contribution compte.</div>
@@ -387,21 +387,21 @@ body,body *{transition:background-color 0.3s,color 0.3s,border-color 0.3s}
         <div class="card-footer"><span class="card-meta">&#703;Aql &middot; &#703;Ilm &middot; Jahl</span><span class="card-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg></span></div>
       </div>
       <div class="card" id="card-9">
-        <div class="card-icon"><svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg"><polygon points="18,3 21,14 33,14 23,21 27,32 18,25 9,32 13,21 3,14 15,14" fill="#c9a84c" fill-opacity="0.2" stroke="#c9a84c" stroke-width="1.3"/><circle cx="18" cy="18" r="5" fill="none" stroke="#c9a84c" stroke-width="1" opacity="0.6"/><circle cx="18" cy="18" r="2" fill="#c9a84c" fill-opacity="0.5"/></svg></div>
+        <div class="card-icon"><svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg"><polygon points="18,3 21,14 33,14 23,21 27,32 18,25 9,32 13,21 3,14 15,14" fill="#d4af37" fill-opacity="0.2" stroke="#d4af37" stroke-width="1.3"/><circle cx="18" cy="18" r="5" fill="none" stroke="#d4af37" stroke-width="1" opacity="0.6"/><circle cx="18" cy="18" r="2" fill="#d4af37" fill-opacity="0.5"/></svg></div>
         <div class="card-tag">Th&#233;ologie</div>
         <div class="card-title">Us&#251;l al-D&#238;n &mdash; Fondements de la Foi</div>
         <div class="card-desc">Les cinq piliers doctrinaux du chiisme : Tawh&#238;d, &#703;Adl, Nubuwwah, Im&#226;mah et Ma&#703;&#226;d.</div>
         <div class="card-footer"><span class="card-meta">5 piliers &middot; Th&#233;ologie rationnelle</span><span class="card-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg></span></div>
       </div>
       <div class="card" id="card-tawheed">
-        <div class="card-icon"><svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="18" cy="18" r="14" stroke="#c9a84c" stroke-width="1.2" fill="none"/><circle cx="18" cy="18" r="7" stroke="#c9a84c" stroke-width="0.8" fill="rgba(201,168,76,0.1)"/><circle cx="18" cy="18" r="2.5" fill="#c9a84c" fill-opacity="0.6"/><line x1="18" y1="4" x2="18" y2="32" stroke="#c9a84c" stroke-width="0.5" opacity="0.3"/><line x1="4" y1="18" x2="32" y2="18" stroke="#c9a84c" stroke-width="0.5" opacity="0.3"/></svg></div>
+        <div class="card-icon"><svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="18" cy="18" r="14" stroke="#d4af37" stroke-width="1.2" fill="none"/><circle cx="18" cy="18" r="7" stroke="#d4af37" stroke-width="0.8" fill="rgba(212,175,55,0.1)"/><circle cx="18" cy="18" r="2.5" fill="#d4af37" fill-opacity="0.6"/><line x1="18" y1="4" x2="18" y2="32" stroke="#d4af37" stroke-width="0.5" opacity="0.3"/><line x1="4" y1="18" x2="32" y2="18" stroke="#d4af37" stroke-width="0.5" opacity="0.3"/></svg></div>
         <div class="card-tag">Th&#233;ologie</div>
         <div class="card-title">Al-Tawḥīd — L'Unicit&#233; Divine</div>
         <div class="card-desc">L'Essence de Dieu, Ses Attributs, Sa Justice, la pr&#233;destination et le libre arbitre dans la tradition de l'Ahl al-Bayt.</div>
         <div class="card-footer"><span class="card-meta">Tawḥīd &middot; &#703;Adl &middot; Qaḍā&#703;</span><span class="card-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg></span></div>
       </div>
       <div class="card" id="card-nubuwwa">
-        <div class="card-icon"><svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M18 4 L22 14 L18 12 L14 14 Z" fill="#c9a84c" fill-opacity="0.3" stroke="#c9a84c" stroke-width="1"/><line x1="18" y1="14" x2="18" y2="32" stroke="#c9a84c" stroke-width="1.2"/><circle cx="12" cy="26" r="3" stroke="#c9a84c" stroke-width="0.8" fill="rgba(201,168,76,0.08)"/><circle cx="24" cy="26" r="3" stroke="#c9a84c" stroke-width="0.8" fill="rgba(201,168,76,0.08)"/><circle cx="18" cy="20" r="3" stroke="#c9a84c" stroke-width="0.8" fill="rgba(201,168,76,0.15)"/></svg></div>
+        <div class="card-icon"><svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M18 4 L22 14 L18 12 L14 14 Z" fill="#d4af37" fill-opacity="0.3" stroke="#d4af37" stroke-width="1"/><line x1="18" y1="14" x2="18" y2="32" stroke="#d4af37" stroke-width="1.2"/><circle cx="12" cy="26" r="3" stroke="#d4af37" stroke-width="0.8" fill="rgba(212,175,55,0.08)"/><circle cx="24" cy="26" r="3" stroke="#d4af37" stroke-width="0.8" fill="rgba(212,175,55,0.08)"/><circle cx="18" cy="20" r="3" stroke="#d4af37" stroke-width="0.8" fill="rgba(212,175,55,0.15)"/></svg></div>
         <div class="card-tag">Th&#233;ologie</div>
         <div class="card-title">La Proph&#233;tie et l'Imamat (Al-Nubuwwa wa-l-Im&#257;mah)</div>
         <div class="card-desc">La n&#233;cessit&#233; de la Proph&#233;tie, l'infaillibilit&#233;, le Sceau des Proph&#232;tes, l'Imamat, les Douze Imams et l'Imam al-Mahdī (a).</div>
@@ -424,7 +424,7 @@ body,body *{transition:background-color 0.3s,color 0.3s,border-color 0.3s}
         <div class="card-footer"><span class="card-meta">V.255&#8211;257 &middot; Audio &middot; Quiz</span><span class="card-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg></span></div>
       </div>
       <div class="card" id="card-8">
-        <div class="card-icon"><svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 6 C4 6 11 5 18 8 L18 30 C11 27 4 28 4 28 Z" fill="#c9a84c" fill-opacity="0.25" stroke="#c9a84c" stroke-width="1.3" stroke-linejoin="round"/><path d="M32 6 C32 6 25 5 18 8 L18 30 C25 27 32 28 32 28 Z" fill="#c9a84c" fill-opacity="0.35" stroke="#c9a84c" stroke-width="1.3" stroke-linejoin="round"/><line x1="18" y1="8" x2="18" y2="30" stroke="#c9a84c" stroke-width="1.5"/><circle cx="18" cy="16" r="4" stroke="#c9a84c" stroke-width="1" fill="none" opacity="0.6"/><line x1="18" y1="12" x2="18" y2="20" stroke="#c9a84c" stroke-width="0.8" opacity="0.5"/><line x1="14" y1="16" x2="22" y2="16" stroke="#c9a84c" stroke-width="0.8" opacity="0.5"/></svg></div>
+        <div class="card-icon"><svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 6 C4 6 11 5 18 8 L18 30 C11 27 4 28 4 28 Z" fill="#d4af37" fill-opacity="0.25" stroke="#d4af37" stroke-width="1.3" stroke-linejoin="round"/><path d="M32 6 C32 6 25 5 18 8 L18 30 C25 27 32 28 32 28 Z" fill="#d4af37" fill-opacity="0.35" stroke="#d4af37" stroke-width="1.3" stroke-linejoin="round"/><line x1="18" y1="8" x2="18" y2="30" stroke="#d4af37" stroke-width="1.5"/><circle cx="18" cy="16" r="4" stroke="#d4af37" stroke-width="1" fill="none" opacity="0.6"/><line x1="18" y1="12" x2="18" y2="20" stroke="#d4af37" stroke-width="0.8" opacity="0.5"/><line x1="14" y1="16" x2="22" y2="16" stroke="#d4af37" stroke-width="0.8" opacity="0.5"/></svg></div>
         <div class="card-tag">Lecture int&#233;grale</div>
         <div class="card-title">Lire le Coran</div>
         <div class="card-desc">Traduction fran&#231;aise int&#233;grale par le Dr Abolqasemi Fakhri &#8212; 114 sourates, navigation par verset.</div>
@@ -440,7 +440,7 @@ body,body *{transition:background-color 0.3s,color 0.3s,border-color 0.3s}
     </div>
     <div class="submenu-cards">
       <div class="card" id="card-10">
-        <div class="card-icon"><svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8 6 L28 6 C29 6 30 7 30 8 L30 28 C30 29 29 30 28 30 L8 30 C7 30 6 29 6 28 L6 8 C6 7 7 6 8 6Z" fill="#c9a84c" fill-opacity="0.15" stroke="#c9a84c" stroke-width="1.3"/><path d="M10 6 L10 30" stroke="#c9a84c" stroke-width="1.5"/><line x1="14" y1="12" x2="26" y2="12" stroke="#c9a84c" stroke-width="0.8" opacity="0.5"/><line x1="14" y1="16" x2="26" y2="16" stroke="#c9a84c" stroke-width="0.8" opacity="0.5"/><line x1="14" y1="20" x2="22" y2="20" stroke="#c9a84c" stroke-width="0.8" opacity="0.5"/></svg></div>
+        <div class="card-icon"><svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8 6 L28 6 C29 6 30 7 30 8 L30 28 C30 29 29 30 28 30 L8 30 C7 30 6 29 6 28 L6 8 C6 7 7 6 8 6Z" fill="#d4af37" fill-opacity="0.15" stroke="#d4af37" stroke-width="1.3"/><path d="M10 6 L10 30" stroke="#d4af37" stroke-width="1.5"/><line x1="14" y1="12" x2="26" y2="12" stroke="#d4af37" stroke-width="0.8" opacity="0.5"/><line x1="14" y1="16" x2="26" y2="16" stroke="#d4af37" stroke-width="0.8" opacity="0.5"/><line x1="14" y1="20" x2="22" y2="20" stroke="#d4af37" stroke-width="0.8" opacity="0.5"/></svg></div>
         <div class="card-tag">Hadith sacr&#233;</div>
         <div class="card-title">Hadith al-Kis&#226;'</div>
         <div class="card-desc">Le Hadith de la Couverture — Arabe, translitt&#233;ration et traduction fran&#231;aise, avec audio.</div>
@@ -773,24 +773,24 @@ body,body *{transition:background-color 0.3s,color 0.3s,border-color 0.3s}
 <style>
 .soutenir-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.7);z-index:9999;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .3s;backdrop-filter:blur(4px)}
 .soutenir-overlay.active{opacity:1;pointer-events:all}
-.soutenir-panel{background:#0d1629;border:1px solid rgba(201,168,76,0.2);border-radius:18px;max-width:520px;width:92%;max-height:90vh;overflow-y:auto;padding:36px 32px;position:relative;transform:translateY(20px);transition:transform .3s}
+.soutenir-panel{background:#0d1629;border:1px solid rgba(212,175,55,0.2);border-radius:18px;max-width:520px;width:92%;max-height:90vh;overflow-y:auto;padding:36px 32px;position:relative;transform:translateY(20px);transition:transform .3s}
 .soutenir-overlay.active .soutenir-panel{transform:translateY(0)}
-.soutenir-close{position:absolute;top:14px;right:16px;background:none;border:none;color:#c9a84c;font-size:22px;cursor:pointer;opacity:0.6;transition:opacity .2s}
+.soutenir-close{position:absolute;top:14px;right:16px;background:none;border:none;color:#d4af37;font-size:22px;cursor:pointer;opacity:0.6;transition:opacity .2s}
 .soutenir-close:hover{opacity:1}
-.soutenir-title{font-family:'Cinzel',serif;font-size:1.3rem;font-weight:700;color:#e8e2d0;text-align:center;margin-bottom:8px}
+.soutenir-title{font-family:'Cinzel',serif;font-size:1.3rem;font-weight:700;color:#ffffff;text-align:center;margin-bottom:8px}
 .soutenir-subtitle{font-size:0.95rem;color:#7a6a4a;text-align:center;font-style:italic;margin-bottom:24px}
 .soutenir-text{font-size:1.05rem;color:#cec6b0;line-height:1.8;margin-bottom:16px;text-align:justify}
 .soutenir-text strong{color:#e8c06a;font-weight:600}
 .soutenir-text em{color:#b8a882}
-.soutenir-divider{width:80px;height:1px;background:linear-gradient(90deg,transparent,#c9a84c,transparent);margin:20px auto}
-.soutenir-section{font-family:'Cinzel',serif;font-size:0.78rem;letter-spacing:0.15em;text-transform:uppercase;color:#c9a84c;margin:24px 0 12px;opacity:0.7}
-.soutenir-btn{display:flex;align-items:center;gap:12px;width:100%;padding:14px 18px;background:rgba(201,168,76,0.06);border:1px solid rgba(201,168,76,0.18);border-radius:10px;color:#e8e2d0;font-family:'EB Garamond',serif;font-size:1.05rem;cursor:pointer;transition:all .2s;text-decoration:none;margin-bottom:10px}
-.soutenir-btn:hover{background:rgba(201,168,76,0.12);border-color:rgba(201,168,76,0.35);transform:translateX(4px)}
+.soutenir-divider{width:80px;height:1px;background:linear-gradient(90deg,transparent,#d4af37,transparent);margin:20px auto}
+.soutenir-section{font-family:'Cinzel',serif;font-size:0.78rem;letter-spacing:0.15em;text-transform:uppercase;color:#d4af37;margin:24px 0 12px;opacity:0.7}
+.soutenir-btn{display:flex;align-items:center;gap:12px;width:100%;padding:14px 18px;background:rgba(212,175,55,0.06);border:1px solid rgba(212,175,55,0.18);border-radius:10px;color:#ffffff;font-family:'EB Garamond',serif;font-size:1.05rem;cursor:pointer;transition:all .2s;text-decoration:none;margin-bottom:10px}
+.soutenir-btn:hover{background:rgba(212,175,55,0.12);border-color:rgba(212,175,55,0.35);transform:translateX(4px)}
 .soutenir-btn-icon{font-size:1.4rem;flex-shrink:0}
 .soutenir-btn-label strong{color:#e8c06a}
 .soutenir-btn-label{display:flex;flex-direction:column}
 .soutenir-btn-sub{font-size:0.82rem;color:#7a6a4a}
-[data-theme="light"] .soutenir-panel{background:#e8e0d4!important;border-color:rgba(122,92,36,0.2)!important}
+[data-theme="light"] .soutenir-panel{background:#e5cca8!important;border-color:rgba(122,92,36,0.2)!important}
 [data-theme="light"] .soutenir-title{color:#2c2114!important}
 [data-theme="light"] .soutenir-text{color:#3d3425!important}
 [data-theme="light"] .soutenir-text strong{color:#6a4e1a!important}
@@ -822,7 +822,7 @@ body,body *{transition:background-color 0.3s,color 0.3s,border-color 0.3s}
 <span class="soutenir-btn-icon">&#128179;</span>
 <span class="soutenir-btn-label"><strong>PayPal — Don libre</strong><span class="soutenir-btn-sub">Montant libre, via votre compte PayPal ou carte bancaire</span></span>
 </a>
-<div class="soutenir-text" style="font-size:0.92rem;background:rgba(201,168,76,0.04);border:1px solid rgba(201,168,76,0.1);border-radius:8px;padding:14px 16px;margin-top:6px"><strong>&#9432; Conseil :</strong> <strong>Revolut</strong> est l'option la plus avantageuse — <strong>0 % de frais</strong> entre utilisateurs. Pour <strong>PayPal</strong>, choisissez <strong>&#171; Envoyer de l'argent &#224; un proche &#187;</strong> (<em>Send to a friend</em>) afin d'&#233;viter la commission d'environ 3 %.</div>
+<div class="soutenir-text" style="font-size:0.92rem;background:rgba(212,175,55,0.04);border:1px solid rgba(212,175,55,0.1);border-radius:8px;padding:14px 16px;margin-top:6px"><strong>&#9432; Conseil :</strong> <strong>Revolut</strong> est l'option la plus avantageuse — <strong>0 % de frais</strong> entre utilisateurs. Pour <strong>PayPal</strong>, choisissez <strong>&#171; Envoyer de l'argent &#224; un proche &#187;</strong> (<em>Send to a friend</em>) afin d'&#233;viter la commission d'environ 3 %.</div>
 
 <div class="soutenir-section">&#128172; Avez-vous des suggestions ?</div>
 <a class="soutenir-btn" href="https://forms.gle/oDidSS3A6NTc2UrQA" target="_blank" rel="noopener">
@@ -836,13 +836,13 @@ body,body *{transition:background-color 0.3s,color 0.3s,border-color 0.3s}
 
 <!-- ══ Floating suggestion button ══ -->
 <style>
-.suggest-float{position:fixed;bottom:24px;left:24px;display:flex;align-items:center;gap:8px;background:rgba(19,29,53,0.9);border:1px solid rgba(201,168,76,0.25);border-radius:24px;padding:8px 16px 8px 12px;color:#c9a84c;font-family:'Cinzel',serif;font-size:0.78rem;letter-spacing:0.05em;cursor:pointer;z-index:998;transition:all .3s;backdrop-filter:blur(10px);box-shadow:0 4px 16px rgba(0,0,0,0.3);text-decoration:none}
-.suggest-float:hover{background:rgba(201,168,76,0.15);border-color:#c9a84c;transform:translateY(-2px)}
+.suggest-float{position:fixed;bottom:24px;left:24px;display:flex;align-items:center;gap:8px;background:rgba(16,28,64,0.9);border:1px solid rgba(212,175,55,0.25);border-radius:24px;padding:8px 16px 8px 12px;color:#d4af37;font-family:'Cinzel',serif;font-size:0.78rem;letter-spacing:0.05em;cursor:pointer;z-index:998;transition:all .3s;backdrop-filter:blur(10px);box-shadow:0 4px 16px rgba(0,0,0,0.3);text-decoration:none}
+.suggest-float:hover{background:rgba(212,175,55,0.15);border-color:#d4af37;transform:translateY(-2px)}
 .suggest-float svg{width:18px;height:18px;flex-shrink:0}
 .suggest-float-text{white-space:nowrap}
 @media(max-width:480px){.suggest-float-text{display:none}.suggest-float{padding:10px;border-radius:50%}}
-[data-theme="light"] .suggest-float{background:rgba(225,218,206,0.92)!important;border-color:rgba(122,92,36,0.25)!important;color:#7a5c24!important}
-[data-theme="light"] .suggest-float:hover{background:rgba(235,228,216,0.95)!important;border-color:#7a5c24!important}
+[data-theme="light"] .suggest-float{background:rgba(247,231,206,0.92)!important;border-color:rgba(122,92,36,0.25)!important;color:#7a5c24!important}
+[data-theme="light"] .suggest-float:hover{background:rgba(247,231,206,0.95)!important;border-color:#7a5c24!important}
 </style>
 
 <a class="suggest-float" href="https://forms.gle/oDidSS3A6NTc2UrQA" target="_blank" rel="noopener">
