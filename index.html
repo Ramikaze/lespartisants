@@ -307,6 +307,14 @@ body,body *{transition:background-color 0.3s,color 0.3s,border-color 0.3s}
       <div class="card-desc">Les 14 Infaillibles, arbre g&#233;n&#233;alogique et biographies des 12 Imams.</div>
       <div class="card-footer"><span class="card-meta">G&#233;n&#233;alogie &middot; Biographies &middot; Imams</span><span class="card-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg></span></div>
     </div>
+    <!-- 99 Noms d'Allah -->
+    <div class="card" id="card-16" data-theme="chiisme" data-keywords="noms allah 99 asma husna theologie dieu attributs">
+      <div class="card-icon"><svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="18" cy="18" r="14" stroke="#c9a84c" stroke-width="1.2" fill="none"/><circle cx="18" cy="18" r="7" stroke="#c9a84c" stroke-width="0.8" fill="rgba(201,168,76,0.1)"/><circle cx="18" cy="18" r="2.5" fill="#c9a84c" fill-opacity="0.6"/></svg></div>
+      <div class="card-tag">Th&#233;ologie</div>
+      <div class="card-title">Les 99 Noms d'Allah</div>
+      <div class="card-desc">Les plus beaux Noms d'Allah (Asm&#226;' Allah al-Husn&#226;) selon la tradition, r&#233;v&#233;lant la grandeur et la mis&#233;ricorde du Cr&#233;ateur.</div>
+      <div class="card-footer"><span class="card-meta">99 Noms &middot; Asm&#226;' al-Husn&#226;</span><span class="card-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg></span></div>
+    </div>
     <!-- Invocations -->
     <div class="card" id="card-4" data-theme="invocations" data-keywords="invocations dua ziyara priere sahifa sajjadiyya ahl bayt">
       <div class="card-icon"><svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="4" y="14" width="4" height="16" rx="1" fill="#c9a84c" fill-opacity="0.6" stroke="#c9a84c" stroke-width="0.8"/><path d="M4 14 Q6 10 8 14Z" fill="#c9a84c"/><rect x="28" y="14" width="4" height="16" rx="1" fill="#c9a84c" fill-opacity="0.6" stroke="#c9a84c" stroke-width="0.8"/><path d="M28 14 Q30 10 32 14Z" fill="#c9a84c"/><rect x="8" y="20" width="20" height="10" rx="1" fill="#c9a84c" fill-opacity="0.25" stroke="#c9a84c" stroke-width="1.2"/><path d="M10 20 Q18 8 26 20Z" fill="#c9a84c" fill-opacity="0.5" stroke="#c9a84c" stroke-width="1.2"/><path d="M15 30 L15 24 Q18 21 21 24 L21 30Z" fill="#c9a84c" fill-opacity="0.5" stroke="#c9a84c" stroke-width="0.8"/><line x1="3" y1="30" x2="33" y2="30" stroke="#c9a84c" stroke-width="1" opacity="0.4"/></svg></div>
@@ -482,6 +490,7 @@ body,body *{transition:background-color 0.3s,color 0.3s,border-color 0.3s}
 <div class="iframe-wrap" id="frame13"><div class="loader" id="loader13"><div class="loader-dots"><div class="loader-dot"></div><div class="loader-dot"></div><div class="loader-dot"></div></div><div class="loader-text">Chargement&#8230;</div></div><iframe id="iframe13"></iframe></div>
 <div class="iframe-wrap" id="frame14"><div class="loader" id="loader14"><div class="loader-dots"><div class="loader-dot"></div><div class="loader-dot"></div><div class="loader-dot"></div></div><div class="loader-text">Chargement&#8230;</div></div><iframe id="iframe14"></iframe></div>
 <div class="iframe-wrap" id="frame15"><div class="loader" id="loader15"><div class="loader-dots"><div class="loader-dot"></div><div class="loader-dot"></div><div class="loader-dot"></div></div><div class="loader-text">Chargement&#8230;</div></div><iframe id="iframe15"></iframe></div>
+<div class="iframe-wrap" id="frame16"><div class="loader" id="loader16"><div class="loader-dots"><div class="loader-dot"></div><div class="loader-dot"></div><div class="loader-dot"></div></div><div class="loader-text">Chargement&#8230;</div></div><iframe id="iframe16"></iframe></div>
 
 <script>
 (function(){
@@ -501,7 +510,8 @@ body,body *{transition:background-color 0.3s,color 0.3s,border-color 0.3s}
     "douze-imams.html",
     "tawheed.html",
     "nubuwwa.html",
-    "resister.html"
+    "resister.html",
+    "99-noms.html"
   ];
   var N = MODULES.length;
   var loaded = new Array(N).fill(false);
@@ -623,7 +633,7 @@ body,body *{transition:background-color 0.3s,color 0.3s,border-color 0.3s}
   });
 
   /* ── Cartes sur la page d'accueil → ouvrent le module directement ── */
-  var cardModules = {0:0, 1:1, 2:2, 3:3, 4:4, 5:5, 6:6, 7:7, 8:8, 9:9, 10:10, 11:11, 12:12, 'tawheed':13, 'nubuwwa':14, 'resister':15};
+  var cardModules = {0:0, 1:1, 2:2, 3:3, 4:4, 5:5, 6:6, 7:7, 8:8, 9:9, 10:10, 11:11, 12:12, 'tawheed':13, 'nubuwwa':14, 'resister':15, 16:16};
   Object.keys(cardModules).forEach(function(cardId){
     var el = document.getElementById('card-' + cardId);
     if (el) el.addEventListener('click', function(){ openModule(cardModules[cardId]); });
