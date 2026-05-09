@@ -1080,7 +1080,15 @@ function showInvocation(id) {
 
   if(data.prose) {
     html += '<div class="c-prose">';
-    data.body.forEach(function(p){ html += '<p>'+p+'</p>'; });
+    data.body.forEach(function(p){
+      if (typeof p === 'string') {
+        html += '<p>'+p+'</p>';
+      } else if (p.t === 'intro') {
+        html += '<div class="c-intro">'+p.tx+'</div>';
+      } else if (p.t === 'salawat') {
+        html += '<div class="c-salawat">— Ṣalawāt —</div>';
+      }
+    });
     html += '</div>';
   } else {
     data.body.forEach(function(v){
