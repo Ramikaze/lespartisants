@@ -310,7 +310,9 @@ var DATA = {
       items: [
         { id: 'kumayl', label: 'Du\'ā Kumayl', emoji: '🌙' },
         { id: 'tawassul', label: 'Du\'ā at-Tawassul', emoji: '🤲' },
-        { id: 'dua-simaat', label: 'Du\'ā as-Simât', emoji: '🤲' },
+        { type: 'header', label: 'Du\'ā as-Simât' },
+        { id: 'dua-simaat-intro', label: '1. Introduction', emoji: '📖' },
+        { id: 'dua-simaat',       label: '2. L\'Invocation', emoji: '🤲' },
       ]
     }
   ],
@@ -515,10 +517,11 @@ var DATA = {
     },
 
 
-    'dua-simaat': {
+    'dua-simaat-intro': {
       source: 'Du\'â as-Simât',
       title: 'L\'Invocation des Marques (as-Simât)',
-      subtitle: 'A réciter dans les dernières heures du vendredi',
+      subtitle: 'Introduction et mérites',
+      prose: true,
       body: [
         {t:'intro', tx:'Introduction'},
         "Du'â' as-Simât (en arabe : اﻟﺴﻤﺎت  دﻋﺎء )est une invocation rapportée par l’Imam al-Bâqir",
@@ -562,7 +565,15 @@ var DATA = {
         'immaculés de sa famille, comme Il a prié Abraham (a) et sa famille',
         "Dans un hadith de l'Imam al-Bâqir (a), il dit :",
         '"Si je jure que le Grand Nom de Dieu est mentionné dans cette invocation, je dis la',
-        'vérité"',
+        'vérité"'
+      ]
+    },
+
+    'dua-simaat': {
+      source: 'Du\'â as-Simât',
+      title: 'L\'Invocation des Marques (as-Simât)',
+      subtitle: 'A réciter dans les dernières heures du vendredi',
+      body: [
         {t:'intro', tx:'Invocation as-Simât'},
         {t:'tri', ar:'ﻋَﲆ  ﺑِﻪِ  دُﻋﯿﺖَ  اِذا  اَﻟﱠﺬی  اﻻَﮐْﺮَمِ  اﻻَﺟَﻞﱢ  اﻻَﻋَﺰﱢ  اﻻَﻋْﻈَﻢِ  اﻟْﻌَﻈﯿﻢِ  ﺑِﺎﺳْﻤِﮏَ  اَﺳْﺌَﻠُﮏَ  اِﻧﯽ  اﻟﻠﻬُﻢﱠ اﻻَرضِ  أﺑْﻮابِ  ﻣَﻀَﺎﯾﻖِ  ﻋَﲆ  ﺑِﻪِ  دُﻋﯿﺖَ  وَاِذا  اﻧْﻔَﺘَﺤَﺖْ  ﺑِﺎﻟﺮﱠﺣْﻤَﻪِ  ﻟِﻠْﻔَﺘْﺢِ  اﻟﺴَﻤﺎءِ  أﺑْﻮابِ  ﻣَﻐﺎﻟِﻖِ اﻷَْﻣْﻮَاتِ  ﻋَﲆَ  ﺑِﻪِ  دُﻋِﯿﺖَ  إِذَا  وَ  ﺗَﯿَﺴﱠﺮَتْ  ﻟِﻠْﯿُﺴْﺮِ  اﻟْﻌُﺴْﺮِ  ﻋَﲆَ  ﺑِﻪِ  دُﻋِﯿﺖَ  إِذَا  وَ  اﻧْﻔَﺮَﺟَﺖْ  ﻟِﻠِﻔَﺮَجِ وَﺟْﻬِﮏَ  ﺑِﺠَﻼلِ  وَ  اﻧْﮑَﺸَﻔَﺖْ  اﻟﻀﱠﺮﱠاءِ  وَ  اﻟْﺒَﺄْﺳَﺎءِ  ﮐَﺸْﻒِ  ﻋَﲆَ  ﺑِﻪِ  دُﻋِﯿﺖَ  إِذَا  وَ  اﻧْﺘَﺸَﺮَتْ  ﻟِﻠﻨﱡﺸُﻮرِ اﻟْﮑَﺮِﯾﻢِ،', tr:"Allâhumma innî as’aluka bi-smika al-‘azhîmi al-a‘zhami al-a‘azzi al-ajalli al- akrami,al-ladhî idhâ du‘îta bihi ‘alâ maghâliqi abwâbi-s-samâ’i li-l-fat’hi bi-r- rahmati infatahat, wa idhâ du‘îta bihi ‘alâ madâ’iqi abwâbi-l-ardi li-l-faraji infarajat, wa idhâ du‘îta bihi ‘alâ-l-‘usri li-l-yusri tayassarat, wa idhâ du‘îta bihi ‘alâ-l- amwâti li-n-nushûri antasharat, wa idhâ du'ita bihi ‘alâ kashfi-l-ba’sâ’i wa-d-darrâ’i inkashafat, wa bi-jalâli wajhika-l-karîmi.", fr:'Mon Dieu, je Te demande, par [la Grâce de] Ton Nom Grandiose, le plus Grandiose, le plus Puissant, le plus Majestueux, le plus Noble, par Lequel, s’il est évoqué devant les portes fermées du ciel pour qu’elles s’ouvrent à la Miséricorde, elles s’ouvrent, par Lequel, s’il est évoqué devant les portes étroites de la terre pour qu’elles s’élargissent, elles s’élargissent, par Lequel, s’il est évoqué devant la difficulté pour qu’elle devienne facile, elle devient facile, par Lequel, s’il est évoqué devant les morts pour qu’ils soient ressuscités, ils ressuscitent, par Lequel, s’il est évoqué pour dissiper le malheur et l’adversité, ils sont dissipés, et par la Majesté de Ta noble FaceDu`a Al Simat'},
         {t:'tri', ar:'وَ  اﻷَْﺻْﻮَاتُ  ﻟَﻪُ  ﺧَﺸَﻌَﺖْ  وَ  اﻟﺮﱢﻗَﺎبُ  ﻟَﻪُ  ﺧَﻀَﻌَﺖْ  وَ  اﻟْﻮُﺟُﻮهُ  ﻟَﻪُ  ﻋَﻨَﺖْ  اﻟﱠﺬِی  اﻟْﻮُﺟُﻮهِ  أَﻋَﺰﱢ  وَ  اﻟْﻮُﺟُﻮهِ  أَﮐْﺮَمِ إِﻻ  اﻷَْرْضِ  ﻋَﲆَ  ﺗَﻘَﻊَ  أَنْ  اﻟﺴﱠﻤَﺎءَ  ﺗُﻤْﺴِﮏُ  ﺑِﻬَﺎ  اﻟﱠﺘِﯽ  ﺑِﻘُﻮﱠﺗِﮏَ  وَ  ﻣَﺨَﺎﻓَﺘِﮏَ  ﻣِﻦْ  اﻟْﻘُﻠُﻮبُ  ﻟَﻪُ  وَﺟِﻠَﺖْ اﻟْﻌَﺎﻟَﻤُﻮنَ،  ﻟَﻬَﺎ  [ ﮐَﺎنَ ] دَانَ  اﻟﱠﺘِﯽ  ﺑِﻤَﺸِﯿﱠﺘِﮏَ  وَ  ﺗَﺰُوﻻ  أَنْ  اﻷَْرْضَ  وَ  اﻟﺴﱠﻤَﺎوَاتِ  ﺗُﻤْﺴِﮏُ  وَ  ﺑِﺈِذْﻧِﮏَ', tr:'akrami-l-ujûhi wa a‘azzi-l- ujûhi, al-ladhî ‘anat lahu al-ujûhu, wa khada‘at lahu ar- riqâbu, wa khasha‘at lahu al-aswâtu, wa wajilat lahu al-qulûbu min makhâfatika, wa bi-quwwatika al-latî bihâ tumsiku-s-samâ’a an taqa‘a ‘alâ-l-ardi illâ bi-idhnika, wa tumsiku as-samâwâti wa-l-arda an tazûlâ, wa bi-mashî’atika al-latî dâna lahâ al-‘âlamûna,', fr:'la plus Noble des faces, la plus Puissante des faces, pour/devant Laquelle s’humilient les faces, pour/devant Laquelle s’enfoncent les cous dans les épaules, pour/devant Laquelle s’abaissent les voix, pour/devant Laquelle tremblent les coeurs par crainte de Toi, et par Ta Force par Laquelle Tu empêches le ciel de tomber sur la terre sauf avec Ton Autorisation et avec Laquelle Tu empêches les cieux et la terre de disparaître, et par Ta Volonté à Laquelle obéissent les mondes,'},
