@@ -110,6 +110,13 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
 .nav-tab.active{color:var(--accent);background:var(--bg-tab-active);font-weight:600}
 
 
+/* === NAV SUGGEST === */
+.nav-suggest{display:flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:50%;border:1px solid var(--accent-border);color:var(--accent);background:rgba(201,168,76,0.06);margin-right:8px;transition:all .2s;text-decoration:none;flex-shrink:0}
+.nav-suggest:hover{background:rgba(201,168,76,0.15);border-color:var(--accent-border-strong);transform:scale(1.08)}
+.nav-suggest svg{width:16px;height:16px}
+[data-theme="light"] .nav-suggest{background:rgba(122,92,36,0.06)!important;border-color:rgba(122,92,36,0.2)!important;color:#7a5c24!important}
+[data-theme="light"] .nav-suggest:hover{background:rgba(122,92,36,0.15)!important;border-color:rgba(122,92,36,0.4)!important}
+
 /* === THEME TOGGLE === */
 .theme-toggle{background:rgba(201,168,76,0.06);border:1px solid var(--accent-border);color:var(--accent);display:flex;align-items:center;border-radius:20px;cursor:pointer;transition:all .2s;flex-shrink:0;margin-right:8px;padding:2px;overflow:hidden;gap:0}
 .theme-toggle:hover{border-color:var(--accent-border-strong);background:rgba(201,168,76,0.1)}
@@ -223,6 +230,9 @@ body,body *{transition:background-color 0.3s,color 0.3s,border-color 0.3s}
 <nav class="top-nav">
   <div class="nav-logo" id="logoBtn">&#xFDFD; Les Partisans</div>
   <div class="nav-spacer"></div>
+  <a class="nav-suggest" href="https://forms.gle/oDidSS3A6NTc2UrQA" target="_blank" rel="noopener" title="Suggestions &amp; retours">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+  </a>
   <div class="theme-toggle" id="themeToggle" title="Changer de thème">
     <div class="theme-opt active" id="themeDark" title="Mode sombre">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
@@ -845,21 +855,7 @@ body,body *{transition:background-color 0.3s,color 0.3s,border-color 0.3s}
 </div>
 </div>
 
-<!-- ══ Floating suggestion button ══ -->
-<style>
-.suggest-float{position:fixed;bottom:24px;left:24px;display:flex;align-items:center;gap:8px;background:rgba(19,29,53,0.9);border:1px solid rgba(201,168,76,0.25);border-radius:24px;padding:8px 16px 8px 12px;color:#c9a84c;font-family:'Cinzel',serif;font-size:0.78rem;letter-spacing:0.05em;cursor:pointer;z-index:998;transition:all .3s;backdrop-filter:blur(10px);box-shadow:0 4px 16px rgba(0,0,0,0.3);text-decoration:none}
-.suggest-float:hover{background:rgba(201,168,76,0.15);border-color:#c9a84c;transform:translateY(-2px)}
-.suggest-float svg{width:18px;height:18px;flex-shrink:0}
-.suggest-float-text{white-space:nowrap}
-@media(max-width:480px){.suggest-float-text{display:none}.suggest-float{padding:10px;border-radius:50%}}
-[data-theme="light"] .suggest-float{background:rgba(225,218,206,0.92)!important;border-color:rgba(122,92,36,0.25)!important;color:#7a5c24!important}
-[data-theme="light"] .suggest-float:hover{background:rgba(235,228,216,0.95)!important;border-color:#7a5c24!important}
-</style>
 
-<a class="suggest-float" href="https://forms.gle/oDidSS3A6NTc2UrQA" target="_blank" rel="noopener">
-<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-<span class="suggest-float-text">Suggestions ?</span>
-</a>
 
 </body>
 </html>
