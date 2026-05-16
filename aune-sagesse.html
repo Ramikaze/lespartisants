@@ -317,7 +317,7 @@ function paginateContent(htmlStr) {
         
         let finalHtml = currentPage.innerHTML;
         if (wrapperTag) {
-           finalHtml = \`<\${wrapperTag} class="\${wrapperClass}" style="\${wrapperStyle}">\${finalHtml}</\${wrapperTag}>\`;
+           finalHtml = `<${wrapperTag} class="${wrapperClass}" style="${wrapperStyle}">${finalHtml}</${wrapperTag}>`;
         }
         pages.push(finalHtml);
         
@@ -339,7 +339,7 @@ function paginateContent(htmlStr) {
         }
         let finalHtml = currentPage.innerHTML;
         if (wrapperTag) {
-           finalHtml = \`<\${wrapperTag} class="\${wrapperClass}" style="\${wrapperStyle}">\${finalHtml}</\${wrapperTag}>\`;
+           finalHtml = `<${wrapperTag} class="${wrapperClass}" style="${wrapperStyle}">${finalHtml}</${wrapperTag}>`;
         }
         pages.push(finalHtml);
   }
