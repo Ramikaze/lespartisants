@@ -4213,16 +4213,35 @@ const AUNE_SAGESSE = [
         "title": "48 - LA CONTRÉE",
         "subparts": [
             {
-                "title": "252 - La bonne contrée"
+                "title": "La bonne contrée",
+                "introduction": "«<i>Une bonne contrée et un Seigneur Pardonneur.</i>»<sup>944</sup><br><br>«<i>Et Nous avions placé entre eux et les cités que Nous avions bénies, d'autres cités proéminentes, et Nous avions évalué les étapes de voyage entre elle. «Voyagez entre elles, de nuit et de jour, en toute sécurité».</i>»<sup>945</sup><br><br><span class=\"reference-note\">(Voir également : Coran 21:71, 21:81, 23:50, 28:29-30, 79:16, 90:1-2, 95:1-3)</span>"
             },
             {
-                "title": "253 - Choisissez les grandes villes"
+                "title": "Choisissez les grandes villes",
+                "hadiths": [
+                    {
+                        "number": "848",
+                        "text": "L'Imām 'Alī (as) a écrit à al-Ḥārith al-Hamadānī : Habite les grandes villes, car c'est le lieu de rassemblement des musulmans ; évite les lieux d'ignorance et de dureté.<sup>946</sup>"
+                    }
+                ]
             },
             {
-                "title": "254 - La meilleure des contrées"
+                "title": "La meilleure des contrées",
+                "hadiths": [
+                    {
+                        "number": "849",
+                        "text": "L'Imām 'Alī (as) a dit : Il n'y a pas de contrée qui te réclame plus qu'une autre ; la meilleure des contrées est celle qui te soutient [dans laquelle tu as trouvé sérénité et repos].<sup>947</sup>"
+                    }
+                ]
             },
             {
-                "title": "255 - Ce dont ne peuvent se passer les habitants de toute contrée"
+                "title": "Ce dont ne peuvent se passer les habitants de toute contrée",
+                "hadiths": [
+                    {
+                        "number": "850",
+                        "text": "L'Imām al-Ṣādiq (as) a dit : Les habitants de toute contrée ne peuvent se passer de trois [types de personnes] vers lesquelles elles peuvent se réfugier pour tout ce qui touche à leur vie d'ici-bas ou à leur vie dans l'Au-delà - et s'ils en sont dépourvus, ils deviennent ignorants et barbares : un savant instruit et pieux, un souverain droit et obéi, et un médecin expérimenté et digne de confiance.<sup>948</sup>"
+                    }
+                ]
             }
         ]
     },
@@ -4230,13 +4249,51 @@ const AUNE_SAGESSE = [
         "title": "49 - L'ÉLOQUENCE",
         "subparts": [
             {
-                "title": "256 - La signification de l'éloquence"
+                "title": "La signification de l'éloquence",
+                "hadiths": [
+                    {
+                        "number": "851",
+                        "text": "L'Imām 'Alī (as) a dit : L'éloquence est ce qui est exprimé de façon facile [par l'orateur] et est léger [et facile] à comprendre [pour l'auditeur].<sup>949</sup>"
+                    },
+                    {
+                        "number": "852",
+                        "text": "L'Imām 'Alī (as) a dit : L'éloquence est de répondre sans attendre et d'atteindre son but [faire comprendre son message] sans se tromper.<sup>950</sup>"
+                    },
+                    {
+                        "number": "853",
+                        "text": "L'Imām 'Alī (as) a dit : La concision suffit parfois [pour atteindre] l'éloquence.<sup>951</sup>"
+                    },
+                    {
+                        "number": "854",
+                        "text": "L'Imām al-Ṣādiq (as) a dit : L'éloquence ne réside pas dans la finesse de la langue ni dans d'abondants radotages, mais dans le fait de saisir le sens [que l'on veut transmettre] et de viser à en apporter la preuve.<sup>952</sup>"
+                    },
+                    {
+                        "number": "855",
+                        "text": "L'Imām al-Ṣādiq (as) a dit : L'éloquence réside dans trois choses : se rapprocher du sens visé, s'éloigner du discours prolixe, et dire beaucoup avec peu de mots.<sup>953</sup>"
+                    }
+                ]
             },
             {
-                "title": "257 - La plus éloquente des paroles"
+                "title": "La plus éloquente des paroles",
+                "hadiths": [
+                    {
+                        "number": "856",
+                        "text": "L'Imām 'Alī (as) a dit : L'éloquence la plus expressive réside dans ce qui véhicule simplement le message, et ce qui est agréablement concis.<sup>954</sup>"
+                    },
+                    {
+                        "number": "857",
+                        "text": "L'Imām 'Alī (as) a dit : La meilleure des paroles est celle qui est embellie par une structure plaisante, et est comprise à la fois par l'élite et le profane.<sup>955</sup>"
+                    }
+                ]
             },
             {
-                "title": "258 - La manipulation par la parole"
+                "title": "La manipulation par la parole",
+                "hadiths": [
+                    {
+                        "number": "858",
+                        "text": "Le Messager d'Allah (s) a dit : Les mauvais de ma communauté sont les bavards, les beaux parleurs, et les hautains ; les meilleurs de ma communauté sont ceux qui ont la meilleure morale.<sup>956</sup>"
+                    }
+                ]
             }
         ]
     },
@@ -4244,10 +4301,99 @@ const AUNE_SAGESSE = [
         "title": "50 - LA DIFFUSION [DE L'ISLAM]",
         "subparts": [
             {
-                "title": "259 - L'importance de la diffusion [de l'islam]"
+                "title": "L'importance de la diffusion [de l'islam]",
+                "introduction": "«<i>Les croyants n'ont pas à quitter tous leurs foyers. Pourquoi de chaque clan quelques hommes ne viendraient-ils pas s'instruire dans la religion pour pouvoir à leur retour avertir leur peuple afin qu'ils soient sur leur garde ?</i>»<sup>957</sup>",
+                "hadiths": [
+                    {
+                        "number": "859",
+                        "text": "Le Messager d'Allah (s) a dit : Je réitère ici cette parole : établissez la prière, acquittez-vous de l'aumône, ordonnez le convenable, interdisez le blâmable. En vérité, le sommet de l'ordonnance du convenable et de l'interdiction du blâmable est de vous fier à ma parole, de la diffuser aux absents, d'ordonner son acceptation et d'interdire sa transgression, car c'est un ordre provenant d'Allah le Tout-Puissant et de moi-même.<sup>958</sup>"
+                    },
+                    {
+                        "number": "860",
+                        "text": "Le Messager d'Allah (s) a dit en s'adressant à 'Alī (as) : Ô 'Alī, lorsqu'Allah guide un homme par tes mains [par toi], cela vaut mieux pour toi que [de posséder] tout ce que le soleil éclaire.<sup>959</sup>"
+                    },
+                    {
+                        "number": "861",
+                        "text": "Le Messager d'Allah (s) a dit : Faites aimer Allah à Ses serviteurs, et Allah vous aimera.<sup>960</sup>"
+                    },
+                    {
+                        "number": "862",
+                        "text": "Le Messager d'Allah (s) a dit : Celui qui convertit une personne à l'islam entre obligatoirement au Paradis.<sup>961</sup>"
+                    },
+                    {
+                        "number": "863",
+                        "text": "Le Messager d'Allah (s) a dit : Toute personne qui appelle à la bonne voie aura la même rétribution que celle qui l'a suivie sans que cela ne diminue leur propre rétribution.<sup>962</sup>"
+                    },
+                    {
+                        "number": "864",
+                        "text": "Le Messager d'Allah (s) a dit : Les élus de ma communauté sont ceux qui invitent à Allah le Très-Haut et qui Le font aimer de Ses serviteurs.<sup>963</sup>"
+                    },
+                    {
+                        "number": "865",
+                        "text": "Sharīf ibn Sābiq al-Taflīsī rapporte de Ḥammād al-Samdarī : J'ai dit à l'Imām al-Ṣādiq (as) : «Je me rends souvent dans des pays d'associationnisme ; à ce propos, certains m'ont dit : «Si tu meurs en ces lieux, tu seras ressuscité en leur compagnie.» [En est-il ainsi ?»] Il (as) me dit : «Ô Ḥammād ! Quand tu es là-bas, évoques-tu notre cause [l'Imāmat] et appelles-tu [les gens] à cela ?» Je lui dis : «Oui.» Il (as) me dit : «Quand tu es dans ces contrées [en terre d'islam], parles-tu de notre cause et appelles-tu les gens à elle ?» Je dis : «Non.» Il me dit : «Alors si tu venais à mourir dans ces lieux [les contrées associationnistes], tu seras ressuscité en tant que communauté à toi tout seul, et ta lumière courra devant toi.»<sup>964</sup><br><br><span class=\"reference-note\">(Voir également : 273. La bienséance (2), section 1286)</span>"
+                    }
+                ]
             },
             {
-                "title": "260 - Ce qui incombe au diffuseur [de l'islam]"
+                "title": "Ce qui incombe au diffuseur [de l'islam]",
+                "hadiths": [
+                    {
+                        "number": "866",
+                        "text": "<b>1 - La connaissance de la religion</b><br><br>Le Messager d'Allah (s) a dit : En vérité, la religion d'Allah le Tout-Puissant ne sera secourue que par le biais d'une personne qui en maîtrise l'ensemble des aspects.<sup>965</sup>"
+                    },
+                    {
+                        "number": "867",
+                        "text": "<b>2 - Se référer aux paroles des Gens de la demeure prophétique (as)</b><br><br>'Abd al-Salām ibn Ṣāliḥ al-Harawī a dit : J'ai entendu Abū al-Ḥasan al-Riḍā (as) dire : «Que la miséricorde d'Allah soit sur un serviteur qui a ravivé notre cause.» Je demandai : «Comment ravive-t-il votre cause ?» Il répondit : «En apprenant nos sciences et en l'enseignant aux gens, car si les gens venaient à connaître les vertus de nos paroles, ils nous suivraient.»<sup>966</sup>"
+                    },
+                    {
+                        "number": "868",
+                        "text": "<b>3 - La sincérité</b><br><br>«<i>Je ne vous demande aucune rétribution pour cela, ma rétribution n'incombe qu'au Seigneur de l'univers.</i>»<sup>967</sup><br><br>Le Messager d'Allah (s) a dit : Nul serviteur ne prononce un discours sans qu'Allah le Tout-Puissant ne l'interroge sur son intention.<sup>968</sup>"
+                    },
+                    {
+                        "number": "869",
+                        "text": "<b>4 - Le courage</b><br><br>«<i>Ceux qui diffusaient les messages d'Allah, Le craignaient et ne redoutaient nul autre qu'Allah. Et Allah suffit pour tenir le compte de tout.</i>»<sup>969</sup><br><br>Le Messager d'Allah (s) a dit : Dis la vérité sans redouter, dans la voie d'Allah, le blâme des réprobateurs.<sup>970</sup>"
+                    },
+                    {
+                        "number": "870",
+                        "text": "Le Messager d'Allah (s) a dit : La peur des gens ne doit pas empêcher l'un de vous de dire la vérité quand il la voit ou quand il en est témoin, car dire la vérité et faire le rappel d'un grand événement [l'Au-delà] ne rapproche pas le terme de la vie et n'éloigne pas la subsistance.<sup>971</sup>"
+                    },
+                    {
+                        "number": "871",
+                        "text": "<b>5 - L'honnêteté</b><br><br>L'Imām al-Ṣādiq (as) a dit selon ce qui lui est attribué dans <i>Miṣbāḥ al-Sharī'a</i> : La meilleure des exhortations est la parole qui n'outrepasse pas les limites de l'honnêteté, ni l'acte les limites de la sincérité.<sup>972</sup>"
+                    },
+                    {
+                        "number": "872",
+                        "text": "'Amrū ibn Abī al-Miqdām a dit : Lors de ma première rencontre avec lui, Abū Ja'far [l'Imām Bāqir] (as) m'a dit : Apprenez l'honnêteté avant la parole.<sup>973</sup>"
+                    },
+                    {
+                        "number": "873",
+                        "text": "<b>6 - La bonté</b><br><br>Le Messager d'Allah (s) a dit : Facilitez et ne causez pas de difficultés [lorsque vous propagez la religion], suscitez l'apaisement et non le dégoût.<sup>974</sup>"
+                    },
+                    {
+                        "number": "874",
+                        "text": "Le Messager d'Allah (s) a dit : J'ai reçu l'ordre de ménager les gens tout comme j'ai reçu l'ordre de transmettre le Message.<sup>975</sup>"
+                    },
+                    {
+                        "number": "875",
+                        "text": "L'Imām al-Ṣādiq (as) a dit en s'adressant à 'Umar ibn Ḥanẓalah : Ô 'Umar ! Ne surchargez pas nos partisans (shī'a), soyez bons avec eux, car ils ne peuvent supporter ce que vous supportez.<sup>976</sup>"
+                    },
+                    {
+                        "number": "876",
+                        "text": "<b>7 - Le bon conseil</b><br><br>«<i>Je vous transmets les messages de mon Seigneur, et je suis pour vous un conseiller digne de confiance.</i>»<sup>977</sup><br><br>L'Imām 'Alī (as) a dit en énonçant les vertus du vénérable Messager : [Allah] l'a envoyé alors que les gens étaient dans l'égarement et le doute, et plongés dans les dissensions. [...] Il (s) a prodigué de nombreux conseils, a suivi la [bonne] voie et a appelé [les gens] à la sagesse et à la bonne exhortation.<sup>978</sup>"
+                    },
+                    {
+                        "number": "877",
+                        "text": "<b>8 - La correspondance du cœur et de la langue</b><br><br>L'Imām 'Alī (as) a dit dans les paroles qui lui sont attribuées : Quand il vient du cœur, le mot touche le cœur, mais s'il ne provient que de la langue, il n'ira pas au-delà de l'oreille.<sup>979</sup>"
+                    },
+                    {
+                        "number": "878",
+                        "text": "<b>9 - La diffusion par l'acte</b><br><br>L'Imām al-Ṣādiq (as) a dit : Invitez les gens au bien par autre chose que vos langues afin qu'ils voient en vous l'assiduité, l'honnêteté et la piété.<sup>980</sup>"
+                    },
+                    {
+                        "number": "879",
+                        "text": "L'Imām al-Ṣādiq (as) a dit : Qu'Allah répande Sa miséricorde sur les gens qui sont une lumière et un phare [une guidance] ; ils appellent les autres à notre cause au travers de leurs actes et par le meilleur de leurs efforts.<sup>981</sup><br><br><span class=\"reference-note\">(Voir également : 273. La bienséance (2), section 1289)</span>"
+                    }
+                ]
             }
         ]
     },
@@ -4255,22 +4401,90 @@ const AUNE_SAGESSE = [
         "title": "51 - L'ÉPREUVE",
         "subparts": [
             {
-                "title": "261 - Être éprouvé par le mal et le bien"
+                "title": "Être éprouvé par le mal et le bien",
+                "introduction": "«<i>Nous vous éprouvons par le mal et par le bien [à titre] de tentation.</i>»<sup>982</sup>",
+                "hadiths": [
+                    {
+                        "number": "880",
+                        "text": "L'Imām al-Ṣādiq (as) a dit : Il n'y a pas de tension ou d'aisance qui ne soit de la part d'Allah une faveur ou une épreuve.<sup>983</sup>"
+                    },
+                    {
+                        "number": "881",
+                        "text": "L'Imām al-Ṣādiq (as) a dit : Toute chose ayant une tension ou une aisance issue de ce qu'Allah a ordonné ou interdit implique une épreuve et un jugement d'Allah.<sup>984</sup>"
+                    }
+                ]
             },
             {
-                "title": "262 - La philosophie de l'épreuve"
+                "title": "La philosophie de l'épreuve",
+                "introduction": "«<i>Ceci afin qu'Allah éprouve ce que vous avez dans vos poitrines, et qu'Il purifie ce que vous avez dans vos cœurs. Et Allah connaît ce qu'il y a dans les cœurs.</i>»<sup>985</sup><br><br>«<i>Certes Nous vous éprouverons afin de distinguer ceux d'entre vous qui luttent [pour la cause d'Allah] et qui endurent, afin d'éprouver [de faire apparaître] vos nouvelles.</i>»<sup>986</sup><br><br>«<i>Celui qui a créé la mort et la vie pour vous éprouver [et savoir] qui de vous est le meilleur en œuvre, et c'est Lui le Puissant, le Pardonneur.</i>»<sup>987</sup>",
+                "hadiths": [
+                    {
+                        "number": "882",
+                        "text": "L'Imām 'Alī (as) a dit : En vérité, Allah le Très-Haut a révélé le for intérieur des gens - non pas qu'Il ignorait les secrets bien gardés qu'ils cachent au fond de leur conscience, mais pour les éprouver et [voir] qui est le meilleur en œuvre, afin que la rétribution soit une récompense [des bonnes actions] et le châtiment, une punition [des mauvaises].<sup>988</sup>"
+                    },
+                    {
+                        "number": "883",
+                        "text": "L'Imām 'Alī (as) a dit : Plus l'épreuve et l'examen sont importants, plus la récompense et la rétribution sont conséquentes. Ne voyez-vous pas qu'Allah - loué soit-Il - a mis à l'épreuve les premiers hommes depuis Adam - que la paix d'Allah soit sur lui - jusqu'aux derniers de ce monde par des pierres qui ne sont ni maléfiques ni bénéfiques, et de surcroît aveugles et sourdes ? [et qu'] Il a fait construire avec ces pierres Sa maison sacrée qu'Il a érigée pour les gens en tant que lieu de droiture... ?!<br>Toutefois, Allah éprouve Ses serviteurs par différentes afflictions, les astreint à de nombreux efforts, et les éprouve par toutes sortes de malheurs pour faire sortir l'orgueil de leurs cœurs et installer l'humilité dans leurs âmes, afin de faire de cela des portes ouvertes vers Sa grâce et des moyens de soumission pour [se préparer à recevoir] Son pardon.<sup>989</sup>"
+                    },
+                    {
+                        "number": "884",
+                        "text": "L'Imām 'Alī (as) a dit : En vérité, vous serez secoués et tamisés jusqu'à ce que ceux parmi vous qui sont en bas se retrouvent en haut et ceux parmi vous qui sont en haut se retrouvent en bas, ainsi que ceux qui étaient à l'arrière devancent les autres, et ceux qui étaient devant soient devancés.<sup>990</sup>"
+                    },
+                    {
+                        "number": "885",
+                        "text": "L'Imām 'Alī (as) a dit : Ne te réjouis point de la richesse et de l'aisance et ne t'attriste pas de la pauvreté et du malheur car en vérité, l'or est testé par le feu et le croyant est testé par l'épreuve.<sup>991</sup>"
+                    }
+                ]
             },
             {
-                "title": "263 - La dureté des épreuves du croyant"
+                "title": "La dureté des épreuves du croyant",
+                "introduction": "«<i>Pensez-vous entrer au Paradis alors que vous n'avez pas encore subi des épreuves semblables à celles que subirent ceux qui vécurent avant vous ? Misère et maladie les avaient touchés ; et ils furent secoués jusqu'à ce que le Messager, et avec lui ceux qui avaient crus, se fussent écriés : «A quand donc le secours d'Allah ?» Certes, le secours d'Allah est sûrement proche.</i>»<sup>992</sup>",
+                "hadiths": [
+                    {
+                        "number": "886",
+                        "text": "L'Imām 'Alī (as) a dit : En vérité, l'épreuve [atteint] plus vite le croyant pieux que la pluie [n'atteint] la terre.<sup>993</sup>"
+                    },
+                    {
+                        "number": "887",
+                        "text": "L'Imām al-Ṣādiq (as) a dit : Les personnes les plus éprouvées sont les prophètes, ensuite leurs successeurs et leurs disciples, et ainsi de suite [en fonction de la piété des gens].<sup>994</sup>"
+                    },
+                    {
+                        "number": "888",
+                        "text": "L'Imām al-Bāqir (as) a dit : En vérité, le croyant est éprouvé par toutes sortes d'épreuves et il peut mourir de toutes sortes de morts, hormis le suicide.<sup>995</sup>"
+                    }
+                ]
             },
             {
-                "title": "264 - Le rôle des mauvais actes dans l'apparition des épreuves"
+                "title": "Le rôle des mauvais actes dans l'apparition des épreuves",
+                "introduction": "«<i>Tout malheur qui vous frappe est dû à ce que vos mains ont acquis. Et Il pardonne beaucoup.</i>»<sup>996</sup>",
+                "hadiths": [
+                    {
+                        "number": "889",
+                        "text": "Le Messager d'Allah (s) a dit : Allah le Très-Haut a révélé à Job : «Sais-tu quel était ton péché vis-à-vis de Moi qui a fait que Je t'éprouve par ces épreuves ?» Il répondit : «Non.» Le Seigneur lui dit : «Tu es entré dans la cour du pharaon et tu l'as flatté par deux mots.»<sup>997</sup><br><br><span class=\"reference-note\">(Voir également : 149. Le péché, section 777)</span>"
+                    }
+                ]
             },
             {
-                "title": "265 - Celui qui n'est pas éprouvé est méprisé par Allah"
+                "title": "Celui qui n'est pas éprouvé est méprisé par Allah",
+                "hadiths": [
+                    {
+                        "number": "890",
+                        "text": "Le Messager d'Allah (s) a dit : En vérité, Allah déteste le renfermé malfaisant qui ne supporte jamais le moindre dommage dans son corps ou son argent.<sup>998</sup>"
+                    },
+                    {
+                        "number": "891",
+                        "text": "L'Imām Zayn al-'Ābidīn (as) a dit : En vérité, je déteste qu'un homme soit préservé [des épreuves] dans cette vie et ne soit touché par aucun malheur.<sup>999</sup><br><br><span class=\"reference-note\">(Voir également : 362. La maladie, section 1652 ; 285. La santé, section 1326)</span>"
+                    }
+                ]
             },
             {
-                "title": "266 - La grâce de l'épreuve"
+                "title": "La grâce de l'épreuve",
+                "hadiths": [
+                    {
+                        "number": "892",
+                        "text": "Le Messager d'Allah (s) a dit : En vérité, Allah nourrit Son serviteur croyant par des épreuves de la même façon que la mère nourrit son enfant de lait.<sup>1000</sup>"
+                    }
+                ]
             },
             {
                 "title": "267 - L'épreuve et le rappel"
