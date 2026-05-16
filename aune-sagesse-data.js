@@ -2500,7 +2500,20 @@ const AUNE_SAGESSE = [
             },
             {
                 "title": "Le monde après la réapparition du Mahdī ('aj)",
-                "content": []
+                "content": [
+                    {
+                        "number": "517",
+                        "text": "Le Messager d'Allah (s) a dit : Le Mahdī ('aj) réapparaîtra parmi les derniers de ma communauté. Allah l'abreuvera de pluie, de la terre sortiront des végétaux, la richesse sera donnée de façon abondante, le bétail augmentera et la communauté s'agrandira.<span class=\"footnote-ref\">577</span>"
+                    },
+                    {
+                        "number": "518",
+                        "text": "L'Imām Zayn al-'Ābidīn (as) a dit : Lorsque notre Qā'im se dressera, Allah fera disparaître tout défaut de nos partisans (shī'a). Il rendra leurs cœurs aussi solides que le fer et fera en sorte que la force d'un homme équivaille à celle de quarante. Ils seront les dirigeants de la terre et ses chefs.<span class=\"footnote-ref\">578</span>"
+                    },
+                    {
+                        "number": "519",
+                        "text": "L'Imām al-Bāqir (as) a dit : Lorsque al-Qā'im se dressera, il proposera la foi à chaque personne vouant de l'inimitié aux Gens de la Demeure prophétique. Si elle y adhère réellement [cela sera pour son bien], sinon, il l'éliminera à moins qu'elle ne paie la capitation comme le font les Gens du livre [vivant en terre d'islam] actuellement. Il attachera à la taille de ces personnes une ceinture [zonnār, ceinture portée par les chrétiens de l'époque] et les fera sortir des villes [pour les exiler] dans ses environs.<span class=\"footnote-ref\">579</span>"
+                    }
+                ]
             }
         ]
     },
@@ -2508,22 +2521,154 @@ const AUNE_SAGESSE = [
         "title": "29 - L'IMĀM AL-QĀ'IM ('AJ)",
         "subparts": [
             {
-                "title": "159 - Les noms de l'Imām"
+                "title": "La foi et l'islam",
+                "content": [
+                    {
+                        "number": "520",
+                        "text": "L'Imām al-Bāqir (as) a dit : La foi est le fait d'attester<span class=\"footnote-ref\">581</span> et d'agir, alors que l'islam est le fait d'attester sans acte.<span class=\"footnote-ref\">582</span>"
+                    },
+                    {
+                        "number": "521",
+                        "text": "L'Imām al-Ṣādiq (as) a dit : En vérité, la foi est ce qui s'enracine dans les cœurs, tandis que l'islam est le moyen par lequel se réalisent les mariages, les héritages et [la préservation] de la vie des gens.<sup>583</sup>"
+                    }
+                ]
             },
             {
-                "title": "160 - Sa désignation en tant qu'Imām"
+                "title": "La réalité de la foi",
+                "content": [
+                    {
+                        "number": "522",
+                        "text": "Le Messager d'Allah (s) a dit : La foi n'est pas dans l'embellissement et les souhaits que l'on formule ; la foi est plutôt ce qui est pur [et sincère] dans le cœur, et est attesté par les actes.<sup>584</sup>"
+                    },
+                    {
+                        "number": "523",
+                        "text": "Le Messager d'Allah (s) a dit : La foi est la connaissance par le cœur, l'affirmation par la parole, et l'application de ses fondements.<sup>585</sup>"
+                    },
+                    {
+                        "number": "524",
+                        "text": "Le Messager d'Allah (s) a dit : La foi est la patience et la bonté.<sup>586</sup>"
+                    },
+                    {
+                        "number": "525",
+                        "text": "Le Messager d'Allah (s) a dit : En vérité, toute chose a une vérité, et le serviteur ne parvient à la vérité de la foi que lorsqu'il sait que ce qui l'a atteint ne pouvait pas ne pas l'atteindre, et que ce qui ne l'a pas atteint n'aurait pas pu l'atteindre.<sup>587</sup>"
+                    },
+                    {
+                        "number": "526",
+                        "text": "Le Messager d'Allah (s) a dit : Le serviteur n'atteint la vérité de la foi que lorsqu'il ne se met en colère que pour Allah et qu'il n'est satisfait que pour Allah. Lorsqu'il agit ainsi, il mérite alors [d'atteindre] la vérité de la foi.<sup>588</sup>"
+                    },
+                    {
+                        "number": "527",
+                        "text": "Le Messager d'Allah (s) a dit : Le serviteur ne devient réellement croyant que lorsqu'il souhaite le bien pour les autres autant qu'il le souhaite pour lui-même.<sup>589</sup>"
+                    },
+                    {
+                        "number": "528",
+                        "text": "L'Imām 'Alī (as) a dit : La foi est la sincérité des actes [pour Allah].<sup>590</sup>"
+                    },
+                    {
+                        "number": "529",
+                        "text": "L'Imām 'Alī (as) a dit : La foi est la patience dans le malheur et la gratitude dans l'aisance.<sup>591</sup>"
+                    },
+                    {
+                        "number": "530",
+                        "text": "L'Imām 'Alī (as) a dit : La sincérité est à la source de la foi.<sup>592</sup>"
+                    },
+                    {
+                        "number": "531",
+                        "text": "L'Imām 'Alī (as) a dit : La foi d'un serviteur n'est véritable que lorsque sa confiance en ce qui est détenu entre les mains d'Allah - loué soit-Il - est plus importante qu'en ce qu'il détient entre ses propres mains.<sup>593</sup>"
+                    },
+                    {
+                        "number": "532",
+                        "text": "L'Imām al-Ṣādiq (as) a dit : En vérité, l'une des vérités de la foi est de préférer la vérité vis-à-vis du faux, même si ce dernier est à votre avantage.<sup>594</sup>"
+                    }
+                ]
             },
             {
-                "title": "161 - La bonne nouvelle du Mahdī ('aj)"
+                "title": "La relation entre la foi et les actes",
+                "note": "(Voir également : 290. Les actes)",
+                "content": [
+                    {
+                        "number": "533",
+                        "text": "Le Messager d'Allah (s) a dit : La foi et les actes sont deux frères associés par un seul lien. Allah n'agrée pas l'un sans l'autre.<sup>595</sup>"
+                    },
+                    {
+                        "number": "534",
+                        "text": "Le Messager d'Allah (s) a dit : Les Murji'ites<sup>596</sup> ont été maudits par soixante-dix prophètes. Ce sont ceux qui disent que la foi est l'attestation sans les actes.<sup>597</sup>"
+                    },
+                    {
+                        "number": "535",
+                        "text": "L'Imām 'Alī (as) a dit : Si la foi se limitait à une simple parole, rien n'aurait été révélé pour cela à propos du jeûne, de la prière, ainsi que du licite et de l'illicite.<sup>598</sup>"
+                    },
+                    {
+                        "number": "536",
+                        "text": "L'Imām al-Kāẓim (as) a dit : Toute la foi est basée sur les actes<sup>599</sup> tandis que la parole est une partie de ces actes qu'Allah a rendus obligatoires, comme Il l'a exprimé dans Son Livre.<sup>600</sup>"
+                    }
+                ]
             },
             {
-                "title": "162 - Les deux occultations de l'Imām al-Qā'im ('aj)"
+                "title": "La foi et les péchés",
+                "content": [
+                    {
+                        "number": "537",
+                        "text": "Le Messager d'Allah (s) a dit : Aucun péché ne peut faire sortir le croyant de sa foi, tout comme aucun acte de bienfaisance ne peut faire sortir l'incroyant de sa mécréance.<sup>601</sup>"
+                    },
+                    {
+                        "source": "Kanz al-'Ummāl :",
+                        "number": "538",
+                        "text": "Le Messager d'Allah (s) a dit : «Celui qui dit : «Point de divinité à part Dieu» (<i>lā ilāha illā Allāh</i>) avec sincérité entrera au Paradis.» On dit : «Que signifie cette sincérité ?» Il répondit : «C'est ce qui retient de s'approcher des interdits d'Allah.»<sup>602</sup>"
+                    },
+                    {
+                        "number": "539",
+                        "text": "Le Messager d'Allah (s) a dit : [La parole] «Point de divinité à part Dieu» sera bénéfique à celui qui la prononce sauf lorsqu'il la dépréciera. Et la dépréciation à son égard apparaîtra lorsque les péchés seront ouvertement commis et que personne ne les rejettera ni ne cherchera à les corriger.<sup>603</sup>"
+                    },
+                    {
+                        "number": "540",
+                        "text": "L'Imām al-Kāẓim (as), à qui il fut demandé si les grands péchés faisaient sortir de la foi, répondit : Oui, et les péchés moins graves également. Le Messager d'Allah (s) a dit : «Celui qui commet l'adultère ne le ferait pas s'il était encore un croyant, et le voleur ne volerait pas s'il était encore un croyant.»<sup>604</sup>"
+                    }
+                ]
             },
             {
-                "title": "163 - La difficulté d'adhérer à la religion durant l'occultation de l'Imām ('aj)"
+                "title": "Ce qui permet d'accomplir la foi",
+                "content": [
+                    {
+                        "number": "541",
+                        "text": "Le Messager d'Allah (s) a dit : Trois qualités, lorsqu'elles sont présentes dans un individu, permettent l'accomplissement de sa foi : un homme qui, pour Allah, ne craint pas le reproche d'une personne qui lui en adresse, celui qui ne tire pas vanité de ses actes, et celui qui, lorsqu'il a le choix entre deux choses dont l'une est pour ce monde et l'autre pour l'Au-delà, choisit celle pour l'Au-delà au détriment de ce monde.<sup>605</sup>"
+                    },
+                    {
+                        "number": "542",
+                        "text": "Le Messager d'Allah (s) a dit : Le serviteur n'a une foi accomplie que lorsqu'il aime pour son frère ce qu'il aime pour lui-même, et lorsqu'il craint Allah à la fois dans ses moments de plaisanterie et de sérieux.<sup>606</sup>"
+                    },
+                    {
+                        "number": "543",
+                        "text": "Le Messager d'Allah (s) a dit : La foi du serviteur en Allah n'est accomplie que lorsqu'il acquiert cinq de ces caractéristiques : remettre sa confiance en Allah, confier ses affaires à Allah, se soumettre aux ordres d'Allah, être satisfait du destin décidé par Allah, et patienter face aux épreuves d'Allah. En vérité, celui qui aime pour Allah, déteste pour Allah, donne pour Allah, et s'abstient pour Allah aura ainsi accompli sa foi.<sup>607</sup>"
+                    },
+                    {
+                        "number": "544",
+                        "text": "L'Imām 'Alī (as) a dit : Le plus parfait dans sa foi parmi vous est celui qui a le meilleur caractère.<sup>608</sup>"
+                    },
+                    {
+                        "number": "545",
+                        "text": "L'Imām 'Alī (as) a dit : Celui qui possède ces trois qualités aura une foi accomplie : la raison, l'indulgence et le savoir.<sup>609</sup>"
+                    },
+                    {
+                        "number": "546",
+                        "text": "L'Imām 'Alī (as) a dit : La foi d'un serviteur n'est complète que lorsqu'il aime celui qu'Allah - gloire à Lui - aime et lorsqu'il hait celui qu'Allah - gloire à Lui - hait.<sup>610</sup>"
+                    },
+                    {
+                        "number": "547",
+                        "text": "L'Imām al-Ṣādiq (as) a dit : Le serviteur n'accomplit la vérité de la foi que lorsqu'il acquiert ces trois qualités : la compréhension de la religion, une juste planification de ses moyens de subsistance, et la patience face aux souffrances.<sup>611</sup>"
+                    }
+                ]
             },
             {
-                "title": "164 - L'invocation durant l'occultation du Qā'im ('aj)"
+                "title": "L'augmentation de la foi",
+                "introduction": "«<i>Et quand Ses versets leur sont récités, cela fait augmenter leur foi.</i>»<sup>612</sup>",
+                "note": "(Voir également : Coran 2:260, 18:13-14, 33:22, 48:4, 58:22)",
+                "content": [
+                    {
+                        "number": "548",
+                        "text": "L'Imām 'Alī (as) a dit : En vérité, la foi apparaît comme un point blanc dans le cœur. Au fur et à mesure que la foi augmente, le blanc s'étend et lorsque la foi est accomplie, tout le cœur devient blanc.<sup>613</sup>"
+                    }
+                ]
             },
             {
                 "title": "165 - L'attente [active] de la délivrance"
