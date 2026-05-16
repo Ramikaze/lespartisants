@@ -13,10 +13,52 @@ const AUNE_SAGESSE = [
     "title": "1 - LE SACRIFICE DE SOI",
     "subparts": [
       {
-        "title": "1 - La vertu du sacrifice de soi"
+        "title": "1 - La vertu du sacrifice de soi",
+        "hadiths": [
+          {
+            "text": "L'Imām 'Alī (as) a dit : Le sacrifice de soi est la plus haute des vertus.<sup>1</sup>"
+          },
+          {
+            "text": "L'Imām 'Alī (as) a dit : Le sacrifice de soi est une caractéristique des bienfaisants.<sup>2</sup>"
+          },
+          {
+            "text": "L'Imām 'Alī (as) a dit : Le sacrifice de soi est le meilleur des actes de bienfaisance, et c'est le plus haut degré de la foi.<sup>3</sup>"
+          },
+          {
+            "text": "L'Imām 'Alī (as) a dit : Le sacrifice de soi est la meilleure des dévotions et la plus sublime des noblesses.<sup>4</sup>"
+          },
+          {
+            "text": "L'Imām 'Alī (as) a dit : Le sacrifice de soi est la meilleure des générosités.<sup>5</sup>"
+          },
+          {
+            "text": "L'Imām 'Alī (as) a dit : Traite l'ensemble des gens de manière équitable ; agis avec les croyants avec sacrifice.<sup>6</sup>"
+          },
+          {
+            "text": "L'Imām 'Alī (as) a dit : Le sacrifice de soi est le sommet des vertus.<sup>7</sup>"
+          },
+          {
+            "text": "L'Imām 'Alī (as) a dit : Par le sacrifice de soi, on gagne le cœur des hommes libres.<sup>8</sup>"
+          }
+        ],
+        "note": "(Voir également : 382. La dépense, sections 1760 et 1762)"
       },
       {
-        "title": "2 - La vertu de ceux qui se sacrifient pour les autres"
+        "title": "2 - La vertu de ceux qui se sacrifient pour les autres",
+        "introduction": "«<i>Il [appartient également] à ceux qui, avant eux, se sont installés dans le pays et dans la foi, qui aiment ceux qui émigrent vers eux, et ne ressentent dans leurs cœurs aucune envie pour ce que [ces immigrés] ont reçu, et qui [les] préfèrent à eux-mêmes, même s'il y a pénurie chez eux. Quiconque se prémunit contre sa propre avarice, ceux-là sont ceux qui réussissent.</i>»<sup>9</sup>",
+        "hadiths": [
+          {
+            "source": "Al-Amālī li al-Ṭūsī :",
+            "text": "Abū Hurayra a dit : Un homme vint chez le Prophète (s) et il se plaint auprès de lui de la faim. Le Messager d'Allah (s) envoya une personne auprès de ses femmes et ces dernières dirent : «Nous n'avons que de l'eau.» Le Prophète (s) dit : «Qui peut être l'hôte de cet homme cette nuit ?» L'Imām 'Alī (as) dit : «Je serai son hôte, ô Messager d'Allah.» Il rejoignit Fāṭima et lui demanda : «Qu'as-tu à nous offrir, ô fille du Messager d'Allah ?» Elle répondit : «Nous n'avons que le dîner de nos fils, mais nous préférerons notre invité à nous-mêmes [nous le faisons passer avant nous-mêmes].» Et l'Imām dit: «ô fille de Muḥammad, fais dormir les enfants et éteins la chandelle.» À son réveil, 'Alī (as) se dirigea vers le Prophète (s) et lui fit part de ce qui s'était passé. Alors qu'il était chez le Prophète, Allah le Tout-Puissant révéla : <i>«et qui [les] préfèrent à eux-mêmes, même s'il y a pénurie chez eux»</i>.<sup>10</sup>"
+          },
+          {
+            "source": "Tanbīh al-Khawāṭir :",
+            "text": "'Ā'isha a dit : Le Messager d'Allah (s) n'a jamais mangé jusqu'à satiété durant trois jours de suite, et ce jusqu'à ce qu'il quitte ce monde. S'il l'avait voulu, il aurait pu manger jusqu'à satiété, mais il faisait passer les autres avant lui-même.<sup>11</sup>"
+          },
+          {
+            "source": "Majma' al-Bayān :",
+            "text": "Abū Ṭufayl a dit : 'Alī (as) acheta un vêtement qui lui plaisait. Il le prit et le donna comme offrande, puis il dit : «J'ai entendu le Messager d'Allah (s) dire : «Celui qui fait passer les autres avant lui-même, Allah le [fera entrer] au Paradis avant les autres le Jour de la Résurrection».»<sup>12</sup>"
+          }
+        ]
       }
     ]
   },
