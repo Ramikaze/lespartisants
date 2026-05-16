@@ -77,6 +77,8 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
   transform: translateY(0);
 }
 
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
 .dev-note{background:rgba(106,180,232,0.1);border:1px solid rgba(106,180,232,0.3);border-radius:12px;padding:20px;margin-top:40px;text-align:center}
 .dev-note-title{font-size:1rem;color:#6ab4e8;font-weight:600;margin-bottom:8px;display:flex;align-items:center;justify-content:center;gap:8px}
 .dev-note-text{font-size:0.95rem;color:#a8c4e0;line-height:1.6}
@@ -165,7 +167,30 @@ function renderSommaire() {
     let subpartsHtml = '';
     
     if (part.content) {
-      subpartsHtml = `<div class="subpart-item" style="border: none; background: transparent; box-shadow: none; padding: 0;">${part.content}</div>`;
+      if (Array.isArray(part.content)) {
+        let pagesHtml = part.content.map((page, i) => `
+          <div id="slide-${partIndex}-${i}" class="content-slide" style="display: ${i === 0 ? 'block' : 'none'}; animation: fadeIn 0.4s ease;">
+             ${page}
+          </div>
+        `).join('');
+        
+        let paginationNav = `
+          <div class="slide-nav" style="display: flex; justify-content: space-between; align-items: center; margin-top: 30px; padding-top: 20px; border-top: 1px solid rgba(201,168,76,0.2);">
+            <button onclick="changeSlide(${partIndex}, -1, ${part.content.length}, event)" class="nav-btn prev-btn" id="btn-prev-${partIndex}" style="visibility: hidden;">&larr; Précédent</button>
+            <span id="slide-counter-${partIndex}" style="color: var(--text-color); font-weight: 500; font-size: 0.9em;">Page 1 sur ${part.content.length}</span>
+            <button onclick="changeSlide(${partIndex}, 1, ${part.content.length}, event)" class="nav-btn next-btn" id="btn-next-${partIndex}">Suivant &rarr;</button>
+          </div>
+        `;
+        
+        subpartsHtml = `
+          <div class="subpart-item" style="border: none; background: transparent; box-shadow: none; padding: 0;">
+             ${pagesHtml}
+             ${paginationNav}
+          </div>
+        `;
+      } else {
+        subpartsHtml = `<div class="subpart-item" style="border: none; background: transparent; box-shadow: none; padding: 0;">${part.content}</div>`;
+      }
     } else if (part.subparts && part.subparts.length > 0) {
       part.subparts.forEach((sub, subIndex) => {
         subpartsHtml += `
@@ -186,19 +211,6 @@ function renderSommaire() {
        `;
     }
     
-    let navHtml = '<div style="display: flex; justify-content: space-between; margin-top: 30px; padding-top: 20px; border-top: 1px solid rgba(201,168,76,0.2);">';
-    if (partIndex > 0) {
-      navHtml += `<button onclick="openPart(${partIndex}, event)" class="nav-btn prev-btn">&larr; Précédent</button>`;
-    } else {
-      navHtml += `<div></div>`;
-    }
-    if (partIndex < AUNE_SAGESSE.length - 1) {
-      navHtml += `<button onclick="openPart(${partIndex + 2}, event)" class="nav-btn next-btn">Suivant &rarr;</button>`;
-    } else {
-      navHtml += `<div></div>`;
-    }
-    navHtml += '</div>';
-
     html += `
     <div class="part-card" id="part-${partIndex + 1}">
       <div class="part-header" onclick="togglePart(this)">
@@ -213,7 +225,6 @@ function renderSommaire() {
       <div class="part-content">
         <div class="subpart-list">
           ${subpartsHtml}
-          ${navHtml}
         </div>
       </div>
     </div>
@@ -221,6 +232,32 @@ function renderSommaire() {
   });
   
   container.innerHTML = html;
+}
+
+let currentSlideState = {};
+
+function changeSlide(partIndex, dir, total, event) {
+  if (event) event.stopPropagation();
+  if (currentSlideState[partIndex] === undefined) currentSlideState[partIndex] = 0;
+  
+  let current = currentSlideState[partIndex];
+  let next = current + dir;
+  
+  if (next >= 0 && next < total) {
+     document.getElementById(`slide-${partIndex}-${current}`).style.display = 'none';
+     document.getElementById(`slide-${partIndex}-${next}`).style.display = 'block';
+     currentSlideState[partIndex] = next;
+     document.getElementById(`slide-counter-${partIndex}`).innerText = `Page ${next + 1} sur ${total}`;
+     
+     document.getElementById(`btn-prev-${partIndex}`).style.visibility = next > 0 ? 'visible' : 'hidden';
+     document.getElementById(`btn-next-${partIndex}`).style.visibility = next < total - 1 ? 'visible' : 'hidden';
+     
+     // Scroll to top of the part
+     const targetCard = document.getElementById('part-' + (partIndex + 1));
+     if (targetCard) {
+        targetCard.scrollIntoView({ behavior: 'smooth', block: 'start' });
+     }
+  }
 }
 
 function togglePart(element) {
