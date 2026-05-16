@@ -110,129 +110,95 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
   </div>
 
   <div class="accordion-container" id="sommaire">
-    <!-- Exemple Partie 1 -->
-    <div class="part-card">
-      <div class="part-header" onclick="togglePart(this)">
-        <div class="part-title-wrap">
-          <div class="part-num">1</div>
-          <div class="part-title">La Connaissance et la Science ('Ilm)</div>
-        </div>
-        <div class="part-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
-        </div>
-      </div>
-      <div class="part-content">
-        <div class="subpart-list">
-          <div class="subpart-item">
-            <div class="subpart-title">1.1 L'importance de la Connaissance</div>
-            <div class="subpart-desc">Hadiths sur les mérites de l'apprentissage et de la recherche du savoir.</div>
-            <div class="empty-hadiths">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
-              Hadiths à intégrer ultérieurement.
-            </div>
-          </div>
-          <div class="subpart-item">
-            <div class="subpart-title">1.2 Les devoirs du Savant</div>
-            <div class="subpart-desc">Responsabilités de ceux qui détiennent la science.</div>
-            <div class="empty-hadiths">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
-              Hadiths à intégrer ultérieurement.
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Exemple Partie 2 -->
-    <div class="part-card">
-      <div class="part-header" onclick="togglePart(this)">
-        <div class="part-title-wrap">
-          <div class="part-num">2</div>
-          <div class="part-title">L'Intellect et l'Ignorance ('Aql wa Jahl)</div>
-        </div>
-        <div class="part-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
-        </div>
-      </div>
-      <div class="part-content">
-        <div class="subpart-list">
-          <div class="subpart-item">
-            <div class="subpart-title">2.1 La valeur de l'Intellect</div>
-            <div class="subpart-desc">La Raison comme lumière divine et guide intérieur.</div>
-            <div class="empty-hadiths">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
-              Hadiths à intégrer ultérieurement.
-            </div>
-          </div>
-          <div class="subpart-item">
-            <div class="subpart-title">2.2 Les caractéristiques de l'Ignorant</div>
-            <div class="subpart-desc">Comportements et signes de l'ignorance.</div>
-            <div class="empty-hadiths">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
-              Hadiths à intégrer ultérieurement.
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Exemple Partie 3 -->
-    <div class="part-card">
-      <div class="part-header" onclick="togglePart(this)">
-        <div class="part-title-wrap">
-          <div class="part-num">3</div>
-          <div class="part-title">L'Éthique et la Morale (Akhlâq)</div>
-        </div>
-        <div class="part-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
-        </div>
-      </div>
-      <div class="part-content">
-        <div class="subpart-list">
-          <div class="subpart-item">
-            <div class="subpart-title">3.1 La sincérité (Ikhlâs)</div>
-            <div class="subpart-desc">L'intention pure et l'action vouée à Dieu.</div>
-            <div class="empty-hadiths">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
-              Hadiths à intégrer ultérieurement.
-            </div>
-          </div>
-          <div class="subpart-item">
-            <div class="subpart-title">3.2 La patience (Sabr)</div>
-            <div class="subpart-desc">Endurance face aux épreuves et dans l'obéissance.</div>
-            <div class="empty-hadiths">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
-              Hadiths à intégrer ultérieurement.
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+    <!-- Dynamically loaded via script -->
   </div>
 
-  <div class="dev-note">
+  <div class="dev-note" id="dev-note" style="display:none">
     <div class="dev-note-title">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
       Note d'intégration
     </div>
     <div class="dev-note-text">
-      Le sommaire PDF étant un scan d'images de 75 pages, la structure présentée ci-dessus sert de modèle (template). Vous pourrez éditer directement le fichier <code>aune-sagesse.html</code> pour y ajouter l'ensemble des parties et sous-parties selon ce modèle, au fur et à mesure que vous intégrerez les hadiths.
+      Le sommaire a été extrait automatiquement (OCR). Certains titres peuvent comporter de légères coquilles dues au scan. Vous pouvez corriger ces titres directement dans le fichier <code>aune-sagesse-data.js</code>.
     </div>
   </div>
 
 </div>
 
+<script src="aune-sagesse-data.js"></script>
 <script>
+function renderSommaire() {
+  const container = document.getElementById('sommaire');
+  if (!container) return;
+  
+  if (typeof AUNE_SAGESSE === 'undefined' || AUNE_SAGESSE.length === 0) {
+    container.innerHTML = '<div style="text-align:center;color:#9aa3b8">Le sommaire est en cours de chargement...</div>';
+    return;
+  }
+  
+  document.getElementById('dev-note').style.display = 'block';
+  
+  let html = '';
+  
+  AUNE_SAGESSE.forEach((part, partIndex) => {
+    let subpartsHtml = '';
+    
+    if (part.subparts && part.subparts.length > 0) {
+      part.subparts.forEach((sub, subIndex) => {
+        subpartsHtml += `
+          <div class="subpart-item">
+            <div class="subpart-title">${sub.title}</div>
+            <div class="empty-hadiths">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+              Hadiths à intégrer ultérieurement.
+            </div>
+          </div>
+        `;
+      });
+    }
+    
+    html += `
+    <div class="part-card">
+      <div class="part-header" onclick="togglePart(this)">
+        <div class="part-title-wrap">
+          <div class="part-num">${partIndex + 1}</div>
+          <div class="part-title">${part.title}</div>
+        </div>
+        <div class="part-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+      </div>
+      <div class="part-content">
+        <div class="subpart-list">
+          ${subpartsHtml}
+        </div>
+      </div>
+    </div>
+    `;
+  });
+  
+  container.innerHTML = html;
+}
+
 function togglePart(element) {
   const card = element.parentElement;
   
-  // Si on veut fermer les autres accordéons (optionnel)
-  // document.querySelectorAll('.part-card').forEach(c => {
-  //   if(c !== card) c.classList.remove('active');
-  // });
+  // Fermer les autres accordéons
+  document.querySelectorAll('.part-card').forEach(c => {
+    if(c !== card) c.classList.remove('active');
+  });
   
   card.classList.toggle('active');
+  
+  // Scroll softly to the part after opening
+  if (card.classList.contains('active')) {
+    setTimeout(() => {
+      card.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }, 300);
+  }
 }
+
+document.addEventListener('DOMContentLoaded', renderSommaire);
 
 // Theme Listener
 window.addEventListener('message', function(e) {
@@ -250,6 +216,7 @@ try {
     document.body.setAttribute('data-theme', '');
   }
 } catch(e) {}
+
 </script>
 
 </body>
