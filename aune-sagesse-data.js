@@ -6157,5 +6157,871 @@ const AUNE_SAGESSE = [
         "title": "1508 - L'interdiction à l'être humain de se suicider"
       }
     ]
+  },
+  {
+    "title": "327 - LE CORAN",
+    "subparts": [
+      {
+        "title": "1509 - Adhérez au Coran"
+      },
+      {
+        "title": "1510 - Le Coran est nouveau à toute époque"
+      },
+      {
+        "title": "1511 - Etudier le Coran et l'enseigner aux autres"
+      },
+      {
+        "title": "1512 - La mémorisation du Coran et la façon dont doit se comporter celui qui le mémorise"
+      },
+      {
+        "title": "1513 - L'incitation à la récitation du Coran"
+      },
+      {
+        "title": "1514 - Réciter le Coran avec une belle voix"
+      },
+      {
+        "title": "1515 - L'authentique récitation"
+      },
+      {
+        "title": "1516 - La conduite à tenir lors de la récitation du Coran"
+      },
+      {
+        "title": "1517 - Celui que le Coran maudit"
+      },
+      {
+        "title": "1518 - L'écoute du Coran"
+      },
+      {
+        "title": "1519 - Mise en garde contre le fait d'interpréter le Coran selon son avis personnel"
+      }
+    ]
+  },
+  {
+    "title": "328 - LES RAPPROCHÉS [D'ALLAH]",
+    "subparts": [
+      {
+        "title": "1520 - Le but ultime du rapprochement [d'Allah]"
+      },
+      {
+        "title": "1521 - Les gens les plus proches d'Allah"
+      },
+      {
+        "title": "1522 - Ce qui rapproche d'Allah"
+      }
+    ]
+  },
+  {
+    "title": "329 - LE PRÊT",
+    "subparts": [
+      {
+        "title": "1523 - La vertu du prêt"
+      },
+      {
+        "title": "1524 - L'incitation à accorder un sursis à un débiteur en difficulté"
+      }
+    ]
+  },
+  {
+    "title": "330 - L'ÉCONOMIE ET LA MESURE",
+    "subparts": [
+      {
+        "title": "1525 - L'incitation à vivre de façon économe et mesurée"
+      },
+      {
+        "title": "1526 - Le rôle de l'économie dans l'absence de besoin"
+      }
+    ]
+  },
+  {
+    "title": "331 - LA LOI DU TALION (QIṢĀṢ)",
+    "subparts": [
+      {
+        "title": "1527 - La loi du talion et son importance"
+      },
+      {
+        "title": "1528 - Pardonner et renoncer au talion"
+      }
+    ]
+  },
+  {
+    "title": "332 - LE DÉCRET ET LA DESTINÉE",
+    "subparts": [
+      {
+        "title": "1529 - Le décret et la destinée"
+      },
+      {
+        "title": "1530 - L'inscription du décret et de la destinée de l'homme dans l'utérus"
+      },
+      {
+        "title": "1531 - Ce qu'Allah décrète pour le croyant est un bien"
+      },
+      {
+        "title": "1532 - Celui qui n'est pas satisfait du décret divin"
+      },
+      {
+        "title": "1533 - Ce qui fait partie de la destinée"
+      }
+    ]
+  },
+  {
+    "title": "333 - LE JUGEMENT",
+    "subparts": [
+      {
+        "title": "1534 - L'importance du statut du jugement"
+      },
+      {
+        "title": "1535 - Recourir au jugement du Ṭāghūt"
+      },
+      {
+        "title": "1536 - La gravité de l'acte de juger"
+      },
+      {
+        "title": "1537 - Le souhait de devenir juge"
+      },
+      {
+        "title": "1538 - La conduite à tenir lors du jugement"
+      },
+      {
+        "title": "1539 - Les juges guidés et aidés par Allah"
+      },
+      {
+        "title": "1540 - Les types de juges"
+      },
+      {
+        "title": "1541 - Les juges justes"
+      },
+      {
+        "title": "1542 - Juger par la preuve claire"
+      },
+      {
+        "title": "1543 - La parole de l'Imām ['Alī] (as): C'est comme un jugement !"
+      }
+    ]
+  },
+  {
+    "title": "334 - LE CŒUR",
+    "subparts": [
+      {
+        "title": "1544 - Le cœur"
+      },
+      {
+        "title": "1545 - L'intégrité du cœur"
+      },
+      {
+        "title": "1546 - L'œil du cœur"
+      },
+      {
+        "title": "1547 - L'oreille du cœur"
+      },
+      {
+        "title": "1548 - L'avancement du cœur et son recul"
+      },
+      {
+        "title": "1549 - La pureté du cœur"
+      },
+      {
+        "title": "1550 - L'expansion du cœur"
+      },
+      {
+        "title": "1551 - Le voile du cœur"
+      },
+      {
+        "title": "1552 - La dureté du cœur"
+      },
+      {
+        "title": "1553 - La maladie du cœur"
+      },
+      {
+        "title": "1554 - Ce qui guérit le cœur"
+      },
+      {
+        "title": "1555 - Ce qui fait mourir le cœur"
+      },
+      {
+        "title": "1556 - Ce qui ravive le cœur"
+      },
+      {
+        "title": "1557 - Ce qui attendrit le cœur"
+      },
+      {
+        "title": "1558 - Ce qui polit et clarifie le cœur"
+      }
+    ]
+  },
+  {
+    "title": "335 - L'IMITATION (TAQLĪD)",
+    "subparts": [
+      {
+        "title": "1559 - L'imitation blâmée"
+      },
+      {
+        "title": "1560 - Celui qu'il est permis d'imiter"
+      }
+    ]
+  },
+  {
+    "title": "336 - LE PARI ET LES JEUX DE HASARD",
+    "subparts": [
+      {
+        "title": "1561 - L'interdiction de parier et de s'adonner aux jeux de hasard"
+      }
+    ]
+  },
+  {
+    "title": "337 - LE CONTENTEMENT",
+    "subparts": [
+      {
+        "title": "1562 - La vertu du contentement"
+      },
+      {
+        "title": "1563 - Ce qui suscite le contentement"
+      },
+      {
+        "title": "1564 - Le fruit du contentement"
+      },
+      {
+        "title": "1565 - Celui qui ne se satisfait pas de peu"
+      }
+    ]
+  },
+  {
+    "title": "338 - L'ORGUEIL",
+    "subparts": [
+      {
+        "title": "1566 - Mise en garde contre l'orgueil"
+      },
+      {
+        "title": "1567 - La signification de l'orgueil"
+      },
+      {
+        "title": "1568 - Le blâme de l'orgueilleux"
+      },
+      {
+        "title": "1569 - Le traitement de l'orgueil"
+      },
+      {
+        "title": "1570 - Les conséquences de l'orgueil"
+      },
+      {
+        "title": "1571 - La destination des orgueilleux"
+      }
+    ]
+  },
+  {
+    "title": "339 - LE LIVRE",
+    "subparts": [
+      {
+        "title": "1572 - Le livre"
+      },
+      {
+        "title": "1573 - L'écriture et la personnalité de l'écrivain"
+      },
+      {
+        "title": "1574 - L'incitation à écrire le savoir"
+      },
+      {
+        "title": "1575 - La récompense de la rédaction d'ouvrages et de l'écriture"
+      },
+      {
+        "title": "1576 - La conduite à tenir lors de l'écriture"
+      },
+      {
+        "title": "1577 - La correspondance"
+      }
+    ]
+  },
+  {
+    "title": "340 - GARDER LES SECRETS",
+    "subparts": [
+      {
+        "title": "1578 - L'importance de garder les secrets"
+      },
+      {
+        "title": "1579 - L'éloge du serviteur discret"
+      }
+    ]
+  },
+  {
+    "title": "341 - LE MENSONGE",
+    "subparts": [
+      {
+        "title": "1580 - Le blâme du mensonge"
+      },
+      {
+        "title": "1581 - Le mensonge et la foi"
+      },
+      {
+        "title": "1582 - Le mensonge est la clé de tout mal"
+      },
+      {
+        "title": "1583 - L'ordre d'abandonner le mensonge dit sérieusement ou par plaisanterie"
+      },
+      {
+        "title": "1584 - Le petit mensonge"
+      },
+      {
+        "title": "1585 - Les conséquences du mensonge"
+      },
+      {
+        "title": "1586 - Le pire des mensonges"
+      },
+      {
+        "title": "1587 - Les cas où le mensonge est permis"
+      },
+      {
+        "title": "1588 - La dissimulation"
+      },
+      {
+        "title": "1589 - Ecouter le mensonge"
+      }
+    ]
+  },
+  {
+    "title": "342 - LA NOBLESSE",
+    "subparts": [
+      {
+        "title": "1590 - La vertu de la noblesse"
+      },
+      {
+        "title": "1591 - La morale des personnes nobles"
+      },
+      {
+        "title": "1592 - Ce qui ne fait pas partie de la morale des nobles"
+      },
+      {
+        "title": "1593 - L'incitation à honorer le noble"
+      },
+      {
+        "title": "1594 - La vertu de traiter [les autres] avec honneur"
+      },
+      {
+        "title": "1595 - Le blâme du fait de rejeter une marque d'honneur et de respect"
+      },
+      {
+        "title": "1596 - La plus honorable des personnes"
+      },
+      {
+        "title": "1597 - Honorer les gens est honorer sa propre personne"
+      }
+    ]
+  },
+  {
+    "title": "343 - LE GAIN",
+    "subparts": [
+      {
+        "title": "1598 - Le meilleur gain"
+      },
+      {
+        "title": "1599 - L'incitation à acquérir ses revenus par le produit de son travail"
+      },
+      {
+        "title": "1600 - Les sources de revenus blâmables"
+      }
+    ]
+  },
+  {
+    "title": "344 - LA PARESSE",
+    "subparts": [
+      {
+        "title": "1601 - La paresse"
+      }
+    ]
+  },
+  {
+    "title": "345 - LA MÉCRÉANCE",
+    "subparts": [
+      {
+        "title": "1602 - Ce qui suscite la mécréance"
+      },
+      {
+        "title": "1603 - Le plus bas degré de mécréance"
+      }
+    ]
+  },
+  {
+    "title": "346 - LA COMPENSATION",
+    "subparts": [
+      {
+        "title": "1604 - L'incitation à récompenser le bien par le bien"
+      },
+      {
+        "title": "1605 - Ce que l'on doit faire et que l'on ne doit pas faire au sujet de la compensation"
+      },
+      {
+        "title": "1606 - Le blâme de la vengeance"
+      },
+      {
+        "title": "1607 - Tu seras traité comme tu traites les autres"
+      }
+    ]
+  },
+  {
+    "title": "347 - LE DEVOIR",
+    "subparts": [
+      {
+        "title": "1608 - La caractéristique du devoir divin"
+      },
+      {
+        "title": "1609 - Allah n'impose à aucune âme une charge supérieure à sa capacité"
+      }
+    ]
+  },
+  {
+    "title": "348 - LA PAROLE",
+    "subparts": [
+      {
+        "title": "1610 - L'importance de la parole"
+      },
+      {
+        "title": "1611 - Mise en garde contre les paroles grossières"
+      },
+      {
+        "title": "1612 - L'incitation à s'abstenir des paroles inutiles"
+      },
+      {
+        "title": "1613 - Le blâme du fait de trop parler"
+      },
+      {
+        "title": "1614 - L'interdiction de parler avec excès"
+      },
+      {
+        "title": "1615 - La vertu de la parole vis-à-vis du silence"
+      }
+    ]
+  },
+  {
+    "title": "349 - LE REPAS",
+    "subparts": [
+      {
+        "title": "1616 - La morale du repas"
+      },
+      {
+        "title": "1617 - L'invitation à manger"
+      },
+      {
+        "title": "1618 - Manger peu"
+      }
+    ]
+  },
+  {
+    "title": "350 - LE VÊTEMENT ET LA PARURE",
+    "subparts": [
+      {
+        "title": "1619 - Le type de vêtement recommandé"
+      },
+      {
+        "title": "1620 - Les beaux vêtements et la parure"
+      },
+      {
+        "title": "1621 - La propreté des vêtements"
+      }
+    ]
+  },
+  {
+    "title": "351 - L'AMUSEMENT ET LE DIVERTISSEMENT",
+    "subparts": [
+      {
+        "title": "1622 - Le blâme de l'amusement et du divertissement"
+      }
+    ]
+  },
+  {
+    "title": "352 - LE PRÉTEXTE ET L'EXCUSE",
+    "subparts": [
+      {
+        "title": "1623 - L'argumentation avec les serviteurs"
+      },
+      {
+        "title": "1624 - Allah n'acceptera l'excuse d'aucun serviteur ayant ignoré Ses prescriptions"
+      }
+    ]
+  },
+  {
+    "title": "353 - LA NUIT",
+    "subparts": [
+      {
+        "title": "1625 - La prière de la nuit"
+      }
+    ]
+  },
+  {
+    "title": "354 - LA FOI ET LE CROYANT",
+    "subparts": [
+      {
+        "title": "1626 - La définition de la foi"
+      },
+      {
+        "title": "1627 - Les conditions de la foi"
+      },
+      {
+        "title": "1628 - L'origine de la foi"
+      },
+      {
+        "title": "1629 - Les différents types de foi"
+      },
+      {
+        "title": "1630 - Les facteurs qui renforcent la foi"
+      },
+      {
+        "title": "1631 - Les facteurs de disparition de la foi"
+      },
+      {
+        "title": "1632 - La certitude"
+      },
+      {
+        "title": "1633 - L'éloge du croyant"
+      },
+      {
+        "title": "1634 - Les caractéristiques du croyant"
+      }
+    ]
+  },
+  {
+    "title": "355 - LA CONFIANCE [EN ALLAH]",
+    "subparts": [
+      {
+        "title": "1635 - La réalité de la confiance [en Allah]"
+      },
+      {
+        "title": "1636 - Le résultat de la confiance [en Allah]"
+      }
+    ]
+  },
+  {
+    "title": "356 - LA REPENTANCE",
+    "subparts": [
+      {
+        "title": "1637 - Les conditions de l'acceptation de la repentance"
+      },
+      {
+        "title": "1638 - L'empressement de se repentir"
+      },
+      {
+        "title": "1639 - L'incitation au repentir"
+      },
+      {
+        "title": "1640 - La repentance est la corde de l'absolution"
+      }
+    ]
+  },
+  {
+    "title": "357 - L'AIDE",
+    "subparts": [
+      {
+        "title": "1641 - Aider son frère dans la foi"
+      },
+      {
+        "title": "1642 - Le blâme de celui qui n'aide pas son frère"
+      },
+      {
+        "title": "1643 - Le blâme du fait de s'abstenir d'aider l'opprimé"
+      }
+    ]
+  },
+  {
+    "title": "358 - LA PRUDENCE",
+    "subparts": [
+      {
+        "title": "1644 - L'incitation à la prudence"
+      }
+    ]
+  },
+  {
+    "title": "359 - L'UNITÉ",
+    "subparts": [
+      {
+        "title": "1645 - L'incitation à l'unité"
+      },
+      {
+        "title": "1646 - Le blâme de la désunion"
+      }
+    ]
+  },
+  {
+    "title": "360 - LA FAMILLE",
+    "subparts": []
+  },
+  {
+    "title": "361 - LA MAGNANIMITÉ",
+    "subparts": [
+      {
+        "title": "1647 - L'interprétation de la magnanimité"
+      }
+    ]
+  },
+  {
+    "title": "362 - LA MALADIE",
+    "subparts": [
+      {
+        "title": "1648 - Certaines raisons profondes de l'existence de la maladie"
+      },
+      {
+        "title": "1649 - Cacher la maladie"
+      },
+      {
+        "title": "1650 - Le blâme de ceux qui ne tombent pas malade"
+      },
+      {
+        "title": "1651 - Rendre visite au malade"
+      },
+      {
+        "title": "1652 - La bonne conduite lors de la visite au malade"
+      }
+    ]
+  },
+  {
+    "title": "363 - LA DISPUTE",
+    "subparts": [
+      {
+        "title": "1653 - Le blâme de la dispute et ses effets"
+      }
+    ]
+  },
+  {
+    "title": "364 - LA PLAISANTERIE",
+    "subparts": [
+      {
+        "title": "1654 - La plaisanterie louable"
+      },
+      {
+        "title": "1655 - La plaisanterie blâmable"
+      }
+    ]
+  },
+  {
+    "title": "365 - L'AUTORITÉ",
+    "subparts": [
+      {
+        "title": "1656 - Le Maître de l'autorité"
+      },
+      {
+        "title": "1657 - La fréquentation des souverains"
+      },
+      {
+        "title": "1658 - Le meilleur souverain"
+      },
+      {
+        "title": "1659 - Ce qui sied aux souverains"
+      }
+    ]
+  },
+  {
+    "title": "366 - LES ANGES",
+    "subparts": [
+      {
+        "title": "1660 - La création des anges"
+      },
+      {
+        "title": "1661 - La description des anges"
+      },
+      {
+        "title": "1662 - Les anges gardiens"
+      },
+      {
+        "title": "1663 - Les maisons au sein desquelles n'entrent pas les anges"
+      }
+    ]
+  },
+  {
+    "title": "367 - LA MORT",
+    "subparts": [
+      {
+        "title": "1664 - La mort"
+      },
+      {
+        "title": "1665 - La certitude face à la mort"
+      },
+      {
+        "title": "1666 - L'approche du départ"
+      },
+      {
+        "title": "1667 - L'interprétation de la mort"
+      },
+      {
+        "title": "1668 - La mort du croyant"
+      },
+      {
+        "title": "1669 - Le rappel de la mort"
+      },
+      {
+        "title": "1670 - Se préparer à la mort"
+      },
+      {
+        "title": "1671 - Souhaiter la mort"
+      },
+      {
+        "title": "1672 - L'agonie de la mort"
+      },
+      {
+        "title": "1673 - La raison de l'aversion pour la mort"
+      },
+      {
+        "title": "1674 - L'apparition du Prophète (s) et des Imāms (as) à l'agonisant"
+      },
+      {
+        "title": "1675 - La mort subite"
+      },
+      {
+        "title": "1676 - L'accompagnement du convoi funèbre"
+      },
+      {
+        "title": "1677 - L'enterrement du défunt"
+      },
+      {
+        "title": "1678 - Ce qui suit la personne après sa mort"
+      }
+    ]
+  },
+  {
+    "title": "368 - LES BIENS",
+    "subparts": [
+      {
+        "title": "1679 - Les biens sont l'objet des désirs"
+      },
+      {
+        "title": "1680 - Les effets de l'amour des biens"
+      },
+      {
+        "title": "1681 - L'amour des biens licites"
+      },
+      {
+        "title": "1682 - Le blâme de l'excès de richesse"
+      },
+      {
+        "title": "1683 - Celui qui acquiert des biens de manière illicite"
+      },
+      {
+        "title": "1684 - Les biens sont ce qui bénéficie à l'homme"
+      }
+    ]
+  },
+  {
+    "title": "369 - LA PROPHÉTIE (1)",
+    "subparts": [
+      {
+        "title": "1685 - La philosophie de la prophétie"
+      },
+      {
+        "title": "1686 - Les différentes catégories de prophètes (as)"
+      },
+      {
+        "title": "1687 - Le nombre des prophètes (as)"
+      },
+      {
+        "title": "1688 - Les prophètes dotés d'une grande résolution (ūlū al-'azm) (as)"
+      },
+      {
+        "title": "1689 - Les caractéristiques spécifiques des prophètes (as)"
+      }
+    ]
+  },
+  {
+    "title": "370 - LA PROPHÉTIE (2)",
+    "subparts": [
+      {
+        "title": "1690 - Adam (as)"
+      },
+      {
+        "title": "1691 - Enoch [Idrīs] (as)"
+      },
+      {
+        "title": "1692 - Noé [Nūḥ] (as)"
+      },
+      {
+        "title": "1693 - Hūd (as)"
+      },
+      {
+        "title": "1694 - Ṣāliḥ (as)"
+      },
+      {
+        "title": "1695 - Abraham [Ibrāhīm] (as)"
+      },
+      {
+        "title": "1696 - Loth [Lūṭ] (as)"
+      },
+      {
+        "title": "1697 - Jacob [Ya'qūb] et Joseph [Yūsuf] (as)"
+      },
+      {
+        "title": "1698 - Job [Ayyūb] (as)"
+      },
+      {
+        "title": "1699 - Shu'ayb (as)"
+      },
+      {
+        "title": "1700 - Moïse [Mūsā] et Aaron [Hārūn] (as)"
+      },
+      {
+        "title": "1701 - Moïse et Khiḍr (as)"
+      },
+      {
+        "title": "1702 - Ismaël fils d'Ézéchiel [Ismā'īl ibn Ḥazqīl] (as)"
+      },
+      {
+        "title": "1703 - Elisée [al-Yasa'] (as)"
+      },
+      {
+        "title": "1704 - Dhū-l-Kifl (as)"
+      },
+      {
+        "title": "1705 - David [Dāwūd] (as)"
+      },
+      {
+        "title": "1706 - Salomon [Sulaymān] (as)"
+      },
+      {
+        "title": "1707 - Zacharie [Zakariyyā] (as)"
+      },
+      {
+        "title": "1708 - Jean [Yaḥyā] (as)"
+      },
+      {
+        "title": "1709 - Jésus ['Isā] (as)"
+      },
+      {
+        "title": "1710 - Jérémie [Irmiyā] (as)"
+      },
+      {
+        "title": "1711 - Jonas [Yunūs] (as)"
+      }
+    ]
+  },
+  {
+    "title": "371 - LA PROPHÉTIE (3)",
+    "subparts": [
+      {
+        "title": "1712 - Muḥammad, le Messager d'Allah (s)"
+      },
+      {
+        "title": "1713 - Le sceau des prophètes (s)"
+      },
+      {
+        "title": "1714 - Muḥammad (s) d'après les paroles de Muḥammad (s)"
+      },
+      {
+        "title": "1715 - Muḥammad (s) d'après les paroles de 'Alī (as)"
+      },
+      {
+        "title": "1716 - L'universalité de la mission de Muḥammad (s)"
+      },
+      {
+        "title": "1717 - La meilleure des familles parmi les gens"
+      },
+      {
+        "title": "1718 - Les caractéristiques du Prophète (s)"
+      }
+    ]
+  },
+  {
+    "title": "372 - LES ÉTOILES",
+    "subparts": [
+      {
+        "title": "1719 - La science des étoiles [l'astronomie]"
+      }
+    ]
+  },
+  {
+    "title": "373 - LE VŒU",
+    "subparts": []
   }
 ];
