@@ -4717,5 +4717,726 @@ const AUNE_SAGESSE = [
         "title": "1163 - Mise en garde contre le fait de rire trop et aux éclats"
       }
     ]
+  },
+  {
+    "title": "246 - LE FAIBLE",
+    "subparts": [
+      {
+        "title": "1164 - Les faibles"
+      },
+      {
+        "title": "1165 - [Le retour au] pouvoir des faibles"
+      },
+      {
+        "title": "1166 - L'impuissance spirituelle"
+      }
+    ]
+  },
+  {
+    "title": "247 - L'ÉGAREMENT",
+    "subparts": [
+      {
+        "title": "1167 - Ce qui suscite l'égarement [du droit chemin]"
+      },
+      {
+        "title": "1168 - Ceux qui égarent les autres"
+      },
+      {
+        "title": "1169 - Ce qui détruit les piliers de l'égarement"
+      }
+    ]
+  },
+  {
+    "title": "248 - LA RESPONSABILITÉ",
+    "subparts": [
+      {
+        "title": "1170 - L'assurance de la responsabilité comme conséquence de la dégradation ou de la perte [des biens des autres]"
+      },
+      {
+        "title": "1171 - Le blâme du fait de s'exposer à une caution et à une responsabilité [que l'on ne pourra pas assurer]"
+      },
+      {
+        "title": "1172 - Aucune responsabilité n'est engagée pour la chose empruntée"
+      }
+    ]
+  },
+  {
+    "title": "249 - L'HOSPITALITÉ",
+    "subparts": [
+      {
+        "title": "1173 - La vertu de l'hospitalité"
+      },
+      {
+        "title": "1174 - Celui qu'il ne faut pas inviter"
+      },
+      {
+        "title": "1175 - L'incitation à accepter l'invitation du croyant"
+      },
+      {
+        "title": "1176 - Faire un effort spécial pour accueillir l'invité"
+      },
+      {
+        "title": "1177 - Les convenances de l'hospitalité"
+      }
+    ]
+  },
+  {
+    "title": "250 - LA MÉDECINE",
+    "subparts": [
+      {
+        "title": "1178 - Le véritable médecin"
+      },
+      {
+        "title": "1179 - Ce qui dispense de la médecine"
+      },
+      {
+        "title": "1180 - Eviter les médicaments autant que possible"
+      }
+    ]
+  },
+  {
+    "title": "251 - NOURRIR LES AUTRES",
+    "subparts": [
+      {
+        "title": "1181 - La vertu du fait de nourrir un affamé"
+      }
+    ]
+  },
+  {
+    "title": "252 - LE DIVORCE",
+    "subparts": [
+      {
+        "title": "1182 - Le blâme du divorce"
+      },
+      {
+        "title": "1183 - La signification profonde de la limitation du divorce [avec une même femme] à trois fois"
+      }
+    ]
+  },
+  {
+    "title": "253 - L'AMBITION",
+    "subparts": [
+      {
+        "title": "1184 - Le blâme de l'ambition"
+      },
+      {
+        "title": "1185 - L'ambition louée"
+      }
+    ]
+  },
+  {
+    "title": "254 - LA PURETÉ",
+    "subparts": [
+      {
+        "title": "1186 - La purification"
+      },
+      {
+        "title": "1187 - Les purificateurs"
+      },
+      {
+        "title": "1188 - La pureté spirituelle"
+      }
+    ]
+  },
+  {
+    "title": "255 - L'OBÉISSANCE",
+    "subparts": [
+      {
+        "title": "1189 - L'obéissance à Dieu et ses effets"
+      },
+      {
+        "title": "1190 - Celui à qui il faut obéir"
+      },
+      {
+        "title": "1191 - Celui à qui il ne faut pas obéir"
+      }
+    ]
+  },
+  {
+    "title": "256 - LE PARFUM",
+    "subparts": [
+      {
+        "title": "1192 - La vertu du parfum"
+      },
+      {
+        "title": "1193 - Le parfum des femmes"
+      }
+    ]
+  },
+  {
+    "title": "257 - LE MAUVAIS PRÉSAGE",
+    "subparts": [
+      {
+        "title": "1194 - Tirer un mauvais présage"
+      }
+    ]
+  },
+  {
+    "title": "258 - LES ONGLES",
+    "subparts": [
+      {
+        "title": "1195 - L'incitation à se couper les ongles"
+      },
+      {
+        "title": "1196 - L'incitation à laisser ses ongles [longs] pour les femmes"
+      }
+    ]
+  },
+  {
+    "title": "259 - L'INJUSTICE",
+    "subparts": [
+      {
+        "title": "1197 - Mise en garde contre l'injustice"
+      },
+      {
+        "title": "1198 - Les types d'injustices"
+      },
+      {
+        "title": "1199 - Les injustices les plus monstrueuses"
+      },
+      {
+        "title": "1200 - Accorder un délai à l'injuste"
+      },
+      {
+        "title": "1201 - Le regret de l'injuste"
+      },
+      {
+        "title": "1202 - Mise en garde contre le fait d'aider l'injuste"
+      },
+      {
+        "title": "1203 - L'incitation à soutenir l'opprimé"
+      },
+      {
+        "title": "1204 - Mise en garde à propos de la supplication de l'opprimé"
+      }
+    ]
+  },
+  {
+    "title": "260 - LA CONJECTURE",
+    "subparts": [
+      {
+        "title": "1205 - La conjecture de l'intellectuel"
+      },
+      {
+        "title": "1206 - L'incitation à entretenir une bonne opinion au sujet de l'acte du croyant"
+      },
+      {
+        "title": "1207 - La vertu de la bonne opinion"
+      },
+      {
+        "title": "1208 - Mise en garde contre la mauvaise conjecture"
+      },
+      {
+        "title": "1209 - La nécessité d'éviter ce qui suscite la mauvaise conjecture"
+      },
+      {
+        "title": "1210 - Les cas où la mauvaise conjoncture est permise"
+      }
+    ]
+  },
+  {
+    "title": "261 - L'ADORATION",
+    "subparts": [
+      {
+        "title": "1211 - L'incitation à l'adoration"
+      },
+      {
+        "title": "1212 - Le rôle de la compréhension et de la certitude dans l'adoration"
+      },
+      {
+        "title": "1213 - Les types d'adoration"
+      },
+      {
+        "title": "1214 - Les types d'adorateurs"
+      },
+      {
+        "title": "1215 - La meilleure forme d'adoration"
+      },
+      {
+        "title": "1216 - L'ardeur dans l'adoration"
+      }
+    ]
+  },
+  {
+    "title": "262 - LA LEÇON MORALE",
+    "subparts": [
+      {
+        "title": "1217 - L'incitation à tirer des leçons"
+      },
+      {
+        "title": "1218 - Ce que dont il faut tirer leçon"
+      },
+      {
+        "title": "1219 - Le fruit du fait de tirer des leçons"
+      }
+    ]
+  },
+  {
+    "title": "263 - LA VANITÉ",
+    "subparts": [
+      {
+        "title": "1220 - Le blâme de la vanité"
+      },
+      {
+        "title": "1221 - L'incitation à sous-estimer le bien que l'on fait"
+      },
+      {
+        "title": "1222 - Le traitement de la vanité"
+      }
+    ]
+  },
+  {
+    "title": "264 - LE MIRACLE",
+    "subparts": [
+      {
+        "title": "1223 - Le miracle est un signe permettant de reconnaître les prophètes d'Allah et Ses preuves"
+      },
+      {
+        "title": "1224 - La signification profonde de la diversité des miracles des prophètes"
+      }
+    ]
+  },
+  {
+    "title": "265 - LA PRÉCIPITATION",
+    "subparts": [
+      {
+        "title": "1225 - Le blâme de la précipitation"
+      },
+      {
+        "title": "1226 - L'incitation à se hâter pour faire des bonnes actions"
+      }
+    ]
+  },
+  {
+    "title": "266 - LA JUSTICE",
+    "subparts": [
+      {
+        "title": "1227 - La valeur de la justice"
+      },
+      {
+        "title": "1228 - Les qualités de la personne juste"
+      },
+      {
+        "title": "1229 - Conseil pour se comporter de façon juste avec son ami et son ennemi"
+      },
+      {
+        "title": "1230 - La plus juste des personnes"
+      }
+    ]
+  },
+  {
+    "title": "267 - L'ANIMOSITÉ",
+    "subparts": [
+      {
+        "title": "1231 - L'interdiction de faire preuve d'animosité vis-à-vis des gens"
+      },
+      {
+        "title": "1232 - La graine de l'animosité"
+      },
+      {
+        "title": "1233 - Celui qui doit être considéré comme un ennemi"
+      },
+      {
+        "title": "1234 - Ton pire ennemi"
+      },
+      {
+        "title": "1235 - Mise en garde contre le fait de faire confiance à son ennemi"
+      },
+      {
+        "title": "1236 - Se réconcilier avec ses ennemis"
+      },
+      {
+        "title": "1237 - La manière dont il faut s'armer face aux ennemis"
+      },
+      {
+        "title": "1238 - L'hostilité des gens vis-à-vis de ce qu'ils ignorent"
+      }
+    ]
+  },
+  {
+    "title": "268 - LES EXCUSES",
+    "subparts": [
+      {
+        "title": "1239 - Mise en garde contre le fait de faire ce qui implique par la suite de présenter des excuses"
+      },
+      {
+        "title": "1240 - L'incitation à accepter les excuses de celui qui les présente"
+      }
+    ]
+  },
+  {
+    "title": "269 - LA DIGNITÉ",
+    "subparts": [
+      {
+        "title": "1241 - L'incitation à préserver sa dignité"
+      },
+      {
+        "title": "1242 - La rétribution pour s'abstenir de porter atteinte à la dignité des musulmans"
+      },
+      {
+        "title": "1243 - La rétribution de celui qui défend la dignité du musulman"
+      }
+    ]
+  },
+  {
+    "title": "270 - LA CONNAISSANCE",
+    "subparts": [
+      {
+        "title": "1244 - La valeur de la connaissance"
+      },
+      {
+        "title": "1245 - Les obstacles à la connaissance"
+      },
+      {
+        "title": "1246 - La connaissance de soi"
+      }
+    ]
+  },
+  {
+    "title": "271 - LA CONNAISSANCE D'ALLAH",
+    "subparts": [
+      {
+        "title": "1247 - La vertu de la connaissance d'Allah"
+      },
+      {
+        "title": "1248 - Les effets de la connaissance d'Allah"
+      },
+      {
+        "title": "1249 - Les caractéristiques de celui qui connaît Allah [ou du gnostique]"
+      },
+      {
+        "title": "1250 - Le plus petit degré de la connaissance d'Allah"
+      },
+      {
+        "title": "1251 - Connaître Allah par Allah"
+      },
+      {
+        "title": "1252 - L'interdiction de réfléchir au sujet de l'Essence d'Allah"
+      },
+      {
+        "title": "1253 - L'incapacité des intellects à connaître Son Essence"
+      },
+      {
+        "title": "1254 - Le cadre dans lequel on peut décrire Allah"
+      },
+      {
+        "title": "1255 - La valeur de [la croyance en] l'unicité d'Allah (tawḥīd) et son explication"
+      },
+      {
+        "title": "1256 - La preuve de l'unicité divine"
+      },
+      {
+        "title": "1257 - Les regards ne peuvent L'atteindre mais les cœurs Le contemplent"
+      },
+      {
+        "title": "1258 - L'Eternel et l'Infini"
+      },
+      {
+        "title": "1259 - Le Vivant"
+      },
+      {
+        "title": "1260 - L'Omniscient"
+      },
+      {
+        "title": "1261 - Le Juste"
+      },
+      {
+        "title": "1262 - Le Créateur"
+      },
+      {
+        "title": "1263 - Le Tout-Puissant"
+      },
+      {
+        "title": "1264 - L'Enonciateur"
+      },
+      {
+        "title": "1265 - Le Détenteur de volonté"
+      },
+      {
+        "title": "1266 - Le Manifeste et le Caché"
+      },
+      {
+        "title": "1267 - Le Souverain"
+      },
+      {
+        "title": "1268 - Celui qui entend tout et qui voit tout"
+      },
+      {
+        "title": "1269 - Le Subtil et le Parfaitement connaisseur"
+      },
+      {
+        "title": "1270 - Le Fort et le Puissant"
+      },
+      {
+        "title": "1271 - Le Sage"
+      },
+      {
+        "title": "1272 - L'Eternel qui n'a besoin de rien pour exister (Ṣamad)"
+      },
+      {
+        "title": "1273 - Il est en tout lieu"
+      },
+      {
+        "title": "1274 - Les attributs de l'Essence et les attributs de l'acte"
+      },
+      {
+        "title": "1275 - Les attributs exhaustifs d'Allah"
+      }
+    ]
+  },
+  {
+    "title": "272 - LA BIENSÉANCE (1)",
+    "subparts": [
+      {
+        "title": "1276 - La vertu de la bienséance"
+      },
+      {
+        "title": "1277 - L'incitation à propager la bienfaisance et à agir selon la bienséance vis-à-vis des bonnes et des mauvaises personnes"
+      },
+      {
+        "title": "1278 - La circulation des actes de bienséance de main en main"
+      },
+      {
+        "title": "1279 - L'interdiction de faire sentir et d'attendre des remerciements pour un acte de bienséance"
+      },
+      {
+        "title": "1280 - L'achèvement de la bienséance"
+      },
+      {
+        "title": "1281 - L'interdiction de mépriser et de sous-estimer la bienséance"
+      },
+      {
+        "title": "1282 - Le signe de l'acceptation d'un acte de bienséance"
+      },
+      {
+        "title": "1283 - La rétribution de l'agissement selon la bienséance"
+      }
+    ]
+  },
+  {
+    "title": "273 - LA BIENSÉANCE (2)",
+    "subparts": [
+      {
+        "title": "1284 - L'importance d'ordonner le convenable et d'interdire le blâmable"
+      },
+      {
+        "title": "1285 - Le danger d'abandonner le fait d'ordonner le convenable et d'interdire le blâmable"
+      },
+      {
+        "title": "1286 - Celui qui est satisfait des actes d'un groupe"
+      },
+      {
+        "title": "1287 - Les conditions pour ordonner le convenable et interdire le blâmable"
+      },
+      {
+        "title": "1288 - Le plus faible degré de l'interdiction du blâmable"
+      }
+    ]
+  },
+  {
+    "title": "274 - LA GRANDEUR",
+    "subparts": [
+      {
+        "title": "1289 - L'explication de la grandeur"
+      },
+      {
+        "title": "1290 - Ce qui suscite la grandeur"
+      },
+      {
+        "title": "1291 - Ce qui suscite la pérennité de la grandeur"
+      }
+    ]
+  },
+  {
+    "title": "275 - LA SOLITUDE",
+    "subparts": [
+      {
+        "title": "1292 - La vertu de la solitude"
+      },
+      {
+        "title": "1293 - Ce qui conduit à la solitude"
+      },
+      {
+        "title": "1294 - Celui à qui il ne sied pas d'adopter la solitude"
+      }
+    ]
+  },
+  {
+    "title": "276 - LA CONSOLATION",
+    "subparts": [
+      {
+        "title": "1295 - Consoler une personne affectée par un malheur"
+      },
+      {
+        "title": "1296 - Ce qu'il faut dire pour consoler une personne affectée par un malheur"
+      },
+      {
+        "title": "1297 - Féliciter une personne affectée par un malheur est plus approprié que de lui présenter ses condoléances"
+      }
+    ]
+  },
+  {
+    "title": "277 - LES FRÉQUENTATIONS",
+    "subparts": [
+      {
+        "title": "1298 - Les usages concernant la fréquentation des gens"
+      },
+      {
+        "title": "1299 - Les usages concernant la fréquentation de la famille"
+      },
+      {
+        "title": "1300 - La façon dont il faut côtoyer les gens"
+      }
+    ]
+  },
+  {
+    "title": "278 - 'ASHŪRĀ",
+    "subparts": [
+      {
+        "title": "1301 - 'Ashūrā et le fait de pleurer pour Ḥusayn (as) et ses compagnons"
+      }
+    ]
+  },
+  {
+    "title": "279 - LA PASSION",
+    "subparts": [
+      {
+        "title": "1302 - Le blâme de la passion"
+      },
+      {
+        "title": "1303 - La rétribution de celui qui s'éprend passionnément de quelqu'un et reste chaste"
+      },
+      {
+        "title": "1304 - L'amour passionné pour Allah"
+      }
+    ]
+  },
+  {
+    "title": "280 - LA FERVEUR AVEUGLE",
+    "subparts": [
+      {
+        "title": "1305 - Le blâme de la ferveur aveugle"
+      },
+      {
+        "title": "1306 - La ferveur louable"
+      }
+    ]
+  },
+  {
+    "title": "281 - L'INFAILLIBILITÉ",
+    "subparts": [
+      {
+        "title": "1307 - La signification de l'infaillibilité"
+      },
+      {
+        "title": "1308 - Les facteurs qui suscitent l'infaillibilité [la préservation vis-à-vis de tout péché]"
+      },
+      {
+        "title": "1309 - L'infaillibilité de l'Imām"
+      }
+    ]
+  },
+  {
+    "title": "282 - LA VÉNÉRATION",
+    "subparts": [
+      {
+        "title": "1310 - La vénération des dirigeants"
+      },
+      {
+        "title": "1311 - L'étendue recommandée de la vénération"
+      }
+    ]
+  },
+  {
+    "title": "283 - LA CHASTETÉ",
+    "subparts": [
+      {
+        "title": "1312 - L'incitation à la chasteté"
+      },
+      {
+        "title": "1313 - L'incitation à la retenue du ventre et du sexe"
+      },
+      {
+        "title": "1314 - L'origine de la chasteté"
+      },
+      {
+        "title": "1315 - Le fruit de la chasteté"
+      }
+    ]
+  },
+  {
+    "title": "284 - LE PARDON",
+    "subparts": [
+      {
+        "title": "1316 - La vertu du pardon"
+      },
+      {
+        "title": "1317 - L'incitation au beau pardon"
+      },
+      {
+        "title": "1318 - L'incitation à pardonner malgré le fait que l'on a le pouvoir [de punir]"
+      },
+      {
+        "title": "1319 - Le pardon et l'assainissement des cœurs"
+      },
+      {
+        "title": "1320 - Ce qui ne doit pas être pardonné"
+      },
+      {
+        "title": "1321 - Le pardon d'Allah"
+      }
+    ]
+  },
+  {
+    "title": "285 - LA SANTÉ",
+    "subparts": [
+      {
+        "title": "1322 - La valeur de la santé"
+      },
+      {
+        "title": "1323 - Ce qui génère la santé"
+      },
+      {
+        "title": "1324 - L'incitation à rechercher la santé auprès d'Allah"
+      },
+      {
+        "title": "1325 - L'invocation pour demander la santé"
+      },
+      {
+        "title": "1326 - Les proches serviteurs [d'Allah]"
+      }
+    ]
+  },
+  {
+    "title": "286 - L'INTELLECT",
+    "subparts": [
+      {
+        "title": "1327 - La valeur de l'intellect"
+      },
+      {
+        "title": "1328 - Le rôle de l'intellect dans le châtiment et la rétribution"
+      },
+      {
+        "title": "1329 - L'autorité de l'intellect"
+      },
+      {
+        "title": "1330 - L'explication de l'intellect"
+      },
+      {
+        "title": "1331 - Les attributs de l'homme d'intellect"
+      },
+      {
+        "title": "1332 - Ce qui développe l'intellect"
+      },
+      {
+        "title": "1333 - Ce qui permet d'évaluer l'intellect"
+      },
+      {
+        "title": "1334 - Ce qui affaiblit l'intellect"
+      },
+      {
+        "title": "1335 - Ce qui indique la faiblesse de l'intellect"
+      }
+    ]
   }
 ];
