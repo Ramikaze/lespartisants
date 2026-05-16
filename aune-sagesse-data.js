@@ -5436,6 +5436,725 @@ const AUNE_SAGESSE = [
       },
       {
         "title": "1335 - Ce qui indique la faiblesse de l'intellect"
+      },
+      {
+        "title": "1336 - Le fruit de l'intellect"
+      },
+      {
+        "title": "1337 - L'ennemi de l'intellect"
+      }
+    ]
+  },
+  {
+    "title": "287 - LA RETRAITE SPIRITUELLE À LA MOSQUÉE (I'TIKĀF)",
+    "subparts": [
+      {
+        "title": "1338 - La retraite spirituelle à la mosquée"
+      }
+    ]
+  },
+  {
+    "title": "288 - LE SAVOIR",
+    "subparts": [
+      {
+        "title": "1339 - La vertu du savoir"
+      },
+      {
+        "title": "1340 - La supériorité du savoir vis-à-vis des actes d'adoration"
+      },
+      {
+        "title": "1341 - La mort du savant"
+      },
+      {
+        "title": "1342 - Regarder le visage d'un savant est un acte d'adoration"
+      },
+      {
+        "title": "1343 - L'incitation à la quête du savoir"
+      },
+      {
+        "title": "1344 - La vertu de celui qui est en quête du savoir"
+      },
+      {
+        "title": "1345 - Les grâces de l'enseignement"
+      },
+      {
+        "title": "1346 - La façon dont l'enseignant sera ressuscité"
+      },
+      {
+        "title": "1347 - S'instruire pour Allah et pour un autre qu'Allah"
+      },
+      {
+        "title": "1348 - Ce qui est nécessaire dans le choix d'un enseignant"
+      },
+      {
+        "title": "1349 - Les droits de l'élève devant être respectés par l'enseignant"
+      },
+      {
+        "title": "1350 - Les droits de l'enseignant devant être respectés par l'élève"
+      },
+      {
+        "title": "1351 - Honorer le savant"
+      },
+      {
+        "title": "1352 - Les devoirs qui incombent à l'élève"
+      },
+      {
+        "title": "1353 - La vertu des savants"
+      },
+      {
+        "title": "1354 - Le fruit du savoir"
+      },
+      {
+        "title": "1355 - Les devoirs qui incombent au savant"
+      },
+      {
+        "title": "1356 - Le blâme du fait d'agir sans savoir"
+      },
+      {
+        "title": "1357 - La nécessité d'agir en conformité avec son savoir"
+      },
+      {
+        "title": "1358 - La sévérité de la punition du savant qui délaisse son savoir"
+      },
+      {
+        "title": "1359 - Le blâme des savants malveillant"
+      },
+      {
+        "title": "1360 - La bonne conduite dans le domaine du savoir"
+      },
+      {
+        "title": "1361 - Le blâme du savoir inutile"
+      },
+      {
+        "title": "1362 - Les différents types de savoir"
+      },
+      {
+        "title": "1363 - Le savoir inspiré"
+      },
+      {
+        "title": "1364 - Le plus savant des gens"
+      },
+      {
+        "title": "1365 - Le véritable savoir est exclusivement détenu par les Gens de la demeure prophétique (Ahl al-Bayt) (as)"
+      }
+    ]
+  },
+  {
+    "title": "289 - LA DURÉE DE VIE",
+    "subparts": [
+      {
+        "title": "1366 - La durée de vie"
+      },
+      {
+        "title": "1367 - L'incitation à faire le meilleur usage de sa vie"
+      },
+      {
+        "title": "1368 - Celui dont la vie sera une preuve contre lui"
+      },
+      {
+        "title": "1369 - Ce qui augmente la durée de vie"
+      },
+      {
+        "title": "1370 - Le croyant et la demande d'une longue vie"
+      },
+      {
+        "title": "1371 - La sagesse du fait que l'homme ignore la durée de sa vie"
+      }
+    ]
+  },
+  {
+    "title": "290 - L'ACTION",
+    "subparts": [
+      {
+        "title": "1372 - L'incitation à réaliser des bonnes actions"
+      },
+      {
+        "title": "1373 - L'action et la rétribution"
+      },
+      {
+        "title": "1374 - La continuité de l'action"
+      },
+      {
+        "title": "1375 - Les meilleurs actes"
+      },
+      {
+        "title": "1376 - Celui qui ne bénéficie pas de ses actes"
+      },
+      {
+        "title": "1377 - Les actes dont il faut se méfier"
+      },
+      {
+        "title": "1378 - La perfection de l'action"
+      },
+      {
+        "title": "1379 - L'exposition des actes à Allah, au Prophète (s) et aux Imāms (as)"
+      },
+      {
+        "title": "1380 - Le recueil des actes"
+      },
+      {
+        "title": "1381 - La matérialisation des actes"
+      }
+    ]
+  },
+  {
+    "title": "291 - L'ENGAGEMENT",
+    "subparts": [
+      {
+        "title": "1382 - L'incitation à être fidèle à ses engagements"
+      }
+    ]
+  },
+  {
+    "title": "292 - LA RÉSURRECTION",
+    "subparts": [
+      {
+        "title": "1383 - La Résurrection"
+      },
+      {
+        "title": "1384 - Les preuves affirmant la Résurrection"
+      },
+      {
+        "title": "1385 - L'approche de l'Heure"
+      },
+      {
+        "title": "1386 - La connaissance exclusive de l'Heure par Allah"
+      },
+      {
+        "title": "1387 - Les signes avant-coureurs de l'Heure"
+      },
+      {
+        "title": "1388 - Le Jour de la sortie [des tombes]"
+      },
+      {
+        "title": "1389 - La description du [Jour du] Rassemblement"
+      },
+      {
+        "title": "1390 - Les pieux le Jour de la Résurrection"
+      },
+      {
+        "title": "1391 - Les pécheurs le Jour de la Résurrection"
+      },
+      {
+        "title": "1392 - Le recueil des actes"
+      },
+      {
+        "title": "1393 - Les gens de la droite et les gens de la gauche"
+      }
+    ]
+  },
+  {
+    "title": "293 - L'HABITUDE",
+    "subparts": [
+      {
+        "title": "1394 - Le rôle de l'habitude dans la vie"
+      },
+      {
+        "title": "1395 - Vaincre l'habitude"
+      },
+      {
+        "title": "1396 - La difficulté de changer ses habitudes"
+      }
+    ]
+  },
+  {
+    "title": "294 - LA FÊTE ('ĪD)",
+    "subparts": [
+      {
+        "title": "1397 - La vraie fête"
+      },
+      {
+        "title": "1398 - La fête de Nowrūz"
+      },
+      {
+        "title": "1399 - Les ornements des fêtes"
+      }
+    ]
+  },
+  {
+    "title": "295 - LES DÉFAUTS",
+    "subparts": [
+      {
+        "title": "1400 - L'éloge de celui à qui la préoccupation au sujet de ses propres défauts fait oublier les défauts des gens"
+      },
+      {
+        "title": "1401 - Mise en garde contre le fait de se préoccuper des défauts des gens et de flatter sa propre personne"
+      },
+      {
+        "title": "1402 - La vertu de la dissimulation des défauts"
+      },
+      {
+        "title": "1403 - L'incitation à offrir les défauts [en disant avec tact leurs défauts aux autres en vue de leur amélioration]"
+      },
+      {
+        "title": "1404 - Le blâme du fait de traquer les défauts des autres"
+      },
+      {
+        "title": "1405 - Ce qui voile les défauts"
+      },
+      {
+        "title": "1406 - Celui qui ignore une chose lui trouve des défauts"
+      }
+    ]
+  },
+  {
+    "title": "296 - LE REPROCHE",
+    "subparts": [
+      {
+        "title": "1407 - Le blâme du reproche"
+      }
+    ]
+  },
+  {
+    "title": "297 - LE MODE DE VIE",
+    "subparts": [
+      {
+        "title": "1408 - Le mode de vie le plus sain et agréable"
+      },
+      {
+        "title": "1409 - Ce qui assombrit la vie"
+      }
+    ]
+  },
+  {
+    "title": "298 - L'ILLUSION",
+    "subparts": [
+      {
+        "title": "1410 - Le danger de l'illusion et les caractéristiques de celui qui est victime d'illusions"
+      },
+      {
+        "title": "1411 - Se tromper au sujet d'Allah"
+      },
+      {
+        "title": "1412 - Se laisser tromper par ce monde"
+      },
+      {
+        "title": "1413 - S'illusionner soi-même"
+      }
+    ]
+  },
+  {
+    "title": "299 - LES BATAILLES [AUXQUELLES LE PROPHÈTE (S) A PARTICIPÉ]",
+    "subparts": [
+      {
+        "title": "1414 - La bataille de Badr"
+      },
+      {
+        "title": "1415 - La bataille d'Uḥud"
+      },
+      {
+        "title": "1416 - La bataille Zhāt al-Riqā'"
+      },
+      {
+        "title": "1417 - La bataille des factions (aḥzāb) et des Banī Qurayẓa"
+      },
+      {
+        "title": "1418 - La bataille de Khaybar"
+      },
+      {
+        "title": "1419 - La conquête de La Mecque"
+      },
+      {
+        "title": "1420 - La Bataille de Ḥunayn"
+      }
+    ]
+  },
+  {
+    "title": "300 - LA TROMPERIE",
+    "subparts": [
+      {
+        "title": "1421 - Le blâme de la tromperie"
+      }
+    ]
+  },
+  {
+    "title": "301 - LA SPOLIATION",
+    "subparts": [
+      {
+        "title": "1422 - L'interdiction de la spoliation"
+      }
+    ]
+  },
+  {
+    "title": "302 - LA COLÈRE",
+    "subparts": [
+      {
+        "title": "1423 - La colère est la clé de tout mal"
+      },
+      {
+        "title": "1424 - L'incitation à maîtriser sa colère"
+      },
+      {
+        "title": "1425 - L'incitation à réprimer la colère"
+      },
+      {
+        "title": "1426 - Le remède de la colère"
+      },
+      {
+        "title": "1427 - L'éloge de la colère pour Allah"
+      }
+    ]
+  },
+  {
+    "title": "303 - LA DEMANDE DE PARDON",
+    "subparts": [
+      {
+        "title": "1428 - La vertu de la demande de pardon"
+      },
+      {
+        "title": "1429 - La demande de pardon et l'augmentation de la subsistance"
+      },
+      {
+        "title": "1430 - La demande de pardon des rapprochés [d'Allah]"
+      },
+      {
+        "title": "1431 - Mise en garde contre la demande de pardon accompagnée de la persistance [des péchés]"
+      }
+    ]
+  },
+  {
+    "title": "304 - LA NÉGLIGENCE",
+    "subparts": [
+      {
+        "title": "1432 - Mise en garde contre la négligence"
+      },
+      {
+        "title": "1433 - Ce qui empêche la négligence"
+      },
+      {
+        "title": "1434 - Les caractéristiques de la personne négligente"
+      },
+      {
+        "title": "1435 - Les effets de la négligence"
+      },
+      {
+        "title": "1436 - L'éloge de la négligence volontaire et de l'ignorance feinte"
+      }
+    ]
+  },
+  {
+    "title": "305 - LA RANCŒUR",
+    "subparts": [
+      {
+        "title": "1437 - Mise en garde contre la rancœur"
+      },
+      {
+        "title": "1438 - Ce vis-à-vis de quoi le cœur du musulman ne doit pas avoir de rancune"
+      },
+      {
+        "title": "1439 - Mise en garde au sujet l'appropriation indue"
+      }
+    ]
+  },
+  {
+    "title": "306 - L'EXAGÉRATION ET L'EXCÈS [DANS LE DOMAINE RELIGIEUX]",
+    "subparts": [
+      {
+        "title": "1440 - Mise en garde contre l'exagération dans le domaine religieux"
+      }
+    ]
+  },
+  {
+    "title": "307 - LA RICHESSE",
+    "subparts": [
+      {
+        "title": "1441 - La richesse et la rébellion"
+      },
+      {
+        "title": "1442 - La richesse et la crainte d'Allah"
+      },
+      {
+        "title": "1443 - La signification réelle de la richesse"
+      },
+      {
+        "title": "1444 - La plus grande richesse"
+      },
+      {
+        "title": "1445 - La clé de la richesse"
+      },
+      {
+        "title": "1446 - Les riches dont la rétribution sera doublée"
+      },
+      {
+        "title": "1447 - La responsabilité des riches vis-à-vis de la faim des pauvres"
+      }
+    ]
+  },
+  {
+    "title": "308 - LA MUSIQUE PROHIBÉE",
+    "subparts": [
+      {
+        "title": "1448 - Le blâme de la musique prohibée"
+      },
+      {
+        "title": "1449 - Les effets engendrés par la musique"
+      }
+    ]
+  },
+  {
+    "title": "309 - L'INVISIBLE",
+    "subparts": [
+      {
+        "title": "1450 - Le Prophète (s) connaît l'invisible par enseignement d'Allah"
+      },
+      {
+        "title": "1451 - L'Imām (as) et la connaissance de l'invisible"
+      }
+    ]
+  },
+  {
+    "title": "310 - LA MÉDISANCE",
+    "subparts": [
+      {
+        "title": "1452 - L'interdiction de la médisance"
+      },
+      {
+        "title": "1453 - La médisance et la religion"
+      },
+      {
+        "title": "1454 - La signification de la médisance"
+      },
+      {
+        "title": "1455 - Les gens au sujet desquels il est autorisé de médire"
+      },
+      {
+        "title": "1456 - Ecouter la médisance"
+      },
+      {
+        "title": "1457 - La récompense du fait de dissuader de médire"
+      },
+      {
+        "title": "1458 - L'expiation de la médisance"
+      }
+    ]
+  },
+  {
+    "title": "311 - LA POSSESSIVITÉ ET LE SENS DE L'HONNEUR",
+    "subparts": [
+      {
+        "title": "1459 - L'éloge de la possessivité"
+      },
+      {
+        "title": "1460 - Le blâme de la possessivité excessive là où elle n'a pas lieu d'être"
+      }
+    ]
+  },
+  {
+    "title": "312 - LA MISE À L'ÉPREUVE",
+    "subparts": [
+      {
+        "title": "1461 - La mise en épreuve"
+      },
+      {
+        "title": "1462 - Les différents types d'épreuve"
+      },
+      {
+        "title": "1463 - Ceux qui sortiront indemnes des épreuves"
+      },
+      {
+        "title": "1464 - Les anecdotes"
+      }
+    ]
+  },
+  {
+    "title": "313 - L'AVIS JURIDIQUE (FATWĀ)",
+    "subparts": [
+      {
+        "title": "1465 - Celui qui donne un avis juridique aux gens sur la base de sa propre opinion"
+      },
+      {
+        "title": "1466 - L'autorisation de promulguer un avis juridique pour un savant"
+      }
+    ]
+  },
+  {
+    "title": "314 - LA LANGAGE OBSCÈNE",
+    "subparts": [
+      {
+        "title": "1467 - Mise en garde contre le recours au langage obscène"
+      }
+    ]
+  },
+  {
+    "title": "315 - LA FIERTÉ",
+    "subparts": [
+      {
+        "title": "1468 - Le blâme du fait de rivaliser de fierté"
+      },
+      {
+        "title": "1469 - Ce qui fait obstacle à la fierté"
+      },
+      {
+        "title": "1470 - Le comportement du Prophète (s) lorsqu'il mentionnait l'une de ses vertus"
+      },
+      {
+        "title": "1471 - Ce dont il faut être fier"
+      }
+    ]
+  },
+  {
+    "title": "316 - LES PERSES",
+    "subparts": [
+      {
+        "title": "1472 - Les Perses et la foi"
+      }
+    ]
+  },
+  {
+    "title": "317 - L'OPPORTUNITÉ",
+    "subparts": [
+      {
+        "title": "1473 - Profiter de l'opportunité"
+      }
+    ]
+  },
+  {
+    "title": "318 - LES OBLIGATIONS [RELIGIEUSES]",
+    "subparts": [
+      {
+        "title": "1474 - L'incitation à s'acquitter des obligations religieuses"
+      },
+      {
+        "title": "1475 - Ce qu'Allah - loué soit-Il - a rendu obligatoire aux gens"
+      },
+      {
+        "title": "1476 - L'ensemble des obligations religieuses"
+      }
+    ]
+  },
+  {
+    "title": "319 - L'OISIVETÉ",
+    "subparts": [
+      {
+        "title": "1477 - L'oisiveté"
+      }
+    ]
+  },
+  {
+    "title": "320 - LA CORRUPTION",
+    "subparts": [
+      {
+        "title": "1478 - Ce qui corrompt le commun des gens"
+      },
+      {
+        "title": "1479 - Qu'est-ce que la corruption et qui sont les corrupteurs ?"
+      },
+      {
+        "title": "1480 - Ce qui repousse la corruption"
+      }
+    ]
+  },
+  {
+    "title": "321 - LE MÉRITE",
+    "subparts": [
+      {
+        "title": "1481 - Les mérites"
+      },
+      {
+        "title": "1482 - Le meilleur des mérites"
+      },
+      {
+        "title": "1483 - La plus vertueuse des personnes"
+      }
+    ]
+  },
+  {
+    "title": "322 - LA PAUVRETÉ",
+    "subparts": [
+      {
+        "title": "1484 - Le blâme de la pauvreté"
+      },
+      {
+        "title": "1485 - L'éloge de la pauvreté"
+      },
+      {
+        "title": "1486 - Les traditions rapportées au sujet de la vertu de la pauvreté vis-à-vis de la richesse"
+      },
+      {
+        "title": "1487 - L'interprétation de la pauvreté"
+      },
+      {
+        "title": "1488 - La pauvreté louée et blâmée"
+      },
+      {
+        "title": "1489 - L'humiliation du pauvre"
+      },
+      {
+        "title": "1490 - Ce qui éloigne la pauvreté"
+      },
+      {
+        "title": "1491 - Ce qui suscite la pauvreté"
+      },
+      {
+        "title": "1492 - L'excuse d'Allah - loué soit-Il - pour les pauvres"
+      },
+      {
+        "title": "1493 - L'ornement de la pauvreté"
+      },
+      {
+        "title": "1494 - Bienheureux soient les pauvres !"
+      }
+    ]
+  },
+  {
+    "title": "323 - LA JURISPRUDENCE ET LE SAVOIR AU SUJET DE LA RELIGION",
+    "subparts": [
+      {
+        "title": "1495 - L'incitation à s'instruire au sujet de la religion"
+      },
+      {
+        "title": "1496 - Les caractéristiques du savant en religion (faqīh)"
+      },
+      {
+        "title": "1497 - La pénibilité de l'existence du savant en religion pour Iblīs"
+      },
+      {
+        "title": "1498 - La mort du savant en religion"
+      }
+    ]
+  },
+  {
+    "title": "324 - LA RÉFLEXION",
+    "subparts": [
+      {
+        "title": "1499 - L'incitation à la réflexion"
+      },
+      {
+        "title": "1500 - Aucune adoration n'est comparable à la réflexion"
+      },
+      {
+        "title": "1501 - Ce qui affine et clarifie la réflexion"
+      },
+      {
+        "title": "1502 - La réflexion interdite"
+      }
+    ]
+  },
+  {
+    "title": "325 - LA TOMBE",
+    "subparts": [
+      {
+        "title": "1503 - La tombe est la première étape de l'Au-delà"
+      },
+      {
+        "title": "1504 - L'interrogatoire de la tombe"
+      },
+      {
+        "title": "1505 - Le châtiment de la tombe"
+      }
+    ]
+  },
+  {
+    "title": "326 - LE MEURTRE",
+    "subparts": [
+      {
+        "title": "1506 - L'interdiction de tuer un être humain"
+      },
+      {
+        "title": "1507 - Tuer un croyant"
+      },
+      {
+        "title": "1508 - L'interdiction à l'être humain de se suicider"
       }
     ]
   }
