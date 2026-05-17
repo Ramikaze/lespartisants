@@ -9664,12 +9664,34 @@ const AUNE_SAGESSE = [
                     {
                         "number": "1587",
                         "text": "Le Messager d'Allah (s) a dit : Allah le Très-Haut dira : «Ô Mes serviteurs qui ont combattu dans Ma voie, qui ont été tués et qui ont été offensés dans Ma voie, et qui ont pratiqué le <i>jihād</i> dans Ma voie, entrez donc au Paradis!» Et ainsi, ils y entreront sans châtiment ni comptes.<sup>1815</sup>"
+                    },
+                    {
+                        "number": "1588",
+                        "text": "L'Imām Zayn al-'Ābidīn (as) a dit : Lorsqu'Allah rassemblera les premiers et les derniers des gens, un appel sera lancé : «Où sont les patients afin qu'ils entrent tous au Paradis sans comptes ?» Les anges leur demanderont : «Qui êtes-vous ?» Ils diront : «Les patients.» Ils leur demanderont : «Pour quoi avez-vous patienté ?» Ils répondront : «Nous avons patienté dans la voie de l'obéissance à Allah et nous avons patienté pour ne pas désobéir à Allah.»<sup>1816</sup>"
+                    },
+                    {
+                        "number": "1589",
+                        "text": "L'Imām Zayn al-'Ābidīn (as) a dit : Lorsqu'Allah le Tout-Puissant rassemblera les premiers et les derniers, un crieur se lèvera et lancera un appel qui sera entendu par l'ensemble des gens : «Où sont ceux qui se sont aimés les uns les autres pour Allah ?» Un groupe de personnes se lèvera et il leur sera dit : «Allez au Paradis sans comptes.»<sup>1817</sup>"
+                    },
+                    {
+                        "number": "1590",
+                        "text": "L'Imām al-Ṣādiq (as) a dit : Le Jour de la Résurrection, un groupe de personnes se lèvera, se rendra à la porte du Paradis et frappera à sa porte. Il leur sera demandé : «Qui êtes-vous ?» Elles répondront : «Nous sommes les pauvres.» Il leur sera dit : «[Voulez-vous entrer au paradis] avant les comptes ?!» Elles diront : «Vous ne nous avez rien donné pour que vous nous demandiez des comptes !» Et Allah le Tout-Puissant dira : «Elles disent vrai, entrez au Paradis.»<sup>1818</sup>"
+                    },
+                    {
+                        "number": "1591",
+                        "text": "L'Imām al-Ṣādiq (as) rapporte du Messager d'Allah (s) : «Lorsque les recueils consignant les actes seront déployés et les balances installées, aucune balance ne sera installée pour les personnes qui ont souffert, ni leur recueil déployé.» Puis il récita ce verset : <i>«Les endurants auront leur pleine récompense sans compter.»</i><sup>1819, 1820</sup>"
                     }
                 ],
                 "introduction": "«Dis : «Ô Mes serviteurs qui avez cru ! Craignez votre Seigneur.» Ceux qui ici-bas font le bien auront une bonne [récompense]. La terre d'Allah est vaste et les endurants auront leur pleine récompense sans compter.»<sup>1814</sup>"
             },
             {
-                "title": "528 - Celui qui ira en Enfer sans que l'on ait dressé ses comptes"
+                "title": "528 - Celui qui ira en Enfer sans que l'on ait dressé ses comptes",
+                "hadiths": [
+                    {
+                        "number": "1592",
+                        "text": "Le Messager d'Allah (s) a dit : En vérité, Allah le Tout-Puissant dressera les comptes de toutes les créatures sauf de celle qui a associé une créature à Allah. On ne dressera pas ses comptes le Jour de la Résurrection, et il sera ordonné de l'emmener [directement] en Enfer.<sup>1821</sup>"
+                    }
+                ]
             }
         ]
     },
@@ -9677,16 +9699,94 @@ const AUNE_SAGESSE = [
         "title": "101 - LA JALOUSIE",
         "subparts": [
             {
-                "title": "529 - La nuisance de la jalousie"
+                "title": "529 - La nuisance de la jalousie",
+                "hadiths": [
+                    {
+                        "number": "1593",
+                        "source": "Tanbīh al-Khawāṭir",
+                        "text": "Le Messager d'Allah (s) a dit : «Six [groupes de gens] iront en Enfer avant les comptes à cause de six [raisons].» Ils dirent : «Ô Messager d'Allah, que les prières d'Allah soient sur toi, qui sont-ils ?» Il répondit : «Les gouvernants pour leur tyrannie, les Arabes pour leur fanatisme envers leur tribu, les propriétaires terriens pour leur arrogance, les commerçants pour leurs tricheries, les villageois pour leur ignorance, et les savants pour leur jalousie.»<sup>1822</sup>"
+                    },
+                    {
+                        "number": "1594",
+                        "text": "L'Imām al-Ṣādiq (as) a dit : Allah fera entrer trois [groupes de] personnes en Enfer sans aucun compte : un chef oppresseur, un commerçant menteur, et un homme âgé ayant commis l'adultère.<sup>1823</sup>"
+                    },
+                    {
+                        "number": "1595",
+                        "text": "Le Messager d'Allah (s) a dit : Allah le Tout-Puissant a dit en s'adressant à Moïse ibn 'Imrān (as) : «En vérité, le jaloux est exaspéré par Mes bienfaits, il rejette le partage que J'ai établi entre Mes serviteurs.»<sup>1825</sup>"
+                    },
+                    {
+                        "number": "1596",
+                        "text": "L'Imām 'Alī (as) a dit : La jalousie est l'emprisonnement de l'esprit.<sup>1826</sup>"
+                    },
+                    {
+                        "number": "1597",
+                        "text": "L'Imām 'Alī (as) a dit : La jalousie est la pire des maladies.<sup>1827</sup>"
+                    },
+                    {
+                        "number": "1598",
+                        "text": "L'Imām 'Alī (as) a dit : Le chef des vices est la jalousie.<sup>1828</sup>"
+                    },
+                    {
+                        "number": "1599",
+                        "text": "L'Imām 'Alī (as) a dit : Comme la jalousie est capable, et comme elle est juste ! Elle commence par [faire souffrir] son auteur, et provoque sa mort.<sup>1829</sup>"
+                    },
+                    {
+                        "number": "1600",
+                        "text": "L'Imām 'Alī (as) a dit : Le résultat de la jalousie est le malheur dans ce bas-monde et dans l'Au-delà.<sup>1830</sup>"
+                    },
+                    {
+                        "number": "1601",
+                        "text": "L'Imām 'Alī (as) a dit : Le jaloux voit la disparition d'une grâce de celui qu'il a jalousé comme une grâce pour lui-même.<sup>1831</sup>"
+                    },
+                    {
+                        "number": "1602",
+                        "text": "L'Imām 'Alī (as) a dit : Je n'ai vu d'oppresseur aussi semblable à l'opprimé que le jaloux : son âme est épuisée, son cœur errant, et sa tristesse persistante.<sup>1832</sup>"
+                    },
+                    {
+                        "number": "1603",
+                        "text": "L'Imām 'Alī (as) a dit : Ce dont il souffre suffit [comme tourment] au jaloux.<sup>1833</sup>"
+                    },
+                    {
+                        "number": "1604",
+                        "text": "L'Imām 'Alī (as) a dit : Les regrets du jaloux sont innombrables et ses vices sont multiples.<sup>1834</sup>"
+                    },
+                    {
+                        "number": "1605",
+                        "text": "L'Imām 'Alī (as) a dit : Le jaloux ne triomphe jamais.<sup>1835</sup>"
+                    }
+                ],
+                "introduction": "«Et contre le mal de l'envieux quand il envie.»<sup>1824</sup>"
             },
             {
-                "title": "530 - Toute personne étant l'objet de grâces est jalousée"
+                "title": "530 - Toute personne étant l'objet de grâces est jalousée",
+                "hadiths": [
+                    {
+                        "number": "1606",
+                        "text": "Le Messager d'Allah (s) a dit : Recherchez l'assistance de la discrétion pour la satisfaction de vos besoins, car toute personne étant l'objet de grâces est jalousée.<sup>1836</sup>"
+                    }
+                ]
             },
             {
-                "title": "531 - La jalousie et la foi"
+                "title": "531 - La jalousie et la foi",
+                "hadiths": [
+                    {
+                        "number": "1607",
+                        "text": "L'Imām al-Bāqir (as) a dit : En vérité, la jalousie consume la foi de la même manière que le feu consume le bois sec.<sup>1837</sup>"
+                    },
+                    {
+                        "number": "1608",
+                        "text": "L'Imām al-Ṣādiq (as) a dit : Prenez garde à ne pas vous jalouser les uns les autres, car la racine de la mécréance est la jalousie.<sup>1838</sup>"
+                    }
+                ]
             },
             {
-                "title": "532 - Les signes caractéristiques du jaloux"
+                "title": "532 - Les signes caractéristiques du jaloux",
+                "hadiths": [
+                    {
+                        "number": "1609",
+                        "text": "L'Imām al-Ṣādiq (as) a dit : Luqmān a dit à son fils : Le jaloux a trois caractéristiques: il médit la personne pendant son absence, il la flatte en sa présence et il se réjouit du malheur des autres.<sup>1839</sup>"
+                    }
+                ]
             }
         ]
     },
@@ -9694,7 +9794,22 @@ const AUNE_SAGESSE = [
         "title": "102 - LE REGRET",
         "subparts": [
             {
-                "title": "533 - La personne qui a le plus grand regret"
+                "title": "533 - La personne qui a le plus grand regret",
+                "hadiths": [
+                    {
+                        "number": "1610",
+                        "text": "Le Messager d'Allah (s) a dit : La personne qui aura le plus intense regret le Jour de la Résurrection sera un homme qui a vendu sa vie de l'Au-delà pour la vie d'ici-bas des autres.<sup>1843</sup>"
+                    },
+                    {
+                        "number": "1611",
+                        "text": "L'Imām 'Alī (as) a dit : Le plus grand regret le Jour de la Résurrection sera celui d'un homme qui a gagné de l'argent en désobéissant à Allah, qui a ensuite été hérité par une autre personne qui l'a dépensé dans l'obéissance d'Allah - loué soit-Il. Elle entrera grâce à [cet argent] au Paradis, tandis que le premier ira en Enfer à cause de lui.<sup>1844</sup>"
+                    },
+                    {
+                        "number": "1612",
+                        "text": "L'Imām al-Ṣādiq (as) a dit : La personne qui aura le plus de regret le Jour de la Résurrection sera celle qui parlait de justice et agissait dans le sens contraire vis-à-vis d'autrui.<sup>1845</sup>"
+                    }
+                ],
+                "introduction": "«Avertis-les du Jour du Regret, quand tout sera réglé ; alors qu'ils sont [dans ce monde] inattentifs et qu'ils ne croient pas.»<sup>1840</sup><br>«Avant qu'une âme ne dise : «Malheur à moi pour mes manquements envers Allah. Car j'ai été, certes, parmi les railleurs.»»<sup>1841</sup><br>«Le jour où l'injuste se mordra les deux mains et dira : «Si seulement j'avais suivi chemin avec le Messager !»<sup>1842</sup>"
             }
         ]
     },
@@ -9702,10 +9817,28 @@ const AUNE_SAGESSE = [
         "title": "103 - LA BONNE ACTION",
         "subparts": [
             {
-                "title": "534 - Les bénédictions de la bonne action"
+                "title": "534 - Les bénédictions de la bonne action",
+                "hadiths": [
+                    {
+                        "number": "1613",
+                        "text": "Le Messager d'Allah (s) a dit : J'ai trouvé que la bonne action était une lumière dans le cœur, un embellissement du visage, et une force dans l'action ; et j'ai trouvé que le péché était un assombrissement du cœur, une paresse dans l'action et une laideur sur le visage.<sup>1846</sup><br><br><span class=\"hadith-footnote\">(Voir également : 385. La lumière)</span>"
+                    }
+                ]
             },
             {
-                "title": "535 - La multiplication de la récompense des bonnes actions"
+                "title": "535 - La multiplication de la récompense des bonnes actions",
+                "hadiths": [
+                    {
+                        "number": "1614",
+                        "source": "Tuḥaf al-'Uqūl",
+                        "text": "L'Imām Zayn al-'Ābidīn (as) a dit : «Malheur à celui dont les unités ont dépassé les dizaines !» - Il voulait ainsi dire que le mal n'est comptabilisé qu'une seule fois alors que le bien l'est dix fois.<sup>1848</sup>"
+                    },
+                    {
+                        "number": "1615",
+                        "text": "L'Imām al-Ṣādiq (as) a dit : Lorsque le croyant excelle dans son action, Allah multipliera chaque bonne action par sept cents, et c'est ce que signifie la parole d'Allah le Béni et le Très-Haut : <i>«Allah multiplie la récompense à qui Il veut.»</i><sup>1849, 1850</sup>"
+                    }
+                ],
+                "introduction": "«Quiconque viendra avec le bien aura dix fois autant ; et quiconque viendra avec le mal ne sera rétribué que par son équivalent. Et on ne leur fera aucune injustice.»<sup>1847</sup>"
             }
         ]
     },
@@ -9713,19 +9846,77 @@ const AUNE_SAGESSE = [
         "title": "104 - LA BIENFAISANCE (IḤSĀN)",
         "subparts": [
             {
-                "title": "536 - La signification de la bienfaisance"
+                "title": "536 - La signification de la bienfaisance",
+                "hadiths": [
+                    {
+                        "number": "1616",
+                        "source": "Tafsīr Nūr al-Thaqalayn",
+                        "text": "au sujet de Sa parole <i>«Qui est meilleur en religion que celui qui soumet à Allah son être, tout en faisant le bien»</i><sup>1851</sup> : Il est rapporté que lorsque le Prophète (s) fut interrogé au sujet de la bienfaisance, il répondit : «C'est d'adorer Allah comme si tu Le voyais car si tu ne Le vois pas, Lui, en vérité, te voit.»<sup>1852</sup>"
+                    }
+                ]
             },
             {
-                "title": "537 - Celui qui est bienfaisant est bienfaisant vis-à-vis de sa propre âme"
+                "title": "537 - Celui qui est bienfaisant est bienfaisant vis-à-vis de sa propre âme",
+                "hadiths": [
+                    {
+                        "number": "1617",
+                        "text": "L'Imām 'Alī (as) a dit : En vérité, si tu fais le bien, c'est ta propre âme que tu honores et à qui tu fais du bien ; en revanche, si tu fais le mal, c'est ta propre âme que tu avilis et que tu lèses.<sup>1854</sup><br><br><span class=\"hadith-footnote\">(Voir également : 342. La noblesse, section 1599)</span>"
+                    }
+                ],
+                "introduction": "«Si vous faites le bien, vous le faites à vos propres âmes ; et si vous faites le mal, vous le leur faites [aussi].»<sup>1853</sup>"
             },
             {
-                "title": "538 - La vertu de la bienfaisance"
+                "title": "538 - La vertu de la bienfaisance",
+                "hadiths": [
+                    {
+                        "number": "1618",
+                        "text": "Le Messager d'Allah (s) a dit : Les cœurs ont été prédisposés à l'amour de celui qui est bienfaisant envers eux et à la haine de celui qui est malfaisant envers eux.<sup>1856</sup>"
+                    },
+                    {
+                        "number": "1619",
+                        "text": "L'Imām 'Alī (as) a dit : La bienfaisance t'incombe, car c'est la meilleure des cultures et la plus profitable des marchandises.<sup>1857</sup>"
+                    },
+                    {
+                        "number": "1620",
+                        "text": "L'Imām 'Alī (as) a dit : Quelle bonne provision pour la Résurrection est la bienfaisance envers les serviteurs !<sup>1858</sup>"
+                    },
+                    {
+                        "number": "1621",
+                        "text": "L'Imām 'Alī (as) a dit : L'aumône (<i>zakāt</i>) de la victoire est la bienfaisance.<sup>1859</sup>"
+                    },
+                    {
+                        "number": "1622",
+                        "text": "L'Imām 'Alī (as) a dit : Celui dont la bienfaisance est profuse sera aimé de ses frères.<sup>1860</sup>"
+                    },
+                    {
+                        "number": "1623",
+                        "text": "L'Imām 'Alī (as) a dit : Par la bienfaisance, on gagne les cœurs.<sup>1861</sup>"
+                    }
+                ],
+                "introduction": "«Certes, Allah commande l'équité, la bienfaisance et l'assistance aux proches. Et Il interdit la turpitude, l'acte répréhensible et la rébellion. Il vous exhorte afin que vous vous souveniez.»<sup>1855</sup>"
             },
             {
-                "title": "539 - La bienfaisance vis-à-vis du malfaiteur"
+                "title": "539 - La bienfaisance vis-à-vis du malfaiteur",
+                "hadiths": [
+                    {
+                        "number": "1624",
+                        "text": "Le Messager d'Allah (s) a dit : Sois bienfaisant envers celui qui a été malfaisant à ton égard.<sup>1862</sup>"
+                    },
+                    {
+                        "number": "1625",
+                        "text": "L'Imām 'Alī (as) a dit : En vérité, ta bienfaisance envers les ennemis et les jaloux les irritera plus que le fait que tu les offenses, et c'est aussi une invitation à leur réforme.<sup>1863</sup><br><br><span class=\"hadith-footnote\">(Voir également : 375. L'équité, section 1728 ; 159. Les liens familiaux, section 813)</span>"
+                    }
+                ]
             },
             {
-                "title": "540 - Les conséquences de la bienfaisance des polythéistes"
+                "title": "540 - Les conséquences de la bienfaisance des polythéistes",
+                "hadiths": [
+                    {
+                        "number": "1626",
+                        "source": "Kanz al-'Ummāl",
+                        "text": "rapporte de Salmān ibn 'Āmir al-Ḍabbī : «Ô Messager d'Allah ! Mon père avait coutume de faire preuve d'hospitalité vis-à-vis de l'invité, d'honorer le voisin, d'être fidèle à sa parole et de donner dans l'adversité. En quoi cela lui sera utile ?» Il répondit : «Est-il mort en étant associationiste ?» Je lui répondis : «Oui.» Il me dit : «En vérité, cela ne lui sera pas utile. En revanche, cela restera pour ses descendants dans le sens où ils ne seront jamais déshonorés, ni humiliés, ni ne souffriront de pauvreté.»<sup>1864</sup>"
+                    }
+                ]
             }
         ]
     },
@@ -9733,13 +9924,31 @@ const AUNE_SAGESSE = [
         "title": "105 - LA MÉMOIRE",
         "subparts": [
             {
-                "title": "541 - La grâce de la mémoire"
+                "title": "541 - La grâce de la mémoire",
+                "hadiths": [
+                    {
+                        "number": "1627",
+                        "text": "L'Imām al-Ṣādiq (as) a dit – selon un hadith rapporté par Mufaḍḍal : As-tu déjà pensé à ce qu'aurait été l'état de l'homme s'il était dépourvu de cette faculté qu'est la mémoire? Combien de difficultés vivrait-il au quotidien, dans sa vie et ses expériences, s'il ne pouvait pas se rappeler de ce qui lui est bénéfique et de ce qui lui est nuisible, de ce qu'il a donné et de ce qu'il a reçu, de ce qu'il a vu et de ce qu'il a entendu ? ... Il ne retrouverait plus son chemin, même après l'avoir emprunté maintes fois, et il ne mémoriserait aucun savoir, même s'il en avait fait l'apprentissage durant toute une vie. Il ne professerait aucune religion, aucune expérience ne lui serait profitable, et il ne pourrait tirer aucune leçon d'une chose s'étant passée. En vérité, il aurait perdu la base même de son humanité.<sup>1865</sup>"
+                    }
+                ]
             },
             {
-                "title": "542 - La mémorisation durant l'enfance"
+                "title": "542 - La mémorisation durant l'enfance",
+                "hadiths": [
+                    {
+                        "number": "1628",
+                        "text": "Le Messager d'Allah (s) a dit : Celui qui apprend dans son enfance est semblable à [celui qui] sculpte dans la pierre, alors que celui qui apprend en étant adulte est semblable à celui qui écrit sur l'eau.<sup>1866</sup>"
+                    }
+                ]
             },
             {
-                "title": "543 - Ce qui renforce la mémoire"
+                "title": "543 - Ce qui renforce la mémoire",
+                "hadiths": [
+                    {
+                        "number": "1629",
+                        "text": "Le Messager d'Allah (s) a dit : Trois choses éloignent l'oubli et ravivent la mémoire: la lecture du Coran, se brosser les dents, et le jeûne.<sup>1867</sup>"
+                    }
+                ]
             }
         ]
     },
@@ -9747,10 +9956,54 @@ const AUNE_SAGESSE = [
         "title": "106 - LA RANCUNE",
         "subparts": [
             {
-                "title": "544 - Le blâme de la rancune"
+                "title": "544 - Le blâme de la rancune",
+                "hadiths": [
+                    {
+                        "number": "1630",
+                        "text": "L'Imām 'Alī (as) a dit : La rancune est le plus bas des défauts.<sup>1868</sup>"
+                    },
+                    {
+                        "number": "1631",
+                        "text": "L'Imām 'Alī (as) a dit : La rancune est source de colère.<sup>1869</sup>"
+                    },
+                    {
+                        "number": "1632",
+                        "text": "L'Imām 'Alī (as) a dit : La rancune est le trait caractéristique des jaloux.<sup>1870</sup>"
+                    },
+                    {
+                        "number": "1633",
+                        "text": "L'Imām 'Alī (as) a dit : La rancune est un feu qui n'est éteint que par la victoire [contre son opposant].<sup>1871</sup>"
+                    },
+                    {
+                        "number": "1634",
+                        "text": "L'Imām 'Alī (as) a dit : La rancune est la cause des dissensions.<sup>1872</sup>"
+                    },
+                    {
+                        "number": "1635",
+                        "text": "L'Imām 'Alī (as) a dit : Le rancunier a l'âme torturée, et son anxiété est multipliée.<sup>1873</sup>"
+                    },
+                    {
+                        "number": "1636",
+                        "text": "L'Imām 'Alī (as) a dit : Le rancunier n'a pas d'affection.<sup>1874</sup>"
+                    },
+                    {
+                        "number": "1637",
+                        "text": "L'Imām al-Hādī (as) a dit : Le reproche [exprimé] est préférable à la rancune [nourrie intérieurement].<sup>1875</sup>"
+                    },
+                    {
+                        "number": "1638",
+                        "text": "L'Imām al-'Askarī (as) a dit: Les personnes les moins apaisées sont les rancuniers.<sup>1876</sup>"
+                    }
+                ]
             },
             {
-                "title": "545 - La disparition rapide de la rancune du croyant"
+                "title": "545 - La disparition rapide de la rancune du croyant",
+                "hadiths": [
+                    {
+                        "number": "1639",
+                        "text": "L'Imām Ṣādiq (as) a dit : Le croyant a de la rancune tant qu'il est avec la personne, mais dès qu'il l'a quitte, sa rancune disparaît.<sup>1877</sup>"
+                    }
+                ]
             }
         ]
     },
@@ -9758,10 +10011,42 @@ const AUNE_SAGESSE = [
         "title": "107 - LE DÉNIGREMENT",
         "subparts": [
             {
-                "title": "546 - L'interdiction de dénigrer les gens"
+                "title": "546 - L'interdiction de dénigrer les gens",
+                "hadiths": [
+                    {
+                        "number": "1640",
+                        "text": "Luqmān (as) a dit en s'adressant à son fils : Ô mon fils ! Ne dénigre jamais un être pour ses vêtements usés car ton Dieu et son Dieu est le même [Dieu] unique.<sup>1878</sup>"
+                    },
+                    {
+                        "number": "1641",
+                        "text": "Le Messager d'Allah (s) a dit : Que l'un de vous ne fasse pas preuve de mépris envers l'une des créatures d'Allah, car nul ne sait laquelle d'entre elles est l'ami d'Allah.<sup>1879</sup>"
+                    },
+                    {
+                        "number": "1642",
+                        "text": "L'Imām al-Ṣādiq (as) a dit : Allah continuera à dénigrer et à détester celui qui aura dénigré un pauvre croyant jusqu'à ce qu'il cesse son dénigrement.<sup>1880</sup>"
+                    }
+                ]
             },
             {
-                "title": "547 - Mise en garde contre le fait de dénigrer un croyant"
+                "title": "547 - Mise en garde contre le fait de dénigrer un croyant",
+                "hadiths": [
+                    {
+                        "number": "1643",
+                        "text": "Le Messager d'Allah (s) a dit : Le Jour de la Résurrection, Allah le Très-Haut fera connaître celui qui a humilié ou a dénigré un croyant ou une croyante à cause de sa pauvreté ou de son peu de moyens, et Il le déshonorera.<sup>1881</sup>"
+                    },
+                    {
+                        "number": "1644",
+                        "text": "Le Messager d'Allah (s) a dit : Ne dénigre aucune personne parmi les musulmans car en vérité, le plus petit d'entre eux est grand auprès d'Allah.<sup>1882</sup>"
+                    },
+                    {
+                        "number": "1645",
+                        "text": "Le Messager d'Allah (s) a dit : Il suffit au fils d'Adam pour faire preuve de méchanceté de dénigrer son frère musulman.<sup>1883</sup>"
+                    },
+                    {
+                        "number": "1646",
+                        "text": "L'Imām al-Ṣādiq (as) a dit : En vérité, Allah le Béni et le Très-Haut a dit : «Que celui qui a offensé l'un de Mes amis s'apprête à Me combattre, et Je suis très rapide lorsqu'il s'agit de secourir Mes amis.»<sup>1884</sup>"
+                    }
+                ]
             }
         ]
     },
@@ -9769,7 +10054,18 @@ const AUNE_SAGESSE = [
         "title": "108 - LA VÉRITÉ",
         "subparts": [
             {
-                "title": "548 - La vérité"
+                "title": "548 - La vérité",
+                "hadiths": [
+                    {
+                        "number": "1647",
+                        "text": "L'Imām 'Alī (as) a dit : La vérité est le plus fort des appuis.<sup>1886</sup>"
+                    },
+                    {
+                        "number": "1648",
+                        "text": "L'Imām 'Alī (as) a dit : Sachez que la ..."
+                    }
+                ],
+                "introduction": "«Bien au contraire, Nous lançons la Vérité contre le faux qui le subjugue, et le voilà qui disparaît. Et malheur à vous pour ce que vous attribuez [injustement à Allah] !»<sup>1885</sup>"
             },
             {
                 "title": "549 - Le poids de la vérité"
