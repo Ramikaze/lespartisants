@@ -2718,7 +2718,33 @@ const AUNE_SAGESSE = [
                 ]
             },
             {
-                "title": "179 - Les degrés de la foi"
+                "title": "179 - Les degrés de la foi",
+                "hadiths": [
+                    {
+                        "number": "549",
+                        "text": "Le Messager d'Allah (s) a dit : Le meilleur de la foi est que tu saches qu'Allah est avec toi où que tu sois.<sup>614</sup>"
+                    },
+                    {
+                        "number": "550",
+                        "text": "Le Messager d'Allah (s) a dit : Le meilleur de la foi est la patience et la bonté.<sup>615</sup>"
+                    },
+                    {
+                        "number": "551",
+                        "text": "Le Messager d'Allah (s) a dit : La foi a plus de soixante-dix branches. La meilleure d'entre elle est la parole «Point de divinité à part Dieu», et la plus basse est d'enlever ce qui est nocif sur le chemin [emprunté par les gens]. La pudeur est [aussi] l'une des branches de la foi.<sup>616</sup>"
+                    },
+                    {
+                        "number": "552",
+                        "text": "L'Imām 'Alī (as) a dit : La bonne conviction [en Allah] est le meilleur de la foi.<sup>617</sup>"
+                    },
+                    {
+                        "number": "553",
+                        "text": "L'Imām al-Ṣādiq (as) a dit : En vérité, la foi comporte dix degrés semblables à une échelle sur laquelle on peut s'élever échelon après échelon. Que celui qui est au deuxième échelon ne dise pas à celui qui est encore au premier : «Tu n'es rien» avant qu'il n'atteigne lui-même le dixième échelon. Ne rabaisse pas celui qui est en-dessous de toi, car tu risques à ton tour d'être rabaissé par celui qui au-dessus de toi. Et quand tu vois quelqu'un qui est [un échelon] plus bas que toi, élève-le vers toi avec douceur et bonté. Ne lui impose pas ce qu'il ne peut supporter car tu le briseras. En vérité, celui qui brise un croyant aura comme obligation de le rétablir.<sup>618</sup>"
+                    },
+                    {
+                        "number": "554",
+                        "text": "L'Imām al-Ṣādiq (as) a dit : En vérité, Allah le Tout-Puissant a partagé la foi en sept parties : la bonté pieuse, la véracité, la certitude, le contentement, la fidélité, le savoir et l'indulgence.<sup>619</sup>"
+                    }
+                ]
             },
             {
                 "title": "180 - Les piliers de la foi",
@@ -3285,6 +3311,54 @@ const AUNE_SAGESSE = [
                         "text": "Le Messager d'Allah (s) a dit : Le fléau de la religion est la passion.<sup>721</sup>"
                     },
                     {
+                        "number": "648",
+                        "text": "L'Imām 'Alī (as) a dit : Toute chose à un fléau. Le fléau du savoir est l'oubli ; le fléau de l'adoration est la vantardise ; le fléau de la conscience est l'admiration de soi ; le fléau de la noblesse est l'orgueil ; le fléau de l'humour est l'absence de honte ; le fléau de la libéralité est le gaspillage ; le fléau de la pudeur est la faiblesse ; le fléau de l'indulgence est le déshonneur ; et le fléau de l'endurance est la dégénérescence.<sup>722</sup>"
+                    },
+                    {
+                        "number": "649",
+                        "text": "L'Imām 'Alī (as) a dit : La lâcheté est un fléau.<sup>723</sup>"
+                    },
+                    {
+                        "number": "650",
+                        "text": "L'Imām 'Alī (as) a dit : La passion est le fléau des intelligences.<sup>724</sup>"
+                    },
+                    {
+                        "number": "651",
+                        "text": "L'Imām 'Alī (as) a dit : Le fléau de la foi est l'associationnisme.<sup>725</sup>"
+                    },
+                    {
+                        "number": "652",
+                        "text": "L'Imām 'Alī (as) a dit : Le fléau de la certitude est le doute.<sup>726</sup>"
+                    },
+                    {
+                        "number": "653",
+                        "text": "L'Imām 'Alī (as) a dit : Le fléau des grâces est l'ingratitude.<sup>727</sup>"
+                    },
+                    {
+                        "number": "654",
+                        "text": "L'Imām 'Alī (as) a dit : Le fléau de l'obéissance est l'insoumission.<sup>728</sup>"
+                    },
+                    {
+                        "number": "655",
+                        "text": "L'Imām 'Alī (as) a dit : Le fléau de la noblesse est l'orgueil.<sup>729</sup>"
+                    },
+                    {
+                        "number": "656",
+                        "text": "L'Imām 'Alī (as) a dit : Le fléau de l'intelligence est la duperie.<sup>730</sup>"
+                    },
+                    {
+                        "number": "657",
+                        "text": "L'Imām 'Alī (as) a dit : Le fléau de l'adoration est la vantardise.<sup>731</sup>"
+                    },
+                    {
+                        "number": "658",
+                        "text": "L'Imām 'Alī (as) a dit : Le fléau de la générosité est de mentionner et de faire sentir ses largesses aux autres.<sup>732</sup>"
+                    },
+                    {
+                        "number": "659",
+                        "text": "L'Imām 'Alī (as) a dit : Le fléau de la religion est la suspicion.<sup>733</sup>"
+                    },
+                    {
                         "number": "660",
                         "text": "L'Imām 'Alī (as) a dit : Le fléau de l'intelligence est la passion.<sup>734</sup>"
                     },
@@ -3339,6 +3413,62 @@ const AUNE_SAGESSE = [
                     {
                         "number": "673",
                         "text": "L'Imām 'Alī (as) a dit : Le fléau des justes est le manque de piété.<sup>747</sup>"
+                    },
+                    {
+                        "number": "674",
+                        "text": "L'Imām 'Alī (as) a dit : Le fléau du courageux est le manque de détermination.<sup>748</sup>"
+                    },
+                    {
+                        "number": "675",
+                        "text": "L'Imām 'Alī (as) a dit : Le fléau du fort est de sous-estimer son rival.<sup>749</sup>"
+                    },
+                    {
+                        "number": "676",
+                        "text": "L'Imām 'Alī (as) a dit : Le fléau de l'indulgence est le déshonneur.<sup>750</sup>"
+                    },
+                    {
+                        "number": "677",
+                        "text": "L'Imām 'Alī (as) a dit : Le fléau du don est l'ajournement.<sup>751</sup>"
+                    },
+                    {
+                        "number": "678",
+                        "text": "L'Imām 'Alī (as) a dit : Le fléau de l'économie est l'avarice.<sup>752</sup>"
+                    },
+                    {
+                        "number": "679",
+                        "text": "L'Imām 'Alī (as) a dit : Le fléau du respect et de la révérence est la plaisanterie.<sup>753</sup>"
+                    },
+                    {
+                        "number": "680",
+                        "text": "L'Imām 'Alī (as) a dit : Le fléau de la quête est l'échec.<sup>754</sup>"
+                    },
+                    {
+                        "number": "681",
+                        "text": "L'Imām 'Alī (as) a dit : Le fléau de la souveraineté est le manque de protection.<sup>755</sup>"
+                    },
+                    {
+                        "number": "682",
+                        "text": "L'Imām 'Alī (as) a dit : Le fléau des pactes est la non-observance.<sup>756</sup>"
+                    },
+                    {
+                        "number": "683",
+                        "text": "L'Imām 'Alī (as) a dit : Le fléau de la présidence est la fierté.<sup>757</sup>"
+                    },
+                    {
+                        "number": "684",
+                        "text": "L'Imām 'Alī (as) a dit : Le fléau de la transmission [d'une parole] est le mensonge dans la narration.<sup>758</sup>"
+                    },
+                    {
+                        "number": "685",
+                        "text": "L'Imām 'Alī (as) a dit : Le fléau du savoir est sa non-application.<sup>759</sup>"
+                    },
+                    {
+                        "number": "686",
+                        "text": "L'Imām 'Alī (as) a dit : Le fléau de l'acte est l'abandon de la sincérité.<sup>760</sup>"
+                    },
+                    {
+                        "number": "687",
+                        "text": "L'Imām 'Alī (as) a dit : Le fléau de la générosité est la pauvreté.<sup>761</sup>"
                     },
                     {
                         "number": "688",
@@ -3432,11 +3562,53 @@ const AUNE_SAGESSE = [
         "title": "36 - L'AVARICE",
         "subparts": [
             {
-                "title": "213 - Mise en garde contre l'avarice"
+                "title": "213 - Mise en garde contre l'avarice",
+                "hadiths": [
+                    {
+                        "number": "709",
+                        "text": "L'Imām 'Alī (as) a dit : L'avarice rassemble les vices de tous les défauts, c'est la bride par laquelle une personne est conduite vers tout mal.<sup>785</sup>"
+                    },
+                    {
+                        "number": "710",
+                        "text": "L'Imām 'Alī (as) a dit : L'avarice est un déshonneur.<sup>786</sup>"
+                    },
+                    {
+                        "number": "711",
+                        "text": "L'Imām 'Alī (as) a dit : L'avarice est l'habit de la misère.<sup>787</sup>"
+                    },
+                    {
+                        "number": "712",
+                        "text": "L'Imām 'Alī (as) a dit : L'avarice vis-à-vis de ce que l'on a est un manque de confiance envers Celui qui est adoré.<sup>788</sup>"
+                    },
+                    {
+                        "number": "713",
+                        "text": "L'Imām 'Alī (as) a dit : Celui qui fait preuve d'avarice dans ce qu'il détient sera humilié, mais celui qui est avare dans sa foi [qui ne l'abandonne pas facilement] sera élevé.<sup>789</sup>"
+                    },
+                    {
+                        "number": "714",
+                        "text": "L'Imām 'Alī (as) a dit : L'avarice humilie celui qui l'approche et honore celui qui s'en éloigne.<sup>790</sup>"
+                    },
+                    {
+                        "number": "715",
+                        "text": "L'Imām al-Riḍā (as) a dit : L'avarice brise la réputation.<sup>791</sup>"
+                    },
+                    {
+                        "number": "716",
+                        "text": "L'Imām al-Hādī (as) a dit : L'avarice est le plus répréhensible des comportements.<sup>792</sup>"
+                    }
+                ]
             },
             {
                 "title": "214 - L'explication de l'avarice",
                 "hadiths": [
+                    {
+                        "number": "717",
+                        "text": "Lorsque son père l'interrogea au sujet de l'avarice empreinte d'avidité, l'Imām Ḥasan (as) répondit : C'est lorsque tu considères ce que tu as entre les mains comme un honneur, et ce que tu as donné comme une perte.<sup>793</sup>"
+                    },
+                    {
+                        "number": "718",
+                        "text": "L'Imām al-Ṣādiq (as) a dit : En vérité, l'avare empreint d'avidité est celui qui nie le droit d'Allah et dépense pour autre chose que ce qui revient à Allah le Tout-Puissant.<sup>794</sup>"
+                    },
                     {
                         "number": "719",
                         "text": "L'Imām al-Ṣādiq (as) a dit : L'avarice empreinte d'avidité est pire que l'avarice, car l'avare l'est concernant ses propres biens, tandis que l'avare avide convoite également ce que les autres possèdent en plus de ce qu'il a lui-même, de telle sorte qu'il ne peut voir quelque chose dans les mains des gens sans espérer se l'accaparer de façon licite ou illicite. Il n'est jamais rassasié et ne profite pas de ce qu'Allah lui a accordé.<sup>795</sup>"
