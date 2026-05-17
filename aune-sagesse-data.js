@@ -5383,10 +5383,47 @@ const AUNE_SAGESSE = [
         "title": "60 - LE TYRAN",
         "subparts": [
             {
-                "title": "323 - Le blâme de la tyrannie et du caractère tyrannique"
+                "title": "Le blâme de la tyrannie et du caractère tyrannique",
+                "introduction": "«<i>Et ils demandèrent la victoire. Et tout tyran insolent fut déçu.</i>»<sup>1167</sup><br><br>«<i>Voilà les 'Ād. Ils avaient nié les signes de leur Seigneur, désobéi à Ses messagers et suivi le commandement de tout tyran entêté.</i>»<sup>1168</sup>",
+                "hadiths": [
+                    {
+                        "number": "1031",
+                        "text": "Le Messager d'Allah (s) a dit : Le tyran entêté est celui qui refuse de dire : «Point de divinité à part Dieu.»<sup>1169</sup>"
+                    },
+                    {
+                        "number": "1032",
+                        "text": "L'Imām 'Alī (as) a dit : L'acte du tyran ne peut se purifier.<sup>1170</sup>"
+                    },
+                    {
+                        "number": "1033",
+                        "text": "L'Imām 'Alī (as) a dit : Ne vous adressez pas à moi comme on s'adresse aux tyrans, ne soyez pas circonspects face à moi comme face aux oppresseurs, et ne vous associez pas avec moi avec hypocrisie.<sup>1171</sup>"
+                    }
+                ]
             },
             {
-                "title": "324 - La mauvaise fin des tyrans"
+                "title": "La mauvaise fin des tyrans",
+                "hadiths": [
+                    {
+                        "number": "1034",
+                        "text": "Le Messager d'Allah (s) a dit : Le Jour de la Résurrection, les tyrans et les insolents seront rassemblés sous la forme de petites fourmis, et ils seront foulés par les pieds des autres en raison de leur petitesse devant Allah.<sup>1172</sup>"
+                    },
+                    {
+                        "number": "1035",
+                        "text": "L'Imām 'Alī (as) a dit : Celui qui agit de façon tyrannique sera brisé.<sup>1173</sup>"
+                    },
+                    {
+                        "number": "1036",
+                        "text": "L'Imām 'Alī (as) a dit : Celui qui agit de façon tyrannique sera humilié et rabaissé par Allah.<sup>1174</sup>"
+                    },
+                    {
+                        "number": "1037",
+                        "text": "L'Imām 'Alī (as) a dit : Prends garde au comportement tyrannique vis-à-vis des serviteurs d'Allah, car tout tyran sera annihilé par Allah.<sup>1175</sup>"
+                    },
+                    {
+                        "number": "1038",
+                        "text": "L'Imām al-Ṣādiq (as) a dit : Les tyrans seront les personnes les plus éloignées d'Allah le Tout-Puissant le Jour de la résurrection.<sup>1176</sup>"
+                    }
+                ]
             }
         ]
     },
@@ -5394,10 +5431,42 @@ const AUNE_SAGESSE = [
         "title": "61 - LA LÂCHETÉ",
         "subparts": [
             {
-                "title": "325 - Le blâme de la lâcheté"
+                "title": "Le blâme de la lâcheté",
+                "hadiths": [
+                    {
+                        "number": "1039",
+                        "text": "L'Imām 'Alī (as) a dit : La lâcheté est un défaut.<sup>1177</sup>"
+                    },
+                    {
+                        "number": "1040",
+                        "text": "L'Imām 'Alī (as) a dit : La lâcheté, la cupidité et l'avarice sont de mauvais instincts qui sont suscités par une mauvaise opinion d'Allah - loué soit-Il.<sup>1178</sup>"
+                    },
+                    {
+                        "number": "1041",
+                        "text": "L'Imām 'Alī (as) a dit : Méfiez-vous de la lâcheté car c'est [une source de] déshonneur et un défaut.<sup>1179</sup>"
+                    },
+                    {
+                        "number": "1042",
+                        "text": "L'Imām 'Alī (as) a dit : La pure lâcheté est issue de l'impuissance de l'âme et de la faiblesse de la conviction.<sup>1180</sup>"
+                    },
+                    {
+                        "number": "1043",
+                        "text": "Interrogé au sujet de la lâcheté, l'Imām Ḥasan (as) a dit : C'est l'agressivité envers l'ami et la fuite face à l'ennemi.<sup>1181</sup>"
+                    }
+                ]
             },
             {
-                "title": "326 - Le lâche et la guerre"
+                "title": "Le lâche et la guerre",
+                "hadiths": [
+                    {
+                        "number": "1044",
+                        "text": "Le Messager d'Allah (s) a dit : Celui qui ressent en lui de la lâcheté ne devrait pas partir en guerre.<sup>1182</sup>"
+                    },
+                    {
+                        "number": "1045",
+                        "text": "L'Imām 'Alī (as) a dit : Il n'est pas autorisé au lâche de participer à la guerre car il sera rapidement mis en fuite. En revanche, il doit prendre ce avec quoi il souhaitait faire la guerre [réunir le matériel de guerre] et en équiper un autre que lui. De cette façon, il aura l'équivalent de la rétribution du combattant, sans diminuer en rien la rétribution de ce dernier.<sup>1183</sup>"
+                    }
+                ]
             }
         ]
     },
@@ -5405,10 +5474,32 @@ const AUNE_SAGESSE = [
         "title": "62 - LA DISCUSSION",
         "subparts": [
             {
-                "title": "327 - La discussion blâmée"
+                "title": "La discussion blâmée",
+                "introduction": "«<i>Et il y a des gens qui discutent au sujet d'Allah sans aucune science, et qui suivent tout diable rebelle.</i>»<sup>1184</sup><br><br>«<i>Seuls ceux qui ont mécru discutent les versets d'Allah. Que leurs activités dans le pays de te trompent pas.</i>»<sup>1185</sup><br><br><span class=\"reference-note\">(Voir également : Coran 3:66, 7:71, 8:6, 18:54, 18:56, 19:97, 22:8-9, 22:68, 25:50, 42:35, 43:57)</span>",
+                "hadiths": [
+                    {
+                        "number": "1046",
+                        "text": "Le Messager d'Allah (s) a dit : Tout groupe qui discute longuement s'égare.<sup>1186</sup>"
+                    },
+                    {
+                        "number": "1047",
+                        "text": "L'Imām 'Alī (as) a dit : Gare à la discussion car elle génère le doute.<sup>1187</sup><br><br><span class=\"reference-note\">(Voir également : 363. La dispute ; 377. Le débat)</span>"
+                    }
+                ]
             },
             {
-                "title": "328 - La bonne discussion"
+                "title": "La bonne discussion",
+                "introduction": "«<i>Appelle au sentier de ton Seigneur par la sagesse et la bonne exhortation. Et discute avec eux de la meilleure façon. Car c'est ton Seigneur qui connait le mieux celui qui s'écarte de Son sentier et c'est Lui qui connaît le mieux ceux qui sont bien guidés.</i>»<sup>1188</sup>",
+                "hadiths": [
+                    {
+                        "number": "1048",
+                        "text": "L'Imām 'Alī (as) a dit dans les sagesses qui lui sont attribuées : Ordonnez aux jeunes de discuter et de polémiquer, aux adultes de réfléchir et aux personnes âgées de garder le silence.<sup>1189</sup>"
+                    },
+                    {
+                        "number": "1049",
+                        "text": "L'Imām al-'Askarī (as) a dit : En présence de l'Imām al-Ṣādiq (as), la question de la discussion au sujet de la religion et le fait que le Messager d'Allah (s) et les Imāms infaillibles (as) ont interdit cela furent évoqués. L'Imām al-Ṣādiq (as) dit : «Ils ne l'ont pas complètement interdite, mais ils n'ont interdit que la discussion qui n'est pas menée de la meilleure façon.»<sup>1190</sup>"
+                    }
+                ]
             }
         ]
     },
@@ -5416,10 +5507,50 @@ const AUNE_SAGESSE = [
         "title": "63 - L'EXPÉRIENCE",
         "subparts": [
             {
-                "title": "329 - Les bénédictions de l'expérience"
+                "title": "Les bénédictions de l'expérience",
+                "hadiths": [
+                    {
+                        "number": "1050",
+                        "text": "L'Imām 'Alī (as) a dit : Les expériences sont un savoir bénéfique.<sup>1191</sup>"
+                    },
+                    {
+                        "number": "1051",
+                        "text": "L'Imām 'Alī (as) a dit en s'adressant à son fils (as) : Je t'ai inculqué une bonne éducation avant que ton cœur ne durcisse et que ton esprit ne soit occupé ; cela afin que tu comprennes avec ton esprit ce que les gens expérimentés t'ont épargné d'expérimenter toi-même. Ainsi, tu seras ménagé de la difficulté de la recherche et de la douleur de l'expérience.<sup>1192</sup>"
+                    },
+                    {
+                        "number": "1052",
+                        "text": "L'Imām 'Alī (as) a dit : Les expériences suffisent comme éducateurs.<sup>1193</sup>"
+                    },
+                    {
+                        "number": "1053",
+                        "text": "L'Imām 'Alī (as) a dit : [La valeur de] l'opinion de l'homme est proportionnelle à son expérience.<sup>1194</sup>"
+                    },
+                    {
+                        "number": "1054",
+                        "text": "L'Imām 'Alī (as) a dit : La raison est un instinct qui s'accroît par la connaissance et l'expérience.<sup>1195</sup>"
+                    },
+                    {
+                        "number": "1055",
+                        "text": "L'Imām 'Alī (as) a dit : La raison conserve l'expérience.<sup>1196</sup>"
+                    }
+                ]
             },
             {
-                "title": "330 - Les dommages issus du manque d'expérience"
+                "title": "Les dommages issus du manque d'expérience",
+                "hadiths": [
+                    {
+                        "number": "1056",
+                        "text": "L'Imām 'Alī (as) a dit : Celui qui n'a pas expérimenté les choses sera dupé.<sup>1197</sup>"
+                    },
+                    {
+                        "number": "1057",
+                        "text": "L'Imām 'Alī (as) a dit : Celui qui maîtrise ses expériences sera épargné par les préjudices, alors que celui qui se dispense d'expériences restera aveugle face aux conséquences [des actes].<sup>1198</sup>"
+                    },
+                    {
+                        "number": "1058",
+                        "text": "L'Imām al-Ṣādiq (as) a dit : Celui qui est peu expérimenté et imbu de son propre avis ne doit pas aspirer à la direction.<sup>1199</sup>"
+                    }
+                ]
             }
         ]
     },
@@ -5427,7 +5558,34 @@ const AUNE_SAGESSE = [
         "title": "64 - L'ANXIÉTÉ",
         "subparts": [
             {
-                "title": "331 - Mise en garde contre l'anxiété"
+                "title": "Mise en garde contre l'anxiété",
+                "introduction": "«<i>Oui, l'homme a été créé instable ; quand un malheur le touche, il est anxieux ; et quand le bonheur le touche, il est grand refuseur.</i>»<sup>1200</sup>",
+                "hadiths": [
+                    {
+                        "number": "1059",
+                        "text": "Le Messager d'Allah (s) a dit : Deux sons sont abhorrés par Allah : les gémissements et les lamentations lors du malheur, et les chants et la musique lors du bonheur.<sup>1201</sup>"
+                    },
+                    {
+                        "number": "1060",
+                        "text": "L'Imām 'Alī (as) a dit : Gare à l'anxiété car elle brise l'espoir, affaiblit l'acte et génère la contrariété. Sache que la solution se trouve dans deux choses : trouver une solution [au problème] s'il en a une, et prendre patience lorsqu'il n'y pas de solution.<sup>1202</sup>"
+                    },
+                    {
+                        "number": "1061",
+                        "text": "L'Imām 'Alī (as) a dit : Vainquez l'anxiété par la patience, car l'anxiété détruit la rétribution [d'Allah] et amplifie le malheur.<sup>1203</sup>"
+                    },
+                    {
+                        "number": "1062",
+                        "text": "L'Imām 'Alī (as) a dit lorsqu'il entendit les pleurs des femmes sur les défunts de la bataille de Ṣiffīn : Vos femmes vous ont vaincus, d'après ce que j'entends ?! Ne pourriez-vous pas leur interdire de gémir ainsi ?!<sup>1204</sup>"
+                    },
+                    {
+                        "number": "1063",
+                        "text": "L'Imām al-Bāqir (as) a dit : Le pire aspect de l'anxiété est de s'adonner aux lamentations et aux gémissements, ainsi que de se frapper le visage et la poitrine et de s'arracher les cheveux. Celui qui se laisse aller aux lamentations a délaissé la patience.<sup>1205</sup>"
+                    },
+                    {
+                        "number": "1064",
+                        "text": "L'Imām al-Kāẓim (as) a dit : Le malheur de la personne patiente est unique, alors que celui de la personne anxieuse est double.<sup>1206</sup>"
+                    }
+                ]
             }
         ]
     },
@@ -5435,13 +5593,22 @@ const AUNE_SAGESSE = [
         "title": "65 - LA RÉTRIBUTION",
         "subparts": [
             {
-                "title": "332 - La rétribution [des actes]"
+                "title": "La rétribution [des actes]",
+                "introduction": "«<i>À Allah appartient ce qui est dans les cieux et sur la terre, de sorte qu'Il rétribue ceux qui font le mal selon ce qu'ils œuvrent, et récompense ceux qui font le bien par la meilleure [récompense].</i>»<sup>1207</sup>",
+                "hadiths": [
+                    {
+                        "number": "1065",
+                        "text": "L'Imām 'Alī (as) a dit : Tout être humain verra ses actes et sera rétribué pour ce qu'il a réalisé.<sup>1208</sup><br><br><span class=\"reference-note\">(Voir également : 57. La récompense)</span>"
+                    }
+                ]
             },
             {
-                "title": "333 - La rétribution des bienfaisants"
+                "title": "La rétribution des bienfaisants",
+                "introduction": "«<i>Et quand il eut atteint sa maturité, Nous lui accordâmes sagesse et savoir. C'est ainsi que Nous récompensons les bienfaisants.</i>»<sup>1209</sup><br><br>«<i>Voilà que Nous l'appelâmes : «Ô Abraham ! Tu as confirmé ta vision. C'est ainsi que Nous récompensons les bienfaisants.»</i>»<sup>1210</sup>"
             },
             {
-                "title": "334 - La rétribution des malfaiteurs"
+                "title": "La rétribution des malfaiteurs",
+                "introduction": "«<i>Et quiconque se détourne de Mon rappel mènera certes une vie pleine de gêne, et le Jour de la Résurrection, Nous l'amènerons aveugle au rassemblement. [...] C'est ainsi que Nous rétribuons l'outrancier qui n'a pas cru aux signes de son Seigneur. Et certes, le châtiment de l'Au-delà est plus sévère et plus durable.</i>»<sup>1211</sup><br><br>«<i>Ceux qui prenaient le veau [comme divinité], bientôt tombera sur eux une colère de la part de leur Seigneur, et un avilissement dans la vie de ce monde. C'est ainsi que Nous rétribuons les inventeurs [d'idoles].</i>»<sup>1212</sup><br><br>«<i>L'Enfer leur servira de lit et, comme couverture, ils auront des voiles de ténèbres. C'est ainsi que Nous rétribuons les injustes.</i>»<sup>1213</sup>"
             }
         ]
     },
@@ -5449,16 +5616,61 @@ const AUNE_SAGESSE = [
         "title": "66 - L'ESPIONNAGE",
         "subparts": [
             {
-                "title": "335 - L'interdiction de rechercher les défauts des gens"
+                "title": "L'interdiction de rechercher les défauts des gens",
+                "introduction": "«<i>Ô vous qui avez cru ! Evitez de trop conjecturer [sur autrui] car une partie des conjectures est péché. Et n'espionnez pas ; et ne médisez pas les uns des autres. L'un de vous aimerait-il manger la chair de son frère mort ? [Non !] Vous en auriez horreur. Et craignez Allah. Car Allah est le Grand Accueillant au repentir, Très Miséricordieux.</i>»<sup>1214</sup>",
+                "hadiths": [
+                    {
+                        "number": "1066",
+                        "text": "Le Messager d'Allah (s) a dit : Gare aux conjectures ! En vérité, la conjecture est la plus mensongère des paroles. Ne vous sondez pas les uns les autres [pour obtenir des informations] et ne vous espionnez pas.<sup>1215</sup>"
+                    },
+                    {
+                        "number": "1067",
+                        "text": "Le Messager d'Allah (s) a dit : Je n'ai pas reçu l'ordre d'inspecter le cœur des gens, ni de percer leur for intérieur.<sup>1216</sup>"
+                    },
+                    {
+                        "number": "1068",
+                        "text": "<i>Kanz al-'Ummāl</i> : 'Umar ibn al-Khaṭṭāb avait pour habitude à Médine de faire des rondes pendant la nuit. [Une nuit], il entendit la voix d'un homme chantant dans une maison. Il sauta par-dessus le mur et lui dit : «Ô ennemi d'Allah ! Crois-tu qu'Allah te protègeras alors que tu Lui désobéis ?» Et l'homme lui répliqua : «Et toi, ô émir des croyants ? Ne te précipite pas [pour me punir], car si j'ai désobéi à Allah une fois, tu Lui as quant à toi désobéi dans trois choses. Allah a dit : «<i>N'espionnez pas</i>»<sup>1217</sup> et tu m'as espionné. Il a dit : «<i>Entrez donc dans les maisons par leurs portes</i>»<sup>1218</sup>, alors que tu es entré chez moi en sautant par-dessus le mur, et sans demander ma permission bien qu'Allah ait dit : «<i>N'entrez pas dans des maisons autres que les vôtres avant de demander la permission [d'une façon délicate] et de saluer leurs habitants.</i>»<sup>1219</sup>» 'Umar dit alors : «Y a-t-il quelque bien en toi, si je décide de te pardonner ?» Il répondit : «Oui.» Ainsi, il lui pardonna, sortit et le laissa [en paix].<sup>1220</sup>"
+                    }
+                ]
             },
             {
-                "title": "336 - Les conséquences de l'espionnage des gens"
+                "title": "Les conséquences de l'espionnage des gens",
+                "hadiths": [
+                    {
+                        "number": "1069",
+                        "text": "Le Messager d'Allah (s) a dit : Ne guettez pas les faux pas des croyants car Allah guettera les faux pas de celui qui guette ceux de son frère, et celui dont Allah guette les faux pas sera déshonoré, même s'il est dans l'intimité de sa propre maison.<sup>1221</sup>"
+                    },
+                    {
+                        "number": "1070",
+                        "text": "Le Messager d'Allah (s) a dit : Ne demandez pas à la dépravée avec qui elle a commis ses actes de dépravation, car elle accusera un musulman innocent aussi facilement qu'elle s'est dépravée.<sup>1222</sup>"
+                    },
+                    {
+                        "number": "1071",
+                        "text": "L'Imām al-Ṣādiq (as) a dit : N'espionne pas les gens dans leur religion car tu finiras sans amis.<sup>1223</sup>"
+                    },
+                    {
+                        "number": "1072",
+                        "text": "<i>Sunan Abī Dāwūd</i> : L'un des Compagnons a dit : J'ai entendu le Messager d'Allah (s) dire: «En vérité, si tu épies les faiblesses des gens, tu les corrompras ou manqueras de peu de les corrompre.»<sup>1224</sup><br><br><span class=\"reference-note\">(Voir également : 295. Les défauts, section 1406)</span>"
+                    }
+                ]
             },
             {
-                "title": "337 - La licéité de l'espionnage pendant les guerres"
+                "title": "La licéité de l'espionnage pendant les guerres",
+                "hadiths": [
+                    {
+                        "number": "1073",
+                        "text": "L'Imām al-Riḍā (as) a dit : Lorsque le Messager d'Allah (s) envoyait une armée avec un commandant en qui il n'avait pas totalement confiance, il envoyait avec lui une personne en qui il avait confiance afin de l'espionner et d'informer [de sa conduite].<sup>1225</sup>"
+                    }
+                ]
             },
             {
-                "title": "338 - Les cas où il faut juger selon ce qui est apparent"
+                "title": "Les cas où il faut juger selon ce qui est apparent",
+                "hadiths": [
+                    {
+                        "number": "1074",
+                        "text": "L'Imām al-Ṣādiq (as) a dit : Cinq choses devraient être jugées par les gens selon ce qui est apparent : les allégeances, les mariages, les héritages, les abattages d'animaux et les témoignages. Ainsi, si la personne apparaît digne de confiance, son témoignage doit être accepté sans s'enquérir de son être profond.<sup>1226</sup>"
+                    }
+                ]
             }
         ]
     },
@@ -5466,10 +5678,27 @@ const AUNE_SAGESSE = [
         "title": "67 - L'ASSEMBLÉE",
         "subparts": [
             {
-                "title": "339 - La plus honorable des assemblées"
+                "title": "La plus honorable des assemblées",
+                "hadiths": [
+                    {
+                        "number": "1075",
+                        "text": "Le Messager d'Allah (s) a dit : En vérité, toute chose a un honneur et la plus honorable des assemblées est celle qui se tient face à la Qibla.<sup>1227</sup>"
+                    },
+                    {
+                        "number": "1076",
+                        "text": "L'Imām al-Ṣādiq (as) a dit : La plupart du temps, le Messager d'Allah (s) s'asseyait face à la Qibla.<sup>1228</sup>"
+                    }
+                ]
             },
             {
-                "title": "340 - Ce qu'il faut respecter lors des assemblées"
+                "title": "Ce qu'il faut respecter lors des assemblées",
+                "introduction": "«<i>Ô vous qui avez cru ! Lorsqu'on vous dit : «Faites place [aux autres] dans les assemblées !», alors faites place. Allah vous ménagera une place [au Paradis]. Et lorsqu'on vous dit de vous lever, levez-vous.</i>»<sup>1229</sup>",
+                "hadiths": [
+                    {
+                        "number": "1077",
+                        "text": "Le Messager d'Allah (s) a dit : Ne sois pas obscène dans les assemblées afin de ne pas être évité pour ton mauvais caractère, et lorsqu'une"
+                    }
+                ]
             },
             {
                 "title": "341 - Le centre de l'assemblée"
