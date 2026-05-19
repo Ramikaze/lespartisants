@@ -263,11 +263,72 @@ body,body *{transition:background-color 0.3s,color 0.3s,border-color 0.3s}
     <div class="home-ornament"></div>
     <h1 class="home-title">Les <span>Partisans</span></h1>
     <p class="home-subtitle">Ressources islamiques interactives</p>
-    <div class="home-verse">
-      <div class="home-verse-text">&laquo; Dis : &lsquo;Sont-ils &eacute;gaux, ceux qui savent et ceux qui ne savent pas ?&rsquo; Seuls les dou&eacute;s d&rsquo;intelligence se rappellent. &raquo;</div>
-      <div class="home-verse-ref">Sourate Az-Zumar, 39:9</div>
+    <div class="home-verse" id="votd-container" style="display:none; text-align:center; max-width:640px; margin:24px auto 0; padding:24px; background:var(--bg-card); border:1px solid var(--accent-border); border-radius:16px; position:relative; overflow:hidden; box-shadow:0 8px 32px var(--shadow-card);">
+      <div style="position:absolute; top:-20px; left:-20px; opacity:0.04; font-family:'Scheherazade New', serif; font-size:120px; color:var(--accent); pointer-events:none;">&#xfdfd;</div>
+      <div style="font-size:11px; font-weight:700; letter-spacing:.15em; text-transform:uppercase; color:var(--accent); margin-bottom:12px;">Verset du Jour</div>
+      <div id="votd-ar" style="font-family:'Scheherazade New', serif; font-size:2rem; color:var(--text); direction:rtl; margin-bottom:16px; line-height:1.5;"></div>
+      <div id="votd-fr" class="home-verse-text" style="font-size:1rem; color:var(--text-sub); line-height:1.6; margin-bottom:16px; font-style:italic;"></div>
+      <div style="display:flex; align-items:center; justify-content:center; gap:12px;">
+        <button id="votd-play" style="background:var(--accent-soft); border:1px solid var(--accent-border); color:var(--accent); width:32px; height:32px; border-radius:50%; display:flex; align-items:center; justify-content:center; cursor:pointer; transition:all 0.2s;">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+        </button>
+        <div id="votd-ref" class="home-verse-ref" style="font-size:0.8rem; color:var(--text-faint); margin:0;"></div>
+      </div>
+      <audio id="votd-audio"></audio>
     </div>
   </div>
+
+  <script>
+    // Fetch Verse of the Day
+    (function(){
+      var cacheKey = 'quran_votd_date';
+      var dataKey = 'quran_votd_data';
+      var today = new Date().toISOString().split('T')[0];
+      
+      function renderVotd(data) {
+        var v = data.verse;
+        if(!v || !v.text_uthmani || !v.translations || !v.translations[0]) return;
+        document.getElementById('votd-ar').textContent = v.text_uthmani;
+        document.getElementById('votd-fr').textContent = '« ' + v.translations[0].text.replace(/<sup.*?<\/sup>/g, '') + ' »';
+        document.getElementById('votd-ref').textContent = 'Sourate ' + v.verse_key;
+        
+        var audioEl = document.getElementById('votd-audio');
+        var playBtn = document.getElementById('votd-play');
+        if(v.audio && v.audio.url) {
+          audioEl.src = 'https://verses.quran.com/' + v.audio.url;
+          playBtn.onclick = function() {
+            if(audioEl.paused) {
+              audioEl.play();
+              playBtn.innerHTML = '<svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg>';
+            } else {
+              audioEl.pause();
+              playBtn.innerHTML = '<svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>';
+            }
+          };
+          audioEl.onended = function() {
+            playBtn.innerHTML = '<svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>';
+          };
+        } else {
+          playBtn.style.display = 'none';
+        }
+        document.getElementById('votd-container').style.display = 'block';
+      }
+
+      var cachedDate = localStorage.getItem(cacheKey);
+      if(cachedDate === today) {
+        try { renderVotd(JSON.parse(localStorage.getItem(dataKey))); } catch(e){}
+      } else {
+        fetch('https://api.quran.com/api/v4/verses/random?language=fr&translations=31&fields=text_uthmani&audio=7')
+          .then(res => res.json())
+          .then(data => {
+            localStorage.setItem(cacheKey, today);
+            localStorage.setItem(dataKey, JSON.stringify(data));
+            renderVotd(data);
+          })
+          .catch(err => console.error('VOTD fetch error:', err));
+      }
+    })();
+  </script>
 
   <!-- RECHERCHE & FILTRES -->
   <div class="search-section" id="searchSection">
@@ -939,7 +1000,8 @@ body,body *{transition:background-color 0.3s,color 0.3s,border-color 0.3s}
     "Hadith al-Kisa'": '📖',
     'Chronologie': '📅',
     'Verset du Trône': '✨',
-    'Al-Nubuwwa & Imāmah': '📿'
+    'Al-Nubuwwa & Imāmah': '📿',
+    'Coran (En ligne)': '🌐'
   };
   function typeIcon(t) { return TYPE_ICONS[t] || '🔍'; }
 
@@ -1023,6 +1085,38 @@ body,body *{transition:background-color 0.3s,color 0.3s,border-color 0.3s}
     }
 
     var hits = gsFuse.search(query.trim(), { limit: 60 });
+    hintEl.textContent = 'Recherche en direct...';
+
+    // Fetch Quran.com API search
+    var apiUrl = 'https://api.quran.com/api/v4/search?q=' + encodeURIComponent(query.trim()) + '&size=6&language=fr';
+    fetch(apiUrl)
+      .then(function(r){ return r.json(); })
+      .then(function(data){
+         var quranHits = [];
+         if(data && data.search && data.search.results) {
+           quranHits = data.search.results.map(function(r){
+             return {
+               item: {
+                 type: 'Coran (En ligne)',
+                 title: 'Sourate ' + r.verse_key,
+                 content: r.translations && r.translations[0] ? r.translations[0].text.replace(/<[^>]*>?/gm, '') : r.text,
+                 state: r.verse_key, // The router handles deep linking like #m8:2:255
+                 idx: 8 // Index of coran-lecture.html
+               }
+             };
+           });
+         }
+         displayHits(hits.concat(quranHits), query.trim());
+      })
+      .catch(function(e){
+         displayHits(hits, query.trim());
+      });
+  }
+
+  function displayHits(hits, query) {
+    results.innerHTML = '';
+    flatItems = [];
+    activeIdx = -1;
     hintEl.textContent = '';
 
     if (!hits.length) {
@@ -1124,7 +1218,7 @@ body,body *{transition:background-color 0.3s,color 0.3s,border-color 0.3s}
   input.addEventListener('input', function() {
     clearTimeout(debounceTimer);
     var q = input.value;
-    debounceTimer = setTimeout(function() { renderResults(q); }, 80);
+    debounceTimer = setTimeout(function() { renderResults(q); }, 400);
   });
 
   var homeSearchInput = document.getElementById('searchInput');
