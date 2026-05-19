@@ -132,8 +132,10 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
 .verse-audio .va-bar{flex:1;height:2px;background:rgba(201,168,76,0.12);border-radius:2px;overflow:hidden;position:relative;cursor:pointer}
 .verse-audio .va-fill{height:100%;width:0%;background:linear-gradient(90deg,#c9a84c,#e8c96a);border-radius:2px;transition:width .1s linear}
 .verse-audio .va-time{font-size:.6rem;color:rgba(201,168,76,0.5);min-width:44px;text-align:right;font-family:'Cinzel',serif;letter-spacing:.04em;white-space:nowrap;flex-shrink:0}
+.verse-audio .va-btn.va-repeat.active{background:rgba(201,168,76,0.3);border-color:rgba(201,168,76,0.5);color:#fff}
 [data-theme="light"] .verse-audio{border-top-color:rgba(122,92,36,0.1)!important}
 [data-theme="light"] .verse-audio .va-btn{background:rgba(122,92,36,0.1)!important;border-color:rgba(122,92,36,0.2)!important;color:#7a5c24!important}
+[data-theme="light"] .verse-audio .va-btn.va-repeat.active{background:rgba(122,92,36,0.2)!important;border-color:rgba(122,92,36,0.4)!important;color:#4a3816!important}
 [data-theme="light"] .verse-audio .va-bar{background:rgba(122,92,36,0.1)!important}
 [data-theme="light"] .verse-audio .va-fill{background:linear-gradient(90deg,#7a5c24,#a07830)!important}
 [data-theme="light"] .verse-audio .va-time{color:rgba(122,92,36,0.5)!important}
@@ -494,7 +496,8 @@ function openSurah(num, scrollToVerse) {
     h += '<span class="verse-num">' + v[0] + '</span>';
     h += '<span class="verse-text">' + v[1] + '</span>';
     h += '<div class="verse-audio" id="' + audioId + '" data-src="https://everyayah.com/data/' + getReciter().id + '/' + sStr + vStr + '.mp3">';
-    h += '<button class="va-btn" onclick="toggleVerseAudio(\'' + audioId + '\')" title="\u00c9couter"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><polygon points="6,4 20,12 6,20"/></svg></button>';
+    h += '<button class="va-btn va-play" onclick="toggleVerseAudio(\'' + audioId + '\')" title="\u00c9couter"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><polygon points="6,4 20,12 6,20"/></svg></button>';
+    h += '<button class="va-btn va-repeat" onclick="toggleVerseRepeat(\'' + audioId + '\')" title="R\u00e9p\u00e9ter en boucle"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M17 1l4 4-4 4"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><path d="M7 23l-4-4 4-4"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/></svg></button>';
     h += '<div class="va-bar" onclick="seekVerseAudio(event,\'' + audioId + '\')">';
     h += '<div class="va-fill"></div></div>';
     h += '<span class="va-time">0:00</span>';
@@ -636,11 +639,19 @@ function getReciter() {
 var _vaPlayers = {};
 var _vaCurrentId = null;
 
+function toggleVerseRepeat(id) {
+  var wrap = document.getElementById(id);
+  if (!wrap) return;
+  wrap.classList.toggle('repeat-active');
+  var btn = wrap.querySelector('.va-repeat');
+  if (btn) btn.classList.toggle('active');
+}
+
 function toggleVerseAudio(id) {
   var wrap = document.getElementById(id);
   if (!wrap) return;
   var src = wrap.getAttribute('data-src');
-  var btn = wrap.querySelector('.va-btn');
+  var btn = wrap.querySelector('.va-play');
   var fill = wrap.querySelector('.va-fill');
   var timeEl = wrap.querySelector('.va-time');
 
@@ -660,9 +671,16 @@ function toggleVerseAudio(id) {
       }
     });
     au.addEventListener('ended', function() {
-      var btn2 = wrap.querySelector('.va-btn');
-      btn2.classList.remove('playing');
-      btn2.innerHTML = '<svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="6,4 20,12 6,20"/></svg>';
+      if (wrap.classList.contains('repeat-active')) {
+        au.currentTime = 0;
+        au.play();
+        return;
+      }
+      var btn2 = wrap.querySelector('.va-play');
+      if (btn2) {
+        btn2.classList.remove('playing');
+        btn2.innerHTML = '<svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="6,4 20,12 6,20"/></svg>';
+      }
       fill.style.width = '0%';
       timeEl.textContent = '0:00';
       _vaCurrentId = null;
@@ -689,13 +707,17 @@ function toggleVerseAudio(id) {
   au = _vaPlayers[id];
   if (au.paused) {
     au.play();
-    btn.classList.add('playing');
-    btn.innerHTML = '<svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg>';
+    if (btn) {
+      btn.classList.add('playing');
+      btn.innerHTML = '<svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg>';
+    }
     _vaCurrentId = id;
   } else {
     au.pause();
-    btn.classList.remove('playing');
-    btn.innerHTML = '<svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="6,4 20,12 6,20"/></svg>';
+    if (btn) {
+      btn.classList.remove('playing');
+      btn.innerHTML = '<svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="6,4 20,12 6,20"/></svg>';
+    }
     _vaCurrentId = null;
   }
 }
@@ -707,11 +729,13 @@ function stopVerseAudio(id) {
   au.currentTime = 0;
   var wrap = document.getElementById(id);
   if (wrap) {
-    var btn = wrap.querySelector('.va-btn');
+    var btn = wrap.querySelector('.va-play');
     var fill = wrap.querySelector('.va-fill');
     var timeEl = wrap.querySelector('.va-time');
-    btn.classList.remove('playing');
-    btn.innerHTML = '<svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="6,4 20,12 6,20"/></svg>';
+    if (btn) {
+      btn.classList.remove('playing');
+      btn.innerHTML = '<svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="6,4 20,12 6,20"/></svg>';
+    }
     fill.style.width = '0%';
     timeEl.textContent = '0:00';
   }
@@ -813,9 +837,16 @@ function _spPlayVerse(idx) {
       }
     });
     au.addEventListener('ended', function() {
-      var btn2 = wrap.querySelector('.va-btn');
-      btn2.classList.remove('playing');
-      btn2.innerHTML = '<svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="6,4 20,12 6,20"/></svg>';
+      if (wrap.classList.contains('repeat-active')) {
+        au.currentTime = 0;
+        au.play();
+        return;
+      }
+      var btn2 = wrap.querySelector('.va-play');
+      if (btn2) {
+        btn2.classList.remove('playing');
+        btn2.innerHTML = '<svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="6,4 20,12 6,20"/></svg>';
+      }
       fill.style.width = '0%';
       timeEl.textContent = '0:00';
       _vaCurrentId = null;
@@ -838,11 +869,13 @@ function _spPlayVerse(idx) {
   }
 
   au = _vaPlayers[audioId];
-  var btn = wrap.querySelector('.va-btn');
+  var btn = wrap.querySelector('.va-play');
   au.currentTime = 0;
   au.play();
-  btn.classList.add('playing');
-  btn.innerHTML = '<svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg>';
+  if (btn) {
+    btn.classList.add('playing');
+    btn.innerHTML = '<svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg>';
+  }
   _vaCurrentId = audioId;
 }
 
