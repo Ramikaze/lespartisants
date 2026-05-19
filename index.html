@@ -506,6 +506,13 @@ body,body *{transition:background-color 0.3s,color 0.3s,border-color 0.3s}
         <div class="card-desc">Traduction fran&#231;aise int&#233;grale par le Dr Abolqasemi Fakhri &#8212; 114 sourates, navigation par verset.</div>
         <div class="card-footer"><span class="card-meta">114 sourates &middot; 6236 versets</span><span class="card-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg></span></div>
       </div>
+      <div class="card" id="card-radio">
+        <div class="card-icon">📻</div>
+        <div class="card-tag">Diffusion 24h/24</div>
+        <div class="card-title">Radio Coranique</div>
+        <div class="card-desc">&#201;coutez des r&#233;citations coraniques en direct par des r&#233;citeurs du monde entier.</div>
+        <div class="card-footer"><span class="card-meta">Radio live &middot; Direct</span><span class="card-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg></span></div>
+      </div>
     </div>
   </div>
 
@@ -575,6 +582,7 @@ body,body *{transition:background-color 0.3s,color 0.3s,border-color 0.3s}
 <div class="iframe-wrap" id="frame15"><div class="loader" id="loader15"><div class="loader-dots"><div class="loader-dot"></div><div class="loader-dot"></div><div class="loader-dot"></div></div><div class="loader-text">Chargement&#8230;</div></div><iframe id="iframe15"></iframe></div>
 <div class="iframe-wrap" id="frame16"><div class="loader" id="loader16"><div class="loader-dots"><div class="loader-dot"></div><div class="loader-dot"></div><div class="loader-dot"></div></div><div class="loader-text">Chargement&#8230;</div></div><iframe id="iframe16"></iframe></div>
 <div class="iframe-wrap" id="frame17"><div class="loader" id="loader17"><div class="loader-dots"><div class="loader-dot"></div><div class="loader-dot"></div><div class="loader-dot"></div></div><div class="loader-text">Chargement&#8230;</div></div><iframe id="iframe17"></iframe></div>
+<div class="iframe-wrap" id="frame18"><div class="loader" id="loader18"><div class="loader-dots"><div class="loader-dot"></div><div class="loader-dot"></div><div class="loader-dot"></div></div><div class="loader-text">Chargement&#8230;</div></div><iframe id="iframe18"></iframe></div>
 
 <script>
 (function(){
@@ -596,7 +604,8 @@ body,body *{transition:background-color 0.3s,color 0.3s,border-color 0.3s}
     "nubuwwa.html",
     "resister.html",
     "99-noms.html",
-    "aune-sagesse.html"
+    "aune-sagesse.html",
+    "radio.html"
   ];
   var N = MODULES.length;
   var loaded = new Array(N).fill(false);
@@ -740,7 +749,7 @@ body,body *{transition:background-color 0.3s,color 0.3s,border-color 0.3s}
   });
 
   /* ── Cartes sur la page d'accueil → ouvrent le module directement ── */
-  var cardModules = {0:0, 1:1, 2:2, 3:3, 4:4, 5:5, 6:6, 7:7, 8:8, 9:9, 10:10, 11:11, 12:12, 'tawheed':13, 'nubuwwa':14, 'resister':15, 16:16, 17:17};
+  var cardModules = {0:0, 1:1, 2:2, 3:3, 4:4, 5:5, 6:6, 7:7, 8:8, 9:9, 10:10, 11:11, 12:12, 'tawheed':13, 'nubuwwa':14, 'resister':15, 16:16, 17:17, 'radio':18};
   Object.keys(cardModules).forEach(function(cardId){
     var el = document.getElementById('card-' + cardId);
     if (el) el.addEventListener('click', function(){ openModule(cardModules[cardId], ''); });

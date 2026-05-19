@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Radio Coranique en Direct</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #070c18;
+      --bg-card: rgba(19, 29, 53, 0.7);
+      --bg-card-hover: rgba(19, 29, 53, 0.9);
+      --text: #e8e2d0;
+      --text-sub: #9aa3b8;
+      --text-faint: #5a6480;
+      --accent: #c9a84c;
+      --accent-soft: rgba(201, 168, 76, 0.12);
+      --accent-border: rgba(201, 168, 76, 0.2);
+      --accent-border-strong: rgba(201, 168, 76, 0.4);
+      --card-border: rgba(201, 168, 76, 0.15);
+      --shadow-card: rgba(0, 0, 0, 0.4);
+    }
+
+    [data-theme="light"] {
+      --bg: #e8e0d4;
+      --bg-card: rgba(235, 228, 216, 0.85);
+      --bg-card-hover: rgba(240, 234, 222, 0.95);
+      --text: #2c2114;
+      --text-sub: #5a4e3c;
+      --text-faint: #8a7c66;
+      --accent: #7a5c24;
+      --accent-soft: rgba(122, 92, 36, 0.12);
+      --accent-border: rgba(122, 92, 36, 0.22);
+      --accent-border-strong: rgba(122, 92, 36, 0.45);
+      --card-border: rgba(122, 92, 36, 0.14);
+      --shadow-card: rgba(60, 45, 20, 0.1);
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      min-height: 100vh;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'><g fill='none' stroke='%23c9a84c' stroke-width='0.5' opacity='0.03'><rect x='22' y='22' width='56' height='56' rx='2'/><rect x='22' y='22' width='56' height='56' rx='2' transform='rotate(45 50 50)'/><circle cx='50' cy='50' r='28'/></g></svg>");
+      background-repeat: repeat;
+      background-size: 100px;
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 32px;
+      max-width: 600px;
+      width: 100%;
+    }
+
+    .ornament {
+      width: 1px;
+      height: 40px;
+      background: linear-gradient(to bottom, transparent, var(--accent), transparent);
+      margin: 0 auto 16px;
+    }
+
+    h1 {
+      font-family: 'Cinzel', serif;
+      font-size: clamp(22px, 5vw, 32px);
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 6px;
+      letter-spacing: 0.05em;
+    }
+
+    h1 span {
+      color: var(--accent);
+    }
+
+    .subtitle {
+      font-size: 14px;
+      color: var(--text-sub);
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+    }
+
+    /* PLAYER AREA */
+    .player-card {
+      width: 100%;
+      max-width: 580px;
+      background: var(--bg-card);
+      border: 1px solid var(--accent-border);
+      border-radius: 20px;
+      padding: 32px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      box-shadow: 0 12px 40px var(--shadow-card);
+      backdrop-filter: blur(8px);
+      margin-bottom: 32px;
+      position: relative;
+    }
+
+    .radio-icon-container {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      background: var(--accent-soft);
+      border: 1px solid var(--accent-border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+      position: relative;
+      transition: all 0.3s;
+    }
+
+    .radio-icon-container.playing {
+      box-shadow: 0 0 24px var(--accent-border);
+      border-color: var(--accent-border-strong);
+      animation: pulseGlow 2s infinite ease-in-out;
+    }
+
+    @keyframes pulseGlow {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+    }
+
+    .radio-icon-container svg {
+      width: 48px;
+      height: 48px;
+      color: var(--accent);
+    }
+
+    .station-title {
+      font-family: 'Cinzel', serif;
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--text);
+      text-align: center;
+      margin-bottom: 8px;
+    }
+
+    .station-status {
+      font-size: 0.85rem;
+      color: var(--text-faint);
+      margin-bottom: 24px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .status-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--text-faint);
+    }
+
+    .status-dot.active {
+      background: #2ec4b6;
+      box-shadow: 0 0 8px #2ec4b6;
+      animation: blink 1.5s infinite;
+    }
+
+    @keyframes blink {
+      0%, 100% { opacity: 0.4; }
+      50% { opacity: 1; }
+    }
+
+    .controls {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      width: 100%;
+      justify-content: center;
+      margin-bottom: 12px;
+    }
+
+    .play-btn {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      background: var(--accent);
+      border: none;
+      color: var(--bg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+
+    .play-btn:hover {
+      transform: scale(1.06);
+      box-shadow: 0 6px 16px rgba(0,0,0,0.3);
+    }
+
+    .play-btn svg {
+      width: 28px;
+      height: 28px;
+    }
+
+    /* VOLUME CONTROLLER */
+    .volume-box {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      width: 150px;
+    }
+
+    .volume-box svg {
+      width: 18px;
+      height: 18px;
+      color: var(--accent);
+      cursor: pointer;
+    }
+
+    .volume-slider {
+      flex: 1;
+      height: 4px;
+      -webkit-appearance: none;
+      background: var(--accent-soft);
+      border-radius: 2px;
+      outline: none;
+      cursor: pointer;
+    }
+
+    .volume-slider::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: var(--accent);
+      cursor: pointer;
+    }
+
+    /* STATIONS LIST & SEARCH */
+    .search-box {
+      width: 100%;
+      max-width: 580px;
+      background: var(--bg-card);
+      border: 1px solid var(--accent-border);
+      border-radius: 24px;
+      padding: 10px 18px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+
+    .search-box svg {
+      width: 18px;
+      height: 18px;
+      color: var(--accent);
+    }
+
+    .search-input {
+      flex: 1;
+      background: none;
+      border: none;
+      color: var(--text);
+      font-family: inherit;
+      font-size: 15px;
+      outline: none;
+    }
+
+    .search-input::placeholder {
+      color: var(--text-faint);
+    }
+
+    .grid-container {
+      width: 100%;
+      max-width: 580px;
+      max-height: 400px;
+      overflow-y: auto;
+      border: 1px solid var(--accent-border);
+      border-radius: 16px;
+      background: var(--bg-card);
+      padding: 8px;
+    }
+
+    .station-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 16px;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: all 0.2s;
+      border-bottom: 1px solid rgba(201, 168, 76, 0.05);
+    }
+
+    .station-item:hover, .station-item.active {
+      background: var(--accent-soft);
+    }
+
+    .station-item.active {
+      border-left: 3px solid var(--accent);
+    }
+
+    .item-name {
+      font-size: 14.5px;
+      font-weight: 500;
+      color: var(--text);
+    }
+
+    .item-icon {
+      font-size: 14px;
+      color: var(--accent);
+    }
+
+    /* SCROLLBAR */
+    .grid-container::-webkit-scrollbar {
+      width: 6px;
+    }
+    .grid-container::-webkit-scrollbar-thumb {
+      background: var(--accent-border);
+      border-radius: 3px;
+    }
+    .grid-container::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    /* LOADER */
+    .loading-stations {
+      text-align: center;
+      padding: 32px;
+      color: var(--text-sub);
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="ornament"></div>
+    <h1>Radio <span>Coranique</span></h1>
+    <p class="subtitle">Direct 24h/24 &middot; Récitateurs du Monde</p>
+  </header>
+
+  <!-- LIVE PLAYER CARD -->
+  <div class="player-card">
+    <div class="radio-icon-container" id="playerGlow">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M4.9 19.1C1 15.2 1 8.8 4.9 4.9M7.8 16.2c-2.3-2.3-2.3-6.1 0-8.5M16.2 7.8c2.3 2.3 2.3 6.1 0 8.5M19.1 4.9C23 8.8 23 15.2 19.1 19.1"/>
+        <circle cx="12" cy="12" r="2"/>
+      </svg>
+    </div>
+    <div class="station-title" id="playerTitle">Sélectionnez une station</div>
+    <div class="station-status">
+      <div class="status-dot" id="statusDot"></div>
+      <span id="statusText">Hors ligne</span>
+    </div>
+
+    <div class="controls">
+      <div class="volume-box">
+        <svg id="volumeIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/>
+          <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"/>
+        </svg>
+        <input type="range" class="volume-slider" id="volumeSlider" min="0" max="1" step="0.05" value="0.8">
+      </div>
+
+      <button class="play-btn" id="playBtn" disabled>
+        <svg id="playIcon" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+      </button>
+
+      <div class="volume-box" style="visibility: hidden;"></div> <!-- Spacer -->
+    </div>
+  </div>
+
+  <!-- SEARCH & STATIONS GRID -->
+  <div class="search-box">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><line x1="16.5" y1="16.5" x2="21" y2="21"/></svg>
+    <input type="text" class="search-input" id="searchBar" placeholder="Rechercher un réciteur ou une station...">
+  </div>
+
+  <div class="grid-container" id="stationsList">
+    <div class="loading-stations">Chargement des stations de radio en direct...</div>
+  </div>
+
+  <audio id="audioElement"></audio>
+
+  <script>
+    var audio = document.getElementById('audioElement');
+    var playBtn = document.getElementById('playBtn');
+    var playIcon = document.getElementById('playIcon');
+    var playerTitle = document.getElementById('playerTitle');
+    var statusDot = document.getElementById('statusDot');
+    var statusText = document.getElementById('statusText');
+    var playerGlow = document.getElementById('playerGlow');
+    var volumeSlider = document.getElementById('volumeSlider');
+    var volumeIcon = document.getElementById('volumeIcon');
+    var searchBar = document.getElementById('searchBar');
+    var stationsList = document.getElementById('stationsList');
+
+    var stations = [];
+    var currentStation = null;
+
+    // Fetch dynamic radios from MP3Quran API
+    fetch('https://www.mp3quran.net/api/v3/radios?language=eng')
+      .then(function(r) { return r.json(); })
+      .then(function(data) {
+        if(data && data.radios) {
+          stations = data.radios.map(function(s) {
+            return {
+              id: s.id,
+              name: s.name.replace("Radio ", "").replace("Radio", ""),
+              url: s.url
+            };
+          });
+          renderStations(stations);
+        }
+      })
+      .catch(function(err) {
+        stationsList.innerHTML = '<div class="loading-stations" style="color: #ef233c;">Erreur de chargement. Veuillez vérifier votre connexion.</div>';
+      });
+
+    function renderStations(list) {
+      stationsList.innerHTML = '';
+      if(list.length === 0) {
+        stationsList.innerHTML = '<div class="loading-stations">Aucune radio trouvée.</div>';
+        return;
+      }
+
+      list.forEach(function(station) {
+        var el = document.createElement('div');
+        el.className = 'station-item';
+        if(currentStation && currentStation.id === station.id) {
+          el.className += ' active';
+        }
+
+        el.innerHTML = `
+          <span class="item-name">${station.name}</span>
+          <span class="item-icon">▶</span>
+        `;
+
+        el.onclick = function() {
+          selectStation(station);
+        };
+
+        stationsList.appendChild(el);
+      });
+    }
+
+    function selectStation(station) {
+      currentStation = station;
+      playerTitle.textContent = station.name;
+      
+      // Update UI selection classes
+      var items = document.querySelectorAll('.station-item');
+      items.forEach(function(item, idx) {
+        if(stations[idx] && stations[idx].id === station.id) {
+          item.classList.add('active');
+        } else {
+          item.classList.remove('active');
+        }
+      });
+
+      // Stop current play and load new stream URL
+      audio.pause();
+      audio.src = station.url;
+      audio.load();
+
+      statusDot.className = 'status-dot';
+      statusText.textContent = 'Prêt à lire';
+      playBtn.disabled = false;
+      playIcon.innerHTML = '<polygon points="5 3 19 12 5 21 5 3"/>';
+      playerGlow.classList.remove('playing');
+
+      // Auto play selected station
+      playBtn.click();
+    }
+
+    playBtn.onclick = function() {
+      if(!currentStation) return;
+
+      if(audio.paused) {
+        statusDot.className = 'status-dot active';
+        statusText.textContent = 'Connexion au direct...';
+        
+        audio.play()
+          .then(function() {
+            statusText.textContent = 'En direct';
+            playIcon.innerHTML = '<rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/>';
+            playerGlow.classList.add('playing');
+          })
+          .catch(function(e) {
+            statusDot.className = 'status-dot';
+            statusText.textContent = 'Erreur de connexion';
+            playerGlow.classList.remove('playing');
+          });
+      } else {
+        audio.pause();
+        statusDot.className = 'status-dot';
+        statusText.textContent = 'Pause';
+        playIcon.innerHTML = '<polygon points="5 3 19 12 5 21 5 3"/>';
+        playerGlow.classList.remove('playing');
+      }
+    };
+
+    // Volume management
+    volumeSlider.oninput = function() {
+      audio.volume = this.value;
+      if(this.value == 0) {
+        volumeIcon.innerHTML = '<polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/>';
+      } else {
+        volumeIcon.innerHTML = '<polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"/>';
+      }
+    };
+
+    volumeIcon.onclick = function() {
+      if(audio.volume > 0) {
+        audio.volume = 0;
+        volumeSlider.value = 0;
+        volumeIcon.innerHTML = '<polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/>';
+      } else {
+        audio.volume = 0.8;
+        volumeSlider.value = 0.8;
+        volumeIcon.innerHTML = '<polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"/>';
+      }
+    };
+
+    // Filter stations on search
+    searchBar.oninput = function() {
+      var query = this.value.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+      var filtered = stations.filter(function(s) {
+        var normName = s.name.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+        return normName.indexOf(query) !== -1;
+      });
+      renderStations(filtered);
+    };
+
+    // Listen to theme toggles from index.html postMessage
+    window.addEventListener('message', function(e) {
+      if(e.data && e.data.type === 'theme') {
+        if(e.data.theme === 'light') {
+          document.documentElement.setAttribute('data-theme', 'light');
+        } else {
+          document.documentElement.removeAttribute('data-theme');
+        }
+      }
+    });
+  </script>
+</body>
+</html>
