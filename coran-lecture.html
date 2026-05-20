@@ -38,7 +38,7 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
 .btn-go:hover{background:rgba(201,168,76,0.25)}
 
 /* SURAH LIST (landing page) */
-.surah-list{max-width:900px;margin:0 auto;padding:32px 24px 80px;position:relative;z-index:1}
+.surah-list{max-width:1100px;margin:0 auto;padding:32px 24px 80px;position:relative;z-index:1}
 .list-header{text-align:center;margin-bottom:32px}
 .list-ornament{width:1px;height:36px;background:linear-gradient(to bottom,transparent,#c9a84c,transparent);margin:0 auto 16px}
 .list-title{font-family:'Cinzel',serif;font-size:clamp(1.4rem,4vw,2rem);font-weight:700;color:#e8e2d0;margin-bottom:6px}
@@ -61,7 +61,7 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
 .surah-arrow{color:#c9a84c;opacity:0.4;font-size:22px}
 
 /* SURAH VIEW (reading) */
-.surah-view{max-width:960px;margin:0 auto;padding:32px 24px 100px;position:relative;z-index:1;display:none}
+.surah-view{max-width:1200px;margin:0 auto;padding:32px 24px 100px;position:relative;z-index:1;display:none}
 .surah-header{text-align:center;margin-bottom:36px;padding-bottom:24px;border-bottom:1px solid rgba(201,168,76,0.15)}
 .s-num{font-family:'Cinzel',serif;font-size:14px;letter-spacing:.2em;text-transform:uppercase;color:#c9a84c;opacity:0.6;margin-bottom:8px}
 .s-name{font-family:'Cinzel',serif;font-size:clamp(1.3rem,3.5vw,1.9rem);font-weight:700;color:#e8e2d0;margin-bottom:4px}
@@ -102,6 +102,8 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
 /* ── ARABIC VERSE TEXT ── */
 .verse-ar{direction:rtl;text-align:right;font-family:var(--ar-font),serif;font-weight:400;font-size:var(--ar-size,2.0rem);color:#c9a84c;line-height:2.1;margin-bottom:10px;padding:6px 0 8px;border-bottom:1px solid rgba(201,168,76,0.08)}
 .bismillah-ar{font-family:var(--ar-font),serif;font-weight:400;font-size:var(--ar-size,1.8rem);display:block;margin-bottom:8px;direction:rtl}
+body:not(.show-ar) .verse-ar, body:not(.show-ar) .bismillah-ar { display: none !important; }
+body:not(.show-fr) .verse-text, body:not(.show-fr) .bismillah { display: none !important; }
 
 /* ── INTERACTIVE WORDS ── */
 .verse-ar .w{display:inline;cursor:pointer;padding:2px 4px;border-radius:4px;transition:background .15s,color .15s;position:relative}
@@ -248,7 +250,7 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
 
 </style>
 </head>
-<body>
+<body class="show-ar show-fr">
 <!-- Word tooltip -->
 <div id="wtooltip">
   <div class="wtt-arabic"></div>
@@ -269,6 +271,10 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
     <button class="btn-go" id="goBtn">Aller</button>
     <select class="sel reciter-sel" id="reciterSel" title="Récitateur"></select>
     <div class="font-ctrl" id="fontCtrl">
+      <div class="fc-toggles" style="display:flex;gap:12px;margin-right:auto;align-items:center;font-size:12px;color:#c9a84c;opacity:0.8;">
+        <label style="cursor:pointer;display:flex;align-items:center;gap:4px;"><input type="checkbox" checked onchange="document.body.classList.toggle('show-ar', this.checked)"> Arabe</label>
+        <label style="cursor:pointer;display:flex;align-items:center;gap:4px;"><input type="checkbox" checked onchange="document.body.classList.toggle('show-fr', this.checked)"> Français</label>
+      </div>
       <div class="fc-grp">
         <select class="fc-select" id="arFontSel" onchange="setArFont(this.value)" title="Police Arabe">
           <option value="'Amiri'">Amiri (Élégante)</option>
@@ -345,7 +351,7 @@ var gridEl = document.getElementById('surahGrid');
 var selWrap = document.getElementById('selWrap');
 
 // ── Font size controls ──
-var _arSize = 2.0, _frSize = 1.4;
+var _arSize = 2.2, _frSize = 1.6;
 var _arMin = 0.9, _arMax = 3.5, _frMin = 0.8, _frMax = 2.8, _step = 0.15;
 function cfs(type, dir) {
   if (type === 'ar') {

@@ -95,7 +95,7 @@ html,body{height:100%;background:#070c18;color:#e8e2d0;font-family:'Plus Jakarta
   animation:fadeIn .25s ease;
 }
 .content-inner{
-  max-width:720px;margin:0 auto;
+  max-width:1200px;margin:0 auto;
 }
 .content::-webkit-scrollbar{width:4px}
 .content::-webkit-scrollbar-thumb{background:rgba(201,168,76,0.2);border-radius:2px}
@@ -141,13 +141,20 @@ html,body{height:100%;background:#070c18;color:#e8e2d0;font-family:'Plus Jakarta
 .c-tri{margin-bottom:14px;padding:12px 14px;border-radius:10px;background:rgba(255,255,255,0.018);border:1px solid rgba(255,255,255,0.035);transition:background .2s}
 .c-tri:hover{background:rgba(201,168,76,0.04);border-color:rgba(201,168,76,0.1)}
 .c-tri-ar{font-family:'Amiri Quran',serif;font-weight:400;font-size:var(--inv-ar-size,1.25rem);color:#c9a84c;direction:rtl;text-align:right;line-height:2;margin-bottom:6px}
-.c-tri-tr{font-size:0.78rem;color:#9aa3b8;font-style:italic;line-height:1.6;margin-bottom:6px;padding-left:2px}
+.c-tri-tr{font-size:var(--inv-tr-size,1.1rem);color:#9aa3b8;font-style:italic;line-height:1.6;margin-bottom:6px;padding-left:2px}
 .c-tri-fr{font-size:var(--inv-fr-size,0.88rem);color:#cec6b0;line-height:1.75;text-align:justify;hyphens:auto}
+
+body:not(.show-ar) .c-tri-ar, body:not(.show-ar) .c-zv-ar { display: none !important; }
+body:not(.show-tr) .c-tri-tr { display: none !important; }
+body:not(.show-fr) .c-tri-fr, body:not(.show-fr) .c-zv-text, body:not(.show-fr) .c-verse, body:not(.show-fr) .c-prose, body:not(.show-fr) .c-intro { display: none !important; }
 
 .c-zv-ar{font-family:'Amiri',serif,sans-serif;font-size:var(--inv-ar-size,14px);color:#c9a84c;opacity:.75;direction:rtl;margin-top:4px;font-style:italic}
 /* ── Font size controls ── */
 .inv-fc{display:none;justify-content:flex-end;padding:8px 16px 0;gap:6px}
 .inv-fc.show{display:flex}
+.inv-fc .fc-toggles{display:flex;gap:12px;margin-right:auto;align-items:center;font-size:12px;color:#9aa3b8}
+.inv-fc .fc-toggles label{cursor:pointer;display:flex;align-items:center;gap:4px}
+.inv-fc .fc-toggles input{cursor:pointer}
 .inv-fc .fc-grp{display:flex;align-items:center;gap:2px;background:rgba(201,168,76,0.06);border:1px solid rgba(201,168,76,0.15);border-radius:8px;padding:2px 4px}
 .inv-fc .fc-label{font-size:10px;color:#c9a84c;opacity:0.6;padding:0 4px;min-width:16px;text-align:center}
 .inv-fc .fc-label.ar-l{font-family:'Amiri',serif;font-size:14px}
@@ -155,7 +162,7 @@ html,body{height:100%;background:#070c18;color:#e8e2d0;font-family:'Plus Jakarta
 .inv-fc .fc-btn:hover{background:rgba(201,168,76,0.18)}
 </style>
 </head>
-<body>
+<body class="show-ar show-tr show-fr">
 <div class="app">
 
   <!-- SIDEBAR -->
@@ -173,7 +180,13 @@ html,body{height:100%;background:#070c18;color:#e8e2d0;font-family:'Plus Jakarta
   <!-- MAIN -->
   <div class="main" id="main">
     <div class="inv-fc" id="invFc">
+      <div class="fc-toggles">
+        <label><input type="checkbox" checked onchange="document.body.classList.toggle('show-ar', this.checked)"> Arabe</label>
+        <label><input type="checkbox" checked onchange="document.body.classList.toggle('show-tr', this.checked)"> Phonétique</label>
+        <label><input type="checkbox" checked onchange="document.body.classList.toggle('show-fr', this.checked)"> Français</label>
+      </div>
       <div class="fc-grp"><span class="fc-label ar-l">ع</span><button class="fc-btn" onclick="invFs('ar',-1)">−</button><button class="fc-btn" onclick="invFs('ar',1)">+</button></div>
+      <div class="fc-grp"><span class="fc-label">Tr</span><button class="fc-btn" onclick="invFs('tr',-1)">−</button><button class="fc-btn" onclick="invFs('tr',1)">+</button></div>
       <div class="fc-grp"><span class="fc-label">Fr</span><button class="fc-btn" onclick="invFs('fr',-1)">−</button><button class="fc-btn" onclick="invFs('fr',1)">+</button></div>
     </div>
     <div class="welcome" id="welcome">
@@ -1300,14 +1313,18 @@ toggle.addEventListener('click', function(){
 
 // ══ RENDER INVOCATION ══
 // Font size controls
-var _invAr = 1.55, _invFr = 1.25;
+var _invAr = 2.0, _invFr = 1.4, _invTr = 1.1;
 document.documentElement.style.setProperty('--inv-ar-size', _invAr + 'rem');
 document.documentElement.style.setProperty('--inv-fr-size', _invFr + 'rem');
+document.documentElement.style.setProperty('--inv-tr-size', _invTr + 'rem');
 function invFs(type, dir) {
   var step = 0.1;
   if (type === 'ar') {
     _invAr = Math.min(3.0, Math.max(0.8, _invAr + dir * step));
     document.documentElement.style.setProperty('--inv-ar-size', _invAr + 'rem');
+  } else if (type === 'tr') {
+    _invTr = Math.min(2.5, Math.max(0.6, _invTr + dir * step));
+    document.documentElement.style.setProperty('--inv-tr-size', _invTr + 'rem');
   } else {
     _invFr = Math.min(2.0, Math.max(0.6, _invFr + dir * step));
     document.documentElement.style.setProperty('--inv-fr-size', _invFr + 'rem');
