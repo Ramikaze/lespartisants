@@ -6,8 +6,9 @@
 <title>Le Coran — Traduction Abolqasemi Fakhri</title>
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><g fill='none' stroke='%23c9a84c' stroke-width='8'><rect x='22' y='22' width='56' height='56' rx='8'/><rect x='22' y='22' width='56' height='56' rx='8' transform='rotate(45 50 50)'/><circle cx='50' cy='50' r='12' fill='%23c9a84c'/></g></svg>">
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Amiri:wght@400;700&family=Amiri+Quran&family=Lateef&family=Noto+Naskh+Arabic:wght@400;700&family=Scheherazade+New:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.cdnfonts.com/css/kfgqpc-hafs-uthmanic-script" rel="stylesheet">
 <style>
-:root{--ar-font:'Amiri',serif}
+:root{--ar-font:'KFGQPC HAFS Uthmanic Script',serif}
 *{box-sizing:border-box;margin:0;padding:0}
 html{height:100%}
 body{min-height:100%;background:#070c18;color:#e2d9c4;font-family:'EB Garamond',Georgia,serif;font-size:18px;line-height:1.8}
@@ -277,6 +278,7 @@ body:not(.show-fr) .verse-text, body:not(.show-fr) .bismillah { display: none !i
       </div>
       <div class="fc-grp">
         <select class="fc-select" id="arFontSel" onchange="setArFont(this.value)" title="Police Arabe">
+          <option value="'KFGQPC HAFS Uthmanic Script'">QPC Uthmani Hafs (Recommandé)</option>
           <option value="'Amiri'">Amiri (Élégante)</option>
           <option value="'Lateef'">Lateef (Fine)</option>
           <option value="'Noto Naskh Arabic'">Noto Naskh</option>
@@ -1095,7 +1097,7 @@ try {
   if (_savedArFont) {
     setArFont(_savedArFont);
   } else {
-    setArFont("'Amiri'");
+    setArFont("'KFGQPC HAFS Uthmanic Script'");
   }
 } catch(e) {}
 document.addEventListener('keydown', function(e) {
