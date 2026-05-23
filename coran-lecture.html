@@ -494,7 +494,18 @@ function openSurah(num, scrollToVerse) {
   _spShowPlayer(s);
 
   if (s.n !== 9 && s.n !== 1) {
-    h += '<div class="bismillah"><span class="bismillah-ar">بِسۡمِ ٱللَّهِ ٱلرَّحۡمَٰنِ ٱلرَّحِيمِ</span><span class="bismillah-fr">Au nom de Dieu, le Tout-Mis\u00e9ricordieux, le Tr\u00e8s-Mis\u00e9ricordieux</span></div>';
+    var audioId = 'audio-bismillah';
+    h += '<div class="bismillah">';
+    h += '<span class="bismillah-ar">بِسۡمِ ٱللَّهِ ٱلرَّحۡمَٰنِ ٱلرَّحِيمِ</span>';
+    h += '<span class="bismillah-fr">Au nom de Dieu, le Tout-Mis\u00e9ricordieux, le Tr\u00e8s-Mis\u00e9ricordieux</span>';
+    h += '<div class="verse-audio" id="' + audioId + '" data-src="https://everyayah.com/data/' + getReciter().id + '/001001.mp3">';
+    h += '<button class="va-btn va-play" onclick="toggleVerseAudio(\'' + audioId + '\')" title="\u00c9couter"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><polygon points="6,4 20,12 6,20"/></svg></button>';
+    h += '<button class="va-btn va-repeat" onclick="toggleVerseRepeat(\'' + audioId + '\')" title="R\u00e9p\u00e9ter en boucle"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M17 1l4 4-4 4"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><path d="M7 23l-4-4 4-4"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/></svg></button>';
+    h += '<div class="va-bar" onclick="seekVerseAudio(event,\'' + audioId + '\')">';
+    h += '<div class="va-fill"></div></div>';
+    h += '<span class="va-time">0:00</span>';
+    h += '</div>';
+    h += '</div>';
   }
 
   s.v.forEach(function(v){
