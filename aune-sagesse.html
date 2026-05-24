@@ -8,183 +8,249 @@
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Amiri+Quran&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
-html,body{min-height:100%;background:#070c18;color:#e8e2d0;font-family:'Plus Jakarta Sans',sans-serif;font-size:16px;line-height:1.6;overflow-x:hidden}
-body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23c9a84c' stroke-width='0.3' opacity='0.055'%3E%3Crect x='22' y='22' width='56' height='56' rx='2'/%3E%3Crect x='22' y='22' width='56' height='56' rx='2' transform='rotate(45 50 50)'/%3E%3Ccircle cx='50' cy='50' r='28'/%3E%3C/g%3E%3C/svg%3E");background-size:100px;pointer-events:none;z-index:0}
-::-webkit-scrollbar{width:6px}::-webkit-scrollbar-track{background:#070c18}::-webkit-scrollbar-thumb{background:rgba(201,168,76,0.3);border-radius:4px}
+html,body{height:100%;background:#070c18;color:#e8e2d0;font-family:'Plus Jakarta Sans',sans-serif;overflow:hidden}
+.app{display:flex;height:100%}
 
-.wrap{max-width:900px;margin:0 auto;padding:40px 24px 100px;position:relative;z-index:1}
-.hero{text-align:center;margin-bottom:44px}
-.hero-ornament{display:flex;align-items:center;justify-content:center;gap:14px;margin-bottom:24px}
-.orn-line{height:1px;width:80px;background:linear-gradient(to right,transparent,#c9a84c)}.orn-line.r{background:linear-gradient(to left,transparent,#c9a84c)}
-.orn-gem{width:7px;height:7px;background:#c9a84c;transform:rotate(45deg);box-shadow:0 0 8px rgba(201,168,76,0.6)}
-.hero-label{font-family:'Cinzel',serif;font-size:0.75rem;letter-spacing:0.22em;text-transform:uppercase;color:#c9a84c;opacity:0.6;margin-bottom:16px}
-.hero-title{font-family:'Cinzel',serif;font-size:clamp(1.6rem,4vw,2.4rem);font-weight:700;color:#e8e2d0;line-height:1.25;margin-bottom:8px}
-.hero-title span{color:#c9a84c}
-.hero-ar{font-family:'Amiri Quran',serif;font-weight:400;font-size:2rem;color:#c9a84c;opacity:0.8;margin-bottom:12px}
-.hero-subtitle{font-size:1.05rem;color:#9aa3b8;margin-bottom:28px;line-height:1.6;font-weight:300}
-.hero-divider{width:120px;height:1px;background:linear-gradient(90deg,transparent,#c9a84c,transparent);margin:0 auto}
+/* ══ SIDEBAR ══ */
+.sidebar{
+  width:240px;flex-shrink:0;height:100%;
+  background:#0a1020;border-right:1px solid rgba(201,168,76,0.12);
+  display:flex;flex-direction:column;overflow:hidden;
+  transition:width .3s cubic-bezier(.4,0,.2,1);
+}
+.sidebar.collapsed{width:0}
+.sb-header{
+  padding:16px 14px 12px;border-bottom:1px solid rgba(201,168,76,0.1);
+  flex-shrink:0;
+}
+.sb-title{font-family:'Cinzel',serif;font-size:12px;font-weight:700;color:#c9a84c;letter-spacing:.08em;text-transform:uppercase;white-space:nowrap}
+.sb-sub{font-size:10px;color:#3a4560;margin-top:2px;white-space:nowrap}
+.sb-scroll{flex:1;overflow-y:auto;overflow-x:hidden;padding:8px 0;scrollbar-width:thin;scrollbar-color:rgba(201,168,76,0.15) transparent}
+.sb-scroll::-webkit-scrollbar{width:3px}
+.sb-scroll::-webkit-scrollbar-thumb{background:rgba(201,168,76,0.15)}
 
-.intro{font-size:1.05rem;color:#9aa3b8;line-height:1.7;margin-bottom:40px;text-align:center;max-width:700px;margin-left:auto;margin-right:auto;background:rgba(19,29,53,0.4);padding:24px;border-radius:12px;border:1px solid rgba(201,168,76,0.15)}
+/* Search input in sidebar */
+.sb-search-container{margin-top:10px;padding:0 2px}
+input.sb-search{
+  width:100%;padding:8px 12px;
+  background:rgba(255,255,255,0.03);border:1px solid rgba(201,168,76,0.2);
+  border-radius:6px;color:#e8e2d0;font-size:11.5px;
+  font-family:inherit;outline:none;transition:border-color 0.2s;
+}
+input.sb-search:focus{
+  border-color:#c9a84c;
+}
 
-/* Accordion Sommaire */
-.accordion-container{display:flex;flex-direction:column;gap:16px;margin-bottom:40px}
+/* Theme group */
+.sb-group{margin-bottom:4px}
+.sb-theme{
+  display:flex;align-items:center;gap:8px;
+  padding:9px 14px;cursor:pointer;
+  font-size:12px;font-weight:600;color:#9aa3b8;
+  transition:all .18s;
+  border-left:2px solid transparent;
+}
+.sb-theme:hover{color:#c9a84c;background:rgba(201,168,76,0.05)}
+.sb-theme.open{color:#c9a84c;border-left-color:rgba(201,168,76,0.4);background:rgba(201,168,76,0.06)}
+.sb-theme-icon{font-size:14px;flex-shrink:0}
+.sb-theme-label{flex:1;line-height:1.4}
+.sb-chevron{font-size:9px;transition:transform .2s;flex-shrink:0;color:#c9a84c;opacity:.6}
+.sb-theme.open .sb-chevron{transform:rotate(90deg)}
 
-.part-card{background:rgba(13,22,42,0.6);border:1px solid rgba(201,168,76,0.2);border-radius:12px;overflow:hidden;transition:all 0.3s;backdrop-filter:blur(10px)}
-.part-card:hover{border-color:rgba(201,168,76,0.4);box-shadow:0 8px 24px rgba(0,0,0,0.3)}
+/* Sub-items */
+.sb-items{max-height:0;overflow:hidden;transition:max-height .3s cubic-bezier(.4,0,.2,1)}
+.sb-items.open{max-height:10000px}
+.sb-item{
+  display:block;padding:7px 14px 7px 36px;
+  font-size:11.5px;color:#6b7280;cursor:pointer;
+  transition:all .15s;line-height:1.4;
+  border-left:2px solid transparent;
+}
+.sb-item:hover{color:#c9a84c;background:rgba(201,168,76,0.04)}
+.sb-item.active{color:#c9a84c;font-weight:600;background:rgba(201,168,76,0.08);border-left-color:#c9a84c}
 
-.part-header{padding:20px 24px;display:flex;align-items:center;justify-content:space-between;cursor:pointer;user-select:none;background:rgba(201,168,76,0.03)}
-.part-header:hover{background:rgba(201,168,76,0.06)}
-.part-title-wrap{display:flex;align-items:center;gap:16px}
-.part-num{font-family:'Cinzel',serif;font-size:1.2rem;font-weight:700;color:#c9a84c;background:rgba(201,168,76,0.1);width:40px;height:40px;display:flex;align-items:center;justify-content:center;border-radius:8px;border:1px solid rgba(201,168,76,0.2)}
-.part-title{font-size:1.15rem;font-weight:600;color:#e8e2d0}
-.part-icon{color:#c9a84c;transition:transform 0.3s ease;display:flex;align-items:center;justify-content:center}
-.part-icon svg{width:20px;height:20px}
+/* ══ TOGGLE BUTTON ══ */
+.sb-toggle{
+  position:absolute;top:50%;left:240px;transform:translateY(-50%);
+  width:18px;height:48px;background:#0d1828;border:1px solid rgba(201,168,76,0.2);
+  border-left:none;border-radius:0 8px 8px 0;cursor:pointer;
+  display:flex;align-items:center;justify-content:center;
+  font-size:10px;color:#c9a84c;z-index:50;transition:left .3s;
+}
+.sb-toggle:hover{background:rgba(201,168,76,0.12)}
+.sidebar.collapsed~.sb-toggle{left:0}
 
-.part-content{max-height:0;overflow:hidden;transition:max-height 0.4s cubic-bezier(0,1,0,1);background:rgba(7,12,24,0.3)}
-.part-card.active .part-content{max-height:15000px;transition:max-height 0.8s ease-in-out}
-.part-card.active .part-icon{transform:rotate(180deg)}
-.part-card.active .part-header{border-bottom:1px solid rgba(201,168,76,0.1)}
+/* ══ MAIN CONTENT ══ */
+.main{flex:1;display:flex;flex-direction:column;overflow:hidden;position:relative}
 
-.subpart-list{padding:16px 24px}
-.subpart-item{padding:0; border-bottom:1px solid rgba(255,255,255,0.05);display:flex;flex-direction:column;}
-.subpart-item:last-child{border-bottom:none}
-.subpart-header{padding:14px 16px; cursor:pointer; display:flex; justify-content:space-between; align-items:center; transition:background 0.2s ease;}
-.subpart-header:hover{background:rgba(201,168,76,0.05)}
-.subpart-title{font-size:1.05rem;font-weight:500;color:#c9a84c;display:flex;align-items:center;gap:10px}
-.subpart-title::before{content:'';width:6px;height:6px;background:#c9a84c;border-radius:50%;opacity:0.7}
-.subpart-icon{color:#c9a84c;transition:transform 0.3s ease;display:flex;opacity:0.7;}
-.subpart-icon svg{width:16px;height:16px}
-.subpart-content{display:grid; grid-template-rows:0fr; transition:grid-template-rows 0.3s ease;}
-.subpart-content-inner{overflow:hidden;}
-.subpart-accordion.active .subpart-content{grid-template-rows:1fr;}
-.subpart-accordion.active .subpart-icon{transform:rotate(180deg);}
+/* Welcome screen */
+.welcome{
+  flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;
+  padding:40px;text-align:center;gap:16px;
+}
+.welcome-icon{font-size:48px;opacity:.4}
+.welcome-title{font-family:'Cinzel',serif;font-size:16px;color:#c9a84c;font-weight:600;opacity:.7}
+.welcome-hint{font-size:12px;color:#3a4560;line-height:1.6}
 
-.hadith-card{margin: 0 16px 16px 16px; padding:16px; background:rgba(255,255,255,0.03); border-radius:8px; border-left:3px solid rgba(201,168,76,0.5);}
-.hadith-number{font-size:0.8em; color:rgba(201,168,76,0.8); margin-bottom:8px; font-weight:bold;}
-.hadith-text{font-size:1rem; color:var(--text-color); line-height:1.6; text-align:justify;}
-.hadith-source{font-size:0.85em; color:#9aa3b8; margin-top:10px; text-align:left; font-style:italic;}
+/* Content panel */
+.content{
+  flex:1;overflow-y:auto;padding:20px 24px 40px;
+  scrollbar-width:thin;scrollbar-color:rgba(201,168,76,0.15) transparent;
+  animation:fadeIn .25s ease;
+}
+.content-inner{
+  max-width:1200px;margin:0 auto;
+}
+.content::-webkit-scrollbar{width:4px}
+.content::-webkit-scrollbar-thumb{background:rgba(201,168,76,0.2);border-radius:2px}
+@keyframes fadeIn{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:translateY(0)}}
+.content.hidden{display:none}
+.welcome.hidden{display:none}
 
-.empty-hadiths{font-size:0.85em;color:rgba(154,163,184,0.6);margin-top:5px;display:flex;align-items:center;gap:6px}
-.empty-hadiths svg{width:14px;height:14px}
+/* ══ CONTENT ELEMENTS ══ */
+.c-source{font-size:9.5px;letter-spacing:.18em;text-transform:uppercase;color:#c9a84c;opacity:.5;font-family:'Cinzel',serif;margin-bottom:4px;text-align:center}
+.c-title{font-family:'Cinzel',serif;font-size:20px;font-weight:700;color:#e8e2d0;line-height:1.3;margin-bottom:6px;text-align:center}
+.c-subtitle{font-size:13px;color:#9aa3b8;font-style:italic;line-height:1.6;margin-bottom:16px;text-align:center}
+.c-divider{height:1px;background:linear-gradient(90deg,rgba(201,168,76,0.25),transparent);margin-bottom:18px}
 
+/* Intro block */
+.c-intro{
+  font-size:14.5px;color:#9aa3b8;font-style:italic;line-height:1.7;
+  padding:12px 16px;border-left:2px solid rgba(201,168,76,0.3);
+  background:rgba(201,168,76,0.03);border-radius:0 8px 8px 0;margin-bottom:18px;
+  text-align:justify;hyphens:auto;
+}
+
+/* Hadith Card */
+.hadith-card{
+  margin-bottom:14px;padding:16px;
+  border-radius:10px;background:rgba(255,255,255,0.018);
+  border:1px solid rgba(255,255,255,0.035);
+  border-left:3px solid rgba(201,168,76,0.5);
+  transition:background .2s;
+}
+.hadith-card:hover{
+  background:rgba(201,168,76,0.04);border-color:rgba(201,168,76,0.1);
+}
+.hadith-number{
+  font-family:'Cinzel',serif;font-size:11px;font-weight:700;
+  color:#c9a84c;margin-bottom:8px;
+}
+.hadith-source-title{
+  font-weight:600;color:#c9a84c;margin-bottom:8px;font-size:0.9em;
+}
+.hadith-text{
+  font-size:13.5px;color:#cec6b0;line-height:1.8;text-align:justify;hyphens:auto;
+}
+
+.empty-hadiths{
+  font-size:13px;color:rgba(154,163,184,0.6);margin:15px 0;
+  display:flex;align-items:center;gap:8px;justify-content:center;
+}
+.empty-hadiths svg{width:16px;height:16px;opacity:0.7}
+
+.subpart-note{
+  margin-top:20px;font-size:12px;color:#9aa3b8;font-style:italic;text-align:center;
+}
+
+/* Pagination navigation inside editorial pages */
 .nav-btn {
   background: rgba(201,168,76,0.1);
   border: 1px solid rgba(201,168,76,0.3);
   color: inherit;
-  padding: 10px 20px;
+  padding: 8px 16px;
   border-radius: 6px;
   cursor: pointer;
-  font-size: 0.95em;
+  font-size: 0.9em;
   font-weight: 500;
   font-family: inherit;
   transition: all 0.2s ease;
-  backdrop-filter: blur(4px);
 }
 .nav-btn:hover {
   background: rgba(201,168,76,0.2);
   transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-}
-.nav-btn:active {
-  transform: translateY(0);
 }
 
-@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-
-.dev-note{background:rgba(106,180,232,0.1);border:1px solid rgba(106,180,232,0.3);border-radius:12px;padding:20px;margin-top:40px;text-align:center}
-.dev-note-title{font-size:1rem;color:#6ab4e8;font-weight:600;margin-bottom:8px;display:flex;align-items:center;justify-content:center;gap:8px}
-.dev-note-text{font-size:0.95rem;color:#a8c4e0;line-height:1.6}
-
-@media(max-width:600px){
-  .wrap{padding:30px 16px 80px}
-  .part-header{padding:16px}
-  .subpart-list{padding:12px 16px}
+.edition-info{
+  margin-top:20px;font-size:0.85em;text-align:left;color:#e8e2d0;opacity:0.8;
+  border-top:1px solid rgba(201,168,76,0.2);padding-top:15px;
 }
+.edition-info summary{cursor:pointer;color:#c9a84c;font-weight:500;outline:none}
 
-/* Thème Clair */
-[data-theme="light"]{
-  --lbg:#e8e0d4;--ltext:#2c2114;--ltext2:#5a4e3c;--laccent:#7a5c24;
+.dev-note{
+  background:rgba(106,180,232,0.06);border:1px solid rgba(106,180,232,0.2);
+  border-radius:10px;padding:16px;margin-top:30px;text-align:justify;
 }
-[data-theme="light"] body{background:var(--lbg)!important;color:var(--ltext)!important}
-[data-theme="light"] body::before{opacity:0.4!important}
-[data-theme="light"] .hero-title{color:var(--ltext)!important}
-[data-theme="light"] .hero-title span{color:var(--laccent)!important}
-[data-theme="light"] .hero-subtitle, [data-theme="light"] .intro{color:var(--ltext2)!important}
-[data-theme="light"] .hero-label, [data-theme="light"] .hero-ar{color:var(--laccent)!important}
-[data-theme="light"] .intro{background:rgba(220,212,196,0.6)!important;border-color:rgba(122,92,36,0.15)!important}
-[data-theme="light"] .part-card{background:rgba(255,255,255,0.6);border:1px solid rgba(0,0,0,0.08);box-shadow:0 8px 32px rgba(0,0,0,0.05)}
-[data-theme="light"] .part-header:hover{background:rgba(0,0,0,0.02)}
-[data-theme="light"] .part-content{background:rgba(220,212,196,0.3)!important}
-[data-theme="light"] .subpart-item{border-bottom:1px solid rgba(0,0,0,0.05)}
-[data-theme="light"] .subpart-title{color:#a6832e}
-[data-theme="light"] .subpart-title::before{background:#a6832e}
-[data-theme="light"] .subpart-desc{color:#5a6480}
-[data-theme="light"] .empty-hadiths{color:rgba(90,100,128,0.8);background:transparent}
-[data-theme="light"] .part-title{color:#2b3a4a}
-[data-theme="light"] .part-icon{color:#a6832e}
-[data-theme="light"] .part-icon:hover{color:#8a6a22}
-[data-theme="light"] .subpart-header:hover{background:rgba(0,0,0,0.02)}
-[data-theme="light"] .hadith-card{background:rgba(0,0,0,0.03)}
-[data-theme="light"] .hadith-source{color:#5a6480}
+.dev-note-title{
+  font-size:12px;color:#6ab4e8;font-weight:600;margin-bottom:6px;
+  display:flex;align-items:center;gap:6px;text-transform:uppercase;letter-spacing:0.05em;
+}
+.dev-note-title svg{width:16px;height:16px}
+.dev-note-text{font-size:11.5px;color:#a8c4e0;line-height:1.6}
+
+/* ══ Light theme overrides ══ */
+[data-theme="light"] body{background:#e8e0d4!important;color:#2c2114!important}
+[data-theme="light"] .sidebar{background:#ddd5c6!important;border-color:rgba(122,92,36,0.15)!important}
+[data-theme="light"] .sb-header{border-color:rgba(122,92,36,0.12)!important}
+[data-theme="light"] .sb-title{color:#7a5c24!important}
+[data-theme="light"] .sb-sub{color:#8a7c66!important}
+[data-theme="light"] .sb-theme{color:#5a4e3c!important}
+[data-theme="light"] .sb-theme:hover{color:#7a5c24!important;background:rgba(122,92,36,0.06)!important}
+[data-theme="light"] .sb-theme.open{color:#7a5c24!important;background:rgba(122,92,36,0.08)!important;border-left-color:rgba(122,92,36,0.4)!important}
+[data-theme="light"] .sb-chevron{color:#7a5c24!important}
+[data-theme="light"] .sb-item{color:#6b5e48!important}
+[data-theme="light"] .sb-item:hover{color:#7a5c24!important;background:rgba(122,92,36,0.05)!important}
+[data-theme="light"] .sb-item.active{color:#7a5c24!important;background:rgba(122,92,36,0.1)!important;border-left-color:#7a5c24!important}
+[data-theme="light"] .sb-toggle{background:#d8d0c2!important;border-color:rgba(122,92,36,0.2)!important;color:#7a5c24!important}
+[data-theme="light"] .sb-toggle:hover{background:rgba(122,92,36,0.15)!important}
+[data-theme="light"] .welcome-title{color:#7a5c24!important}
+[data-theme="light"] .welcome-hint{color:#8a7c66!important}
+[data-theme="light"] .hadith-card{background:rgba(0,0,0,0.03)!important;border-left-color:rgba(122,92,36,0.4)!important;border-color:rgba(0,0,0,0.06)!important}
+[data-theme="light"] .hadith-number{color:rgba(122,92,36,0.8)!important}
+[data-theme="light"] .hadith-source-title{color:#7a5c24!important}
+[data-theme="light"] .hadith-text{color:#3d3425!important}
+[data-theme="light"] input#sb-search{background:rgba(0,0,0,0.03)!important;border-color:rgba(122,92,36,0.2)!important;color:#2c2114!important}
+[data-theme="light"] input#sb-search:focus{border-color:#7a5c24!important}
+[data-theme="light"] .c-title{color:#2c2114!important}
+[data-theme="light"] .c-subtitle{color:#6b5e48!important}
+[data-theme="light"] .c-source{color:#7a5c24!important}
+[data-theme="light"] .c-intro{color:#6b5e48!important;background:rgba(122,92,36,0.04)!important;border-left-color:rgba(122,92,36,0.3)!important}
+[data-theme="light"] .c-divider{background:linear-gradient(90deg,rgba(122,92,36,0.25),transparent)!important}
+[data-theme="light"] .empty-hadiths{color:rgba(90,100,128,0.7)!important}
 [data-theme="light"] .dev-note{background:rgba(70,120,170,0.08)!important;border-color:rgba(70,120,170,0.2)!important}
 [data-theme="light"] .dev-note-title{color:#2a5080!important}
 [data-theme="light"] .dev-note-text{color:#3a5c85!important}
 </style>
 </head>
 <body>
-<div class="wrap">
-  <div class="hero">
-    <div class="hero-label">Encyclopédie Thématique</div>
-    <div class="hero-ornament"><div class="orn-line"></div><div class="orn-gem"></div><div class="orn-line r"></div></div>
-    <h1 class="hero-title">L'Aune de la <span>Sagesse</span></h1>
-    <div class="hero-ar">ميزان الحكمة</div>
-    <div class="hero-subtitle">Mizan al-Hikmah — Anthologie de Hadiths du Prophète (ص) et des Ahl al-Bayt (ع)</div>
-    <div class="hero-divider"></div>
-  </div>
+<div class="app">
 
-  <div class="intro">
-    Cette section regroupera progressivement les hadiths compilés dans l'ouvrage <strong>"L'Aune de la Sagesse"</strong> de Mohammad Reyshahri. Voici la structure du sommaire thématique. Vous pourrez par la suite cliquer sur chaque partie et sous-partie pour accéder aux hadiths correspondants.
-      
-      <details class="edition-info" style="margin-top: 20px; font-size: 0.85em; text-align: left; color: var(--text-color); opacity: 0.8; border-top: 1px solid rgba(201,168,76,0.2); padding-top: 15px;">
-        <summary style="cursor: pointer; color: #c9a84c; font-weight: 500; user-select: none;">Informations sur l'édition source</summary>
-        <div style="margin-top: 15px; line-height: 1.6; background: rgba(0,0,0,0.1); padding: 15px; border-radius: 8px;">
-          <p style="margin-top: 0;"><strong>L'Aune de la Sagesse – Une anthologie de hadiths</strong> / Mohammad Mohammadi Rayshahri<br>
-          Traduit par Amélie Razavi-Far, Mohammad-Javad Mohammadi, Haja Fadlallah.</p>
-          
-          <p><strong>ISBN :</strong> 978-964-493-787-3<br>
-          <strong>Index :</strong> Fipa<br>
-          <strong>Classification de la Bibliothèque du Congrès :</strong> BP116/5/M3M804957 1393<br>
-          <strong>Classification décimale de Dewey :</strong> 297/21<br>
-          <strong>Code de la bibliothèque nationale :</strong> 3549468</p>
-          
-          <div style="margin-top: 15px; padding-top: 15px; border-top: 1px dashed rgba(201,168,76,0.3);">
-              <strong>Publié par :</strong><br>
-              La Maison d'édition et de distribution Dar al-Hadith<br>
-              P.O. Box 37185/4468 – Qom – République Islamique d'Iran<br>
-              Tel : +98 (25) 37740523, 37740571
-          </div>
-          
-          <div style="margin-top: 15px; padding-top: 15px; border-top: 1px dashed rgba(201,168,76,0.3);">
-              La Bibliothèque des Langues Étrangères et des Sources Islamiques<br>
-              Qom – République Islamique d'Iran<br>
-              Première édition : avril 2015<br>
-              Nombre d'exemplaires : 1000
-          </div>
-        </div>
-      </details>
-  </div>
-
-  <div class="accordion-container" id="sommaire">
-    <!-- Dynamically loaded via script -->
-  </div>
-
-  <div class="dev-note" id="dev-note" style="display:none">
-    <div class="dev-note-title">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
-      Note d'intégration
+  <!-- SIDEBAR -->
+  <div class="sidebar" id="sidebar">
+    <div class="sb-header">
+      <div class="sb-title">📚 L'Aune de la Sagesse</div>
+      <div class="sb-sub">Mizan al-Hikmah</div>
+      <div class="sb-search-container">
+        <input type="text" id="sb-search" placeholder="Rechercher un sujet..." oninput="filterSidebar()">
+      </div>
     </div>
-    <div class="dev-note-text">
-      Le sommaire a été extrait automatiquement (OCR). Certains titres peuvent comporter de légères coquilles dues au scan. Vous pouvez corriger ces titres directement dans le fichier <code>aune-sagesse-data.js</code>.
+    <div class="sb-scroll" id="sb-scroll">
+      <!-- Dynamically loaded via script -->
+    </div>
+  </div>
+
+  <!-- TOGGLE -->
+  <div class="sb-toggle" id="sb-toggle">‹</div>
+
+  <!-- MAIN -->
+  <div class="main" id="main">
+    <div class="welcome" id="welcome">
+      <div class="welcome-icon">📚</div>
+      <div class="welcome-title">L'Aune de la Sagesse</div>
+      <div class="welcome-hint">Sélectionne une partie ou un sujet<br>dans le menu à gauche</div>
+    </div>
+    <div class="content hidden" id="content">
+      <div class="content-inner" id="content-inner"></div>
     </div>
   </div>
 
@@ -192,130 +258,256 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
 
 <script src="aune-sagesse-data.js"></script>
 <script>
+let currentSlideState = {};
+
+// ══ SOMMAIRE SIDEBAR RENDERING ══
 function renderSommaire() {
-  const container = document.getElementById('sommaire');
-  if (!container) return;
+  const sbScroll = document.getElementById('sb-scroll');
+  if (!sbScroll) return;
   
   if (typeof AUNE_SAGESSE === 'undefined' || AUNE_SAGESSE.length === 0) {
-    container.innerHTML = '<div style="text-align:center;color:#9aa3b8">Le sommaire est en cours de chargement...</div>';
+    sbScroll.innerHTML = '<div style="text-align:center;color:#9aa3b8;padding:20px;font-size:12px;">Le sommaire est en cours de chargement...</div>';
     return;
   }
   
-  document.getElementById('dev-note').style.display = 'block';
-  
-  let html = '';
+  sbScroll.innerHTML = '';
   
   AUNE_SAGESSE.forEach((part, partIndex) => {
-    let subpartsHtml = '';
+    const group = document.createElement('div');
+    group.className = 'sb-group';
+    group.id = `sb-group-${partIndex}`;
     
     if (part.content) {
-      const pages = paginateContent(part.content);
-      
-      if (pages.length > 1) {
-        let pagesHtml = pages.map((page, i) => `
-          <div id="slide-${partIndex}-${i}" class="content-slide" style="display: ${i === 0 ? 'block' : 'none'}; animation: fadeIn 0.4s ease;">
-             ${page}
-          </div>
-        `).join('');
-        
-        let paginationNav = `
-          <div class="slide-nav" style="display: flex; justify-content: space-between; align-items: center; margin-top: 30px; padding-top: 20px; border-top: 1px solid rgba(201,168,76,0.2);">
-            <button onclick="changeSlide(${partIndex}, -1, ${pages.length}, event)" class="nav-btn prev-btn" id="btn-prev-${partIndex}" style="visibility: hidden;">&larr; Précédent</button>
-            <span id="slide-counter-${partIndex}" style="color: var(--text-color); font-weight: 500; font-size: 0.9em;">Page 1 sur ${pages.length}</span>
-            <button onclick="changeSlide(${partIndex}, 1, ${pages.length}, event)" class="nav-btn next-btn" id="btn-next-${partIndex}">Suivant &rarr;</button>
-          </div>
-        `;
-        
-        subpartsHtml = `
-          <div class="subpart-item" style="border: none; background: transparent; box-shadow: none; padding: 0;">
-             ${pagesHtml}
-             ${paginationNav}
-          </div>
-        `;
-      } else {
-        subpartsHtml = `<div class="subpart-item" style="border: none; background: transparent; box-shadow: none; padding: 0;">${pages[0] || part.content}</div>`;
-      }
+      // Direct editorial page
+      const themeBtn = document.createElement('div');
+      themeBtn.className = 'sb-theme';
+      themeBtn.innerHTML = `<span class="sb-theme-icon">📖</span><span class="sb-theme-label">${part.title}</span>`;
+      themeBtn.addEventListener('click', function(e) {
+        showContent(partIndex, null, e);
+      });
+      group.appendChild(themeBtn);
     } else if (part.subparts && part.subparts.length > 0) {
+      // Chapter folder containing subparts
+      const themeBtn = document.createElement('div');
+      themeBtn.className = 'sb-theme';
+      themeBtn.innerHTML = `<span class="sb-theme-icon">🗂️</span><span class="sb-theme-label">${part.title}</span><span class="sb-chevron">›</span>`;
+      
+      const itemsDiv = document.createElement('div');
+      itemsDiv.className = 'sb-items';
+      
       part.subparts.forEach((sub, subIndex) => {
-        let hadithsHtml = '';
+        const itemBtn = document.createElement('div');
+        itemBtn.className = 'sb-item';
+        itemBtn.textContent = sub.title;
+        itemBtn.id = `sb-item-${partIndex}-${subIndex}`;
+        itemBtn.addEventListener('click', function(e) {
+          showContent(partIndex, subIndex, e);
+        });
+        itemsDiv.appendChild(itemBtn);
+      });
+      
+      themeBtn.addEventListener('click', function(e) {
+        e.stopPropagation();
+        const isOpen = itemsDiv.classList.contains('open');
+        // Close other expandable groups
+        document.querySelectorAll('.sb-items').forEach(d => {
+          if (d !== itemsDiv) {
+            d.classList.remove('open');
+            d.style.maxHeight = '0px';
+            d.previousElementSibling.classList.remove('open');
+          }
+        });
         
-        if (sub.introduction) {
-            hadithsHtml += `<div class="subpart-introduction" style="margin: 15px 16px 20px 16px; padding: 15px; background: rgba(201,168,76,0.05); border-left: 3px solid #c9a84c; font-style: italic; color: var(--text-color); border-radius: 4px; line-height: 1.6;">${sub.introduction}</div>`;
-        }
-
-        if (sub.hadiths && sub.hadiths.length > 0) {
-           sub.hadiths.forEach((h, hIndex) => {
-               hadithsHtml += `
-                 <div class="hadith-card">
-                    <div class="hadith-number">${h.number || hIndex + 1}</div>
-                    ${h.source ? `<div class="hadith-source-title" style="font-weight: 600; color: #c9a84c; margin-bottom: 5px; font-size: 0.9em;">${h.source}</div>` : ''}
-                    <div class="hadith-text">${h.text}</div>
-                 </div>
-               `;
-           });
+        if (!isOpen) {
+          itemsDiv.classList.add('open');
+          themeBtn.classList.add('open');
+          itemsDiv.style.maxHeight = '10000px';
         } else {
-           hadithsHtml += `
-             <div class="empty-hadiths" style="margin: 15px 0 15px 15px;">
-               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
-               Hadiths à intégrer ultérieurement.
-             </div>
-           `;
+          itemsDiv.classList.remove('open');
+          themeBtn.classList.remove('open');
+          itemsDiv.style.maxHeight = '0px';
         }
-        
-        if (sub.note) {
-            hadithsHtml += `<div class="subpart-note" style="margin: 0 16px 20px 16px; font-size: 0.85em; color: #9aa3b8; font-style: italic; text-align: center;">${sub.note}</div>`;
+      });
+      
+      group.appendChild(themeBtn);
+      group.appendChild(itemsDiv);
+    }
+    
+    sbScroll.appendChild(group);
+  });
+}
+
+// ══ SEARCH FILTER IN SIDEBAR ══
+function filterSidebar() {
+  const query = document.getElementById('sb-search').value.toLowerCase().trim();
+  const groups = document.querySelectorAll('.sb-group');
+  
+  groups.forEach((group, partIndex) => {
+    const part = AUNE_SAGESSE[partIndex];
+    const themeBtn = group.querySelector('.sb-theme');
+    const itemsDiv = group.querySelector('.sb-items');
+    
+    if (part.content) {
+      // Editorial page search
+      const matches = part.title.toLowerCase().includes(query);
+      group.style.display = matches ? 'block' : 'none';
+    } else if (part.subparts && part.subparts.length > 0) {
+      // Expandable list search
+      let matchingSubpartsCount = 0;
+      const subItems = itemsDiv.querySelectorAll('.sb-item');
+      
+      part.subparts.forEach((sub, subIndex) => {
+        const itemBtn = subItems[subIndex];
+        const matches = sub.title.toLowerCase().includes(query) || (sub.hadiths && sub.hadiths.some(h => (h.number && h.number.toString().includes(query))));
+        if (matches) {
+          itemBtn.style.display = 'block';
+          matchingSubpartsCount++;
+        } else {
+          itemBtn.style.display = 'none';
         }
-        
-        subpartsHtml += `
-          <div class="subpart-item subpart-accordion">
-            <div class="subpart-header" onclick="toggleSubpart(this, event)">
-              <div class="subpart-title">${sub.title}</div>
-              <div class="subpart-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
-              </div>
-            </div>
-            <div class="subpart-content">
-              <div class="subpart-content-inner">
-                ${hadithsHtml}
-              </div>
-            </div>
+      });
+      
+      const partHeaderMatches = part.title.toLowerCase().includes(query);
+      
+      if (query === '') {
+        // Clear: show all, restore normal closed state
+        group.style.display = 'block';
+        subItems.forEach(i => i.style.display = 'block');
+        itemsDiv.classList.remove('open');
+        themeBtn.classList.remove('open');
+        itemsDiv.style.maxHeight = '0px';
+      } else if (matchingSubpartsCount > 0) {
+        // Sub-items match: show group and auto-expand to show matching items
+        group.style.display = 'block';
+        itemsDiv.classList.add('open');
+        themeBtn.classList.add('open');
+        itemsDiv.style.maxHeight = '10000px';
+      } else if (partHeaderMatches) {
+        // Only chapter header matches: show all sub-items and group, but keep collapsed
+        group.style.display = 'block';
+        subItems.forEach(i => i.style.display = 'block');
+        itemsDiv.classList.remove('open');
+        themeBtn.classList.remove('open');
+        itemsDiv.style.maxHeight = '0px';
+      } else {
+        // No matches at all: hide entire group
+        group.style.display = 'none';
+      }
+    }
+  });
+}
+
+// ══ SHOW CONTENT IN CENTER AREA ══
+function showContent(partIndex, subpartIndex, event) {
+  if (event) event.stopPropagation();
+  
+  // 1. Remove active state from all items
+  document.querySelectorAll('.sb-theme').forEach(el => el.classList.remove('active'));
+  document.querySelectorAll('.sb-item').forEach(el => el.classList.remove('active'));
+  
+  const part = AUNE_SAGESSE[partIndex];
+  const group = document.getElementById(`sb-group-${partIndex}`);
+  
+  // 2. Set active state in sidebar
+  if (subpartIndex === null) {
+    const themeBtn = group.querySelector('.sb-theme');
+    themeBtn.classList.add('active');
+  } else {
+    const itemBtn = document.getElementById(`sb-item-${partIndex}-${subpartIndex}`);
+    if (itemBtn) itemBtn.classList.add('active');
+  }
+  
+  // 3. Toggle views
+  document.getElementById('welcome').classList.add('hidden');
+  const content = document.getElementById('content');
+  const contentInner = document.getElementById('content-inner');
+  content.classList.remove('hidden');
+  
+  // 4. Render the specific content
+  let html = '';
+  
+  if (subpartIndex === null) {
+    // Editorial Content (Preface, Intro, etc.)
+    const pages = paginateContent(part.content);
+    
+    if (pages.length > 1) {
+      let pagesHtml = pages.map((page, i) => `
+        <div id="slide-${partIndex}-${i}" class="content-slide" style="display: ${i === 0 ? 'block' : 'none'}; animation: fadeIn 0.4s ease;">
+           ${page}
+        </div>
+      `).join('');
+      
+      let paginationNav = `
+        <div class="slide-nav" style="display: flex; justify-content: space-between; align-items: center; margin-top: 30px; padding-top: 20px; border-top: 1px solid rgba(201,168,76,0.2);">
+          <button onclick="changeSlide(${partIndex}, -1, ${pages.length}, event)" class="nav-btn prev-btn" id="btn-prev-${partIndex}" style="visibility: hidden;">&larr; Précédent</button>
+          <span id="slide-counter-${partIndex}" style="color: var(--text-color); font-weight: 500; font-size: 0.9em;">Page 1 sur ${pages.length}</span>
+          <button onclick="changeSlide(${partIndex}, 1, ${pages.length}, event)" class="nav-btn next-btn" id="btn-next-${partIndex}">Suivant &rarr;</button>
+        </div>
+      `;
+      
+      html = `
+        <div class="subpart-item" style="border: none; background: transparent; box-shadow: none; padding: 0;">
+           ${pagesHtml}
+           ${paginationNav}
+        </div>
+      `;
+    } else {
+      html = `<div class="subpart-item" style="border: none; background: transparent; box-shadow: none; padding: 0;">${pages[0] || part.content}</div>`;
+    }
+  } else {
+    // Hadiths Subject Content
+    const sub = part.subparts[subpartIndex];
+    
+    // Header metadata block
+    html += `<div class="c-source">L'Aune de la Sagesse</div>`;
+    html += `<h2 class="c-title">${sub.title}</h2>`;
+    html += `<div class="c-subtitle">${part.title}</div>`;
+    html += `<div class="c-divider"></div>`;
+    
+    // Chapter introduction verse
+    if (sub.introduction) {
+      html += `<div class="c-intro">${sub.introduction}</div>`;
+    }
+    
+    // Hadith cards
+    if (sub.hadiths && sub.hadiths.length > 0) {
+      sub.hadiths.forEach((h, hIndex) => {
+        html += `
+          <div class="hadith-card">
+             <div class="hadith-number">Hadith n°${h.number || hIndex + 1}</div>
+             ${h.source ? `<div class="hadith-source-title">${h.source}</div>` : ''}
+             <div class="hadith-text">${h.text}</div>
           </div>
         `;
       });
     } else {
-       subpartsHtml = `
-          <div class="subpart-item" style="justify-content: center; opacity: 0.7;">
-            Aucun contenu
-          </div>
-       `;
+      html += `
+        <div class="empty-hadiths">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+          Hadiths à intégrer ultérieurement.
+        </div>
+      `;
     }
     
-    html += `
-    <div class="part-card" id="part-${partIndex + 1}">
-      <div class="part-header" onclick="togglePart(this)">
-        <div class="part-title-wrap">
-          <div class="part-num">${partIndex + 1}</div>
-          <div class="part-title">${part.title}</div>
-        </div>
-        <div class="part-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
-        </div>
-      </div>
-      <div class="part-content">
-        <div class="subpart-list">
-          ${subpartsHtml}
-        </div>
-      </div>
-    </div>
-    `;
-  });
+    // Subpart note
+    if (sub.note) {
+      html += `<div class="subpart-note">${sub.note}</div>`;
+    }
+  }
   
-  container.innerHTML = html;
+  contentInner.innerHTML = html;
+  content.scrollTop = 0;
+  
+  // Trigger transition animation
+  content.style.animation = 'none';
+  content.offsetHeight;
+  content.style.animation = '';
 }
 
+// ══ EDITORIAL PAGINATION NAVIGATION ══
 function paginateContent(htmlStr) {
   if (Array.isArray(htmlStr)) {
-    htmlStr = htmlStr.join('\\n');
+    htmlStr = htmlStr.join('\n');
   }
   const tempDiv = document.createElement('div');
   tempDiv.innerHTML = htmlStr;
@@ -338,7 +530,6 @@ function paginateContent(htmlStr) {
   if (hrs.length > 0) {
      const lastHr = hrs[hrs.length - 1];
      let nextSib = lastHr.nextElementSibling;
-     // Sometime the footnote container is next, or after a text node
      while (nextSib && nextSib.tagName !== 'DIV') {
        nextSib = nextSib.nextElementSibling;
      }
@@ -424,8 +615,6 @@ function paginateContent(htmlStr) {
   return pages;
 }
 
-let currentSlideState = {};
-
 function changeSlide(partIndex, dir, total, event) {
   if (event) event.stopPropagation();
   if (currentSlideState[partIndex] === undefined) currentSlideState[partIndex] = 0;
@@ -442,86 +631,115 @@ function changeSlide(partIndex, dir, total, event) {
      document.getElementById(`btn-prev-${partIndex}`).style.visibility = next > 0 ? 'visible' : 'hidden';
      document.getElementById(`btn-next-${partIndex}`).style.visibility = next < total - 1 ? 'visible' : 'hidden';
      
-     const targetCard = document.getElementById('part-' + (partIndex + 1));
-     if (targetCard) {
-        targetCard.scrollIntoView({ behavior: 'smooth', block: 'start' });
-     }
+     const content = document.getElementById('content');
+     if (content) content.scrollTop = 0;
   }
 }
 
-function togglePart(element) {
-  const card = element.parentElement;
-  
-  // Fermer les autres accordéons principaux
-  document.querySelectorAll('.part-card').forEach(c => {
-    if(c !== card) c.classList.remove('active');
-  });
-  
-  card.classList.toggle('active');
-  
-  if (card.classList.contains('active')) {
-    setTimeout(() => {
-      card.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }, 400);
+// ══ SIDEBAR COLLAPSE TOGGLE ══
+const sidebar = document.getElementById('sidebar');
+const toggle = document.getElementById('sb-toggle');
+let sidebarOpen = true;
+toggle.addEventListener('click', function() {
+  sidebarOpen = !sidebarOpen;
+  sidebar.classList.toggle('collapsed', !sidebarOpen);
+  toggle.textContent = sidebarOpen ? '‹' : '›';
+  toggle.style.left = sidebarOpen ? '240px' : '0';
+});
+
+// ══ DEEP-LINK HASH NAVIGATION ══
+function handleHashNavigate() {
+  var hash = window.location.hash.substring(1);
+  if (hash) {
+    var parts = hash.split(',');
+    var partIdx = parseInt(parts[0], 10);
+    var subpartIdx = parts[1] !== undefined && parts[1] !== '' ? parseInt(parts[1], 10) : null;
+    
+    if (!isNaN(partIdx)) {
+      setTimeout(function() {
+        const group = document.getElementById(`sb-group-${partIdx}`);
+        if (group) {
+          // If it is an expandable group, expand it
+          const itemsDiv = group.querySelector('.sb-items');
+          const themeBtn = group.querySelector('.sb-theme');
+          if (itemsDiv && !itemsDiv.classList.contains('open')) {
+            // Close other groups
+            document.querySelectorAll('.sb-items').forEach(d => {
+              d.classList.remove('open');
+              d.style.maxHeight = '0px';
+              d.previousElementSibling.classList.remove('open');
+            });
+            itemsDiv.classList.add('open');
+            themeBtn.classList.add('open');
+            itemsDiv.style.maxHeight = '10000px';
+          }
+          
+          showContent(partIdx, subpartIdx);
+          
+          // Scroll active sidebar item into view
+          const activeItem = subpartIdx === null ? themeBtn : document.getElementById(`sb-item-${partIdx}-${subpartIdx}`);
+          if (activeItem) {
+            activeItem.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+          }
+        }
+      }, 150);
+    }
   }
 }
 
-function toggleSubpart(element, event) {
-  if (event) event.stopPropagation();
-  const subpart = element.parentElement;
-  
-  // Fermer les autres sous-parties du même niveau si désiré
-  // (Optionnel: on peut laisser plusieurs sous-parties ouvertes en même temps)
-  /*
-  const siblings = subpart.parentElement.querySelectorAll('.subpart-accordion');
-  siblings.forEach(s => {
-    if (s !== subpart) s.classList.remove('active');
-  });
-  */
-  
-  subpart.classList.toggle('active');
-}
+// ══ INITIAL LOAD ══
+document.addEventListener('DOMContentLoaded', () => {
+  renderSommaire();
+  handleHashNavigate();
+});
+window.addEventListener('hashchange', handleHashNavigate);
 
-function openPart(partNumber, event) {
-  if (event) event.stopPropagation();
-  const targetCard = document.getElementById('part-' + partNumber);
-  if (targetCard) {
-    document.querySelectorAll('.part-card').forEach(c => {
-      c.classList.remove('active');
-    });
-    targetCard.classList.add('active');
-    setTimeout(() => {
-      targetCard.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }, 400);
-  }
-}
-
-document.addEventListener('DOMContentLoaded', renderSommaire);
-
-// Theme Listener
+// ══ DEEP-LINK & THEME LISTENERS ══
 window.addEventListener('message', function(e) {
   if (e.data && e.data.type === 'theme') {
     var t = e.data.theme;
     document.documentElement.setAttribute('data-theme', t);
     document.body.setAttribute('data-theme', t === 'light' ? '' : 'dark');
   }
-  // Global Search deep-link: state = "pi,si" (part index, subpart index)
+  
+  // Search navigate message format: "partIdx,subpartIdx"
   if (e.data && e.data.type === 'gs-navigate' && e.data.state) {
     var parts = e.data.state.split(',');
-    var pi = parseInt(parts[0], 10);
-    if (!isNaN(pi)) {
-      // openPart uses 1-indexed in the HTML id
-      var target = document.getElementById('part-' + pi);
-      if (target) {
-        setTimeout(function(){
-          document.querySelectorAll('.part-card').forEach(function(c){ c.classList.remove('active'); });
-          target.classList.add('active');
-          target.scrollIntoView({behavior:'smooth', block:'start'});
-        }, 150);
-      }
+    var partIdx = parseInt(parts[0], 10);
+    var subpartIdx = parts[1] !== undefined && parts[1] !== '' ? parseInt(parts[1], 10) : null;
+    
+    if (!isNaN(partIdx)) {
+      setTimeout(function() {
+        const group = document.getElementById(`sb-group-${partIdx}`);
+        if (group) {
+          // If it is an expandable group, expand it
+          const itemsDiv = group.querySelector('.sb-items');
+          const themeBtn = group.querySelector('.sb-theme');
+          if (itemsDiv && !itemsDiv.classList.contains('open')) {
+            // Close other groups
+            document.querySelectorAll('.sb-items').forEach(d => {
+              d.classList.remove('open');
+              d.style.maxHeight = '0px';
+              d.previousElementSibling.classList.remove('open');
+            });
+            itemsDiv.classList.add('open');
+            themeBtn.classList.add('open');
+            itemsDiv.style.maxHeight = '10000px';
+          }
+          
+          showContent(partIdx, subpartIdx);
+          
+          // Scroll active sidebar item into view
+          const activeItem = subpartIdx === null ? themeBtn : document.getElementById(`sb-item-${partIdx}-${subpartIdx}`);
+          if (activeItem) {
+            activeItem.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+          }
+        }
+      }, 150);
     }
   }
 });
+
 document.addEventListener('keydown', function(e) {
   if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
     e.preventDefault();
@@ -529,15 +747,13 @@ document.addEventListener('keydown', function(e) {
   }
 });
 
-// Initialisation du thème
+// Init theme from localStorage
 try {
   if (localStorage.getItem('theme') === 'light') {
     document.documentElement.setAttribute('data-theme', 'light');
     document.body.setAttribute('data-theme', '');
   }
 } catch(e) {}
-
 </script>
-
 </body>
 </html>
