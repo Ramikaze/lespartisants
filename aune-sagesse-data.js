@@ -10363,6 +10363,10 @@ const AUNE_SAGESSE = [
                     {
                         "number": "1701",
                         "text": "L'Imām 'Alī (as) a dit : La sagesse est le bien perdu du croyant, prenez donc la sagesse même chez les hypocrites.<sup>1944</sup>"
+                    },
+                    {
+                        "number": "1701",
+                        "text": "L'Imām 'Alī (as) a dit : La sagesse est le bien perdu du croyant, prenez donc la sagesse même chez les hypocrites.<sup>1944</sup>"
                     }
                 ]
             },
@@ -10392,7 +10396,7 @@ const AUNE_SAGESSE = [
                     },
                     {
                         "number": "1706",
-                        "text": "Interrogé par Abū Baṣīr au sujet de la parole divine «Et celui à qui la sagesse est donnée, vraiment c'est un bien immense qui lui est donné»<sup>1949</sup>, l'Imām al-Bāqir (as) répondit : Il s'agit de l'obéissance à Allah et de la connaissance de l'Imām.<sup>1950</sup>"
+                        "text": "Interrogé par Abū Baṣīr au sujet de la parole divine <i>«Et celui à qui la sagesse est donnée, vraiment c'est un bien immense qui lui est donné»</i><sup>1949</sup>, l'Imām al-Bāqir (as) répondit : Il s'agit de l'obéissance à Allah et de la connaissance de l'Imām.<sup>1950</sup>"
                     },
                     {
                         "number": "1707",
@@ -10459,7 +10463,7 @@ const AUNE_SAGESSE = [
                     },
                     {
                         "number": "1719",
-                        "text": "L'Imām al-Kāẓim (as) a dit : En vérité, la graine pousse dans la terre fine et non sur la pierre ; de même, la sagesse s'accroît dans le cœur de l'humble et elle ne prend pas racine dans le cœur de l'orgueilleux arrogant, car Allah a fait en sorte que l'humilité soit l'instrument de la raison.<sup>1963</sup>"
+                        "text": "L'Imām al-Kāẓim (as) a dit : En vérité, la graine pousse dans la terre et non sur la pierre; de même, la sagesse s'accroît dans le cœur de l'humble et elle ne prend pas racine dans le cœur de l'orgueilleux arrogant, car Allah a fait en sorte que l'humilité soit l'instrument de la raison.<sup>1963</sup>"
                     },
                     {
                         "number": "1720",
@@ -10503,7 +10507,7 @@ const AUNE_SAGESSE = [
                 "hadiths": [
                     {
                         "number": "1725",
-                        "text": "L'Imām al-Ṣādiq (as) a dit : Ne prêtez pas serment en utilisant le Nom d'Allah, que vos paroles soient véridiques ou mensongères, car Allah le Tout-Puissant a dit : «Et n'usez pas du nom d'Allah dans vos serments»<sup>1970, 1971</sup>"
+                        "text": "L'Imām al-Ṣādiq (as) a dit : Ne prêtez pas serment en utilisant le Nom d'Allah, que vos paroles soient véridiques ou mensongères, car Allah le Tout-Puissant a dit : <i>«Et n'usez pas du nom d'Allah dans vos serments»</i><sup>1970, 1971</sup>"
                     }
                 ],
                 "introduction": "«Et n'usez pas du nom d'Allah dans vos serments, pour vous dispenser de faire le bien, d'être pieux ou de réconcilier les gens. Et Allah est Audient et Omniscient.»<sup>1969</sup>"
@@ -10513,7 +10517,8 @@ const AUNE_SAGESSE = [
                 "hadiths": [
                     {
                         "number": "1726",
-                        "text": "Thawāb al-A'māl : Allah le Tout-Puissant a dit : Je n'accorde pas Ma miséricorde à celui qui profère un serment mensonger.<sup>1972</sup>"
+                        "source": "Thawāb al-A'māl",
+                        "text": "Allah le Tout-Puissant a dit : Je n'accorde pas Ma miséricorde à celui qui profère un serment mensonger.<sup>1972</sup>"
                     },
                     {
                         "number": "1727",
@@ -10534,7 +10539,7 @@ const AUNE_SAGESSE = [
                 "hadiths": [
                     {
                         "number": "1730",
-                        "text": "L'Imām 'Alī (as) a dit : Faites prêter serment à l'oppresseur lorsque vous le voulez de telle façon qu'il soit exempt de la puissance et de la force d'Allah, car s'il y prête faussement serment, il aura hâté sa punition, et s'il prête serment par Allah à propos duquel il n'y a de divinité que Lui, elle ne sera pas hâtée car il a reconnu l'unicité d'Allah le Très-Haut.<sup>1976</sup>"
+                        "text": "L'Imām 'Alī (as) a dit : Faites prêter serment à l'oppresseur lorsque vous le voulez de telle façon qu'il soit exempt de la puissance et de la force d'Allah, car s'il y prête faussement serment, il aura hâté sa punition, et s'il se prête serment par Allah à propos duquel il n'y a de divinité que Lui, elle ne sera pas hâtée car il a reconnu l'unicité d'Allah le Très-Haut.<sup>1976</sup>"
                     }
                 ]
             }
@@ -10551,7 +10556,7 @@ const AUNE_SAGESSE = [
                         "text": "L'Imām 'Alī (as) a dit : Astreins-toi à ne manger que ce qui est licite, à être bon envers tes enfants, et à te souvenir d'Allah en toute situation.<sup>1979</sup>"
                     }
                 ],
-                "introduction": "«Ils t'interrogeront sur ce qui leur est permis. Dis : «Vous sont permises les bonnes nourritures».»<sup>1977</sup><br><br>«Ô gens ! De ce qui existe sur la terre, mangez le licite et le pur ; ne suivez point les pas du Diable car il est vraiment pour vous un ennemi déclaré.»<sup>1978</sup>"
+                "introduction": "«Ils t'interrogeront sur ce qui leur est permis. Dis : «Vous sont permises les bonnes nourritures.»»<sup>1977</sup><br>«Ô gens ! De ce qui existe sur la terre, mangez le licite et le pur ; ne suivez point les pas du Diable car il est vraiment pour vous un ennemi déclaré.»<sup>1978</sup>"
             },
             {
                 "title": "574 - La difficulté de la quête du licite",
@@ -10669,7 +10674,7 @@ const AUNE_SAGESSE = [
                     },
                     {
                         "number": "1751",
-                        "text": "Lorsqu'on lui demanda quelle était la plus clémente des personnes, l'Imām 'Alī (as) répondit : C'est celle qui ne se met pas en colère.<sup>1999</sup>"
+                        "text": "Lorsqu'on lui demanda quelle était la plus clémente des personnes, l'Imām 'Alī (as) répondit: C'est celle qui ne se met pas en colère.<sup>1999</sup>"
                     },
                     {
                         "number": "1752",
@@ -10729,7 +10734,7 @@ const AUNE_SAGESSE = [
                 "hadiths": [
                     {
                         "number": "1761",
-                        "text": "L'Imām Zayn al-'Ābidīn (as) a dit dans l'une de ses recommandations à son fils al-Bāqir (as) : Mon fils ! Garde-toi de prendre le sot pour compagnon ou de le fréquenter. Reste éloigné de lui et ne lui parle pas car en vérité, le sot est vil, qu'il soit présent ou absent. S'il parle sa sottise le déshonore, s'il se tait c'est en raison de son incapacité à parler. S'il effectue un travail il le gâche, et s'il lui est confié une responsabilité il échoue. Son propre savoir ne l'enrichit pas et le savoir des autres ne lui est d'aucune utilité, il n'applique pas les conseils qu'on lui prodigue et son associé ne trouve pas de repos, sa mère souhaite faire son deuil, sa femme de le perdre, son voisin de vivre loin de lui, et celui qui s'assied à ses côtés d'être seul plutôt qu'en sa compagnie. S'il est le moins important [du point de vue du statut] de l'assemblée, il rabaisse ceux qui sont au-dessus de lui, et s'il est le plus important, il dénigre les autres.<sup>2009</sup>"
+                        "text": "L'Imām Zayn al-'Ābidīn (as) a dit dans l'une de ses recommandations à son fils al-Bāqir (as) : Mon fils ! Garde-toi de prendre le sot pour compagnon ou de les fréquenter. Reste éloigné de lui et ne lui parle pas car en vérité, le sot est vil, qu'il soit présent ou absent. S'il parle sa sottise le déshonore, s'il se tait c'est en raison de son incapacité à parler. S'il effectue un travail le gâche, et s'il lui est confié une responsabilité il échoue. Son propre savoir ne l'enrichit pas et le savoir des autres ne lui est d'aucune utilité, il n'applique pas les conseils qu'on lui prodigue et son associé ne trouve pas de repos, sa mère souhaite faire son deuil, sa femme de le perdre, son voisin de vivre loin de lui, et celui qui s'assied à ses côtés d'être seul plutôt qu'en sa compagnie. S'il est le moins important [du point de vue du statut] de l'assemblée, il rabaisse ceux qui sont au-dessus de lui, et s'il est le plus important, il dénigre les autres.<sup>2009</sup>"
                     },
                     {
                         "number": "1762",
@@ -10804,7 +10809,7 @@ const AUNE_SAGESSE = [
                 "hadiths": [
                     {
                         "number": "1771",
-                        "text": "L'Imām 'Alī (as) a dit : Prodigue à qui tu veux et tu seras son maître ; sollicite ce dont tu as besoin auprès de qui tu veux et tu seras son prisonnier ; ne dépends pas de qui tu veux [pour un besoin] et tu seras son égal.<sup>2019</sup>"
+                        "text": "L'Imām 'Alī (as) a dit : Prodigue à qui tu veux et tu seras son maître ; sollicite ce dont tu as besoin auprès de qui tu veux et tu seras son prisonnier ; ne dépends de qui tu veux [pour un besoin] et tu seras son égal.<sup>2019</sup>"
                     },
                     {
                         "number": "1772",
@@ -10833,7 +10838,7 @@ const AUNE_SAGESSE = [
                     },
                     {
                         "number": "1777",
-                        "text": "L'Imām al-Ṣādiq (as) a dit : Allah le Tout-Puissant inscrit un million de bonnes actions à celui qui s'est efforcé de satisfaire le besoin de son frère musulman pour Allah.<sup>2025</sup>"
+                        "text": "L'Imām al-Ṣādiq (as) a dit : Allah le Tout-Puissant inscrit un million de bonnes actions à celui qui s'est efforce de satisfaire le besoin de son frère musulman pour Allah.<sup>2025</sup>"
                     },
                     {
                         "number": "1778",
@@ -10845,11 +10850,11 @@ const AUNE_SAGESSE = [
                     },
                     {
                         "number": "1780",
-                        "text": "L'Imām al-Ṣādiq (as) a dit : Le Jour de le Résurrection, Allah le Tout-Puissant satisfera cent mille des besoins de celui qui a satisfait le besoin de son frère croyant, le premier étant le Paradis.<sup>2028</sup>"
+                        "text": "L'Imām al-Ṣādiq (as) a dit : Le Jour de la Résurrection, Allah le Tout-Puissant satisfera cent mille des besoins de celui qui a satisfait le besoin de son frère croyant, le premier étant le Paradis.<sup>2028</sup>"
                     },
                     {
                         "number": "1781",
-                        "text": "L'Imām al-Ṣādiq (as) a dit : En vérité, satisfaire le besoin d'un croyant est plus aimé d'Allah que l'accomplissement de vingt pèlerinages obligatoires (ḥajj) en dépensant cent mille [dinars ou dirhams] lors de chaque pèlerinage.<sup>2029</sup><br><br><span class=\"reference-note\">(Voir également : 272. La bienséance (1) ; 104. La bienfaisance ; 5. Le frère, section 41)</span>"
+                        "text": "L'Imām al-Ṣādiq (as) a dit : En vérité, satisfaire le besoin d'un croyant est plus aimé d'Allah que l'accomplissement de vingt pèlerinages obligatoires (<i>ḥajj</i>) en dépensant cent mille [dinars ou dirhams] lors de chaque pèlerinage.<sup>2029</sup><br><br><span class=\"hadith-footnote\">(Voir également : 272. La bienseance (1) ; 104. La bienfaisance ; 5. Le frère, section 41)</span>"
                     }
                 ]
             },
@@ -10858,7 +10863,7 @@ const AUNE_SAGESSE = [
                 "hadiths": [
                     {
                         "number": "1782",
-                        "text": "L'Imām al-Bāqir (as) a dit : La malédiction d'Allah le Tout-Puissant s'abattra sur tout musulman qui n'accueille pas son frère qui se rend chez lui pour lui rendre visite ou pour demander une chose dont il a besoin en demandant la permission d'entrer, et cela jusqu'à ce qu'ils se voient.<sup>2030</sup>"
+                        "text": "L'Imām al-Bāqir (as) a dit : La malédiction d'Allah le Tout-Puissant s'abattra sur tout musulman qui n'accueille pas son frère qui se rend chez lui pour lui rendre visite ou pour demander son accord ou qui n'a besoin de demander la permission d'entrer, et cela jusqu'à ce qu'ils se voient.<sup>2030</sup>"
                     },
                     {
                         "number": "1783",
@@ -10866,7 +10871,7 @@ const AUNE_SAGESSE = [
                     },
                     {
                         "number": "1784",
-                        "text": "L'Imām al-Ṣādiq (as) a dit : Toute personne parmi nos partisans (shī'a) auprès de laquelle un de nos frères est venu implorer une aide concernant un besoin et qui n'a pas répondu alors qu'elle pouvait le faire, sera accablée par Allah le Tout-Puissant pour avoir satisfait les besoins de l'un de nos ennemis et châtiée pour cela le Jour de la Résurrection.<sup>2032</sup>"
+                        "text": "L'Imām al-Ṣādiq (as) a dit : Toute personne parmi nos partisans (<i>shī'a</i>) auprès de laquelle un de nos frères est venu implorer une aide concernant un besoin et qui n'a pas répondu alors qu'elle pouvait le faire, sera accablée par Allah le Tout-Puissant pour avoir satisfait les besoins de l'un de nos ennemis et châtiée pour cela le Jour de la Résurrection.<sup>2032</sup>"
                     },
                     {
                         "number": "1785",
@@ -10892,11 +10897,11 @@ const AUNE_SAGESSE = [
                     },
                     {
                         "number": "1788",
-                        "text": "L'Imām Zayn al-'Ābidīn (as) a dit à celui qui dit en sa présence «Ô Allah, rends-moi indépendant de [tout besoin vis-à-vis de] Tes créatures !» : «Ce n'est pas comme cela qu'il faut dire les choses, car les gens ont besoin les uns des autres. Dis plutôt : «Ô Allah, rends-moi indépendant de [tout besoin vis-à-vis des] mauvais parmi Ta création !».»<sup>2036</sup>"
+                        "text": "L'Imām Zayn al-'Ābidīn (as) a dit à celui qui dit en sa présence «Ô Allah, rends-moi indépendant de [tout besoin vis-à-vis de] Tes créatures !» : «Ce n'est pas comme cela qu'il faut dire les choses, car les gens ont besoin les uns des autres. Dis plutôt : «Ô Allah, rends-moi indépendant de [tout besoin vis-à-vis des] mauvais parmi Ta création !»»<sup>2036</sup>"
                     },
                     {
                         "number": "1789",
-                        "text": "L'Imām al-Bāqir (as) a dit : En vérité, le besoin vis-à-vis d'une personne nouvellement riche est comme un dirham dans la gueule d'un serpent : tu en as besoin, mais en même temps elle te met en danger.<sup>2037</sup><br><br><span class=\"reference-note\">(Voir également : La demande (2), section 911)</span>"
+                        "text": "L'Imām al-Bāqir (as) a dit : En vérité, le besoin vis-à-vis d'une personne nouvellement riche est comme un dirham dans la gueule d'un serpent : tu en as besoin, mais en même temps elle te met en danger.<sup>2037</sup><br><br><span class=\"hadith-footnote\">(Voir également : La demande (2), section 911)</span>"
                     }
                 ]
             }
@@ -11002,7 +11007,7 @@ const AUNE_SAGESSE = [
                     },
                     {
                         "number": "1804",
-                        "text": "Le Messager d'Allah (s) a dit : Tout animal - oiseau ou autre – qui est tué injustement et sans raison se plaindra [à la personne qui l'a tué] le Jour de la Résurrection.<sup>2053</sup>"
+                        "text": "Le Messager d'Allah (s) a dit : Tout animal - oiseau ou autre - qui est tué injustement et sans raison se plaindra [à la personne qui l'a tué] le Jour de la Résurrection.<sup>2053</sup>"
                     },
                     {
                         "number": "1805",
@@ -11022,7 +11027,8 @@ const AUNE_SAGESSE = [
                     },
                     {
                         "number": "1809",
-                        "text": "<em>Kanz al-'Ummāl</em> : [Le Messager d'Allah (s)] a interdit de tuer tout être vivant sauf s'il est nuisible.<sup>2058</sup>"
+                        "source": "Kanz al-'Ummāl",
+                        "text": "[Le Messager d'Allah (s)] a interdit de tuer tout être vivant sauf s'il est nuisible.<sup>2058</sup>"
                     },
                     {
                         "number": "1810",
@@ -11151,7 +11157,7 @@ const AUNE_SAGESSE = [
                     },
                     {
                         "number": "1830",
-                        "text": "Le Messager d'Allah (s) a dit : Ne soyez pas émerveillés par [les bonnes actions d'] un être avant d'avoir vu l'issue [de sa vie] car en vérité, quelqu'un peut faire le bien pendant une longue période de sa vie ou une partie de sa vie et s'il venait alors à mourir, il irait au Paradis. Cependant, il change par la suite et commet des actes vils.<sup>2080</sup><br><br><span class=\"reference-note\">(Voir également : 190. Le bonheur, section 948)</span>"
+                        "text": "Le Messager d'Allah (s) a dit : Ne soyez pas émerveillés par [les bonnes actions d'] un être avant qu'il ait vu l'issue [de sa vie] car en vérité, quelqu'un peut faire le bien pendant une longue période de sa vie ou une partie de sa vie et s'il venait alors à mourir, il irait au Paradis. Cependant, il change par la suite et commet des actes vils.<sup>2080</sup><br><br><span class=\"hadith-footnote\">(Voir également : 190. Le bonheur, section 948)</span>"
                     }
                 ]
             },
@@ -11160,7 +11166,7 @@ const AUNE_SAGESSE = [
                 "hadiths": [
                     {
                         "number": "1831",
-                        "text": "L'Imām 'Alī (as) a dit : Si tu veux qu'Allah t'épargne une mauvaise issue, sache que le bien qui t'arrive est dû à la grâce d'Allah et à Sa faveur, et que pour ce qui t'arrive de mal, [sache qu'] Allah t'a donné un sursis et un répit. Crains Sa clémence et Son pardon à ton égard.<sup>2081</sup>"
+                        "text": "L'Imām 'Alī (as) a dit : Si tu veux qu'Allah t'épargne une mauvaise issue, sache que le bien qui t'arrive est dû à la grâce d'Allah et à Sa faveur, et que pour ce qui t'arrive de mal, [sache qu'] Allah t'a donné un sursis et un répit. Crains Sa clémence et à Son pardon à ton égard.<sup>2081</sup>"
                     },
                     {
                         "number": "1832",
@@ -11186,11 +11192,12 @@ const AUNE_SAGESSE = [
                     },
                     {
                         "number": "1835",
-                        "text": "<em>Al-Kāfī</em> : Jamīl a dit : l'Imām al-Ṣādiq (as) a dit : «Les croyants sont les serviteurs les uns des autres.» [Jamīl dit :] Je demandai : «Comment sont-ils les serviteurs les uns des autres ?» Il répondit : «En étant bénéfiques les uns aux autres.»<sup>2085</sup>"
+                        "source": "Al-Kāfī",
+                        "text": "Jamīl a dit : l'Imām al-Ṣādiq (as) a dit : «Les croyants sont les serviteurs les uns des autres.» [Jamīl dit :] Je demandai : «Comment sont-ils les serviteurs les uns des autres ?» Il répondit : «En étant bénéfiques les uns aux autres.»<sup>2085</sup>"
                     },
                     {
                         "number": "1836",
-                        "text": "L'Imām al-Ṣādiq (as) a dit : Rends service à ton frère et s'il abuse de toi, pas de marque d'honneur [ne le sers pas].<sup>2086</sup><br><br><span class=\"reference-note\">(Voir également : 288. Le savoir, section 1353 ; 2. La rémunération)</span>"
+                        "text": "L'Imām al-Ṣādiq (as) a dit : Rends service à ton frère et s'il abuse de toi, pas de marque d'honneur [ne le sers pas].<sup>2086</sup><br><br><span class=\"hadith-footnote\">(Voir également : 288. Le savoir, section 1353 ; 2. La rémunération)</span>"
                     }
                 ]
             }
@@ -11204,7 +11211,8 @@ const AUNE_SAGESSE = [
                 "hadiths": [
                     {
                         "number": "1837",
-                        "text": "<em>Kanz al-'Ummāl</em> : 'Abdullāh Ibn Amrū a dit : Un homme vint voir le Prophète (s) le jour de [la bataille de] Ḥunayn alors qu'il était occupé à partager le butin. L'homme lui dit : «Ô Muḥammad ! Sois équitable.» Le Prophète (s) lui dit : «Malheur à toi ! Qui peut être équitable si je ne le suis pas ?» - ou bien il (s) dit : - «Auprès de qui aspires-tu trouver l'équité si ce n'est auprès de moi ?» Le Prophète (s) dit ensuite : «Bientôt viendra un groupe semblable à cet homme, [dont les membres] rechercheront le Livre d'Allah alors qu'ils seront ses ennemis, ils liront le Livre d'Allah et pourtant, il ne dépassera pas leur gorge. Ils auront la tête rasée. Ainsi, lorsqu'ils sortiront [pour se révolter], frappez-les au cou.»<sup>2088</sup>"
+                        "source": "Kanz al-'Ummāl",
+                        "text": "'Abdullāh Ibn Amrū a dit : Un homme vint voir le Prophète (s) le jour de [la bataille de] Ḥunayn alors qu'il était occupé à partager le butin. L'homme lui dit : «Ô Muhammad ! Sois équitable.» Le Prophète (s) lui dit : «Malheur à toi ! Qui peut être équitable si je ne le suis pas ?» - ou bien il (s) dit - «Auprès de qui aspires-tu trouver l'équité si ce n'est pas auprès de moi ?» Le Prophète (s) dit ensuite : «Bientôt viendra un groupe semblable à cet homme, [dont les membres] rechercheront le Livre d'Allah alors qu'ils seront ses ennemis, ils liront le Livre d'Allah et il ne dépassera pas leur gorge. Ils auront la tête rasée. Ainsi, lorsqu'ils sortiront [pour se révolter], frappez-les au cou.»<sup>2088</sup>"
                     },
                     {
                         "number": "1838",
@@ -11212,21 +11220,21 @@ const AUNE_SAGESSE = [
                     },
                     {
                         "number": "1839",
-                        "text": "L'Imām 'Alī (as) a dit : J'ai entendu le Messager d'Allah (s) dire : «Il viendra, à la fin des temps, un groupe d'hommes jeunes et aux esprits irréfléchis. Leurs paroles seront les meilleures paroles des vertueux, leurs prières sont plus nombreuses que les vôtres, leur récitation [du Coran] sera plus importante que vos récitations ; pourtant, leur foi ne dépassera pas leurs clavicules - ou il (s) dit : leurs gorges - ; ils quitteront la religion aussi rapidement que la flèche quitte l'arc ; aussi, éliminez-les.»<sup>2091</sup>"
+                        "text": "L'Imām 'Alī (as) a dit : J'ai entendu le Messager d'Allah (s) dire : «Il viendra, à la fin des temps, un groupe d'hommes jeunes et aux esprits irréfléchis. Leurs paroles seront les meilleures paroles des vertueux, leurs prières sont plus nombreuses que les vôtres, leur récitation [du Coran] sera plus importante que vos récitations ; pourtant, leur foi ne dépassera pas leurs clavicules - ou il (s) dit : leurs gorges - ; ils quitteront la religion aussi rapidement que la flèche quitte l'arc; aussi, éliminez-les.»<sup>2091</sup>"
                     }
                 ],
-                "introduction": "«Dis : «Voulez-vous que Nous vous apprenions lesquels sont les plus grands perdants en œuvres ? Ceux dont l'effort, dans la vie présente, s'est égaré, alors qu'ils s'imaginent faire le bien».»<sup>2087</sup>"
+                "introduction": "«Dis : «Voulez-vous que Nous vous apprenions lesquels sont les plus grands perdants en œuvres? Ceux dont l'effort, dans la vie présente, s'est égaré, alors qu'ils s'imaginent faire le bien.»»<sup>2087</sup>"
             },
             {
                 "title": "609 - L'Imām 'Alī (as) après l'élimination des Kharidjites",
                 "hadiths": [
                     {
                         "number": "1840",
-                        "text": "L'Imām 'Alī (as) a dit alors qu'il passait près des corps des personnes tuées parmi les kharidjites : «Malheur à vous ! Celui qui vous a trompé vous a causé du tort.» On lui demanda : «Qui les a trompés, ô Emir des croyants ?» Il répondit : «Satan qui égare, ainsi que l'âme qui ordonne le mal les a trompés par de faux espoirs, ouvrant ainsi pour eux un vaste espace de désobéissance, et leur promettant la victoire. Ils les ont ainsi poussés dans le Feu.»<sup>2092</sup>"
+                        "text": "L'Imām 'Alī (as) a dit alors qu'il passait près des corps des personnes tuées parmi les kharidjites : «Malheur à vous ! Celui qui vous a trompé a causé du tort.» On lui demanda: «Qui les a trompés, ô Emir des croyants ?» Il répondit : «Satan qui égare, ainsi que l'âme qui ordonne le mal les a trompés par de faux espoirs, ouvrant ainsi pour eux un vaste espace de désobéissance, et leur promettant la victoire. Ils les ont ainsi poussés dans le Feu.»<sup>2092</sup>"
                     },
                     {
                         "number": "1841",
-                        "text": "Lorsque l'on demanda à l'Imām 'Alī (as) après que l'on ait tué les Kharidjites : «Ô Emir des croyants ! L'ensemble du groupe a-t-il été éliminé ?» Il répondit : «Pas du tout ! Par Allah, ils continuent à exister dans les lombes des hommes et dans les matrices des femmes. A chaque fois qu'une branche [un chef] émerge, il faut la couper jusqu'à ce que les derniers d'entre eux soient des brigands et des pillards.»<sup>2093</sup>"
+                        "text": "Lorsque l'on demanda à l'Imām 'Alī (as) après que l'on ait tué les Kharidjites : «Ô Emir des croyants ! L'ensemble du groupe a-t-il été éliminé ?» Il répondit : «Pas du tout ! Par Allah, ils continuent à exister dans les lombes des hommes et dans les matrices des femmes. À chaque fois qu'une branche [un chef] émerge, il faut la couper jusqu'à ce que les derniers d'entre eux soient des brigands et des pillards.»<sup>2093</sup>"
                     },
                     {
                         "number": "1842",
@@ -11239,7 +11247,7 @@ const AUNE_SAGESSE = [
                 "hadiths": [
                     {
                         "number": "1843",
-                        "text": "L'Imām 'Alī (as) a dit : Ne combattez (tuez) pas les Kharidjites après moi, car celui qui aspire à la vérité et qui se trompe en la prenant pour autre chose n'est pas comme celui qui aspire au faux et qui l'a atteint.<sup>2095</sup>"
+                        "text": "L'Imām 'Alī (as) a dit : Ne combattez (tuez) pas les Kharidjites après moi, car celui qui aspire à la vérité et qui se trompe en la prenant pour autre chose n'est pas comme celui qui aspire au faux et qui l'a atteint.<sup>2095, 2096</sup>"
                     }
                 ]
             }
@@ -11266,20 +11274,20 @@ const AUNE_SAGESSE = [
                 "hadiths": [
                     {
                         "number": "1846",
-                        "text": "Lorsqu'on lui demanda : «Qui a le [plus] grand malheur ?», l'Imām 'Alī (as) répondit : «C'est l'homme qui a abandonné la vie de ce monde pour la vie de ce monde. Il a ainsi manqué la vie de ce bas-monde et perdu l'Au-delà. C'est aussi un homme qui a adoré, a lutté et a jeûné par ostentation : il s'est donc interdit les délices de ce bas-monde et en a récolté la fatigue. Néanmoins, s'il avait été sincère, il en aurait mérité la récompense.»<sup>2099</sup>"
+                        "text": "Lorsqu'on lui demanda : «Qui a le [plus] grand malheur ?», l'Imām 'Alī (as) répondit: «C'est l'homme qui a abandonné la vie de ce monde pour la vie de ce monde. Il a ainsi manqué la vie de ce bas-monde et perdu l'Au-delà. C'est aussi un homme qui a adoré, a lutté et a jeûné par ostentation : il s'est donc interdit les délices de ce bas-monde pour ce bas-monde et en a récolté la fatigue. Néanmoins, s'il avait été sincère, il en aurait mérité la récompense.»<sup>2099</sup>"
                     }
                 ],
-                "introduction": "«Il en est parmi les gens qui adorent Allah d'une manière indécise. S'il leur arrive quelque bien, ils s'en tranquillisent, et s'il leur arrive une épreuve, ils détournent leur visage, perdant ainsi [le bien] de l'ici bas et de l'Au-delà. Telle est la perte évidente !»<sup>2098</sup>"
+                "introduction": "«Il en est parmi les gens qui adorent Allah d'une manière indécise. S'il leur arrive quelque bien, ils s'en tranquillisent, et s'il leur arrive une épreuve, ils détournent leur visage, perdant ainsi [le bien] de l'ici-bas et de l'Au-delà. Telle est la perte évidente !»<sup>2098</sup>"
             },
             {
                 "title": "613 - Les plus grands perdants",
                 "hadiths": [
                     {
                         "number": "1847",
-                        "text": "L'Imām 'Alī (as) a dit : En vérité, le plus grand perdant dans sa transaction et celui dont les efforts sont les plus vains est l'homme qui a usé son corps dans la quête de sa fortune, bien que le destin ne l'ait pas aidé dans son dessein. Il a ainsi quitté ce monde avec regret et fait face à l'Au-delà avec ses [funestes] conséquences.<sup>2101</sup>"
+                        "text": "L'Imām 'Alī (as) a dit : En vérité, le plus grand perdant et celui dont les efforts sont les plus vains est l'homme qui a usé son corps dans la quête de sa fortune, bien que le destin ne l'ait pas aidé dans son dessein. Il a ainsi quitté ce monde avec regret et fait face à l'Au-delà avec ses [funestes] conséquences.<sup>2101</sup>"
                     }
                 ],
-                "introduction": "«Dis : «Voulez-vous que Nous vous apprenions lesquels sont les plus grands perdants en œuvres ? Ceux dont l'effort, dans la vie présente, s'est égaré, alors qu'ils s'imaginent faire le bien.»»<sup>2100</sup>"
+                "introduction": "«Dis : «Voulez-vous que Nous vous apprenions lesquels sont les plus grands perdants en œuvres? Ceux dont l'effort, dans la vie présente, s'est égaré, alors qu'ils s'imaginent faire le bien.»»<sup>2087</sup>"
             }
         ]
     },
@@ -11291,7 +11299,8 @@ const AUNE_SAGESSE = [
                 "hadiths": [
                     {
                         "number": "1848",
-                        "text": "<em>Irshād al-Qulūb</em> : Dans le <em>ḥadīth</em> de l'ascension (<em>mi'rāj</em>), [Allah a dit] : Dès qu'un serviteur vient à Me connaître et s'humilie devant Moi, toute chose s'humilie devant lui.<sup>2103</sup>"
+                        "source": "Irshād al-Qulūb",
+                        "text": "Dans le <i>ḥadīth</i> de l'ascension (<i>mi'rāj</i>), [Allah a dit] : Dès qu'un serviteur vient à Me connaître et s'humilie devant Moi, toute chose s'humilie devant lui.<sup>2103</sup>"
                     },
                     {
                         "number": "1849",
@@ -11313,7 +11322,7 @@ const AUNE_SAGESSE = [
                     },
                     {
                         "number": "1852",
-                        "text": "L'Imām 'Alī (as) a dit : Celui dont le cœur est humble verra l'ensemble de ses membres devenir humbles.<sup>2107</sup><br><br><span class=\"reference-note\">(Voir également : 47. Pleurer ; 334. Le cœur, section 1554)</span>"
+                        "text": "L'Imām 'Alī (as) a dit : Celui dont le cœur est humble verra l'ensemble de ses membres devenir humbles.<sup>2107</sup><br><br><span class=\"hadith-footnote\">(Voir également : 47. Pleurer ; 334. Le cœur, section 1554)</span>"
                     }
                 ]
             }
@@ -11327,7 +11336,7 @@ const AUNE_SAGESSE = [
                 "hadiths": [
                     {
                         "number": "1853",
-                        "text": "Sa'ad Ibn Ibrāhīm rapporte de son père : Le premier à avoir fait un sermon sur une chaire fut Ibrāhīm (as) lors de l'emprisonnement de Loth par les Romains. Ibrāhīm (as) les combattit jusqu'à ce qu'il le sauve des Romains.<sup>2109</sup>"
+                        "text": "Sa'ad Ibn Ibrāhīm rapporte de son père: Le premier à avoir fait un sermon sur une chaire fut Ibrāhīm (as) lors de l'emprisonnement de Loth par les Romains. Ibrāhīm (as) les combattit jusqu'à ce qu'il sauve des Romains.<sup>2109</sup>"
                     },
                     {
                         "number": "1854",
@@ -11335,15 +11344,18 @@ const AUNE_SAGESSE = [
                     },
                     {
                         "number": "1855",
-                        "text": "<em>Al-Mu'jam al-Kabīr</em> : Abū Umāma a dit : En vérité, lorsqu'il nommait un commandant, le Messager d'Allah (as) avait pour habitude de lui dire : «Abrège ton discours, raccourcis tes paroles.»<sup>2111</sup>"
+                        "source": "Al-Mu'jam al-Kabīr",
+                        "text": "Abū Umāma a dit: En vérité, lorsqu'il nommait un commandant, le Messager d'Allah (as) avait pour habitude de lui dire: «Abrège ton discours, raccourcis tes paroles.»<sup>2111</sup>"
                     },
                     {
                         "number": "1856",
-                        "text": "<em>Sunan Abī Dāwūd</em> rapporte de 'Ammār ibn Yāsir : Le Messager d'Allah (s) nous a ordonné d'abréger les discours.<sup>2112</sup>"
+                        "source": "Sunan Abī Dāwūd",
+                        "text": "rapporte de 'Ammār ibn Yāsir : Le Messager d'Allah (s) nous a ordonné d'abréger les discours.<sup>2112</sup>"
                     },
                     {
                         "number": "1857",
-                        "text": "<em>Sunan Abī Dāwūd</em> rapporte de Jābir ibn Samura al-Sawā'ī : Le Messager d'Allah (s) ne prolongeait pas son prêche du vendredi ; c'était juste quelques courtes paroles.<sup>2113</sup><br><br><span class=\"reference-note\">(Voir également : 239. La prière (3), section 1147 ; 348. La parole, section 1619)</span>"
+                        "source": "Sunan Abī Dāwūd",
+                        "text": "rapporte de Jābir ibn Samura al-Sawā'ī : Le Messager d'Allah (s) ne prolongeait pas son prêche du vendredi ; c'était juste quelques courtes paroles.<sup>2113</sup><br><br><span class=\"hadith-footnote\">(Voir également : 239. La prière (3), section 1147 ; 348. La parole, section 1619)</span>"
                     }
                 ],
                 "introduction": "«Nous consolidèrent son royaume et lui donnâmes la sagesse et un discours convaincant.»<sup>2108</sup>"
@@ -11362,11 +11374,12 @@ const AUNE_SAGESSE = [
                     },
                     {
                         "number": "1859",
-                        "text": "Le Messager d'Allah (s) a dit au sujet de la parole du Très-Haut «<em>ou un vestige d'une science</em>»<sup>2116</sup> : [Cela signifie] l'écriture.<sup>2117</sup>"
+                        "text": "Le Messager d'Allah (s) a dit au sujet de la parole du Très-Haut «ou un vestige d'une science»<sup>2116</sup> : [Cela signifie] l'écriture.<sup>2117</sup>"
                     },
                     {
                         "number": "1860",
-                        "text": "<em>Al-Durr al-Manthūr</em> rapporte de 'Aṭā' ibn Yasār : Le Messager d'Allah (s) fut interrogé au sujet de l'écriture. Il (s) dit : «C'est [en premier lieu] un prophète qui l'a enseignée, et ceux qui l'accompagnaient l'ont apprise.»<sup>2118</sup>"
+                        "source": "Al-Durr al-Manthūr",
+                        "text": "rapporte de 'Aṭā' ibn Yasār : Le Messager d'Allah (s) fut interrogé au sujet de l'écriture. Il (s) dit : «C'est [en premier lieu] un prophète qui l'a enseignée, et ceux qui l'accompagnaient l'ont apprise.»<sup>2118</sup>"
                     },
                     {
                         "number": "1861",
@@ -11420,14 +11433,14 @@ const AUNE_SAGESSE = [
                         "text": "L'Imām 'Alī (as) a dit : Heureux soit celui dont les actes et le savoir, l'amour et la haine, l'acceptation et le refus, les mots et le silence ainsi que les actes et paroles ont été seulement et sincèrement pour Allah.<sup>2129</sup>"
                     }
                 ],
-                "introduction": "«Par Ta puissance ! dit [Satan]. Je les séduirai assurément tous, sauf Tes serviteurs élus parmi eux.»<sup>2122</sup><br><br><span class=\"reference-note\">(Voir également : Coran 2:112, 2:139, 2:196, 2:207, 2:238, 2:265, 3:20, 6:52, 6:79, 6:162, 12:24, 18:28, 18:110, 22:31, 30:38, 31:22, 37:40, 39:2-3, 39:11, 39:14, 39:29, 40:14, 72:18, 72:20, 76:9, 92:20, 97:5)</span>"
+                "introduction": "«Par Ta puissance ! dit [Satan]. Je les séduirai assurément tous, sauf Tes serviteurs élus parmi eux.»<sup>2122</sup><br><br><span class=\"hadith-footnote\">(Voir également : Coran 2:112, 2:139, 2:196, 2:207, 2:238, 2:265, 3:20, 6:52, 6:79, 6:162, 12:24, 18:28, 18:110, 22:31, 30:38, 31:22, 37:40, 39:2-3, 39:11, 39:14, 39:29, 40:14, 72:18, 72:20, 76:9, 92:20, 97:5)</span>"
             },
             {
                 "title": "619 - La difficulté de la sincérité",
                 "hadiths": [
                     {
                         "number": "1871",
-                        "text": "L'Imām 'Alī (as) a dit : Rendre l'acte sincère est plus difficile que la réalisation de l'acte en lui-même, et purifier l'intention de la corruption est plus difficile pour ceux qui agissent que de s'engager dans un long combat (<em>jihād</em>).<sup>2130</sup>"
+                        "text": "L'Imām 'Alī (as) a dit : Rendre l'acte sincère est plus difficile que la réalisation de l'acte en lui-même, et purifier l'intention de la corruption est plus difficile pour ceux qui agissent que de s'engager dans un long combat (<i>jihād</i>).<sup>2130</sup>"
                     },
                     {
                         "number": "1872",
@@ -11440,7 +11453,8 @@ const AUNE_SAGESSE = [
                 "hadiths": [
                     {
                         "number": "1873",
-                        "text": "<em>Al-Kāfī</em> : Allah le Béni et le Très-Haut a dit lors de l'un de Ses entretiens intimes avec Moïse (as) : Ô Moïse ! L'acte accompli pour Moi sera important même s'il est modeste, tandis que l'acte accompli pour un autre que Moi sera insignifiant même s'il est important.<sup>2132</sup>"
+                        "source": "Al-Kāfī",
+                        "text": "Allah le Béni et le Très-Haut a dit lors de l'un de Ses entretiens intimes avec Moïse (as) : Ô Moïse ! L'acte accompli pour Moi sera important même s'il est modeste, tandis que l'acte accompli pour un autre que Moi sera insignifiant même s'il est important.<sup>2132</sup>"
                     },
                     {
                         "number": "1874",
@@ -11453,7 +11467,8 @@ const AUNE_SAGESSE = [
                 "hadiths": [
                     {
                         "number": "1875",
-                        "text": "<em>'Uddat al-Dā'ī</em> rapporte d'al-Mufaḍḍal ibn Ṣāliḥ : L'Imām al-Ṣādiq (as) a dit : «En vérité, Allah a des serviteurs qui ont agi vis-à-vis de Lui avec sincérité en secret, et Allah a agi vis-à-vis d'eux avec une pure bonté, car ce sont eux qui, le Jour de la Résurrection, verront le recueil de leurs actes vides, et lorsqu'ils seront entre les mains d'Allah, Il remplira leurs recueils des secrets qu'ils avaient avec Lui.» Je dis : «Ô maître, pourquoi [leurs recueils seront-ils vides] ?» Il dit : «Il les a tellement honorés qu'Il ne veut même pas que les anges gardiens sachent ce qu'il y a entre eux et Lui.»<sup>2134</sup>"
+                        "source": "'Uddat al-Dā'ī",
+                        "text": "rapporte d'al-Mufaḍḍal ibn Ṣāliḥ : L'Imām al-Ṣādiq (as) a dit : «En vérité, Allah a des serviteurs qui ont agi vis-à-vis de Lui avec sincérité en secret, et Allah a agi vis-à-vis d'eux avec une pure bonté, car ce sont eux qui, le Jour de la Résurrection, feront partie des ceux à qui Allah accordera Son secours.»"
                     }
                 ]
             },

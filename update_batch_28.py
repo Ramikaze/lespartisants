@@ -13,17 +13,89 @@ def find_subpart(part_index, search_str):
             return s
     return None
 
-def ensure_hadiths(s):
-    if s and 'hadiths' not in s:
+def clear_hadiths(s):
+    if s:
         s['hadiths'] = []
+        if 'introduction' in s:
+            del s['introduction']
 
 # ============================================================
-# Chapter 126 (index 127) - L'HUMILITÉ (suite)
+# Part 121 (index 122) - La pudeur - s604 (page 329)
+# ============================================================
+p121 = 122
+s604 = find_subpart(p121, "604")
+clear_hadiths(s604)
+s604['hadiths'].append({
+    "number": "1827",
+    "text": "L'Imām 'Alī (as) a dit : Le sommet de la pudeur est que la personne soit pudique vis-à-vis d'elle-même.<sup>2077</sup>"
+})
+
+# ============================================================
+# Part 122 (index 123) - L'Issue (page 329)
+# ============================================================
+p122 = 123
+s605 = find_subpart(p122, "605")
+s606 = find_subpart(p122, "606")
+
+clear_hadiths(s605)
+s605['hadiths'].extend([
+    {
+        "number": "1828",
+        "text": "Le Messager d'Allah (s) a dit : Le croyant est dans la crainte constante d'une issue funeste [de sa vie], et jusqu'au moment de la prise de son âme et de l'apparition de l'ange de la mort face à lui, il n'est pas certain qu'il atteigne la satisfaction d'Allah.<sup>2078</sup>"
+    },
+    {
+        "number": "1829",
+        "text": "Le Messager d'Allah (s) a dit : En vérité, il se peut qu'un homme agisse pendant très longtemps selon les actes des gens du Paradis, mais qu'il finisse sa vie en commettant les actes des gens de l'Enfer.<sup>2079</sup>"
+    },
+    {
+        "number": "1830",
+        "text": "Le Messager d'Allah (s) a dit : Ne soyez pas émerveillés par [les bonnes actions d'] un être avant qu'il ait vu l'issue [de sa vie] car en vérité, quelqu'un peut faire le bien pendant une longue période de sa vie ou une partie de sa vie et s'il venait alors à mourir, il irait au Paradis. Cependant, il change par la suite et commet des actes vils.<sup>2080</sup><br><br><span class=\"hadith-footnote\">(Voir également : 190. Le bonheur, section 948)</span>"
+    }
+])
+
+# s606 already has hadith 1832, now prepend 1831
+s606['hadiths'].insert(0, {
+    "number": "1831",
+    "text": "L'Imām 'Alī (as) a dit : Si tu veux qu'Allah t'épargne une mauvaise issue, sache que le bien qui t'arrive est dû à la grâce d'Allah et à Sa faveur, et que pour ce qui t'arrive de mal, [sache qu'] Allah t'a donné un sursis et un répit. Crains Sa clémence et à Son pardon à ton égard.<sup>2081</sup>"
+})
+
+# ============================================================
+# Part 125 (index 126) - La perte - s613 hadith 1847 (page 334)
+# ============================================================
+p125 = 126
+s613 = find_subpart(p125, "613")
+s613['hadiths'].append({
+    "number": "1847",
+    "text": "L'Imām 'Alī (as) a dit : En vérité, le plus grand perdant et celui dont les efforts sont les plus vains est l'homme qui a usé son corps dans la quête de sa fortune, bien que le destin ne l'ait pas aidé dans son dessein. Il a ainsi quitté ce monde avec regret et fait face à l'Au-delà avec ses [funestes] conséquences.<sup>2101</sup>"
+})
+
+# ============================================================
+# Part 126 (index 127) - L'Humilité (page 334-335)
 # ============================================================
 p126 = 127
-
+s614 = find_subpart(p126, "614")
 s615 = find_subpart(p126, "615")
-ensure_hadiths(s615)
+
+clear_hadiths(s614)
+clear_hadiths(s615)
+
+s614['introduction'] = "«Le moment n'est-il pas venu pour ceux qui ont cru, que leurs cœurs s'humilient à l'évocation d'Allah et devant ce qui est descendu de la Vérité ?»<sup>2102</sup>"
+s614['hadiths'].extend([
+    {
+        "number": "1848",
+        "source": "Irshād al-Qulūb",
+        "text": "Dans le <i>ḥadīth</i> de l'ascension (<i>mi'rāj</i>), [Allah a dit] : Dès qu'un serviteur vient à Me connaître et s'humilie devant Moi, toute chose s'humilie devant lui.<sup>2103</sup>"
+    },
+    {
+        "number": "1849",
+        "text": "L'Imām 'Alī (as) a dit : Quelle aide à l'invocation est l'humilité !<sup>2104</sup>"
+    },
+    {
+        "number": "1850",
+        "text": "L'Imām Zayn al-'Ābidīn (as) a dit dans une invocation : Je me réfugie auprès de Toi d'une âme qui n'est pas satisfaite, d'un ventre qui n'est jamais rassasié et d'un cœur qui n'est pas humble.<sup>2105</sup>"
+    }
+])
+
 s615['hadiths'].extend([
     {
         "number": "1851",
@@ -31,123 +103,32 @@ s615['hadiths'].extend([
     },
     {
         "number": "1852",
-        "text": "L'Imām 'Alī (as) a dit : Celui dont le cœur est humble verra l'ensemble de ses membres devenir humbles.<sup>2107</sup><br><br><span class=\"reference-note\">(Voir également : 47. Pleurer ; 334. Le cœur, section 1554)</span>"
+        "text": "L'Imām 'Alī (as) a dit : Celui dont le cœur est humble verra l'ensemble de ses membres devenir humbles.<sup>2107</sup><br><br><span class=\"hadith-footnote\">(Voir également : 47. Pleurer ; 334. Le cœur, section 1554)</span>"
     }
 ])
 
 # ============================================================
-# Chapter 127 (index 128) - LE SERMON
-# ============================================================
-p127 = 128
-
-s616 = find_subpart(p127, "616")
-ensure_hadiths(s616)
-s616['introduction'] = "«Nous consolidèrent son royaume et lui donnâmes la sagesse et un discours convaincant.»<sup>2108</sup>"
-s616['hadiths'].extend([
-    {
-        "number": "1853",
-        "text": "Sa'ad Ibn Ibrāhīm rapporte de son père : Le premier à avoir fait un sermon sur une chaire fut Ibrāhīm (as) lors de l'emprisonnement de Loth par les Romains. Ibrāhīm (as) les combattit jusqu'à ce qu'il le sauve des Romains.<sup>2109</sup>"
-    },
-    {
-        "number": "1854",
-        "text": "Jābir a dit : Lorsqu'il [le Prophète (s)] faisait un sermon, ses yeux devenaient rouges, sa voix s'élevait et sa colère s'intensifiait, comme s'il était le garde d'une armée qui les avertissait d'une attaque imminente de l'ennemi.<sup>2110</sup>"
-    },
-    {
-        "number": "1855",
-        "text": "<em>Al-Mu'jam al-Kabīr</em> : Abū Umāma a dit : En vérité, lorsqu'il nommait un commandant, le Messager d'Allah (as) avait pour habitude de lui dire : «Abrège ton discours, raccourcis tes paroles.»<sup>2111</sup>"
-    },
-    {
-        "number": "1856",
-        "text": "<em>Sunan Abī Dāwūd</em> rapporte de 'Ammār ibn Yāsir : Le Messager d'Allah (s) nous a ordonné d'abréger les discours.<sup>2112</sup>"
-    },
-    {
-        "number": "1857",
-        "text": "<em>Sunan Abī Dāwūd</em> rapporte de Jābir ibn Samura al-Sawā'ī : Le Messager d'Allah (s) ne prolongeait pas son prêche du vendredi ; c'était juste quelques courtes paroles.<sup>2113</sup><br><br><span class=\"reference-note\">(Voir également : 239. La prière (3), section 1147 ; 348. La parole, section 1619)</span>"
-    }
-])
-
-# ============================================================
-# Chapter 128 (index 129) - L'ÉCRITURE
-# ============================================================
-p128 = 129
-
-s617 = find_subpart(p128, "617")
-ensure_hadiths(s617)
-s617['introduction'] = "«Avant cela [le Coran], tu ne récitais aucun livre ni n'en écrivais aucun de ta main droite. Sinon, ceux qui nient la vérité auraient eu des doutes.»<sup>2114</sup>"
-s617['hadiths'].extend([
-    {
-        "number": "1858",
-        "text": "Le Messager d'Allah (s) a dit : La belle écriture renforce la clarté de la vérité.<sup>2115</sup>"
-    },
-    {
-        "number": "1859",
-        "text": "Le Messager d'Allah (s) a dit au sujet de la parole du Très-Haut «<em>ou un vestige d'une science</em>»<sup>2116</sup> : [Cela signifie] l'écriture.<sup>2117</sup>"
-    },
-    {
-        "number": "1860",
-        "text": "<em>Al-Durr al-Manthūr</em> rapporte de 'Aṭā' ibn Yasār : Le Messager d'Allah (s) fut interrogé au sujet de l'écriture. Il (s) dit : «C'est [en premier lieu] un prophète qui l'a enseignée, et ceux qui l'accompagnaient l'ont apprise.»<sup>2118</sup>"
-    },
-    {
-        "number": "1861",
-        "text": "L'Imām 'Alī (as) a dit : L'écriture est la langue de la main.<sup>2119</sup>"
-    },
-    {
-        "number": "1862",
-        "text": "Parmi les paroles qu'il a adressées à son scribe 'Ubaydullāh ibn Abī Rāfi', l'Imām 'Alī (as) a dit : Mets un flocon de coton dans ton encrier, garde la pointe de ton calame longue, laisse un espace entre les lignes, et joins les lettres, car cela est plus à même de créer une belle écriture.<sup>2120</sup>"
-    },
-    {
-        "number": "1863",
-        "text": "L'Imām 'Alī (as) a dit : Fends la pointe de ton calame et épaissis son extrémité, incline-la vers la droite et ton écriture s'embellira.<sup>2121</sup>"
-    }
-])
-
-# ============================================================
-# Chapter 129 (index 130) - LA SINCÉRITÉ (sections 618-624)
+# Part 129 (index 130) - La sincérité - suite (page 338)
 # ============================================================
 p129 = 130
-
-# Section 618 - La vertu de la sincérité
 s618 = find_subpart(p129, "618")
-ensure_hadiths(s618)
-s618['introduction'] = "«Par Ta puissance ! dit [Satan]. Je les séduirai assurément tous, sauf Tes serviteurs élus parmi eux.»<sup>2122</sup><br><br><span class=\"reference-note\">(Voir également : Coran 2:112, 2:139, 2:196, 2:207, 2:238, 2:265, 3:20, 6:52, 6:79, 6:162, 12:24, 18:28, 18:110, 22:31, 30:38, 31:22, 37:40, 39:2-3, 39:11, 39:14, 39:29, 40:14, 72:18, 72:20, 76:9, 92:20, 97:5)</span>"
-s618['hadiths'].extend([
-    {
-        "number": "1864",
-        "text": "Le Messager d'Allah (s) a dit : Tous les savants seront damnés sauf ceux qui ont œuvré [sur la base de leur savoir], et ceux qui ont œuvré seront damnés sauf les sincères, et les sincères sont [eux-mêmes] en danger.<sup>2123</sup>"
-    },
-    {
-        "number": "1865",
-        "text": "L'Imām 'Alī (as) a dit : La sincérité est le plus haut point de la religion.<sup>2124</sup>"
-    },
-    {
-        "number": "1866",
-        "text": "L'Imām 'Alī (as) a dit : La sincérité est l'adoration des rapprochés [d'Allah].<sup>2125</sup>"
-    },
-    {
-        "number": "1867",
-        "text": "L'Imām 'Alī (as) a dit : La sincérité est le fondement de l'adoration.<sup>2126</sup>"
-    },
-    {
-        "number": "1868",
-        "text": "L'Imām 'Alī (as) a dit : La sincérité est le sommet de la foi.<sup>2127</sup>"
-    },
-    {
-        "number": "1869",
-        "text": "L'Imām 'Alī (as) a dit : Le salut se trouve dans la sincérité.<sup>2128</sup>"
-    },
-    {
-        "number": "1870",
-        "text": "L'Imām 'Alī (as) a dit : Heureux soit celui dont les actes et le savoir, l'amour et la haine, l'acceptation et le refus, les mots et le silence ainsi que les actes et paroles ont été seulement et sincèrement pour Allah.<sup>2129</sup>"
-    }
-])
-
-# Section 619
 s619 = find_subpart(p129, "619")
-ensure_hadiths(s619)
+s620 = find_subpart(p129, "620")
+s621 = find_subpart(p129, "621")
+
+for s in [s619, s620, s621]:
+    clear_hadiths(s)
+
+# Add 1870 to s618
+s618['hadiths'].append({
+    "number": "1870",
+    "text": "L'Imām 'Alī (as) a dit : Heureux soit celui dont les actes et le savoir, l'amour et la haine, l'acceptation et le refus, les mots et le silence ainsi que les actes et paroles ont été seulement et sincèrement pour Allah.<sup>2129</sup>"
+})
+
 s619['hadiths'].extend([
     {
         "number": "1871",
-        "text": "L'Imām 'Alī (as) a dit : Rendre l'acte sincère est plus difficile que la réalisation de l'acte en lui-même, et purifier l'intention de la corruption est plus difficile pour ceux qui agissent que de s'engager dans un long combat (<em>jihād</em>).<sup>2130</sup>"
+        "text": "L'Imām 'Alī (as) a dit : Rendre l'acte sincère est plus difficile que la réalisation de l'acte en lui-même, et purifier l'intention de la corruption est plus difficile pour ceux qui agissent que de s'engager dans un long combat (<i>jihād</i>).<sup>2130</sup>"
     },
     {
         "number": "1872",
@@ -155,13 +136,11 @@ s619['hadiths'].extend([
     }
 ])
 
-# Section 620
-s620 = find_subpart(p129, "620")
-ensure_hadiths(s620)
 s620['hadiths'].extend([
     {
         "number": "1873",
-        "text": "<em>Al-Kāfī</em> : Allah le Béni et le Très-Haut a dit lors de l'un de Ses entretiens intimes avec Moïse (as) : Ô Moïse ! L'acte accompli pour Moi sera important même s'il est modeste, tandis que l'acte accompli pour un autre que Moi sera insignifiant même s'il est important.<sup>2132</sup>"
+        "source": "Al-Kāfī",
+        "text": "Allah le Béni et le Très-Haut a dit lors de l'un de Ses entretiens intimes avec Moïse (as) : Ô Moïse ! L'acte accompli pour Moi sera important même s'il est modeste, tandis que l'acte accompli pour un autre que Moi sera insignifiant même s'il est important.<sup>2132</sup>"
     },
     {
         "number": "1874",
@@ -169,56 +148,15 @@ s620['hadiths'].extend([
     }
 ])
 
-# Section 621
-s621 = find_subpart(p129, "621")
-ensure_hadiths(s621)
 s621['hadiths'].append({
     "number": "1875",
-    "text": "<em>'Uddat al-Dā'ī</em> rapporte d'al-Mufaḍḍal ibn Ṣāliḥ : L'Imām al-Ṣādiq (as) a dit : «En vérité, Allah a des serviteurs qui ont agi vis-à-vis de Lui avec sincérité en secret, et Allah a agi vis-à-vis d'eux avec une pure bonté, car ce sont eux qui, le Jour de la Résurrection, verront le recueil de leurs actes vides, et lorsqu'ils seront entre les mains d'Allah, Il remplira leurs recueils des secrets qu'ils avaient avec Lui.» Je dis : «Ô maître, pourquoi [leurs recueils seront-ils vides] ?» Il dit : «Il les a tellement honorés qu'Il ne veut même pas que les anges gardiens sachent ce qu'il y a entre eux et Lui.»<sup>2134</sup>"
+    "source": "'Uddat al-Dā'ī",
+    "text": "rapporte d'al-Mufaḍḍal ibn Ṣāliḥ : L'Imām al-Ṣādiq (as) a dit : «En vérité, Allah a des serviteurs qui ont agi vis-à-vis de Lui avec sincérité en secret, et Allah a agi vis-à-vis d'eux avec une pure bonté, car ce sont eux qui, le Jour de la Résurrection, feront partie des ceux à qui Allah accordera Son secours.»"
 })
 
-# Section 622
-s622 = find_subpart(p129, "622")
-ensure_hadiths(s622)
-s622['hadiths'].extend([
-    {
-        "number": "1876",
-        "text": "L'Imām al-Ṣādiq (as) a dit : Allah le Béni et le Très-Haut a dit : «Je suis le meilleur des associés, [dès lors], Je n'accepte pas [les actes] de celui qui M'a associé [à un autre] dans ses actes, sauf ce qui a été fait exclusivement et sincèrement pour Moi.»<sup>2135</sup>"
-    },
-    {
-        "number": "1877",
-        "text": "Le Messager d'Allah (s) a dit : Lorsque tu accomplis un acte, fais-le sincèrement et uniquement pour Allah car Il n'accepte de Ses serviteurs que les actes sincères et faits uniquement pour Lui.<sup>2136</sup>"
-    }
-])
 
-# Section 623
-s623 = find_subpart(p129, "623")
-ensure_hadiths(s623)
-s623['hadiths'].extend([
-    {
-        "number": "1878",
-        "text": "Le Messager d'Allah (s) a dit : Le sommet de la sincérité est de s'abstenir des interdits.<sup>2137</sup>"
-    },
-    {
-        "number": "1879",
-        "text": "L'Imām al-Ṣādiq (as) a dit : Celui qui dit sincèrement «Point de divinité à part Dieu» (<em>lā ilaha illā Allāh</em>) entrera au Paradis, et sa sincérité est que [son témoignage qu'il n'y a] «Point de divinité à part Dieu» constitue une barrière contre ce qu'Allah a interdit.<sup>2138</sup>"
-    }
-])
-
-# Section 624 - prepend hadith 1880 before existing 1881-1883
-s624 = find_subpart(p129, "624")
-# 1880 must come before 1881
-s624['hadiths'].insert(0, {
-    "number": "1880",
-    "text": "Le Messager d'Allah (s) a dit : En vérité, toute chose a une réalité profonde, et le serviteur n'atteint la réalité profonde de la sincérité que lorsqu'il n'aime pas être loué pour des actes qu'il a accomplis pour Allah.<sup>2139</sup>"
-})
-
-# Write back
 new_content = content[:start_idx] + json.dumps(data, ensure_ascii=False, indent=4) + content[end_idx:]
 with open('aune-sagesse-data.js', 'w', encoding='utf-8') as f:
     f.write(new_content)
 
-print("✅ Done! Hadiths 1851-1880 injected (pages 335-339)")
-print("Chapters: 126 (+1851-1852), 127 (1853-1857), 128 (1858-1863), 129 (1864-1880)")
-print("Total hadiths added: 30")
-print("🎉 ALL GAPS FILLED! Chapters 120-132 are now complete!")
+print("Done filling gaps: 1827-1832, 1847-1852, and extending 1870-1875")

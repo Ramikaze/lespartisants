@@ -20,185 +20,223 @@ def clear_hadiths(s):
             del s['introduction']
 
 # ============================================================
-# Part 116 (index 117) - Le bain
+# Part 113 (index 114) - Le licite (page 315)
+# ============================================================
+p113 = 114
+s575 = find_subpart(p113, "575")
+clear_hadiths(s575)
+s575['hadiths'].append({
+    "number": "1733",
+    "text": "Le Messager d'Allah (s) a dit : Il n'est pas licite pour un homme d'utiliser ce qui appartient à son frère, sauf avec son accord.<sup>1981</sup>"
+})
+
+# ============================================================
+# Part 114 (index 115) - La clémence (pages 315-316)
+# ============================================================
+p114 = 115
+s576 = find_subpart(p114, "576")
+s577 = find_subpart(p114, "577")
+s578 = find_subpart(p114, "578")
+s579 = find_subpart(p114, "579")
+s580 = find_subpart(p114, "580")
+
+for s in [s576, s577, s578, s579, s580]:
+    clear_hadiths(s)
+
+s576['hadiths'].extend([
+    {
+        "number": "1734",
+        "text": "Le Messager d'Allah (s) a dit : Le clément est presque un prophète.<sup>1982</sup>"
+    },
+    {
+        "number": "1735",
+        "text": "L'Imām 'Alī (as) a dit : La clémence est la perfection de la raison.<sup>1983</sup>"
+    },
+    {
+        "number": "1736",
+        "text": "L'Imām 'Alī (as) a dit : La clémence ordonne les affaires du croyant.<sup>1984</sup>"
+    },
+    {
+        "number": "1737",
+        "text": "L'Imām 'Alī (as) a dit : La beauté de l'homme est dans sa clémence.<sup>1985</sup>"
+    },
+    {
+        "number": "1738",
+        "text": "L'Imām al-Riḍā (as) a dit : L'homme ne peut être un serviteur [d'Allah] que lorsqu'il est clément.<sup>1986</sup>"
+    }
+])
+
+s577['hadiths'].extend([
+    {
+        "number": "1739",
+        "text": "L'Imām 'Alī (as) a dit : Par l'éminence de la raison, la clémence devient profuse.<sup>1987</sup>"
+    },
+    {
+        "number": "1740",
+        "text": "L'Imām 'Alī (as) a dit : Attache-toi à faire preuve de clémence, car elle est véritablement le fruit du savoir.<sup>1988</sup>"
+    },
+    {
+        "number": "1741",
+        "text": "L'Imām 'Alī (as) a dit : La clémence et la tempérance sont des jumeaux engendrant la haute et noble résolution.<sup>1989</sup>"
+    },
+    {
+        "number": "1742",
+        "text": "L'Imām 'Alī (as) a dit : Si tu n'es pas clément, efforce-toi de le paraître, car peu nombreux sont ceux qui essaient de ressembler à un groupe sans finir par devenir comme lui.<sup>1990</sup>"
+    }
+])
+
+s578['hadiths'].extend([
+    {
+        "number": "1743",
+        "text": "L'Imām 'Alī (as) a dit : Celui qui fait preuve de clémence a le dessus.<sup>1991</sup>"
+    },
+    {
+        "number": "1744",
+        "text": "L'Imām 'Alī (as) a dit : Celui qui est clément envers son adversaire l'aura vaincu.<sup>1992</sup>"
+    },
+    {
+        "number": "1745",
+        "text": "L'Imām 'Alī (as) a dit : La première compensation de la personne clémente pour cette qualité est que les gens l'aideront face à l'ignorant.<sup>1993</sup>"
+    },
+    {
+        "number": "1746",
+        "text": "L'Imām 'Alī (as) a dit : Faire preuve de clémence dans un moment de forte colère protège contre la colère du Tout-Puissant.<sup>1994</sup>"
+    },
+    {
+        "number": "1747",
+        "text": "L'Imām al-Ṣādiq (as) a dit : La clémence suffit comme auxiliaire et aide.<sup>1995</sup>"
+    }
+])
+
+s579['hadiths'].extend([
+    {
+        "number": "1748",
+        "text": "L'Imām 'Alī (as) a dit : Le clément est celui qui supporte ses frères.<sup>1996</sup>"
+    },
+    {
+        "number": "1749",
+        "text": "Interrogé au sujet de la clémence, l'Imām Ḥasan (as) répondit : [C'est de] retenir sa colère et de se contrôler.<sup>1997</sup>"
+    }
+])
+
+s580['hadiths'].extend([
+    {
+        "number": "1750",
+        "text": "Luqmān (as) a dit : Le clément n'est connu que dans la colère.<sup>1998</sup>"
+    },
+    {
+        "number": "1751",
+        "text": "Lorsqu'on lui demanda quelle était la plus clémente des personnes, l'Imām 'Alī (as) répondit: C'est celle qui ne se met pas en colère.<sup>1999</sup>"
+    },
+    {
+        "number": "1752",
+        "text": "L'Imām Zayn al-'Ābidīn (as) a dit : En vérité, l'homme que la clémence atteint au milieu de sa colère m'étonne.<sup>2000</sup>"
+    }
+])
+
+# ============================================================
+# Part 115 (index 116) - La stupidité (pages 317-318)
+# ============================================================
+p115 = 116
+s581 = find_subpart(p115, "581")
+s582 = find_subpart(p115, "582")
+s583 = find_subpart(p115, "583")
+s584 = find_subpart(p115, "584")
+s585 = find_subpart(p115, "585")
+
+for s in [s581, s582, s583, s584, s585]:
+    clear_hadiths(s)
+
+s581['hadiths'].extend([
+    {
+        "number": "1753",
+        "text": "L'Imām 'Alī (as) a dit : La stupidité est la pire des maladies.<sup>2001</sup>"
+    },
+    {
+        "number": "1754",
+        "text": "L'Imām 'Alī (as) a dit : La stupidité est la pire des indigences.<sup>2002</sup>"
+    },
+    {
+        "number": "1755",
+        "text": "L'Imām 'Alī (as) a dit : L'ennemi ne cause pas plus de tort à son ennemi que le sot n'en cause à lui-même.<sup>2003</sup>"
+    }
+])
+
+s582['hadiths'].extend([
+    {
+        "number": "1756",
+        "text": "Interrogé au sujet du sot, Jésus (as) répondit : [C'est] celui qui est imbu de son propre avis et de sa personne, qui pense qu'il a tous les mérites et vertus et non le contraire, qui a décidé qu'il avait tous les droits et qu'il n'était astreint à aucun devoir ; tel est le sot et il n'existe aucun moyen de le guérir.<sup>2004</sup>"
+    },
+    {
+        "number": "1757",
+        "text": "L'Imām 'Alī (as) a dit : Celui qui remarque les défauts des autres, les leur reproche puis les admet pour lui-même est le sot par excellence.<sup>2005</sup>"
+    },
+    {
+        "number": "1758",
+        "text": "L'Imām 'Alī (as) a dit : La sottise de l'homme se reconnaît par sa condescendance dans la prospérité et par son humiliation dans le malheur.<sup>2006</sup>"
+    },
+    {
+        "number": "1759",
+        "text": "L'Imām 'Alī (as) a dit : Parmi les signes de la sottise figure la versatilité.<sup>2007</sup>"
+    },
+    {
+        "number": "1760",
+        "text": "L'Imām 'Alī (as) a dit : Ne réponds pas à tout ce que les gens te disent, car cela suffit pour être [considéré comme] sot.<sup>2008</sup>"
+    }
+])
+
+s583['hadiths'].extend([
+    {
+        "number": "1761",
+        "text": "L'Imām Zayn al-'Ābidīn (as) a dit dans l'une de ses recommandations à son fils al-Bāqir (as) : Mon fils ! Garde-toi de prendre le sot pour compagnon ou de les fréquenter. Reste éloigné de lui et ne lui parle pas car en vérité, le sot est vil, qu'il soit présent ou absent. S'il parle sa sottise le déshonore, s'il se tait c'est en raison de son incapacité à parler. S'il effectue un travail le gâche, et s'il lui est confié une responsabilité il échoue. Son propre savoir ne l'enrichit pas et le savoir des autres ne lui est d'aucune utilité, il n'applique pas les conseils qu'on lui prodigue et son associé ne trouve pas de repos, sa mère souhaite faire son deuil, sa femme de le perdre, son voisin de vivre loin de lui, et celui qui s'assied à ses côtés d'être seul plutôt qu'en sa compagnie. S'il est le moins important [du point de vue du statut] de l'assemblée, il rabaisse ceux qui sont au-dessus de lui, et s'il est le plus important, il dénigre les autres.<sup>2009</sup>"
+    },
+    {
+        "number": "1762",
+        "text": "L'Imām al-Ṣādiq (as) a dit : Celui qui ne s'abstient pas d'établir des liens d'amitié avec un sot ne tardera pas à adopter son caractère.<sup>2010</sup>"
+    }
+])
+
+s584['hadiths'].extend([
+    {
+        "number": "1763",
+        "text": "L'Imām 'Alī (as) a dit : Le plus sot est celui qui croit être la personne la plus intelligente.<sup>2011</sup>"
+    },
+    {
+        "number": "1764",
+        "text": "L'Imām 'Alī (as) a dit : Le plus sot est celui qui fait obstacle à la bienfaisance et s'attend à ce qu'on le remercie, et qui agit mal et s'attend à une bonne récompense.<sup>2012</sup>"
+    },
+    {
+        "number": "1765",
+        "text": "L'Imām 'Alī (as) a dit : Le plus sot est celui qui réprouve les autres pour un vice alors qu'il a le même.<sup>2013</sup>"
+    }
+])
+
+s585['hadiths'].append({
+    "number": "1766",
+    "text": "L'Imām 'Alī (as) a dit : Garder le silence face à un sot est la meilleure réponse.<sup>2014</sup>"
+})
+
+# ============================================================
+# Part 116 (index 117) - Le bain (page 319)
 # ============================================================
 p116 = 117
-s587 = find_subpart(p116, "587")
-clear_hadiths(s587)
+s586 = find_subpart(p116, "586")
+clear_hadiths(s586)
 
-s587['hadiths'].extend([
+s586['hadiths'].extend([
     {
-        "number": "1769",
-        "text": "L'Imām al-Ṣādiq (as) a dit : Trois choses détruisent le corps et peuvent provoquer la mort : manger des restes de viande de la veille, prendre un bain en ayant le ventre plein, et avoir des relations intimes avec des personnes âgées.<sup>2017</sup>"
+        "number": "1767",
+        "text": "L'Imām 'Alī (as) a dit : Quel bon lieu est celui où l'on prend son bain ! Il rappelle le feu [de l'Enfer] et il fait partir les impuretés [du corps].<sup>2015</sup>"
     },
     {
-        "number": "1770",
-        "text": "L'Imām al-Ṣādiq (as) a dit : Ne prends un bain que si tu as quelque chose dans le ventre qui va refroidir la température de ton estomac, car cela renforce la santé du corps. Mais ne prends pas de bain lorsque tu as l'estomac trop plein.<sup>2018</sup>"
+        "number": "1768",
+        "text": "L'Imām al-Ṣādiq (as) a dit : Trois choses font grossir et trois font maigrir. Celles qui font grossir sont d'aller [trop] souvent au bain, de sentir les bonnes odeurs et de porter des vêtements doux. En revanche, les trois qui font maigrir sont de manger [trop] souvent des œufs, du poisson et des dattes non mûres.<sup>2016</sup>"
     }
 ])
 
-# ============================================================
-# Part 117 (index 118) - Le besoin
-# ============================================================
-p117 = 118
-s588 = find_subpart(p117, "588")
-s589 = find_subpart(p117, "589")
-s590 = find_subpart(p117, "590")
-s591 = find_subpart(p117, "591")
-s592 = find_subpart(p117, "592")
 
-for s in [s588, s589, s590, s591, s592]:
-    clear_hadiths(s)
-
-s588['hadiths'].extend([
-    {
-        "number": "1771",
-        "text": "L'Imām 'Alī (as) a dit : Prodigue à qui tu veux et tu seras son maître ; sollicite ce dont tu as besoin auprès de qui tu veux et tu seras son prisonnier ; ne dépends pas de qui tu veux [pour un besoin] et tu seras son égal.<sup>2019</sup>"
-    },
-    {
-        "number": "1772",
-        "text": "L'Imām 'Alī (as) a dit : Tu te seras rabaissé aux yeux de celui auprès de qui tu as sollicité un besoin.<sup>2020</sup>"
-    }
-])
-
-s589['hadiths'].extend([
-    {
-        "number": "1773",
-        "text": "L'Imām al-Ṣādiq (s) a dit : Allah le Tout-Puissant a dit : «Les créatures sont Mes enfants, celles que J'aime le plus sont celles qui sont les plus douces les unes avec les autres et s'efforcent le plus de satisfaire les besoins des autres.»<sup>2021</sup>"
-    },
-    {
-        "number": "1774",
-        "text": "Le Messager d'Allah (s) a dit : Celui qui s'efforce d'aider son frère et de lui être bénéfique aura la rétribution d'un combattant dans la voie d'Allah.<sup>2022</sup>"
-    },
-    {
-        "number": "1775",
-        "text": "Le Messager d'Allah (s) a dit : Celui qui s'efforce de satisfaire le besoin de son frère croyant est comme celui qui a adoré Allah neuf mille ans en jeûnant le jour et en priant la nuit.<sup>2023</sup>"
-    },
-    {
-        "number": "1776",
-        "text": "Le Messager d'Allah (s) a dit : Celui qui a satisfait le besoin de son frère croyant est comme celui qui a adoré Allah sa vie entière.<sup>2024</sup>"
-    },
-    {
-        "number": "1777",
-        "text": "L'Imām al-Ṣādiq (as) a dit : Allah le Tout-Puissant inscrit un million de bonnes actions à celui qui s'est efforcé de satisfaire le besoin de son frère musulman pour Allah.<sup>2025</sup>"
-    },
-    {
-        "number": "1778",
-        "text": "L'Imām al-Ṣādiq (as) a dit : Allah satisfera le besoin de celui qui s'engage à satisfaire le besoin de son frère croyant et musulman tant qu'il reste engagé à satisfaire le besoin de son frère.<sup>2026</sup>"
-    },
-    {
-        "number": "1779",
-        "text": "L'Imām al-Ṣādiq (as) a dit : Celui qui s'efforce de satisfaire le besoin de son frère est comme celui qui court entre Ṣafā et Marwā.<sup>2027</sup>"
-    },
-    {
-        "number": "1780",
-        "text": "L'Imām al-Ṣādiq (as) a dit : Le Jour de le Résurrection, Allah le Tout-Puissant satisfera cent mille des besoins de celui qui a satisfait le besoin de son frère croyant, le premier étant le Paradis.<sup>2028</sup>"
-    },
-    {
-        "number": "1781",
-        "text": "L'Imām al-Ṣādiq (as) a dit : En vérité, satisfaire le besoin d'un croyant est plus aimé d'Allah que l'accomplissement de vingt pèlerinages obligatoires (ḥajj) en dépensant cent mille [dinars ou dirhams] lors de chaque pèlerinage.<sup>2029</sup><br><br><span class=\"reference-note\">(Voir également : 272. La bienséance (1) ; 104. La bienfaisance ; 5. Le frère, section 41)</span>"
-    }
-])
-
-s590['hadiths'].extend([
-    {
-        "number": "1782",
-        "text": "L'Imām al-Bāqir (as) a dit : La malédiction d'Allah le Tout-Puissant s'abattra sur tout musulman qui n'accueille pas son frère qui se rend chez lui pour lui rendre visite ou pour demander une chose dont il a besoin en demandant la permission d'entrer, et cela jusqu'à ce qu'ils se voient.<sup>2030</sup>"
-    },
-    {
-        "number": "1783",
-        "text": "L'Imām al-Ṣādiq (as) a dit : Celui qui a demandé à son frère croyant une chose dont il a besoin alors qu'il est en situation de difficulté, et qui l'a renvoyé les mains vides alors qu'il pouvait exaucer sa requête directement ou par le biais de quelqu'un d'autre, Allah le ressuscitera le Jour de la Résurrection alors qu'il sera enchaîné des mains jusqu'au cou, et ce jusqu'à ce qu'Allah ait terminé les comptes de l'ensemble des créatures.<sup>2031</sup>"
-    },
-    {
-        "number": "1784",
-        "text": "L'Imām al-Ṣādiq (as) a dit : Toute personne parmi nos partisans (shī'a) auprès de laquelle un de nos frères est venu implorer une aide concernant un besoin et qui n'a pas répondu alors qu'elle pouvait le faire, sera accablée par Allah le Tout-Puissant pour avoir satisfait les besoins de l'un de nos ennemis et châtiée pour cela le Jour de la Résurrection.<sup>2032</sup>"
-    },
-    {
-        "number": "1785",
-        "text": "L'Imām al-Ṣādiq (as) a dit : Par Allah, tout croyant qui refuse ses biens à un croyant [en vue de l'aider] alors qu'il en a besoin, ne goûtera pas les nourritures du Paradis et il ne boira pas la liqueur cachetée [du Paradis].<sup>2033</sup>"
-    }
-])
-
-s591['hadiths'].extend([
-    {
-        "number": "1786",
-        "text": "L'Imām al-Ṣādiq (as) a dit : En vérité, dès qu'un homme me sollicite pour un besoin, j'entreprends de le satisfaire de peur que son besoin ne soit satisfait [entre temps] et qu'il n'ait plus besoin de mon aide lorsqu'elle lui parviendra.<sup>2034</sup>"
-    }
-])
-
-s592['hadiths'].extend([
-    {
-        "number": "1787",
-        "text": "L'Imām 'Alī (as) a dit : Ô Allah ! Fais que je n'aie pas à solliciter un besoin auprès des mauvais parmi Ta création ; et lorsque Tu fais que j'ai besoin d'une chose, fais que je la sollicite auprès de ceux qui ont le plus beau [et heureux] visage, ceux dont l'âme est la plus généreuse, ceux qui sont les plus éloquents, et ceux qui feront le moins sentir [le bienfait qu'ils ont réalisé].<sup>2035</sup>"
-    },
-    {
-        "number": "1788",
-        "text": "L'Imām Zayn al-'Ābidīn (as) a dit à celui qui dit en sa présence «Ô Allah, rends-moi indépendant de [tout besoin vis-à-vis de] Tes créatures !» : «Ce n'est pas comme cela qu'il faut dire les choses, car les gens ont besoin les uns des autres. Dis plutôt : «Ô Allah, rends-moi indépendant de [tout besoin vis-à-vis des] mauvais parmi Ta création !».»<sup>2036</sup>"
-    },
-    {
-        "number": "1789",
-        "text": "L'Imām al-Bāqir (as) a dit : En vérité, le besoin vis-à-vis d'une personne nouvellement riche est comme un dirham dans la gueule d'un serpent : tu en as besoin, mais en même temps elle te met en danger.<sup>2037</sup><br><br><span class=\"reference-note\">(Voir également : La demande (2), section 911)</span>"
-    }
-])
-
-# ============================================================
-# Part 118 (index 119) - La précaution
-# ============================================================
-p118 = 119
-s593 = find_subpart(p118, "593")
-clear_hadiths(s593)
-
-s593['hadiths'].extend([
-    {
-        "number": "1790",
-        "text": "L'Imām 'Alī (as) a dit : Ton frère est ta religion, fais preuve de précaution vis-à-vis de ta religion autant que tu le peux.<sup>2038</sup>"
-    },
-    {
-        "number": "1791",
-        "text": "L'Imām al-Ṣādiq (as) a dit : Il t'incombe d'être résolu et de faire preuve de précaution vis-à-vis de ta religion.<sup>2039</sup>"
-    },
-    {
-        "number": "1792",
-        "text": "L'Imām al-Ṣādiq (as) a dit : Fais preuve de précaution en toute chose que tu as la possibilité de réaliser.<sup>2040</sup>"
-    }
-])
-
-# ============================================================
-# Part 119 (index 120) - La vie
-# ============================================================
-p119 = 120
-s594 = find_subpart(p119, "594")
-s595 = find_subpart(p119, "595")
-s596 = find_subpart(p119, "596")
-s597 = find_subpart(p119, "597")
-
-for s in [s594, s595, s596, s597]:
-    clear_hadiths(s)
-
-s594['hadiths'].append({
-    "number": "1793",
-    "text": "L'Imām 'Alī (as) a dit : Sachez que l'homme peut se rassasier et se lasser de toute chose sauf de la vie, car il ne trouve aucun confort dans la mort.<sup>2041</sup>"
-})
-
-s595['introduction'] = "«Nous avons fait de l'eau toute chose vivante.»<sup>2042</sup>"
-s595['hadiths'].append({
-    "number": "1794",
-    "text": "L'Imām al-Ṣādiq (as) a dit : Le goût de l'eau est la vie.<sup>2043</sup>"
-})
-
-s596['hadiths'].append({
-    "number": "1795",
-    "text": "L'Imām al-'Askarī (as) a dit : Ce qui est meilleur que la vie est la chose qui te dégoûterait de la vie si tu venais à la perdre, et ce qui est pire que la mort est la chose qui te ferait aimer la mort si elle venait à te toucher.<sup>2044</sup>"
-})
-
-s597['hadiths'].append({
-    "number": "1796",
-    "text": "L'Imām 'Alī (as) a dit : Il n'y a de vie qu'avec la religion, et il n'y a de mort qu'avec la négation de la vérité certaine.<sup>2045</sup>"
-})
-
-# Write back
 new_content = content[:start_idx] + json.dumps(data, ensure_ascii=False, indent=4) + content[end_idx:]
 with open('aune-sagesse-data.js', 'w', encoding='utf-8') as f:
     f.write(new_content)
 
-print("Done updating hadiths 1769-1796")
+print("Done updating hadiths 1733-1768")
