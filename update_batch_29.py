@@ -10,238 +10,305 @@ data = json.loads(content[start_idx:end_idx])
 def find_subpart(part_index, search_str):
     for s in data[part_index].get('subparts', []):
         if search_str in s['title']:
+            s.setdefault('hadiths', [])
             return s
     return None
 
-def ensure_hadiths(s):
-    if s and 'hadiths' not in s:
-        s['hadiths'] = []
+# Part 147 - LE RAPPEL (DHIKR) is at index 148
+p147 = 148
 
 # ============================================================
-# Chapter 132 (index 133) - LE CRÉATEUR (suite)
+# s750 - La vertu du rappel d'Allah
 # ============================================================
-p132 = 133
-
-# Section 637 - append sub-sections 3 & 4
-s637 = find_subpart(p132, "637")
-s637['hadiths'].extend([
+s750 = find_subpart(p147, "750")
+s750['introduction'] = "«Ô vous qui avez cru ! Que ni vos biens ni vos enfants ne vous distraient du rappel d'Allah. Et quiconque fait cela... alors ceux-là seront les perdants.»<sup>2607</sup>"
+s750['hadiths'].extend([
     {
-        "number": "1919",
-        "text": "<strong>3 - L'ordre du monde</strong><br><br>L'Imām 'Alī (as) a dit : Ô créature à la création parfaite et sans faille, qui a émergé des obscurités utérines et des multiples voiles. Tu tires ton origine d'un extrait d'argile… Puis on t'a fait sortir de ta demeure vers une résidence que tu n'avais pas vue et dont tu ignorais les moyens d'en tirer profit. Qui t'a guidé vers la tétée du sein de la mère ? Qui t'a inculqué, en cas de besoin, où se trouve ce que tu recherches et ce que tu veux ?<sup>2186</sup>"
+        "number": "2315",
+        "text": "Le Messager d'Allah (s) a dit : Ne préférez rien au rappel d'Allah car en vérité, Il a dit : «Le rappel d'Allah est certes ce qu'il y a de plus grand.»<sup>2608,2609</sup>"
     },
     {
-        "number": "1920",
-        "text": "<em>Sharḥ Nahj al-Balāgha</em> : [L'Imām 'Alī (as)] disait fréquemment après avoir effectué sa prière de la nuit : Je témoigne que les cieux et la terre et ce qu'il y a entre eux sont des signes qui Te montrent et des témoins qui témoignent de ce à quoi Tu nous as invité. Tout ce qui conduit à Ta preuve et atteste de Ta Seigneurie porte les signes de Tes grâces et les marques de Tes dispositions.<sup>2187</sup>"
+        "number": "2316",
+        "source": "Kanz al-'Ummāl",
+        "text": "Mu'ādh a dit : Le Messager d'Allah (s) a dit : «Il n'y a pas d'acte plus aimé d'Allah le Très-Haut et qui permet autant de sauver le serviteur de tout mal dans ce bas-monde et dans l'Au-delà que le rappel d'Allah.» On demanda : «Même [plus que] le combat dans le sentier d'Allah ?» Il (s) répondit : «Sans le rappel d'Allah, l'ordre du combat n'aurait pas été donné.»<sup>2610</sup>"
     },
     {
-        "number": "1921",
-        "text": "L'Imām al-Bāqir (as) a dit en commentant la parole du Très-Haut : «<em>Et quiconque aura été aveugle ici-bas sera aveugle dans l'Au-delà</em>»<sup>2188</sup> : «Celui qui n'a pas été guidé par la création des cieux et de la terre, l'alternance de la nuit et du jour, la rotation des planètes autour du soleil, la lune, et les signes extraordinaires qui montrent que derrière tout cela se cache une réalité plus grande encore <em>«sera aveugle dans l'Au-delà»</em>.» Il ajouta : «Il sera aveugle vis-à-vis de ce qu'il n'a pas vu, et encore plus égaré du [droit] chemin.»<sup>2189</sup><sup>2190</sup>"
+        "number": "2317",
+        "text": "L'Imām 'Alī (as) a dit : Le rappel [d'Allah] est le plaisir de ceux qui aiment.<sup>2611</sup>"
     },
     {
-        "number": "1922",
-        "text": "L'Imām al-Ṣādiq (as) a dit : Si tu voyais une entrée à deux portes avec un fermoir à deux battants, considérerais-tu qu'elles ont été ainsi fabriquées sans but ? Non, tu saurais qu'elles ont été faites ainsi pour se compléter, de sorte que leur assemblage soit une source d'utilité. Il en va ainsi pour l'animal mâle qui est comme un membre d'une paire fait pour la partie [correspondante] qui est la femelle. Dès lors, ils s'accouplent pour la continuité et la survie de l'espèce. Comme sont détruits, défaits et pitoyables les supposés philosophes ! Comment leurs cœurs ont-ils pu être aveugles face à cette création étonnante et merveilleuse, allant jusqu'à nier qu'elle comporte une organisation et un but ?!<sup>2191</sup>"
+        "number": "2318",
+        "text": "L'Imām 'Alī (as) a dit : Le rappel est la compagnie de l'Aimé.<sup>2612</sup>"
     },
     {
-        "number": "1923",
-        "text": "L'Imām al-Ṣādiq (as) a dit en s'adressant à Mufaḍḍal ibn 'Omar : Ô Mufaḍḍal ! Réfléchis aux actes qui ont été assignés à l'homme, comme le fait de se nourrir et dormir… Si pour dormir l'être humain devait réfléchir au besoin qu'a son corps de repos et de reprendre des forces, il pourrait trouver cela pesant et l'éviter jusqu'à ce que son corps s'épuise.<sup>2192</sup>"
-    },
-    {
-        "number": "1924",
-        "text": "<strong>4 - L'annulation des résolutions et l'échec des ambitions</strong><br><br>Interrogé au sujet de la preuve affirmant l'existence du Créateur, l'Imām 'Alī (as) répondit : [Elle comprend] trois choses : le changement des états, la faiblesse des organes corporels et l'échec des ambitions.<sup>2193</sup>"
-    },
-    {
-        "number": "1925",
-        "text": "Lorsqu'on lui demanda par quoi il avait connu son Seigneur, l'Imām al-Ṣādiq (as) répondit : Par le fait que les résolutions sont annulées et les ambitions échouent. J'ai pris une résolution et ma résolution a été annulée, j'ai eu une ambition et elle a échoué.<sup>2194</sup>"
+        "number": "2319",
+        "text": "L'Imām 'Alī (as) a dit : Le rappel d'Allah est la disposition naturelle de tout bienfaiteur et le trait distinctif de tout croyant.<sup>2613</sup>"
     }
 ])
 
-# Section 638
-s638 = find_subpart(p132, "638")
-ensure_hadiths(s638)
-s638['hadiths'].append({
-    "number": "1926",
-    "text": "L'Imām al-Ṣādiq (as) a dit en réponse à cette parole de Mufaḍḍal : «Ô maître ! En vérité, un groupe prétend que ceci [la création] est l'acte de la nature» : «Interroge-les au sujet de cette nature ; est-elle une chose qui a un savoir et une puissance pour pouvoir faire de tels actes [comme la création], ou bien n'est-ce pas le cas ? S'ils lui accordent le savoir et la puissance, qu'est-ce qui les empêche donc de reconnaître l'existence d'un Créateur ? Car en vérité, ceci est Sa création. S'ils prétendent que la nature a accompli cela sans savoir et sans but alors que l'on voit dans ses actes de la justesse et de la sagesse, on en déduit dès lors que ceci est l'acte d'un Créateur sage, et que ce qu'ils appellent «nature» est le système même qui a cours dans Sa création.»<sup>2195</sup><br><br><span class=\"reference-note\">(Voir également : 27. La connaissance d'Allah)</span>"
-})
-
 # ============================================================
-# Chapter 133 (index 134) - LE CARACTÈRE
+# s751 - L'incitation à multiplier le rappel [d'Allah]
 # ============================================================
-p133 = 134
-
-s639 = find_subpart(p133, "639")
-ensure_hadiths(s639)
-s639['hadiths'].extend([
-    {"number": "1927", "text": "Le Messager d'Allah (s) a dit : L'islam est le fait d'avoir un bon caractère.<sup>2196</sup>"},
-    {"number": "1928", "text": "Le Messager d'Allah (s) a dit : Le bon caractère est la moitié de la religion.<sup>2197</sup>"},
-    {"number": "1929", "text": "L'Imām 'Alī (as) a dit : Le bon caractère est la source de toute bienfaisance.<sup>2198</sup>"}
-])
-
-s640 = find_subpart(p133, "640")
-ensure_hadiths(s640)
-s640['hadiths'].extend([
-    {"number": "1930", "text": "Le Messager d'Allah (s) a dit : Le bon caractère établit l'affection.<sup>2199</sup>"},
-    {"number": "1931", "text": "L'Imām al-Ṣādiq (as) a dit : Le bon caractère augmente la subsistance.<sup>2200</sup>"},
-    {"number": "1932", "text": "L'Imām al-Ṣādiq (as) a dit : En vérité, la générosité et le bon caractère font prospérer les demeures et rallongent la durée de vie.<sup>2201</sup>"},
-    {"number": "1933", "text": "L'Imām al-Ṣādiq (as) a dit : Il n'y a de vie plus saine [que celle vécue avec] un bon caractère.<sup>2202</sup>"}
-])
-
-s641 = find_subpart(p133, "641")
-ensure_hadiths(s641)
-s641['hadiths'].extend([
-    {"number": "1934", "text": "Le Messager d'Allah (s) a dit : En vérité, le serviteur peut atteindre, par son bon caractère, de hauts degrés et des stations élevées dans l'Au-delà, même si ses actes d'adoration sont faibles.<sup>2203</sup>"},
-    {"number": "1935", "text": "Le Messager d'Allah (s) a dit : En vérité, celui qui a un bon caractère aura la même rétribution que celui qui jeûne et prie la nuit.<sup>2204</sup>"},
-    {"number": "1936", "text": "Le Messager d'Allah (s) a dit : Aucune chose ne pèse aussi lourd dans la balance que le bon caractère.<sup>2205</sup>"},
-    {"number": "1937", "text": "Le Messager d'Allah (s) a dit : Le Jour de la Résurrection, le plus aimé et le plus proche de moi sera celui qui a le meilleur caractère et le plus humble parmi vous.<sup>2206</sup>"},
-    {"number": "1938", "text": "Le Messager d'Allah (s) a dit : Les croyants qui ont la foi la plus parfaite sont ceux qui ont le meilleur caractère.<sup>2207</sup>"},
-    {"number": "1939", "text": "L'Imām 'Alī (as) a dit : Le bon caractère est le titre du recueil [le signe distinctif] du croyant.<sup>2208</sup>"}
-])
-
-s642 = find_subpart(p133, "642")
-ensure_hadiths(s642)
-s642['hadiths'].extend([
-    {"number": "1940", "text": "L'Imām 'Alī (as) a dit : Le bon caractère se manifeste dans trois choses : s'abstenir des interdits, être en quête du licite, et procurer paix et confort à sa famille.<sup>2209</sup>"},
-    {"number": "1941", "text": "L'Imām 'Alī (as) a dit : Échanger des salutations fait partie du bon caractère.<sup>2210</sup>"},
-    {"number": "1942", "text": "Lorsqu'il fut interrogé au sujet de la définition du bon caractère, l'Imām al-Ṣādiq (as) répondit : [C'est que] tu sois doux, que ta parole soit agréable et polie, et que tu rencontres tes frères avec jovialité et gaité.<sup>2211</sup>"}
-])
-
-s643 = find_subpart(p133, "643")
-ensure_hadiths(s643)
-s643['hadiths'].extend([
-    {"number": "1943", "text": "Le Messager d'Allah (s) a dit : En vérité, Allah aime les hautes vertus morales et Il déteste les basses et viles manières.<sup>2212</sup>"},
-    {"number": "1944", "text": "L'Imām 'Alī (as) a dit : Adoptez les nobles vertus car elles occupent un haut rang ; et gare [à ne pas adopter] les mœurs viles car elles rabaissent la personne noble et détruisent la grandeur et l'éminence.<sup>2213</sup>"},
-    {"number": "1945", "text": "L'Imām 'Alī (as) a dit : Persévérez dans l'acquisition des nobles vertus.<sup>2214</sup>"}
-])
-
-s644 = find_subpart(p133, "644")
-ensure_hadiths(s644)
-s644['hadiths'].extend([
-    {"number": "1946", "text": "Le Messager d'Allah (s) a dit : J'ai été envoyé pour parfaire les nobles vertus morales.<sup>2215</sup>"},
-    {"number": "1947", "text": "L'Imām al-Ṣādiq (as) a dit : «En vérité, Allah le Béni et le Très-Haut a distingué Son Messager (s) par de hautes vertus morales. Dès lors, examinez-vous ô gens, et si vous les trouvez en vous, alors rendez grâce à Allah et implorez-le pour qu'Il les augmente.» Puis il en cita dix : «La certitude, la frugalité, la patience, la gratitude, la clémence, le bon caractère, la générosité, l'estime de soi, le courage et l'esprit chevaleresque.»<sup>2216</sup>"},
-    {"number": "1948", "text": "Interrogé au sujet des hautes vertus morales, l'Imām 'Alī (as) répondit : [Elles consistent à] pardonner à celui qui a été injuste envers toi, à rétablir une relation avec celui qui a coupé ses liens avec toi, et à donner à celui qui t'a privé et à dire la vérité même à ton détriment.<sup>2217</sup>"}
-])
-
-s645 = find_subpart(p133, "645")
-ensure_hadiths(s645)
-s645['hadiths'].extend([
-    {"number": "1949", "text": "L'Imām 'Alī (as) a dit : La meilleure des nobles vertus est le sacrifice de soi.<sup>2218</sup>"},
-    {"number": "1950", "text": "L'Imām 'Alī (as) a dit : La meilleure des nobles vertus est le pardon du puissant et la générosité du pauvre.<sup>2219</sup>"},
-    {"number": "1951", "text": "L'Imām 'Alī (as) a dit : La meilleure des caractéristiques morales est de parfaire la grâce [envers quelqu'un].<sup>2220</sup>"}
-])
-
-s646 = find_subpart(p133, "646")
-ensure_hadiths(s646)
-s646['hadiths'].extend([
-    {"number": "1952", "text": "L'Imām 'Alī (as) a dit : Améliore ton caractère et Allah allègera et facilitera ton jugement.<sup>2221</sup>"},
-    {"number": "1953", "text": "L'Imām al-Ṣādiq (as) a dit : Le bon caractère fait fondre les péchés comme le soleil fait fondre la glace.<sup>2222</sup>"}
-])
-
-s647 = find_subpart(p133, "647")
-ensure_hadiths(s647)
-s647['hadiths'].extend([
-    {"number": "1954", "text": "Le Messager d'Allah (s) a dit : Avoir un mauvais caractère est un péché impardonnable.<sup>2223</sup>"},
-    {"number": "1955", "text": "Le Messager d'Allah (s) a dit : En vérité, en raison de son mauvais caractère, le serviteur sera au plus bas degré de l'Enfer.<sup>2224</sup>"},
-    {"number": "1956", "text": "Lorsqu'on lui dit : «Telle femme jeûne la journée et veille la nuit en prière, néanmoins, elle a un mauvais caractère et offense ses voisins par sa langue», le Messager d'Allah (s) dit : «Il n'y a rien de bon en elle, elle fait partie des gens de l'Enfer.»<sup>2225</sup>"},
-    {"number": "1957", "text": "L'Imām 'Alī (as) a dit : Le mauvais caractère [suscite] l'adversité de l'existence et la tourmente de l'âme.<sup>2226</sup>"}
-])
-
-s648 = find_subpart(p133, "648")
-ensure_hadiths(s648)
-s648['hadiths'].extend([
-    {"number": "1958", "text": "L'Imām 'Alī (as) a dit : Celui qui a un mauvais caractère lasse et fatigue sa famille.<sup>2227</sup>"},
-    {"number": "1959", "text": "L'Imām 'Alī (as) a dit : Celui qui a une faible tolérance verra son confort se réduire.<sup>2228</sup>"},
-    {"number": "1960", "text": "L'Imām 'Alī (as) a dit : Celui dont le caractère est mauvais verra sa subsistance restreinte.<sup>2229</sup>"},
-    {"number": "1961", "text": "L'Imām al-Ṣādiq (as) a dit : [Manger de] la viande fait croître la chair [du corps], et celui qui abandonne la consommation de la viande durant quarante jours verra son caractère se détériorer.<sup>2230</sup>"},
-    {"number": "1962", "text": "L'Imām al-Ṣādiq (as) a dit : En vérité, le mauvais caractère gâche les bonnes actions, de la même façon que le vinaigre gâche le miel.<sup>2231</sup>"}
-])
-
-s649 = find_subpart(p133, "649")
-ensure_hadiths(s649)
-s649['hadiths'].extend([
-    {"number": "1963", "text": "L'Imām 'Alī (as) a dit : La plus noble des vertus morales est la générosité et la plus bénéfique est la justice.<sup>2232</sup>"},
-    {"number": "1964", "text": "L'Imām 'Alī (as) a dit : Les plus nobles des vertus morales sont l'humilité, la clémence et la mansuétude.<sup>2233</sup>"},
-    {"number": "1965", "text": "Interrogé au sujet des meilleures vertus morales, l'Imām al-Bāqir (as) répondit : La patience et la magnanimité.<sup>2234</sup>"}
-])
-
-s650 = find_subpart(p133, "650")
-ensure_hadiths(s650)
-s650['hadiths'].extend([
-    {"number": "1966", "text": "L'Imām 'Alī (as) a dit : Lorsque vous voyez une qualité louable chez un homme, attendez-vous à en voir d'autres semblables.<sup>2235</sup>"},
-    {"number": "1967", "text": "L'Imām al-Ṣādiq (as) a dit : En vérité, les bonnes vertus morales sont liées les unes aux autres.<sup>2236</sup>"}
+s751 = find_subpart(p147, "751")
+s751['introduction'] = "«Ô vous qui croyez ! Évoquez Allah d'une façon abondante, et glorifiez-Le à la pointe et au déclin du jour.»<sup>2614</sup>"
+s751['hadiths'].extend([
+    {
+        "number": "2320",
+        "text": "Le Messager d'Allah (s) a dit : Vous devez réciter le Coran et multiplier le rappel d'Allah car en vérité, cela est un rappel pour vous dans le ciel et une lumière pour vous sur terre.<sup>2615</sup>"
+    },
+    {
+        "number": "2321",
+        "text": "L'Imām 'Alī (as) a dit : Celui qui pratique le rappel d'Allah en secret aura certainement abondamment pratiqué le rappel d'Allah.<sup>2616</sup>"
+    },
+    {
+        "number": "2322",
+        "text": "L'Imām al-Ṣādiq (as) a dit : Multipliez le rappel d'Allah autant que vous le pouvez à chaque heure de la nuit et du jour, car Allah a ordonné de pratiquer souvent Son rappel.<sup>2617</sup>"
+    },
+    {
+        "number": "2323",
+        "text": "L'Imām al-Ṣādiq (as) a dit : Les glorifications de Fāṭima al-Zahrā (as) font partie du rappel abondant à propos duquel Allah le Tout-Puissant a dit : «Évoquez Allah d'une façon abondante.»<sup>2618,2619</sup>"
+    }
 ])
 
 # ============================================================
-# Chapter 134 (index 135) - L'ALCOOL
+# s752 - L'incitation à pratiquer continuellement le rappel [d'Allah]
 # ============================================================
-p134 = 135
-
-s651 = find_subpart(p134, "651")
-ensure_hadiths(s651)
-s651['hadiths'].extend([
-    {"number": "1968", "text": "Le Messager d'Allah (s) a dit : L'alcool et la foi ne se rassemblent jamais dans la poitrine ou dans le cœur d'un même homme.<sup>2237</sup>"},
-    {"number": "1969", "text": "Le Messager d'Allah (s) a dit : L'alcool est la mère de toutes les indécences et des péchés majeurs.<sup>2238</sup>"},
-    {"number": "1970", "text": "Le Messager d'Allah (s) a dit : Le mal dans sa totalité est rassemblé dans une demeure, et sa clé est la consommation d'alcool.<sup>2239</sup>"}
+s752 = find_subpart(p147, "752")
+s752['hadiths'].extend([
+    {
+        "number": "2324",
+        "text": "Le Messager d'Allah (s) a dit : Le Jour du Jugement, l'homme regrettera chaque heure de sa vie passée durant laquelle il n'a pas pratiqué le rappel d'Allah.<sup>2620</sup>"
+    },
+    {
+        "number": "2325",
+        "text": "L'Imām 'Alī (as) a dit dans l'un de ses entretiens intimes [avec Allah] du mois de Sha'bān : Mon Dieu, inspire-moi la ferveur d'une évocation à une autre, et l'ardeur dans le plaisir d'atteindre Tes Noms et le lieu de Ta Sainteté.<sup>2621</sup>"
+    },
+    {
+        "number": "2326",
+        "text": "L'Imām 'Alī (as) a dit : [Mon Dieu], Je T'implore de prier sur Muḥammad et la famille de Muḥammad, fais en sorte que je sois parmi ceux qui se rappellent continuellement de Toi et qui ne brisent pas leur engagement vis-à-vis de Toi.<sup>2622</sup>"
+    }
 ])
-
-s652 = find_subpart(p134, "652")
-ensure_hadiths(s652)
-s652['hadiths'].extend([
-    {"number": "1971", "text": "L'Imām 'Alī (as) a dit : Allah a imposé… de s'abstenir de la consommation d'alcool pour protéger la raison.<sup>2240</sup>"},
-    {"number": "1972", "text": "L'Imām al-Riḍā (as) a dit : Allah a prohibé l'alcool en raison de la corruption qu'il entraîne et de l'altération de la raison du consommateur qu'il provoque, il les encourage à renier l'existence d'Allah le Tout-Puissant, à Le calomnier Lui et Ses messagers. [Il l'a aussi prohibé] pour toutes les corruptions et crimes qu'il accompagne.<sup>2241</sup>"}
-])
-
-s653 = find_subpart(p134, "653")
-ensure_hadiths(s653)
-s653['hadiths'].extend([
-    {"number": "1973", "text": "L'Imām 'Alī (as) a dit : Celui qui consomme perpétuellement de l'alcool rencontrera Allah le Tout-Puissant en tant qu'adorateur d'idole.<sup>2242</sup>"},
-    {"number": "1974", "text": "L'Imām 'Alī (as) a dit : La prière de celui qui a bu une boisson enivrante ne sera pas acceptée pendant quarante jours et nuits.<sup>2243</sup>"}
-])
-
-s654 = find_subpart(p134, "654")
-ensure_hadiths(s654)
-s654['hadiths'].extend([
-    {"number": "1975", "text": "Le Messager d'Allah (s) a dit : Ne croyez pas le buveur d'alcool lorsqu'il vous parle, ne vous mariez pas avec lui s'il en fait la demande, ne lui rendez pas visite s'il est malade, n'assistez pas à son enterrement s'il meurt, et ne lui confiez pas de dépôt.<sup>2244</sup>"},
-    {"number": "1976", "text": "Le Messager d'Allah (s) a dit : Le buveur d'alcool est comme le souffre, alors restez éloigné de lui afin qu'il ne vous empuantisse pas de la même façon qu'empuantit le souffre.<sup>2245</sup>"}
-])
-
-s655 = find_subpart(p134, "655")
-ensure_hadiths(s655)
-s655['hadiths'].append({
-    "number": "1977",
-    "text": "L'Imām al-Ṣādiq (as) a dit : Ceux qui dans ce bas-monde se sont désaltérés avec de l'alcool mourront assoiffés, seront ressuscités assoiffés et entreront en Enfer assoiffés.<sup>2246</sup>"
-})
-
-s656 = find_subpart(p134, "656")
-ensure_hadiths(s656)
-s656['hadiths'].append({
-    "number": "1978",
-    "text": "<em>Biḥār al-Anwār</em> : Le Messager d'Allah (s) a dit : «Celui qui s'est sevré pour une autre raison qu'Allah sera abreuvé par Allah [au Paradis] du nectar cacheté.» 'Alī (as) dit alors : «Pour une autre raison qu'Allah ?» Il dit : «Oui, par Allah, pour la protection de sa personne.»<sup>2247</sup>"
-})
-
-s657 = find_subpart(p134, "657")
-ensure_hadiths(s657)
-s657['hadiths'].append({
-    "number": "1979",
-    "text": "L'Imām al-Kāẓim (as) a dit : En vérité, Allah le Tout-Puissant n'a pas prohibé l'alcool du fait de son nom, mais Il l'a interdit en raison de ses effets. Ainsi, tout ce qui génère les mêmes effets que l'alcool est [considéré comme] de l'alcool.<sup>2248</sup>"
-})
 
 # ============================================================
-# Chapter 135 (index 136) - LA CRAINTE
+# s753 - Le rappel d'Allah est un bien dans tous les cas
 # ============================================================
-p135 = 136
-
-s658 = find_subpart(p135, "658")
-ensure_hadiths(s658)
-s658['hadiths'].extend([
-    {"number": "1980", "text": "Le Messager d'Allah (s) a dit : La crainte d'Allah est la source de la sagesse.<sup>2249</sup>"},
-    {"number": "1981", "text": "Le Messager d'Allah (s) a dit : Ceux qui occupent le rang le plus haut auprès d'Allah sont ceux qui Le craignent le plus.<sup>2250</sup>"},
-    {"number": "1982", "text": "Le Messager d'Allah (s) a dit : Trois choses sont salutaires : […] la crainte d'Allah dans le secret comme si tu Le voyais, car si tu ne Le vois pas, Lui, en vérité, te voit.<sup>2251</sup>"}
+s753 = find_subpart(p147, "753")
+s753['introduction'] = "«En vérité, il y a dans la création des cieux et de la terre, et dans l'alternance de la nuit et du jour, des signes pour les doués d'intelligence qui, debout, assis, couchés sur leurs côtés, invoquent Allah et méditent sur la création des cieux et de la terre [disant] : «Notre Seigneur ! Tu n'as pas créé cela en vain. Gloire à Toi ! Préserve-nous du châtiment du Feu.»<sup>2623</sup>"
+s753['hadiths'].extend([
+    {
+        "number": "2327",
+        "text": "L'Imām 'Alī (as) a dit dans l'une de ses recommandations à son fils Ḥasan (as) au moment de sa mort : «Pratique le rappel d'Allah en toute situation.»<sup>2624</sup>"
+    },
+    {
+        "number": "2328",
+        "text": "L'Imām al-Ṣādiq (as) a dit : Moïse (as) a dit : «Ô Seigneur, je suis dans une [basse] situation où je considère que Ton rang est trop éminent pour que je pratique Ton rappel [à ce moment précis].» Et Allah lui dit : «Ô Moïse ! Pratique Mon rappel en toute situation.»<sup>2625</sup>"
+    }
 ])
 
-# Write back
+# ============================================================
+# s754 - Ceux qui observent le rappel [d'Allah]
+# ============================================================
+s754 = find_subpart(p147, "754")
+s754['hadiths'].extend([
+    {
+        "number": "2329",
+        "text": "Le Messager d'Allah (s) a dit : Celui qui observe le rappel [d'Allah] au milieu des distraits est comme un combattant [dans la voie d'Allah] au milieu de ceux qui fuient.<sup>2626</sup>"
+    },
+    {
+        "number": "2330",
+        "text": "Le Messager d'Allah (s) a dit : Tout être mourra assoiffé, sauf celui qui observe le rappel d'Allah.<sup>2627</sup>"
+    },
+    {
+        "number": "2331",
+        "text": "Le Messager d'Allah (s) a dit : En vérité, lorsque Moïse ibn 'Imrān (as) s'entretint en secret avec son Seigneur, il dit : «Ô Seigneur ! Es-tu loin de moi pour que je T'appelle, ou bien proche de moi pour que je m'adresse à Toi en chuchotant ?» Et Allah – que Sa gloire soit glorifiée – lui inspira : «Je suis le compagnon [proche] de celui qui observe Mon rappel.»<sup>2628</sup>"
+    },
+    {
+        "number": "2332",
+        "text": "L'Imām 'Alī (as) a dit : Allah embellit le rappel [et la réputation] de celui qui est occupé à observer le rappel d'Allah.<sup>2629</sup>"
+    },
+    {
+        "number": "2333",
+        "text": "L'Imām 'Alī (as) a dit : Celui qui observe le rappel d'Allah – loué soit-Il – se tient en Sa compagnie.<sup>2630</sup>"
+    },
+    {
+        "number": "2334",
+        "text": "L'Imām al-Bāqir (as) a dit : Le croyant est en prière tant qu'il observe le rappel d'Allah, qu'il soit debout, assis ou couché. En vérité, Allah le Très-Haut a dit : «Qui, debout, assis, couchés sur leurs côtés, invoquent Allah.»<sup>2631,2632</sup>"
+    },
+    {
+        "number": "2335",
+        "text": "L'Imām al-Ṣādiq (as) a dit : En vérité, la foudre ne touche jamais celui qui observe le rappel d'Allah le Tout-Puissant.<sup>2633</sup>"
+    }
+])
+
+# ============================================================
+# s755 - Rappelez-vous d'Allah et Il se rappellera de vous
+# ============================================================
+s755 = find_subpart(p147, "755")
+s755['introduction'] = "«Souvenez-vous de Moi, Je me souviendrai de vous ! Remerciez-Moi et ne soyez pas ingrats envers Moi !»<sup>2634</sup>"
+s755['hadiths'].extend([
+    {
+        "number": "2336",
+        "text": "L'Imām al-Ṣādiq (as) a dit : Allah le Très Haut a dit : «Fils d'Adam ! Souviens-toi de Moi en toi-même et Je Me souviendrai de toi en Moi-même. Fils d'Adam ! Souviens-toi de Moi dans ta solitude [en secret] et Je Me souviendrai de toi dans ta solitude [en secret]. Fils d'Adam ! Souviens-toi de Moi en public et Je Me souviendrai de toi devant un public meilleur que le tien.»<sup>2635</sup>"
+    }
+])
+
+# ============================================================
+# s756 - Les fruits du rappel [d'Allah]
+# ============================================================
+s756 = find_subpart(p147, "756")
+s756['introduction'] = "«Ceux qui ont cru et dont les cœurs se tranquillisent au rappel d'Allah. N'est-ce pas par le rappel d'Allah que se tranquillisent les cœurs ?»<sup>2636</sup>"
+s756['hadiths'].extend([
+    {
+        "number": "2337",
+        "text": "Le Messager d'Allah (s) a dit : Le rappel d'Allah est un remède pour les cœurs.<sup>2637</sup>"
+    },
+    {
+        "number": "2338",
+        "text": "Le Messager d'Allah (s) a dit : Celui qui multiplie le rappel d'Allah sera affranchi de l'hypocrisie.<sup>2638</sup>"
+    },
+    {
+        "number": "2339",
+        "text": "Le Messager d'Allah (s) a dit : Allah aimera celui qui multiplie Son rappel.<sup>2639</sup>"
+    },
+    {
+        "number": "2340",
+        "text": "L'Imām 'Alī (as) a dit : Celui qui fait prospérer son cœur en pratiquant constamment le rappel d'Allah verra ses actes s'améliorer, qu'ils soient faits en secret ou en public.<sup>2640</sup>"
+    },
+    {
+        "number": "2341",
+        "text": "L'Imām 'Alī (as) a dit : L'origine de la réforme du cœur se trouve dans le fait de l'occuper avec le rappel d'Allah.<sup>2641</sup>"
+    },
+    {
+        "number": "2342",
+        "text": "L'Imām 'Alī (as) a dit : Allah – loué soit-Il – ravive le cœur et illumine la raison ainsi que les tréfonds du cœur de celui qui pratique le rappel d'Allah.<sup>2642</sup>"
+    },
+    {
+        "number": "2343",
+        "text": "L'Imām 'Alī (as) a dit : Pratiquer le rappel d'Allah est une nourriture pour l'esprit et consiste à tenir compagnie à l'Aimé.<sup>2643</sup>"
+    },
+    {
+        "number": "2344",
+        "text": "L'Imām 'Alī (as) a dit : Pratiquez souvent le rappel d'Allah, car en vérité, cela illumine les cœurs.<sup>2644</sup>"
+    },
+    {
+        "number": "2345",
+        "text": "L'Imām 'Alī (as) a dit : La pratique continuelle du rappel [d'Allah] illumine le cœur et l'esprit.<sup>2645</sup>"
+    },
+    {
+        "number": "2346",
+        "text": "L'Imām 'Alī (as) a dit : En vérité, Allah – loué soit-Il – a fait en sorte que la pratique de [Son] rappel polisse les cœurs ; par cela, ils entendront après avoir été sourds, ils verront après avoir été malvoyants, et ils seront guidés après avoir été indociles.<sup>2646</sup>"
+    },
+    {
+        "number": "2347",
+        "text": "L'Imām 'Alī (as) a dit dans une invocation : Ô Celui dont le Nom est un remède et le rappel une guérison.<sup>2647</sup>"
+    },
+    {
+        "number": "2348",
+        "text": "L'Imām 'Alī (as) a dit : Le rappel [d'Allah] est la clé de la familiarité et de la proximité [avec Lui].<sup>2648</sup>"
+    },
+    {
+        "number": "2349",
+        "text": "L'Imām 'Alī (as) a dit : Si tu vois qu'Allah – loué soit-Il – te rend familier de Son rappel, alors Il t'aime ; et si tu vois qu'Allah te rend familier de Sa création et qu'Il t'éloigne de Son rappel, alors Il te déteste.<sup>2649</sup>"
+    },
+    {
+        "number": "2350",
+        "text": "L'Imām 'Alī (as) a dit : Le rappel d'Allah permet de repousser Satan.<sup>2650</sup>"
+    },
+    {
+        "number": "2351",
+        "text": "L'Imām 'Alī (as) a dit : Le rappel d'Allah polit les poitrines et apaise les cœurs.<sup>2651</sup>"
+    },
+    {
+        "number": "2352",
+        "text": "L'Imām 'Alī (as) a dit : Le rappel [d'Allah] élargit la poitrine.<sup>2652</sup>"
+    }
+])
+
+# ============================================================
+# s757 - L'incitation à pratiquer le rappel d'Allah dans certaines situations
+# ============================================================
+s757 = find_subpart(p147, "757")
+s757['hadiths'].extend([
+    {
+        "number": "2353",
+        "text": "<b>a - Lors de la rencontre de l'ennemi :</b> «Ô vous qui croyez ! Lorsque vous rencontrez une troupe [ennemie], soyez fermes, et invoquez beaucoup Allah afin de réussir.»<sup>2653</sup><br>L'Imām 'Alī (as) a dit : Lorsque vous êtes confrontés à votre ennemi durant le combat, diminuez vos paroles et multipliez le rappel d'Allah le Tout-Puissant.<sup>2654</sup>"
+    },
+    {
+        "number": "2354",
+        "text": "<b>b - Lorsque l'on entre dans les marchés :</b> L'Imām 'Alī (as) a dit : Multipliez le rappel d'Allah le Tout-Puissant lorsque vous entrez dans les marchés quand les gens sont occupés, car en vérité, cela permet d'effacer les péchés et d'augmenter les bonnes actions. Ainsi, vous ne serez pas inscrits parmi les distraits.<sup>2655</sup>"
+    },
+    {
+        "number": "2355",
+        "text": "<b>c - Lors de malheurs, lorsque l'on rend un jugement ou que l'on partage :</b> Le Messager d'Allah (s) a dit : Pratique le rappel d'Allah dans ta tristesse quand tu es triste, avec ta langue quand tu juges, et avec ta main quand tu dois effectuer un partage.<sup>2656</sup>"
+    },
+    {
+        "number": "2356",
+        "text": "<b>d - Lors de colère :</b> Le Messager d'Allah (s) a dit : Allah a révélé à l'un de Ses prophètes : «Ô fils d'Adam ! Rappelle-toi de Moi dans ta colère et Je me rappellerai de toi dans Ma colère. Et ainsi, Je ne t'annihilerai pas avec ceux que J'annihilerai.»<sup>2657</sup>"
+    },
+    {
+        "number": "2357",
+        "text": "<b>e - Dans la solitude et lors de plaisirs :</b> L'Imām al-Bāqir (as) a dit : Il est écrit dans la Thora : «[...] Ô Moïse ! [...] Rappelle-toi de Moi dans la solitude de la joie des plaisirs, et Je me rappellerai de toi lors de tes moments de négligence.»<sup>2658</sup>"
+    }
+])
+
+# ============================================================
+# s758 - La vérité profonde du rappel [d'Allah]
+# ============================================================
+s758 = find_subpart(p147, "758")
+s758['hadiths'].extend([
+    {
+        "number": "2358",
+        "text": "Le Messager d'Allah (s) a dit : Celui qui obéit à Allah le Tout-Puissant aura pratiqué le rappel d'Allah même si sa prière, son jeûne et sa psalmodie du Coran sont modestes.<sup>2659</sup>"
+    },
+    {
+        "number": "2359",
+        "text": "L'Imām al-Ṣādiq (as) a dit en commentant la parole du Très-Haut «Et le rappel d'Allah est certes ce qu'il y a de plus grand» : [Cela signifie] se rappeler d'Allah concernant ce qu'Il a rendu licite et illicite.<sup>2661</sup>"
+    },
+    {
+        "number": "2360",
+        "text": "L'Imām al-Ṣādiq (as) a dit : Il y a deux types de rappel [d'Allah] : un rappel sincère en accord avec le cœur, et un rappel exclusif qui fait disparaître le rappel de tout autre qu'Allah.<sup>2662</sup>"
+    },
+    {
+        "number": "2361",
+        "text": "L'Imām al-Ṣādiq (as) a dit : Pratique le rappel d'Allah pour qu'Il se rappelle de toi, car en vérité, Il se rappelle de toi alors qu'Il n'a nul besoin de toi. Ainsi, Son rappel de toi est plus noble, plus désirable, et plus complet que ton rappel de Lui, et il le précède... Dès lors, que celui qui veut pratiquer le rappel d'Allah le Très-Haut sache que tant qu'Allah ne se rappelle pas du serviteur en lui donnant ainsi la réussite [et la grâce] de se rappeler de Lui, le serviteur ne sera pas capable de se souvenir de Lui [et de pratiquer Son rappel].<sup>2663</sup>"
+    },
+    {
+        "number": "2362",
+        "text": "L'Imām al-Riḍā (as) a dit : Celui qui pratique le rappel d'Allah et qui n'anticipe pas Sa rencontre se sera moqué de sa propre personne.<sup>2664</sup>"
+    }
+])
+
+# ============================================================
+# s759 - Ce qui suscite la permanence du rappel [d'Allah]
+# ============================================================
+s759 = find_subpart(p147, "759")
+s759['hadiths'].extend([
+    {
+        "number": "2363",
+        "source": "Biḥār al-Anwār",
+        "text": "Dans le ḥadīth de l'ascension [du Prophète (s), Allah le Très-Haut a dit] : «Ô Ahmad... Pratique Mon rappel de façon continue.» Il demanda : «Ô Seigneur, comment puis-je pratiquer Ton rappel de façon continue ?» Il répondit : «En t'isolant des gens, en méprisant le monde et la vie, et en vidant ton ventre et ta maison [des délices] de ce monde.»<sup>2665</sup>"
+    },
+    {
+        "number": "2364",
+        "text": "L'Imām 'Alī (as) a dit : Celui qui aime une chose est attaché à en pratiquer le rappel.<sup>2666</sup>"
+    }
+])
+
+# ============================================================
+# s760 - Ce qui empêche le rappel [d'Allah]
+# ============================================================
+s760 = find_subpart(p147, "760")
+s760['introduction'] = "«Ô vous qui avez cru ! Que ni vos biens ni vos enfants ne vous distraient du rappel d'Allah. Et quiconque fait cela... alors ceux-là seront les perdants.»<sup>2667</sup><br><br>«Le Diable ne veut que jeter parmi vous, à travers le vin et le jeu de hasard, l'inimitié et la haine, et vous détourner de votre rappel d'Allah et de la ṣalāt. Allez-vous donc y mettre fin ?»<sup>2668</sup>"
+s760['hadiths'].extend([
+    {
+        "number": "2365",
+        "text": "L'Imām 'Alī (as) a dit : Il n'y a rien de pire parmi les transgressions que de suivre ses [mauvais] désirs et de persévérer dans ses péchés."
+    }
+])
+
+# Save
 new_content = content[:start_idx] + json.dumps(data, ensure_ascii=False, indent=4) + content[end_idx:]
 with open('aune-sagesse-data.js', 'w', encoding='utf-8') as f:
     f.write(new_content)
 
-print("✅ Done! Hadiths 1919-1982 injected (pages 348-357)")
-print("Chapters: 132 (+1919-1926), 133 (1927-1967), 134 (1968-1979), 135 (1980-1982)")
-print(f"Total hadiths added: 64")
+print("Batch 29 done: hadiths 2315-2365 added to Part 147 (Le rappel dhikr)")
