@@ -16130,14 +16130,80 @@ const AUNE_SAGESSE = [
                     {
                         "number": "2699",
                         "text": "L'Imām al-Bāqir (as) a dit : Le Jour du Jugement, Allah transformera les biens de celui qui refusait de s'acquitter de la zakāt en un cobra de feu pourvu de deux glandes venimeuses qui s'enroulera autour de lui, et il lui sera dit : «Accroche-toi à lui comme il s'est accroché à toi dans la vie terrestre.» C'est ce que signifie la parole d'Allah : «Le Jour de la Résurrection, on leur attachera autour du cou ce qu'ils ont gardé avec avarice».<sup>3044, 3045</sup>"
+                    },
+                    {
+                        "number": "2700",
+                        "text": "L'Imām al-Ṣādiq (as) a dit : Celui qui a refusé de s'acquitter de la zakāt demandera à retourner [sur terre] à l'instant de sa mort, selon la parole d'Allah le Tout-Puissant : «Puis, quand la mort vient à l'un d'eux, il dit : «Mon Seigneur ! Fais-moi revenir [sur terre], afin que je fasse du bien dans ce que je délaissais.»<sup>3046, 3047</sup>"
+                    },
+                    {
+                        "number": "2701",
+                        "text": "L'Imām al-Ṣādiq (as) a dit : Les voleurs sont de trois sortes : celui qui refuse de s'acquitter de la zakāt, celui qui dépense illicitement la dot de sa femme, et celui qui s'endette sans avoir l'intention de rembourser.<sup>3048</sup>"
+                    },
+                    {
+                        "number": "2702",
+                        "text": "L'Imām al-Ṣādiq (as) a dit : Celui qui refuse de s'acquitter [même d'une aussi petite somme qu'] un seizième de dirham de la zakāt pourra tout autant mourir en étant juif ou chrétien.<sup>3049</sup>"
                     }
                 ]
             },
             {
-                "title": "852 - Les destinataires de la zakāt"
+                "title": "852 - Les destinataires de la zakāt",
+                "hadiths": [
+                    {
+                        "number": "2703",
+                        "text": "L'Imām al-Ṣādiq (as) a dit en commentant la parole du Très-Haut : «Les aumônes sont destinées aux pauvres»<sup>3051</sup> : Le pauvre est celui qui ne mendie pas auprès des gens [malgré sa pauvreté] ; le nécessiteux vit dans des conditions plus difficiles ; et le désespéré vit dans les conditions les plus âpres.<sup>3052</sup><br>(Voir également : 232. La charité, section 1116)"
+                    }
+                ],
+                "introduction": "«<i>Les aumônes (ṣadaqāt) sont destinées aux pauvres, aux nécessiteux, à ceux qui y travaillent, à ceux dont les cœurs sont à gagner [à l'islam], à l'affranchissement des jougs, à ceux qui sont lourdement endettés, dans le sentier d'Allah et pour le voyageur. C'est un décret d'Allah ! Et Allah est Omniscient et Sage.</i>»<sup>3050</sup>"
             },
             {
-                "title": "853 - Toute chose a une zakāt"
+                "title": "853 - Toute chose a une zakāt",
+                "hadiths": [
+                    {
+                        "number": "2704",
+                        "text": "L'Imām 'Alī (as) a dit : La zakāt de la puissance est l'équité.<sup>3053</sup>"
+                    },
+                    {
+                        "number": "2705",
+                        "text": "L'Imām 'Alī (as) a dit : La zakāt de la beauté est la chasteté.<sup>3054</sup>"
+                    },
+                    {
+                        "number": "2706",
+                        "text": "L'Imām 'Alī (as) a dit : La zakāt de l'aisance est la bienfaisance envers les voisins et le maintien des liens familiaux.<sup>3055</sup>"
+                    },
+                    {
+                        "number": "2707",
+                        "text": "L'Imām 'Alī (as) a dit : La zakāt de la santé est l'effort dans l'obéissance à Allah.<sup>3056</sup>"
+                    },
+                    {
+                        "number": "2708",
+                        "text": "L'Imām 'Alī (as) a dit : La zakāt du courage est le jihād dans le sentier d'Allah.<sup>3057</sup>"
+                    },
+                    {
+                        "number": "2709",
+                        "text": "L'Imām 'Alī (as) a dit : Jeûnez, car c'est la zakāt du corps.<sup>3058</sup>"
+                    },
+                    {
+                        "number": "2710",
+                        "text": "L'Imām al-Ṣādiq (as) a dit : En vérité, toute chose a une zakāt, et la zakāt du savoir est de l'enseigner à ceux qui le méritent.<sup>3059</sup>"
+                    },
+                    {
+                        "number": "2711",
+                        "text": "L'Imām al-Ṣādiq (as) a dit : La conduite bonne et convenable est la zakāt des bienfaits ; l'intercession est la zakāt d'une haute position ; les maladies sont la zakāt des corps ; l'amnistie est la zakāt de la victoire. Ainsi, toute chose dont tu donnes la zakāt est protégée du fait qu'on te la retire.<sup>3060</sup>"
+                    }
+                ]
+            },
+            {
+                "title": "854 - La zakāt de l' ‘īd al-Fitr (l'aumône légale obligatoire de la fin du Ramadan)",
+                "hadiths": [
+                    {
+                        "number": "2712",
+                        "text": "L'Imām 'Alī (as) a dit : Allah utilise la zakāt de la fin du Ramadan de celui qui s'en acquitte pour compenser tout déficit [éventuel] de zakāt payée sur ses biens.<sup>3061</sup>"
+                    },
+                    {
+                        "number": "2713",
+                        "text": "L'Imām al-Ṣādiq (as) a dit : En vérité, donner la zakāt [de l' ‘īd al-Fitr] complète et achève le jeûne, tout comme l'envoi de prières sur le Prophète (s) complète et achève la prière ; ceci car en vérité, le jeûne de celui qui jeûne et ne s'est pas acquitté intentionnellement de la zakāt est invalide.<sup>3062</sup>"
+                    }
+                ]
             }
         ]
     },
@@ -16148,13 +16214,39 @@ const AUNE_SAGESSE = [
                 "title": "855 - La connaissance du temps"
             },
             {
-                "title": "856 - Le blâme du fait de faire confiance au temps"
+                "title": "856 - Le blâme du fait de faire confiance au temps",
+                "hadiths": [
+                    {
+                        "number": "2721",
+                        "text": "L'Imām 'Alī (as) a dit : Celui qui se préoccupe du temps sera [en retour] accaparé par lui.<sup>3070</sup>"
+                    }
+                ]
             },
             {
-                "title": "857 - Le blâme de l'obstination contre le temps"
+                "title": "857 - Le blâme de l'obstination contre le temps",
+                "hadiths": [
+                    {
+                        "number": "2722",
+                        "text": "L'Imām 'Alī (as) a dit : Celui qui blâme le temps verra ses reproches durer.<sup>3071</sup>"
+                    },
+                    {
+                        "number": "2723",
+                        "text": "L'Imām 'Alī (as) a dit : Celui qui s'obstine contre le temps sera mis au pas et contraint par lui, et celui qui se rend et s'abandonne à lui ne sera pas [non plus] préservé.<sup>3072</sup>"
+                    },
+                    {
+                        "number": "2724",
+                        "text": "L'Imām 'Alī (as) a dit : Celui qui s'obstine contre le temps s'épuisera, et celui qui lui voue du ressentiment finira en colère.<sup>3073</sup>"
+                    }
+                ]
             },
             {
-                "title": "858 - L'incrimination du temps"
+                "title": "858 - L'incrimination du temps",
+                "hadiths": [
+                    {
+                        "number": "2725",
+                        "text": "'Uyūn Akhbār al-Riḍā (as) : Al-Rayyān ibn al-Ṣalt : Al-Riḍā (as) m'a récité ces vers composés par 'Abd al-Muṭṭalib :<br><i>Les gens dans leur ensemble incriminent le temps alors que le défaut du temps n'est que nous-mêmes ;<br>Nous incriminons notre temps, alors que le défaut est en nous ;<br>Si le temps pouvait parler, il nous aurait brocardés.<br>En vérité, le loup délaisse [ne mange pas] la chair du loup, alors que nous nous entredévorons ouvertement.<br>Nous revêtons, pour tromper, de belles pelisses, malheur à l'étranger lorsqu'il vient à nous.</i><sup>3074</sup>"
+                    }
+                ]
             }
         ]
     },
@@ -16162,10 +16254,43 @@ const AUNE_SAGESSE = [
         "title": "173 - L'ADULTÈRE",
         "subparts": [
             {
-                "title": "859 - L'interdiction de l'adultère"
+                "title": "859 - L'interdiction de l'adultère",
+                "introduction": "«<i>N'approchez pas l'adultère. En vérité, c'est une turpitude et quel mauvais chemin !</i>»<sup>3075</sup><br><br><span class=\"reference-note\">(Voir également : Coran 24:33, 25:68)</span>",
+                "hadiths": [
+                    {
+                        "number": "2726",
+                        "text": "Le Messager d'Allah (s) a dit : La colère d'Allah le Tout-Puissant sera sévère vis-à-vis de la femme mariée qui a rempli son regard [de désir] pour un homme autre que son mari ou un proche parent [non mari]. Si elle agit ainsi, Allah anéantira tout acte qu'elle accomplit, et si elle fait entrer un autre homme dans son lit, Allah la fera brûler de plein droit dans le Feu après l'avoir châtiée dans sa tombe.<sup>3076</sup>"
+                    },
+                    {
+                        "number": "2727",
+                        "text": "L'Imām 'Alī (as) a dit : Celui qui a un sens de l'honneur ne commet jamais d'adultère.<sup>3077</sup>"
+                    },
+                    {
+                        "number": "2728",
+                        "text": "L'Imām al-Ṣādiq (as) a dit : Le Jour du Jugement, la personne la plus sévèrement châtiée sera un homme qui a déposé sa semence dans un utérus qui lui était interdit.<sup>3078</sup>"
+                    },
+                    {
+                        "number": "2729",
+                        "text": "L'Imām al-Riḍā (as) a dit : L'adultère a été interdit en raison de la turpitude qu'il engendre dont le meurtre, la perte des filiations, le délaissement de l'éducation des enfants, la corruption des lignées, et toutes sortes d'autres turpitudes qui ressemblent à cela.<sup>3079</sup>"
+                    }
+                ]
             },
             {
-                "title": "860 - Les conséquences de l'adultère"
+                "title": "860 - Les conséquences de l'adultère",
+                "hadiths": [
+                    {
+                        "number": "2730",
+                        "text": "Le Messager d'Allah (s) a dit : Ô 'Alī, l'adultère a six conséquences ; trois dans ce bas-monde, et trois dans l'Au-delà. Dans ce bas-monde, il ruine la beauté, précipite la mort, et coupe l'accès à la subsistance. Dans l'Au-delà, il entraîne un jugement funeste, le courroux du Tout-Miséricordieux, et le séjour éternel dans le Feu.<sup>3080</sup>"
+                    },
+                    {
+                        "number": "2731",
+                        "text": "L'Imām 'Alī (as) a dit : L'adultère suscite la pauvreté.<sup>3081</sup>"
+                    },
+                    {
+                        "number": "2732",
+                        "text": "L'Imām al-Bāqir (as) a dit : Nous avons trouvé ceci écrit dans le livre du Messager d'Allah (s) : «Si l'adultère prédomine après moi [après mon décès], les morts subites augmenteront.»<sup>3082</sup>"
+                    }
+                ]
             },
             {
                 "title": "861 - Chaque membre a une part d'adultère"
@@ -16176,13 +16301,60 @@ const AUNE_SAGESSE = [
         "title": "174 - LE RENONCEMENT",
         "subparts": [
             {
-                "title": "862 - La vertu du renoncement"
+                "title": "862 - La vertu du renoncement",
+                "hadiths": [
+                    {
+                        "number": "2739",
+                        "text": "L'Imām 'Alī (as) a dit : En vérité, parmi les qualités qui permettent de faire grandir la foi figure le renoncement aux plaisirs de ce monde.<sup>3090</sup>"
+                    },
+                    {
+                        "number": "2740",
+                        "text": "L'Imām al-Bāqir (as) a dit : Dans l'un de Ses entretiens intimes avec Moïse (as), Allah a dit : Le meilleur ornement de ceux qui cherchent à s'embellir [pour Moi] est le renoncement aux plaisirs de ce monde dont ils peuvent se passer.<sup>3091</sup>"
+                    },
+                    {
+                        "number": "2741",
+                        "text": "L'Imām al-Ṣādiq (as) a dit : Tout le bien a été placé dans un lieu, et sa clé est le renoncement aux plaisirs de ce monde.<sup>3092</sup>"
+                    }
+                ]
             },
             {
-                "title": "863 - La signification réelle du renoncement"
+                "title": "863 - La signification réelle du renoncement",
+                "hadiths": [
+                    {
+                        "number": "2742",
+                        "text": "Le Messager d'Allah (s) a dit : Le renoncement aux plaisirs de ce monde consiste à réduire ses espoirs [en lui], à remercier pour chaque grâce, ainsi qu'à faire preuve de piété et à éviter tout ce qu'Allah a interdit.<sup>3094</sup>"
+                    },
+                    {
+                        "number": "2743",
+                        "text": "Le Messager d'Allah (s) a dit : Le renoncement n'est pas de s'interdire ce qui est licite, mais c'est de trouver plus sûr ce qu'il y a entre les mains d'Allah que ce qu'il y a entre ses propres mains.<sup>3095</sup>"
+                    },
+                    {
+                        "number": "2744",
+                        "text": "L'Imām 'Alī (as) a dit : Le renoncement est résumé dans deux phrases [du Coran, dans lequel] Allah le Très-Haut a dit : «<i>Afin que vous ne vous tourmentiez pas au sujet de ce qui vous a échappé, ni n'exultiez pour ce qu'Il vous a donné. Et Allah n'aime point tout présomptueux plein de gloriole.</i>»<sup>3096</sup> Ainsi, celui qui ne regrette pas le passé ni ne se réjouit des biens qu'il obtient aura réuni les deux aspects du renoncement.<sup>3097</sup>"
+                    },
+                    {
+                        "number": "2745",
+                        "text": "L'Imām al-Ṣādiq (as) a dit : Le renoncement est la clé de la porte de l'Au-delà et de l'immunité vis-à-vis du Feu, et il consiste à s'abstenir de toute chose qui t'occupe au détriment d'Allah, et ce sans regretter sa perte, sans admirer le fait de l'avoir délaissée, sans attente d'en être délivré, sans rechercher des louanges pour cela ni aucune contrepartie. Il faut plutôt voir sa perte comme une source de repos et sa présence comme un vice, de telle sorte que tu fuies toujours le vice et que tu recherches le repos.<sup>3098</sup>"
+                    }
+                ],
+                "introduction": "«<i>Afin que vous ne vous tourmentiez pas au sujet de ce qui vous a échappé, ni n'exultiez pour ce qu'Il vous a donné. Et Allah n'aime point tout présomptueux plein de gloriole.</i>»<sup>3093</sup>"
             },
             {
-                "title": "864 - Les caractéristiques de celui qui renonce"
+                "title": "864 - Les caractéristiques de celui qui renonce",
+                "hadiths": [
+                    {
+                        "number": "2746",
+                        "text": "L'Imām 'Alī (as) a dit : Celui qui renonce aux plaisirs de ce monde est tel que les choses interdites ne vainquent pas sa patience [et sa persévérance dans la voie d'Allah], et que l'obtention des choses licites ne le détourne pas de la gratitude [envers Allah].<sup>3099</sup>"
+                    },
+                    {
+                        "number": "2747",
+                        "text": "L'Imām 'Alī (as) a dit : En vérité, ceux qui renoncent aux plaisirs de ce monde sont tels que leurs cœurs pleurent même s'ils rient [en apparence], ils ressentent un profond chagrin même s'ils manifestent de la joie [en apparence], et ils sont remplis de colère contre eux-mêmes même s'ils se réjouissent de ce qui leur a été accordé comme subsistance.<sup>3100</sup>"
+                    },
+                    {
+                        "number": "2748",
+                        "text": "Interrogé au sujet de celui qui renonce aux plaisirs de ce monde, l'Imām al-Ṣādiq (as) a dit : C'est celui qui délaisse les choses licites de ce monde par crainte des comptes [et du Jugement à leur sujet], et qui délaisse les choses illicites par crainte de subir un châtiment à cause d'elles.<sup>3101</sup>"
+                    }
+                ]
             },
             {
                 "title": "865 - Ce qui suscite le renoncement"
@@ -16191,7 +16363,41 @@ const AUNE_SAGESSE = [
                 "title": "866 - Les fruits du renoncement"
             },
             {
-                "title": "867 - Celui qui fait preuve du plus grand renoncement"
+                "title": "867 - Celui qui fait preuve du plus grand renoncement",
+                "hadiths": [
+                    {
+                        "number": "2756",
+                        "text": "L'Imām 'Alī (as) a dit : Celui qui a renoncé aux plaisirs de ce monde sans se préoccuper de sa bassesse ni rivaliser pour sa gloire sera guidé par Allah sans besoin de la guidance d'une créature, Il lui accordera le savoir sans besoin d'étudier, Il ancrera la sagesse dans sa poitrine et Il la répandra sur sa langue.<sup>3109</sup>"
+                    },
+                    {
+                        "number": "2757",
+                        "text": "L'Imām 'Alī (as) a dit : Renonce aux plaisirs de ce monde et la miséricorde se répandra sur toi.<sup>3110</sup>"
+                    },
+                    {
+                        "number": "2758",
+                        "text": "L'Imām 'Alī (as) a dit : Le renoncement aux plaisirs de ce monde est la plus grande source de repos.<sup>3111</sup>"
+                    },
+                    {
+                        "number": "2759",
+                        "text": "L'Imām Zayn al-'Ābidīn (as) a dit : Celui qui renonce aux plaisirs de ce monde fera facilement face à ses malheurs et ils ne l'affecteront pas.<sup>3112</sup>"
+                    },
+                    {
+                        "number": "2760",
+                        "text": "L'Imām al-Ṣādiq (as) a dit : Il est interdit à vos cœurs de goûter la douceur de la foi tant qu'ils ne renoncent pas aux plaisirs de ce monde.<sup>3113</sup>"
+                    },
+                    {
+                        "number": "2761",
+                        "text": "Le Messager d'Allah (s) a dit : Celui qui fait preuve du plus grand renoncement est celui qui s'abstient des choses illicites.<sup>3114</sup>"
+                    },
+                    {
+                        "number": "2762",
+                        "text": "L'Imām 'Alī (as) a dit : Ne sois pas de ceux qui aspirent à l'Au-delà en agissant en fonction du monde terrestre... Ceux-là parlent de ce bas-monde comme ceux qui y ont renoncé, tout en y agissant à la manière de ceux qui le désirent.<sup>3115</sup>"
+                    },
+                    {
+                        "number": "2763",
+                        "text": "L'Imām 'Alī (as) a dit : Le meilleur renoncement est de cacher son renoncement.<sup>3116</sup>"
+                    }
+                ]
             }
         ]
     },
@@ -16199,28 +16405,169 @@ const AUNE_SAGESSE = [
         "title": "175 - LE MARIAGE",
         "subparts": [
             {
-                "title": "868 - L'incitation au mariage"
+                "title": "868 - L'incitation au mariage",
+                "hadiths": [
+                    {
+                        "number": "2764",
+                        "text": "L'Imām 'Alī (as) a dit : Si celui qui a renoncé [aux plaisirs de ce monde] fuit les gens, recherche-le, et si celui qui y a renoncé recherche la compagnie des gens, fuis-le.<sup>3117</sup>"
+                    },
+                    {
+                        "number": "2765",
+                        "text": "L'Imām Zayn al-'Ābidīn (as) a dit : Allah a dit : Ô fils d'Adam, sois satisfait de ce que Je t'ai donné, tu seras celui qui fait le plus preuve de renoncement parmi les gens.<sup>3118</sup>"
+                    },
+                    {
+                        "number": "2766",
+                        "text": "L'Imām al-Kāẓim (as) a dit : Celui qui parmi vous est le plus patient face aux malheurs est celui qui a le plus renoncé aux plaisirs de ce monde.<sup>3119</sup>"
+                    },
+                    {
+                        "number": "2767",
+                        "text": "Le Messager d'Allah (s) a dit : Celui qui aspire à rencontrer Allah en étant pur et purifié doit Le rencontrer accompagné de sa femme.<sup>3122</sup>"
+                    },
+                    {
+                        "number": "2768",
+                        "text": "Le Messager d'Allah (s) a dit : Aucune institution en islam n'est plus aimée par Allah le Tout-Puissant et plus estimée que le mariage.<sup>3123</sup>"
+                    }
+                ],
+                "introduction": "«<i>Mariez les célibataires d'entre vous et les gens de bien parmi vos esclaves, hommes et femmes. S'ils sont pauvres, Allah les rendra riches par Sa grâce. Car [la grâce d'] Allah est immense et Il est Omniscient.</i>»<sup>3120</sup><br><br>«<i>Et parmi Ses signes Il a créé de vous, pour vous, des épouses afin que vous trouviez auprès d'elles votre quiétude, et a mis entre vous de l'affection et de la bonté. Il y a en cela des signes pour les gens qui réfléchissent.</i>»<sup>3121</sup><br><br><span class=\"reference-note\">(Voir également : Coran 3:39, 16:72, 30:32, 25:74)</span>"
             },
             {
-                "title": "869 - Le blâme des célibataires"
+                "title": "869 - Le blâme des célibataires",
+                "hadiths": [
+                    {
+                        "number": "2769",
+                        "text": "Le Messager d'Allah (s) a dit : Le mariage est ma tradition ; dès lors, celui qui rejette ma tradition ne fait pas partie de moi.<sup>3124</sup>"
+                    },
+                    {
+                        "number": "2770",
+                        "text": "Le Messager d'Allah (s) a dit : Lorsqu'une jeune personne se marie au début de sa jeunesse, son démon intérieur crie de rage : «Malheur à elle, malheur à elle ! Elle a préservé de moi deux tiers de sa religion.» Dès lors, que le serviteur fasse preuve de piété et craigne Allah pour le tiers restant.<sup>3125</sup>"
+                    },
+                    {
+                        "number": "2771",
+                        "text": "Le Messager d'Allah (s) a dit : Lorsque le serviteur se marie, en réalité, il complète la moitié de sa foi. Dès lors, qu'il fasse preuve de piété et craigne Allah dans la seconde moitié.<sup>3126</sup>"
+                    },
+                    {
+                        "number": "2772",
+                        "text": "Le Messager d'Allah (s) a dit : Une personne mariée endormie est meilleure auprès d'Allah qu'une personne célibataire qui jeûne et passe sa nuit en prière.<sup>3127</sup>"
+                    },
+                    {
+                        "number": "2773",
+                        "text": "Le Messager d'Allah (s) a dit : Prenez un conjoint car en vérité, cela suscitera une augmentation de votre subsistance.<sup>3128</sup>"
+                    },
+                    {
+                        "number": "2774",
+                        "text": "Le Messager d'Allah (s) a dit : Mariez les célibataires parmi vous car en vérité, Allah embellira [par cela] leurs caractéristiques morales, Il augmentera leur subsistance, et Il accroîtra leur noblesse.<sup>3129</sup>"
+                    },
+                    {
+                        "number": "2775",
+                        "text": "L'Imām al-Ṣādiq (as) a dit : Deux raka'āt de prière accomplis par une personne mariée sont meilleurs que soixante-dix raka'āt accomplis par une personne non mariée.<sup>3130</sup>"
+                    },
+                    {
+                        "number": "2776",
+                        "text": "Le Messager d'Allah (s) a dit : Les pires parmi vos morts sont les célibataires.<sup>3131</sup>"
+                    },
+                    {
+                        "number": "2777",
+                        "text": "Le Messager d'Allah (s) a dit : Les pires d'entre vous sont les célibataires. Deux raka'āt de prière accomplis par une personne mariée sont meilleurs que soixante-dix raka'āt de prière accomplis par une personne non mariée.<sup>3132</sup>"
+                    }
+                ]
             },
             {
-                "title": "870 - La rétribution de ceux qui aident leurs frères [musulmans] à se marier"
+                "title": "870 - La rétribution de ceux qui aident leurs frères [musulmans] à se marier",
+                "hadiths": [
+                    {
+                        "number": "2778",
+                        "text": "L'Imām al-Ṣādiq (as) a dit : Celui qui aide une personne célibataire à se marier sera parmi ceux qu'Allah le Tout-Puissant regardera [avec miséricorde] le Jour de la Résurrection.<sup>3133</sup>"
+                    },
+                    {
+                        "number": "2779",
+                        "text": "L'Imām al-Kāẓim (as) a dit : Trois types de personnes seront ombragées par l'ombre du Trône d'Allah le Jour où il n'y aura d'ombre que son ombre : celle qui a aidé son frère musulman à se marier, celle qui l'a servi, et celle qui a caché [ses fautes].<sup>3134</sup>"
+                    }
+                ]
             },
             {
-                "title": "871 - L'incitation à hâter le mariage des jeunes filles"
+                "title": "871 - L'incitation à hâter le mariage des jeunes filles",
+                "hadiths": [
+                    {
+                        "number": "2780",
+                        "text": "L'Imām al-Riḍā (as) a dit : L'Archange Gabriel (as) descendit auprès du Prophète (s) et dit : «Ô Muḥammad, en vérité, ton Seigneur te salue et te dit : «En vérité, les jeunes filles parmi les femmes sont semblables aux fruits de l'arbre : lorsque le fruit arrive à maturité, rien ne peut le préserver si ce n'est de le récolter, sans quoi le soleil le détériorera et le vent l'altérera. De même, lorsque les jeunes filles arrivent à maturité, leur seul recours est le mari, sinon, elles ne seront pas préservées de la tentation.»» Le Messager d'Allah (s) monta alors sur le minbar, rassembla les gens, et porta à leur connaissance ce qu'Allah le Tout-Puissant avait ordonné.<sup>3135</sup>"
+                    }
+                ]
             },
             {
-                "title": "872 - L'importance accordée à la religion lors du choix d'un conjoint"
+                "title": "872 - L'importance accordée à la religion lors du choix d'un conjoint",
+                "hadiths": [
+                    {
+                        "number": "2781",
+                        "text": "Le Messager d'Allah (s) a dit : Celui qui se marie avec une femme uniquement pour sa beauté ne trouvera pas en elle ce qu'il aime, et celui qui se marie avec elle pour son argent sera confié par Allah à ce dernier. Dès lors, cherchez à [épouser] celles qui sont religieuses.<sup>3136</sup>"
+                    },
+                    {
+                        "number": "2782",
+                        "text": "Le Messager d'Allah (s) a dit : Il ne faut pas privilégier la beauté du visage d'une femme aux dépens de la beauté de sa foi.<sup>3137</sup>"
+                    },
+                    {
+                        "number": "2783",
+                        "text": "Le Messager d'Allah (s) a dit : Si quelqu'un dont la religion et l'intégrité vous satisfont vient [vous faire une proposition de mariage], alors mariez-vous avec lui. Si vous ne le faites pas, la discorde et la corruption prévaudront sur terre.<sup>3138</sup>"
+                    },
+                    {
+                        "number": "2784",
+                        "text": "L'Imām Hasan (as) a dit à un homme qui lui avait demandé conseil au sujet du mariage de sa fille : Marie-la à un homme pieux car s'il l'aime, il l'honorera et s'il ne l'aime pas, il ne sera pas injuste envers elle.<sup>3139</sup>"
+                    }
+                ]
             },
             {
-                "title": "873 - Le blâme des dots excessives"
+                "title": "873 - Le blâme des dots excessives",
+                "hadiths": [
+                    {
+                        "number": "2785",
+                        "text": "Le Messager d'Allah (s) a dit : Les meilleures femmes de ma communauté sont celles qui ont les plus beaux visages et les dots les plus modestes.<sup>3140</sup>"
+                    },
+                    {
+                        "number": "2786",
+                        "text": "Le Messager d'Allah (s) a dit : La meilleure des dots est la plus simple.<sup>3141</sup>"
+                    },
+                    {
+                        "number": "2787",
+                        "text": "L'Imām al-Ṣādiq (as) a dit : Les choses mauvaises chez la femme sont une dot excessive et le manque de respect vis-à-vis de son mari.<sup>3142</sup>"
+                    }
+                ]
             },
             {
-                "title": "874 - L'importance d'accorder du soin au choix d'une femme"
+                "title": "874 - L'importance d'accorder du soin au choix d'une femme",
+                "hadiths": [
+                    {
+                        "number": "2788",
+                        "text": "Le Messager d'Allah (s) a dit : Mariez-vous à une bonne famille car en vérité, le sang a une influence [les traits de caractère se transmettent par filiation].<sup>3143</sup>"
+                    },
+                    {
+                        "number": "2789",
+                        "text": "Le Messager d'Allah (s) a dit : Choisissez avec attention [la meilleure femme] pour vos semences car en vérité, les femmes donnent naissance à des enfants qui ressemblent à leurs frères et sœurs.<sup>3144</sup>"
+                    },
+                    {
+                        "number": "2790",
+                        "text": "L'Imām al-Ṣādiq (as) a transmis de ses pères (as) : Le Messager d'Allah (s) a dit aux gens : «Gare à la verdure qui pousse dans du fumier.» Ils demandèrent : «Ô Messager d'Allah, quelle est la verdure qui pousse dans le fumier ?» Il dit : «La belle femme élevée dans un mauvais environnement.»<sup>3145</sup>"
+                    },
+                    {
+                        "number": "2791",
+                        "text": "Le Messager d'Allah (s) a dit : Ne vous mariez pas avec une femme sotte, car sa compagnie est une perte et ses enfants seront tels des hyènes.<sup>3146</sup>"
+                    }
+                ]
             },
             {
-                "title": "875 - Les droits du mari"
+                "title": "875 - Les droits du mari",
+                "hadiths": [
+                    {
+                        "number": "2792",
+                        "text": "Le Messager d'Allah (s) a dit : La personne qui a le plus de droit sur la femme est son mari, et la personne qui a le plus de droit sur l'homme est sa mère.<sup>3147</sup>"
+                    },
+                    {
+                        "number": "2793",
+                        "text": "Le Messager d'Allah (s) a dit : Malheur à la femme qui a provoqué la colère de son mari, et bénie soit celle dont le mari est satisfait d'elle.<sup>3148</sup>"
+                    },
+                    {
+                        "number": "2794",
+                        "text": "L'Imām al-Bāqir (as) a dit : Il n'y a pas de meilleur intercesseur pour la femme auprès de son Seigneur que la satisfaction de son mari.<sup>3149</sup>"
+                    }
+                ]
             },
             {
                 "title": "876 - Les droits de l'épouse"
