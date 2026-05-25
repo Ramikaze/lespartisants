@@ -14853,13 +14853,43 @@ const AUNE_SAGESSE = [
                 ]
             },
             {
-                "title": "786 - La fin funeste des personnes qui font preuve d'ostentation"
+                "title": "786 - La fin funeste des personnes qui font preuve d'ostentation",
+                "hadiths": [
+                    {
+                        "number": "2478",
+                        "text": "Mustadrak al-Wasā'il : Le Messager d'Allah (s) a dit : «En vérité, le Feu et ses occupants enragent contre les personnes ayant fait preuve d'ostentation.» On lui demanda : «Ô Messager d'Allah ! Pour quelle raison le Feu se maint-il ?!» Il répondit : «En raison de la chaleur du feu par lequel ils sont châtiés.»<sup>2799</sup>"
+                    },
+                    {
+                        "number": "2479",
+                        "text": "L'Imām al-Ṣādiq (as) a dit : Le Jour du Jugement, un serviteur qui avait l'habitude de prier sera amené et il dira : «Ô Seigneur ! J'ai prié pour Toi et pour obtenir Ton agrément !» Et il lui sera dit : «Tu as plutôt prié pour que l'on dise que ta prière était belle. Emmenez-le donc au Feu.»<sup>2800</sup>"
+                    }
+                ]
             },
             {
-                "title": "787 - Les traits caractéristiques des personnes qui font preuve d'ostentation"
+                "title": "787 - Les traits caractéristiques des personnes qui font preuve d'ostentation",
+                "hadiths": [
+                    {
+                        "number": "2480",
+                        "text": "L'Imām 'Alī (as) a dit : La personne qui fait preuve d'ostentation a trois traits caractéristiques : elle s'active quand elle voit les gens, elle devient paresseuse lorsqu'elle est seule, et elle aime être congratulée pour tous ses actes.<sup>2801</sup>"
+                    }
+                ]
             },
             {
-                "title": "788 - Divers"
+                "title": "788 - Divers",
+                "hadiths": [
+                    {
+                        "number": "2481",
+                        "text": "Le Messager d'Allah (s) a dit : Réaliser [des actes d'adoration et des bonnes actions] en secret est meilleur que de le faire en public, [excepté] si on le fait pour donner l'exemple.<sup>2802</sup>"
+                    },
+                    {
+                        "number": "2482",
+                        "text": "Lorsqu'il fut interrogé par Zurāra au sujet d'un homme qui accomplit une bonne action, est vu par autrui et s'en réjouit, l'Imām al-Bāqir (as) dit : Il n'y a aucun mal à cela ; toute personne aime apparaître aux autres comme une bonne personne, à condition qu'à la base elle n'ait pas accompli cette action dans ce but.<sup>2803</sup>"
+                    },
+                    {
+                        "number": "2483",
+                        "text": "L'Imām al-Ṣādiq (as) a dit : Celui qui accomplit une bonne action en secret, elle lui sera inscrite en tant que «secrète». S'il déclare l'avoir faite, elle sera effacée et inscrite comme «publique». Et s'il la déclare une seconde fois, elle sera effacée et inscrite comme «ostentatoire».<sup>2804</sup>"
+                    }
+                ]
             }
         ]
     },
@@ -14867,22 +14897,90 @@ const AUNE_SAGESSE = [
         "title": "153 - L'OPINION",
         "subparts": [
             {
-                "title": "789 - Ce qui permet d'avoir une opinion juste"
+                "title": "789 - Ce qui permet d'avoir une opinion juste",
+                "hadiths": [
+                    {
+                        "number": "2484",
+                        "text": "L'Imām 'Alī (as) a dit : L'opinion [juste] vient d'un jugement équilibré, alors que l'opinion irréfléchie et hâtive est véritablement un mauvais appui.<sup>2805</sup>"
+                    },
+                    {
+                        "number": "2485",
+                        "text": "L'Imām 'Alī (as) a dit : Échangez vos opinions les uns avec les autres, et celle qui est juste en émergera.<sup>2806</sup>"
+                    },
+                    {
+                        "number": "2486",
+                        "text": "L'Imām 'Alī (as) a dit : Celui qui fait bon accueil aux divers aspects d'une opinion [aux différentes opinions] saura où résident les erreurs.<sup>2807</sup>"
+                    },
+                    {
+                        "number": "2487",
+                        "text": "L'Imām 'Alī (as) a dit : La personne qui a la meilleure opinion est celle qui ne rejette pas l'avis d'un conseiller.<sup>2808</sup>"
+                    }
+                ]
             },
             {
-                "title": "790 - Les conséquences du fait de suivre obstinément sa propre opinion"
+                "title": "790 - Les conséquences du fait de suivre obstinément sa propre opinion",
+                "hadiths": [
+                    {
+                        "number": "2488",
+                        "text": "L'Imām 'Alī (as) a dit : Celui qui s'obstine à suivre sa propre opinion sera anéanti. En revanche, celui qui consulte les autres aura une part de leur compréhension.<sup>2809</sup>"
+                    },
+                    {
+                        "number": "2489",
+                        "text": "L'Imām 'Alī (as) a dit : Seul l'ignorant est fier de sa propre opinion.<sup>2810</sup>"
+                    },
+                    {
+                        "number": "2490",
+                        "text": "L'Imām al-Ṣādiq (as) a dit : Celui qui s'obstine à suivre sa propre opinion l'a basée sur un argument peu solide et erroné.<sup>2811</sup>"
+                    }
+                ]
             },
             {
-                "title": "791 - Ce qui détruit l'opinion"
+                "title": "791 - Ce qui détruit l'opinion",
+                "hadiths": [
+                    {
+                        "number": "2491",
+                        "text": "L'Imām 'Alī (as) a dit : Insister obstinément sur son opinion la détruit.<sup>2812</sup>"
+                    },
+                    {
+                        "number": "2492",
+                        "text": "L'Imām al-Ṣādiq (as) a dit : Le reclus n'a pas d'opinion.<sup>2813</sup><br>(Voir également : 352. L'entêtement)"
+                    }
+                ]
             },
             {
-                "title": "792 - Le gouvernement et la justesse de l'opinion"
+                "title": "792 - Le gouvernement et la justesse de l'opinion",
+                "hadiths": [
+                    {
+                        "number": "2493",
+                        "text": "L'Imām 'Alī (as) a dit : La justesse des opinions change avec les gouvernements. Lorsqu'un nouveau gouvernement entre en scène, il en va de même de son opinion [qui est acceptée comme valide] et quand il part, elle part avec lui.<sup>2814</sup>"
+                    }
+                ]
             },
             {
-                "title": "793 - Le recours à sa propre opinion dans les affaires religieuses"
+                "title": "793 - Le recours à sa propre opinion dans les affaires religieuses",
+                "hadiths": [
+                    {
+                        "number": "2494",
+                        "text": "Le Messager d'Allah (s) a dit : Cette communauté agira pendant un moment en s'appuyant sur le Livre d'Allah. Par la suite, elle agira selon la pratique (sunna) du Messager d'Allah et après, elle agira selon sa propre opinion. Et lorsque les gens agiront selon leur propre opinion, ils s'égareront et égareront les autres.<sup>2815</sup>"
+                    },
+                    {
+                        "number": "2495",
+                        "text": "Kanz al-'Ummāl : L'Imām 'Alī (as) a dit : «Un acte n'est pas accepté s'il est accompagné de l'une de ces trois choses : l'associationnisme, la mécréance et l'opinion.» Ils demandèrent : «Ô Emir des croyants, que signifie l'opinion ?» Il répondit : «Abandonner le Livre d'Allah ainsi que la pratique (sunna) de Son Messager, et agir selon sa propre opinion.»<sup>2816</sup>"
+                    }
+                ]
             },
             {
-                "title": "794 - L'effort sincère requis pour formuler une opinion"
+                "title": "794 - L'effort sincère requis pour formuler une opinion",
+                "hadiths": [
+                    {
+                        "number": "2496",
+                        "text": "Le Messager d'Allah (s) a dit : Si le dirigeant s'efforce avec sincérité d'atteindre une bonne opinion et qu'il juge de façon juste, il sera récompensé par deux rétributions. En revanche, s'il s'est efforcé avec sincérité dans cette voie et s'est trompé, il aura tout de même une rétribution [pour son effort].<sup>2817</sup>"
+                    },
+                    {
+                        "number": "2497",
+                        "text": "L'Imām 'Alī (as) a dit : Celui qui s'est efforcé avec sincérité en vue de conseiller les gens sera récompensé selon son intention et il aura rempli son devoir.<sup>2818</sup>"
+                    }
+                ]
             }
         ]
     },
@@ -14890,16 +14988,65 @@ const AUNE_SAGESSE = [
         "title": "154 - L'USURE",
         "subparts": [
             {
-                "title": "795 - Mise en garde contre l'usure"
+                "title": "795 - Mise en garde contre l'usure",
+                "hadiths": [
+                    {
+                        "number": "2498",
+                        "text": "Le Messager d'Allah (s) a dit : En vérité, Allah le Tout-Puissant maudit le bénéficiaire de l'usure, celui qui la donne, celui qui la consigne par écrit et ceux qui en sont les témoins.<sup>2819</sup>"
+                    },
+                    {
+                        "number": "2499",
+                        "text": "Le Messager d'Allah (s) a dit : Lors de mon ascension céleste (mi'rāj), j'ai été amené auprès d'hommes dont le ventre était aussi gros qu'une maison et rempli de serpents visibles de l'extérieur. Je demandai alors : «Qui sont ces gens, ô Gabriel ?» Il répondit : «Ce sont les usuriers.»<sup>2820</sup>"
+                    },
+                    {
+                        "number": "2500",
+                        "text": "L'Imām al-Bāqir (as) a dit : Le plus vil des gains est celui issu de l'usure.<sup>2821</sup>"
+                    },
+                    {
+                        "number": "2501",
+                        "text": "L'Imām al-Ṣādiq (as) a dit : L'usurier ne quittera pas ce monde avant d'avoir été rendu fou par Satan.<sup>2822</sup>"
+                    },
+                    {
+                        "number": "2502",
+                        "text": "L'Imām al-Ṣādiq (as) a dit : Un dirham gagné par l'usure est plus grave aux yeux d'Allah le Tout-Puissant que soixante-dix incestes commis au sein de la Demeure sacrée d'Allah.<sup>2823</sup>"
+                    }
+                ]
             },
             {
-                "title": "796 - La sagesse de l'interdiction de l'usure"
+                "title": "796 - La sagesse de l'interdiction de l'usure",
+                "hadiths": [
+                    {
+                        "number": "2503",
+                        "text": "Lorsque Hishām ibn al-Ḥakam l'interrogea sur la raison de l'interdiction de l'usure, l'Imām al-Ṣādiq (as) répondit : Si l'usure était licite, les gens délaisseraient le commerce et tout ce dont ils ont besoin. Allah a donc interdit l'usure afin que les hommes s'éloignent des [moyens de subsistance] illicites et qu'ils aient recours au commerce, à l'achat et à la vente, et que cela facilite à son tour les prêts entre eux.<sup>2824</sup>"
+                    },
+                    {
+                        "number": "2504",
+                        "text": "Lorsqu'il fut interrogé sur la raison de l'interdiction de l'usure, l'Imām al-Ṣādiq (as) répondit : Afin que les hommes ne soient pas réticents à faire preuve de courtoisie les uns vis-à-vis des autres.<sup>2825</sup>"
+                    }
+                ]
             },
             {
-                "title": "797 - Ce qui conduit à être impliqué dans l'usure"
+                "title": "797 - Ce qui conduit à être impliqué dans l'usure",
+                "hadiths": [
+                    {
+                        "number": "2505",
+                        "text": "L'Imām 'Alī (as) a dit : Engagez-vous d'abord dans des relations communes avec les gens, puis [apprenez] la loi, et ensuite [seulement] faites du commerce, car par Allah, l'usure se glisse plus discrètement au sein de cette communauté que la fourmi qui se faufile sur la roche noire.<sup>2826</sup>"
+                    },
+                    {
+                        "number": "2506",
+                        "text": "L'Imām 'Alī (as) a dit : Celui qui commerce sans connaître les lois à ce sujet sera impliqué dans l'usure.<sup>2827</sup><br>(Voir également : 55. Le commerce, section 285)"
+                    }
+                ]
             },
             {
-                "title": "798 - L'usurier qui considère cela licite est en guerre contre Allah"
+                "title": "798 - L'usurier qui considère cela licite est en guerre contre Allah",
+                "hadiths": [
+                    {
+                        "number": "2507",
+                        "text": "Lorsqu'il apprit qu'un homme consommait de l'usure et qu'il appelait cela liba<sup>2829</sup> [pour s'en justifier], l'Imām al-Ṣādiq (as) a dit : Si Allah le Tout-Puissant m'en donnait le pouvoir, je lui ferais couper le cou.<sup>2830</sup>"
+                    }
+                ],
+                "introduction": "«<i>Ô vous qui croyez ! Craignez Allah et renoncez au reliquat de l'intérêt usuraire, si vous êtes croyants. Et si vous ne le faites pas, alors recevez l'annonce d'une guerre de la part d'Allah et de Son messager. Et si vous vous repentez, vous aurez vos capitaux. Vous ne lèserez personne, et vous ne serez point lésés.</i>»<sup>2828</sup>"
             }
         ]
     },
@@ -14907,10 +15054,31 @@ const AUNE_SAGESSE = [
         "title": "155 - L'ESPOIR",
         "subparts": [
             {
-                "title": "799 - L'incitation au vrai espoir"
+                "title": "799 - L'incitation au vrai espoir",
+                "hadiths": [
+                    {
+                        "number": "2508",
+                        "text": "L'Imām 'Alī (as) a dit : L'homme qui espère est en quête, et l'homme apeuré est en fuite.<sup>2832</sup>"
+                    },
+                    {
+                        "number": "2509",
+                        "text": "L'Imām 'Alī (as) a dit en s'adressant à un homme qui lui avait demandé conseil : Ne sois pas de celui qui espère l'Au-delà sans actes, qui remet à plus tard son repentir à cause de hauts espoirs, et qui parle comme les ascètes de la vie de ce monde, alors qu'il se comporte en pratique comme ceux qui la convoitent.<sup>2833</sup>"
+                    },
+                    {
+                        "number": "2510",
+                        "text": "Interrogé au sujet de gens qui désobéissent [à Allah] tout en disant : «Nous espérons [en la miséricorde divine]», puis restent dans cet état jusqu'à ce que la mort leur vienne, l'Imām al-Ṣādiq (as) répondit : «Ceux-là sont balancés et oscillent entre leurs désirs. Ils mentent et ne sont pas réellement de ceux qui espèrent, car celui qui espère une chose la cherche, tandis que celui qui a peur d'une chose la fuit.»<sup>2834</sup>"
+                    }
+                ],
+                "introduction": "«<i>Certes, ceux qui ont cru, émigré et lutté dans le sentier d'Allah, ceux-là espèrent la miséricorde d'Allah. Et Allah est Pardonneur et Miséricordieux.</i>»<sup>2831</sup>"
             },
             {
-                "title": "800 - Mise en garde contre le fait de placer ses espoirs en un autre qu'Allah"
+                "title": "800 - Mise en garde contre le fait de placer ses espoirs en un autre qu'Allah",
+                "hadiths": [
+                    {
+                        "number": "2511",
+                        "text": "L'Imām 'Alī (as) a dit : Placez tous vos espoirs en Allah - loué soit-Il -, et ne les placez pas en un autre que Lui, car toute personne plaçant ses espoirs en un autre qu'Allah échouera.<sup>2835</sup><br>(Voir également : 181. La demande (2), section 908 ; 417. Le désespoir, section 1907)"
+                    }
+                ]
             }
         ]
     },
@@ -14918,13 +15086,35 @@ const AUNE_SAGESSE = [
         "title": "156 - LE RETOUR",
         "subparts": [
             {
-                "title": "801 - Le Retour des morts"
+                "title": "801 - Le Retour des morts",
+                "hadiths": [
+                    {
+                        "number": "2512",
+                        "text": "L'Imām al-Ṣādiq (as) a dit : Par Allah, les jours et les nuits ne prendront pas fin avant qu'Allah fasse revenir les morts, qu'Il donne la mort aux vivants, qu'Il rende les droits aux ayant-droits et qu'Il établisse la religion qu'Il a choisie pour Lui-même.<sup>2837</sup>"
+                    }
+                ]
             },
             {
-                "title": "802 - La mention des personnes qui seront l'objet du Retour"
+                "title": "802 - La mention des personnes qui seront l'objet du Retour",
+                "hadiths": [
+                    {
+                        "number": "2513",
+                        "text": "L'Imām Ḥusayn (as) a dit : Je serai le premier à émerger au moment où la terre se fendra. Je sortirai au même moment que l'Emir des croyants et la manifestation de notre Qa'im.<sup>2838</sup>"
+                    },
+                    {
+                        "number": "2514",
+                        "text": "L'Imām al-Ṣādiq (as) a dit : Le premier à revenir dans ce monde sera Ḥusayn ibn 'Alī (as), et il lui sera donné de régner jusqu'à ce que ses sourcils, de vieillesse, tombent sur ses yeux.<sup>2839</sup>"
+                    }
+                ]
             },
             {
-                "title": "803 - Le Retour n'est pas général"
+                "title": "803 - Le Retour n'est pas général",
+                "hadiths": [
+                    {
+                        "number": "2515",
+                        "text": "L'Imām al-Ṣādiq (as) a dit : En vérité, le Retour ne sera pas général mais spécifique. Ne seront ressuscités que ceux ayant une foi absolument pure ou faisant preuve d'un associationnisme pur.<sup>2840</sup>"
+                    }
+                ]
             }
         ]
     },
@@ -14932,10 +15122,43 @@ const AUNE_SAGESSE = [
         "title": "157 - LA COMPASSION",
         "subparts": [
             {
-                "title": "804 - L'incitation à la compassion mutuelle"
+                "title": "804 - L'incitation à la compassion mutuelle",
+                "hadiths": [
+                    {
+                        "number": "2516",
+                        "text": "Le Messager d'Allah (s) a dit : Le Très-Miséricordieux et le Très-Haut fait preuve de miséricorde envers ceux qui sont compatissants et miséricordieux [vis-à-vis des autres]. Faites preuve de compassion sur terre, et Celui qui est dans le ciel fera preuve de compassion envers vous.<sup>2844</sup>"
+                    },
+                    {
+                        "number": "2517",
+                        "text": "Le Messager d'Allah (s) a dit : Dans le Feu, un appel sera lancé par l'un de ses résidents : «Ô Tendre, ô Donateur, Sauve-moi du Feu!» Allah ordonnera alors à un ange de le faire sortir et de l'amener devant Lui. Allah le Tout-Puissant dira alors : «As-tu un jour fait preuve de compassion envers un oiseau ?»<sup>2845</sup>"
+                    },
+                    {
+                        "number": "2518",
+                        "text": "L'Imām 'Alī (as) a dit : Sois compatissant, et on fera preuve de compassion envers toi.<sup>2846</sup>"
+                    },
+                    {
+                        "number": "2519",
+                        "text": "L'Imām 'Alī (as) a dit : Je suis étonné de celui qui espère la compassion de Celui qui est au-dessus de lui et qui ne fait pas lui-même preuve de compassion vis-à-vis de celui qui est en dessous de lui.<sup>2847</sup>"
+                    }
+                ],
+                "introduction": "«<i>Muhammad est le Messager d'Allah. Et ceux qui sont avec lui sont durs envers les mécréants, miséricordieux entre eux.</i>»<sup>2842</sup><br>«<i>Et c'est être, en outre, de ceux qui croient et s'enjoignent mutuellement la patience et s'enjoignent mutuellement la miséricorde. Ceux-là sont les gens de la droite.</i>»<sup>2843</sup>"
             },
             {
-                "title": "805 - Ceux qui méritent la compassion"
+                "title": "805 - Ceux qui méritent la compassion",
+                "hadiths": [
+                    {
+                        "number": "2520",
+                        "text": "Le Messager d'Allah (s) a dit : Soyez compatissants envers une personne puissante qui a été déshonorée, un riche devenu pauvre, et un savant oublié au milieu d'une génération d'ignorants.<sup>2848</sup>"
+                    },
+                    {
+                        "number": "2521",
+                        "text": "Le Messager d'Allah (s) a dit : Soyez compatissants envers les pauvres.<sup>2849</sup>"
+                    },
+                    {
+                        "number": "2522",
+                        "text": "L'Imām 'Alī (as) a dit : Sois compatissant envers le plus jeune de ta famille et respectueux envers le plus âgé.<sup>2850</sup>"
+                    }
+                ]
             }
         ]
     },
@@ -14943,10 +15166,42 @@ const AUNE_SAGESSE = [
         "title": "158 - LA MISÉRICORDE",
         "subparts": [
             {
-                "title": "806 - La miséricorde d'Allah"
+                "title": "806 - La miséricorde d'Allah",
+                "hadiths": [
+                    {
+                        "number": "2523",
+                        "text": "Le Messager d'Allah (s) a dit : En vérité, le jour où Il a créé les cieux et la terre, Allah le Très-Haut a créé cent miséricordes. Chaque miséricorde correspond à tout ce qui est entre le ciel et la terre. Parmi elles, Il a fait descendre une miséricorde sur terre et c'est elle qui fait que les créatures sont compatissantes et miséricordieuses entre elles, c'est par elle que la mère a de la tendresse envers son enfant, par elle que les oiseaux et les fauves peuvent s'abreuver d'eau, et par elle que toutes les créatures vivent.<sup>2851</sup>"
+                    }
+                ]
             },
             {
-                "title": "807 - Ce qui suscite la miséricorde [d'Allah]"
+                "title": "807 - Ce qui suscite la miséricorde [d'Allah]",
+                "hadiths": [
+                    {
+                        "number": "2524",
+                        "text": "Kanz al-'Ummāl : Le Messager d'Allah (s) a dit : «Nulle personne n'entrera au Paradis sauf par la miséricorde d'Allah.» Ils dirent : «Même pas toi ?» Il (s) répondit : «Même pas moi, sauf si Allah m'enveloppe de Sa miséricorde.»<sup>2852</sup>"
+                    },
+                    {
+                        "number": "2525",
+                        "text": "Le Messager d'Allah (s) a dit : Si vous saviez la valeur de la miséricorde d'Allah le Très-Haut, vous vous appuieriez sur elle.<sup>2853</sup>"
+                    },
+                    {
+                        "number": "2526",
+                        "text": "L'Imām Zayn al-'Ābidīn (as) a dit : L'étonnement ne réside pas dans celui qui a été sauvé [le Jour du Jugement], mais dans celui qui a été damné : comment a-t-il été damné malgré l'immensité de la miséricorde d'Allah ?<sup>2854</sup>"
+                    },
+                    {
+                        "number": "2527",
+                        "text": "Le Messager d'Allah (s) a dit : Bénéficiez de la miséricorde d'Allah en effectuant les actes d'obéissance qu'Il vous a ordonnés.<sup>2855</sup>"
+                    },
+                    {
+                        "number": "2528",
+                        "text": "L'Imām 'Alī (as) a dit : La pratique du rappel d'Allah fait descendre la miséricorde.<sup>2856</sup>"
+                    },
+                    {
+                        "number": "2529",
+                        "text": "L'Imām 'Alī (as) a dit : En répandant la miséricorde sur les autres, on fait descendre la miséricorde [d'Allah].<sup>2857</sup>"
+                    }
+                ]
             }
         ]
     },
@@ -14954,19 +15209,86 @@ const AUNE_SAGESSE = [
         "title": "159 - LES LIENS FAMILIAUX",
         "subparts": [
             {
-                "title": "808 - La vertu du maintien des liens familiaux"
+                "title": "808 - La vertu du maintien des liens familiaux",
+                "hadiths": [
+                    {
+                        "number": "2530",
+                        "text": "Le Messager d'Allah (s) a dit : En vérité, la récompense liée au maintien des liens familiaux est donnée plus vite que celle de toute bonne action.<sup>2858</sup>"
+                    },
+                    {
+                        "number": "2531",
+                        "text": "Le Messager d'Allah (s) a dit : Si tu veux être heureux durant toute l'année, maintiens tes liens familiaux.<sup>2859</sup>"
+                    }
+                ]
             },
             {
-                "title": "809 - Les effets du maintien des liens familiaux"
+                "title": "809 - Les effets du maintien des liens familiaux",
+                "hadiths": [
+                    {
+                        "number": "2532",
+                        "text": "Fāṭima al-Zahrā (as) a dit : Allah a ordonné le maintien des liens familiaux pour augmenter la croissance de la population.<sup>2860</sup>"
+                    },
+                    {
+                        "number": "2533",
+                        "text": "L'Imām Ḥusayn (as) a dit : Que celui qui veut que sa vie soit prolongée et sa subsistance augmentée, maintienne ses liens familiaux.<sup>2861</sup>"
+                    },
+                    {
+                        "number": "2534",
+                        "text": "L'Imām al-Bāqir (as) a dit : Le maintien des liens familiaux purifie les actes, suscite l'augmentation des richesses, repousse le mal, facilite les comptes [le Jour du Jugement] et retarde l'échéance [de la vie].<sup>2862</sup>"
+                    },
+                    {
+                        "number": "2535",
+                        "text": "L'Imām al-Bāqir (as) a dit : Le maintien des liens familiaux améliore le caractère, rend généreux, adoucit l'âme, accroît la subsistance et retarde l'échéance [de la vie].<sup>2863</sup>"
+                    },
+                    {
+                        "number": "2536",
+                        "text": "L'Imām al-Hādī (as) a dit : Lorsqu'Allah le Tout-Puissant permis à Moïse ibn 'Imrān (as) de converser avec Lui, il demande : «Mon Dieu... Quelle est la récompense de celui qui maintient ses relations avec ses proches ?» Il répondit : «Ô Moïse, Je retarderai l'échéance [de sa vie] et Je lui faciliterai les difficultés de l'agonie.»<sup>2864</sup>"
+                    }
+                ]
             },
             {
-                "title": "810 - Renouer des liens avec celui qui les a coupés"
+                "title": "810 - Renouer des liens avec celui qui les a coupés",
+                "hadiths": [
+                    {
+                        "number": "2537",
+                        "text": "Le Messager d'Allah (s) a dit : Ne romps pas les liens with ton proche, même s'il les rompt avec toi.<sup>2865</sup>"
+                    },
+                    {
+                        "number": "2538",
+                        "text": "L'Imām Ḥusayn (as) a dit : La personne qui maintient le mieux ses liens familiaux est celle qui renoue des liens avec celui qui les a coupés.<sup>2866</sup>"
+                    }
+                ]
             },
             {
-                "title": "811 - Mise en garde contre la rupture des liens familiaux"
+                "title": "811 - Mise en garde contre la rupture des liens familiaux",
+                "hadiths": [
+                    {
+                        "number": "2539",
+                        "text": "Le Messager d'Allah (s) a dit : En vérité, les anges ne vont pas [rendre visite] à des gens parmi lesquels se trouve une personne ayant rompu ses liens familiaux.<sup>2868</sup>"
+                    },
+                    {
+                        "number": "2540",
+                        "text": "L'Imām 'Alī (as) a dit : S'ils rompent leurs liens familiaux, leurs richesses seront placées entre les mains des malveillants.<sup>2869</sup>"
+                    },
+                    {
+                        "number": "2541",
+                        "text": "L'Imām al-Ṣādiq (as) a dit : Le péché qui hâte la mort est la rupture des liens familiaux.<sup>2870</sup>"
+                    }
+                ],
+                "introduction": "«<i>Si vous vous détournez, ne risquez-vous pas de semer la corruption sur terre et de rompre vos liens de parenté ? Ce sont ceux-là qu'Allah a maudits, a rendus sourds et a rendu leurs yeux aveugles.</i>»<sup>2867</sup>"
             },
             {
-                "title": "812 - Le moins que l'on puisse faire pour maintenir les liens familiaux"
+                "title": "812 - Le moins que l'on puisse faire pour maintenir les liens familiaux",
+                "hadiths": [
+                    {
+                        "number": "2542",
+                        "text": "Le Messager d'Allah (s) a dit : Maintenez vos liens familiaux, ne serait-ce qu'en adressant des salutations.<sup>2871</sup>"
+                    },
+                    {
+                        "number": "2543",
+                        "text": "L'Imām al-Ṣādiq (as) a dit : Maintiens tes relations avec tes proches, ne serait-ce qu'en leur offrant une gorgée d'eau. La meilleure façon de maintenir ses liens familiaux est de s'abstenir d'offenser [ses proches].<sup>2872</sup>"
+                    }
+                ]
             }
         ]
     },
@@ -14974,28 +15296,174 @@ const AUNE_SAGESSE = [
         "title": "160 - LA SUBSISTANCE",
         "subparts": [
             {
-                "title": "813 - Le Grand Pourvoyeur de subsistance"
+                "title": "813 - Le Grand Pourvoyeur de subsistance",
+                "hadiths": [
+                    {
+                        "number": "2544",
+                        "text": "L'Imām 'Alī (as) a dit : Seul le Grand Pourvoyeur [Allah] a le pouvoir de retenir ou d'accorder la subsistance.<sup>2875</sup>"
+                    },
+                    {
+                        "number": "2545",
+                        "text": "L'Imām 'Alī (as) a dit : Il [Allah] assigne les subsistances de façon abondante ou avec parcimonie, et Il les distribue à ceux qui sont dans le besoin et à ceux qui sont dans l'aisance. Il fait preuve de justice en les allouant afin d'éprouver celui qu'Il veut par l'aisance ou la difficulté, et Il teste par ce biais la reconnaissance et la patience des riches et des pauvres.<sup>2876</sup>"
+                    }
+                ],
+                "introduction": "«<i>En vérité, c'est Allah qui est le Grand Pourvoyeur, le Détenteur de la force, l'Inébranlable.</i>»<sup>2873</sup><br>«<i>En vérité, ton Seigneur étend Ses dons largement à qui Il veut ou les accorde avec parcimonie. Il est, sur Ses serviteurs, parfaitement Connaisseur et Clairvoyant.</i>»<sup>2874</sup>"
             },
             {
-                "title": "814 - La garantie de la subsistance"
+                "title": "814 - La garantie de la subsistance",
+                "hadiths": [
+                    {
+                        "number": "2546",
+                        "text": "Le Messager d'Allah (s) a dit : Ne te laisse pas préoccuper par ce qui t'est garanti [ta subsistance] au détriment de ce qui t'a été ordonné car en vérité, tu ne seras pas privé de ce qui t'a déjà été destiné et tu n'atteindras pas ce que l'on a écarté de toi.<sup>2878</sup>"
+                    },
+                    {
+                        "number": "2547",
+                        "text": "L'Imām 'Alī (as) a dit : Tout être vivant a une nourriture [qui lui est assignée].<sup>2879</sup>"
+                    },
+                    {
+                        "number": "2548",
+                        "text": "L'Imām 'Alī (as) a dit : Celui-ci est un corbeau et celui-là un aigle ; celle-ci est une colombe et celle-là une autruche. Il a appelé chaque oiseau par son nom et Il a garanti à chacun sa subsistance.<sup>2880</sup>"
+                    },
+                    {
+                        "number": "2549",
+                        "text": "L'Imām 'Alī (as) a dit : Ses créatures sont à Sa charge, Il leur a garanti leur subsistance et Il leur a assigné leur nourriture.<sup>2881</sup>"
+                    },
+                    {
+                        "number": "2550",
+                        "text": "L'Imām 'Alī (as) a dit : Allez à la quête de votre subsistance, car elle a été garantie à celui qui est à sa quête.<sup>2882</sup>"
+                    },
+                    {
+                        "number": "2551",
+                        "text": "L'Imām al-'Askarī (as) a dit : Que la [préoccupation] pour la subsistance qui est garantie ne te détourne pas de l'accomplissement d'un acte obligatoire.<sup>2883</sup>"
+                    }
+                ],
+                "introduction": "«<i>Il n'est point de bête sur terre dont la subsistance n'incombe à Allah qui connaît son gîte et son dépôt ; tout est dans un Livre explicite.</i>»<sup>2877</sup>"
             },
             {
-                "title": "815 - L'avidité et l'accroissement de la subsistance"
+                "title": "815 - L'avidité et l'accroissement de la subsistance",
+                "hadiths": [
+                    {
+                        "number": "2552",
+                        "text": "Le Messager d'Allah (s) a dit : En vérité, la subsistance ne peut être attirée par l'avidité de la personne avide ni repoussée par la répugnance d'une personne répugnante.<sup>2884</sup>"
+                    },
+                    {
+                        "number": "2553",
+                        "text": "L'Imām 'Alī (as) a dit : Sachez que même si un serviteur est dénué de perspicacité et doté de peu de ruse, cela ne réduira pas la subsistance qu'Allah lui a assignée, alors que même si un serviteur est très perspicace et doté d'une grande ruse, cela n'augmentera pas ce qu'Allah lui a assigné.<sup>2885</sup>"
+                    },
+                    {
+                        "number": "2554",
+                        "text": "L'Imām al-Ṣādiq (as) a dit : Étant donné que la subsistance est assignée, pourquoi donc faire preuve d'avidité ?!<sup>2886</sup>"
+                    },
+                    {
+                        "number": "2555",
+                        "text": "L'Imām al-Ṣādiq (as) a dit : En vérité, Allah le Très-Haut a distribué abondamment la subsistance même aux sots, afin que les personnes intelligentes en tirent une leçon et sachent que la richesse de ce monde ne s'obtient pas par le travail ni par la ruse.<sup>2887</sup>"
+                    }
+                ]
             },
             {
-                "title": "816 - L'incitation à rechercher sa subsistance par des moyens honnêtes"
+                "title": "816 - L'incitation à rechercher sa subsistance par des moyens honnêtes",
+                "hadiths": [
+                    {
+                        "number": "2556",
+                        "text": "Le Messager d'Allah (s) a dit : En vérité, l'Esprit probe [Gabriel] m'a inspiré qu'aucune âme ne mourra avant d'avoir reçu la totalité de la subsistance [qui lui a été destinée dans ce monde]. Craignez donc Allah et recherchez votre subsistance par des moyens honnêtes, et ne laissez pas un retard dans l'octroi de la subsistance vous conduire à la rechercher de manière illicite car en vérité, ce qu'il y a auprès d'Allah n'est atteint qu'en Lui obéissant.<sup>2888</sup>"
+                    },
+                    {
+                        "number": "2557",
+                        "text": "L'Imām 'Alī (as) a dit : Prends de la vie de ce monde ce qui vient à toi, et détourne-toi de ce qui se détourne de toi [ce qui ne t'est pas destiné]. Et si tu n'agis pas ainsi, recherche au moins ta subsistance avec des moyens honnêtes.<sup>2889</sup>"
+                    },
+                    {
+                        "number": "2558",
+                        "text": "L'Imām al-Ṣādiq (as) a dit : Que ta quête de la subsistance ne soit pas comme le gain du gaspilleur, ni comme la quête du cupide qui aime ce monde et en dépend. Reviens plutôt au niveau de la modération et de la chasteté, élève-toi au-dessus du niveau de l'incapacité et de la faiblesse, et cherche à gagner tes revenus de la façon dont doit le faire un croyant.<sup>2890</sup>"
+                    }
+                ]
             },
             {
-                "title": "817 - La subsistance et celui qui la recherche"
+                "title": "817 - La subsistance et celui qui la recherche",
+                "hadiths": [
+                    {
+                        "number": "2559",
+                        "text": "Le Messager d'Allah (s) a dit : Si l'homme fuyait sa subsistance comme il fuit la mort, elle l'atteindrait néanmoins tout comme l'atteint la mort.<sup>2891</sup>"
+                    },
+                    {
+                        "number": "2560",
+                        "text": "L'Imām 'Alī (as) a dit : La subsistance cherche celui qui n'est pas à sa recherche.<sup>2892</sup>"
+                    },
+                    {
+                        "number": "2561",
+                        "text": "L'Imām 'Alī (as) a dit : Il y a deux sortes de subsistances : une subsistance que tu cherches, et une subsistance qui te cherche. Ainsi, même si tu ne viens pas à elle, elle viendra à toi.<sup>2893</sup>"
+                    },
+                    {
+                        "number": "2562",
+                        "text": "L'Imām al-Ṣādiq (as) a dit : En vérité, Allah le Tout-Puissant a placé la subsistance des croyants là où ils ne l'attendent pas ; ceci parce que lorsque le serviteur ignore où se trouve sa subsistance, il multiplie ses invocations.<sup>2894</sup>"
+                    }
+                ]
             },
             {
-                "title": "818 - Le fait de se soucier de sa subsistance du lendemain"
+                "title": "818 - Le fait de se soucier de sa subsistance du lendemain",
+                "hadiths": [
+                    {
+                        "number": "2563",
+                        "text": "Le Messager d'Allah (s) a dit : Ne te soucie guère de la subsistance de demain, car chaque jour arrive avec sa propre subsistance.<sup>2895</sup>"
+                    },
+                    {
+                        "number": "2564",
+                        "text": "L'Imām al-Ṣādiq (as) a dit : Celui qui se soucie de sa subsistance, cela sera inscrit pour lui comme péché.<sup>2896</sup>"
+                    }
+                ]
             },
             {
-                "title": "819 - L'impatience vis-à-vis de l'arrivée de la subsistance"
+                "title": "819 - L'impatience vis-à-vis de l'arrivée de la subsistance",
+                "hadiths": [
+                    {
+                        "number": "2565",
+                        "text": "Le Messager d'Allah (s) a dit : Allah - loué soit le Très-Haut - a dit : «Que Mon serviteur soit prévenu que s'il est impatient vis-à-vis de l'arrivée de Ma subsistance, Je Me mettrai en colère et ouvrirai devant lui la porte de [l'attachement à] ce monde.»<sup>2897</sup>"
+                    },
+                    {
+                        "number": "2566",
+                        "text": "Le Messager d'Allah (s) a dit : Que celui à qui Allah le Très-Haut accorde une grâce Le loue, et que celui qui est impatient vis-à-vis de [l'arrivée de] la subsistance implore le pardon d'Allah.<sup>2898</sup>"
+                    },
+                    {
+                        "number": "2567",
+                        "text": "Le Messager d'Allah (s) a dit : Que celui qui est impatient vis-à-vis de [l'arrivée de] la subsistance multiplie les takbīr<sup>2899</sup>, et que celui qui s'inquiète et se fait beaucoup de souci [pour ses moyens de subsistance] augmente ses demandes de pardon.<sup>2900</sup><br>(Voir également : 303. La demande de pardon, section 1431)"
+                    }
+                ]
             },
             {
-                "title": "820 - Ce qui fait venir la subsistance et qui l'augmente"
+                "title": "820 - Ce qui fait venir la subsistance et qui l'augmente",
+                "hadiths": [
+                    {
+                        "number": "2568",
+                        "text": "Le Messager d'Allah (s) a dit : L'arrivée de la subsistance de la personne qui nourrit les autres est plus rapide qu'un couteau qui coupe la chair.<sup>2901</sup>"
+                    },
+                    {
+                        "number": "2569",
+                        "text": "Lorsqu'il lui fut dit : «J'aimerais que ma subsistance augmente», le Messager d'Allah (s) répondit : «Sois toujours en état de pureté (tahāra), et ta subsistance sera augmentée.»<sup>2902</sup>"
+                    },
+                    {
+                        "number": "2570",
+                        "text": "Le Messager d'Allah (s) a dit : Augmentez votre charité (sadaqa) et [Allah] vous donnera votre subsistance.<sup>2903</sup>"
+                    },
+                    {
+                        "number": "2571",
+                        "text": "L'Imām 'Alī (as) a dit : Aider un frère en religion avec sa richesse pour Allah le Tout-Puissant augmente la subsistance.<sup>2904</sup>"
+                    },
+                    {
+                        "number": "2572",
+                        "text": "L'Imām 'Alī (as) a dit : Agir avec intégrité augmente la subsistance.<sup>2905</sup>"
+                    },
+                    {
+                        "number": "2573",
+                        "text": "L'Imām 'Alī (as) a dit : Faites descendre la subsistance par la charité (sadaqa).<sup>2906</sup>"
+                    },
+                    {
+                        "number": "2574",
+                        "text": "L'Imām 'Alī (as) a dit : Celui qui a une intention bonne et sincère verra sa subsistance augmenter.<sup>2907</sup>"
+                    },
+                    {
+                        "number": "2575",
+                        "text": "L'Imām al-Bāqir (as) a dit : Prie avec ferveur pour tes frères [en religion] en secret, et la subsistance sera déversée [abondamment] sur toi.<sup>2908</sup>"
+                    }
+                ]
             },
             {
                 "title": "821 - Ce qui coupe la subsistance"
