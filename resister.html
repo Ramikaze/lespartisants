@@ -44,17 +44,18 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
 .a-card-arrow{position:absolute;right:20px;top:50%;transform:translateY(-50%);color:#c9a84c;opacity:0.3}
 .a-card:hover .a-card-arrow{opacity:0.7}
 .a-card-soon{font-family:'Cinzel',serif;font-size:0.7rem;color:#5a5040;letter-spacing:0.1em;margin-top:6px}
-.article-view{display:none}
+.article-view{display:none;max-width:680px;margin:0 auto}
 .article-view.active{display:block}
 .back-btn{display:inline-flex;align-items:center;gap:8px;font-family:'Cinzel',serif;font-size:0.85rem;color:#c9a84c;cursor:pointer;border:1px solid rgba(201,168,76,0.2);background:rgba(19,29,53,0.4);border-radius:8px;padding:8px 16px;margin-bottom:32px;transition:all .2s}
 .back-btn:hover{background:rgba(201,168,76,0.1);border-color:rgba(201,168,76,0.4)}
-.article-header{margin-bottom:28px}
-.article-num{font-family:'Cinzel',serif;font-size:0.7rem;letter-spacing:0.2em;text-transform:uppercase;color:#c9a84c;opacity:0.5;margin-bottom:8px}
-.article-title{font-family:'Cinzel',serif;font-size:clamp(1.2rem,3vw,1.6rem);font-weight:700;color:#e8e2d0;line-height:1.3;margin-bottom:12px}
+.article-header{margin-bottom:38px;text-align:center}
+.article-header::after{content:'';display:block;width:120px;height:1px;background:linear-gradient(90deg,transparent,#c9a84c,transparent);margin:20px auto 0}
+.article-num{font-family:'Cinzel',serif;font-size:0.75rem;letter-spacing:0.22em;text-transform:uppercase;color:#c9a84c;opacity:0.6;margin-bottom:8px;text-align:center}
+.article-title{font-family:'Cinzel',serif;font-size:clamp(1.25rem,3.5vw,1.75rem);font-weight:700;color:#e8e2d0;line-height:1.35;margin-bottom:12px;text-align:center}
 .body-text{font-size:1.15rem;color:#cec6b0;line-height:1.95;margin-bottom:18px;text-align:justify}
 .body-text strong{color:#e8c06a;font-weight:600}
 .body-text em{color:#b8a882}
-.sub-heading{font-family:'Cinzel',serif;font-size:1.1rem;font-weight:600;color:#e8c06a;margin:32px 0 16px;scroll-margin-top:16px}
+.sub-heading{font-family:'Cinzel',serif;font-size:1.15rem;font-weight:600;color:#e8c06a;margin:42px 0 20px;text-align:center;scroll-margin-top:16px}
 .article-toc{background:rgba(19,29,53,0.4);border:1px solid rgba(201,168,76,0.12);border-radius:10px;padding:16px 20px;margin-bottom:28px}
 .article-toc-title{font-family:'Cinzel',serif;font-size:0.7rem;letter-spacing:0.18em;text-transform:uppercase;color:#c9a84c;margin-bottom:10px;opacity:0.6}
 .article-toc-list{list-style:none;display:flex;flex-direction:column;gap:6px}
@@ -68,11 +69,11 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
 .article-toc-item:hover{color:#e8c06a}
 .evidence{background:rgba(13,22,42,0.7);border:1px solid rgba(201,168,76,0.15);border-left:3px solid #c9a84c;border-radius:0 10px 10px 0;padding:18px 22px;margin:22px 0}
 .evidence-label{font-family:'Cinzel',serif;font-size:0.72rem;letter-spacing:0.15em;text-transform:uppercase;color:#c9a84c;margin-bottom:8px;opacity:0.7}
-.evidence-text{font-size:1.05rem;color:#ddd5bf;line-height:1.8;margin-bottom:6px}
+.evidence-text{font-size:1.05rem;color:#ddd5bf;line-height:1.8;margin-bottom:6px;text-align:justify}
 .evidence-source{font-size:0.82rem;color:#7a6a4a;font-style:italic}
 .action-box{background:rgba(201,168,76,0.06);border:1px solid rgba(201,168,76,0.18);border-radius:12px;padding:24px 26px;margin:32px 0}
 .action-title{font-family:'Cinzel',serif;font-size:0.85rem;letter-spacing:0.15em;text-transform:uppercase;color:#c9a84c;margin-bottom:14px}
-.action-item{display:flex;align-items:baseline;gap:12px;font-size:1.05rem;color:#cec6b0;line-height:1.8;margin-bottom:10px}
+.action-item{display:flex;align-items:baseline;gap:12px;font-size:1.05rem;color:#cec6b0;line-height:1.8;margin-bottom:10px;text-align:justify}
 .action-bullet{width:5px;height:5px;background:#c9a84c;transform:rotate(45deg);flex-shrink:0;margin-top:10px}
 .sources-box{background:rgba(7,12,24,0.8);border:1px solid rgba(201,168,76,0.12);border-radius:12px;padding:24px 28px;margin-top:40px}
 .sources-title{font-family:'Cinzel',serif;font-size:0.78rem;letter-spacing:0.18em;text-transform:uppercase;color:#c9a84c;margin-bottom:14px;opacity:0.7}
