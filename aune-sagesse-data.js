@@ -4929,7 +4929,7 @@ const AUNE_SAGESSE = [
                     },
                     {
                         "number": "838",
-                        "text": "Le Messager d'Allah (s) a dit : Celui dont les yeux ont, par crainte d'Allah, versés une larme ne serait-ce que de la traille d'une mouche, Allah lui accordera la sécurité le jour de la grande frayeur.<sup>934</sup>"
+                        "text": "Le Messager d'Allah (s) a dit : Celui dont les yeux ont, par crainte d'Allah, versé une larme ne serait-ce que de la taille d'une mouche, Allah lui accordera la sécurité le jour de la grande frayeur.<sup>934</sup>"
                     },
                     {
                         "number": "839",
@@ -14726,7 +14726,7 @@ const AUNE_SAGESSE = [
                     },
                     {
                         "number": "2456",
-                        "text": "L'Imām 'Alī (as) a dit : Celui qui est généreux prévaut et dirige, alors que celui qui a une fortune abondante prend les reines du pouvoir pour lui même.<sup>2773</sup>"
+                        "text": "L'Imām 'Alī (as) a dit : Celui qui est généreux prévaut et dirige, alors que celui qui a une fortune abondante prend les rênes du pouvoir pour lui-même.<sup>2773</sup>"
                     },
                     {
                         "number": "2457",
